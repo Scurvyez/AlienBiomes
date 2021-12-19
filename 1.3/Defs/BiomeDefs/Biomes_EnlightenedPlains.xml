@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Enlightened Plains ====================-->
+
+    <!-- NO hills or mountains are present. -->
+    <!-- Belt around middle of planet. -->
+    <!-- Temperate, sprawling with life. -->
+    <!-- No trees, need another wood source...
+        ... new animal that gives wood-like resource? -->
+
+    <BiomeDef>
+        <defName>SZ_EnlightenedPlains</defName>
+        <label>enlightened plains</label>
+        <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all though no trees grow in these parts.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
+        <workerClass>BiomesKit.UniversalBiomeWorker</workerClass>
+        <animalDensity>3.7</animalDensity>
+        <plantDensity>0.65</plantDensity>
+        <settlementSelectionWeight>1</settlementSelectionWeight>
+        <movementDifficulty>1</movementDifficulty>
+        <texture>World/Biomes/SZ_EnlightenedPlains</texture>
+        <forageability>1</forageability>
+        <foragedFood>RawBerries</foragedFood>
+        <wildPlantRegrowDays>20</wildPlantRegrowDays>
+        <soundsAmbient>
+            <li>Ambient_NightInsects_Jungle</li>
+            <li>Ambient_DayInsects_Jungle</li>
+        </soundsAmbient>
+        <diseaseMtbDays>50</diseaseMtbDays>
+        <diseases>
+            <li>
+                <diseaseInc>Disease_Flu</diseaseInc>
+                <commonality>100</commonality>
+            </li>
+            <li>
+				<diseaseInc>Disease_Plague</diseaseInc>
+				<commonality>100</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_GutWorms</diseaseInc>
+				<commonality>80</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_AnimalFlu</diseaseInc>
+				<commonality>100</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_AnimalPlague</diseaseInc>
+				<commonality>100</commonality>
+			</li>
+        </diseases>
+        <terrainsByFertility>
+            <li>
+                <terrain>SZ_EnlightenedSoil</terrain>
+                <min>-999</min>
+                <max>0.87</max>
+            </li>
+            <li>
+                <terrain>SZ_EnlightenedRichSoil</terrain>
+                <min>0.87</min>
+                <max>999</max>
+            </li>
+        </terrainsByFertility>
+        <terrainPatchMakers>
+            <li>
+                <perlinFrequency>0.017</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_EnlightenedRichSoil</terrain>
+                        <min>0.73</min>
+                        <max>0.80</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_EnlightenedMud</terrain>
+                        <min>0.80</min>
+                        <max>0.93</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_EnlightenedStonySoil</terrain>
+                        <min>0.60</min>
+                        <max>0.74</max>
+                    </li>
+                    <li>
+                        <terrain>WaterShallow</terrain>
+                        <min>.85</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li>
+        </terrainPatchMakers>
+        <baseWeatherCommonalities>
+            <Clear>18</Clear>
+            <Rain>5</Rain>
+            <DryThunderstorm>1</DryThunderstorm>
+            <RainyThunderstorm>4</RainyThunderstorm>
+        </baseWeatherCommonalities>
+        <wildPlants>
+            <SZ_Plant_GreenSwirlA>0.22</SZ_Plant_GreenSwirlA>
+            <SZ_Plant_GreenSwirlB>0.22</SZ_Plant_GreenSwirlB>
+            <SZ_Plant_GreenSwirlC>0.22</SZ_Plant_GreenSwirlC>
+            <SZ_Plant_SpiralStalkA>0.15</SZ_Plant_SpiralStalkA>
+            <SZ_Plant_SpiralStalkB>0.15</SZ_Plant_SpiralStalkB>
+            <SZ_Plant_SpiralStalkC>0.15</SZ_Plant_SpiralStalkC>
+            <SZ_Plant_EnlightenedGrass>5.00</SZ_Plant_EnlightenedGrass>
+            <SZ_Plant_EnlightenedTallGrass>4.10</SZ_Plant_EnlightenedTallGrass>
+        </wildPlants>
+        <wildAnimals>
+            <Bast_Bastyon MayRequire="Scurvyez.Bastyon">0.01</Bast_Bastyon>
+            <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.02</Bast_Alluvium>
+        </wildAnimals>
+        <modExtensions>
+			<li Class="BiomesKit.BiomesKitControls">
+                <allowOnLand>True</allowOnLand>
+                <frequency>100</frequency>
+                <minTemperature>20.5</minTemperature>
+                <maxTemperature>30.5</maxTemperature>
+                <maxHilliness>Flat</maxHilliness>
+			</li>
+		</modExtensions>
+    </BiomeDef>
+
+</Defs>

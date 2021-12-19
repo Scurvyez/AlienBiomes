@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Enlightened Soil ====================-->
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_EnlightenedSoil</defName>
+        <label>enlightened soil</label>
+        <texturePath>Terrain/Surfaces/SZ_EnlightenedSoil</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>340</renderPrecedence>
+        <pathCost>1</pathCost>
+        <statBases>
+            <Beauty>0</Beauty>
+            <BeautyOutdoors>0</BeautyOutdoors>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <scatterType>Rocky</scatterType>
+        <affordances>
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Heavy</li>
+            <li>GrowSoil</li>
+            <li>Diggable</li>
+        </affordances>
+        <generatedFilth>Filth_Dirt</generatedFilth>
+        <fertility>1.0</fertility>
+        <takeFootprints>True</takeFootprints>
+        <tags>
+            <li>Soil</li>
+        </tags>
+    </TerrainDef>
+
+    <!--==================== Enlightened Rich Soil ====================-->
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_EnlightenedRichSoil</defName>
+        <label>enlightened rich soil</label>
+        <texturePath>Terrain/Surfaces/SZ_EnlightenedRichSoil</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>335</renderPrecedence>
+        <pathCost>2</pathCost>
+        <statBases>
+            <Beauty>-1</Beauty>
+            <BeautyOutdoors>0</BeautyOutdoors>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <affordances>
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Heavy</li>
+            <li>GrowSoil</li>
+            <li>Diggable</li>
+        </affordances>
+        <generatedFilth>Filth_Dirt</generatedFilth>
+        <fertility>1.4</fertility>
+        <takeFootprints>True</takeFootprints>
+        <tags>
+            <li>Soil</li>
+        </tags>
+    </TerrainDef>
+
+    <!--==================== Enlightened Mud ====================-->
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_EnlightenedMud</defName>
+        <label>enlightened mud</label>
+        <texturePath>Terrain/Surfaces/SZ_EnlightenedMud</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>330</renderPrecedence>
+        <pathCost>14</pathCost>
+        <statBases>
+            <Beauty>-3</Beauty>
+            <BeautyOutdoors>0</BeautyOutdoors>
+            <Cleanliness>-2</Cleanliness>
+        </statBases>
+        <affordances>
+            <li>Bridgeable</li>
+        </affordances>
+        <generatedFilth>Filth_Dirt</generatedFilth>
+        <fertility>0</fertility>
+        <takeFootprints>True</takeFootprints>
+        <avoidWander>true</avoidWander>
+        <driesTo>SZ_EnlightenedSoil</driesTo>
+        <tags>
+            <li>Soil</li>
+        </tags>
+    </TerrainDef>
+
+    <!--==================== Enlightened Stony Soil ====================-->
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_EnlightenedStonySoil</defName>
+        <label>enlightened stony soil</label>
+        <texturePath>Terrain/Surfaces/SZ_EnlightenedStonySoil</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>320</renderPrecedence>
+        <pathCost>2</pathCost>
+        <statBases>
+            <Beauty>-3</Beauty>
+            <BeautyOutdoors>0</BeautyOutdoors>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <scatterType>Rocky</scatterType>
+        <affordances>
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Heavy</li>
+            <li>GrowSoil</li>
+            <li>Diggable</li>
+        </affordances>
+        <generatedFilth>Filth_Dirt</generatedFilth>
+        <fertility>0.7</fertility>
+        <takeFootprints>True</takeFootprints>
+        <tags>
+            <li>Soil</li>
+        </tags>
+    </TerrainDef>
+
+</Defs>
