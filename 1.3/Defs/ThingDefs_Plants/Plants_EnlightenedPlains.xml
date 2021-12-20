@@ -110,6 +110,7 @@
 
     <ThingDef ParentName="SpiralStalkBase">
         <defName>SZ_Plant_SpiralStalkB</defName>
+        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
         <graphicData>
             <texPath>Things/Plant/SpiralStalkPlant/SpiralStalkPlantB</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -129,6 +130,7 @@
 
     <ThingDef ParentName="SpiralStalkBase">
         <defName>SZ_Plant_SpiralStalkC</defName>
+        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
         <graphicData>
             <texPath>Things/Plant/SpiralStalkPlant/SpiralStalkPlantC</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -150,6 +152,7 @@
         <defName>SZ_Plant_GreenSwirlA</defName>
         <label>green swirl</label>
         <description>PLACEHOLDER</description>
+        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <Nutrition>0.50</Nutrition>
@@ -191,6 +194,7 @@
 
     <ThingDef ParentName="GreenSwirlBase">
         <defName>SZ_Plant_GreenSwirlB</defName>
+        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
         <graphicData>
             <texPath>Things/Plant/GreenSwirlPlant/GreenSwirlPlantB</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -210,6 +214,7 @@
 
     <ThingDef ParentName="GreenSwirlBase">
         <defName>SZ_Plant_GreenSwirlC</defName>
+        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
         <graphicData>
             <texPath>Things/Plant/GreenSwirlPlant/GreenSwirlPlantC</texPath>
             <graphicClass>Graphic_Single</graphicClass>

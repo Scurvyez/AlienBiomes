@@ -7,15 +7,18 @@
     <!-- Belt around middle of planet. -->
     <!-- Temperate, sprawling with life. -->
     <!-- No trees, need another wood source...
-        ... new animal that gives wood-like resource? -->
+        ... new animal that gives wood-like resource?
+        ... or new plant that creates wood somehow? -->
+    <!-- Add 4 more plants. -->
+    <!-- Add 1 tree that produces something.... else. -->
 
     <BiomeDef>
         <defName>SZ_EnlightenedPlains</defName>
         <label>enlightened plains</label>
         <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all though no trees grow in these parts.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
         <workerClass>BiomesKit.UniversalBiomeWorker</workerClass>
-        <animalDensity>3.7</animalDensity>
-        <plantDensity>0.65</plantDensity>
+        <animalDensity>1.7</animalDensity>
+        <plantDensity>1.2</plantDensity>
         <settlementSelectionWeight>1</settlementSelectionWeight>
         <movementDifficulty>1</movementDifficulty>
         <texture>World/Biomes/SZ_EnlightenedPlains</texture>
@@ -26,7 +29,7 @@
             <li>Ambient_NightInsects_Jungle</li>
             <li>Ambient_DayInsects_Jungle</li>
         </soundsAmbient>
-        <diseaseMtbDays>50</diseaseMtbDays>
+        <diseaseMtbDays>75</diseaseMtbDays>
         <diseases>
             <li>
                 <diseaseInc>Disease_Flu</diseaseInc>
@@ -63,22 +66,22 @@
         </terrainsByFertility>
         <terrainPatchMakers>
             <li>
-                <perlinFrequency>0.017</perlinFrequency>
+                <perlinFrequency>0.020</perlinFrequency>
                 <thresholds>
                     <li>
                         <terrain>SZ_EnlightenedRichSoil</terrain>
-                        <min>0.73</min>
-                        <max>0.80</max>
+                        <min>0.42</min>
+                        <max>0.73</max>
                     </li>
                     <li>
                         <terrain>SZ_EnlightenedMud</terrain>
-                        <min>0.80</min>
-                        <max>0.93</max>
+                        <min>0.73</min>
+                        <max>0.86</max>
                     </li>
                     <li>
                         <terrain>SZ_EnlightenedStonySoil</terrain>
-                        <min>0.60</min>
-                        <max>0.74</max>
+                        <min>0.86</min>
+                        <max>1.06</max>
                     </li>
                     <li>
                         <terrain>WaterShallow</terrain>

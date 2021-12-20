@@ -26,6 +26,16 @@
         <generatedFilth>Filth_Dirt</generatedFilth>
         <fertility>1.0</fertility>
         <takeFootprints>True</takeFootprints>
+        <tools>
+            <li>
+                <label>dirt</label>
+                <capacities>
+                    <li>KickMaterialInEyes</li>
+                </capacities>
+                <hediff>DirtInEyes</hediff>
+                <cooldownTime>1.5</cooldownTime>
+            </li>
+        </tools>
         <tags>
             <li>Soil</li>
         </tags>
@@ -55,6 +65,16 @@
         <generatedFilth>Filth_Dirt</generatedFilth>
         <fertility>1.4</fertility>
         <takeFootprints>True</takeFootprints>
+        <tools>
+            <li>
+                <label>dirt</label>
+                <capacities>
+                    <li>KickMaterialInEyes</li>
+                </capacities>
+                <hediff>DirtInEyes</hediff>
+                <cooldownTime>1.5</cooldownTime>
+            </li>
+        </tools>
         <tags>
             <li>Soil</li>
         </tags>
@@ -82,6 +102,16 @@
         <takeFootprints>True</takeFootprints>
         <avoidWander>true</avoidWander>
         <driesTo>SZ_EnlightenedSoil</driesTo>
+        <tools>
+            <li>
+                <label>mud</label>
+                <capacities>
+                    <li>KickMaterialInEyes</li>
+                </capacities>
+                <hediff>MudInEyes</hediff>
+                <cooldownTime>1.5</cooldownTime>
+            </li>
+        </tools>
         <tags>
             <li>Soil</li>
         </tags>

@@ -31,9 +31,10 @@ namespace Alien_Biomes
                 if ((GenLocalDate.DayPercent(this) * Rand.RangeSeeded(0.9f, 1.1f, Position.x)) >= 0.75 || (GenLocalDate.DayPercent(this) * Rand.RangeSeeded(0.9f, 1.1f, Position.x)) <= 0.20)
                     // This statement checks time of day on the player map (GenLocalDate.DayPercent), in sections (Rand.RangeSeeded)
                     // DayPercent max = 1.00 or 24 hours, so 0.75 = 18 hours
-                    // ...so here, the check is for the hours of 1800 - 0448
+                    // ...so here, the check is for the hours of 1800 - 0448.
                 {
                     //Log.Message("Swap Texture Check " + GenLocalDate.DayPercent(this));
+                    // A simple debug message to find out when a plant shifts graphics.
                     return graphicNightFallCache ??= GraphicDatabase.Get<Graphic_Single>(plantExt.nightfallGraphicPath, ShaderDatabase.TransparentPlant, Vector2.one, Color.white);
                 }
 
