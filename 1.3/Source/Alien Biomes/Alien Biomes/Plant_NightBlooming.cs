@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace Alien_Biomes
+namespace AlienBiomes
 {
     [StaticConstructorOnStartup]
     public class Plant_NightBlooming : Plant

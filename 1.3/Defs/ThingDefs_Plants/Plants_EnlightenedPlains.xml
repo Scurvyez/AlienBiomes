@@ -13,7 +13,7 @@
             <Nutrition>0.50</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plant/EnlightenedGrassPlant</texPath>
+            <texPath>Things/Plants/EnlightenedGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
@@ -22,7 +22,7 @@
             <fertilityMin>0.05</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>2.5</growDays>
-            <leaflessGraphicPath>Things/Plant/EnlightenedGrassPlant_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>Things/Plants/EnlightenedGrass_Leafless</leaflessGraphicPath>
             <harvestWork>40</harvestWork>
             <maxMeshCount>9</maxMeshCount>
             <visualSizeRange>0.4~0.6</visualSizeRange>
@@ -44,7 +44,7 @@
         </statBases>
         <pathCost>14</pathCost>
         <graphicData>
-            <texPath>Things/Plant/EnlightenedGrassPlant</texPath>
+            <texPath>Things/Plants/EnlightenedGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
@@ -68,13 +68,13 @@
         <defName>SZ_Plant_SpiralStalkA</defName>
         <label>spiral stalk</label>
         <description>PLACEHOLDER</description>
-        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
+        <thingClass>AlienBiomes.Plant_NightBlooming</thingClass>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <Nutrition>0.50</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plant/SpiralStalkPlant/SpiralStalkPlantA</texPath>
+            <texPath>Things/Plants/SpiralStalk/SpiralStalkA</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <selectable>true</selectable>
@@ -85,8 +85,8 @@
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
             <growDays>6</growDays>
-            <leaflessGraphicPath>Things/Plant/SpiralStalkPlant_Leafless/SpiralStalkPlant_LeaflessA</leaflessGraphicPath>
-            <immatureGraphicPath>Things/Plant/SpiralStalkPlant_Immature/SpiralStalkPlant_ImmatureA</immatureGraphicPath>
+            <leaflessGraphicPath>Things/Plants/SpiralStalk_Leafless/SpiralStalk_LeaflessA</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/SpiralStalk_Immature/SpiralStalk_ImmatureA</immatureGraphicPath>
             <harvestYield>10</harvestYield>
             <harvestWork>250</harvestWork>
             <harvestTag>Standard</harvestTag>
@@ -100,8 +100,8 @@
             <purpose>Food</purpose>
         </plant>
         <modExtensions>
-            <li Class="Alien_Biomes.NightBlooming_ModExtension">
-              <nightfallGraphicPath>Things/Plant/SpiralStalkPlant_NightFall/SpiralStalkPlantA</nightfallGraphicPath>
+            <li Class="AlienBiomes.NightBlooming_ModExtension">
+              <nightfallGraphicPath>Things/Plants/SpiralStalk_NightFall/SpiralStalkA</nightfallGraphicPath>
             </li>
         </modExtensions>
     </ThingDef>
@@ -110,18 +110,18 @@
 
     <ThingDef ParentName="SpiralStalkBase">
         <defName>SZ_Plant_SpiralStalkB</defName>
-        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
+        <thingClass>AlienBiomes.Plant_NightBlooming</thingClass>
         <graphicData>
-            <texPath>Things/Plant/SpiralStalkPlant/SpiralStalkPlantB</texPath>
+            <texPath>Things/Plants/SpiralStalk/SpiralStalkB</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <plant>
-            <leaflessGraphicPath>Things/Plant/SpiralStalkPlant_Leafless/SpiralStalkPlant_LeaflessA</leaflessGraphicPath>
-            <immatureGraphicPath>Things/Plant/SpiralStalkPlant_Immature/SpiralStalkPlant_ImmatureA</immatureGraphicPath>
+            <leaflessGraphicPath>Things/Plants/SpiralStalk_Leafless/SpiralStalk_LeaflessA</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/SpiralStalk_Immature/SpiralStalk_ImmatureA</immatureGraphicPath>
         </plant>
         <modExtensions>
-            <li Class="Alien_Biomes.NightBlooming_ModExtension">
-              <nightfallGraphicPath>Things/Plant/SpiralStalkPlant_NightFall/SpiralStalkPlantB</nightfallGraphicPath>
+            <li Class="AlienBiomes.NightBlooming_ModExtension">
+              <nightfallGraphicPath>Things/Plants/SpiralStalk_NightFall/SpiralStalkB</nightfallGraphicPath>
             </li>
         </modExtensions>
     </ThingDef>
@@ -130,47 +130,97 @@
 
     <ThingDef ParentName="SpiralStalkBase">
         <defName>SZ_Plant_SpiralStalkC</defName>
-        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
+        <thingClass>AlienBiomes.Plant_NightBlooming</thingClass>
         <graphicData>
-            <texPath>Things/Plant/SpiralStalkPlant/SpiralStalkPlantC</texPath>
+            <texPath>Things/Plants/SpiralStalk/SpiralStalkC</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <plant>
-            <leaflessGraphicPath>Things/Plant/SpiralStalkPlant_Leafless/SpiralStalkPlant_LeaflessA</leaflessGraphicPath>
-            <immatureGraphicPath>Things/Plant/SpiralStalkPlant_Immature/SpiralStalkPlant_ImmatureA</immatureGraphicPath>
+            <leaflessGraphicPath>Things/Plants/SpiralStalk_Leafless/SpiralStalk_LeaflessA</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/SpiralStalk_Immature/SpiralStalk_ImmatureA</immatureGraphicPath>
         </plant>
         <modExtensions>
-            <li Class="Alien_Biomes.NightBlooming_ModExtension">
-              <nightfallGraphicPath>Things/Plant/SpiralStalkPlant_NightFall/SpiralStalkPlantC</nightfallGraphicPath>
+            <li Class="AlienBiomes.NightBlooming_ModExtension">
+              <nightfallGraphicPath>Things/Plants/SpiralStalk_NightFall/SpiralStalkC</nightfallGraphicPath>
             </li>
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Green Swirl Plant Base (A) ====================-->
+    <!--==================== TEST TREE ====================-->
 
-    <ThingDef ParentName="PlantBase" Name="GreenSwirlBase">
-        <defName>SZ_Plant_GreenSwirlA</defName>
-        <label>green swirl</label>
+    <!-- This tree will produce a woody pulp which can then be manufactured into "WoodLog" -->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_TEST_TREE</defName>
+        <label>PLACEHOLDER</label>
         <description>PLACEHOLDER</description>
-        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
+        <graphicData>
+            <texPath>Things/Trees/TEST_TREE</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <!-- <drawSize>2.2</drawSize>
+            <drawOffset>(0.0, 0.0, 1.8)</drawOffset> -->
+            <shadowData>
+                <volume>(0.2, 0.35, 0.13)</volume>
+                <offset>(-0.03,0,-0.44)</offset>
+            </shadowData>
+        </graphicData>
         <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
+            <Beauty>2</Beauty>
+            <BeautyOutdoors>2</BeautyOutdoors>
+            <Nutrition>0.15</Nutrition>
+        </statBases>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <fillPercent>0.90</fillPercent>
+        <plant>
+            <fertilityMin>0.5</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <growDays>40</growDays>
+            <leaflessGraphicPath>Things/Plants/TreeOak_Leafless</leaflessGraphicPath>
+            <harvestWork>1111</harvestWork>
+            <harvestYield>35</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestedThingDef>WoodLog</harvestedThingDef>
+            <harvestFailable>true</harvestFailable>
+            <topWindExposure>0.70</topWindExposure>
+            <visualSizeRange>0.95~2.2</visualSizeRange>
+            <sowMinSkill>7</sowMinSkill>
+            <sowTags>
+                <li>Ground</li>
+            </sowTags>
+            <wildOrder>2</wildOrder>
+            <mustBeWildToSow>false</mustBeWildToSow>
+            <wildClusterRadius>8</wildClusterRadius>
+            <wildClusterWeight>250</wildClusterWeight>
+        </plant>
+    </ThingDef>
+
+    <!--==================== Copacetic Cone Plant (Base) ====================-->
+
+    <ThingDef ParentName="PlantBase" Name="CopaceticConeBase">
+        <defName>SZ_CopaceticConeBase</defName>
+        <label>copacetic cone</label>
+        <description>PLACEHOLDER</description>
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>1.3</Flammability>
             <Nutrition>0.50</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plant/GreenSwirlPlant/GreenSwirlPlantA</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Plants/CopaceticCone</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <fillPercent>0.20</fillPercent>
         <pathCost>30</pathCost>
+        <ingestible />
         <plant>
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
             <growDays>6</growDays>
-            <leaflessGraphicPath>Things/Plant/GreenSwirlPlant_Leafless/GreenSwirlPlant_LeaflessA</leaflessGraphicPath>
-            <immatureGraphicPath>Things/Plant/GreenSwirlPlant_Immature/GreenSwirlPlant_ImmatureA</immatureGraphicPath>
+            <leaflessGraphicPath>Things/Plants/CopaceticCone_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/CopaceticCone_Immature</immatureGraphicPath>
             <harvestYield>10</harvestYield>
             <harvestWork>250</harvestWork>
             <harvestTag>Standard</harvestTag>
@@ -183,51 +233,32 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
         </plant>
-        <modExtensions>
-            <li Class="Alien_Biomes.NightBlooming_ModExtension">
-              <nightfallGraphicPath>Things/Plant/GreenSwirlPlant_NightFall/GreenSwirlPlantA</nightfallGraphicPath>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_ChangePlantDef">
+                <defToChangeTo>SZ_CopaceticConeGlowing</defToChangeTo>
             </li>
-        </modExtensions>
+        </comps>
     </ThingDef>
 
-    <!--==================== Green Swirl Plant B ====================-->
+    <!--==================== Copacetic Cone Plant (Glowing) ====================-->
 
-    <ThingDef ParentName="GreenSwirlBase">
-        <defName>SZ_Plant_GreenSwirlB</defName>
-        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
+    <ThingDef ParentName="CopaceticConeBase" Name="CopaceticConeGlowing">
+        <defName>SZ_CopaceticConeGlowing</defName>
+        <label>glowing copacetic cone</label>
         <graphicData>
-            <texPath>Things/Plant/GreenSwirlPlant/GreenSwirlPlantB</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Plants/CopaceticCone</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <plant>
-            <leaflessGraphicPath>Things/Plant/GreenSwirlPlant_Leafless/GreenSwirlPlant_LeaflessA</leaflessGraphicPath>
-            <immatureGraphicPath>Things/Plant/GreenSwirlPlant_Immature/GreenSwirlPlant_ImmatureA</immatureGraphicPath>
+            <leaflessGraphicPath>Things/Plants/CopaceticCone_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/CopaceticCone_Immature</immatureGraphicPath>
         </plant>
-        <modExtensions>
-            <li Class="Alien_Biomes.NightBlooming_ModExtension">
-              <nightfallGraphicPath>Things/Plant/GreenSwirlPlant_NightFall/GreenSwirlPlantB</nightfallGraphicPath>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>2.25</glowRadius>
+                <glowColor>(124, 251, 208, 0)</glowColor>
             </li>
-        </modExtensions>
-    </ThingDef>
-
-    <!--==================== Green Swirl Plant C ====================-->
-
-    <ThingDef ParentName="GreenSwirlBase">
-        <defName>SZ_Plant_GreenSwirlC</defName>
-        <thingClass>Alien_Biomes.Plant_NightBlooming</thingClass>
-        <graphicData>
-            <texPath>Things/Plant/GreenSwirlPlant/GreenSwirlPlantC</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <plant>
-            <leaflessGraphicPath>Things/Plant/GreenSwirlPlant_Leafless/GreenSwirlPlant_LeaflessA</leaflessGraphicPath>
-            <immatureGraphicPath>Things/Plant/GreenSwirlPlant_Immature/GreenSwirlPlant_ImmatureA</immatureGraphicPath>
-        </plant>
-        <modExtensions>
-            <li Class="Alien_Biomes.NightBlooming_ModExtension">
-              <nightfallGraphicPath>Things/Plant/GreenSwirlPlant_NightFall/GreenSwirlPlantC</nightfallGraphicPath>
-            </li>
-        </modExtensions>
+        </comps>
     </ThingDef>
 
 </Defs>

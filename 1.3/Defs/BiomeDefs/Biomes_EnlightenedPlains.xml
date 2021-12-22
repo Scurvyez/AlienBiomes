@@ -3,14 +3,14 @@
 
     <!--==================== Enlightened Plains ====================-->
 
-    <!-- NO hills or mountains are present. -->
     <!-- Belt around middle of planet. -->
     <!-- Temperate, sprawling with life. -->
-    <!-- No trees, need another wood source...
-        ... new animal that gives wood-like resource?
-        ... or new plant that creates wood somehow? -->
+
     <!-- Add 4 more plants. -->
     <!-- Add 1 tree that produces something.... else. -->
+    <!-- Add some ambient FleckDefs for the plants (check performance). -->
+
+    <!-- ThingComp to change a def to another def (with glower comp). -->
 
     <BiomeDef>
         <defName>SZ_EnlightenedPlains</defName>
@@ -71,21 +71,21 @@
                     <li>
                         <terrain>SZ_EnlightenedRichSoil</terrain>
                         <min>0.42</min>
-                        <max>0.73</max>
+                        <max>0.78</max>
                     </li>
-                    <li>
+                    <!-- <li>
                         <terrain>SZ_EnlightenedMud</terrain>
                         <min>0.73</min>
                         <max>0.86</max>
-                    </li>
+                    </li> -->
                     <li>
                         <terrain>SZ_EnlightenedStonySoil</terrain>
-                        <min>0.86</min>
-                        <max>1.06</max>
+                        <min>0.78</min>
+                        <max>0.85</max>
                     </li>
                     <li>
                         <terrain>WaterShallow</terrain>
-                        <min>.85</min>
+                        <min>0.85</min>
                         <max>999</max>
                     </li>
                 </thresholds>
@@ -93,17 +93,13 @@
         </terrainPatchMakers>
         <baseWeatherCommonalities>
             <Clear>18</Clear>
-            <Rain>5</Rain>
+            <Rain>8</Rain>
             <DryThunderstorm>1</DryThunderstorm>
-            <RainyThunderstorm>4</RainyThunderstorm>
+            <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
-            <SZ_Plant_GreenSwirlA>0.22</SZ_Plant_GreenSwirlA>
-            <SZ_Plant_GreenSwirlB>0.22</SZ_Plant_GreenSwirlB>
-            <SZ_Plant_GreenSwirlC>0.22</SZ_Plant_GreenSwirlC>
-            <SZ_Plant_SpiralStalkA>0.15</SZ_Plant_SpiralStalkA>
-            <SZ_Plant_SpiralStalkB>0.15</SZ_Plant_SpiralStalkB>
-            <SZ_Plant_SpiralStalkC>0.15</SZ_Plant_SpiralStalkC>
+            <SZ_TEST_TREE>0.01</SZ_TEST_TREE>
+            <SZ_CopaceticConeBase>0.22</SZ_CopaceticConeBase>
             <SZ_Plant_EnlightenedGrass>5.00</SZ_Plant_EnlightenedGrass>
             <SZ_Plant_EnlightenedTallGrass>4.10</SZ_Plant_EnlightenedTallGrass>
         </wildPlants>

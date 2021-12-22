@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace Alien_Biomes
+namespace AlienBiomes
 {
     public class NightBlooming_ModExtension : DefModExtension
     {
