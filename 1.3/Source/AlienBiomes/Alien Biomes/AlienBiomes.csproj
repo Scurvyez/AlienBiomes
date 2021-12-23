@@ -62,11 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlienBiomes_TerrainFrom_Patch.cs" />
-    <Compile Include="AlienBiomes_BeachTerrainAt_Patch.cs" />
-    <Compile Include="CompProperties_ChangePlantDef.cs" />
-    <Compile Include="CompChangePlantDef.cs" />
-    <Compile Include="HarmonyInstance.cs" />
+    <Compile Include="Harmony\AlienBiomes_TerrainFrom_Patch.cs" />
+    <Compile Include="Harmony\AlienBiomes_BeachTerrainAt_Patch.cs" />
+    <Compile Include="Comps\CompProperties\CompProperties_ChangePlantDef.cs" />
+    <Compile Include="Comps\CompChangePlantDef.cs" />
+    <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="NightBlooming_ModExtension.cs" />
     <Compile Include="Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
