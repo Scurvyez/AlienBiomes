@@ -202,9 +202,10 @@
         <label>copacetic cone</label>
         <description>PLACEHOLDER</description>
         <statBases>
+            <Nutrition>0.15</Nutrition>
             <MaxHitPoints>85</MaxHitPoints>
-            <Flammability>1.3</Flammability>
-            <Nutrition>0.50</Nutrition>
+            <Flammability>1.30</Flammability>
+            <DeteriorationRate>0.00</DeteriorationRate>
         </statBases>
         <graphicData>
             <texPath>Things/Plants/CopaceticCone</texPath>
@@ -218,24 +219,19 @@
         <plant>
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
-            <growDays>6</growDays>
+            <growDays>5.0</growDays>
             <leaflessGraphicPath>Things/Plants/CopaceticCone_Leafless</leaflessGraphicPath>
             <immatureGraphicPath>Things/Plants/CopaceticCone_Immature</immatureGraphicPath>
-            <harvestYield>10</harvestYield>
-            <harvestWork>250</harvestWork>
-            <harvestTag>Standard</harvestTag>
-            <harvestAfterGrowth>0.30</harvestAfterGrowth>
-            <harvestedThingDef>RawBerries</harvestedThingDef>
             <wildClusterRadius>5</wildClusterRadius>
             <wildClusterWeight>250</wildClusterWeight>
-            <visualSizeRange>0.95~1.7</visualSizeRange>
+            <visualSizeRange>0.85~1.9</visualSizeRange>
             <topWindExposure>0.3</topWindExposure>
             <wildOrder>2</wildOrder>
-            <purpose>Food</purpose>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_ChangePlantDef">
-                <defToChangeTo>SZ_CopaceticConeGlowing</defToChangeTo>
+                <__defToChangeTo>SZ_CopaceticConeGlowing</__defToChangeTo>
+                <__duskTime>0.75</__duskTime>
             </li>
         </comps>
     </ThingDef>
@@ -245,18 +241,33 @@
     <ThingDef ParentName="CopaceticConeBase" Name="CopaceticConeGlowing">
         <defName>SZ_CopaceticConeGlowing</defName>
         <label>glowing copacetic cone</label>
+        <statBases>
+            <Nutrition>0.50</Nutrition>
+        </statBases>
         <graphicData>
             <texPath>Things/Plants/CopaceticCone</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <plant>
+            <growDays>0.75</growDays>
             <leaflessGraphicPath>Things/Plants/CopaceticCone_Leafless</leaflessGraphicPath>
             <immatureGraphicPath>Things/Plants/CopaceticCone_Immature</immatureGraphicPath>
+            <harvestYield>10</harvestYield>
+            <harvestWork>150</harvestWork>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestedThingDef>RawBerries</harvestedThingDef>
+            <purpose>Food</purpose>
         </plant>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Glower">
+                <overlightRadius>1.75</overlightRadius>
                 <glowRadius>2.25</glowRadius>
                 <glowColor>(124, 251, 208, 0)</glowColor>
+            </li>
+            <li Class="AlienBiomes.CompProperties_ChangePlantDef">
+                <__defToChangeTo>SZ_CopaceticCone</__defToChangeTo>
+                <__dawnTime>0.20</__dawnTime>
             </li>
         </comps>
     </ThingDef>
