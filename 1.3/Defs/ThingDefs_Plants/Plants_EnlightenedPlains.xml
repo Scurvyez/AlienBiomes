@@ -157,8 +157,6 @@
         <graphicData>
             <texPath>Things/Trees/TEST_TREE</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <!-- <drawSize>2.2</drawSize>
-            <drawOffset>(0.0, 0.0, 1.8)</drawOffset> -->
             <shadowData>
                 <volume>(0.2, 0.35, 0.13)</volume>
                 <offset>(-0.03,0,-0.44)</offset>
@@ -183,7 +181,7 @@
             <harvestedThingDef>WoodLog</harvestedThingDef>
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
-            <visualSizeRange>0.95~2.2</visualSizeRange>
+            <visualSizeRange>0.95~3.5</visualSizeRange>
             <sowMinSkill>7</sowMinSkill>
             <sowTags>
                 <li>Ground</li>
@@ -231,7 +229,7 @@
         <comps>
             <li Class="AlienBiomes.CompProperties_ChangePlantDef">
                 <__defToChangeTo>SZ_CopaceticConeGlowing</__defToChangeTo>
-                <__duskTime>0.75</__duskTime>
+                <__switchTime>0.75</__switchTime>
             </li>
         </comps>
     </ThingDef>
@@ -267,7 +265,7 @@
             </li>
             <li Class="AlienBiomes.CompProperties_ChangePlantDef">
                 <__defToChangeTo>SZ_CopaceticCone</__defToChangeTo>
-                <__dawnTime>0.20</__dawnTime>
+                <__switchTime>0.20</__switchTime>
             </li>
         </comps>
     </ThingDef>

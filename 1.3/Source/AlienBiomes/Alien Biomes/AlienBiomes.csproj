@@ -67,6 +67,7 @@
     <Compile Include="Comps\CompProperties\CompProperties_ChangePlantDef.cs" />
     <Compile Include="Comps\CompChangePlantDef.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="MapComps\MapComponent_PlantTracker.cs" />
     <Compile Include="NightBlooming_ModExtension.cs" />
     <Compile Include="Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

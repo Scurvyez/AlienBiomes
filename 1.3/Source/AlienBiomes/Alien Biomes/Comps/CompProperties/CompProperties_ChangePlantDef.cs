@@ -7,6 +7,7 @@ namespace AlienBiomes
         public string __defToChangeTo = ""; // New DefName to change to.
         public float? __duskTime = null; // Time window when def changes at sundown.
         public float? __dawnTime = null; // Time window when def changes at sunrise.
+        public float? __switchTime = null;
 
         public CompProperties_ChangePlantDef()
         {
