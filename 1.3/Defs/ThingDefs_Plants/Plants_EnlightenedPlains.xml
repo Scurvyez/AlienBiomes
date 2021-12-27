@@ -217,20 +217,21 @@
         <plant>
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
-            <growDays>5.0</growDays>
+            <growDays>14</growDays>
             <leaflessGraphicPath>Things/Plants/CopaceticCone_Leafless</leaflessGraphicPath>
             <immatureGraphicPath>Things/Plants/CopaceticCone_Immature</immatureGraphicPath>
             <wildClusterRadius>5</wildClusterRadius>
             <wildClusterWeight>250</wildClusterWeight>
-            <visualSizeRange>0.85~1.9</visualSizeRange>
+            <visualSizeRange>0.85~2.85</visualSizeRange>
             <topWindExposure>0.3</topWindExposure>
             <wildOrder>2</wildOrder>
         </plant>
         <comps>
-            <li Class="AlienBiomes.CompProperties_ChangePlantDef">
-                <__defToChangeTo>SZ_CopaceticConeGlowing</__defToChangeTo>
-                <__duskTime>0.75</__duskTime>
-                <__dawnTime>0.20</__dawnTime>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <glowRadius>1.75</glowRadius>
+                <glowColor>(63,216,188,0)</glowColor>
+                <startTime>0.75</startTime>
+                <stopTime>0.20</stopTime>
             </li>
         </comps>
     </ThingDef>
@@ -258,13 +259,6 @@
             <harvestedThingDef>RawBerries</harvestedThingDef>
             <purpose>Food</purpose>
         </plant>
-        <comps>
-            <li Class="CompProperties_Glower">
-                <overlightRadius>1.75</overlightRadius>
-                <glowRadius>2.25</glowRadius>
-                <glowColor>(124, 251, 208, 0)</glowColor>
-            </li>
-        </comps>
     </ThingDef>
 
 </Defs>
