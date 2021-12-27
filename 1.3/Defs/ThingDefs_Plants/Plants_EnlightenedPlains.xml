@@ -229,7 +229,8 @@
         <comps>
             <li Class="AlienBiomes.CompProperties_ChangePlantDef">
                 <__defToChangeTo>SZ_CopaceticConeGlowing</__defToChangeTo>
-                <__switchTime>0.75</__switchTime>
+                <__duskTime>0.75</__duskTime>
+                <__dawnTime>0.20</__dawnTime>
             </li>
         </comps>
     </ThingDef>
@@ -257,15 +258,11 @@
             <harvestedThingDef>RawBerries</harvestedThingDef>
             <purpose>Food</purpose>
         </plant>
-        <comps Inherit="False">
+        <comps>
             <li Class="CompProperties_Glower">
                 <overlightRadius>1.75</overlightRadius>
                 <glowRadius>2.25</glowRadius>
                 <glowColor>(124, 251, 208, 0)</glowColor>
-            </li>
-            <li Class="AlienBiomes.CompProperties_ChangePlantDef">
-                <__defToChangeTo>SZ_CopaceticCone</__defToChangeTo>
-                <__switchTime>0.20</__switchTime>
             </li>
         </comps>
     </ThingDef>

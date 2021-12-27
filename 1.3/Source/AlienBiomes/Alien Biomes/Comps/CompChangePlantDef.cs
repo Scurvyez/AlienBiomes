@@ -11,22 +11,20 @@ namespace AlienBiomes
         public override void CompTickLong()
         {
             var dayPercent = GenLocalDate.DayPercent(this.parent.Map);
-            //FloatRange nightCyle = new (0.75f, 0.20f);
-            //FloatRange dayCylce = new (0.21f, 0.74f);
-            //float dawn = 0.21f;
+            var originalDefInstance = this.parent;
+            var originalDefPosition = this.parent.Position;
+            if (parent == null) { Log.Message("Parent null during tick!"); return; }
 
-            /*if (this.parent.Spawned && (dayPercent >= Props.__duskTime || dayPercent <= Props.__dawnTime))
+            if (this.parent.Spawned && ((dayPercent > Props.__duskTime && dayPercent < 1f) || (dayPercent < Props.__dawnTime && dayPercent > 0f)))
             {
                 ThingDef thingToSpawn = ThingDef.Named(Props.__defToChangeTo);
                 GenSpawn.Spawn(thingToSpawn, this.parent.Position, this.parent.Map, WipeMode.Vanish);
-                this.parent.Destroy();
-            }*/
+                this.parent?.Destroy();
+            }
 
-            if (this.parent.Spawned && dayPercent == Props.__switchTime)
+            else
             {
-                ThingDef thingToSpawn = ThingDef.Named(Props.__defToChangeTo);
-                GenSpawn.Spawn(thingToSpawn, this.parent.Position, this.parent.Map, WipeMode.Vanish);
-                this.parent.Destroy();
+                
             }
         }
     }

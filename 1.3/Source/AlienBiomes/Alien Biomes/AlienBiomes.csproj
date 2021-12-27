@@ -62,18 +62,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dynamic_ModExtension.cs" />
+    <Compile Include="Plant_Dynamic.cs" />
     <Compile Include="Harmony\AlienBiomes_TerrainFrom_Patch.cs" />
     <Compile Include="Harmony\AlienBiomes_BeachTerrainAt_Patch.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_ChangePlantDef.cs" />
     <Compile Include="Comps\CompChangePlantDef.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
-    <Compile Include="MapComps\MapComponent_PlantTracker.cs" />
     <Compile Include="NightBlooming_ModExtension.cs" />
     <Compile Include="Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MapComps\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
