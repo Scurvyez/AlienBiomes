@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="Comps\Comp_TimedGlower.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_TimedGlower.cs" />
     <Compile Include="Harmony\AlienBiomes_CompGlower_Patch.cs" />

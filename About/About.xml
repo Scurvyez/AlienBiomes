@@ -13,6 +13,14 @@ Discord: Steve o.O#1151
 steam: Scurvyez
   </description>
 
+  <modDependencies>
+    <li>
+			<packageId>BiomesTeam.BiomesCore</packageId>
+			<displayName>Biomes! Core</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2038000893</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+
   <loadAfter>
     <li>Ludeon.RimWorld</li>
     <li>brrainz.harmony</li>

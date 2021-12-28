@@ -7,15 +7,19 @@
     <!-- Temperate, sprawling with life. -->
 
     <!-- Add 4 more plants. -->
-    <!-- Add 1 tree that produces something.... else. -->
     <!-- Add some ambient FleckDefs for the plants (check performance). -->
+    <!-- Add new filth types for the soils and sand. -->
+    <!-- Add ambient sounds for when a pawn walks through certain plants? -->
 
-    <!-- ThingComp to change a def to another def (with glower comp). -->
+    <!-- Grass that grows seeds in naturally-produced high-pressure methane capsules that are
+        triggered by proximity and fires seeds into the skin and flesh of nearby animals. 
+        They draw nutrients from the bloodstream and then eventually kill their host,
+        bursting from their bodies to continue their lifecycle. -->
 
     <BiomeDef>
         <defName>SZ_EnlightenedPlains</defName>
         <label>enlightened plains</label>
-        <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all though no trees grow in these parts.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
+        <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all and ancient trees grow in small clusters as the local fauna congregates nearby.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
         <workerClass>BiomesKit.UniversalBiomeWorker</workerClass>
         <animalDensity>1.7</animalDensity>
         <plantDensity>1.2</plantDensity>
@@ -73,11 +77,6 @@
                         <min>0.42</min>
                         <max>0.78</max>
                     </li>
-                    <!-- <li>
-                        <terrain>SZ_EnlightenedMud</terrain>
-                        <min>0.73</min>
-                        <max>0.86</max>
-                    </li> -->
                     <li>
                         <terrain>SZ_EnlightenedStonySoil</terrain>
                         <min>0.78</min>
@@ -98,13 +97,30 @@
             <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
-            <SZ_TEST_TREE>0.01</SZ_TEST_TREE>
-            <SZ_CopaceticConeBase>0.22</SZ_CopaceticConeBase>
+            <SZ_SpiralStalk>0.15</SZ_SpiralStalk>
+            <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
+            <SZ_ElderBlushingTree>0.01</SZ_ElderBlushingTree>
             <SZ_Plant_EnlightenedGrass>5.00</SZ_Plant_EnlightenedGrass>
             <SZ_Plant_EnlightenedTallGrass>4.10</SZ_Plant_EnlightenedTallGrass>
         </wildPlants>
         <wildAnimals>
-            <Bast_Bastyon MayRequire="Scurvyez.Bastyon">0.01</Bast_Bastyon>
+            <Donkey>0.20</Donkey>
+            <GuineaPig>0.45</GuineaPig>
+            <Horse>0.20</Horse>
+            <Hare>1.0</Hare>
+            <Squirrel>1.0</Squirrel>
+            <Rat>1.0</Rat>
+            <Deer>0.5</Deer>
+            <WildBoar>0.5</WildBoar>
+            <Turkey>0.5</Turkey>
+            <Raccoon>0.5</Raccoon>
+            <Muffalo>0.5</Muffalo>
+            <Alpaca>0.5</Alpaca>
+            <Tortoise>0.3</Tortoise>
+            <Megasloth>0.2</Megasloth>
+            <Rhinoceros>0.1</Rhinoceros>
+            <Fox_Red>0.07</Fox_Red>
+            <Bast_Bastyon MayRequire="Scurvyez.Bastyon">0.02</Bast_Bastyon>
             <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.02</Bast_Alluvium>
         </wildAnimals>
         <modExtensions>
