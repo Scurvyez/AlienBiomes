@@ -102,14 +102,13 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
         </plant>
-        <comps>
-            <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <glowRadius>2.15</glowRadius>
-                <glowColor>(130, 112, 145, 0)</glowColor>
-                <startTime>0.82</startTime>
-                <stopTime>0.22</stopTime>
+        <!-- <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                </terrainTags>
             </li>
-        </comps>
+        </modExtensions> -->
     </ThingDef>
 
     <!--==================== Copacetic Cone Plant ====================-->
@@ -147,7 +146,7 @@
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <glowRadius>2.15</glowRadius>
+                <glowRadius>1.5</glowRadius>
                 <glowColor>(63, 216, 188, 0)</glowColor>
                 <startTime>0.80</startTime>
                 <stopTime>0.20</stopTime>
@@ -188,10 +187,10 @@
             <harvestWork>1111</harvestWork>
             <harvestYield>35</harvestYield>
             <harvestTag>Standard</harvestTag>
-            <harvestedThingDef>FragrantWoodyPulp</harvestedThingDef> <!-- change this -->
+            <harvestedThingDef>SZ_FragrantWoodyPulp</harvestedThingDef> <!-- change this -->
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
-            <visualSizeRange>0.95~5.15</visualSizeRange>
+            <visualSizeRange>1.00~5.15</visualSizeRange>
             <sowMinSkill>7</sowMinSkill>
             <sowTags>
                 <li>Ground</li>
@@ -201,6 +200,14 @@
             <wildClusterRadius>8</wildClusterRadius>
             <wildClusterWeight>250</wildClusterWeight>
         </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <glowRadius>1.5</glowRadius>
+                <glowColor>(63, 216, 188, 0)</glowColor>
+                <startTime>0.80</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+        </comps>
     </ThingDef>
 
 </Defs>

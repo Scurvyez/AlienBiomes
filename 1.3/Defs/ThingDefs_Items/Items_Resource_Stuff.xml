@@ -3,12 +3,12 @@
 
     <!--==================== Elder Woody Pulp ====================-->
 
-    <ThingDef ParentName="ResourceVerbBase">
-        <defName>SZ_ElderWoodyPulp</defName>
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_FragrantWoodyPulp</defName>
         <label>elder woody pulp</label>
-        <description></description>
+        <description>PLACEHOLDER</description>
         <graphicData>
-            <texPath>Things/Item/Resource/ElderWoodyPulp</texPath>
+            <texPath>Things/Item/Resource/FragrantWoodyPulp</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <statBases>
@@ -39,7 +39,7 @@
     <ThingDef ParentName="ResourceVerbBase">
         <defName>SZ_ElderWoodLog</defName>
         <label>elder wood log</label>
-        <description></description>
+        <description>PLACEHOLDER</description>
         <graphicData>
             <texPath>Things/Item/Resource/ElderWoodLog</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
@@ -70,7 +70,7 @@
                 <li>Woody</li>
             </categories>
             <commonality>1.00</commonality>
-            <color>(133,97,67)</color>
+            <color>(130, 112, 145)</color>
             <constructEffect>ConstructWood</constructEffect>
             <appearance>Planks</appearance>
             <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
