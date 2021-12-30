@@ -36,9 +36,13 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <tags>
-            <li>Soil</li>
-        </tags>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <!--==================== Enlightened Rich Soil ====================-->
@@ -75,9 +79,13 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <tags>
-            <li>Soil</li>
-        </tags>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <!--==================== Enlightened Mud ====================-->
@@ -191,13 +199,13 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <!-- <modExtensions>
+        <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Sandy</li>
                 </terrainTags>
             </li>
-        </modExtensions> -->
+        </modExtensions>
     </TerrainDef>
 
 </Defs>

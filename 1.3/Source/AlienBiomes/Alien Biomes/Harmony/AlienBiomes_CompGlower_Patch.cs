@@ -8,7 +8,7 @@ namespace AlienBiomes
     {
         public static void Postfix(CompGlower __instance, ref bool __result)
         {
-            if (__instance is CompTimedGlower glower) __result = __result && glower.AdditionalGlowerLogic();
+            if (__instance is Comp_TimedGlower glower) __result = __result && glower.AdditionalGlowerLogic();
         }
     }
 }

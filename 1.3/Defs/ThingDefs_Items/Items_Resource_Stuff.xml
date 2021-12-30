@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--==================== Elder Woody Pulp ====================-->
+    <!--==================== Elder Woody Shavings ====================-->
 
     <ThingDef ParentName="ResourceBase">
-        <defName>SZ_FragrantWoodyPulp</defName>
-        <label>elder woody pulp</label>
-        <description>PLACEHOLDER</description>
+        <defName>SZ_FragrantWoodyShavings</defName>
+        <label>elder woody shavings</label>
+        <description>PLACEHOLDER</description> <!-- change this -->
         <graphicData>
-            <texPath>Things/Item/Resource/FragrantWoodyPulp</texPath>
+            <texPath>Things/Item/Resource/FragrantWoodyShavings</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <statBases>
@@ -39,7 +39,7 @@
     <ThingDef ParentName="ResourceVerbBase">
         <defName>SZ_ElderWoodLog</defName>
         <label>elder wood log</label>
-        <description>PLACEHOLDER</description>
+        <description>PLACEHOLDER</description> <!-- change this -->
         <graphicData>
             <texPath>Things/Item/Resource/ElderWoodLog</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>

@@ -16,7 +16,7 @@ namespace AlienBiomes
 
         public CompProperties_TimedGlower()
         {
-            this.compClass = typeof(CompTimedGlower);
+            this.compClass = typeof(Comp_TimedGlower);
         }
     }
 }

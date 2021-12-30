@@ -3,7 +3,7 @@ using Verse;
 
 namespace AlienBiomes
 {
-    public class CompTimedGlower : CompGlower
+    public class Comp_TimedGlower : CompGlower
     {
         public CompProperties_TimedGlower TimeProps => (CompProperties_TimedGlower)props;
         protected int lastUpdateTick = 0;
@@ -13,7 +13,7 @@ namespace AlienBiomes
             var dayPercent = GenLocalDate.DayPercent(parent.Map);
             return (dayPercent > TimeProps.startTime && dayPercent < 1f) || (dayPercent < TimeProps.stopTime && dayPercent > 0f);
         }
-
+        
         public override void CompTickLong()
         {
             int currentTick = Find.TickManager.TicksGame;
