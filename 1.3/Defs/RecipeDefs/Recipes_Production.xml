@@ -6,8 +6,8 @@
     <RecipeDef>
         <defName>SZ_FragrantShavingsToWood</defName>
         <label>process shavings into wood</label>
-        <description></description> <!-- change this -->
-        <jobString>Processing elder tree shavings into wood.</jobString>
+        <description>PLACEHOLDER</description> <!-- change this -->
+        <jobString>Processing elder tree shavings into usable wood.</jobString>
         <workAmount>400</workAmount>
         <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
         <effectWorking>Smelt</effectWorking>
@@ -16,7 +16,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>ChunkSlagSteel</li>
+                        <li>SZ_FragrantWoodShavings</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -25,11 +25,11 @@
         <products>
             <SZ_ElderWoodLog>15</SZ_ElderWoodLog>
         </products>
-        <fixedIngredientFilter>
+        <!-- <fixedIngredientFilter>
             <thingDefs>
-                <li>SZ_FragrantWoodyShavings</li>
+                <li>SZ_FragrantWoodShavings</li>
             </thingDefs>
-        </fixedIngredientFilter>
+        </fixedIngredientFilter> -->
     </RecipeDef>
 
 </Defs>

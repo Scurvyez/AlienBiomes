@@ -118,7 +118,8 @@
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <glowRadius>1.5</glowRadius>
+                <overlightRadius>2.25</overlightRadius>
+                <glowRadius>3.25</glowRadius>
                 <glowColor>(250, 180, 188, 0)</glowColor>
                 <startTime>0.80</startTime>
                 <stopTime>0.20</stopTime>
@@ -215,7 +216,7 @@
             <harvestWork>1111</harvestWork>
             <harvestYield>35</harvestYield>
             <harvestTag>Standard</harvestTag>
-            <harvestedThingDef>SZ_FragrantWoodyPulp</harvestedThingDef> <!-- change this -->
+            <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef> <!-- change this -->
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
             <visualSizeRange>1.00~5.15</visualSizeRange>
