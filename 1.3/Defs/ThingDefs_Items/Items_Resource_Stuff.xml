@@ -8,7 +8,7 @@
         <label>elder wood shavings</label>
         <description>The woody shavings of an elder blushing tree. They can be refined into elder wood logs.</description>
         <graphicData>
-            <texPath>Things/Item/Resource/FragrantWoodShavings</texPath>
+            <texPath>Things/Items/Resources/FragrantWoodShavings</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <statBases>
@@ -99,7 +99,7 @@
             <li>
                 <label>elder log</label>
                 <capacities>
-                <li>Blunt</li>
+                    <li>Blunt</li>
                 </capacities>
                 <power>10</power>
                 <cooldownTime>2</cooldownTime>

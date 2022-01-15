@@ -213,10 +213,11 @@
             <fertilitySensitivity>0.5</fertilitySensitivity>
             <growDays>40</growDays>
             <leaflessGraphicPath>Things/Trees/ElderBlushingTree_Leafless</leaflessGraphicPath>
-            <harvestWork>1111</harvestWork>
+            <harvestWork>250</harvestWork>
             <harvestYield>35</harvestYield>
             <harvestTag>Standard</harvestTag>
-            <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef> <!-- change this -->
+            <harvestAfterGrowth>0.25</harvestAfterGrowth>
+            <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef>
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
             <visualSizeRange>1.00~5.15</visualSizeRange>

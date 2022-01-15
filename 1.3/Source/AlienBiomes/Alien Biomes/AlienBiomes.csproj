@@ -64,9 +64,11 @@
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="Comps\Comp_TimedGlower.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_TimedGlower.cs" />
+    <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
     <Compile Include="Harmony\AlienBiomes_CompGlower_Patch.cs" />
     <Compile Include="Harmony\AlienBiomes_TerrainFrom_Patch.cs" />
     <Compile Include="Harmony\AlienBiomes_BeachTerrainAt_Patch.cs" />
+    <Compile Include="Harmony\AlienBiomes_SteamGeyserSpawnSetup_Patch.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
     <Compile Include="Things\Plant_NightBlooming.cs" />
@@ -75,6 +77,8 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MapComps\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

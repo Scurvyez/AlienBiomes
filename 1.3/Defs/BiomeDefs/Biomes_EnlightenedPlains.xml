@@ -131,6 +131,8 @@
                 <maxTemperature>30.5</maxTemperature>
                 <maxHilliness>Flat</maxHilliness>
 			</li>
+            <li Class="BiomesCore.DefModExtensions.BiomesMap">
+            </li>
 		</modExtensions>
     </BiomeDef>
 
