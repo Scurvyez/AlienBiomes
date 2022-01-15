@@ -16,17 +16,21 @@ namespace AlienBiomes
 
             var steamGeyserOne = ThingDef.Named("SZ_SteamGeyserEnlightenedSoil");
             var steamGeyserTwo = ThingDef.Named("SZ_SteamGeyserEnlightenedRichSoil");
+            var vanillaGeyserPosition = __instance.Position;
 
             // checks to see if the given terrain at the vanilla geysers' pos is "enlightened soil"
-            if (map.terrainGrid.TerrainAt(__instance.Position) == AlienBiomes_TerrainDefOf.SZ_EnlightenedSoil)
+            if (map.terrainGrid.TerrainAt(vanillaGeyserPosition) == AlienBiomes_TerrainDefOf.SZ_EnlightenedSoil)
             {
-                if (!__instance.Destroyed)
+                if (!(__instance is Building_SteamGeyserEnlightenedSoil))
                 {
-                    // destroy old geyser
-                    __instance.Destroy(DestroyMode.Vanish);
-                    // spawn new geyser
-                    Thing newGeyser = ThingMaker.MakeThing(steamGeyserOne);
-                    GenPlace.TryPlaceThing(newGeyser, __instance.Position, map, ThingPlaceMode.Direct);
+                    if (!__instance.Destroyed)
+                    {
+                        // destroy old geyser
+                        __instance.Destroy(DestroyMode.Vanish);
+                        // spawn new geyser
+                        Thing newGeyser = ThingMaker.MakeThing(steamGeyserOne);
+                        GenPlace.TryPlaceThing(newGeyser, vanillaGeyserPosition, map, ThingPlaceMode.Direct);
+                    }
                 }
             }
         }
