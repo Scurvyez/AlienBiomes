@@ -13,15 +13,21 @@ namespace AlienBiomes
         [HarmonyPostfix]
         public static void SpawnSetupUpdateGeysers(Map map, bool respawningAfterLoad, Building_SteamGeyser __instance)
         {
+
             var steamGeyserOne = ThingDef.Named("SZ_SteamGeyserEnlightenedSoil");
             var steamGeyserTwo = ThingDef.Named("SZ_SteamGeyserEnlightenedRichSoil");
 
             // checks to see if the given terrain at the vanilla geysers' pos is "enlightened soil"
             if (map.terrainGrid.TerrainAt(__instance.Position) == AlienBiomes_TerrainDefOf.SZ_EnlightenedSoil)
             {
-                // spawn new steam geyser
-                Thing thing = ThingMaker.MakeThing(steamGeyserOne);
-                GenPlace.TryPlaceThing(thing, __instance.Position, map, ThingPlaceMode.Direct);
+                if (!__instance.Destroyed)
+                {
+                    // destroy old geyser
+                    __instance.Destroy(DestroyMode.Vanish);
+                    // spawn new geyser
+                    Thing newGeyser = ThingMaker.MakeThing(steamGeyserOne);
+                    GenPlace.TryPlaceThing(newGeyser, __instance.Position, map, ThingPlaceMode.Direct);
+                }
             }
         }
     }
