@@ -4,12 +4,12 @@
     <!--==================== STEAM GEYSERS ====================-->
 
     <ThingDef ParentName="BuildingNaturalBase" Name="AlienBiomes_SteamGeyserBase">
-        <defName>SZ_SteamGeyserEnlightenedSoil</defName>
+        <defName>SZ_SteamGeyserRadiantSoil</defName>
         <label>steam geyser</label>
         <description>A natural source of high-pressure steam. Geothermal generators can harness the steam power. Rooms built over this will rapidly cook.</description>
-        <thingClass>AlienBiomes.Building_SteamGeyserEnlightenedSoil</thingClass>
+        <thingClass>AlienBiomes.Building_SteamGeyserRadiantSoil</thingClass>
         <graphicData>
-            <texPath>Things/Buildings/Natural/SteamGeyser/SteamGeyserEnlightenedSoil</texPath>
+            <texPath>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantSoil</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>Transparent</shaderType>
             <drawSize>(4,4)</drawSize>
@@ -32,10 +32,10 @@
     </ThingDef>
 
     <ThingDef ParentName="AlienBiomes_SteamGeyserBase">
-        <defName>SZ_SteamGeyserEnlightenedRichSoil</defName>
-        <thingClass>AlienBiomes.Building_SteamGeyserEnlightenedRichSoil</thingClass>
+        <defName>SZ_SteamGeyserRadiantRichSoil</defName>
+        <thingClass>AlienBiomes.Building_SteamGeyserRadiantRichSoil</thingClass>
         <graphicData>
-            <texPath>Things/Buildings/Natural/SteamGeyser/SteamGeyserEnlightenedSoil</texPath> <!-- change this -->
+            <texPath>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantSoil</texPath> <!-- change this -->
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>Transparent</shaderType>
             <drawSize>(4,4)</drawSize>

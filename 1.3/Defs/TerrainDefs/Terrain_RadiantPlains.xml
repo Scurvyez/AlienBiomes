@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--==================== Enlightened Soil ====================-->
+    <!--==================== Radiant Soil ====================-->
 
     <TerrainDef ParentName="NaturalTerrainBase">
-        <defName>SZ_EnlightenedSoil</defName>
-        <label>enlightened soil</label>
-        <texturePath>Terrain/Surfaces/SZ_EnlightenedSoil</texturePath>
+        <defName>SZ_RadiantSoil</defName>
+        <label>radiant soil</label>
+        <texturePath>Terrain/Surfaces/SZ_RadiantSoil</texturePath>
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>340</renderPrecedence>
         <pathCost>1</pathCost>
@@ -45,12 +45,12 @@
         </modExtensions>
     </TerrainDef>
 
-    <!--==================== Enlightened Rich Soil ====================-->
+    <!--==================== Radiant Rich Soil ====================-->
 
     <TerrainDef ParentName="NaturalTerrainBase">
-        <defName>SZ_EnlightenedRichSoil</defName>
-        <label>enlightened rich soil</label>
-        <texturePath>Terrain/Surfaces/SZ_EnlightenedRichSoil</texturePath>
+        <defName>SZ_RadiantRichSoil</defName>
+        <label>radiant rich soil</label>
+        <texturePath>Terrain/Surfaces/SZ_RadiantRichSoil</texturePath>
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>335</renderPrecedence>
         <pathCost>2</pathCost>
@@ -88,12 +88,12 @@
         </modExtensions>
     </TerrainDef>
 
-    <!--==================== Enlightened Mud ====================-->
+    <!--==================== Radiant Mud ====================-->
 
     <TerrainDef ParentName="NaturalTerrainBase">
-        <defName>SZ_EnlightenedMud</defName>
-        <label>enlightened mud</label>
-        <texturePath>Terrain/Surfaces/SZ_EnlightenedMud</texturePath>
+        <defName>SZ_RadiantMud</defName>
+        <label>radiant mud</label>
+        <texturePath>Terrain/Surfaces/SZ_RadiantMud</texturePath>
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>330</renderPrecedence>
         <pathCost>14</pathCost>
@@ -109,7 +109,7 @@
         <fertility>0</fertility>
         <takeFootprints>True</takeFootprints>
         <avoidWander>true</avoidWander>
-        <driesTo>SZ_EnlightenedSoil</driesTo>
+        <driesTo>SZ_RadiantSoil</driesTo>
         <tools>
             <li>
                 <label>mud</label>
@@ -125,12 +125,12 @@
         </tags>
     </TerrainDef>
 
-    <!--==================== Enlightened Stony Soil ====================-->
+    <!--==================== Radiant Stony Soil ====================-->
 
     <TerrainDef ParentName="NaturalTerrainBase">
-        <defName>SZ_EnlightenedStonySoil</defName>
-        <label>enlightened stony soil</label>
-        <texturePath>Terrain/Surfaces/SZ_EnlightenedStonySoil</texturePath>
+        <defName>SZ_RadiantStonySoil</defName>
+        <label>radiant stony soil</label>
+        <texturePath>Terrain/Surfaces/SZ_RadiantStonySoil</texturePath>
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>320</renderPrecedence>
         <pathCost>2</pathCost>

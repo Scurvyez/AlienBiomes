@@ -14,22 +14,22 @@ namespace AlienBiomes
         public static void SpawnSetupUpdateGeysers(Map map, bool respawningAfterLoad, Building_SteamGeyser __instance)
         {
 
-            var steamGeyserOne = ThingDef.Named("SZ_SteamGeyserEnlightenedSoil");
-            var steamGeyserTwo = ThingDef.Named("SZ_SteamGeyserEnlightenedRichSoil");
-            var vanillaGeyserPosition = __instance.Position;
+            var steamGeyserOne = ThingDef.Named("SZ_SteamGeyserRadiantSoil");
+            var steamGeyserTwo = ThingDef.Named("SZ_SteamGeyserRadiantRichSoil");
+            var vanillaGeyserPos = __instance.Position;
 
-            // checks to see if the given terrain at the vanilla geysers' pos is "enlightened soil"
-            if (map.terrainGrid.TerrainAt(vanillaGeyserPosition) == AlienBiomes_TerrainDefOf.SZ_EnlightenedSoil)
+            // Checks to see if the given terrain at the vanilla geysers' pos is "radiant soil".
+            if (map.terrainGrid.TerrainAt(vanillaGeyserPos) == AlienBiomes_TerrainDefOf.SZ_RadiantSoil)
             {
-                if (!(__instance is Building_SteamGeyserEnlightenedSoil))
+                if (!(__instance is Building_SteamGeyserRadiantSoil))
                 {
                     if (!__instance.Destroyed)
                     {
-                        // destroy old geyser
+                        // Destroy old geyser.
                         __instance.Destroy(DestroyMode.Vanish);
-                        // spawn new geyser
+                        // Spawn new geyser, in same cell.
                         Thing newGeyser = ThingMaker.MakeThing(steamGeyserOne);
-                        GenPlace.TryPlaceThing(newGeyser, vanillaGeyserPosition, map, ThingPlaceMode.Direct);
+                        GenPlace.TryPlaceThing(newGeyser, vanillaGeyserPos, map, ThingPlaceMode.Direct);
                     }
                 }
             }

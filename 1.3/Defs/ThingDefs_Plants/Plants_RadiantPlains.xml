@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--==================== Enlightened Grass Plant ====================-->
+    <!--==================== Radiant Grass Plant ====================-->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_Plant_EnlightenedGrass</defName>
-        <label>enlightened grass</label>
+        <defName>SZ_Plant_RadiantGrass</defName>
+        <label>radiant grass</label>
         <description>PLACEHOLDER</description> <!-- change this -->
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
@@ -13,7 +13,7 @@
             <Nutrition>0.50</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/EnlightenedGrass</texPath>
+            <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
@@ -23,7 +23,7 @@
             <fertilityMin>0.05</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>2.5</growDays>
-            <leaflessGraphicPath>Things/Plants/EnlightenedGrass_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>Things/Plants/RadiantGrass_Leafless</leaflessGraphicPath>
             <harvestWork>40</harvestWork>
             <maxMeshCount>9</maxMeshCount>
             <visualSizeRange>0.4~0.6</visualSizeRange>
@@ -39,11 +39,11 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Enlightened Tall Grass Plant ====================-->
+    <!--==================== Radiant Tall Grass Plant ====================-->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_Plant_EnlightenedTallGrass</defName>
-        <label>enlightened tall grass</label>
+        <defName>SZ_Plant_RadiantTallGrass</defName>
+        <label>radiant tall grass</label>
         <description>PLACEHOLDER</description> <!-- change this -->
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
@@ -52,7 +52,7 @@
         </statBases>
         <pathCost>14</pathCost>
         <graphicData>
-            <texPath>Things/Plants/EnlightenedGrass</texPath>
+            <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>

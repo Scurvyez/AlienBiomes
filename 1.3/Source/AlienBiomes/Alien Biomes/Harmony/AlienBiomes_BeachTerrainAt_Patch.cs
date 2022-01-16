@@ -12,8 +12,8 @@ namespace AlienBiomes
         [HarmonyPostfix]
         public static void ReplaceBeachTerrain(BiomeDef biome, ref TerrainDef __result)
         {
-            if ((__result == TerrainDefOf.Sand) && (biome.defName == "SZ_EnlightenedPlains"))
-            // Checks for any Sand terrain def and whether the current map is of biome type "SZ_EnlightenedPlains".
+            if ((__result == TerrainDefOf.Sand) && (biome.defName == "SZ_RadiantPlains"))
+            // Checks for any Sand terrain def and whether the current map is of biome type "SZ_RadiantPlains".
             {
                 __result = TerrainDef.Named("SZ_SoothingSand");
                 // If the above check is true, terrain def "SZ_SoothingSand" is used instead of Gravel.

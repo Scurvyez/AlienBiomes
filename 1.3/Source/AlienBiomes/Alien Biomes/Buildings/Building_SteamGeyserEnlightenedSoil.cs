@@ -6,7 +6,7 @@ using System;
 
 namespace AlienBiomes
 {
-    public class Building_SteamGeyserEnlightenedSoil : Building_SteamGeyser
+    public class Building_SteamGeyserRadiantSoil : Building_SteamGeyser
     {
 
     }
