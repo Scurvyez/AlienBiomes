@@ -4,14 +4,16 @@
     <!--==================== Elder Woody Pulp ====================-->
 
     <RecipeDef>
-        <defName>SZ_FragrantShavingsToWood</defName>
-        <label>process shavings into wood</label>
+        <defName>SZ_ProcessElderWoodLog</defName>
+        <label>process elder wood log</label>
         <description>PLACEHOLDER</description> <!-- change this -->
         <jobString>Processing elder tree shavings into usable wood.</jobString>
         <workAmount>400</workAmount>
+        <workSkill>Crafting</workSkill>
         <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-        <effectWorking>Smelt</effectWorking>
-        <soundWorking>Recipe_Smelt</soundWorking>
+        <effectWorking>Sculpt</effectWorking>
+        <soundWorking>Recipe_Sculpt</soundWorking>
+        <unfinishedThingDef>UnfinishedElderWoodLog</unfinishedThingDef>
         <ingredients>
             <li>
                 <filter>
@@ -19,17 +21,17 @@
                         <li>SZ_FragrantWoodShavings</li>
                     </thingDefs>
                 </filter>
-                <count>1</count>
+                <count>2</count>
             </li>
         </ingredients>
         <products>
-            <SZ_ElderWoodLog>15</SZ_ElderWoodLog>
+            <SZ_ElderWoodLog>5</SZ_ElderWoodLog>
         </products>
-        <!-- <fixedIngredientFilter>
+        <fixedIngredientFilter>
             <thingDefs>
                 <li>SZ_FragrantWoodShavings</li>
             </thingDefs>
-        </fixedIngredientFilter> -->
+        </fixedIngredientFilter>
     </RecipeDef>
 
 </Defs>

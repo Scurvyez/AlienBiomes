@@ -78,7 +78,7 @@
                         <max>0.78</max>
                     </li>
                     <li>
-                        <terrain>SZ_RadiantStonySoil</terrain>
+                        <terrain>SZ_SoothingSand</terrain>
                         <min>0.78</min>
                         <max>0.85</max>
                     </li>

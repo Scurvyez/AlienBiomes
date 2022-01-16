@@ -57,8 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
-    <Compile Include="Buildings\Building_SteamGeyserEnlightenedRichSoil.cs" />
-    <Compile Include="Buildings\Building_SteamGeyserEnlightenedSoil.cs" />
+    <Compile Include="Buildings\Building_SteamGeyserRadiantRichSoil.cs" />
+    <Compile Include="Buildings\Building_SteamGeyserRadiantSoil.cs" />
     <Compile Include="Comps\Comp_TimedGlower.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_TimedGlower.cs" />
     <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
