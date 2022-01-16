@@ -167,14 +167,14 @@
             <topWindExposure>0.3</topWindExposure>
             <wildOrder>2</wildOrder>
         </plant>
-        <comps>
+        <!-- <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <glowRadius>1.5</glowRadius>
                 <glowColor>(63, 216, 188, 0)</glowColor>
                 <startTime>0.80</startTime>
                 <stopTime>0.20</stopTime>
             </li>
-        </comps>
+        </comps> -->
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
