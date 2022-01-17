@@ -49,7 +49,7 @@
 
     <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_RadiantRichSoil</defName>
-        <label>radiant rich soil</label>
+        <label>rich radiant soil</label>
         <texturePath>Terrain/Surfaces/SZ_RadiantRichSoil</texturePath>
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>335</renderPrecedence>

@@ -4,9 +4,9 @@
     <!--==================== Radiant Grass Plant ====================-->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_Plant_RadiantGrass</defName>
+        <defName>SZ_RadiantGrass</defName>
         <label>radiant grass</label>
-        <description>PLACEHOLDER</description> <!-- change this -->
+        <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Flammability>1.3</Flammability>
@@ -42,9 +42,9 @@
     <!--==================== Radiant Tall Grass Plant ====================-->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_Plant_RadiantTallGrass</defName>
-        <label>radiant tall grass</label>
-        <description>PLACEHOLDER</description> <!-- change this -->
+        <defName>SZ_RadiantTallGrass</defName>
+        <label>tall radiant grass</label>
+        <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
             <Flammability>1.3</Flammability>
@@ -79,36 +79,39 @@
       </ThingDef>
 
     <!--==================== Spiral Stalk Plant ====================-->
-    <!-- only spawns on soothing sand -->
+    <!-- Only spawns on soothing sand. -->
+    <!-- Produces raw soothing honey. -->
+    <!-- Harvestable only at night(?) -->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_SpiralStalk</defName> <!-- change this -->
-        <label>spiral stalk</label> <!-- change this -->
-        <description>PLACEHOLDER</description> <!-- change this -->
+        <defName>SZ_SoothingStalk</defName>
+        <label>soothing stalk</label>
+        <description>A vibrant plant only found in the pink sands of radiant plains. They can be farmed for their sweet, pinkish honey.</description>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
-            <Nutrition>0.50</Nutrition>
+            <Nutrition>0.25</Nutrition>
             <DeteriorationRate>0.00</DeteriorationRate>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/SpiralStalk</texPath> <!-- change this -->
+            <texPath>Things/Plants/SoothingStalk</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
         <fillPercent>0.20</fillPercent>
         <pathCost>30</pathCost>
         <plant>
             <fertilityMin>0.1</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
             <growDays>16</growDays>
-            <leaflessGraphicPath>Things/Plants/SpiralStalk_Leafless</leaflessGraphicPath> <!-- change this -->
-            <immatureGraphicPath>Things/Plants/SpiralStalk_Immature</immatureGraphicPath> <!-- change this -->
+            <leaflessGraphicPath>Things/Plants/SoothingStalk_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/SoothingStalk_Immature</immatureGraphicPath>
             <harvestYield>10</harvestYield>
             <harvestWork>250</harvestWork>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.30</harvestAfterGrowth>
-            <harvestedThingDef>RawBerries</harvestedThingDef> <!-- change this -->
+            <harvestedThingDef>SZ_RawSoothingHoney</harvestedThingDef>
             <wildClusterRadius>5</wildClusterRadius>
             <wildClusterWeight>250</wildClusterWeight>
             <visualSizeRange>0.95~1.7</visualSizeRange>
@@ -135,13 +138,14 @@
     </ThingDef>
 
     <!--==================== Copacetic Cone Plant ====================-->
+    <!-- Only spawns on radiant soil and rich radiant soil. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
         <label>copacetic cone</label>
         <description>PLACEHOLDER</description> <!-- change this -->
         <statBases>
-            <Nutrition>0.15</Nutrition>
+            <Nutrition>0.20</Nutrition>
             <MaxHitPoints>85</MaxHitPoints>
             <Flammability>1.30</Flammability>
             <DeteriorationRate>0.00</DeteriorationRate>
@@ -152,6 +156,7 @@
         </graphicData>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
         <fillPercent>0.20</fillPercent>
         <pathCost>30</pathCost>
         <ingestible />
@@ -161,11 +166,17 @@
             <growDays>14</growDays>
             <leaflessGraphicPath>Things/Plants/CopaceticCone_Leafless</leaflessGraphicPath>
             <immatureGraphicPath>Things/Plants/CopaceticCone_Immature</immatureGraphicPath>
+            <harvestYield>10</harvestYield>
+            <harvestWork>250</harvestWork>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestedThingDef>SZ_RawCopaceticHoney</harvestedThingDef>
             <wildClusterRadius>5</wildClusterRadius>
             <wildClusterWeight>250</wildClusterWeight>
             <visualSizeRange>0.85~2.85</visualSizeRange>
             <topWindExposure>0.3</topWindExposure>
             <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
         </plant>
         <!-- <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">

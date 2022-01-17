@@ -97,11 +97,11 @@
             <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
-            <SZ_SpiralStalk>0.15</SZ_SpiralStalk>
+            <SZ_SoothingStalk>0.15</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
             <SZ_ElderBlushingTree>0.01</SZ_ElderBlushingTree>
-            <SZ_Plant_RadiantGrass>5.00</SZ_Plant_RadiantGrass>
-            <SZ_Plant_RadiantTallGrass>4.10</SZ_Plant_RadiantTallGrass>
+            <SZ_RadiantGrass>5.00</SZ_RadiantGrass>
+            <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
         </wildPlants>
         <wildAnimals>
             <Donkey>0.20</Donkey>
