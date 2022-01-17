@@ -59,6 +59,8 @@
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="Buildings\Building_SteamGeyserRadiantRichSoil.cs" />
     <Compile Include="Buildings\Building_SteamGeyserRadiantSoil.cs" />
+    <Compile Include="Comps\CompProperties\CompProperties_TimedHarvest.cs" />
+    <Compile Include="Comps\Comp_TimedHarvest.cs" />
     <Compile Include="Comps\Comp_TimedGlower.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_TimedGlower.cs" />
     <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Harmony\AlienBiomes_TerrainFrom_Patch.cs" />
     <Compile Include="Harmony\AlienBiomes_BeachTerrainAt_Patch.cs" />
     <Compile Include="Harmony\AlienBiomes_SteamGeyserSpawnSetup_Patch.cs" />
+    <Compile Include="Harmony\AlienBiomes_HarvestableNow_Patch.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
     <Compile Include="Things\Plant_NightBlooming.cs" />

@@ -178,14 +178,12 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
         </plant>
-        <!-- <comps>
-            <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <glowRadius>1.5</glowRadius>
-                <glowColor>(63, 216, 188, 0)</glowColor>
-                <startTime>0.80</startTime>
-                <stopTime>0.20</stopTime>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedHarvest">
+                <harvestStartTime>0.80</harvestStartTime>
+                <harvestStopTime>0.20</harvestStopTime>
             </li>
-        </comps> -->
+        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
