@@ -12,10 +12,5 @@ namespace AlienBiomes
             var dayPercent = GenLocalDate.DayPercent(parent.Map);
             return (dayPercent > HarvestProps.harvestStartTime && dayPercent < 1f) || (dayPercent < HarvestProps.harvestStopTime && dayPercent > 0f);
         }
-
-        internal object GetComp<T>()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
