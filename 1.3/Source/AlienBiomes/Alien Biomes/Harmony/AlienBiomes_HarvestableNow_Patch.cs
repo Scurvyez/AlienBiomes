@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using Verse;
 
 namespace AlienBiomes
 {
@@ -8,10 +9,11 @@ namespace AlienBiomes
     {
         public static void HarvestableNowPostFix(Comp_TimedHarvest __instance, ref bool __result)
         {
-            var comp = __instance.GetComp<Comp_TimedHarvest>();
+            var comp = (Comp_TimedHarvest)__instance.GetComp<Comp_TimedHarvest>();
+            Log.Message("boom" + comp.GetType().FullName);
             if (comp != null)
             {
-                if (__instance is Comp_TimedHarvest harvest) __result = __result && harvest.AdditionalPlantHarvestLogic();
+                __result = __result && comp.AdditionalPlantHarvestLogic();
             }
         }
     }
