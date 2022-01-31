@@ -1,0 +1,32 @@
+ERRORS / BUGS...
+- terrainTags error(s) on plant defs and terrain defs
+
+TO DO LIST...
+- Radiant Plains
+    - [done] World tile art.
+    - XML.
+    - [done] Belt around middle of planet.
+    - Add new filth types for the soils and sand.
+    - Add some ambient FleckDefs for the plants (check performance).
+    - Add ambient sounds for when a pawn walks through certain plants.
+
+- Soothing Stalk
+    - [done] Art.
+    - [done] XML.
+    - [done] Only spawns on soothing sand.
+    - [done] Produces raw soothing honey.
+    - [done] Harvestable only at night.
+    - [done] Timed glower.
+
+- Copacetic Cone
+    - [done] Art.
+    - [done] XML.
+    - [done] Only spawns on radiant soil and rich radiant soil.
+
+- Elder Blushing Tree
+    - [done] Art.
+    - [done] XML.
+    - [done] Only spawns on radiant soil and rich radiant soil.
+    - [done] Produces wood shavings.
+    - [done] Timed glower.
+

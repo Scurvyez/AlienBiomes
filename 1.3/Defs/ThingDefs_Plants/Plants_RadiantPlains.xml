@@ -78,10 +78,10 @@
         </modExtensions>
       </ThingDef>
 
-    <!--==================== Spiral Stalk Plant ====================-->
+    <!--==================== Soothing Stalk Plant ====================-->
     <!-- Only spawns on soothing sand. -->
     <!-- Produces raw soothing honey. -->
-    <!-- Harvestable only at night(?) -->
+    <!-- Harvestable only at night. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_SoothingStalk</defName>
@@ -127,6 +127,10 @@
                 <startTime>0.80</startTime>
                 <stopTime>0.20</stopTime>
             </li>
+            <li Class="AlienBiomes.CompProperties_TimedHarvest">
+                <harvestStartTime>0.80</harvestStartTime>
+                <harvestStopTime>0.20</harvestStopTime>
+            </li>
         </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
@@ -157,8 +161,8 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
-        <fillPercent>0.20</fillPercent>
-        <pathCost>30</pathCost>
+        <fillPercent>0.80</fillPercent>
+        <pathCost>42</pathCost>
         <ingestible />
         <plant>
             <fertilityMin>0.5</fertilityMin>
@@ -179,9 +183,12 @@
             <purpose>Food</purpose>
         </plant>
         <comps>
-            <li Class="AlienBiomes.CompProperties_TimedHarvest">
-                <harvestStartTime>0.80</harvestStartTime>
-                <harvestStopTime>0.20</harvestStopTime>
+            <li Class="AlienBiomes.CompProperties_PlantFleckEmitter">
+                <fleck>SparkFlash</fleck>
+                <rotationRate>-15~15</rotationRate>
+                <soundOnEmission>Archonexus_Throb</soundOnEmission> <!-- just a test -->
+                <velocityX>0.3~0.7</velocityX>
+                <velocityY>0.7~1.0</velocityY>
             </li>
         </comps>
         <modExtensions>
