@@ -16,7 +16,8 @@ namespace AlienBiomes
         public Color colorB = Color.white;
         public FloatRange velocityX;
         public FloatRange velocityY;
-        
+        public float fadeOutTime = 3f;
+
         public CompProperties_PlantFleckEmitter() => compClass = typeof(Comp_PlantFleckEmitter);
 
         public override IEnumerable<string> ConfigErrors(ThingDef parentDef)

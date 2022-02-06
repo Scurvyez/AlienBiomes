@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -10,8 +11,8 @@ namespace AlienBiomes
 {
     public class Comp_PlantFleckEmitter : ThingComp
     {
+        // tickerType MUST match CompTick, so "Normal"
         private CompProperties_PlantFleckEmitter Props => (CompProperties_PlantFleckEmitter)props;
-
         private Color EmissionColor => Color.Lerp(Props.colorA, Props.colorB, Rand.Value);
         // New variable color for the fleck itself.
         public List<Pawn> pawnsTouchingPlants = new();
@@ -35,26 +36,29 @@ namespace AlienBiomes
                 {
                     pawnsTouchingPlants.Add(p1);
                     Emit();
-                    // Call Emit and cast the fleck. :)
-                    //Log.Message("Fleck was emitted at " + parent.Position);
+                    // Call Emit and cast the built fleck. :)
+                    Log.Message("Fleck was emitted at " + parent.Position);
                 }
             }
         }
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void Emit()
         {
             SoundDef soundDefUsed = Props.soundOnEmission;
+            float throwAngle = 90f;
+            Vector3 inheritVelocity = new(0.00f, 0.00f, 1.00f);
+
             for (int iii = 0; iii < Props.burstCount; ++iii)
-                // Fleck and sound creation loop.
             {
                 FleckCreationData dataStatic = FleckMaker.GetDataStatic(parent.DrawPos, parent.Map, Props.fleck, Props.scale.RandomInRange);
-                dataStatic.rotationRate = Props.rotationRate.RandomInRange;
+                dataStatic.rotationRate = Rand.RangeInclusive(-240, 240);
                 dataStatic.instanceColor = new Color?(EmissionColor);
-                dataStatic.velocityAngle = Props.velocityX.RandomInRange;
-                dataStatic.velocitySpeed = Props.velocityY.RandomInRange;
+                dataStatic.velocityAngle = throwAngle + Rand.Range(-5, 5);
+                dataStatic.velocitySpeed = Rand.Range(0.1f, 0.8f);
+                dataStatic.velocity = inheritVelocity * 0.5f;
                 parent.Map.flecks.CreateFleck(dataStatic);
-                //Log.Message("Fleck was created ");
+
+                Log.Message("Fleck was created ");
                 soundDefUsed.PlayOneShot(new TargetInfo(parent.Position, null));
             }
         }

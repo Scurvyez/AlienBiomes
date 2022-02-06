@@ -18,7 +18,6 @@
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
-        <tickerType>Normal</tickerType> <!-- check this -->
         <ingestible />
         <plant>
             <fertilityMin>0.05</fertilityMin>
@@ -31,19 +30,6 @@
             <topWindExposure>0.4</topWindExposure>
             <wildOrder>1</wildOrder>
         </plant>
-        <comps>
-            <li Class="AlienBiomes.CompProperties_PlantFleckEmitter">
-                <fleck>Twinkle</fleck>
-                <offset>(0.0, 0.0, 0.45)</offset>
-                <scale>0.25~0.45</scale>
-                <colorA>(56, 163, 169)</colorA>
-                <colorB>(124, 251, 208)</colorB>
-                <rotationRate>-15~15</rotationRate>
-                <soundOnEmission>PokerChips</soundOnEmission>
-                <velocityX>0.3~0.7</velocityX>
-                <velocityY>0.0~1.75</velocityY>
-            </li>
-        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
@@ -175,8 +161,9 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <tickerType>Normal</tickerType> <!-- check this -->
         <fillPercent>0.80</fillPercent>
-        <pathCost>42</pathCost>
+        <pathCost>6</pathCost>
         <ingestible />
         <plant>
             <fertilityMin>0.5</fertilityMin>
@@ -196,6 +183,20 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
         </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_PlantFleckEmitter">
+                <fleck>Twinkle</fleck>
+                <burstCount>1</burstCount>
+                <offset>(0.0, 0.0, -0.45)</offset>
+                <scale>0.25~0.45</scale>
+                <colorA>(56, 163, 169)</colorA>
+                <colorB>(124, 251, 208)</colorB>
+                <rotationRate>-15~15</rotationRate>
+                <soundOnEmission>PokerChips</soundOnEmission>
+                <velocityX>0.3~0.7</velocityX>
+                <velocityY>0.0~1.75</velocityY>
+            </li>
+        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
