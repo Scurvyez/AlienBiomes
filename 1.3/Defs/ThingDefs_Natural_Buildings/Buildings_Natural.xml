@@ -40,6 +40,6 @@
             <shaderType>Transparent</shaderType>
             <drawSize>(4,4)</drawSize>
         </graphicData>
-    </ThingDef> 
+    </ThingDef>
 
 </Defs>

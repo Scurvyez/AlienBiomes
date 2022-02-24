@@ -187,7 +187,7 @@
             <li Class="AlienBiomes.CompProperties_PlantFleckEmitter">
                 <fleck>Twinkle</fleck>
                 <burstCount>1</burstCount>
-                <offset>(0.0, 0.0, -0.45)</offset>
+                <offset>(0.0, 0.0, -1.00)</offset>
                 <scale>0.25~0.45</scale>
                 <colorA>(56, 163, 169)</colorA>
                 <colorB>(124, 251, 208)</colorB>

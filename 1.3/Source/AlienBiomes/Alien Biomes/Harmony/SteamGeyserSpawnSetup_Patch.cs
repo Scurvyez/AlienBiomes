@@ -1,17 +1,16 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using Verse;
-using UnityEngine;
-using System.Collections.Generic;
-using System;
 
 namespace AlienBiomes
 {
-    // This patch replaces vanilla steam geyser textures on map gen.
-
     [HarmonyPatch(typeof(Building_SteamGeyser), "SpawnSetup")]
-    public static class AlienBiomes_SteamGeyserSpawnSetup_Patch
+    public static class SteamGeyserSpawnSetup_Patch
     {
+        /// <summary>
+        /// Checks the map for vanilla steam geysers.
+        /// If any are present on radiant or rich radiant soil, they are replaced.
+        /// </summary>
         [HarmonyPostfix]
         public static void SpawnSetupUpdateGeysers(Map map, bool respawningAfterLoad, Building_SteamGeyser __instance)
         {
@@ -22,7 +21,7 @@ namespace AlienBiomes
             // Checks to see if the given terrain at the vanilla geysers' pos is "radiant soil".
             if (map.terrainGrid.TerrainAt(vanillaGeyserPos) == AlienBiomes_TerrainDefOf.SZ_RadiantSoil)
             {
-                if (!(__instance is Building_SteamGeyserRadiantSoil))
+                if ((__instance is Building_SteamGeyser))
                 {
                     // Allows for geysers to be destroyed.
                     Thing.allowDestroyNonDestroyable = true;
@@ -41,7 +40,7 @@ namespace AlienBiomes
 
             else if (map.terrainGrid.TerrainAt(vanillaGeyserPos) == AlienBiomes_TerrainDefOf.SZ_RadiantRichSoil)
             {
-                if (!(__instance is Building_SteamGeyserRadiantRichSoil))
+                if ((__instance is Building_SteamGeyser))
                 {
                     Thing.allowDestroyNonDestroyable = true;
                     if (!__instance.Destroyed)

@@ -4,11 +4,13 @@ using Verse;
 
 namespace AlienBiomes
 {
-    // This patch changes terrain types for several biomes.
-
     [HarmonyPatch(typeof(GenStep_Terrain), "TerrainFrom")]
-    public static class AlienBiomes_TerrainFrom_Patch
+    public static class TerrainFrom_Patch
     {
+        /// <summary>
+        /// Checks to see if a biome has vanilla gravel.
+        /// If so, change all vanilla gravel to radiant soil.
+        /// </summary>
         [HarmonyPostfix]
         public static void ReplaceTerrain(Map map, ref TerrainDef __result)
         {

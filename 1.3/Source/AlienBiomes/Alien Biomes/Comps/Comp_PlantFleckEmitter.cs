@@ -37,7 +37,7 @@ namespace AlienBiomes
                     pawnsTouchingPlants.Add(p1);
                     Emit();
                     // Call Emit and cast the built fleck. :)
-                    Log.Message("Fleck was emitted at " + parent.Position);
+                    //Log.Message("Fleck was emitted at " + parent.Position);
                 }
             }
         }
@@ -58,7 +58,7 @@ namespace AlienBiomes
                 dataStatic.velocity = inheritVelocity * 0.5f;
                 parent.Map.flecks.CreateFleck(dataStatic);
 
-                Log.Message("Fleck was created ");
+                //Log.Message("Fleck was created ");
                 soundDefUsed.PlayOneShot(new TargetInfo(parent.Position, null));
             }
         }

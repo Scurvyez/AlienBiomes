@@ -66,19 +66,19 @@
     <Compile Include="Comps\Comp_TimedGlower.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_TimedGlower.cs" />
     <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
-    <Compile Include="Harmony\AlienBiomes_CompGlower_Patch.cs" />
-    <Compile Include="Harmony\AlienBiomes_TerrainFrom_Patch.cs" />
-    <Compile Include="Harmony\AlienBiomes_BeachTerrainAt_Patch.cs" />
-    <Compile Include="Harmony\AlienBiomes_SteamGeyserSpawnSetup_Patch.cs" />
-    <Compile Include="Harmony\AlienBiomes_HarvestableNow_Patch.cs" />
+    <Compile Include="DefOfs\AlienBiomes_NaturalBuildingDefOf.cs" />
+    <Compile Include="Harmony\AllowsPlacing_Patch.cs" />
+    <Compile Include="Harmony\CompGlower_Patch.cs" />
+    <Compile Include="Harmony\TerrainFrom_Patch.cs" />
+    <Compile Include="Harmony\BeachTerrainAt_Patch.cs" />
+    <Compile Include="Harmony\SteamGeyserSpawnSetup_Patch.cs" />
+    <Compile Include="Harmony\HarvestableNow_Patch.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
     <Compile Include="Things\Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MapComps\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

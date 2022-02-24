@@ -4,8 +4,12 @@ using RimWorld;
 namespace AlienBiomes
 {
     [HarmonyPatch(typeof(Plant), "HarvestableNow", MethodType.Getter)]
-    public static class AlienBiomes_HarvestableNow_Patch
+    public static class HarvestableNow_Patch
     {
+        /// <summary>
+        /// Checks to see if a plant has Comp_TimedHarvest.
+        /// If so, applies additional logic to the method.
+        /// </summary>
         [HarmonyPostfix]
         public static void HarvestableNowPostFix(Plant __instance, ref bool __result)
         {

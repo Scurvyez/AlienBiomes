@@ -4,11 +4,13 @@ using Verse;
 
 namespace AlienBiomes
 {
-    // This patch changes terrain types of beaches for several biomes.
-
     [HarmonyPatch(typeof(BeachMaker), "BeachTerrainAt")]
-    public static class AlienBiomes_BeachTerrainAt_Patch
+    public static class BeachTerrainAt_Patch
     {
+        /// <summary>
+        /// Checks to see if a biome has vanilla sand.
+        /// If so, change all vanilla sand to soothing sand.
+        /// </summary>
         [HarmonyPostfix]
         public static void ReplaceBeachTerrain(BiomeDef biome, ref TerrainDef __result)
         {
