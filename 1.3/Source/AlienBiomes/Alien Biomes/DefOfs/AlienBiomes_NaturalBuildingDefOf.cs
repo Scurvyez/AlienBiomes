@@ -8,7 +8,5 @@ namespace AlienBiomes
     {
         public static ThingDef SZ_SteamGeyserRadiantSoil;
         public static ThingDef SZ_SteamGeyserRadiantRichSoil;
-
-        static AlienBiomes_NaturalBuildingDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
     }
 }

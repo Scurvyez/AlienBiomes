@@ -14,12 +14,14 @@ namespace AlienBiomes
         [HarmonyPostfix]
         public static void SpawnSetupUpdateGeysers(Map map, bool respawningAfterLoad, Building_SteamGeyser __instance)
         {
-            var steamGeyserOne = ThingDef.Named("SZ_SteamGeyserRadiantSoil");
-            var steamGeyserTwo = ThingDef.Named("SZ_SteamGeyserRadiantRichSoil");
+            var steamGeyserOne = AlienBiomes_NaturalBuildingDefOf.SZ_SteamGeyserRadiantSoil;
+            var steamGeyserTwo = AlienBiomes_NaturalBuildingDefOf.SZ_SteamGeyserRadiantRichSoil;
+            var terrainOne = AlienBiomes_TerrainDefOf.SZ_RadiantSoil;
+            var terrainTwo = AlienBiomes_TerrainDefOf.SZ_RadiantRichSoil;
             var vanillaGeyserPos = __instance.Position;
 
             // Checks to see if the given terrain at the vanilla geysers' pos is "radiant soil".
-            if (map.terrainGrid.TerrainAt(vanillaGeyserPos) == AlienBiomes_TerrainDefOf.SZ_RadiantSoil)
+            if (map.terrainGrid.TerrainAt(vanillaGeyserPos) == terrainOne)
             {
                 if ((__instance is Building_SteamGeyser))
                 {
@@ -38,7 +40,7 @@ namespace AlienBiomes
                 }
             }
 
-            else if (map.terrainGrid.TerrainAt(vanillaGeyserPos) == AlienBiomes_TerrainDefOf.SZ_RadiantRichSoil)
+            else if (map.terrainGrid.TerrainAt(vanillaGeyserPos) == terrainTwo)
             {
                 if ((__instance is Building_SteamGeyser))
                 {

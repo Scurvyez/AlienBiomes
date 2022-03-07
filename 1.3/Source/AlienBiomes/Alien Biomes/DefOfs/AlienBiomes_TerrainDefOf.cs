@@ -11,7 +11,5 @@ namespace AlienBiomes
         public static TerrainDef SZ_RadiantMud;
         public static TerrainDef SZ_RadiantStonySoil;
         public static TerrainDef SZ_SoothingSand;
-
-        static AlienBiomes_TerrainDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(TerrainDefOf));
     }
 }

@@ -7,7 +7,7 @@
         <defName>SZ_SteamGeyserRadiantSoil</defName>
         <label>steam geyser</label>
         <description>A natural source of high-pressure steam. Geothermal generators can harness the steam power. Rooms built over this will rapidly cook.</description>
-        <thingClass>AlienBiomes.Building_SteamGeyserRadiantSoil</thingClass>
+        <thingClass>Building_SteamGeyser</thingClass>
         <graphicData>
             <texPath>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantSoil</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -33,7 +33,7 @@
 
     <ThingDef ParentName="AlienBiomes_SteamGeyserBase">
         <defName>SZ_SteamGeyserRadiantRichSoil</defName>
-        <thingClass>AlienBiomes.Building_SteamGeyserRadiantRichSoil</thingClass>
+        <thingClass>Building_SteamGeyser</thingClass>
         <graphicData>
             <texPath>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantSoil</texPath> <!-- change this -->
             <graphicClass>Graphic_Single</graphicClass>

@@ -5,7 +5,6 @@ using Verse;
 
 namespace AlienBiomes
 {
-    [HarmonyDebug]
     [HarmonyPatch(typeof(PlaceWorker_OnSteamGeyser), "AllowsPlacing")]
     public static class AllowsPlacing_Patch
     {
@@ -15,9 +14,6 @@ namespace AlienBiomes
             if (!__result)
             {
                 var geyser = map.thingGrid.ThingAt(loc, AlienBiomes_NaturalBuildingDefOf.SZ_SteamGeyserRadiantSoil);
-                if (geyser != null && geyser.Position == loc)
-                    return true;
-                geyser = map.thingGrid.ThingAt(loc, AlienBiomes_NaturalBuildingDefOf.SZ_SteamGeyserRadiantSoil);
                 if (geyser != null && geyser.Position == loc)
                     return true;
             }
