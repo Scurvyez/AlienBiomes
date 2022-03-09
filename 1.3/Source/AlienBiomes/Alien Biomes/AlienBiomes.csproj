@@ -57,14 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
-    <Compile Include="Buildings\Building_SteamGeyserRadiantRichSoil.cs" />
-    <Compile Include="Buildings\Building_SteamGeyserRadiantSoil.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_PlantFleckEmitter.cs" />
     <Compile Include="Comps\Comp_PlantFleckEmitter.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_TimedHarvest.cs" />
     <Compile Include="Comps\Comp_TimedHarvest.cs" />
     <Compile Include="Comps\Comp_TimedGlower.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_TimedGlower.cs" />
+    <Compile Include="DefModExtensions\Geyser_GraphicPerTerrain.cs" />
     <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_NaturalBuildingDefOf.cs" />
     <Compile Include="Harmony\AllowsPlacing_Patch.cs" />
@@ -73,7 +72,6 @@
     <Compile Include="Harmony\BeachTerrainAt_Patch.cs" />
     <Compile Include="Harmony\SteamGeyserSpawnSetup_Patch.cs" />
     <Compile Include="Harmony\HarvestableNow_Patch.cs" />
-    <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
     <Compile Include="Things\Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

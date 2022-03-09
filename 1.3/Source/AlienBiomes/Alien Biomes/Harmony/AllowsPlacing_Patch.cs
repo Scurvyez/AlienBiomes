@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+﻿/*using HarmonyLib;
 using RimWorld;
 using System;
 using Verse;
@@ -16,8 +16,12 @@ namespace AlienBiomes
                 var geyser = map.thingGrid.ThingAt(loc, AlienBiomes_NaturalBuildingDefOf.SZ_SteamGeyserRadiantSoil);
                 if (geyser != null && geyser.Position == loc)
                     return true;
+                geyser = map.thingGrid.ThingAt(loc, AlienBiomes_NaturalBuildingDefOf.SZ_SteamGeyserRadiantSoil);
+                if (geyser != null && geyser.Position == loc)
+                    return true;
             }
             return __result;
         }
     }
 }
+*/

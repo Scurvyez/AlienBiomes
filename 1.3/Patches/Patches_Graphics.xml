@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!--========== Change Geyser Graphic ==========-->
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="SteamGeyser"]</xpath>
+        <value>
+            <modExtensions>
+                <li Class="AlienBiomes.DefModExtensions.Geyser_GraphicPerTerrain">
+                    <terrains>
+                        <li>SZ_RadiantSoil</li>
+                        <li>SZ_RadiantRichSoil</li>
+                    </terrains>
+                    <newGraphicPaths>
+                        <li>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantSoil</li>
+                        <li>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantRichSoil</li>
+                    </newGraphicPaths>
+                </li>
+            </modExtensions>
+        </value>
+    </Operation>
+
+</Patch>
