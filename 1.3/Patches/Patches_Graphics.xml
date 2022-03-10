@@ -7,7 +7,7 @@
         <xpath>Defs/ThingDef[defName="SteamGeyser"]</xpath>
         <value>
             <modExtensions>
-                <li Class="AlienBiomes.DefModExtensions.Geyser_GraphicPerTerrain">
+                <li Class="AlienBiomes.Geyser_GraphicPerTerrain">
                     <terrains>
                         <li>SZ_RadiantSoil</li>
                         <li>SZ_RadiantRichSoil</li>
