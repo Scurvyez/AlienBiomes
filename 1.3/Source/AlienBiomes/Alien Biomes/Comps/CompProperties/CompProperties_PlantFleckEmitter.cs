@@ -11,7 +11,7 @@ namespace AlienBiomes
         public FloatRange scale;
         public FloatRange rotationRate;
         public int burstCount = 1;
-        public SoundDef soundOnEmission = null;
+        public SoundDef soundOnEmission;
         public Color colorA = Color.white;
         public Color colorB = Color.white;
         public FloatRange velocityX;

@@ -186,13 +186,13 @@
         <comps>
             <li Class="AlienBiomes.CompProperties_PlantFleckEmitter">
                 <fleck>Twinkle</fleck>
-                <burstCount>1</burstCount>
-                <offset>(0.0, 0.0, -1.00)</offset>
+                <burstCount>10</burstCount>
+                <offset>(0.0, 0.0, 3.00)</offset>
                 <scale>0.25~0.45</scale>
                 <colorA>(56, 163, 169)</colorA>
                 <colorB>(124, 251, 208)</colorB>
                 <rotationRate>-15~15</rotationRate>
-                <soundOnEmission>PokerChips</soundOnEmission>
+                <soundOnEmission>SZ_PlantShimmering</soundOnEmission>
                 <velocityX>0.3~0.7</velocityX>
                 <velocityY>0.0~1.75</velocityY>
             </li>

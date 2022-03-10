@@ -29,10 +29,10 @@ namespace AlienBiomes
                 if (!touchingPawn.Spawned || touchingPawn.Position != parent.Position)
                     pawnsTouchingPlants.Remove(touchingPawn);
             }
-            for (int ii = 0; ii < pawnList.Count; ++ii)
+            for (int i = 0; i < pawnList.Count; ++i)
                 // Loop to add pawns to list of those touching plant(s).
             {
-                if (pawnList[ii] is Pawn p1 && !pawnsTouchingPlants.Contains(p1))
+                if (pawnList[i] is Pawn p1 && !pawnsTouchingPlants.Contains(p1))
                 {
                     pawnsTouchingPlants.Add(p1);
                     Emit();
@@ -48,7 +48,7 @@ namespace AlienBiomes
             float throwAngle = 90f;
             Vector3 inheritVelocity = new(0.00f, 0.00f, 1.00f);
 
-            for (int iii = 0; iii < Props.burstCount; ++iii)
+            for (int i = 0; i < Props.burstCount; ++i)
             {
                 FleckCreationData dataStatic = FleckMaker.GetDataStatic(parent.DrawPos, parent.Map, Props.fleck, Props.scale.RandomInRange);
                 dataStatic.rotationRate = Rand.RangeInclusive(-240, 240);
@@ -59,7 +59,7 @@ namespace AlienBiomes
                 parent.Map.flecks.CreateFleck(dataStatic);
 
                 //Log.Message("Fleck was created ");
-                soundDefUsed.PlayOneShot(new TargetInfo(parent.Position, null));
+                soundDefUsed.PlayOneShot(new TargetInfo(parent.Position, parent.Map));
             }
         }
     }

@@ -66,6 +66,7 @@
     <Compile Include="DefModExtensions\Geyser_GraphicPerTerrain.cs" />
     <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_NaturalBuildingDefOf.cs" />
+    <Compile Include="DefOfs\AlienBiomes_BiomeDefOf.cs" />
     <Compile Include="Harmony\AllowsPlacing_Patch.cs" />
     <Compile Include="Harmony\CompGlower_Patch.cs" />
     <Compile Include="Harmony\TerrainFrom_Patch.cs" />
