@@ -12,10 +12,10 @@
                         <li>SZ_RadiantSoil</li>
                         <li>SZ_RadiantRichSoil</li>
                     </terrains>
-                    <newGraphicPaths>
+                    <graphicPaths>
                         <li>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantSoil</li>
                         <li>Things/Buildings/Natural/SteamGeyser/SteamGeyserRadiantRichSoil</li>
-                    </newGraphicPaths>
+                    </graphicPaths>
                 </li>
             </modExtensions>
         </value>
