@@ -16,7 +16,7 @@
 					</li>
 				</grains>
 				<sustainLoop>True</sustainLoop>
-                <volumeRange>60~60</volumeRange>
+                <volumeRange>5~30</volumeRange>
                 <pitchRange>0.95~1.05</pitchRange>
                 <distRange>0~60</distRange>
 			</li>

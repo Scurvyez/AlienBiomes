@@ -186,7 +186,7 @@
         <comps>
             <li Class="AlienBiomes.CompProperties_PlantFleckEmitter">
                 <fleck>Twinkle</fleck>
-                <burstCount>10</burstCount>
+                <burstCount>1</burstCount>
                 <offset>(0.0, 0.0, 3.00)</offset>
                 <scale>0.25~0.45</scale>
                 <colorA>(56, 163, 169)</colorA>
@@ -194,7 +194,14 @@
                 <rotationRate>-15~15</rotationRate>
                 <soundOnEmission>SZ_PlantShimmering</soundOnEmission>
                 <velocityX>0.3~0.7</velocityX>
-                <velocityY>0.0~1.75</velocityY>
+                <velocityY>0.0~5.75</velocityY>
+            </li>
+            <li Class="AlienBiomes.CompProperties_HediffEffecterWithRadius">
+                <releaseRadius>2</releaseRadius>
+                <fleckReleased>PsycastAreaEffect</fleckReleased>
+                <appliedHediff>PsychicHangover</appliedHediff>
+                <tickInterval>240</tickInterval>
+                <radiusOutlineColor>(102, 255, 204)</radiusOutlineColor>
             </li>
         </comps>
         <modExtensions>
