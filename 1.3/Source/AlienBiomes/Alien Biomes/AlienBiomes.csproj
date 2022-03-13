@@ -76,6 +76,7 @@
     <Compile Include="Harmony\SteamGeyserSpawnSetup_Patch.cs" />
     <Compile Include="Harmony\HarvestableNow_Patch.cs" />
     <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
+    <Compile Include="MapComps\MapThingCompsGetter.cs" />
     <Compile Include="Things\Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

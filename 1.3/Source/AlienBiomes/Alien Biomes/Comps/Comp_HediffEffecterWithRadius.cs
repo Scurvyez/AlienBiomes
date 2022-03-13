@@ -1,25 +1,21 @@
 ﻿using Verse;
 using Verse.Sound;
 using RimWorld;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Linq;
 using UnityEngine;
 
 namespace AlienBiomes
 {
     public class Comp_HediffEffecterWithRadius : ThingComp
     {
-        private CompProperties_HediffEffecterWithRadius Props
+        public CompProperties_HediffEffecterWithRadius Props
         {
             get
             {
                 return (CompProperties_HediffEffecterWithRadius)props;
             }
         }
-
-        public int tickCounter = 0;
-        public List<Comp_HediffEffecterWithRadius> comps = new();
+        
+        public int TickCounter = 0;
 
         /// <summary>
         /// Applies a hediff within a zone.
@@ -29,8 +25,8 @@ namespace AlienBiomes
         {
             base.CompTick();
 
-            tickCounter++;
-            if (tickCounter > Props.tickInterval)
+            TickCounter++;
+            if (TickCounter > Props.tickInterval)
             {
                 // If parent & map exist...
                 if (parent != null && parent.Map != null)
@@ -54,7 +50,31 @@ namespace AlienBiomes
                         }
                     }
                 }
-                tickCounter = 0;
+                TickCounter = 0;
+            }
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            if (parent.Map != null)
+            {
+                MapThingCompsGetter mapComp = parent.Map.GetComponent<MapThingCompsGetter>();
+                if (mapComp != null)
+                {
+                    mapComp.AddCompInstancesToMap(this);
+                }
+            }
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            if (parent.Map != null)
+            {
+                MapThingCompsGetter mapComp = parent.Map.GetComponent<MapThingCompsGetter>();
+                if (mapComp != null)
+                {
+                    mapComp.RemoveCompInstancesFromMap(this);
+                }
             }
         }
 
@@ -63,14 +83,12 @@ namespace AlienBiomes
         /// </summary>
         public override void PostDrawExtraSelectionOverlays()
         {
-            
-            List<IntVec3> cells = new(GenRadial.RadialCellsAround(parent.Position, Props.releaseRadius, true));
             // Only draws the area when selected.
+            // Also uses the color defined in Props to populate one in a MapComp.
             if (!parent.def.drawPlaceWorkersWhileSelected)
             {
-                // Currently DrawRadiusRing & DrawFieldEdges do the same shit. lol
-                //GenDraw.DrawRadiusRing(parent.Position, Props.releaseRadius, Props.radiusOutlineColor);
-                GenDraw.DrawFieldEdges(cells, Props.radiusOutlineColor);
+                parent.Map.GetComponent<MapThingCompsGetter>().DoDrawing = true;
+                parent.Map.GetComponent<MapThingCompsGetter>().FieldEdgesColor = Props.radiusOutlineColor;
             }
         }
     }
