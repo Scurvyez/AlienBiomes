@@ -187,7 +187,7 @@
             <fertilitySensitivity>0.9</fertilitySensitivity>
             <growDays>30</growDays>
             <harvestWork>60</harvestWork>
-            <visualSizeRange>6.00~10.25</visualSizeRange>
+            <visualSizeRange>2.25~10.25</visualSizeRange>
             <topWindExposure>0.0</topWindExposure>
             <wildClusterRadius>12</wildClusterRadius>
             <wildClusterWeight>14</wildClusterWeight>

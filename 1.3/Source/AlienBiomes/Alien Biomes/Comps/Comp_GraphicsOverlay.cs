@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace AlienBiomes
@@ -22,8 +23,7 @@ namespace AlienBiomes
         {
             base.PostDraw();
             
-            List<Thing> parents = parent.Position.GetThingList(parent.Map);
-            var dayPercent = GenLocalDate.DayPercent(parent.Map);
+            float dayPercent = GenLocalDate.DayPercent(parent.Map);
             float vSR = parent.def.plant.visualSizeRange.LerpThroughRange((parent as Plant).Growth);
             CompProperties_GraphicsOverlay props = Props;
 
@@ -34,9 +34,9 @@ namespace AlienBiomes
                     props.graphicElements[i].Graphic.Draw(parent.DrawPos, parent.Rotation, parent);
 
                     // Extra step for crystals only.
-                    if (parent.def.plant.visualSizeRange != null && parent.def.defName == "SZ_ColossalCrystalOne")
+                    if (parent.def.plant.visualSizeRange != null)
                     {
-                        for (int ii = 0; ii < parents.Count; ii++)
+                        if (parent.def.defName == "SZ_ColossalCrystalOne")
                         {
                             float z2 = 0.83f;
 
@@ -50,11 +50,8 @@ namespace AlienBiomes
                             crystal3Offset = props.graphicElements[2].drawOffset.ToIntVec3();
                             crystal4Offset = props.graphicElements[3].drawOffset.ToIntVec3();
                         }
-                    }
 
-                    if (parent.def.plant.visualSizeRange != null && parent.def.defName == "SZ_ColossalCrystalTwo")
-                    {
-                        for (int ii = 0; ii < parents.Count; ii++)
+                        if (parent.def.defName == "SZ_ColossalCrystalTwo")
                         {
                             float z2 = 0.67f;
 
@@ -70,7 +67,7 @@ namespace AlienBiomes
 
         public override string CompInspectStringExtra()
         {
-            return crystal1Offset + "\n" + crystal2Offset + "\n" + crystal3Offset + "\n";
+            return crystal1Offset + "\n" + crystal2Offset + "\n" + crystal3Offset + "\n" + crystal4Offset;
         }
     }
 }
