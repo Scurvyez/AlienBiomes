@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Shimmering Grass Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_ShimmeringGrass</defName>
+        <label>shimmering grass</label>
+        <description>A lush and beautiful grass found all over the crystalline flats.</description>
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.50</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/ShimmeringGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.05</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>2.5</growDays>
+            <leaflessGraphicPath>Things/Plants/ShimmeringGrass_Leafless</leaflessGraphicPath>
+            <harvestWork>40</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.4~0.6</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Shimmering Tall Grass Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_ShimmeringTallGrass</defName>
+        <label>tall shimmering grass</label>
+        <description>A lush and beautiful grass found all over the crystalline plains.</description>
+        <statBases>
+            <MaxHitPoints>90</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.50</Nutrition>
+        </statBases>
+        <pathCost>14</pathCost>
+        <graphicData>
+            <texPath>Things/Plants/ShimmeringGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilitySensitivity>0.7</fertilitySensitivity>
+            <growDays>3</growDays>
+            <harvestWork>60</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.7~0.85</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildClusterRadius>6</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Glistening Grass Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_GlisteningGrass</defName>
+        <label>glistening grass</label>
+        <description>A lush and vibrant grass found all over the crystalline flats.</description>
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.50</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/GlisteningGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.05</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>2.5</growDays>
+            <leaflessGraphicPath>Things/Plants/GlisteningGrass_Leafless</leaflessGraphicPath>
+            <harvestWork>40</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.4~0.6</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Glistening Tall Grass Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_GlisteningTallGrass</defName>
+        <label>tall glistening grass</label>
+        <description>A lush and vibrant grass found all over the crystalline plains.</description>
+        <statBases>
+            <MaxHitPoints>90</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.50</Nutrition>
+        </statBases>
+        <pathCost>14</pathCost>
+        <graphicData>
+            <texPath>Things/Plants/GlisteningGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilitySensitivity>0.7</fertilitySensitivity>
+            <growDays>3</growDays>
+            <harvestWork>60</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.7~1.00</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildClusterRadius>6</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Colossal Crystal One ====================-->
+
+    <ThingDef ParentName="PlantBaseNonEdible" Name="ColossalCrystal">
+        <defName>SZ_ColossalCrystalOne</defName>
+        <label>colossal crystal</label>
+        <description>A massive, living crystal. It dwarfs those who gaze upon its magnificence.</description>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <passability>Impassable</passability>
+        <selectable>true</selectable>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <neverMultiSelect>false</neverMultiSelect>
+        <rotatable>false</rotatable>
+        <blockLight>false</blockLight>
+        <tickerType>Long</tickerType>
+        <size>(1,1)</size>
+        <hideAtSnowDepth>1.0</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <statBases>
+            <MaxHitPoints>4500</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+            <BeautyOutdoors>2.50</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Buildings/Natural/ResouceProducers/Crystals/ColossalCrystalOne</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilitySensitivity>0.9</fertilitySensitivity>
+            <growDays>30</growDays>
+            <harvestWork>60</harvestWork>
+            <visualSizeRange>6.00~10.25</visualSizeRange>
+            <topWindExposure>0.0</topWindExposure>
+            <wildClusterRadius>12</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <comps>
+            <li Class="CompProperties_Spawner">
+                <thingToSpawn>WoodLog</thingToSpawn>
+                <spawnCount>4</spawnCount>
+                <spawnIntervalRange>2500~720000</spawnIntervalRange>
+                <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+                <showMessageIfOwned>true</showMessageIfOwned>
+            </li>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>11.0</overlightRadius>
+                <glowRadius>12.0</glowRadius>
+                <glowColor>(21, 177, 217, 0)</glowColor>
+                <startTime>0.65</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+            <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
+                <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
+                <graphicElements>
+                    <li>
+                        <!-- 1-pixel on a 512x512 canvas. -->
+                        <!-- For some reason the first array element here doesn't obey the code. -->
+                        <texPath>Things/Special/Overlays/Crystals/ColossalCrystalError/ColossalCrystalA</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPlant</shaderType>
+                        <drawOffset>(0, 0, 1.15)</drawOffset>
+                        <drawSize>2.00</drawSize>
+                    </li>
+                    <li> <!-- MIDDLE -->
+                        <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
+                        <graphicClass>Graphic_Random</graphicClass>
+                        <shaderType>TransparentPlant</shaderType>
+                        <drawOffset>(0, 0, 1.05)</drawOffset>
+                        <drawSize>2.00</drawSize>
+                    </li>
+                    <li> <!-- LEFT -->
+                        <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
+                        <graphicClass>Graphic_Random</graphicClass>
+                        <shaderType>TransparentPlant</shaderType>
+                        <drawOffset>(-1.15, 0, 1.05)</drawOffset>
+                        <drawSize>1.75</drawSize>
+                    </li>
+                    <li> <!-- RIGHT -->
+                        <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
+                        <graphicClass>Graphic_Random</graphicClass>
+                        <shaderType>TransparentPlant</shaderType>
+                        <drawOffset>(1.15, 0, 1.05)</drawOffset>
+                        <drawSize>1.75</drawSize>
+                    </li>
+                </graphicElements>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Colossal Crystal Two ====================-->
+    <!-- Needed because the parent graphics are different sizes, making the overlays line up differently on both. -->
+
+    <ThingDef ParentName="ColossalCrystal">
+        <defName>SZ_ColossalCrystalTwo</defName>
+        <label>colossal crystal</label>
+        <graphicData>
+            <texPath>Things/Buildings/Natural/ResouceProducers/Crystals/ColossalCrystalTwo</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+    </ThingDef>
+
+    <!--==================== Inferior Crystal ====================-->
+
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_InferiorCrystal</defName>
+        <label>inferior crystal</label>
+        <description>A much smaller crystal. While nowhere near the size of its colossal sibling, it will still produce products.</description>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <passability>Impassable</passability>
+        <selectable>true</selectable>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <neverMultiSelect>false</neverMultiSelect>
+        <rotatable>false</rotatable>
+        <blockLight>false</blockLight>
+        <tickerType>Long</tickerType>
+        <size>(1,1)</size>
+        <hideAtSnowDepth>1.0</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+            <BeautyOutdoors>1.75</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Buildings/Natural/ResouceProducers/Crystals/InferiorCrystal</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilitySensitivity>0.9</fertilitySensitivity>
+            <growDays>30</growDays>
+            <harvestWork>60</harvestWork>
+            <visualSizeRange>2.75~6.12</visualSizeRange>
+            <topWindExposure>0.0</topWindExposure>
+            <wildClusterRadius>5</wildClusterRadius>
+            <wildClusterWeight>11</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <comps>
+            <li Class="CompProperties_Spawner">
+                <thingToSpawn>WoodLog</thingToSpawn>
+                <spawnCount>2</spawnCount>
+                <spawnIntervalRange>720000~1440000</spawnIntervalRange>
+                <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+                <showMessageIfOwned>true</showMessageIfOwned>
+            </li>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>4.50</overlightRadius>
+                <glowRadius>5.10</glowRadius>
+                <glowColor>(21, 177, 217, 0)</glowColor>
+                <startTime>0.65</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

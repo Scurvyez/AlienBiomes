@@ -82,11 +82,12 @@
     <!-- Only spawns on soothing sand. -->
     <!-- Produces raw soothing honey. -->
     <!-- Harvestable only at night. -->
+    <!-- Glows at night. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_SoothingStalk</defName>
         <label>soothing stalk</label>
-        <description>A vibrant plant only found in the pink sands of radiant plains. They can be farmed for their sweet, pinkish honey.</description>
+        <description>A vibrant plant only found on the pink sands of radiant plains. They can be farmed for their sweet, pinkish honey. They seemingly spring to life at sundown.</description>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <Nutrition>0.25</Nutrition>
@@ -99,6 +100,7 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <tickerType>Long</tickerType>
         <fillPercent>0.20</fillPercent>
         <pathCost>30</pathCost>
         <plant>
@@ -143,11 +145,12 @@
 
     <!--==================== Copacetic Cone Plant ====================-->
     <!-- Only spawns on radiant soil and rich radiant soil. -->
+    <!-- Emits a hediff to sooth nearby pawns. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
         <label>copacetic cone</label>
-        <description>PLACEHOLDER</description> <!-- change this -->
+        <description>Curious-looking plants that resemble urb-world soft serve ice cream. They release an exquisite honey!</description>
         <statBases>
             <Nutrition>0.20</Nutrition>
             <MaxHitPoints>85</MaxHitPoints>
@@ -161,7 +164,7 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
-        <tickerType>Normal</tickerType> <!-- check this -->
+        <tickerType>Long</tickerType>
         <fillPercent>0.80</fillPercent>
         <pathCost>6</pathCost>
         <ingestible />
@@ -196,11 +199,11 @@
                 <velocityX>0.3~0.7</velocityX>
                 <velocityY>0.0~5.75</velocityY>
             </li>
-            <li Class="AlienBiomes.CompProperties_HediffEffecterWithRadius">
-                <releaseRadius>2</releaseRadius>
+            <li Class="AlienBiomes.CompProperties_HediffEffectorWithRadius">
+                <releaseRadius>3</releaseRadius>
                 <fleckReleased>PsycastAreaEffect</fleckReleased>
-                <appliedHediff>PsychicHangover</appliedHediff>
-                <tickInterval>240</tickInterval>
+                <appliedHediff MayRequire="Ludeon.RimWorld.Iedology">WorkDrive</appliedHediff>
+                <tickInterval>2500</tickInterval>
                 <radiusOutlineColor>(102, 255, 204)</radiusOutlineColor>
             </li>
         </comps>
@@ -215,6 +218,7 @@
 
     <!--==================== Elder Blushing Tree ====================-->
     <!-- This tree will produce a woody pulp which can then be manufactured into a "WoodLog" variant -->
+    <!-- Glows at night. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_ElderBlushingTree</defName>
@@ -236,6 +240,7 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <tickerType>Long</tickerType>
         <fillPercent>0.90</fillPercent>
         <plant>
             <fertilityMin>0.5</fertilityMin>

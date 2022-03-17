@@ -11,5 +11,9 @@ namespace AlienBiomes
         public static TerrainDef SZ_RadiantMud;
         public static TerrainDef SZ_RadiantStonySoil;
         public static TerrainDef SZ_SoothingSand;
+        public static TerrainDef SZ_CrystallineSoil;
+        public static TerrainDef SZ_CrystallineRichSoil;
+        public static TerrainDef SZ_CrystallineStonySoil;
+        public static TerrainDef SZ_CrystallineSand;
     }
 }

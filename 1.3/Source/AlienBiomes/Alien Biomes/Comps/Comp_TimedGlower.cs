@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using System;
 
 namespace AlienBiomes
 {
@@ -16,10 +17,26 @@ namespace AlienBiomes
         
         public override void CompTickLong()
         {
+            Random rand = new();
+            int randomness = rand.Next(120, 240);
             int currentTick = Find.TickManager.TicksGame;
-            if (currentTick - lastUpdateTick > 2500) //Once per hour only
+
+            if (currentTick - lastUpdateTick > 2500) // Once per hour only.
             {
-                lastUpdateTick = currentTick;
+                lastUpdateTick = currentTick + randomness;
+                UpdateLit(parent.Map);
+            }
+        }
+
+        public override void CompTick()
+        {
+            Random rand = new();
+            int randomness = rand.Next(640, 1280);
+            int currentTick = Find.TickManager.TicksGame;
+
+            if (currentTick - lastUpdateTick > 2500)
+            {
+                lastUpdateTick = currentTick + randomness;
                 UpdateLit(parent.Map);
             }
         }

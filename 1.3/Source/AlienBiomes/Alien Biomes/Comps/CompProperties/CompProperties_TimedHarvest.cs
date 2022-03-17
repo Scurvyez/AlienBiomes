@@ -9,7 +9,7 @@ namespace AlienBiomes
 
         public CompProperties_TimedHarvest()
         {
-            this.compClass = typeof(Comp_TimedHarvest);
+            compClass = typeof(Comp_TimedHarvest);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using Verse;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AlienBiomes
 {
@@ -9,16 +11,20 @@ namespace AlienBiomes
     {
         /// <summary>
         /// Checks to see if a biome has vanilla gravel.
-        /// If so, change all vanilla gravel to radiant soil.
+        /// If so, change the current maps gravel to something else.
         /// </summary>
         [HarmonyPostfix]
         public static void ReplaceTerrain(Map map, ref TerrainDef __result)
         {
-            if ((__result == TerrainDefOf.Gravel) && (map.Biome.defName == "SZ_RadiantPlains"))
             // Checks for any Gravel terrain def and whether the current map is of biome type "SZ_RadiantPlains".
+            if ((__result == TerrainDefOf.Gravel) && (map.Biome.defName == "SZ_RadiantPlains"))
             {
-                __result = TerrainDef.Named("SZ_RadiantSoil");
                 // If the above check is true, terrain def "SZ_RadiantSoil" is used instead of Gravel.
+                __result = TerrainDef.Named("SZ_RadiantSoil");
+            }
+            if ((__result == TerrainDefOf.Gravel) && (map.Biome.defName == "SZ_CrystallineFlats"))
+            {
+                __result = TerrainDef.Named("SZ_CrystallineStonySoil");
             }
         }
     }

@@ -9,7 +9,7 @@ namespace AlienBiomes
     {
         /// <summary>
         /// Checks to see if a biome has vanilla sand.
-        /// If so, change all vanilla sand to soothing sand.
+        /// If so, change the current maps sand to something else.
         /// </summary>
         [HarmonyPostfix]
         public static void ReplaceBeachTerrain(BiomeDef biome, ref TerrainDef __result)
@@ -19,6 +19,10 @@ namespace AlienBiomes
             {
                 __result = TerrainDef.Named("SZ_SoothingSand");
                 // If the above check is true, terrain def "SZ_SoothingSand" is used instead of Gravel.
+            }
+            if ((__result == TerrainDefOf.Sand) && (biome.defName == "SZ_CrystallineFlats"))
+            {
+                __result = TerrainDef.Named("SZ_CrystallineSand");
             }
         }
     }

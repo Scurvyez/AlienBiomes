@@ -4,17 +4,9 @@
     <!--==================== Radiant Plains ====================-->
 
     <!-- Belt around middle of planet. -->
-    <!-- Temperate, sprawling with life. -->
+    <!-- Temperate, sprawling with life and resources. -->
 
-    <!-- Add 4 more plants. -->
-    <!-- Add some ambient FleckDefs for the plants (check performance). -->
     <!-- Add new filth types for the soils and sand. -->
-    <!-- Add ambient sounds for when a pawn walks through certain plants? -->
-
-    <!-- Grass that grows seeds in naturally-produced high-pressure methane capsules that are
-        triggered by proximity and fires seeds into the skin and flesh of nearby animals. 
-        They draw nutrients from the bloodstream and then eventually kill their host,
-        bursting from their bodies to continue their lifecycle. -->
 
     <BiomeDef>
         <defName>SZ_RadiantPlains</defName>

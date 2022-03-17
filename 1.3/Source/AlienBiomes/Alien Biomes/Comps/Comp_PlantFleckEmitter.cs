@@ -18,7 +18,7 @@ namespace AlienBiomes
         public List<Pawn> pawnsTouchingPlants = new();
         // A list of all pawns on the map when touching plants.
 
-        public override void CompTick()
+        public override void CompTickLong()
         {
             List<Thing> pawnList = parent.Position.GetThingList(parent.Map);
             // List of parent position(s).
