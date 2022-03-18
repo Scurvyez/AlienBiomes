@@ -186,7 +186,6 @@
         <plant>
             <fertilitySensitivity>0.9</fertilitySensitivity>
             <growDays>30</growDays>
-            <harvestWork>60</harvestWork>
             <visualSizeRange>2.25~10.25</visualSizeRange>
             <topWindExposure>0.0</topWindExposure>
             <wildClusterRadius>12</wildClusterRadius>
@@ -195,8 +194,8 @@
         </plant>
         <comps>
             <li Class="CompProperties_Spawner">
-                <thingToSpawn>WoodLog</thingToSpawn>
-                <spawnCount>4</spawnCount>
+                <thingToSpawn>SZ_BlueCrystalFragment</thingToSpawn>
+                <spawnCount>3</spawnCount>
                 <spawnIntervalRange>2500~720000</spawnIntervalRange>
                 <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
                 <showMessageIfOwned>true</showMessageIfOwned>
@@ -218,7 +217,7 @@
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlant</shaderType>
                         <drawOffset>(0, 0, 1.15)</drawOffset>
-                        <drawSize>2.00</drawSize>
+                        <drawSize>0.05</drawSize>
                     </li>
                     <li> <!-- MIDDLE -->
                         <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
@@ -296,8 +295,7 @@
         </graphicData>
         <plant>
             <fertilitySensitivity>0.9</fertilitySensitivity>
-            <growDays>30</growDays>
-            <harvestWork>60</harvestWork>
+            <growDays>10</growDays>
             <visualSizeRange>2.75~6.12</visualSizeRange>
             <topWindExposure>0.0</topWindExposure>
             <wildClusterRadius>5</wildClusterRadius>
@@ -306,8 +304,8 @@
         </plant>
         <comps>
             <li Class="CompProperties_Spawner">
-                <thingToSpawn>WoodLog</thingToSpawn>
-                <spawnCount>2</spawnCount>
+                <thingToSpawn>SZ_BlueCrystalFragment</thingToSpawn>
+                <spawnCount>1</spawnCount>
                 <spawnIntervalRange>720000~1440000</spawnIntervalRange>
                 <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
                 <showMessageIfOwned>true</showMessageIfOwned>

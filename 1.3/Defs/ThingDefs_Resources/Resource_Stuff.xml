@@ -109,4 +109,64 @@
         <allowedArchonexusCount>150</allowedArchonexusCount>
     </ThingDef>
 
+    <!--==================== Blue Crystal Fragments ====================-->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_BlueCrystalFragment</defName>
+        <label>blue crystal fragments</label>
+        <description>These small crystal fragments are valued by many and sell for a decent amount in markets.</description>
+        <graphicData>
+            <texPath>Things/Items/Resources/BlueCrystalFragments</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+        <statBases>
+            <MarketValue>3.25</MarketValue>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>0.15</Mass>
+            <Flammability>0.0</Flammability>
+            <DeteriorationRate>0.0</DeteriorationRate>
+        </statBases>
+        <burnableByRecipe>false</burnableByRecipe>
+        <healthAffectsPrice>true</healthAffectsPrice>
+        <minRewardCount>10</minRewardCount>
+        <stuffProps>
+            <commonality>1.00</commonality>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+        <thingCategories>
+            <li>ResourcesRaw</li>
+        </thingCategories>
+    </ThingDef>
+
+    <!--==================== Green Crystal Fragments ====================-->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_GreenCrystalFragment</defName>
+        <label>green crystal fragments</label>
+        <description>These small crystal fragments are valued by many and sell for a decent amount in markets.</description>
+        <graphicData>
+            <texPath>Things/Items/Resources/GreenCrystalFragments</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+        <statBases>
+            <MarketValue>3.25</MarketValue>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>0.15</Mass>
+            <Flammability>0.0</Flammability>
+            <DeteriorationRate>0.0</DeteriorationRate>
+        </statBases>
+        <burnableByRecipe>false</burnableByRecipe>
+        <healthAffectsPrice>true</healthAffectsPrice>
+        <minRewardCount>10</minRewardCount>
+        <stuffProps>
+            <commonality>1.00</commonality>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+        <thingCategories>
+            <li>ResourcesRaw</li>
+        </thingCategories>
+    </ThingDef>
+
 </Defs>

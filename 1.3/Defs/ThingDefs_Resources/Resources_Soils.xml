@@ -14,7 +14,7 @@
             <Mass>0.60</Mass>
         </statBases>
         <thingCategories>
-            <li>Soils</li>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
         </thingCategories>
         <stackLimit>75</stackLimit>
     </ThingDef>
@@ -32,7 +32,7 @@
             <Mass>0.60</Mass>
         </statBases>
         <thingCategories>
-            <li>Soils</li>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
         </thingCategories>
         <stackLimit>75</stackLimit>
     </ThingDef>
@@ -50,7 +50,7 @@
             <Mass>0.75</Mass>
         </statBases>
         <thingCategories>
-            <li>Soils</li>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
         </thingCategories>
         <stackLimit>75</stackLimit>
     </ThingDef>
@@ -68,7 +68,7 @@
             <Mass>0.50</Mass>
         </statBases>
         <thingCategories>
-            <li>Soils</li>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
         </thingCategories>
         <stackLimit>75</stackLimit>
     </ThingDef>
