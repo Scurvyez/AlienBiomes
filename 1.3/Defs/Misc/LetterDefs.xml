@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Pawn Crystallizing ====================-->
+
+    <LetterDef Name="PawnCrystallizing">
+        <defName>SZ_PawnCrystallizing</defName>
+        <color>(253, 1, 33)</color>
+        <flashColor>(253, 1, 33)</flashColor>
+        <flashInterval>3</flashInterval>
+        <bounce>true</bounce>
+        <arriveSound>LetterArrive_BadUrgentSmall</arriveSound>
+        <pauseMode>AnyThreat</pauseMode>
+    </LetterDef>
+
+    <!--==================== Pawn Crystallizing ====================-->
+
+    <LetterDef Name="PawnCrystallized">
+        <defName>SZ_PawnCrystallized</defName>
+        <color>(253, 1, 33)</color>
+        <flashColor>(253, 1, 33)</flashColor>
+        <flashInterval>3</flashInterval>
+        <bounce>false</bounce>
+        <arriveSound>LetterArrive_BadUrgent</arriveSound>
+        <pauseMode>AnyThreat</pauseMode>
+    </LetterDef>
+
+</Defs>

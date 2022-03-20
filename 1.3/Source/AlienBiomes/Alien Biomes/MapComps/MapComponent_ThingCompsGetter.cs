@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace AlienBiomes
 {
-    public class MapThingCompsGetter : MapComponent
+    public class MapComponent_ThingCompsGetter : MapComponent
     {
         //public Color FieldEdgesColor = CompProperties_HediffEffecterWithRadius.radiusOutlineColor;
         public HashSet<Comp_HediffEffectorWithRadius> ActiveThingComps = new();
         public List<IntVec3> Cells = new();
         public bool DoDrawing;
         public Color FieldEdgesColor;
-
-        public MapThingCompsGetter(Map map) : base(map) {
-
+        
+        public MapComponent_ThingCompsGetter(Map map) : base(map) {
+            
         }
 
         public override void FinalizeInit() {

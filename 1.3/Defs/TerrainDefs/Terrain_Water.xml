@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <TerrainDef ParentName="WaterShallowBase">
+        <defName>SZ_BloodWaterMovingShallow</defName>
+        <label>shallow moving water</label>
+        <texturePath>Terrain/Surfaces/BloodWaterShallowRamp</texturePath>
+        <waterDepthShader>Map/WaterDepth</waterDepthShader>
+        <renderPrecedence>398</renderPrecedence>
+        <affordances>
+            <li>MovingFluid</li>
+        </affordances>
+        <tags>
+            <li>River</li>
+        </tags>
+        <waterDepthShaderParameters>
+            <_UseWaterOffset>1</_UseWaterOffset>
+        </waterDepthShaderParameters>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WaterChestDeepBase">
+        <defName>SZ_BloodWaterMovingChestDeep</defName>
+        <label>chest-deep moving water</label>
+        <texturePath>Terrain/Surfaces/BloodWaterChestDeepRamp</texturePath>
+        <renderPrecedence>399</renderPrecedence>
+        <affordances>
+          <li>MovingFluid</li>
+        </affordances>
+        <tags>
+          <li>River</li>
+        </tags>
+        <waterDepthShaderParameters>
+          <_UseWaterOffset>1</_UseWaterOffset>
+        </waterDepthShaderParameters>
+    </TerrainDef>
+
+</Defs>

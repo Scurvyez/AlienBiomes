@@ -58,27 +58,29 @@
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="Comps\Comp_GraphicsOverlay.cs" />
-    <Compile Include="Comps\CompProperties\CompProperties_GraphicsOverlay.cs" />
-    <Compile Include="Comps\CompProperties\CompProperties_HediffEffecterWithRadius.cs" />
+    <Compile Include="Comps\CompProps\CompProperties_GraphicsOverlay.cs" />
+    <Compile Include="Comps\CompProps\CompProperties_HediffEffecterWithRadius.cs" />
     <Compile Include="Comps\Comp_HediffEffecterWithRadius.cs" />
-    <Compile Include="Comps\CompProperties\CompProperties_PlantFleckEmitter.cs" />
+    <Compile Include="Comps\CompProps\CompProperties_PlantFleckEmitter.cs" />
     <Compile Include="Comps\Comp_PlantFleckEmitter.cs" />
-    <Compile Include="Comps\CompProperties\CompProperties_TimedHarvest.cs" />
+    <Compile Include="Comps\CompProps\CompProperties_TimedHarvest.cs" />
     <Compile Include="Comps\Comp_TimedHarvest.cs" />
     <Compile Include="Comps\Comp_TimedGlower.cs" />
-    <Compile Include="Comps\CompProperties\CompProperties_TimedGlower.cs" />
-    <Compile Include="DefModExtensions\Geyser_GraphicPerTerrain.cs" />
+    <Compile Include="Comps\CompProps\CompProperties_TimedGlower.cs" />
     <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_ThingDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_BiomeDefOf.cs" />
+    <Compile Include="DefOfs\AlienBiomes_HediffDefOf.cs" />
+    <Compile Include="DefOfs\AlienBiomes_LetterDefOf.cs" />
     <Compile Include="Harmony\AllowsPlacing_Patch.cs" />
     <Compile Include="Harmony\CompGlower_Patch.cs" />
     <Compile Include="Harmony\TerrainFrom_Patch.cs" />
     <Compile Include="Harmony\BeachTerrainAt_Patch.cs" />
-    <Compile Include="Harmony\SteamGeyserSpawnSetup_Patch.cs" />
     <Compile Include="Harmony\HarvestableNow_Patch.cs" />
     <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
-    <Compile Include="MapComps\MapThingCompsGetter.cs" />
+    <Compile Include="HediffComps\HediffCompProps\HediffCompProps_Crystallize.cs" />
+    <Compile Include="HediffComps\HediffComp_Crystallize.cs" />
+    <Compile Include="MapComps\MapComponent_ThingCompsGetter.cs" />
     <Compile Include="Things\Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

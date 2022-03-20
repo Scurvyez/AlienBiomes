@@ -26,6 +26,14 @@ namespace AlienBiomes
             {
                 __result = TerrainDef.Named("SZ_CrystallineStonySoil");
             }
+            /*if ((__result == TerrainDefOf.WaterMovingShallow) && (map.Biome.defName == "SZ_CrystallineFlats"))
+            {
+                __result = TerrainDef.Named("SZ_BloodWaterMovingShallow");
+            }
+            if ((__result == TerrainDefOf.WaterMovingChestDeep) && (map.Biome.defName == "SZ_CrystallineFlats"))
+            {
+                __result = TerrainDef.Named("SZ_BloodWaterMovingChestDeep");
+            }*/
         }
     }
 }

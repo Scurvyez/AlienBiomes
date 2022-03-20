@@ -8,14 +8,10 @@ namespace AlienBiomes
     {
         public new CompProperties_GraphicsOverlay Props => (CompProperties_GraphicsOverlay)props;
         public Plant Plant = new();
-        //public IntVec3 crystal1Offset;
-        //public IntVec3 crystal2Offset;
-        //public IntVec3 crystal3Offset;
-        //public IntVec3 crystal4Offset;
         
         /// <summary>
         /// Renders additional graphics on a parent thing.
-        /// drawerType = RealTime || MapMeshAndRealTime.
+        /// drawerType = RealtimeOnly || MapMeshAndRealTime.
         /// </summary>
         public override void PostDraw()
         {
@@ -35,7 +31,7 @@ namespace AlienBiomes
                     // Extra step for crystals only.
                     if (parent.def.plant.visualSizeRange.max == maxGrowth)
                     {
-                        if (parent.def.defName == "SZ_ColossalCrystalOne")
+                        if (parent.def.defName == "SZ_BlueColossalCrystalOne" || parent.def.defName == "SZ_GreenColossalCrystalOne")
                         {
                             float z2 = 0.83f;
 
@@ -43,14 +39,9 @@ namespace AlienBiomes
                             props.graphicElements[1].drawOffset.z = (vSR * z2) + 0.75f;
                             props.graphicElements[2].drawOffset.z = vSR * z2;
                             props.graphicElements[3].drawOffset.z = vSR * z2;
-
-                            //crystal1Offset = props.graphicElements[0].drawOffset.ToIntVec3();
-                            //crystal2Offset = props.graphicElements[1].drawOffset.ToIntVec3();
-                            //crystal3Offset = props.graphicElements[2].drawOffset.ToIntVec3();
-                            //crystal4Offset = props.graphicElements[3].drawOffset.ToIntVec3();
                         }
 
-                        if (parent.def.defName == "SZ_ColossalCrystalTwo")
+                        if (parent.def.defName == "SZ_BlueColossalCrystalTwo" || parent.def.defName == "SZ_GreenColossalCrystalTwo")
                         {
                             float z2 = 0.67f;
 
@@ -63,10 +54,5 @@ namespace AlienBiomes
                 }
             }
         }
-
-        /*public override string CompInspectStringExtra()
-        {
-            return crystal1Offset + "\n" + crystal2Offset + "\n" + crystal3Offset + "\n" + crystal4Offset;
-        }*/
     }
 }

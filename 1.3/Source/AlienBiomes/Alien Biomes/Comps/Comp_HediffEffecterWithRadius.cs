@@ -27,7 +27,7 @@ namespace AlienBiomes
             SoundDef soundDefUsed = Props.soundOnRelease;
 
             TickCounter++;
-            if (TickCounter > Props.tickInterval)
+            if (TickCounter < Props.tickInterval)
             {
                 // If parent & map exist...
                 if (parent != null && parent.Map != null)
@@ -40,11 +40,19 @@ namespace AlienBiomes
                         {
                             if (Props.appliedHediff != null)
                             {
+                                //Log.Message("<color=cyan>Crystallizing </color>"+ pawn.Name);
                                 FleckMaker.AttachedOverlay(parent, Props.fleckReleased, Vector3.zero, 1f, -1f);
-                                // 0.01f below means the applied hediff starts at 1% severity.
-                                HealthUtility.AdjustSeverity(pawn, Props.appliedHediff, 0.01f);
 
-                                // Null check the SoundDef. Otherwise, error!
+                                if (!pawn.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
+                                {
+                                    Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), AlienBiomes_LetterDefOf.SZ_PawnCrystallizing, null, null, null);
+                                    Find.TickManager.slower.SignalForceNormalSpeedShort();
+                                }
+
+                                // Adds the target hediff.
+                                pawn.health.AddHediff(Props.appliedHediff);
+
+                                // Null check the SoundDef. Otherwise... Behold, error.
                                 if (Props.soundOnRelease != null) {
                                     soundDefUsed.PlayOneShot(new TargetInfo(parent.Position, parent.Map));
                                 }
@@ -60,7 +68,7 @@ namespace AlienBiomes
         {
             if (parent.Map != null)
             {
-                MapThingCompsGetter mapComp = parent.Map.GetComponent<MapThingCompsGetter>();
+                MapComponent_ThingCompsGetter mapComp = parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
                 if (mapComp != null)
                 {
                     mapComp.AddCompInstancesToMap(this);
@@ -72,7 +80,7 @@ namespace AlienBiomes
         {
             if (parent.Map != null)
             {
-                MapThingCompsGetter mapComp = parent.Map.GetComponent<MapThingCompsGetter>();
+                MapComponent_ThingCompsGetter mapComp = parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
                 if (mapComp != null)
                 {
                     mapComp.RemoveCompInstancesFromMap(this);
@@ -89,8 +97,8 @@ namespace AlienBiomes
             // Also uses the color defined in Props to populate one in a MapComp.
             if (!parent.def.drawPlaceWorkersWhileSelected)
             {
-                parent.Map.GetComponent<MapThingCompsGetter>().DoDrawing = true;
-                parent.Map.GetComponent<MapThingCompsGetter>().FieldEdgesColor = Props.radiusOutlineColor;
+                parent.Map.GetComponent<MapComponent_ThingCompsGetter>().DoDrawing = true;
+                parent.Map.GetComponent<MapComponent_ThingCompsGetter>().FieldEdgesColor = Props.radiusOutlineColor;
             }
         }
     }

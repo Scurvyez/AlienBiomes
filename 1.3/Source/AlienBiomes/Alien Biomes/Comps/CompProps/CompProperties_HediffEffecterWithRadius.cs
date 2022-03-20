@@ -11,7 +11,7 @@ namespace AlienBiomes
         public HediffDef appliedHediff = null;
         public ThoughtDef appliedThought = null;
         public SoundDef soundOnRelease;
-        public int tickInterval = 2500; // 2500 = a check every in-game hour.
+        public int ?tickInterval = 2500; // 2500 = a check every in-game hour.
         public Color radiusOutlineColor; // (r, g, b, a)
         public bool onlyAffectHumanlike = true;
 

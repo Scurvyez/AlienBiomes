@@ -7,5 +7,6 @@ namespace AlienBiomes
     public class AlienBiomes_BiomeDefOf
     {
         public static BiomeDef SZ_RadiantPlains;
+        public static BiomeDef SZ_CrystallineFlats;
     }
 }

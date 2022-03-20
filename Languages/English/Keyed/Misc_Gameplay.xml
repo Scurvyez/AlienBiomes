@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <SZ_LetterLabelCrystallizing>Colonist crystallizing</SZ_LetterLabelCrystallizing>
+    <SZ_LetterCrystallizing>{0} has been exposed to an aggressive form of living cyrstal parasites. These microscopic glass-like invaders will begin attacking {0_possessive} capillaries and immune system. Early treatment is essential here! Once {0_possessive} body has been weakened enough the parasites will spread to more vital regions of the body as they feed on {0_possessive} soul. Upon full synthesis with the host body and once all nutrients have been depleted, {0} will be obliterated and a magnificent red crystal will arise from the pooling blood.</SZ_LetterCrystallizing>
+
+    <SZ_LetterLabelCrystallized>Colonist crystallized</SZ_LetterLabelCrystallized>
+    <SZ_LetterCrystallized>{0} has perished as a result of microscopic parasites released from a colossal crystal. Colonists will mourn {0_possessive} death and they will forever be remembered in crimson fervor.</SZ_LetterCrystallized>
+
+</LanguageData>
