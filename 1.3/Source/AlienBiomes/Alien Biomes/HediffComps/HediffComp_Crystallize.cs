@@ -17,22 +17,6 @@ namespace AlienBiomes
         {
             base.CompPostMake();
         }
-        
-        /// <summary>
-        /// Checks for a hediff, if found the pawn is killed and a letter is generated.
-        /// </summary>
-        public override void CompPostTick(ref float severityAdjustment)
-        {
-            base.CompPostTick(ref severityAdjustment);
-            var instance = parent.pawn.health.hediffSet.GetFirstHediffOfDef(AlienBiomes_HediffDefOf.SZ_Crystallize, true);
-            if (instance != null && instance.Severity >= instance.def.lethalSeverity)
-            {
-                CrystalDeath = true;
-                parent.pawn.Kill(null);
-                Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(), "SZ_LetterCrystallized".Translate(parent.pawn), AlienBiomes_LetterDefOf.SZ_PawnCrystallized, null, null, null);
-                Find.TickManager.slower.SignalForceNormalSpeedShort();
-            }
-        }
 
         /// <summary>
         /// Generates a new ThingDef where a pawn died.
@@ -44,6 +28,7 @@ namespace AlienBiomes
 
             if (map != null)
             {
+                CrystalDeath = true;
                 if (CrystalDeath)
                 {
                     if (map.Biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats)
@@ -57,6 +42,8 @@ namespace AlienBiomes
                                 map.terrainGrid.SetTerrain(map.cellIndices.IndexToCell(i), AlienBiomes_TerrainDefOf.SZ_BloodWaterMovingChestDeep);
                         }
                     }
+                    Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(), "SZ_LetterCrystallized".Translate(parent.pawn), AlienBiomes_LetterDefOf.SZ_PawnCrystallized, null, null, null);
+                    Find.TickManager.slower.SignalForceNormalSpeedShort();
 
                     GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal), pos, map, WipeMode.Vanish);
                     FilthMaker.TryMakeFilth(parent.pawn.Position, parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);

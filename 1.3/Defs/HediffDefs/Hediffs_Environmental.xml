@@ -6,7 +6,7 @@
 		<label>crystallizing</label>
 		<description>A colossal crystal released some of its life-threatening toxins into the surrounding air. If the toxins are not fought with medicine the pawn will succumb to the deadly toxin and ultimately be consumed in a violent and transformative death.</description>
 		<initialSeverity>0.01</initialSeverity>
-		<lethalSeverity>0.95</lethalSeverity>
+		<lethalSeverity>1.00</lethalSeverity>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<tendable>true</tendable>
 		<isBad>true</isBad>
@@ -16,10 +16,10 @@
 				<severityPerDayTended>-0.525</severityPerDayTended>
 			</li>
             <li Class="HediffCompProperties_Immunizable">
-				<severityPerDayNotImmune>0.725</severityPerDayNotImmune>
+				<severityPerDayNotImmune>0.625</severityPerDayNotImmune>
 				<immunityPerDaySick>0.325</immunityPerDaySick>
-				<severityPerDayImmune>-0.725</severityPerDayImmune>
-				<immunityPerDayNotSick>-0.325</immunityPerDayNotSick>
+				<severityPerDayImmune>-0.825</severityPerDayImmune>
+				<immunityPerDayNotSick>-0.425</immunityPerDayNotSick>
 			</li>
 			<li Class="AlienBiomes.HediffCompProperties_Crystallize">
 				<targetCrystal>SZ_RedColossalCrystal</targetCrystal>
@@ -27,19 +27,13 @@
 		</comps>
 		<stages>
 			<li>
-                <minSeverity>0.125</minSeverity>
-				<label>minor</label>
-				<painOffset>0.06</painOffset>
-			</li>
-			<li>
 				<minSeverity>0.33</minSeverity>
-				<label>major</label>
+				<label>minor pain</label>
 				<painOffset>0.09</painOffset>
 			</li>
 			<li>
 				<minSeverity>0.69</minSeverity>
-				<label>extreme</label>
-				<lifeThreatening>true</lifeThreatening>
+				<label>moderate pain</label>
 				<painOffset>0.12</painOffset>
 				<capMods>
 					<li>
@@ -50,9 +44,36 @@
 			</li>
 			<li>
 				<minSeverity>0.87</minSeverity>
-				<label>extreme</label>
-				<lifeThreatening>true</lifeThreatening>
+				<label>intense pain</label>
 				<painOffset>0.85</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.35</setMax>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>ChemicalDamageSevere</hediff>
+						<mtbDays>1.50</mtbDays>
+						<partsToAffect>
+							<li>Brain</li>
+							<li>Liver</li>
+							<li>Kidney</li>
+							<li>Heart</li>
+						</partsToAffect>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<lifeThreatening>true</lifeThreatening>
+				<minSeverity>0.95</minSeverity>
+				<label>excrutiating pain</label>
+				<painOffset>0.95</painOffset>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -60,7 +81,7 @@
 					</li>
 					<li>
 						<capacity>Breathing</capacity>
-						<offset>-0.05</offset>
+						<offset>-0.15</offset>
 					</li>
 				</capMods>
 			</li>
