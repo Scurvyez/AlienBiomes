@@ -37,8 +37,6 @@ namespace AlienBiomes
 
                             props.graphicElements[0].drawOffset.z = vSR * z2;
                             props.graphicElements[1].drawOffset.z = (vSR * z2) + 0.75f;
-                            props.graphicElements[2].drawOffset.z = vSR * z2;
-                            props.graphicElements[3].drawOffset.z = vSR * z2;
                         }
 
                         if (parent.def.defName == "SZ_BlueColossalCrystalTwo" || parent.def.defName == "SZ_GreenColossalCrystalTwo")
@@ -47,8 +45,6 @@ namespace AlienBiomes
 
                             props.graphicElements[0].drawOffset.z = vSR * z2;
                             props.graphicElements[1].drawOffset.z = (vSR * z2) + 0.20f;
-                            props.graphicElements[2].drawOffset.z = vSR * z2;
-                            props.graphicElements[3].drawOffset.z = vSR * z2;
                         }
                     }
                 }

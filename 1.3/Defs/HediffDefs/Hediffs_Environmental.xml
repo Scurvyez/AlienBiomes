@@ -59,7 +59,7 @@
 				<hediffGivers>
 					<li Class="HediffGiver_Random">
 						<hediff>ChemicalDamageSevere</hediff>
-						<mtbDays>1.50</mtbDays>
+						<mtbDays>0.25</mtbDays>
 						<partsToAffect>
 							<li>Brain</li>
 							<li>Liver</li>

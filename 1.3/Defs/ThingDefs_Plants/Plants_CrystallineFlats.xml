@@ -185,9 +185,13 @@
         </graphicData>
         <plant>
             <harvestedThingDef>SZ_BlueCrystalFragment</harvestedThingDef>
+            <blockAdjacentSow>true</blockAdjacentSow>
             <harvestYield>3</harvestYield>
+            <fertilityMin>0.2</fertilityMin>
             <fertilitySensitivity>0.9</fertilitySensitivity>
             <growDays>30</growDays>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.35</harvestAfterGrowth>
             <visualSizeRange>2.25~10.25</visualSizeRange>
             <topWindExposure>0.0</topWindExposure>
             <wildClusterRadius>12</wildClusterRadius>
@@ -226,21 +230,7 @@
                         <graphicClass>Graphic_Random</graphicClass>
                         <shaderType>TransparentPlant</shaderType>
                         <drawOffset>(0, 0, 1.15)</drawOffset>
-                        <drawSize>2.00</drawSize>
-                    </li>
-                    <li> <!-- LEFT -->
-                        <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
-                        <graphicClass>Graphic_Random</graphicClass>
-                        <shaderType>TransparentPlant</shaderType>
-                        <drawOffset>(-1.15, 0, 1.05)</drawOffset>
-                        <drawSize>1.75</drawSize>
-                    </li>
-                    <li> <!-- RIGHT -->
-                        <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
-                        <graphicClass>Graphic_Random</graphicClass>
-                        <shaderType>TransparentPlant</shaderType>
-                        <drawOffset>(1.15, 0, 1.05)</drawOffset>
-                        <drawSize>1.75</drawSize>
+                        <drawSize>1.50</drawSize>
                     </li>
                 </graphicElements>
             </li>
