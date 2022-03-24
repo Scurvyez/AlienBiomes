@@ -59,8 +59,8 @@
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="Comps\Comp_GraphicsOverlay.cs" />
     <Compile Include="Comps\CompProps\CompProperties_GraphicsOverlay.cs" />
-    <Compile Include="Comps\CompProps\CompProperties_HediffEffecterWithRadius.cs" />
-    <Compile Include="Comps\Comp_HediffEffecterWithRadius.cs" />
+    <Compile Include="Comps\CompProps\CompProperties_EffecterWithRadius.cs" />
+    <Compile Include="Comps\Comp_EffecterWithRadius.cs" />
     <Compile Include="Comps\CompProps\CompProperties_PlantFleckEmitter.cs" />
     <Compile Include="Comps\Comp_PlantFleckEmitter.cs" />
     <Compile Include="Comps\CompProps\CompProperties_TimedHarvest.cs" />

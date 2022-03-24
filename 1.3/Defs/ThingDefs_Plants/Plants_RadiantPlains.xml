@@ -199,7 +199,7 @@
                 <velocityX>0.3~0.7</velocityX>
                 <velocityY>0.0~5.75</velocityY>
             </li>
-            <li Class="AlienBiomes.CompProperties_HediffEffectorWithRadius">
+            <li Class="AlienBiomes.CompProperties_EffectorWithRadius">
                 <releaseRadius>3</releaseRadius>
                 <fleckReleased>PsycastAreaEffect</fleckReleased>
                 <appliedHediff MayRequire="Ludeon.RimWorld.Iedology">WorkDrive</appliedHediff>

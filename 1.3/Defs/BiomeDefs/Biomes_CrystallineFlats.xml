@@ -91,6 +91,7 @@
             <SZ_ShimmeringTallGrass>12.0</SZ_ShimmeringTallGrass>
             <SZ_GlisteningGrass>5.50</SZ_GlisteningGrass>
             <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
+            <SZ_OpulentOrchid>0.02</SZ_OpulentOrchid>
         </wildPlants>
         <wildAnimals> <!-- CHANGE -->
             <Donkey>0.20</Donkey>

@@ -161,6 +161,9 @@
         <defName>SZ_BlueColossalCrystalOne</defName>
         <label>blue colossal crystal</label>
         <description>A massive, living crystal. It dwarfs those who gaze upon its magnificence.</description>
+        <descriptionHyperlinks>
+            <HediffDef>SZ_Crystallize</HediffDef>
+        </descriptionHyperlinks>
         <drawerType>MapMeshAndRealTime</drawerType>
         <passability>Impassable</passability>
         <selectable>true</selectable>
@@ -206,7 +209,7 @@
                 <startTime>0.75</startTime>
                 <stopTime>0.20</stopTime>
             </li>
-            <li Class="AlienBiomes.CompProperties_HediffEffectorWithRadius">
+            <li Class="AlienBiomes.CompProperties_EffectorWithRadius">
                 <releaseRadius>3</releaseRadius>
                 <fleckReleased>PsycastAreaEffect</fleckReleased>
                 <appliedHediff>SZ_Crystallize</appliedHediff>
@@ -383,6 +386,46 @@
                 </terrainTags>
             </li>
         </modExtensions>
+    </ThingDef>
+
+    <!--==================== Opulent Orchid ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_OpulentOrchid</defName>
+        <label>opulent orchid</label>
+        <description>PLACEHOLDER</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <pathCost>14</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>135</MaxHitPoints>
+            <Nutrition>1.50</Nutrition>
+            <BeautyOutdoors>1.75</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/OpulentOrchid</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilitySensitivity>0.15</fertilitySensitivity>
+            <growDays>15</growDays>
+            <leaflessGraphicPath>Things/Plants/OpulentOrchid_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/OpulentOrchid_Immature</immatureGraphicPath>
+            <harvestYield>4</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.4</harvestAfterGrowth>
+            <harvestedThingDef>Ambrosia</harvestedThingDef>
+            <visualSizeRange>0.5~3.85</visualSizeRange>
+            <topWindExposure>0.25</topWindExposure>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+            <allowAutoCut>false</allowAutoCut>
+        </plant>
     </ThingDef>
 
 </Defs>

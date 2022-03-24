@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace AlienBiomes
 {
-    public class Comp_HediffEffectorWithRadius : ThingComp
+    public class Comp_EffectorWithRadius : ThingComp
     {
-        public CompProperties_HediffEffectorWithRadius Props
+        public CompProperties_EffectorWithRadius Props
         {
             get
             {
-                return (CompProperties_HediffEffectorWithRadius)props;
+                return (CompProperties_EffectorWithRadius)props;
             }
         }
         
@@ -43,7 +43,7 @@ namespace AlienBiomes
                                 //Log.Message("<color=cyan>Crystallizing </color>"+ pawn.Name);
                                 FleckMaker.AttachedOverlay(parent, Props.fleckReleased, Vector3.zero, 1f, -1f);
 
-                                if (!pawn.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
+                                if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize && !pawn.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
                                 {
                                     Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), AlienBiomes_LetterDefOf.SZ_PawnCrystallizing, null, null, null);
                                     Find.TickManager.slower.SignalForceNormalSpeedShort();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AlienBiomes
 {
-    public class CompProperties_HediffEffectorWithRadius : CompProperties
+    public class CompProperties_EffectorWithRadius : CompProperties
     {
         public FleckDef fleckReleased;
         public int releaseRadius;
@@ -15,7 +15,7 @@ namespace AlienBiomes
         public Color radiusOutlineColor; // (r, g, b, a)
         public bool onlyAffectHumanlike = true;
 
-        public CompProperties_HediffEffectorWithRadius() => compClass = typeof(Comp_HediffEffectorWithRadius);
+        public CompProperties_EffectorWithRadius() => compClass = typeof(Comp_EffectorWithRadius);
 
     }
 }

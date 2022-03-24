@@ -8,7 +8,7 @@ namespace AlienBiomes
     public class MapComponent_ThingCompsGetter : MapComponent
     {
         //public Color FieldEdgesColor = CompProperties_HediffEffecterWithRadius.radiusOutlineColor;
-        public HashSet<Comp_HediffEffectorWithRadius> ActiveThingComps = new();
+        public HashSet<Comp_EffectorWithRadius> ActiveThingComps = new();
         public List<IntVec3> Cells = new();
         public bool DoDrawing;
         public Color FieldEdgesColor;
@@ -24,7 +24,7 @@ namespace AlienBiomes
         /// <summary>
         /// Adds instances of the specified comp to a collection.
         /// </summary>
-        public void AddCompInstancesToMap(Comp_HediffEffectorWithRadius tC)
+        public void AddCompInstancesToMap(Comp_EffectorWithRadius tC)
         {
             if (!ActiveThingComps.Contains(tC))
             {
@@ -38,7 +38,7 @@ namespace AlienBiomes
         /// <summary>
         /// Removes instances of the specified comp from a collection.
         /// </summary>
-        public void RemoveCompInstancesFromMap(Comp_HediffEffectorWithRadius tC)
+        public void RemoveCompInstancesFromMap(Comp_EffectorWithRadius tC)
         {
             if (ActiveThingComps.Contains(tC))
             {
