@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+    <!--==================== Letters ====================-->
+
     <SZ_LetterLabelCrystallizing>Colonist crystallizing</SZ_LetterLabelCrystallizing>
     <SZ_LetterCrystallizing>{0} has been exposed to an aggressive form of living cyrstal parasites. These microscopic glass-like invaders will begin attacking {0_possessive} capillaries and immune system. Early treatment is essential here! Once {0_possessive} body has been weakened enough the parasites will spread to more vital regions of the body as they feed on {0_possessive} soul. Upon full synthesis with the host body and once all nutrients have been depleted, {0} will be obliterated and a magnificent red crystal will arise from the pooling blood.</SZ_LetterCrystallizing>
 
     <SZ_LetterLabelCrystallized>Colonist crystallized</SZ_LetterLabelCrystallized>
     <SZ_LetterCrystallized>{0} has perished as a result of microscopic parasites released from a colossal crystal. Colonists will mourn {0_possessive} death and they will forever be remembered in crimson fervor.</SZ_LetterCrystallized>
+
+    <!--==================== Mod Settings ====================-->
+
+    <AlienBiomes_ModName>Alien Biomes</AlienBiomes_ModName>
+
+    <AlienBiomes_SettingPlantGlow>Allow plants to glow on the map.</AlienBiomes_SettingPlantGlow>
+    <AlienBiomes_SettingPlantGlowDesc>Many plants in Alien Biomes glow at various times of the day. This may significantly improve performance on large maps if turned off, depending on hardware, map size, and number of plants able to glow.</AlienBiomes_SettingPlantGlowDesc>
+
+    <AlienBiomes_SettingEffecterOverlay>Show effecter radius outlines.</AlienBiomes_SettingEffecterOverlay>
+    <AlienBiomes_SettingEffecterOverlayDesc>Some plants and other natural things in Alien Biomes can be dangerous to your colonists. Leaving this on will allow you to see where the danger zones are located. This may significantly improve performance on large maps if turned off, depending on hardware, map size, and number of things with effecters.</AlienBiomes_SettingEffecterOverlayDesc>
+
+    <AlienBiomes_SettingSpecialEffects>Show special effects.</AlienBiomes_SettingSpecialEffects>
+    <AlienBiomes_SettingSpecialEffectsDesc>Many things in Alien Biomes have special effects in the form of flecks and motes which can be performance heavy. Turn this off if it becomes a problem.</AlienBiomes_SettingSpecialEffectsDesc>
+
+    <AlienBiomes_SettingCrystallizing>Allow colonists to be crystallized in the Crystalline Flats.</AlienBiomes_SettingCrystallizing>
+    <AlienBiomes_SettingCrystallizingDesc>This can make for some fun gameplay but is also a fair challenge. Pawns afflicted with the crystallizing hediff will eventually die and be replaced by a magnificent red crystal.</AlienBiomes_SettingCrystallizingDesc>
+
+    <AlienBiomes_SettingReplaceSand>Allow vanilla sand to be replaced with new variants.</AlienBiomes_SettingReplaceSand>
+    <AlienBiomes_SettingReplaceSandDesc>Certain plants added by Alien Biomes only spawn on the new sand terrains and they look better so I'd recommend leaving this on. But if you still want a touch of familiarity then now you have it.</AlienBiomes_SettingReplaceSandDesc>
+
+    <AlienBiomes_SettingReplaceGravel>Allow vanilla gravel to be replaced with new variants.</AlienBiomes_SettingReplaceGravel>
+    <AlienBiomes_SettingReplaceGravelDesc>If turned on all vanilla gravel will cease to be present on newly generated map tiles. The biomes are certainly prettier with this left on.</AlienBiomes_SettingReplaceGravelDesc>
+
+    <AlienBiomes_SettingCompEffectSounds>Allow plants to emit ambient sounds.</AlienBiomes_SettingCompEffectSounds>
+    <AlienBiomes_SettingCompEffectSoundsDesc>Certain plants added by Alien Biomes have unique behaviors and some emit short ambient queues when pawns are nearby or are walking through them. Turn this off if you prefer total silence and dislike nature.</AlienBiomes_SettingCompEffectSoundsDesc>
+
+    <AlienBiomes_PlantSoundEffectVolume>Volume: {0}%</AlienBiomes_PlantSoundEffectVolume>
+    <AlienBiomes_PlantSoundEffectVolumeDesc>Adjust the slider to either increase or descrease the volume of plant sound effects.</AlienBiomes_PlantSoundEffectVolumeDesc>
 
 </LanguageData>

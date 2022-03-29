@@ -35,7 +35,11 @@ namespace AlienBiomes
                 if (pawnList[i] is Pawn p1 && !pawnsTouchingPlants.Contains(p1))
                 {
                     pawnsTouchingPlants.Add(p1);
-                    Emit();
+
+                    if (AlienBiomesSettings.ShowSpecialEffects == true)
+                    {
+                        Emit();
+                    }
                     // Call Emit and cast the built fleck. :)
                     //Log.Message("Fleck was emitted at " + parent.Position);
                 }
@@ -59,7 +63,12 @@ namespace AlienBiomes
                 parent.Map.flecks.CreateFleck(dataStatic);
 
                 //Log.Message("Fleck was created ");
-                soundDefUsed.PlayOneShot(new TargetInfo(parent.Position, parent.Map));
+                if (AlienBiomesSettings.AllowCompEffectSounds == true)
+                {
+                    SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
+                    sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
+                    soundDefUsed.PlayOneShot(sI);
+                }
             }
         }
     }

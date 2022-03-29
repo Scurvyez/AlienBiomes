@@ -11,20 +11,12 @@ namespace AlienBiomes
         public bool CrystalDeath;
 
         /// <summary>
-        /// Sets a range of ints based on Props.
-        /// </summary>
-        public override void CompPostMake()
-        {
-            base.CompPostMake();
-        }
-
-        /// <summary>
-        /// Generates a new ThingDef where a pawn died.
+        /// Generates a new ThingDef where a pawn died if the pawn died with a specific hediff.
         /// </summary>
         public override void Notify_PawnDied()
         {
             Map map = parent.pawn.Corpse.MapHeld;
-            IntVec3 pos = parent.pawn.Position;
+            IntVec3 pos = map.AllCells.RandomElement();
 
             if (map != null)
             {

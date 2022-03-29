@@ -413,7 +413,7 @@
         </graphicData>
         <plant>
             <fertilitySensitivity>0.15</fertilitySensitivity>
-            <growDays>15</growDays>
+            <growDays>45</growDays>
             <leaflessGraphicPath>Things/Plants/OpulentOrchid_Leafless</leaflessGraphicPath>
             <immatureGraphicPath>Things/Plants/OpulentOrchid_Immature</immatureGraphicPath>
             <harvestYield>4</harvestYield>

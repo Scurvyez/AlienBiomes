@@ -6,7 +6,7 @@
     <RecipeDef>
         <defName>SZ_ProcessElderWoodLog</defName>
         <label>process elder wood log</label>
-        <description>PLACEHOLDER</description> <!-- change this -->
+        <description>Process elder wood shavings for industrial uses. The resulting logs can be used for walls and weaponry.</description>
         <jobString>Processing elder tree shavings into usable wood.</jobString>
         <workAmount>400</workAmount>
         <workSkill>Crafting</workSkill>

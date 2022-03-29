@@ -54,7 +54,7 @@ namespace AlienBiomes
         /// </summary>
         public override void MapComponentUpdate()
         {
-            if (DoDrawing)
+            if (DoDrawing && AlienBiomesSettings.ShowEffecterOverlay == true)
             {
                 DoDrawing = false;
                 // Color set via CompProperties in xml. :)

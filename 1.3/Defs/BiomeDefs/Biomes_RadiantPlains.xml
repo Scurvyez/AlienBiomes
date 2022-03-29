@@ -96,22 +96,15 @@
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
         </wildPlants>
         <wildAnimals>
-            <Donkey>0.20</Donkey>
-            <GuineaPig>0.45</GuineaPig>
             <Horse>0.20</Horse>
             <Hare>1.0</Hare>
-            <Squirrel>1.0</Squirrel>
-            <Rat>1.0</Rat>
             <Deer>0.5</Deer>
-            <WildBoar>0.5</WildBoar>
-            <Turkey>0.5</Turkey>
-            <Raccoon>0.5</Raccoon>
             <Muffalo>0.5</Muffalo>
             <Alpaca>0.5</Alpaca>
             <Tortoise>0.3</Tortoise>
             <Megasloth>0.2</Megasloth>
-            <Rhinoceros>0.1</Rhinoceros>
-            <Fox_Red>0.07</Fox_Red>
+            <AA_Aerofleet MayRequire="sarg.alphaanimals">0.02</AA_Aerofleet>
+            <AA_ChameleonYak MayRequire="sarg.alphaanimals">0.05</AA_ChameleonYak>
             <Bast_Bastyon MayRequire="Scurvyez.Bastyon">0.02</Bast_Bastyon>
             <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.02</Bast_Alluvium>
         </wildAnimals>

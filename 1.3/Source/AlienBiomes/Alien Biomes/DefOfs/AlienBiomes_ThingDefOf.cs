@@ -10,6 +10,7 @@ namespace AlienBiomes
         public static ThingDef SZ_BlueColossalCrystalTwo;
         public static ThingDef SZ_GreenColossalCrystalOne;
         public static ThingDef SZ_GreenColossalCrystalTwo;
+        public static ThingDef SZ_RedColossalCrystal;
         public static ThingDef SZ_InferiorCrystal;
     }
 }

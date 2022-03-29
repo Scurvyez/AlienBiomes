@@ -3,7 +3,7 @@
 
     <TerrainDef ParentName="WaterShallowBase">
         <defName>SZ_BloodWaterMovingShallow</defName>
-        <label>shallow moving water</label>
+        <label>shallow moving bloody water</label>
         <texturePath>Terrain/Surfaces/BloodWaterShallowRamp</texturePath>
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>398</renderPrecedence>
@@ -20,7 +20,7 @@
 
     <TerrainDef ParentName="WaterChestDeepBase">
         <defName>SZ_BloodWaterMovingChestDeep</defName>
-        <label>chest-deep moving water</label>
+        <label>chest-deep moving bloody water</label>
         <texturePath>Terrain/Surfaces/BloodWaterChestDeepRamp</texturePath>
         <renderPrecedence>399</renderPrecedence>
         <affordances>

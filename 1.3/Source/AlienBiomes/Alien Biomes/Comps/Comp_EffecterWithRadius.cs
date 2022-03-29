@@ -38,23 +38,43 @@ namespace AlienBiomes
                         // If thing is a pawn, is alive, and (doesn't affect humanlife OR is humanlike)...
                         if (thing is Pawn pawn && !pawn.Dead && (!Props.onlyAffectHumanlike || pawn.RaceProps.Humanlike))
                         {
-                            if (Props.appliedHediff != null)
+                            if (Props.appliedHediff != null && Props.appliedHediff != AlienBiomes_HediffDefOf.SZ_Crystallize)
                             {
-                                //Log.Message("<color=cyan>Crystallizing </color>"+ pawn.Name);
-                                FleckMaker.AttachedOverlay(parent, Props.fleckReleased, Vector3.zero, 1f, -1f);
+                                if (AlienBiomesSettings.ShowSpecialEffects == true)
+                                {
+                                    FleckMaker.AttachedOverlay(parent, Props.fleckReleased, Vector3.zero, 1f, -1f);
+                                }
 
-                                if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize && !pawn.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
+                                // Null check the SoundDef. Otherwise... Behold, error.
+                                if (Props.soundOnRelease != null && AlienBiomesSettings.AllowCompEffectSounds == true)
+                                {
+                                    SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
+                                    sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
+                                    soundDefUsed.PlayOneShot(sI);
+                                }
+                                // Adds the target hediff.
+                                pawn.health.AddHediff(Props.appliedHediff);
+                            }
+
+                            else if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize && !pawn.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
+                            {
+                                if (AlienBiomesSettings.AllowCrystallizing == true)
                                 {
                                     Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), AlienBiomes_LetterDefOf.SZ_PawnCrystallizing, null, null, null);
                                     Find.TickManager.slower.SignalForceNormalSpeedShort();
-                                }
 
-                                // Adds the target hediff.
-                                pawn.health.AddHediff(Props.appliedHediff);
+                                    if (AlienBiomesSettings.ShowSpecialEffects == true)
+                                    {
+                                        FleckMaker.AttachedOverlay(parent, Props.fleckReleased, Vector3.zero, 1f, -1f);
+                                    }
 
-                                // Null check the SoundDef. Otherwise... Behold, error.
-                                if (Props.soundOnRelease != null) {
-                                    soundDefUsed.PlayOneShot(new TargetInfo(parent.Position, parent.Map));
+                                    if (Props.soundOnRelease != null && AlienBiomesSettings.AllowCompEffectSounds == true)
+                                    {
+                                        SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
+                                        sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
+                                        soundDefUsed.PlayOneShot(sI);
+                                    }
+                                    pawn.health.AddHediff(Props.appliedHediff);
                                 }
                             }
                         }

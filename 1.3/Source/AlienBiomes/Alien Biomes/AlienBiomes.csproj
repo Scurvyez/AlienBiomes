@@ -57,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
+    <Compile Include="Settings\AlienBiomesMod.cs" />
+    <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="Comps\Comp_GraphicsOverlay.cs" />
     <Compile Include="Comps\CompProps\CompProperties_GraphicsOverlay.cs" />
     <Compile Include="Comps\CompProps\CompProperties_EffecterWithRadius.cs" />
@@ -78,7 +80,7 @@
     <Compile Include="Harmony\BeachTerrainAt_Patch.cs" />
     <Compile Include="Harmony\HarvestableNow_Patch.cs" />
     <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
-    <Compile Include="HediffComps\HediffCompProps\HediffCompProps_Crystallize.cs" />
+    <Compile Include="HediffComps\HediffCompProps\HediffCompProperties_Crystallize.cs" />
     <Compile Include="HediffComps\HediffComp_Crystallize.cs" />
     <Compile Include="MapComps\MapComponent_ThingCompsGetter.cs" />
     <Compile Include="Things\Plant_NightBlooming.cs" />
