@@ -11,19 +11,20 @@ namespace AlienBiomes
 
         public bool AdditionalGlowerLogic()
         {
-            var dayPercent = GenLocalDate.DayPercent(parent.Map);
-            return (dayPercent > TimeProps.startTime && dayPercent < 1f) || (dayPercent < TimeProps.stopTime && dayPercent > 0f);
+            var dP = GenLocalDate.DayPercent(parent.Map);
+            return (dP > TimeProps.startTime && dP < 1f) 
+                || (dP < TimeProps.stopTime && dP > 0f);
         }
         
         public override void CompTickLong()
         {
             Random rand = new();
             int randomness = rand.Next(120, 240);
-            int currentTick = Find.TickManager.TicksGame;
+            int curTick = Find.TickManager.TicksGame;
 
-            if (currentTick - lastUpdateTick > 2500) // Once per hour only.
+            if (curTick - lastUpdateTick > 2500) // Once per hour only.
             {
-                lastUpdateTick = currentTick + randomness;
+                lastUpdateTick = curTick + randomness;
                 UpdateLit(parent.Map);
             }
         }
@@ -32,11 +33,11 @@ namespace AlienBiomes
         {
             Random rand = new();
             int randomness = rand.Next(640, 1280);
-            int currentTick = Find.TickManager.TicksGame;
+            int curTick = Find.TickManager.TicksGame;
 
-            if (currentTick - lastUpdateTick > 2500)
+            if (curTick - lastUpdateTick > 2500)
             {
-                lastUpdateTick = currentTick + randomness;
+                lastUpdateTick = curTick + randomness;
                 UpdateLit(parent.Map);
             }
         }

@@ -13,11 +13,11 @@
 
     <AlienBiomes_ModName>Alien Biomes</AlienBiomes_ModName>
 
-    <AlienBiomes_SettingPlantGlow>Allow plants to glow on the map.</AlienBiomes_SettingPlantGlow>
+    <AlienBiomes_SettingPlantGlow>Show glow effects.</AlienBiomes_SettingPlantGlow>
     <AlienBiomes_SettingPlantGlowDesc>Many plants in Alien Biomes glow at various times of the day. This may significantly improve performance on large maps if turned off, depending on hardware, map size, and number of plants able to glow.</AlienBiomes_SettingPlantGlowDesc>
 
-    <AlienBiomes_SettingEffecterOverlay>Show effecter radius outlines.</AlienBiomes_SettingEffecterOverlay>
-    <AlienBiomes_SettingEffecterOverlayDesc>Some plants and other natural things in Alien Biomes can be dangerous to your colonists. Leaving this on will allow you to see where the danger zones are located. This may significantly improve performance on large maps if turned off, depending on hardware, map size, and number of things with effecters.</AlienBiomes_SettingEffecterOverlayDesc>
+    <AlienBiomes_SettingEffectorOverlay>Show effector radius outlines.</AlienBiomes_SettingEffectorOverlay>
+    <AlienBiomes_SettingEffectorOverlayDesc>Some plants and other natural things in Alien Biomes can be dangerous to your colonists. Leaving this on will allow you to see where the danger zones are located. This may significantly improve performance on large maps if turned off, depending on hardware, map size, and number of things with effecters.</AlienBiomes_SettingEffectorOverlayDesc>
 
     <AlienBiomes_SettingSpecialEffects>Show special effects.</AlienBiomes_SettingSpecialEffects>
     <AlienBiomes_SettingSpecialEffectsDesc>Many things in Alien Biomes have special effects in the form of flecks and motes which can be performance heavy. Turn this off if it becomes a problem.</AlienBiomes_SettingSpecialEffectsDesc>

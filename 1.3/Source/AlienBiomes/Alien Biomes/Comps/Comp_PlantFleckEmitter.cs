@@ -20,19 +20,18 @@ namespace AlienBiomes
 
         public override void CompTickLong()
         {
-            List<Thing> pawnList = parent.Position.GetThingList(parent.Map);
-            // List of parent position(s).
+            List<Thing> pL = parent.Position.GetThingList(parent.Map); // list of pawns
             for (int i = 0; i < pawnsTouchingPlants.Count; ++i)
                 // Loop to remove pawns from list of those ouching plant(s).
             {
-                Pawn touchingPawn = pawnsTouchingPlants[i];
-                if (!touchingPawn.Spawned || touchingPawn.Position != parent.Position)
-                    pawnsTouchingPlants.Remove(touchingPawn);
+                Pawn tP = pawnsTouchingPlants[i]; // pawns touching parent
+                if (!tP.Spawned || tP.Position != parent.Position)
+                    pawnsTouchingPlants.Remove(tP);
             }
-            for (int i = 0; i < pawnList.Count; ++i)
+            for (int i = 0; i < pL.Count; ++i)
                 // Loop to add pawns to list of those touching plant(s).
             {
-                if (pawnList[i] is Pawn p1 && !pawnsTouchingPlants.Contains(p1))
+                if (pL[i] is Pawn p1 && !pawnsTouchingPlants.Contains(p1))
                 {
                     pawnsTouchingPlants.Add(p1);
 
@@ -48,26 +47,24 @@ namespace AlienBiomes
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void Emit()
         {
-            SoundDef soundDefUsed = Props.soundOnEmission;
-            float throwAngle = 90f;
-            Vector3 inheritVelocity = new(0.00f, 0.00f, 1.00f);
+            SoundDef sDef = Props.soundOnEmission; // sound emitted in-game
+            Vector3 vel = new(0.00f, 0.00f, 1.00f); // velocity
 
             for (int i = 0; i < Props.burstCount; ++i)
             {
-                FleckCreationData dataStatic = FleckMaker.GetDataStatic(parent.DrawPos, parent.Map, Props.fleck, Props.scale.RandomInRange);
-                dataStatic.rotationRate = Rand.RangeInclusive(-240, 240);
-                dataStatic.instanceColor = new Color?(EmissionColor);
-                dataStatic.velocityAngle = throwAngle + Rand.Range(-5, 5);
-                dataStatic.velocitySpeed = Rand.Range(0.1f, 0.8f);
-                dataStatic.velocity = inheritVelocity * 0.5f;
-                parent.Map.flecks.CreateFleck(dataStatic);
+                FleckCreationData fCD = FleckMaker.GetDataStatic(parent.DrawPos, parent.Map, Props.fleck, Props.scale.RandomInRange);
+                fCD.rotationRate = Rand.RangeInclusive(-240, 240);
+                fCD.instanceColor = new Color?(EmissionColor);
+                fCD.velocitySpeed = Rand.Range(0.1f, 0.8f);
+                fCD.velocity = vel * 0.5f;
+                parent.Map.flecks.CreateFleck(fCD);
 
                 //Log.Message("Fleck was created ");
                 if (AlienBiomesSettings.AllowCompEffectSounds == true)
                 {
                     SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
                     sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
-                    soundDefUsed.PlayOneShot(sI);
+                    sDef.PlayOneShot(sI);
                 }
             }
         }

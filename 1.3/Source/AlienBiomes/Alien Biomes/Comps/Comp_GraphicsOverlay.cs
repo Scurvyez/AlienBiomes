@@ -11,27 +11,29 @@ namespace AlienBiomes
         
         /// <summary>
         /// Renders additional graphics on a parent thing.
-        /// drawerType = RealtimeOnly || MapMeshAndRealTime.
+        /// XML, drawerType = RealtimeOnly || MapMeshAndRealTime.
         /// </summary>
         public override void PostDraw()
         {
             base.PostDraw();
             
-            float dayPercent = GenLocalDate.DayPercent(parent.Map);
+            float dP = GenLocalDate.DayPercent(parent.Map); // Time of day as a %
             float vSR = parent.def.plant.visualSizeRange.LerpThroughRange((parent as Plant).Growth);
-            float maxGrowth = parent.def.plant.visualSizeRange.TrueMax;
+            float mG = parent.def.plant.visualSizeRange.TrueMax; // max growth stage of a plant
             CompProperties_GraphicsOverlay props = Props;
 
             for (int i = 0; i < props.graphicElements.Count; i++)
             {
-                if ((dayPercent > Props.timeRangeDisplayed.min && dayPercent < 1f) || (dayPercent < Props.timeRangeDisplayed.max && dayPercent > 0f))
+                if ((dP > Props.timeRangeDisplayed.min && dP < 1f) 
+                    || (dP < Props.timeRangeDisplayed.max && dP > 0f))
                 {
                     props.graphicElements[i].Graphic.Draw(parent.DrawPos, parent.Rotation, parent);
 
                     // Extra step for crystals only.
-                    if (parent.def.plant.visualSizeRange.max == maxGrowth)
+                    if (parent.def.plant.visualSizeRange.max == mG)
                     {
-                        if (parent.def.defName == "SZ_BlueColossalCrystalOne" || parent.def.defName == "SZ_GreenColossalCrystalOne")
+                        if (parent.def.defName == "SZ_BlueColossalCrystalOne" 
+                            || parent.def.defName == "SZ_GreenColossalCrystalOne")
                         {
                             float z2 = 0.83f;
 
@@ -39,7 +41,8 @@ namespace AlienBiomes
                             props.graphicElements[1].drawOffset.z = (vSR * z2) + 0.75f;
                         }
 
-                        if (parent.def.defName == "SZ_BlueColossalCrystalTwo" || parent.def.defName == "SZ_GreenColossalCrystalTwo")
+                        if (parent.def.defName == "SZ_BlueColossalCrystalTwo" 
+                            || parent.def.defName == "SZ_GreenColossalCrystalTwo")
                         {
                             float z2 = 0.67f;
 

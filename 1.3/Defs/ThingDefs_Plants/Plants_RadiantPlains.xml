@@ -248,9 +248,9 @@
             <growDays>40</growDays>
             <leaflessGraphicPath>Things/Trees/ElderBlushingTree_Leafless</leaflessGraphicPath>
             <harvestWork>250</harvestWork>
-            <harvestYield>35</harvestYield>
+            <harvestYield>2</harvestYield>
             <harvestTag>Standard</harvestTag>
-            <harvestAfterGrowth>0.25</harvestAfterGrowth>
+            <harvestAfterGrowth>0.45</harvestAfterGrowth>
             <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef>
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
@@ -261,15 +261,16 @@
             </sowTags>
             <wildOrder>2</wildOrder>
             <mustBeWildToSow>false</mustBeWildToSow>
-            <wildClusterRadius>8</wildClusterRadius>
+            <wildClusterRadius>22</wildClusterRadius>
             <wildClusterWeight>250</wildClusterWeight>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>2.50</overlightRadius>
                 <glowRadius>3.20</glowRadius>
                 <glowColor>(63, 216, 188, 0)</glowColor>
                 <startTime>0.80</startTime>
-                <stopTime>0.20</stopTime>
+                <stopTime>0.15</stopTime>
             </li>
         </comps>
         <modExtensions>

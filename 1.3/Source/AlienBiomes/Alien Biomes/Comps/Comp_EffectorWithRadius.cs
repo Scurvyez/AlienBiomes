@@ -24,7 +24,7 @@ namespace AlienBiomes
         public override void CompTickLong()
         {
             base.CompTickLong();
-            SoundDef soundDefUsed = Props.soundOnRelease;
+            SoundDef sDef = Props.soundOnRelease; // sound emitted in-game
 
             TickCounter++;
             if (TickCounter < Props.tickInterval)
@@ -33,12 +33,15 @@ namespace AlienBiomes
                 if (parent != null && parent.Map != null)
                 {
                     // Do for every instance of a Pawn within the release readius.
-                    foreach (Thing thing in GenRadial.RadialDistinctThingsAround(parent.Position, parent.Map, Props.releaseRadius, true))
+                    foreach (Thing t in GenRadial.RadialDistinctThingsAround(parent.Position, parent.Map, Props.releaseRadius, true))
                     {
                         // If thing is a pawn, is alive, and (doesn't affect humanlife OR is humanlike)...
-                        if (thing is Pawn pawn && !pawn.Dead && (!Props.onlyAffectHumanlike || pawn.RaceProps.Humanlike))
+                        if (t is Pawn p && !p.Dead 
+                            && (!Props.onlyAffectHumanlike 
+                            || p.RaceProps.Humanlike))
                         {
-                            if (Props.appliedHediff != null && Props.appliedHediff != AlienBiomes_HediffDefOf.SZ_Crystallize)
+                            if (Props.appliedHediff != null 
+                                && Props.appliedHediff != AlienBiomes_HediffDefOf.SZ_Crystallize)
                             {
                                 if (AlienBiomesSettings.ShowSpecialEffects == true)
                                 {
@@ -46,21 +49,25 @@ namespace AlienBiomes
                                 }
 
                                 // Null check the SoundDef. Otherwise... Behold, error.
-                                if (Props.soundOnRelease != null && AlienBiomesSettings.AllowCompEffectSounds == true)
+                                if (Props.soundOnRelease != null 
+                                    && AlienBiomesSettings.AllowCompEffectSounds == true)
                                 {
                                     SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
                                     sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
-                                    soundDefUsed.PlayOneShot(sI);
+                                    sDef.PlayOneShot(sI);
                                 }
                                 // Adds the target hediff.
-                                pawn.health.AddHediff(Props.appliedHediff);
+                                p.health.AddHediff(Props.appliedHediff);
                             }
 
-                            else if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize && !pawn.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
+                            else if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize 
+                                && !p.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
                             {
                                 if (AlienBiomesSettings.AllowCrystallizing == true)
                                 {
-                                    Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), AlienBiomes_LetterDefOf.SZ_PawnCrystallizing, null, null, null);
+                                    Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), 
+                                        "SZ_LetterCrystallizing".Translate(p), 
+                                        AlienBiomes_LetterDefOf.SZ_PawnCrystallizing, null, null, null);
                                     Find.TickManager.slower.SignalForceNormalSpeedShort();
 
                                     if (AlienBiomesSettings.ShowSpecialEffects == true)
@@ -68,13 +75,14 @@ namespace AlienBiomes
                                         FleckMaker.AttachedOverlay(parent, Props.fleckReleased, Vector3.zero, 1f, -1f);
                                     }
 
-                                    if (Props.soundOnRelease != null && AlienBiomesSettings.AllowCompEffectSounds == true)
+                                    if (Props.soundOnRelease != null 
+                                        && AlienBiomesSettings.AllowCompEffectSounds == true)
                                     {
                                         SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
                                         sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
-                                        soundDefUsed.PlayOneShot(sI);
+                                        sDef.PlayOneShot(sI);
                                     }
-                                    pawn.health.AddHediff(Props.appliedHediff);
+                                    p.health.AddHediff(Props.appliedHediff);
                                 }
                             }
                         }
@@ -88,10 +96,11 @@ namespace AlienBiomes
         {
             if (parent.Map != null)
             {
-                MapComponent_ThingCompsGetter mapComp = parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
-                if (mapComp != null)
+                MapComponent_ThingCompsGetter mC = 
+                    parent.Map.GetComponent<MapComponent_ThingCompsGetter>(); // map comp
+                if (mC != null)
                 {
-                    mapComp.AddCompInstancesToMap(this);
+                    mC.AddCompInstancesToMap(this);
                 }
             }
         }
@@ -100,10 +109,11 @@ namespace AlienBiomes
         {
             if (parent.Map != null)
             {
-                MapComponent_ThingCompsGetter mapComp = parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
-                if (mapComp != null)
+                MapComponent_ThingCompsGetter mC = 
+                    parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
+                if (mC != null)
                 {
-                    mapComp.RemoveCompInstancesFromMap(this);
+                    mC.RemoveCompInstancesFromMap(this);
                 }
             }
         }

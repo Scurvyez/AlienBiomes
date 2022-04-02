@@ -91,7 +91,7 @@
         <wildPlants>
             <SZ_SoothingStalk>0.15</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
-            <SZ_ElderBlushingTree>0.01</SZ_ElderBlushingTree>
+            <SZ_ElderBlushingTree>0.10</SZ_ElderBlushingTree>
             <SZ_RadiantGrass>5.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
         </wildPlants>

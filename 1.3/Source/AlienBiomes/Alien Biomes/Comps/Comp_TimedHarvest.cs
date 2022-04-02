@@ -10,8 +10,9 @@ namespace AlienBiomes
         public bool AdditionalPlantHarvestLogic()
         {
             base.CompTickLong();
-            var dayPercent = GenLocalDate.DayPercent(parent.Map);
-            return (dayPercent > HarvestProps.harvestStartTime && dayPercent < 1f) || (dayPercent < HarvestProps.harvestStopTime && dayPercent > 0f);
+            var dP = GenLocalDate.DayPercent(parent.Map);
+            return (dP > HarvestProps.harvestStartTime && dP < 1f) 
+                || (dP < HarvestProps.harvestStopTime && dP > 0f);
         }
     }
 }

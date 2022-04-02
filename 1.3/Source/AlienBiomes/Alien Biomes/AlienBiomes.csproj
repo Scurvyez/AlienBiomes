@@ -51,8 +51,14 @@
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule">
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -62,7 +68,7 @@
     <Compile Include="Comps\Comp_GraphicsOverlay.cs" />
     <Compile Include="Comps\CompProps\CompProperties_GraphicsOverlay.cs" />
     <Compile Include="Comps\CompProps\CompProperties_EffecterWithRadius.cs" />
-    <Compile Include="Comps\Comp_EffecterWithRadius.cs" />
+    <Compile Include="Comps\Comp_EffectorWithRadius.cs" />
     <Compile Include="Comps\CompProps\CompProperties_PlantFleckEmitter.cs" />
     <Compile Include="Comps\Comp_PlantFleckEmitter.cs" />
     <Compile Include="Comps\CompProps\CompProperties_TimedHarvest.cs" />
@@ -74,7 +80,6 @@
     <Compile Include="DefOfs\AlienBiomes_BiomeDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_HediffDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_LetterDefOf.cs" />
-    <Compile Include="Harmony\AllowsPlacing_Patch.cs" />
     <Compile Include="Harmony\CompGlower_Patch.cs" />
     <Compile Include="Harmony\TerrainFrom_Patch.cs" />
     <Compile Include="Harmony\BeachTerrainAt_Patch.cs" />

@@ -6,11 +6,11 @@ namespace AlienBiomes
     {
         private static AlienBiomesSettings _instance;
 
-        public static bool AllowPlantGlow
+        public static bool ShowPlantGlow
         {
             get
             {
-                return _instance._allowPlantGlow;
+                return _instance._showPlantGlow;
             }
         }
 
@@ -70,7 +70,7 @@ namespace AlienBiomes
             }
         }
         
-        public bool _allowPlantGlow = false;
+        public bool _showPlantGlow = false;
         public bool _showEffecterOverlay = false;
         public bool _showSpecialEffects = false;
         public bool _allowCrystallizing = false;
@@ -87,7 +87,7 @@ namespace AlienBiomes
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref _allowPlantGlow, "allowPlantGlow", true);
+            Scribe_Values.Look(ref _showPlantGlow, "allowPlantGlow", true);
             Scribe_Values.Look(ref _showEffecterOverlay, "allowEffecterOverlay", true);
             Scribe_Values.Look(ref _showSpecialEffects, "showSpecialEffects", true);
             Scribe_Values.Look(ref _allowCrystallizing, "allowCrystallizing", true);
