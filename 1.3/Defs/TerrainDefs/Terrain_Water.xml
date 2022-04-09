@@ -18,20 +18,40 @@
         </waterDepthShaderParameters>
     </TerrainDef>
 
+    <TerrainDef ParentName="WaterShallowBase">
+        <defName>SZ_BloodWaterShallow</defName>
+        <label>shallow bloody water</label>
+        <texturePath>Terrain/Surfaces/BloodWaterShallowRamp</texturePath>
+        <waterDepthShader>Map/WaterDepth</waterDepthShader>
+        <renderPrecedence>394</renderPrecedence>
+        <driesTo>SZ_CrystallineStonySoil</driesTo>
+    </TerrainDef>
+
     <TerrainDef ParentName="WaterChestDeepBase">
         <defName>SZ_BloodWaterMovingChestDeep</defName>
         <label>chest-deep moving bloody water</label>
         <texturePath>Terrain/Surfaces/BloodWaterChestDeepRamp</texturePath>
         <renderPrecedence>399</renderPrecedence>
         <affordances>
-          <li>MovingFluid</li>
+            <li>MovingFluid</li>
         </affordances>
         <tags>
-          <li>River</li>
+            <li>River</li>
         </tags>
         <waterDepthShaderParameters>
-          <_UseWaterOffset>1</_UseWaterOffset>
+            <_UseWaterOffset>1</_UseWaterOffset>
         </waterDepthShaderParameters>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WaterChestDeepBase">
+        <defName>SZ_BloodWaterChestDeep</defName>
+        <label>chest deep bloody water</label>
+        <texturePath>Terrain/Surfaces/BloodWaterChestDeepRamp</texturePath>
+        <waterDepthShader>Map/WaterDepth</waterDepthShader>
+        <pathCost>42</pathCost>
+        <affordances>
+            <li>Bridgeable</li>
+        </affordances>
     </TerrainDef>
 
 </Defs>

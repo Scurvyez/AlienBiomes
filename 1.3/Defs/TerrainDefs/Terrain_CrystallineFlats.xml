@@ -123,9 +123,13 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <tags>
-            <li>Rocky</li>
-        </tags>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Rocky</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <!--==================== Crystalline Sand ====================-->
@@ -142,14 +146,12 @@
             <BeautyOutdoors>0</BeautyOutdoors>
             <Cleanliness>-1</Cleanliness>
         </statBases>
-        <!-- <scatterType>SoftDry</scatterType> -->
         <affordances>
             <li>Light</li>
             <li>Medium</li>
             <li>Heavy</li>
             <li>Diggable</li>
         </affordances>
-        <!-- <generatedFilth>Filth_Sand</generatedFilth> -->
         <fertility>0.09</fertility>
         <takeFootprints>True</takeFootprints>
         <tools>
@@ -166,6 +168,47 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Sandy</li>
+                    <li>Sandy_Beach</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </TerrainDef>
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_CrystallineSand_Grove</defName>
+        <label>crystalline sand</label>
+        <texturePath>Terrain/Surfaces/SZ_CrystallineSand</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>350</renderPrecedence>
+        <pathCost>4</pathCost>
+        <statBases>
+            <Beauty>-1</Beauty>
+            <BeautyOutdoors>0</BeautyOutdoors>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <affordances>
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Heavy</li>
+            <li>Diggable</li>
+        </affordances>
+        <fertility>0.09</fertility>
+        <takeFootprints>True</takeFootprints>
+        <tools>
+            <li>
+                <label>crystalline sand</label>
+                <capacities>
+                    <li>KickMaterialInEyes</li>
+                </capacities>
+                <hediff>SandInEyes</hediff>
+                <cooldownTime>1.5</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
                 </terrainTags>
             </li>
         </modExtensions>

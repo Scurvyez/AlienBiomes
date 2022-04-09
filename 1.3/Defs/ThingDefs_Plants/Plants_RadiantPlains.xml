@@ -216,11 +216,56 @@
         </modExtensions>
     </ThingDef>
 
+    <!--==================== Lily of the Plains Plant ====================-->
+    <!-- Decorative, wild, no fruit or real benefits. lol -->
+    <!-- Only spawns in water. -->
+
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_LilyOfThePlains</defName>
+        <label>lily of the plains</label>
+        <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
+        <statBases>
+            <MaxHitPoints>20</MaxHitPoints>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/LilyOfThePlains</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <selectable>false</selectable>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>2</pathCost>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>8</growDays>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>75</wildClusterWeight>
+            <visualSizeRange>0.35~2.00</visualSizeRange>
+            <topWindExposure>0.65</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Salty</li>
+                    <li>Shallow</li>
+                    <li>Boggy</li>
+                    <li>Muddy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
     <!--==================== Elder Blushing Tree ====================-->
     <!-- This tree will produce a woody pulp which can then be manufactured into a "WoodLog" variant -->
     <!-- Glows at night. -->
 
-    <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="AlienDeciduousTreeBase" Name="SZ_ElderBlushingTree">
         <defName>SZ_ElderBlushingTree</defName>
         <label>elder blushing tree</label>
         <description>These trees attract clawed predators who love the fragrant bark beneath their razor-like claws. Generations of animals scratching at the surface and subsequent evolutionary softening of the trees' woody trunks has led to the loss of natural woody bi-products.\n\nInstead, these trees produce a pulp-like substance that can be harvested and refined into wood planks.</description>

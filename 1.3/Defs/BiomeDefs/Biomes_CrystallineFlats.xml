@@ -40,21 +40,21 @@
             <li>
                 <terrain>SZ_CrystallineSoil</terrain>
                 <min>-999</min>
-                <max>0.87</max>
+                <max>0.89</max>
             </li>
-            <li>
+            <!-- <li>
                 <terrain>SZ_CrystallineSand</terrain>
                 <min>0.87</min>
                 <max>0.91</max>
-            </li>
+            </li> -->
             <li>
                 <terrain>SZ_CrystallineRichSoil</terrain>
-                <min>0.91</min>
+                <min>0.89</min>
                 <max>999</max>
             </li>
         </terrainsByFertility>
         <terrainPatchMakers>
-            <li>
+            <!-- <li>
                 <perlinFrequency>0.008</perlinFrequency>
                 <thresholds>
                     <li>
@@ -70,6 +70,33 @@
                     <li>
                         <terrain>WaterDeep</terrain>
                         <min>0.85</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li> -->
+            
+            <!--==================== GROVE PATCHES ====================-->
+            <li>
+                <perlinFrequency>0.008</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_CrystallineRichSoil</terrain>
+                        <min>0.80</min>
+                        <max>0.83</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_CrystallineSand_Grove</terrain>
+                        <min>0.83</min>
+                        <max>0.92</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_BloodWaterShallow</terrain>
+                        <min>0.92</min>
+                        <max>0.98</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_BloodWaterChestDeep</terrain>
+                        <min>0.98</min>
                         <max>999</max>
                     </li>
                 </thresholds>
@@ -91,7 +118,8 @@
             <SZ_ShimmeringTallGrass>12.0</SZ_ShimmeringTallGrass>
             <SZ_GlisteningGrass>5.50</SZ_GlisteningGrass>
             <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
-            <SZ_OpulentOrchid>0.02</SZ_OpulentOrchid>
+            <!--==================== FOR GROVES ====================-->
+            <SZ_OpulentOrchid>4.15</SZ_OpulentOrchid>
         </wildPlants>
         <wildAnimals>
             <Donkey>0.20</Donkey>
@@ -116,7 +144,7 @@
         </wildAnimals>
         <modExtensions> <!-- CHANGE -->
 			<li Class="BiomesKit.BiomesKitControls">
-                <maxHilliness>Flat</maxHilliness>
+                <!-- <maxHilliness>Flat</maxHilliness> -->
                 <allowOnLand>True</allowOnLand>
                 <frequency>100</frequency>
                 <spawnOnBiomes>
