@@ -111,6 +111,8 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -150,6 +152,8 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -313,6 +317,7 @@
         </graphicData>
         <plant>
             <fertilitySensitivity>0.9</fertilitySensitivity>
+            <interferesWithRoof>true</interferesWithRoof>
             <growDays>30</growDays>
             <visualSizeRange>7.25~12.25</visualSizeRange>
             <topWindExposure>0.0</topWindExposure>
@@ -412,24 +417,82 @@
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
-            <fertilityMin>0.05</fertilityMin>
-            <fertilitySensitivity>0.20</fertilitySensitivity>
+            <fertilityMin>0.35</fertilityMin>
+            <fertilitySensitivity>0.02</fertilitySensitivity>
             <growDays>45</growDays>
             <leaflessGraphicPath>Things/Plants/OpulentOrchid_Leafless</leaflessGraphicPath>
             <immatureGraphicPath>Things/Plants/OpulentOrchid_Immature</immatureGraphicPath>
             <harvestYield>4</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.4</harvestAfterGrowth>
-            <harvestedThingDef>Ambrosia</harvestedThingDef>
+            <harvestedThingDef>Ambrosia</harvestedThingDef> <!-- PLACEHOLDER -->
             <visualSizeRange>0.5~2.85</visualSizeRange>
             <topWindExposure>0.25</topWindExposure>
             <maxMeshCount>4</maxMeshCount>
             <wildClusterRadius>6</wildClusterRadius>
             <wildClusterWeight>22</wildClusterWeight>
-            <wildOrder>1</wildOrder>
+            <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
             <allowAutoCut>false</allowAutoCut>
         </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Blue Moonberry ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_BlueMoonberry</defName>
+        <label>blue moonberry</label>
+        <description>PLACEHOLDER</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <pathCost>23</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>156</MaxHitPoints>
+            <Nutrition>1.50</Nutrition>
+            <BeautyOutdoors>1.10</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/BlueMoonberry</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.35</fertilityMin>
+            <fertilitySensitivity>0.02</fertilitySensitivity>
+            <growDays>37</growDays>
+            <leaflessGraphicPath>Things/Plants/BlueMoonberry_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/BlueMoonberry_Immature</immatureGraphicPath>
+            <harvestYield>5</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.4</harvestAfterGrowth>
+            <harvestedThingDef>Ambrosia</harvestedThingDef> <!-- PLACEHOLDER -->
+            <visualSizeRange>0.65~2.25</visualSizeRange>
+            <topWindExposure>0.625</topWindExposure>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+            <allowAutoCut>false</allowAutoCut>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>1.50</overlightRadius>
+                <glowRadius>1.50</glowRadius>
+                <glowColor>(253, 1, 33, 0)</glowColor>
+                <startTime>0.75</startTime>
+                <stopTime>0.15</stopTime>
+            </li>
+        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
