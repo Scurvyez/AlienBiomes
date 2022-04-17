@@ -10,7 +10,7 @@
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.50</Nutrition>
+            <Nutrition>0.05</Nutrition>
         </statBases>
         <graphicData>
             <texPath>Things/Plants/ShimmeringGrass</texPath>
@@ -48,7 +48,7 @@
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.50</Nutrition>
+            <Nutrition>0.05</Nutrition>
         </statBases>
         <pathCost>14</pathCost>
         <graphicData>
@@ -87,7 +87,7 @@
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.50</Nutrition>
+            <Nutrition>0.05</Nutrition>
         </statBases>
         <graphicData>
             <texPath>Things/Plants/GlisteningGrass</texPath>
@@ -127,7 +127,7 @@
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.50</Nutrition>
+            <Nutrition>0.05</Nutrition>
         </statBases>
         <pathCost>14</pathCost>
         <graphicData>
@@ -154,6 +154,44 @@
                     <li>Soil</li>
                     <li>Sandy</li>
                     <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Lush Green Grass Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_LushGreenGrass</defName>
+        <label>lush grass</label>
+        <description>A lush and beautiful grass found all over the crystalline flats. It grows taller than most grasses and its roots run deep underground.</description>
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/LushGreenGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>Things/Plants/LushGreenGrass_Leafless</leaflessGraphicPath>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.2~1.35</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -486,8 +524,8 @@
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <overlightRadius>1.50</overlightRadius>
-                <glowRadius>1.50</glowRadius>
+                <overlightRadius>2.20</overlightRadius>
+                <glowRadius>2.50</glowRadius>
                 <glowColor>(253, 1, 33, 0)</glowColor>
                 <startTime>0.75</startTime>
                 <stopTime>0.15</stopTime>
@@ -497,6 +535,55 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Winding Fern ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_WindingFern</defName>
+        <label>winding fern</label>
+        <description>PLACEHOLDER</description>
+        <selectable>false</selectable>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <pathCost>19</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>47.5</MaxHitPoints>
+            <BeautyOutdoors>1.04</BeautyOutdoors>
+            <Nutrition>0.05</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/WindingFern</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.50</fertilityMin>
+            <fertilitySensitivity>0.75</fertilitySensitivity>
+            <growDays>30</growDays>
+            <wildClusterRadius>9</wildClusterRadius>
+            <wildClusterWeight>11</wildClusterWeight>
+            <leaflessGraphicPath>Things/Plants/WindingFern_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plants/WindingFern_Immature</immatureGraphicPath>
+            <harvestYield>5</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.25</harvestAfterGrowth>
+            <harvestedThingDef>Ambrosia</harvestedThingDef> <!-- PLACEHOLDER -->
+            <visualSizeRange>0.25~1.65</visualSizeRange>
+            <topWindExposure>0.72</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>Soil</li>
                     <li>CrystallineSand_Grove</li>
                 </terrainTags>
             </li>

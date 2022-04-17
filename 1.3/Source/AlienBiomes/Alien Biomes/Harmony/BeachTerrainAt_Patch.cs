@@ -9,22 +9,25 @@ namespace AlienBiomes
     {
         /// <summary>
         /// Checks to see if a biome has vanilla sand.
-        /// If so, change the current maps sand to something else.
+        /// If so, changes the current maps' sand to something else.
         /// </summary>
         [HarmonyPostfix]
         public static void ReplaceBeachTerrain(BiomeDef biome, ref TerrainDef __result)
         {
-            if (__result == TerrainDefOf.Sand && biome.defName == "SZ_RadiantPlains" 
-                && AlienBiomesSettings.AllowReplacingOfSand == true)
-            // Checks for any Sand terrain def and whether the current map is of biome type "SZ_RadiantPlains".
+            if (!ModsConfig.IsActive("m00nl1ght.geologicallandforms"))
             {
-                __result = TerrainDef.Named("SZ_SoothingSand");
-                // If the above check is true, terrain def "SZ_SoothingSand" is used instead of Gravel.
-            }
-            if (__result == TerrainDefOf.Sand && biome.defName == "SZ_CrystallineFlats" 
+                if (__result == TerrainDefOf.Sand && biome.defName == "SZ_RadiantPlains"
                 && AlienBiomesSettings.AllowReplacingOfSand == true)
-            {
-                __result = TerrainDef.Named("SZ_CrystallineSand");
+                // Checks for any Sand terrain def and whether the current map is of biome type "SZ_RadiantPlains".
+                {
+                    __result = TerrainDef.Named("SZ_SoothingSand");
+                    // If the above check is true, terrain def "SZ_SoothingSand" is used instead of vanilla sand.
+                }
+                if (__result == TerrainDefOf.Sand && biome.defName == "SZ_CrystallineFlats"
+                    && AlienBiomesSettings.AllowReplacingOfSand == true)
+                {
+                    __result = TerrainDef.Named("SZ_CrystallineSand");
+                }
             }
         }
     }

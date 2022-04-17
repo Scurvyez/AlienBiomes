@@ -20,8 +20,8 @@ namespace AlienBiomes
         {
             base.DoSettingsWindowContents(inRect);
             Listing_Standard list = new ();
-            Rect viewRect = new(inRect.x, inRect.y, inRect.width, inRect.height / 2 + 25f);
-            Rect vROffset = new(0f, 0f, inRect.width - 20, inRect.height); // Adjust height here if more settings are added :)
+            Rect viewRect = new(inRect.x, inRect.y, inRect.width, inRect.height / 2 + 25f); // Adjust height here if more settings are added :)
+            Rect vROffset = new(0f, 0f, inRect.width - 20, inRect.height);
             Widgets.BeginScrollView(viewRect, ref scrollPosition, vROffset, true);
 
             list.Begin(vROffset);
@@ -73,30 +73,6 @@ namespace AlienBiomes
 
             list.End();
             Widgets.EndScrollView();
-
-            // Preview picture #1
-            Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/Texture3", false);
-            Rect pos1 = inRect.AtZero();
-            pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
-            pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
-            GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
-
-            // Preview picture #2
-            Texture2D tex2 = ContentFinder<Texture2D>.Get("UI/Settings/Texture2", false);
-            Rect pos2 = inRect.AtZero();
-            pos2.x = inRect.center.x - (pos2.width / 2f - 300f);
-            pos2.y = inRect.center.y - (pos2.height / 2f - 350f);
-            GUI.DrawTexture(pos2, tex2, ScaleMode.ScaleToFit, true);
-
-            /*var oldBool = settings._allowCrystallizing;
-            if (oldBool != true)
-            {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/Texture3", false);
-                Rect pos1 = inRect.AtZero();
-                pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
-                pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
-                GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
-            }*/
         }
 
         public override string SettingsCategory()

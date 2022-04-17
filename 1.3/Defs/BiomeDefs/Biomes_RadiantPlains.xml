@@ -75,7 +75,7 @@
                         <max>0.85</max>
                     </li>
                     <li>
-                        <terrain>WaterShallow</terrain>
+                        <terrain>SZ_RadiantWaterShallow</terrain>
                         <min>0.85</min>
                         <max>999</max>
                     </li>
@@ -89,12 +89,13 @@
             <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
-            <SZ_LilyOfThePlains>2.72</SZ_LilyOfThePlains>
-            <SZ_SoothingStalk>0.15</SZ_SoothingStalk>
+            <SZ_LilyOfThePlains>2.75</SZ_LilyOfThePlains>
+            <SZ_SoothingStalk>0.25</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
             <SZ_ElderBlushingTree>0.10</SZ_ElderBlushingTree>
             <SZ_RadiantGrass>5.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
+            <SZ_LushGrass>3.75</SZ_LushGrass>
         </wildPlants>
         <wildAnimals>
             <Horse>0.20</Horse>

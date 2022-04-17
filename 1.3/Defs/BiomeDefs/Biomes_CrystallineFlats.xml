@@ -68,7 +68,7 @@
                         <max>0.92</max>
                     </li>
                     <li>
-                        <terrain>WaterDeep</terrain>
+                        <terrain>SZ_CrystallineWaterChestDeep</terrain>
                         <min>0.92</min>
                         <max>999</max>
                     </li>
@@ -118,9 +118,11 @@
             <SZ_ShimmeringTallGrass>12.0</SZ_ShimmeringTallGrass>
             <SZ_GlisteningGrass>5.50</SZ_GlisteningGrass>
             <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
+            <SZ_LushGreenGrass>5.78</SZ_LushGreenGrass>
             <!--==================== FOR GROVES ====================-->
             <SZ_OpulentOrchid>2.555</SZ_OpulentOrchid>
             <SZ_BlueMoonberry>4.75</SZ_BlueMoonberry>
+            <SZ_WindingFern>3.85</SZ_WindingFern>
         </wildPlants>
         <wildAnimals>
             <Donkey>0.20</Donkey>
