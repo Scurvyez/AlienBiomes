@@ -318,7 +318,7 @@
         <statBases>
             <Beauty>2</Beauty>
             <BeautyOutdoors>2</BeautyOutdoors>
-            <Nutrition>0.15</Nutrition>
+            <Nutrition>0.01</Nutrition>
         </statBases>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>

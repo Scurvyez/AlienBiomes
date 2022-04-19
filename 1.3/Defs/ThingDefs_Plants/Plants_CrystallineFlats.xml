@@ -590,4 +590,51 @@
         </modExtensions>
     </ThingDef>
 
+    <ThingDef ParentName="AlienDeciduousTreeBase">
+        <defName>SZ_GlassyBroadLeafedBirch</defName>
+        <label>glassy broad-leafed birch</label>
+        <description>A hardwood tree? Yeah, that sounds right. Wood can be harvested from this tree and its planks exhibit a dull yet pleasent greenish hue.</description>
+        <graphicData>
+            <texPath>Things/Trees/GlassyBroadLeafedBirch</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <statBases>
+            <Beauty>2</Beauty>
+            <BeautyOutdoors>2</BeautyOutdoors>
+        </statBases>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.90</fillPercent>
+        <plant>
+            <fertilityMin>0.5</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <growDays>30</growDays>
+            <harvestWork>250</harvestWork>
+            <harvestYield>10</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <leaflessGraphicPath>Things/Trees/GlassyBroadLeafedBirch_Leafless</leaflessGraphicPath>
+            <harvestAfterGrowth>0.45</harvestAfterGrowth>
+            <harvestedThingDef>WoodLog</harvestedThingDef>
+            <topWindExposure>0.80</topWindExposure>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>45</wildClusterWeight>
+            <visualSizeRange>1.00~4.15</visualSizeRange>
+            <sowMinSkill>7</sowMinSkill>
+            <sowTags>
+                <li>Ground</li>
+            </sowTags>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>Soil</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
 </Defs>
