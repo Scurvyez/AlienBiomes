@@ -25,11 +25,14 @@
     <AlienBiomes_SettingCrystallizing>Allow colonists to be crystallized in the Crystalline Flats.</AlienBiomes_SettingCrystallizing>
     <AlienBiomes_SettingCrystallizingDesc>This can make for some fun gameplay but is also a fair challenge. Pawns afflicted with the crystallizing hediff will eventually die and be replaced by a magnificent red crystal.</AlienBiomes_SettingCrystallizingDesc>
 
-    <AlienBiomes_SettingReplaceSand>Allow vanilla sand to be replaced with new variants.</AlienBiomes_SettingReplaceSand>
-    <AlienBiomes_SettingReplaceSandDesc>Certain plants added by Alien Biomes only spawn on the new sand terrains and they look better so I'd recommend leaving this on. But if you still want a touch of familiarity then now you have it.</AlienBiomes_SettingReplaceSandDesc>
+    <AlienBiomes_SettingUseVanillaSand>Use vanilla sand.</AlienBiomes_SettingUseVanillaSand>
+    <AlienBiomes_SettingUseVanillaSandDesc>Certain plants added by Alien Biomes only spawn on the new sand terrains and they look better so I'd recommend leaving this off and letting the new sand variants take over. But if you still want a touch of familiarity then at least you have the choice.</AlienBiomes_SettingUseVanillaSandDesc>
 
-    <AlienBiomes_SettingReplaceGravel>Allow vanilla gravel to be replaced with new variants.</AlienBiomes_SettingReplaceGravel>
-    <AlienBiomes_SettingReplaceGravelDesc>If turned on all vanilla gravel will cease to be present on newly generated map tiles. The biomes are certainly prettier with this left on.</AlienBiomes_SettingReplaceGravelDesc>
+    <AlienBiomes_SettingUseVanillaGravel>Use vanilla gravel.</AlienBiomes_SettingUseVanillaGravel>
+    <AlienBiomes_SettingUseVanillaGravelDesc>If left off all vanilla gravel will be replaced by alien gravel variants. The biomes are certainly prettier with this left off.</AlienBiomes_SettingUseVanillaGravelDesc>
+
+    <AlienBiomes_SettingUseVanillaWater>Use vanilla water.</AlienBiomes_SettingUseVanillaWater>
+    <AlienBiomes_SettingUseVanillaWaterDesc>Each alien biome also has its' own new, vibrant, warm, or otherwise water textures. Turn this on to insult me and use the vanilla water.</AlienBiomes_SettingUseVanillaWaterDesc>
 
     <AlienBiomes_SettingCompEffectSounds>Allow plants to emit ambient sounds.</AlienBiomes_SettingCompEffectSounds>
     <AlienBiomes_SettingCompEffectSoundsDesc>Certain plants added by Alien Biomes have unique behaviors and some emit short ambient queues when pawns are nearby or are walking through them. Turn this off if you prefer total silence and dislike nature.</AlienBiomes_SettingCompEffectSoundsDesc>

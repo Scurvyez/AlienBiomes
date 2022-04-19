@@ -241,7 +241,7 @@
                 <releaseRadius>3</releaseRadius>
                 <fleckReleased>PsycastAreaEffect</fleckReleased>
                 <appliedHediff MayRequire="Ludeon.RimWorld.Iedology">WorkDrive</appliedHediff>
-                <tickInterval>2500</tickInterval>
+                <tickInterval>15000</tickInterval>
                 <radiusOutlineColor>(102, 255, 204)</radiusOutlineColor>
             </li>
         </comps>

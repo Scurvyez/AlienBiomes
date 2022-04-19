@@ -2,6 +2,8 @@
 using Verse;
 using RimWorld;
 using System;
+using System.Text;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace AlienBiomes
@@ -38,8 +40,9 @@ namespace AlienBiomes
             GUI.DrawTexture(parPos1, partition1, ScaleMode.StretchToFill, true);
             list.Gap(3.00f);
             list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(), ref settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingReplaceSand".Translate(), ref settings._allowReplacingOfSand, "AlienBiomes_SettingReplaceSandDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingReplaceGravel".Translate(), ref settings._allowReplacingOfGravel, "AlienBiomes_SettingReplaceGravelDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseVanillaSand".Translate(), ref settings._useVanillaSand, "AlienBiomes_SettingUseVanillaSandDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseVanillaGravel".Translate(), ref settings._useVanillaGravel, "AlienBiomes_SettingUseVanillaGravelDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseVanillaWater".Translate(), ref settings._useVanillaWater, "AlienBiomes_SettingUseVanillaWaterDesc".Translate());
             list.Gap(12.0f);
 
             // GRAPHICS & PERFORMANCE SETTINGS
@@ -47,7 +50,7 @@ namespace AlienBiomes
             list.Gap(3.00f);
             Texture2D partition2 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
             Rect parPos2 = vROffset.AtZero();
-            parPos2.y = vROffset.yMin + 145f;
+            parPos2.y = vROffset.yMin + 170f;
             parPos2.width = vROffset.width;
             parPos2.height = 12f;
             GUI.DrawTexture(parPos2, partition2, ScaleMode.StretchToFill, true);
@@ -62,7 +65,7 @@ namespace AlienBiomes
             list.Gap(3.00f);
             Texture2D partition3 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
             Rect parPos3 = vROffset.AtZero();
-            parPos3.y = vROffset.yMin + 259f;
+            parPos3.y = vROffset.yMin + 284f;
             parPos3.width = vROffset.width;
             parPos3.height = 12f;
             GUI.DrawTexture(parPos3, partition3, ScaleMode.StretchToFill, true);
@@ -73,6 +76,24 @@ namespace AlienBiomes
 
             list.End();
             Widgets.EndScrollView();
+
+            // FIX THIS SHIT STAIN.
+            if (Mouse.IsOver(viewRect)) {
+                if (settings._useVanillaWater == true || settings._useVanillaWater == false)
+                {
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaWaterTrue", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+
+                    Texture2D tex2 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaWaterFalse", false);
+                    Rect pos2 = inRect.AtZero();
+                    pos2.x = inRect.center.x - (pos2.width / 2f - 300f);
+                    pos2.y = inRect.center.y - (pos2.height / 2f - 350f);
+                    GUI.DrawTexture(pos2, tex2, ScaleMode.ScaleToFit, true);
+                }
+            }
         }
 
         public override string SettingsCategory()

@@ -1,4 +1,9 @@
-﻿using Verse;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using RimWorld;
+using UnityEngine;
+using Verse;
 
 namespace AlienBiomes
 {
@@ -38,19 +43,27 @@ namespace AlienBiomes
             }
         }
 
-        public static bool AllowReplacingOfSand
+        public static bool UseVanillaSand
         {
             get
             {
-                return _instance._allowReplacingOfSand;
+                return _instance._useVanillaSand;
             }
         }
 
-        public static bool AllowReplacingOfGravel
+        public static bool UseVanillaGravel
         {
             get
             {
-                return _instance._allowReplacingOfGravel;
+                return _instance._useVanillaGravel;
+            }
+        }
+
+        public static bool UseVanillaWater
+        {
+            get
+            {
+                return _instance._useVanillaWater;
             }
         }
 
@@ -74,8 +87,9 @@ namespace AlienBiomes
         public bool _showEffecterOverlay = false;
         public bool _showSpecialEffects = false;
         public bool _allowCrystallizing = false;
-        public bool _allowReplacingOfSand = false;
-        public bool _allowReplacingOfGravel = false;
+        public bool _useVanillaSand = false;
+        public bool _useVanillaGravel = false;
+        public bool _useVanillaWater = false;
         public bool _allowCompEffectSounds = false;
         public float _plantSoundEffectVolume = 1.00f;
 
@@ -91,8 +105,9 @@ namespace AlienBiomes
             Scribe_Values.Look(ref _showEffecterOverlay, "allowEffecterOverlay", true);
             Scribe_Values.Look(ref _showSpecialEffects, "showSpecialEffects", true);
             Scribe_Values.Look(ref _allowCrystallizing, "allowCrystallizing", true);
-            Scribe_Values.Look(ref _allowReplacingOfSand, "allowReplacingOfSand", true);
-            Scribe_Values.Look(ref _allowReplacingOfGravel, "allowReplacingOfSand", true);
+            Scribe_Values.Look(ref _useVanillaSand, "useVanillaSand", false);
+            Scribe_Values.Look(ref _useVanillaGravel, "useVanillaGravel", false);
+            Scribe_Values.Look(ref _useVanillaWater, "useVanillaWater", false);
             Scribe_Values.Look(ref _allowCompEffectSounds, "allowCompEffectSounds", true);
             Scribe_Values.Look(ref _plantSoundEffectVolume, "plantSoundEffectVolume", 1.00f);
         }
