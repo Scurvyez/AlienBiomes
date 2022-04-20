@@ -17,14 +17,14 @@ namespace AlienBiomes
             if (!ModsConfig.IsActive("m00nl1ght.geologicallandforms"))
             {
                 if (__result == TerrainDefOf.Sand && biome.defName == "SZ_RadiantPlains"
-                && AlienBiomesSettings.UseVanillaSand == false)
+                && AlienBiomesSettings.UseAlienSand == true)
                 // Checks for any Sand terrain def and whether the current map is of biome type "SZ_RadiantPlains".
                 {
                     __result = TerrainDef.Named("SZ_SoothingSand");
                     // If the above check is true, terrain def "SZ_SoothingSand" is used instead of vanilla sand.
                 }
                 if (__result == TerrainDefOf.Sand && biome.defName == "SZ_CrystallineFlats"
-                    && AlienBiomesSettings.UseVanillaSand == false)
+                    && AlienBiomesSettings.UseAlienSand == true)
                 {
                     __result = TerrainDef.Named("SZ_CrystallineSand");
                 }

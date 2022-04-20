@@ -40,9 +40,9 @@ namespace AlienBiomes
             GUI.DrawTexture(parPos1, partition1, ScaleMode.StretchToFill, true);
             list.Gap(3.00f);
             list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(), ref settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseVanillaSand".Translate(), ref settings._useVanillaSand, "AlienBiomes_SettingUseVanillaSandDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseVanillaGravel".Translate(), ref settings._useVanillaGravel, "AlienBiomes_SettingUseVanillaGravelDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseVanillaWater".Translate(), ref settings._useVanillaWater, "AlienBiomes_SettingUseVanillaWaterDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseAlienSand".Translate(), ref settings._useAlienSand, "AlienBiomes_SettingUseAlienSandDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseAlienGravel".Translate(), ref settings._useAlienGravel, "AlienBiomes_SettingUseAlienGravelDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseAlienWater".Translate(), ref settings._useAlienWater, "AlienBiomes_SettingUseAlienWaterDesc".Translate());
             list.Gap(12.0f);
 
             // GRAPHICS & PERFORMANCE SETTINGS
@@ -78,22 +78,85 @@ namespace AlienBiomes
             Widgets.EndScrollView();
 
             // FIX THIS SHIT STAIN.
-            if (Mouse.IsOver(viewRect)) {
-                if (settings._useVanillaWater == true || settings._useVanillaWater == false)
-                {
-                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaWaterTrue", false);
+            // Left hand side image Rect to display example map gen with settings turned on.
+            // Right hand side image Rect to display example map gen with settings turned off.
+            //if (Mouse.IsOver(viewRect)) {
+
+                // Right
+                Texture2D tex2 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaTerrain", false);
+                Rect pos2 = inRect.AtZero();
+                pos2.x = inRect.center.x - (pos2.width / 2f - 300f);
+                pos2.y = inRect.center.y - (pos2.height / 2f - 350f);
+                GUI.DrawTexture(pos2, tex2, ScaleMode.ScaleToFit, true);
+
+                if (settings._useAlienSand == false && settings._useAlienGravel == false && settings._useAlienWater == false) {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaTerrain", false);
                     Rect pos1 = inRect.AtZero();
                     pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
                     pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
                     GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
-
-                    Texture2D tex2 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaWaterFalse", false);
-                    Rect pos2 = inRect.AtZero();
-                    pos2.x = inRect.center.x - (pos2.width / 2f - 300f);
-                    pos2.y = inRect.center.y - (pos2.height / 2f - 350f);
-                    GUI.DrawTexture(pos2, tex2, ScaleMode.ScaleToFit, true);
                 }
-            }
+                if (settings._useAlienSand == true && settings._useAlienGravel == false && settings._useAlienWater == false) {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienSand", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+                }
+                if (settings._useAlienSand == false && settings._useAlienGravel == true && settings._useAlienWater == false) {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienGravel", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+                }
+                if (settings._useAlienSand == false && settings._useAlienGravel == false && settings._useAlienWater == true)
+                {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienWater", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+                }
+                if (settings._useAlienSand == true && settings._useAlienGravel == true && settings._useAlienWater == false) {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienGravelAndSand", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+                }
+                if (settings._useAlienSand == false && settings._useAlienGravel == true && settings._useAlienWater == true)
+                {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienGravelAndWater", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+                }
+                if (settings._useAlienSand == true && settings._useAlienGravel == false && settings._useAlienWater == true)
+                {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienSandAndWater", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+                }
+                if (settings._useAlienSand == true && settings._useAlienGravel == true && settings._useAlienWater == true) {
+                    // Left
+                    Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseNoVanillaTerrain", false);
+                    Rect pos1 = inRect.AtZero();
+                    pos1.x = inRect.center.x - (pos1.width / 2f + 300f);
+                    pos1.y = inRect.center.y - (pos1.height / 2f - 350f);
+                    GUI.DrawTexture(pos1, tex1, ScaleMode.ScaleToFit, true);
+                }
+            //}
         }
 
         public override string SettingsCategory()

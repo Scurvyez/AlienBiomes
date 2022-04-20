@@ -17,13 +17,13 @@ namespace AlienBiomes
             // Per Biome.
             if (map.Biome.defName == "SZ_CrystallineFlats")
             {
-                if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseVanillaGravel == false) {
+                if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineStonySoil;
                 }
             }
             if (map.Biome.defName == "SZ_RadiantPlains")
             {
-                if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseVanillaGravel == false) {
+                if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantStonySoil;
                 }
             }
@@ -35,13 +35,13 @@ namespace AlienBiomes
             {
                 if (map.Biome.defName == "SZ_CrystallineFlats")
                 {
-                    if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseVanillaSand == false) {
+                    if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
                         __result = AlienBiomes_TerrainDefOf.SZ_CrystallineSand;
                     }
                 }
                 if (map.Biome.defName == "SZ_RadiantPlains")
                 {
-                    if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseVanillaSand == false) {
+                    if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
                         __result = AlienBiomes_TerrainDefOf.SZ_SoothingSand;
                     }
                 }
@@ -51,25 +51,25 @@ namespace AlienBiomes
             // Per Biome.
             if (map.Biome.defName == "SZ_CrystallineFlats")
             {
-                if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseVanillaWater == false) {
+                if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseVanillaWater == false) {
+                if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterOceanShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseVanillaWater == false) {
+                if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterOceanDeep;
                 }
             }
             if (map.Biome.defName == "SZ_RadiantPlains")
             {
-                if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseVanillaWater == false) {
+                if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseVanillaWater == false) {
+                if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterOceanShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseVanillaWater == false) {
+                if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterOceanDeep;
                 }
             }
