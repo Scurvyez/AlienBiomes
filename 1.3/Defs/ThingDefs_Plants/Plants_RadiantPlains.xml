@@ -292,6 +292,8 @@
                     <li>Fresh</li>
                     <li>Salty</li>
                     <li>Shallow</li>
+                    <li>ChestDeep</li>
+                    <li>River</li>
                     <li>Boggy</li>
                     <li>Muddy</li>
                 </terrainTags>

@@ -4,6 +4,26 @@
     <!--==================== Ominous Grove Symbols Data ====================-->
 
     <KCSG.SymbolDef>
+        <defName>SZ_CrystallineSoil</defName>
+        <thing>SZ_CrystallineSoil</thing>
+    </KCSG.SymbolDef>
+
+    <KCSG.SymbolDef>
+        <defName>SZ_CrystallineSand_Grove</defName>
+        <thing>SZ_CrystallineSand_Grove</thing>
+    </KCSG.SymbolDef>
+
+    <KCSG.SymbolDef>
+        <defName>SZ_BloodWaterShallow</defName>
+        <thing>SZ_BloodWaterShallow</thing>
+    </KCSG.SymbolDef>
+
+    <KCSG.SymbolDef>
+        <defName>SZ_BloodWaterChestDeep</defName>
+        <thing>SZ_BloodWaterChestDeep</thing>
+    </KCSG.SymbolDef>
+
+    <KCSG.SymbolDef>
         <defName>SZ_GlisteningGrass</defName>
         <thing>SZ_GlisteningGrass</thing>
     </KCSG.SymbolDef>

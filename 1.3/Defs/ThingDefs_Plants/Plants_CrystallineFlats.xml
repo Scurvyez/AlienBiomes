@@ -488,7 +488,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_BlueMoonberry</defName>
         <label>blue moonberry</label>
-        <description>PLACEHOLDER</description>
+        <description>Only able to grow in the uncharacteristically fertile sands of crystalline groves, around pools of bloody water, these elastic-stemmed plants produce sweet berries over time.</description>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <drawerType>MapMeshAndRealTime</drawerType>
@@ -546,8 +546,9 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_WindingFern</defName>
         <label>winding fern</label>
-        <description>PLACEHOLDER</description>
-        <selectable>false</selectable>
+        <description>These tall and spiraling ferns are soft to the touch and over time they will produce a healing aloe which can be used to treat wounds.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
         <drawerType>MapMeshAndRealTime</drawerType>
         <altitudeLayer>Building</altitudeLayer>
         <tickerType>Long</tickerType>
@@ -574,7 +575,7 @@
             <harvestYield>5</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.25</harvestAfterGrowth>
-            <harvestedThingDef>Ambrosia</harvestedThingDef> <!-- PLACEHOLDER -->
+            <harvestedThingDef>SZ_WindingFernAloe</harvestedThingDef>
             <visualSizeRange>0.25~1.65</visualSizeRange>
             <topWindExposure>0.72</topWindExposure>
             <wildOrder>2</wildOrder>

@@ -67,9 +67,16 @@
         <affordances>
             <li>MovingFluid</li>
         </affordances>
-        <tags>
-            <li>River</li>
-        </tags>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Shallow</li>
+                    <li>River</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
         <waterDepthShaderParameters>
             <_UseWaterOffset>1</_UseWaterOffset>
         </waterDepthShaderParameters>
@@ -82,6 +89,15 @@
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>394</renderPrecedence>
         <driesTo>SZ_RadiantStonySoil</driesTo>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Shallow</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterChestDeepBase">
@@ -92,9 +108,16 @@
         <affordances>
             <li>MovingFluid</li>
         </affordances>
-        <tags>
-            <li>River</li>
-        </tags>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>ChestDeep</li>
+                    <li>River</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
         <waterDepthShaderParameters>
             <_UseWaterOffset>1</_UseWaterOffset>
         </waterDepthShaderParameters>
@@ -109,6 +132,15 @@
         <affordances>
             <li>Bridgeable</li>
         </affordances>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Salty</li>
+                    <li>ChestDeep</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterShallowBase">
@@ -118,6 +150,15 @@
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>396</renderPrecedence>
         <driesTo>SZ_RadiantStonySoil</driesTo>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Salty</li>
+                    <li>Shallow</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterDeepBase">
@@ -125,6 +166,15 @@
         <label>deep ocean water</label>
         <texturePath>Terrain/Surfaces/RadiantWaterDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Salty</li>
+                    <li>Deep</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <!--==================== Crystalline Water ====================-->

@@ -160,9 +160,13 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <tags>
-            <li>Soil</li>
-        </tags>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Rocky</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </TerrainDef>
 
     <!--==================== Soothing Sand (Light Lavender) ====================-->

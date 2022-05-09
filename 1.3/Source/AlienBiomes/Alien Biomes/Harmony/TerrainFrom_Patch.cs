@@ -54,10 +54,10 @@ namespace AlienBiomes
                 if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
+                else if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterOceanShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
+                else if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterOceanDeep;
                 }
             }
@@ -66,13 +66,27 @@ namespace AlienBiomes
                 if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
+                else if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterOceanShallow;
                 }
-                if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
+                else if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterOceanDeep;
                 }
             }
+
+            // Structure terrain checks.
+            /*if (ModsConfig.IsActive("oskarpotocki.vanillafactionsexpanded.core"))
+            {
+                if (map.Biome.defName == "SZ_CrystallineFlats")
+                {
+                    for (int i = 0; i < map.Biome.GetModExtension<KCSG.BiomeStructGenExtension>().structures.Count; i++)
+                    {
+                        if (__result == AlienBiomes_TerrainDefOf.SZ_CrystallineSoil) {
+                            __result = AlienBiomes_ThingDefOf.SZAB_OminousGrove.layouts;
+                        }
+                    }
+                }
+            }*/
         }
     }
 }

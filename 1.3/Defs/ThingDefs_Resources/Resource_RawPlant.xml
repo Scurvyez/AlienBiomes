@@ -53,4 +53,32 @@
         </ingestible>
     </ThingDef>
 
+    <!--==================== Winding Fern Aloe ====================-->
+
+    <ThingDef ParentName="MedicineBase">
+        <defName>SZ_WindingFernAloe</defName>
+        <label>winding fern aloe</label>
+        <description>A natural soothing, jelly-like liquid that feels cold to the touch when applied on wounds.</description>
+        <techLevel>Neolithic</techLevel>
+        <tickerType>Rare</tickerType>
+        <graphicData>
+            <texPath>Things/Items/Resources/PlantResourceRaw/Aloe/SZ_WindingFernAloe</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>6.65</MarketValue>
+            <Mass>0.17</Mass>
+            <Flammability>1.15</Flammability>
+            <MedicalPotency>0.60</MedicalPotency>
+            <MedicalQualityMax>0.55</MedicalQualityMax>
+            <DeteriorationRate>4</DeteriorationRate>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Rottable">
+                <daysToRotStart>150</daysToRotStart>
+                <rotDestroys>true</rotDestroys>
+            </li>
+        </comps>
+    </ThingDef>
+
 </Defs>

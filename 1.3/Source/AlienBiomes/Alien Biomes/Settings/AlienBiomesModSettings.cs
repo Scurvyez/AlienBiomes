@@ -13,72 +13,63 @@ namespace AlienBiomes
 
         public static bool ShowPlantGlow
         {
-            get
-            {
+            get {
                 return _instance._showPlantGlow;
             }
         }
 
         public static bool ShowEffecterOverlay
         {
-            get
-            {
+            get {
                 return _instance._showEffecterOverlay;
             }
         }
 
         public static bool ShowSpecialEffects
         {
-            get
-            {
+            get {
                 return _instance._showSpecialEffects;
             }
         }
 
         public static bool AllowCrystallizing
         {
-            get
-            {
+            get {
                 return _instance._allowCrystallizing;
             }
         }
 
         public static bool UseAlienSand
         {
-            get
-            {
+            get {
                 return _instance._useAlienSand;
             }
         }
 
         public static bool UseAlienGravel
         {
-            get
-            {
+            get {
                 return _instance._useAlienGravel;
             }
         }
 
         public static bool UseAlienWater
         {
-            get
-            {
+            get {
                 return _instance._useAlienWater;
             }
         }
 
         public static bool AllowCompEffectSounds
         {
-            get
-            {
+            get {
                 return _instance._allowCompEffectSounds;
             }
         }
 
         public static float PlantSoundEffectVolume
         {
-            get
-            {
+            get {
                 return _instance._plantSoundEffectVolume;
             }
         }

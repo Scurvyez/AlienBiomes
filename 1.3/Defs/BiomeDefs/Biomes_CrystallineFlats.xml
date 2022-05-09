@@ -162,6 +162,20 @@
 			</li>
             <li Class="BiomesCore.DefModExtensions.BiomesMap">
             </li>
+            <li Class="KCSG.BiomeStructGenExtension">
+                <structures>
+                    <li>
+                        <layout>SZAB_OminousGrove</layout>
+                        <commonality>1.0</commonality>
+                    </li>
+                </structures>
+                <canSpawnInMontains>true</canSpawnInMontains>
+                <clearCellRadiusAround>1</clearCellRadiusAround>
+                <spawnCount>1</spawnCount>
+                <countScaleHiliness>false</countScaleHiliness>
+                <postGenerateOre>true</postGenerateOre>
+                <canSpawnOnBridgeableTerrain>false</canSpawnOnBridgeableTerrain>
+            </li>
 		</modExtensions>
     </BiomeDef>
 
