@@ -174,7 +174,7 @@
                 <spawnCount>1</spawnCount>
                 <countScaleHiliness>false</countScaleHiliness>
                 <postGenerateOre>true</postGenerateOre>
-                <canSpawnOnBridgeableTerrain>false</canSpawnOnBridgeableTerrain>
+                <canSpawnOnWaterTerrain>false</canSpawnOnWaterTerrain>
             </li>
 		</modExtensions>
     </BiomeDef>
