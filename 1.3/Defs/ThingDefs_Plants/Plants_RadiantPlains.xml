@@ -261,6 +261,8 @@
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_LilyOfThePlains</defName>
         <label>lily of the plains</label>
+        <thingClass>AlienBiomes.Plant_Mobile</thingClass>
+        <drawerType>MapMeshAndRealTime</drawerType>
         <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
         <statBases>
             <MaxHitPoints>20</MaxHitPoints>
@@ -279,9 +281,10 @@
             <fertilityMin>0.1</fertilityMin>
             <fertilitySensitivity>0.1</fertilitySensitivity>
             <growDays>8</growDays>
+            <maxMeshCount>9</maxMeshCount>
             <wildClusterRadius>4</wildClusterRadius>
             <wildClusterWeight>75</wildClusterWeight>
-            <visualSizeRange>0.35~2.00</visualSizeRange>
+            <visualSizeRange>0.15~1.00</visualSizeRange>
             <topWindExposure>0.65</topWindExposure>
             <wildOrder>2</wildOrder>
         </plant>
@@ -297,6 +300,9 @@
                     <li>Boggy</li>
                     <li>Muddy</li>
                 </terrainTags>
+            </li>
+            <li Class="AlienBiomes.Plant_Mobile_ModExtension">
+                
             </li>
         </modExtensions>
     </ThingDef>

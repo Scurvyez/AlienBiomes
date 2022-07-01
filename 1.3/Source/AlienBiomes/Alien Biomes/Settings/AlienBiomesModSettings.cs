@@ -74,14 +74,14 @@ namespace AlienBiomes
             }
         }
         
-        public bool _showPlantGlow = false;
-        public bool _showEffecterOverlay = false;
-        public bool _showSpecialEffects = false;
-        public bool _allowCrystallizing = false;
-        public bool _useAlienSand = false;
-        public bool _useAlienGravel = false;
-        public bool _useAlienWater = false;
-        public bool _allowCompEffectSounds = false;
+        public bool _showPlantGlow = true;
+        public bool _showEffecterOverlay = true;
+        public bool _showSpecialEffects = true;
+        public bool _allowCrystallizing = true;
+        public bool _useAlienSand = true;
+        public bool _useAlienGravel = true;
+        public bool _useAlienWater = true;
+        public bool _allowCompEffectSounds = true;
         public float _plantSoundEffectVolume = 1.00f;
 
         public AlienBiomesSettings()

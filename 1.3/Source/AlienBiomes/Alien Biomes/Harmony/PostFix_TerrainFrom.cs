@@ -60,6 +60,12 @@ namespace AlienBiomes
                 else if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterOceanDeep;
                 }
+                else if (__result == TerrainDefOf.WaterMovingShallow && AlienBiomesSettings.UseAlienWater == true) {
+                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterMovingShallow;
+                }
+                else if (__result == TerrainDefOf.WaterMovingChestDeep && AlienBiomesSettings.UseAlienWater == true) {
+                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterMovingChestDeep;
+                }
             }
             if (map.Biome.defName == "SZ_RadiantPlains")
             {
@@ -72,21 +78,13 @@ namespace AlienBiomes
                 else if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterOceanDeep;
                 }
-            }
-
-            // Structure terrain checks.
-            /*if (ModsConfig.IsActive("oskarpotocki.vanillafactionsexpanded.core"))
-            {
-                if (map.Biome.defName == "SZ_CrystallineFlats")
-                {
-                    for (int i = 0; i < map.Biome.GetModExtension<KCSG.BiomeStructGenExtension>().structures.Count; i++)
-                    {
-                        if (__result == AlienBiomes_TerrainDefOf.SZ_CrystallineSoil) {
-                            __result = AlienBiomes_ThingDefOf.SZAB_OminousGrove.layouts;
-                        }
-                    }
+                else if (__result == TerrainDefOf.WaterMovingShallow && AlienBiomesSettings.UseAlienWater == true) {
+                    __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterMovingShallow;
                 }
-            }*/
+                else if (__result == TerrainDefOf.WaterMovingChestDeep && AlienBiomesSettings.UseAlienWater == true) {
+                    __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterMovingChestDeep;
+                }
+            }
         }
     }
 }

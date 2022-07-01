@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Lib.Harmony.2.2.0\lib\net472\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -69,16 +70,18 @@
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
-    <Compile Include="Comps\Comp_GraphicsOverlay.cs" />
-    <Compile Include="Comps\CompProps\CompProperties_GraphicsOverlay.cs" />
-    <Compile Include="Comps\CompProps\CompProperties_EffecterWithRadius.cs" />
-    <Compile Include="Comps\Comp_EffectorWithRadius.cs" />
-    <Compile Include="Comps\CompProps\CompProperties_PlantFleckEmitter.cs" />
-    <Compile Include="Comps\Comp_PlantFleckEmitter.cs" />
-    <Compile Include="Comps\CompProps\CompProperties_TimedHarvest.cs" />
-    <Compile Include="Comps\Comp_TimedHarvest.cs" />
-    <Compile Include="Comps\Comp_TimedGlower.cs" />
-    <Compile Include="Comps\CompProps\CompProperties_TimedGlower.cs" />
+    <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
+    <Compile Include="ThingClasses\Plant_Mobile.cs" />
+    <Compile Include="ThingComps\Comp_GraphicsOverlay.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_GraphicsOverlay.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_EffecterWithRadius.cs" />
+    <Compile Include="ThingComps\Comp_EffectorWithRadius.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_PlantFleckEmitter.cs" />
+    <Compile Include="ThingComps\Comp_PlantFleckEmitter.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_TimedHarvest.cs" />
+    <Compile Include="ThingComps\Comp_TimedHarvest.cs" />
+    <Compile Include="ThingComps\Comp_TimedGlower.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_TimedGlower.cs" />
     <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_ThingDefOf.cs" />
     <Compile Include="DefOfs\AlienBiomes_BiomeDefOf.cs" />
@@ -88,12 +91,12 @@
     <Compile Include="Harmony\PostFix_TerrainFrom.cs" />
     <Compile Include="Harmony\PostFix_BeachTerrainAt.cs" />
     <Compile Include="Harmony\PostFix_HarvestableNow.cs" />
-    <Compile Include="DefModExtensions\NightBlooming_ModExtension.cs" />
+    <Compile Include="ThingClasses\DefModExtensions\NightBlooming_ModExtension.cs" />
     <Compile Include="HediffComps\HediffCompProps\HediffCompProperties_Crystallize.cs" />
     <Compile Include="HediffComps\HediffComp_Crystallize.cs" />
     <Compile Include="MapComps\MapComponent_ThingCompsGetter.cs" />
-    <Compile Include="Things\Medicine_Aloe.cs" />
-    <Compile Include="Things\Plant_NightBlooming.cs" />
+    <Compile Include="ThingClasses\Medicine_Aloe.cs" />
+    <Compile Include="ThingClasses\Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

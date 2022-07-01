@@ -37,3 +37,5 @@ TO DO LIST...
     They draw nutrients from the bloodstream and then eventually kill their host,
     bursting from their bodies to continue their lifecycle. -->
 
+- Plants that can move from cell to cell sporadically throughout the day/week/quadrum
+
