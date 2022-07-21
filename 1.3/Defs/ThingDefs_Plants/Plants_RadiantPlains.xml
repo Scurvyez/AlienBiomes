@@ -116,6 +116,81 @@
         </modExtensions>
     </ThingDef>
 
+    <!--==================== Fiddlehead Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_Fiddlefead</defName>
+        <label>fiddlehead</label>
+        <description>PLACEHOLDER</description>
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/Fiddlehead</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.5~1.2</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Cuphead Mold Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_CupheadMold</defName>
+        <label>cuphead mold</label>
+        <description>PLACEHOLDER</description>
+        <statBases>
+            <MaxHitPoints>46</MaxHitPoints>
+            <Flammability>1.00</Flammability>
+            <Nutrition>0.02</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/CupheadMold</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>30</growDays>
+            <leaflessGraphicPath>Things/Plants/CupheadMold_Leafless</leaflessGraphicPath>
+            <maxMeshCount>4</maxMeshCount>
+            <visualSizeRange>0.5~1.6</visualSizeRange>
+            <topWindExposure>0.75</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
     <!--==================== Soothing Stalk Plant ====================-->
     <!-- Only spawns on soothing sand. -->
     <!-- Produces raw soothing honey. -->
@@ -293,9 +368,7 @@
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
-                    <li>Salty</li>
                     <li>Shallow</li>
-                    <li>ChestDeep</li>
                     <li>River</li>
                     <li>Boggy</li>
                     <li>Muddy</li>

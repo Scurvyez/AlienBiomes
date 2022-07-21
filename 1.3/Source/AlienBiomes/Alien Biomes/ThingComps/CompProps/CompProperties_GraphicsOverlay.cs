@@ -13,5 +13,17 @@ namespace AlienBiomes
         {
             compClass = typeof(Comp_GraphicsOverlay);
         }
+
+        public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
+        {
+            foreach (string error in base.ConfigErrors(parentDef))
+            {
+                yield return error;
+            }
+            if (graphicElements == null)
+            {
+                yield return "Oops! We couldn't find a texture for <graphicElements>, please provide at least one.";
+            }
+        }
     }
 }

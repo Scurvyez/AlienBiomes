@@ -16,11 +16,17 @@ namespace AlienBiomes
         public int Counter = 0;
         public TerrainDef ter = new ();
 
+        // Grab all cells with existing ThingDef in them already and cache those for use...
+        // instead of scanning over the entire map.
+
+        /// <summary>
+        /// Checks to see if a given cell on the map is not occupied.
+        /// Swap into a MapComp?
+        /// </summary>
         private bool IsProperTerrain()
         {
             if (this.RandomAdjacentCell8Way().IsValid == true
-                && this.RandomAdjacentCell8Way().Filled(this.Map) == false
-                && ter.defName == "SZ_RadiantWaterShallow")
+                && this.RandomAdjacentCell8Way().Filled(this.Map) == false)
             {
                 return true;
             }
@@ -31,9 +37,11 @@ namespace AlienBiomes
         {
             base.TickLong();
 
+            // See if the tile is a good cell to move to.
             bool iPT = IsProperTerrain();
             Plant_Mobile_ModExtension mobileExt = def.GetModExtension<Plant_Mobile_ModExtension>();
 
+            // Dict = cell + is valid/unoccupied.
             Dictionary<IntVec3, bool> availCells = new();
             foreach (IntVec3 cell in Map.AllCells)
             {
@@ -51,7 +59,9 @@ namespace AlienBiomes
             {
                 if (this.Map != null && !this.LeaflessNow)
                 {
+                    //Map.glowGrid.DeRegisterGlower(GetComp<Comp_TimedGlower>());
                     Position = availCells.RandomElement().Key;
+                    //Map.glowGrid.RegisterGlower(GetComp<Comp_TimedGlower>());
                     Log.Message(this.def + "<color=green> at </color>" + this.Position + "<color=green> moved to </color>" + availCells.RandomElement().Key);
                 }
                 Counter = 0;
@@ -61,6 +71,8 @@ namespace AlienBiomes
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             base.DrawAt(drawLoc, flip);
+
+
         }
     }
 }

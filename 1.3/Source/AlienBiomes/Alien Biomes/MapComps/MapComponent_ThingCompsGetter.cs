@@ -17,7 +17,8 @@ namespace AlienBiomes
             
         }
 
-        public override void FinalizeInit() {
+        public override void FinalizeInit() 
+        {
             base.FinalizeInit();
         }
 

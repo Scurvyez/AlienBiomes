@@ -89,6 +89,8 @@
             <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
+            <SZ_Fiddlefead>2.75</SZ_Fiddlefead>
+            <SZ_CupheadMold>1.50</SZ_CupheadMold>
             <SZ_LilyOfThePlains>0.25</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>2.85</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
