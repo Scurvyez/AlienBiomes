@@ -62,7 +62,7 @@ namespace AlienBiomes
                     //Map.glowGrid.DeRegisterGlower(GetComp<Comp_TimedGlower>());
                     Position = availCells.RandomElement().Key;
                     //Map.glowGrid.RegisterGlower(GetComp<Comp_TimedGlower>());
-                    Log.Message(this.def + "<color=green> at </color>" + this.Position + "<color=green> moved to </color>" + availCells.RandomElement().Key);
+                    //Log.Message(this.def + "<color=green> at </color>" + this.Position + "<color=green> moved to </color>" + availCells.RandomElement().Key);
                 }
                 Counter = 0;
             }

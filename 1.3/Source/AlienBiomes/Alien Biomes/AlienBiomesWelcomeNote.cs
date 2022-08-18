@@ -9,10 +9,10 @@ namespace AlienBiomes
         static AlienBiomesMain()
         {
             Log.Message("<color=white>[</color>" +
-                "<color=cyan>Alien</color>" +
-                "<color=cyan>Biomes</color>" +
+                "<color=#4494E3FF>Alien</color>" +
+                "<color=#4494E3FF>Biomes</color>" +
                 "<color=white>]</color>" +
-                " <color=cyan>Welcome, enjoy the ride!</color>");
+                " <color=#4494E3FF>Welcome, enjoy the ride!</color>");
 
             var harmony = new Harmony("com.alienbiomes");
             harmony.PatchAll();

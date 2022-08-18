@@ -6,11 +6,11 @@ namespace AlienBiomes
     public class CompProperties_TimedGlower : CompProperties_Glower
     {
         /// <summary>
-        /// If not null, the time after which it will glow.
+        /// If not null, the time after which it will start glowing.
         /// </summary>
         public float startTime = 0.75f;
         /// <summary>
-        /// If not null, the time before which it will glow.
+        /// If not null, the time before which it will stop glowing.
         /// </summary>
         public float stopTime = 0.20f;
 

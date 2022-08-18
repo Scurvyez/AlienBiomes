@@ -91,7 +91,7 @@
         <wildPlants>
             <SZ_Fiddlefead>2.75</SZ_Fiddlefead>
             <SZ_CupheadMold>1.50</SZ_CupheadMold>
-            <SZ_LilyOfThePlains>0.25</SZ_LilyOfThePlains>
+            <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>2.85</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
             <SZ_ElderBlushingTree>0.10</SZ_ElderBlushingTree>
@@ -116,8 +116,8 @@
 			<li Class="BiomesKit.BiomesKitControls">
                 <allowOnLand>True</allowOnLand>
                 <frequency>100</frequency>
-                <minTemperature>20.5</minTemperature>
-                <maxTemperature>30.5</maxTemperature>
+                <minTemperature>-20.5</minTemperature>
+                <maxTemperature>300.5</maxTemperature>
                 <maxHilliness>Flat</maxHilliness>
 			</li>
             <li Class="BiomesCore.DefModExtensions.BiomesMap">
