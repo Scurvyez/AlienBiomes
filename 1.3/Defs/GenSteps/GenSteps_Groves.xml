@@ -20,7 +20,7 @@
         <order>450</order>
         <genStep Class="KCSG.GenStep_CustomStructureGen">
             <structureLayoutDefs>
-                <li>SZAB_OminousGrove</li>
+                <li>SZAB_OminousGroveTwo</li>
             </structureLayoutDefs>
         </genStep>
     </GenStepDef>

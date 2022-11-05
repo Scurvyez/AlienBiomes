@@ -165,7 +165,7 @@
             <li Class="KCSG.BiomeStructGenExtension">
                 <structures>
                     <li>
-                        <layout>SZAB_OminousGrove</layout>
+                        <layout>SZAB_OminousGroveTwo</layout>
                         <commonality>1.0</commonality>
                     </li>
                 </structures>

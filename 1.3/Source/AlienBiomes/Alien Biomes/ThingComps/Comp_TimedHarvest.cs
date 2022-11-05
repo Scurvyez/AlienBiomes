@@ -12,20 +12,24 @@ namespace AlienBiomes
         public bool AdditionalPlantHarvestLogic()
         {
             base.CompTickLong();
-            var dP = GenLocalDate.DayPercent(parent.Map);
-            var sTS = GenLocalDate.Season(parent.Map).ToString();
+            float dayPercent = GenLocalDate.DayPercent(parent.Map);
+            string season = GenLocalDate.Season(parent.Map).ToString();
 
             TickCounter++;
             if (TickCounter > 6000)
             {
-                Color c = new (0.145f, 0.588f, 0.745f, 1f);
+                Color color = new (0.145f, 0.588f, 0.745f, 1f);
 
-                Log.Message(sTS.ToString().Colorize(c));
+                Log.Message(season.ToString().Colorize(color));
                 TickCounter = 0;
             }
 
-            if (((dP > Props.harvestStartTime && dP < 1f) || (dP < Props.harvestStopTime && dP > 0f))
-                || (GenLocalDate.Season(parent.Map).ToString() == Props.harvestSeasons.Any().ToString()))
+            if (Props.harvestSeasons.Contains(GenLocalDate.Season(parent.Map)))
+            {
+                return true;
+            }
+            if ((dayPercent > Props.harvestStartTime && dayPercent < 1f) 
+                || (dayPercent < Props.harvestStopTime && dayPercent > 0f))
             {
                 return true;
             }

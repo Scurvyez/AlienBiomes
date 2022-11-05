@@ -1,4 +1,5 @@
 ﻿using Verse;
+using RimWorld;
 using System.Collections.Generic;
 
 namespace AlienBiomes
@@ -10,8 +11,7 @@ namespace AlienBiomes
         /// <summary>
         /// Seasons = Spring, Fall, Winter, Summer, Permanent Summer, Permanent Winter.
         /// </summary>
-        public List<string> harvestSeasons = null;
-        //public bool seasonalHarvesting = false;
+        public List<Season> harvestSeasons = new ();
 
         public CompProperties_TimedHarvest()
         {
