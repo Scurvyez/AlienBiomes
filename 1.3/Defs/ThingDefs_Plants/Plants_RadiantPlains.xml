@@ -119,7 +119,45 @@
     <!--==================== Fiddlehead Plant ====================-->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_Fiddlefead</defName>
+        <defName>SZ_BulbusSanitas</defName>
+        <label>bulbus sanitas</label>
+        <description>PLACEHOLDER</description>
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/BulbusSanitas</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>Things/Plants/BulbusSanitas_Leafless</leaflessGraphicPath>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.5~1.2</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Fiddlehead Plant ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_Fiddlehead</defName>
         <label>fiddlehead</label>
         <description>PLACEHOLDER</description>
         <statBases>
@@ -340,8 +378,6 @@
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_LilyOfThePlains</defName>
         <label>lily of the plains</label>
-        <thingClass>AlienBiomes.Plant_Mobile</thingClass>
-        <drawerType>MapMeshAndRealTime</drawerType>
         <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
         <statBases>
             <MaxHitPoints>20</MaxHitPoints>
@@ -377,9 +413,6 @@
                     <li>Boggy</li>
                     <li>Muddy</li>
                 </terrainTags>
-            </li>
-            <li Class="AlienBiomes.Plant_Mobile_ModExtension">
-                
             </li>
         </modExtensions>
     </ThingDef>
@@ -445,6 +478,62 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Fiddlehead Wall ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_FiddleheadWall</defName>
+        <label>fiddlehead wall</label>
+        <description>PLACEHOLDER</description>
+        <passability>Impassable</passability>
+        <blockWind>true</blockWind>
+        <fillPercent>0.99</fillPercent>
+        <selectable>true</selectable>
+        <holdsRoof>true</holdsRoof>
+        <blockLight>false</blockLight>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>Building</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <Flammability>0.035</Flammability>
+            <Nutrition>0.01</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/FiddleheadWall</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <building>
+            <isInert>true</isInert>
+            <ai_chillDestination>false</ai_chillDestination>
+        </building>
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>0.25</growDays>
+            <leaflessGraphicPath>Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
+            <visualSizeRange>1.00~3.25</visualSizeRange>
+            <topWindExposure>0.10</topWindExposure>
+            <harvestWork>200</harvestWork>
+            <harvestYield>1</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.45</harvestAfterGrowth>
+            <harvestedThingDef>SZ_FiddleheadWall</harvestedThingDef>
+            <harvestFailable>true</harvestFailable>
+            <wildOrder>1</wildOrder>
+            <sowTags>
+                <li>Ground</li>
+            </sowTags>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
                 </terrainTags>
             </li>
         </modExtensions>

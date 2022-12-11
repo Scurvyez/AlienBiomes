@@ -89,7 +89,7 @@
             <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
-            <SZ_Fiddlefead>2.75</SZ_Fiddlefead>
+            <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
             <SZ_CupheadMold>1.50</SZ_CupheadMold>
             <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>2.85</SZ_SoothingStalk>
@@ -98,6 +98,9 @@
             <SZ_RadiantGrass>5.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
             <SZ_LushGrass>3.75</SZ_LushGrass>
+            <SZ_BulbusSanitas>2.35</SZ_BulbusSanitas>
+
+            <SZ_FiddleheadWall>0.35</SZ_FiddleheadWall>
         </wildPlants>
         <wildAnimals>
             <Horse>0.20</Horse>
