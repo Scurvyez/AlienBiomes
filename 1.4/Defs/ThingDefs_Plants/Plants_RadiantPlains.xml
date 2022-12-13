@@ -507,10 +507,6 @@
             <texPath>Things/Plants/FiddleheadWall</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
-        <building>
-            <isInert>true</isInert>
-            <ai_chillDestination>false</ai_chillDestination>
-        </building>
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
