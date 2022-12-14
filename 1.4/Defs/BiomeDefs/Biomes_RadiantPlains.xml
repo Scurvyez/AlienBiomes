@@ -20,7 +20,7 @@
         <texture>World/Biomes/SZ_RadiantPlains</texture>
         <forageability>1</forageability>
         <foragedFood>RawBerries</foragedFood>
-        <wildPlantRegrowDays>20</wildPlantRegrowDays>
+        <wildPlantRegrowDays>10</wildPlantRegrowDays>
         <soundsAmbient>
             <li>Ambient_NightInsects_Jungle</li>
             <li>Ambient_DayInsects_Jungle</li>
@@ -90,7 +90,7 @@
         </baseWeatherCommonalities>
         <wildPlants>
             <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
-            <SZ_CupheadMold>1.50</SZ_CupheadMold>
+            <SZ_CupheadMold>1.10</SZ_CupheadMold>
             <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>2.85</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
@@ -98,7 +98,7 @@
             <SZ_RadiantGrass>5.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
             <SZ_LushGrass>3.75</SZ_LushGrass>
-            <SZ_BulbusSanitas>2.35</SZ_BulbusSanitas>
+            <SZ_BulbusSanitas>1.95</SZ_BulbusSanitas>
 
             <SZ_FiddleheadWall>0.35</SZ_FiddleheadWall>
         </wildPlants>

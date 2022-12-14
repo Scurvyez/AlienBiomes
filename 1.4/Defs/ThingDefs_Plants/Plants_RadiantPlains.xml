@@ -121,7 +121,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_BulbusSanitas</defName>
         <label>bulbus sanitas</label>
-        <description>PLACEHOLDER</description>
+        <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
@@ -139,7 +139,7 @@
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>4.75</growDays>
             <leaflessGraphicPath>Things/Plants/BulbusSanitas_Leafless</leaflessGraphicPath>
-            <maxMeshCount>9</maxMeshCount>
+            <maxMeshCount>16</maxMeshCount>
             <visualSizeRange>0.5~1.2</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
             <wildOrder>1</wildOrder>
@@ -300,7 +300,7 @@
 
     <!--==================== Copacetic Cone Plant ====================-->
     <!-- Only spawns on radiant soil and rich radiant soil. -->
-    <!-- Emits a hediff to sooth nearby pawns. -->
+    <!-- Emits a hediff to calm nearby pawns. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
