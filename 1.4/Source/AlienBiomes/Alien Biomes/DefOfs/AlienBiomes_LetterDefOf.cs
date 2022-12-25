@@ -8,5 +8,10 @@ namespace AlienBiomes
     {
         public static LetterDef SZ_PawnCrystallizing;
         public static LetterDef SZ_PawnCrystallized;
+
+        static AlienBiomes_LetterDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_LetterDefOf));
+        }
     }
 }

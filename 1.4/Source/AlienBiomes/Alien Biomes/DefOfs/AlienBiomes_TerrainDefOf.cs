@@ -38,5 +38,10 @@ namespace AlienBiomes
         public static TerrainDef SZ_RadiantWaterChestDeep;
         public static TerrainDef SZ_RadiantWaterOceanShallow;
         public static TerrainDef SZ_RadiantWaterOceanDeep;
+
+        static AlienBiomes_TerrainDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_TerrainDefOf));
+        }
     }
 }

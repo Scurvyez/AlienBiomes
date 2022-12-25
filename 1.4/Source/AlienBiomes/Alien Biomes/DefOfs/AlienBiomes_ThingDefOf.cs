@@ -19,5 +19,10 @@ namespace AlienBiomes
 
         // Structures
         public static KCSG.StructureLayoutDef SZAB_OminousGrove;
+
+        static AlienBiomes_ThingDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_ThingDefOf));
+        }
     }
 }
