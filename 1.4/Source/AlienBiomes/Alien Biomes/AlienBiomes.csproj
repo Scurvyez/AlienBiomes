@@ -40,6 +40,10 @@
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="BiomesCore">
+      <HintPath>E:\DOWNLOADS\BiomesCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="KCSG">
       <HintPath>C:\Users\steve\Downloads\KCSG.dll</HintPath>
       <Private>False</Private>
@@ -68,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
+    <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />

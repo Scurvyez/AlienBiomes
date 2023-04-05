@@ -27,6 +27,7 @@ namespace AlienBiomes
                 if ((dP > Props.timeRangeDisplayed.min && dP < 1f) 
                     || (dP < Props.timeRangeDisplayed.max && dP > 0f))
                 {
+                    props.graphicElements[i].drawSize *= vSR;
                     props.graphicElements[i].Graphic.Draw(parent.DrawPos, parent.Rotation, parent);
 
                     // Extra step for crystals only.

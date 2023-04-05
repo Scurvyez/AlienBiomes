@@ -5,6 +5,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Reflection;
+using HarmonyLib;
 
 namespace AlienBiomes
 {
@@ -16,6 +17,9 @@ namespace AlienBiomes
         public AlienBiomesMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<AlienBiomesSettings>();
+
+            var harmony = new Harmony("com.alienbiomes");
+            harmony.PatchAll();
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

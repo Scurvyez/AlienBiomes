@@ -3,6 +3,11 @@ using RimWorld;
 
 namespace AlienBiomes
 {
+    /// <summary>
+    /// This is a DefOf class with the DefOf attribute.
+    /// All this does is create a direct reference to your specific xml def.
+    /// Allows you to reference the def directly in c# without using strings.
+    /// </summary>
     [DefOf]
     public static class AlienBiomes_ThingDefOf
     {

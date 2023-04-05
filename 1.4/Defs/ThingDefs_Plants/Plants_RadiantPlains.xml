@@ -34,6 +34,8 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -73,6 +75,8 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -159,7 +163,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_Fiddlehead</defName>
         <label>fiddlehead</label>
-        <description>PLACEHOLDER</description>
+        <description>Named after the more commonly known terrestrial fiddlehead because of their uncanny resemblance to the juvenile fronds of a sprouting Earth-bound fern.</description>
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
@@ -224,6 +228,8 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -374,9 +380,13 @@
     <!--==================== Lily of the Plains Plant ====================-->
     <!-- Decorative, wild, no fruit or real benefits. lol -->
     <!-- Only spawns in water. -->
+    <!-- Can move around in the water. -->
+    <!-- thingClass = AlienBiomes.Plant_Mobile -->
+    <!-- tickType = Long -->
 
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_LilyOfThePlains</defName>
+        <thingClass>AlienBiomes.Plant_Mobile</thingClass>
         <label>lily of the plains</label>
         <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
         <statBases>
@@ -414,6 +424,10 @@
                     <li>Muddy</li>
                 </terrainTags>
             </li>
+            <li Class="AlienBiomes.Plant_Mobile_ModExtension">
+                <startTime>0.75</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
         </modExtensions>
     </ThingDef>
 
@@ -423,14 +437,18 @@
 
     <ThingDef ParentName="AlienDeciduousTreeBase" Name="SZ_ElderBlushingTree">
         <defName>SZ_ElderBlushingTree</defName>
+        <thingClass>AlienBiomes.Plant_Mobile</thingClass>
+        <drawerType>MapMeshAndRealTime</drawerType>
         <label>elder blushing tree</label>
         <description>These trees attract clawed predators who love the fragrant bark beneath their razor-like claws. Generations of animals scratching at the surface and subsequent evolutionary softening of the trees' woody trunks has led to the loss of natural woody bi-products.\n\nInstead, these trees produce a pulp-like substance that can be harvested and refined into wood planks.</description>
         <graphicData>
             <texPath>Things/Trees/ElderBlushingTree</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+            <drawSize>1.00</drawSize>
             <shadowData>
-                <volume>(0.2, 0.35, 0.13)</volume>
-                <offset>(-0.03,0,-0.44)</offset>
+                <volume>(0, 0, 0)</volume>
+                <offset>(0, 0, 0)</offset>
             </shadowData>
         </graphicData>
         <statBases>
@@ -473,12 +491,35 @@
                 <startTime>0.80</startTime>
                 <stopTime>0.15</stopTime>
             </li>
+            <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
+                <timeRangeDisplayed>0.55~0.30</timeRangeDisplayed>
+                <graphicElements>
+                    <li>
+                        <texPath>Things/Trees/Overlays/ElderBlushingTree/GlowingSpots</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>MoteGlowDistorted</shaderType>
+                        <drawSize>1.00</drawSize>
+                        <shaderParameters>
+                            <_distortionScale>0.5</_distortionScale>
+                            <_distortionIntensity>0.058</_distortionIntensity>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                        </shaderParameters>
+                        <damageData>
+                            <enabled>false</enabled>
+                        </damageData>
+                    </li>
+                </graphicElements>
+            </li>
         </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
+            </li>
+            <li Class="AlienBiomes.Plant_Mobile_ModExtension">
+                <startTime>0.75</startTime>
+                <stopTime>0.20</stopTime>
             </li>
         </modExtensions>
     </ThingDef>
@@ -488,7 +529,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_FiddleheadWall</defName>
         <label>fiddlehead wall</label>
-        <description>PLACEHOLDER</description>
+        <description>This closely related variant of the much smaller fiddlehead towers above all who embrace its presence. The fiddlehead walls' roots burrow deep underground, offering strong structural support to the rest of the plant, even in the soggiest of places. Their steel-like stalks provide adequate cover in times of projectile onslaught.</description>
         <passability>Impassable</passability>
         <blockWind>true</blockWind>
         <fillPercent>0.99</fillPercent>
@@ -508,18 +549,12 @@
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <plant>
-            <fertilityMin>0.025</fertilityMin>
-            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <fertilityMin>0.10</fertilityMin>
+            <fertilitySensitivity>0.750</fertilitySensitivity>
             <growDays>0.25</growDays>
             <leaflessGraphicPath>Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
             <visualSizeRange>1.00~3.25</visualSizeRange>
             <topWindExposure>0.10</topWindExposure>
-            <harvestWork>200</harvestWork>
-            <harvestYield>1</harvestYield>
-            <harvestTag>Standard</harvestTag>
-            <harvestAfterGrowth>0.45</harvestAfterGrowth>
-            <harvestedThingDef>SZ_FiddleheadWall</harvestedThingDef>
-            <harvestFailable>true</harvestFailable>
             <wildOrder>1</wildOrder>
             <sowTags>
                 <li>Ground</li>
@@ -530,6 +565,10 @@
                 <terrainTags>
                     <li>Soil</li>
                     <li>Sandy</li>
+                    <li>Boggy</li>
+                    <li>Loose</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
                 </terrainTags>
             </li>
         </modExtensions>
