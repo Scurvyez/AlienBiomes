@@ -4,7 +4,7 @@ using Verse;
 
 namespace AlienBiomes
 {
-    public class CompProperties_GraphicsOverlay : CompProperties_FireOverlay
+    public class CompProperties_GraphicsOverlay : CompProperties
     {
         public List<GraphicData> graphicElements;
         public FloatRange timeRangeDisplayed; // XML = someFloat~someFloat

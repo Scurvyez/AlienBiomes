@@ -40,7 +40,7 @@ namespace AlienBiomes
             }
 
             Counter++;
-            if (Counter > this.HashOffset())
+            if (Counter > this.HashOffsetTicks())
             {
                 // check to make sure it's within the allowed time range of the day on the current map
                 if (GenLocalDate.DayPercent(this) >= plantExt.startTime || GenLocalDate.DayPercent(this) <= plantExt.stopTime)

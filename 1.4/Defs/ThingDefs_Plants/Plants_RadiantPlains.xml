@@ -473,7 +473,7 @@
             <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef>
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
-            <visualSizeRange>1.00~5.15</visualSizeRange>
+            <visualSizeRange>0.10~5.00</visualSizeRange>
             <sowMinSkill>7</sowMinSkill>
             <sowTags>
                 <li>Ground</li>
@@ -488,20 +488,21 @@
                 <overlightRadius>2.50</overlightRadius>
                 <glowRadius>3.20</glowRadius>
                 <glowColor>(63, 216, 188, 0)</glowColor>
-                <startTime>0.80</startTime>
-                <stopTime>0.15</stopTime>
+                <startTime>0.75</startTime>
+                <stopTime>0.20</stopTime>
             </li>
             <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
-                <timeRangeDisplayed>0.55~0.30</timeRangeDisplayed>
+                <timeRangeDisplayed>0.75~0.20</timeRangeDisplayed>
                 <graphicElements>
                     <li>
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/GlowingSpots</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>MoteGlowDistorted</shaderType>
                         <drawSize>1.00</drawSize>
+                        <drawOffset>(0, 0, 0)</drawOffset>
                         <shaderParameters>
-                            <_distortionScale>0.5</_distortionScale>
-                            <_distortionIntensity>0.058</_distortionIntensity>
+                            <_distortionScale>0.025</_distortionScale>
+                            <_distortionIntensity>0.025</_distortionIntensity>
                             <_DistortionTex>/Other/Ripples</_DistortionTex>
                         </shaderParameters>
                         <damageData>
