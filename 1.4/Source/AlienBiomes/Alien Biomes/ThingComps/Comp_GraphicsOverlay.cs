@@ -8,7 +8,9 @@ namespace AlienBiomes
     public class Comp_GraphicsOverlay : ThingComp
     {
         public CompProperties_GraphicsOverlay Props => (CompProperties_GraphicsOverlay)props;
-        
+
+        private float curWindSpeed; // initialize current speed to default value
+
         /// <summary>
         /// Renders additional graphics on a parent thing.
         /// XML, drawerType = RealtimeOnly || MapMeshAndRealTime.
@@ -18,6 +20,8 @@ namespace AlienBiomes
             base.PostDraw();
 
             var parentPlant = parent as Plant;
+            if (parentPlant == null) return;
+
             float dP = GenLocalDate.DayPercent(parent.Map); // Time of day as a %
             float pGrowth = parent.def.plant.visualSizeRange.LerpThroughRange(parentPlant.Growth);
             float maxG = parent.def.plant.visualSizeRange.TrueMax; // max growth stage of a plant
@@ -26,9 +30,29 @@ namespace AlienBiomes
             {
                 if ((dP > Props.timeRangeDisplayed.min && dP < 1f) || (dP < Props.timeRangeDisplayed.max && dP > 0f))
                 {
-                    Props.graphicElements[i].Graphic.drawSize = new Vector2(pGrowth, pGrowth);
-                    Props.graphicElements[i].Graphic.data.drawOffset.z = pGrowth / 2.5f;
-                    Props.graphicElements[i].Graphic.Draw(parent.DrawPos, parent.Rotation, parent);
+                    float plantSize = parentPlant.def.graphicData.drawSize.x * pGrowth;
+                    float graphicSize = Props.graphicElements[i].Graphic.data.drawSize.y * Props.graphicElements[i].Graphic.data.drawSize.y;
+                    float offset = (plantSize - graphicSize) / 2f;
+                    Material mat = Props.graphicElements[i].Graphic.data.Graphic.MatSingle;
+                    Props.graphicElements[i].Graphic.data.DrawOffsetForRot(parent.Rotation);
+
+                    Vector3 pos = parentPlant.TrueCenter();
+                    pos.y += 0.01f;
+                    pos.z += offset;
+                    Props.graphicElements[i].Graphic.drawSize = new Vector2(plantSize, plantSize);
+
+                    if (Props.graphicElements[i].Graphic.data.shaderType.ToString() == "MoteGlowDistorted")
+                    {
+                        curWindSpeed = parent.Map.windManager.WindSpeed;
+                        var propOffset = parent.HashOffset() / -1.47e9f;
+                        mat.SetFloat("_distortionScrollSpeed", (curWindSpeed / 5f) * propOffset);
+                        mat.SetFloat("_distortionScale", (curWindSpeed / 8f) * propOffset);
+                        mat.SetFloat("_distortionIntensity", (curWindSpeed / 10f) * propOffset);
+
+                        Log.Message("<color=#4494E3FF>Plant_Mobile at: </color>" + "parent hash = " + propOffset);
+                    }
+
+                    Props.graphicElements[i].Graphic.Draw(pos, parent.Rotation, parent);
 
                     // Extra step for crystals only.
                     if (parent.def.plant.visualSizeRange.max == maxG)

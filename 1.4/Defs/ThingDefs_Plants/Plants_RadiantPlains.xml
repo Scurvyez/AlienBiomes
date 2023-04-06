@@ -484,6 +484,11 @@
             <wildClusterWeight>250</wildClusterWeight>
         </plant>
         <comps>
+            <li Class="CompProperties_HeatPusher">
+                <compClass>CompHeatPusher</compClass>
+                <heatPerSecond>2</heatPerSecond>
+                <heatPushMaxTemperature>4</heatPushMaxTemperature>
+            </li>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>2.50</overlightRadius>
                 <glowRadius>3.20</glowRadius>
@@ -495,14 +500,44 @@
                 <timeRangeDisplayed>0.75~0.20</timeRangeDisplayed>
                 <graphicElements>
                     <li>
+                        <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>MoteDistorted</shaderType>
+                        <drawSize>1.00</drawSize>
+                        <shaderParameters>
+                            <_distortionScale>0.085</_distortionScale>
+                            <_distortionScrollSpeed>0.5</_distortionScrollSpeed>
+                            <_distortionIntensity>0.015</_distortionIntensity>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                        </shaderParameters>
+                        <damageData>
+                            <enabled>false</enabled>
+                        </damageData>
+                    </li>
+                    <li>
+                        <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>MoteDistorted</shaderType>
+                        <drawSize>0.80</drawSize>
+                        <shaderParameters>
+                            <_distortionScale>0.085</_distortionScale>
+                            <_distortionScrollSpeed>0.5</_distortionScrollSpeed>
+                            <_distortionIntensity>0.015</_distortionIntensity>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                        </shaderParameters>
+                        <damageData>
+                            <enabled>false</enabled>
+                        </damageData>
+                    </li>
+                    <li>
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/GlowingSpots</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>MoteGlowDistorted</shaderType>
                         <drawSize>1.00</drawSize>
-                        <drawOffset>(0, 0, 0)</drawOffset>
                         <shaderParameters>
-                            <_distortionScale>0.025</_distortionScale>
-                            <_distortionIntensity>0.025</_distortionIntensity>
+                            <_distortionScale>0.085</_distortionScale>
+                            <_distortionScrollSpeed>0.5</_distortionScrollSpeed>
+                            <_distortionIntensity>0.015</_distortionIntensity>
                             <_DistortionTex>/Other/Ripples</_DistortionTex>
                         </shaderParameters>
                         <damageData>
