@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
+    <Compile Include="GraphicData\GraphicDataAB.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />

@@ -7,27 +7,45 @@ namespace AlienBiomes
     public class Comp_TimedHarvest : ThingComp
     {
         public CompProperties_TimedHarvest Props => (CompProperties_TimedHarvest)props;
+
+        private float dayPercent;
+        private Season season;
         public int TickCounter = 0;
 
         public bool AdditionalPlantHarvestLogic()
         {
             base.CompTickLong();
-            float dayPercent = GenLocalDate.DayPercent(parent.Map);
-            string season = GenLocalDate.Season(parent.Map).ToString();
+            dayPercent = GenLocalDate.DayPercent(parent.Map);
+            season = GenLocalDate.Season(parent.Map);
 
-            TickCounter++;
-            if (TickCounter > 6000)
+            switch (season)
             {
-                Color color = new (0.145f, 0.588f, 0.745f, 1f);
-
-                Log.Message(season.ToString().Colorize(color));
-                TickCounter = 0;
+                case Season.Spring:
+                    if (Props.harvestSeasons.Contains(Season.Spring))
+                    {
+                        return true;
+                    }
+                    break;
+                case Season.Summer:
+                    if (Props.harvestSeasons.Contains(Season.Summer))
+                    {
+                        return true;
+                    }
+                    break;
+                case Season.Fall:
+                    if (Props.harvestSeasons.Contains(Season.Fall))
+                    {
+                        return true;
+                    }
+                    break;
+                case Season.Winter:
+                    if (Props.harvestSeasons.Contains(Season.Winter))
+                    {
+                        return true;
+                    }
+                    break;
             }
 
-            if (Props.harvestSeasons.Contains(GenLocalDate.Season(parent.Map)))
-            {
-                return true;
-            }
             if ((dayPercent > Props.harvestStartTime && dayPercent < 1f) 
                 || (dayPercent < Props.harvestStopTime && dayPercent > 0f))
             {

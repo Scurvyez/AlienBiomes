@@ -12,6 +12,16 @@ namespace AlienBiomes
         private float curWindSpeed; // initialize current speed to default value
 
         /// <summary>
+        /// Updates each shader parameter attached to each additional graphic.
+        /// </summary>
+        private void UpdateShaderParams(Material mat, float curWindSpeed, GraphicDataAB extraGraphicProp)
+        {
+            mat.SetFloat("_distortionScrollSpeed", extraGraphicProp.shaderScrollSpeedFactor + (curWindSpeed / 10f));
+            mat.SetFloat("_distortionScale", extraGraphicProp.shaderScaleFactor + (curWindSpeed / 10f));
+            mat.SetFloat("_distortionIntensity", extraGraphicProp.shaderIntensityFactor + (curWindSpeed / 10f));
+        }
+
+        /// <summary>
         /// Renders additional graphics on a parent thing.
         /// XML, drawerType = RealtimeOnly || MapMeshAndRealTime.
         /// </summary>
@@ -19,8 +29,7 @@ namespace AlienBiomes
         {
             base.PostDraw();
 
-            var parentPlant = parent as Plant;
-            if (parentPlant == null) return;
+            if (parent is not Plant parentPlant) return;
 
             float dP = GenLocalDate.DayPercent(parent.Map); // Time of day as a %
             float pGrowth = parent.def.plant.visualSizeRange.LerpThroughRange(parentPlant.Growth);
@@ -28,31 +37,30 @@ namespace AlienBiomes
 
             for (int i = 0; i < Props.graphicElements.Count; i++)
             {
-                if ((dP > Props.timeRangeDisplayed.min && dP < 1f) || (dP < Props.timeRangeDisplayed.max && dP > 0f))
+                Graphic extraGraphic = Props.graphicElements[i].Graphic;
+                GraphicDataAB extraGraphicProp = Props.graphicElements[i];
+
+                if ((dP > extraGraphicProp.timeRangeDisplayed.min && dP < 1f) 
+                    || (dP < extraGraphicProp.timeRangeDisplayed.max && dP > 0f))
                 {
                     float plantSize = parentPlant.def.graphicData.drawSize.x * pGrowth;
-                    float graphicSize = Props.graphicElements[i].Graphic.data.drawSize.y * Props.graphicElements[i].Graphic.data.drawSize.y;
+                    float graphicSize = extraGraphic.data.drawSize.y * extraGraphic.data.drawSize.y;
                     float offset = (plantSize - graphicSize) / 2f;
-                    Material mat = Props.graphicElements[i].Graphic.data.Graphic.MatSingle;
-                    Props.graphicElements[i].Graphic.data.DrawOffsetForRot(parent.Rotation);
-
+                    Material mat = extraGraphic.data.Graphic.MatSingle;
+                    
                     Vector3 pos = parentPlant.TrueCenter();
                     pos.y += 0.01f;
                     pos.z += offset;
-                    Props.graphicElements[i].Graphic.drawSize = new Vector2(plantSize, plantSize);
+                    extraGraphic.drawSize = new Vector2(plantSize, plantSize);
 
-                    if (Props.graphicElements[i].Graphic.data.shaderType.ToString() == "MoteGlowDistorted")
+                    if (extraGraphic.data.shaderType.ToString() == "MoteGlowDistorted"
+                        || extraGraphic.data.shaderType.ToString() == "MoteDistorted")
                     {
                         curWindSpeed = parent.Map.windManager.WindSpeed;
-                        var propOffset = parent.HashOffset() / -1.47e9f;
-                        mat.SetFloat("_distortionScrollSpeed", (curWindSpeed / 5f) * propOffset);
-                        mat.SetFloat("_distortionScale", (curWindSpeed / 8f) * propOffset);
-                        mat.SetFloat("_distortionIntensity", (curWindSpeed / 10f) * propOffset);
-
-                        Log.Message("<color=#4494E3FF>Plant_Mobile at: </color>" + "parent hash = " + propOffset);
+                        UpdateShaderParams(mat, curWindSpeed, extraGraphicProp);
                     }
 
-                    Props.graphicElements[i].Graphic.Draw(pos, parent.Rotation, parent);
+                    extraGraphic.Draw(pos, parent.Rotation, parent);
 
                     // Extra step for crystals only.
                     if (parent.def.plant.visualSizeRange.max == maxG)

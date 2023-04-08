@@ -458,7 +458,7 @@
         </statBases>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <altitudeLayer>Building</altitudeLayer>
         <tickerType>Long</tickerType>
         <fillPercent>0.90</fillPercent>
         <plant>
@@ -497,7 +497,6 @@
                 <stopTime>0.20</stopTime>
             </li>
             <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
-                <timeRangeDisplayed>0.75~0.20</timeRangeDisplayed>
                 <graphicElements>
                     <li>
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
@@ -505,11 +504,12 @@
                         <shaderType>MoteDistorted</shaderType>
                         <drawSize>1.00</drawSize>
                         <shaderParameters>
-                            <_distortionScale>0.085</_distortionScale>
-                            <_distortionScrollSpeed>0.5</_distortionScrollSpeed>
-                            <_distortionIntensity>0.015</_distortionIntensity>
                             <_DistortionTex>/Other/Ripples</_DistortionTex>
                         </shaderParameters>
+                        <timeRangeDisplayed>0.00~1.00</timeRangeDisplayed>
+                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
+                        <shaderScaleFactor>0.0085</shaderScaleFactor>
+                        <shaderIntensityFactor>0.0025</shaderIntensityFactor>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>
@@ -520,11 +520,12 @@
                         <shaderType>MoteDistorted</shaderType>
                         <drawSize>0.80</drawSize>
                         <shaderParameters>
-                            <_distortionScale>0.085</_distortionScale>
-                            <_distortionScrollSpeed>0.5</_distortionScrollSpeed>
-                            <_distortionIntensity>0.015</_distortionIntensity>
                             <_DistortionTex>/Other/Ripples</_DistortionTex>
                         </shaderParameters>
+                        <timeRangeDisplayed>0.00~1.00</timeRangeDisplayed>
+                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
+                        <shaderScaleFactor>0.0085</shaderScaleFactor>
+                        <shaderIntensityFactor>0.0055</shaderIntensityFactor>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>
@@ -535,11 +536,12 @@
                         <shaderType>MoteGlowDistorted</shaderType>
                         <drawSize>1.00</drawSize>
                         <shaderParameters>
-                            <_distortionScale>0.085</_distortionScale>
-                            <_distortionScrollSpeed>0.5</_distortionScrollSpeed>
-                            <_distortionIntensity>0.015</_distortionIntensity>
                             <_DistortionTex>/Other/Ripples</_DistortionTex>
                         </shaderParameters>
+                        <timeRangeDisplayed>0.75~0.20</timeRangeDisplayed>
+                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
+                        <shaderScaleFactor>0.0085</shaderScaleFactor>
+                        <shaderIntensityFactor>0.0015</shaderIntensityFactor>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>

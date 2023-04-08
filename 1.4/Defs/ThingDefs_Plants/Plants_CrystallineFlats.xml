@@ -259,7 +259,6 @@
                 <radiusOutlineColor>(253, 1, 33)</radiusOutlineColor>
             </li>
             <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
-                <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
                 <graphicElements>
                     <li>
                         <!-- 1-pixel on a 512x512 canvas. -->
@@ -269,6 +268,7 @@
                         <shaderType>TransparentPlant</shaderType>
                         <drawOffset>(0, 0, 1.15)</drawOffset>
                         <drawSize>0.05</drawSize>
+                        <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
                     </li>
                     <li> <!-- MIDDLE -->
                         <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
@@ -276,6 +276,7 @@
                         <shaderType>TransparentPlant</shaderType>
                         <drawOffset>(0, 0, 1.15)</drawOffset>
                         <drawSize>1.50</drawSize>
+                        <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
                     </li>
                 </graphicElements>
             </li>

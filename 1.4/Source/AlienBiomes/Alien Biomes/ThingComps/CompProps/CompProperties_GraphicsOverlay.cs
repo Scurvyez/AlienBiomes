@@ -6,9 +6,8 @@ namespace AlienBiomes
 {
     public class CompProperties_GraphicsOverlay : CompProperties
     {
-        public List<GraphicData> graphicElements;
-        public FloatRange timeRangeDisplayed; // XML = someFloat~someFloat
-
+        public List<GraphicDataAB> graphicElements; // all added graphics
+        
         public CompProperties_GraphicsOverlay()
         {
             compClass = typeof(Comp_GraphicsOverlay);

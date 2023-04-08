@@ -53,30 +53,23 @@ namespace AlienBiomes
                         // Move to a random adjacent unoccupied cell
                         newPos = validNextCells.RandomElement();
 
-                        if (GetComp<Comp_TimedGlower>() != null || GetComp<CompGlower>() != null)
+                        CompGlower compGlower = GetComp<Comp_TimedGlower>() ?? GetComp<CompGlower>();
+                        if (compGlower != null)
                         {
-                            if (GetComp<Comp_TimedGlower>() != null)
-                            {
-                                Map.glowGrid.DeRegisterGlower(GetComp<Comp_TimedGlower>());
-                                Position = newPos;
-                                Map.glowGrid.RegisterGlower(GetComp<Comp_TimedGlower>());
-                            }
-                            else if (GetComp<CompGlower>() != null)
-                            {
-                                Map.glowGrid.DeRegisterGlower(GetComp<CompGlower>());
-                                Position = newPos;
-                                Map.glowGrid.RegisterGlower(GetComp<CompGlower>());
-                            }
+                            Map.glowGrid.DeRegisterGlower(compGlower);
+                            Position = newPos;
+                            Map.glowGrid.RegisterGlower(compGlower);
                         }
                         else
                         {
                             Position = newPos;
                         }
+
                         validNextCells.Clear();
                         Map.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things);
 
                         // check position of the plant after moving
-                        Log.Message("<color=#4494E3FF>Plant_Mobile at: </color>" + oldPos + "<color=#4494E3FF> moved to </color>" + Position);
+                        //Log.Message("<color=#4494E3FF>Plant_Mobile at: </color>" + oldPos + "<color=#4494E3FF> moved to </color>" + Position);
                     }
                 }
                 Counter = 0;
