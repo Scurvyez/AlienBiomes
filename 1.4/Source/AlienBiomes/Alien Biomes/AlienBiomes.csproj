@@ -78,6 +78,8 @@
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Mobile.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_PlantReactive.cs" />
+    <Compile Include="ThingComps\Comp_PlantReactive.cs" />
     <Compile Include="ThingComps\Comp_GraphicsOverlay.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_GraphicsOverlay.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_EffecterWithRadius.cs" />
