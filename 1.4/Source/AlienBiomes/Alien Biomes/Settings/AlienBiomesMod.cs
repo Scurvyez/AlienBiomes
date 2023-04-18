@@ -6,6 +6,8 @@ using System.Text;
 using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
+using System.Runtime.InteropServices;
+using System.IO;
 
 namespace AlienBiomes
 {
@@ -13,13 +15,35 @@ namespace AlienBiomes
     {
         AlienBiomesSettings settings;
         private Vector2 scrollPosition = Vector2.zero;
+        public static AlienBiomesMod mod;
 
         public AlienBiomesMod(ModContentPack content) : base(content)
         {
+            mod = this;
             settings = GetSettings<AlienBiomesSettings>();
-
             var harmony = new Harmony("com.alienbiomes");
             harmony.PatchAll();
+        }
+
+        public AssetBundle MainBundle
+        {
+            get
+            {
+                string text = "";
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    text = "StandaloneOSX";
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    text = "StandaloneWindows";
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    text = "StandaloneLinux64";
+                }
+                return AssetBundle.LoadFromFile(Path.Combine(base.Content.RootDir, "Materials\\Bundles\\" + text + "\\alienbiomesbundle"));
+            }
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

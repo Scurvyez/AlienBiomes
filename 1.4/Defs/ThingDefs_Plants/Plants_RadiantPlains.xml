@@ -7,6 +7,7 @@
         <defName>SZ_RadiantGrass</defName>
         <label>radiant grass</label>
         <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
@@ -16,6 +17,7 @@
         <graphicData>
             <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlantShimmer</shaderType>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -31,27 +33,6 @@
             <topWindExposure>0.4</topWindExposure>
             <wildOrder>1</wildOrder>
         </plant>
-        <comps>
-            <li Class="AlienBiomes.CompProperties_PlantReactive">
-                <graphicElements>
-                    <li>
-                        <texPath>Things/Special/Overlays/RadiantGrass</texPath>
-                        <graphicClass>Graphic_Random</graphicClass>
-                        <shaderType>MoteGlowDistorted</shaderType>
-                        <drawSize>1.00</drawSize>
-                        <shaderParameters>
-                            <_DistortionTex>/Other/Ripples</_DistortionTex>
-                        </shaderParameters>
-                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
-                        <shaderScaleFactor>0.0085</shaderScaleFactor>
-                        <shaderIntensityFactor>0.0025</shaderIntensityFactor>
-                        <damageData>
-                            <enabled>false</enabled>
-                        </damageData>
-                    </li>
-                </graphicElements>
-            </li>
-        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
@@ -69,6 +50,7 @@
         <defName>SZ_RadiantTallGrass</defName>
         <label>tall radiant grass</label>
         <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
@@ -94,27 +76,6 @@
             <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>1</wildOrder>
         </plant>
-        <comps>
-            <li Class="AlienBiomes.CompProperties_PlantReactive">
-                <graphicElements>
-                    <li>
-                        <texPath>Things/Special/Overlays/RadiantGrass</texPath>
-                        <graphicClass>Graphic_Random</graphicClass>
-                        <shaderType>MoteGlowDistorted</shaderType>
-                        <drawSize>1.00</drawSize>
-                        <shaderParameters>
-                            <_DistortionTex>/Other/Ripples</_DistortionTex>
-                        </shaderParameters>
-                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
-                        <shaderScaleFactor>0.0085</shaderScaleFactor>
-                        <shaderIntensityFactor>0.0025</shaderIntensityFactor>
-                        <damageData>
-                            <enabled>false</enabled>
-                        </damageData>
-                    </li>
-                </graphicElements>
-            </li>
-        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>

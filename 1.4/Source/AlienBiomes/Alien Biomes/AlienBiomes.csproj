@@ -60,6 +60,10 @@
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
@@ -74,8 +78,10 @@
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
+    <Compile Include="MapComps\MapComponent_PlantGetter.cs" />
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
+    <Compile Include="Settings\AlienBiomesContentDatabase.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Mobile.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_PlantReactive.cs" />

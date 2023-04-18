@@ -7,9 +7,8 @@ namespace AlienBiomes
 {
     public class MapComponent_ThingCompsGetter : MapComponent
     {
-        //public Color FieldEdgesColor = CompProperties_HediffEffecterWithRadius.radiusOutlineColor;
         public HashSet<Comp_EffectorWithRadius> ActiveThingComps = new();
-        public List<IntVec3> Cells = new();
+        public List<IntVec3> Cells = new ();
         public bool DoDrawing;
         public Color FieldEdgesColor;
         
