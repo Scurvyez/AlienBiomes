@@ -36,13 +36,31 @@ namespace AlienBiomes
                 }
                 else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
-                    text = "StandaloneWindows";
+                    text = "StandaloneWindows64";
                 }
                 else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
                     text = "StandaloneLinux64";
                 }
-                return AssetBundle.LoadFromFile(Path.Combine(base.Content.RootDir, "Materials\\Bundles\\" + text + "\\alienbiomesbundle"));
+                string bundlePath = Path.Combine(base.Content.RootDir, "Materials\\Bundles\\" + text + "\\alienbiomesbundle");
+                Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Bundle Path: " + bundlePath);
+
+                // Load the bundle as a local variable
+                AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);
+
+                // Check if the bundle is not null
+                if (bundle == null)
+                {
+                    Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Failed to load bundle at path: " + bundlePath);
+                }
+
+                foreach (var allAssetName in bundle.GetAllAssetNames())
+                {
+                    Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] - [{allAssetName}]");
+                }
+
+                // Return the bundle
+                return bundle;
             }
         }
 

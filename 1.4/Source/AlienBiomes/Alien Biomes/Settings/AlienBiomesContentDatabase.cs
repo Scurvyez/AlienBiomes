@@ -15,7 +15,7 @@ namespace AlienBiomes
     {
         private static AssetBundle bundleInt;
         private static Dictionary<string, Shader> lookupShaders;
-        public static readonly Shader TransparentPlantShimmer = LoadShader("TransparentPlantShimmer");
+        public static readonly Shader TransparentPlantShimmer = LoadShader("Assets/TransparentPlantShimmer.shader");
         
         public static AssetBundle AlienBiomesBundle
         {
@@ -24,6 +24,7 @@ namespace AlienBiomes
                 if (bundleInt == null)
                 {
                     bundleInt = AlienBiomesMod.mod.MainBundle;
+                    Log.Message("[<color=#4494E3FF>AlienBiomes</color>] bundleInt: " + bundleInt.name);
                 }
                 return bundleInt;
             }
@@ -37,12 +38,13 @@ namespace AlienBiomes
             }
             if (!lookupShaders.ContainsKey(shaderName))
             {
+                Log.Message("[<color=#4494E3FF>AlienBiomes</color>] lookupShaders: " + lookupShaders.ToList().Count);
                 lookupShaders[shaderName] = AlienBiomesBundle.LoadAsset<Shader>(shaderName);
             }
             Shader shader = lookupShaders[shaderName];
             if (shader == null)
             {
-                Log.Warning("[AB] Could not load shader " + shaderName);
+                Log.Warning("[<color=#4494E3FF>AlienBiomes</color>] Could not load shader " + shaderName);
                 return ShaderDatabase.Cutout;
             }
             return shader;
