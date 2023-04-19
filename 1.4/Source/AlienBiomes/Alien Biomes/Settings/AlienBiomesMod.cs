@@ -22,7 +22,27 @@ namespace AlienBiomes
             mod = this;
             settings = GetSettings<AlienBiomesSettings>();
             var harmony = new Harmony("com.alienbiomes");
+
+            harmony.Patch(original: AccessTools.PropertyGetter(typeof(ShaderTypeDef), nameof(ShaderTypeDef.Shader)),
+                prefix: new HarmonyMethod(typeof(AlienBiomesMod),
+                nameof(ShaderFromAssetBundle)));
+
             harmony.PatchAll();
+        }
+
+        /// <summary>
+		/// Load shader asset for AlienBiomes shader types
+		/// </summary>
+		public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
+        {
+            if (__instance is ABShaderTypeDef)
+            {
+                ___shaderInt = AlienBiomesContentDatabase.AlienBiomesBundle.LoadAsset<Shader>(__instance.shaderPath);
+                if (___shaderInt is null)
+                {
+                    Log.Error($"[<color=#4494E3FF>AlienBiomes</color>] Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text>");
+                }
+            }
         }
 
         public AssetBundle MainBundle
@@ -43,7 +63,7 @@ namespace AlienBiomes
                     text = "StandaloneLinux64";
                 }
                 string bundlePath = Path.Combine(base.Content.RootDir, "Materials\\Bundles\\" + text + "\\alienbiomesbundle");
-                Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Bundle Path: " + bundlePath);
+                //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Bundle Path: " + bundlePath);
 
                 // Load the bundle as a local variable
                 AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);
@@ -56,7 +76,7 @@ namespace AlienBiomes
 
                 foreach (var allAssetName in bundle.GetAllAssetNames())
                 {
-                    Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] - [{allAssetName}]");
+                    //Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] - [{allAssetName}]");
                 }
 
                 // Return the bundle

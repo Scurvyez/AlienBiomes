@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ShaderTypeDef> 
+	<AlienBiomes.ABShaderTypeDef> 
 		<defName>TransparentPlantShimmer</defName>
 		<shaderPath>TransparentPlantShimmer</shaderPath>
-	</ShaderTypeDef>
+	</AlienBiomes.ABShaderTypeDef>
   
 </Defs>

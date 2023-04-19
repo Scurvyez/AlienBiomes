@@ -61,6 +61,7 @@
         <graphicData>
             <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlantShimmer</shaderType>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -449,7 +450,7 @@
         <graphicData>
             <texPath>Things/Trees/ElderBlushingTree</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
+            <shaderType>TransparentPlantShimmer</shaderType>
             <drawSize>1.00</drawSize>
             <shadowData>
                 <volume>(0, 0, 0)</volume>
