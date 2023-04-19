@@ -82,6 +82,7 @@
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="Settings\AlienBiomesContentDatabase.cs" />
+    <Compile Include="Shaders\ABShaderPropertyIDs.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Mobile.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_PlantReactive.cs" />
