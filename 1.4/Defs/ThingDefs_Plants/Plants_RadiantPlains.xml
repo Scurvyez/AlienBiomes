@@ -6,8 +6,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantGrass</defName>
         <label>radiant grass</label>
-        <drawerType>MapMeshAndRealTime</drawerType>
-        <tickerType>Normal</tickerType>
+        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
@@ -49,8 +48,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantTallGrass</defName>
         <label>tall radiant grass</label>
-        <drawerType>MapMeshAndRealTime</drawerType>
-        <tickerType>Normal</tickerType>
+        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
@@ -450,7 +448,7 @@
         <graphicData>
             <texPath>Things/Trees/ElderBlushingTree</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantShimmer</shaderType>
+            <shaderType>TransparentPlant</shaderType>
             <drawSize>1.00</drawSize>
             <shadowData>
                 <volume>(0, 0, 0)</volume>
@@ -507,15 +505,8 @@
                     <li>
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>MoteDistorted</shaderType>
+                        <shaderType>TransparentPlantShimmer</shaderType>
                         <drawSize>1.00</drawSize>
-                        <shaderParameters>
-                            <_DistortionTex>/Other/Ripples</_DistortionTex>
-                        </shaderParameters>
-                        <timeRangeDisplayed>0.00~1.00</timeRangeDisplayed>
-                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
-                        <shaderScaleFactor>0.0085</shaderScaleFactor>
-                        <shaderIntensityFactor>0.0025</shaderIntensityFactor>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>
@@ -523,15 +514,8 @@
                     <li>
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>MoteDistorted</shaderType>
+                        <shaderType>TransparentPlantShimmer</shaderType>
                         <drawSize>0.80</drawSize>
-                        <shaderParameters>
-                            <_DistortionTex>/Other/Ripples</_DistortionTex>
-                        </shaderParameters>
-                        <timeRangeDisplayed>0.00~1.00</timeRangeDisplayed>
-                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
-                        <shaderScaleFactor>0.0085</shaderScaleFactor>
-                        <shaderIntensityFactor>0.0055</shaderIntensityFactor>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>
@@ -539,15 +523,8 @@
                     <li>
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/GlowingSpots</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>MoteGlowDistorted</shaderType>
+                        <shaderType>TransparentPlantShimmer</shaderType>
                         <drawSize>1.00</drawSize>
-                        <shaderParameters>
-                            <_DistortionTex>/Other/Ripples</_DistortionTex>
-                        </shaderParameters>
-                        <timeRangeDisplayed>0.75~0.20</timeRangeDisplayed>
-                        <shaderScrollSpeedFactor>0.005</shaderScrollSpeedFactor>
-                        <shaderScaleFactor>0.0085</shaderScaleFactor>
-                        <shaderIntensityFactor>0.0015</shaderIntensityFactor>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>
