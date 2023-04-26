@@ -1,5 +1,6 @@
 ERRORS / BUGS...
 - [fixed] TerrainTags error(s) on plant defs and terrain defs.
+- edificeGrid erroring for moving plants -_-
 
 TO DO LIST...
 - Radiant Plains
@@ -37,5 +38,5 @@ TO DO LIST...
     They draw nutrients from the bloodstream and then eventually kill their host,
     bursting from their bodies to continue their lifecycle. -->
 
-- Plants that can move from cell to cell sporadically throughout the day/week/quadrum
+- [done] Plants that can move from cell to cell sporadically throughout the day/week/quadrum
 
