@@ -10,7 +10,6 @@ namespace AlienBiomes
     public static class ABShaderPropertyIDs
     {
         private static readonly string HashOffsetName = "_HashOffset";
-
         public static int HashOffset = Shader.PropertyToID(HashOffsetName);
     }
 }

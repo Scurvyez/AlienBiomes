@@ -7,25 +7,21 @@ namespace AlienBiomes
 {
     public class Plant_Shimmering : Plant
     {
-        private System.Random rand = new ();
-        private float randFloat;
-
-        public override void TickLong()
+        public override void PostPostMake()
         {
-            base.TickLong();
-            randFloat = (float)rand.NextDouble();
+            base.PostPostMake();
 
             if (Graphic.data.shaderType.ToString() == "TransparentPlantShimmer")
             {
-                Material mat = Graphic.data.Graphic.MatSingle;
-                Log.Message("[<color=#4494E3FF>AlienBiomes</color>] thingHashOffset: " + randFloat);
-                UpdateShaderParams(mat);
+                Log.Message("[<color=#4494E3FF>AlienBiomes</color>] hashOffset: " + thingIDNumber);
+                UpdateShaderParams();
             }
         }
 
-        private void UpdateShaderParams(Material mat)
+        private void UpdateShaderParams()
         {
-            mat.SetFloat("_HashOffset", randFloat);
+            MaterialPropertyBlock props = new ();
+            props.SetFloat("_HashOffset", thingIDNumber);
         }
     }
 }
