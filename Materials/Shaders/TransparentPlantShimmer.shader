@@ -31,12 +31,14 @@
             CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
+            #pragma multi_compile_instancing
 			
 			#include "UnityCG.cginc"
 			struct v2f
 			{
 				float4 position : SV_POSITION0;
 				float3 texcoord : TEXCOORD0;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 			struct fout
 			{
@@ -46,11 +48,17 @@
 			float _SwayHead; // some shit in c# that makes no sense to me :D
 			sampler2D _MainTex; // declares the main texture
             float _GameSeconds; // declares passage of time in-game, in seconds
-            float _HashOffset;
+            //float _HashOffset;
+
+            UNITY_INSTANCING_BUFFER_START(Props)
+                UNITY_DEFINE_INSTANCED_PROP(float4, _HashOffset)
+            UNITY_INSTANCING_BUFFER_END(Props)
 			
 			v2f vert(appdata_full v)
 			{
                 v2f o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_TRANSFER_INSTANCE_ID(v, o);
                 float4 tmp0;
                 float4 tmp1;
                 tmp0.xy = v.vertex.xz * float2(4.0, 4.0);
@@ -74,10 +82,17 @@
 			fout frag(v2f inp)
 			{
                 fout o;
+                UNITY_SETUP_INSTANCE_ID(inp);
                 float2 uv = inp.texcoord.xy;
 
+                //float thingIDNumber = UNITY_ACCESS_INSTANCED_PROP(Props, _HashOffset); // get the thingIDNumber value from RimWorld
+                //float maxThingIDNumber = 4294967295; // maximum possible value of thingIDNumber
+                //float thingIDRatio = thingIDNumber / maxThingIDNumber; // convert to a ratio between 0 and 1
+                //thingIDRatio = saturate(thingIDRatio); // clamp the value between 0 and 1
+
                 // Calculate the brightness adjustment factor based on time and vertical position
-                float brightness = sin((_GameSeconds + (_HashOffset % 1)) * 7.0/*speed*/ + uv.y * 7.5/*shimmer length*/) * 0.25 + 0.75;
+                //float brightness = sin((_GameSeconds + thingIDRatio) * 7.0/*speed*/ + uv.y * 7.5/*shimmer length*/) * 0.25 + 0.75;
+                float brightness = sin((_GameSeconds + UNITY_ACCESS_INSTANCED_PROP(Props, _HashOffset / 4294967295)) * 7.0/*speed*/ + uv.y * 7.5/*shimmer length*/) * 0.25 + 0.75;
 
                 // Get the original color from the texture
                 fixed4 col = tex2D(_MainTex, uv);
