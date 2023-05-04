@@ -6,7 +6,6 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantGrass</defName>
         <label>radiant grass</label>
-        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
@@ -48,7 +47,6 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantTallGrass</defName>
         <label>tall radiant grass</label>
-        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
@@ -59,7 +57,7 @@
         <graphicData>
             <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantShimmer</shaderType>
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
