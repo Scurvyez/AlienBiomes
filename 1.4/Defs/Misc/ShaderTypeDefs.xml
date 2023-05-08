@@ -5,5 +5,10 @@
 		<defName>TransparentPlantShimmer</defName>
 		<shaderPath>TransparentPlantShimmer</shaderPath>
 	</AlienBiomes.ABShaderTypeDef>
+
+	<AlienBiomes.ABShaderTypeDef> 
+		<defName>TransparentPlantPulse</defName>
+		<shaderPath>TransparentPlantPulse</shaderPath>
+	</AlienBiomes.ABShaderTypeDef>
   
 </Defs>

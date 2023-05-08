@@ -11,6 +11,7 @@ using RimWorld.Planet;
 
 namespace AlienBiomes
 {
+    /*
     public class MapComponent_ShimmerUpdate : MapComponent
     {
         private MaterialPropertyBlock mPB = new ();
@@ -66,4 +67,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

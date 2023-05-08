@@ -11,7 +11,9 @@ namespace AlienBiomes
         [HarmonyPostfix]
         public static void MatFromPostFix(MaterialRequest req, ref Material __result)
         {
-            if (__result != null && __result.shader == AlienBiomesContentDatabase.TransparentPlantShimmer)
+            if (__result != null 
+                && (__result.shader == AlienBiomesContentDatabase.TransparentPlantShimmer
+                || __result.shader == AlienBiomesContentDatabase.TransparentPlantPulse))
             {
                 //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] MatFrom_Patch: Material shader = " + __result.shader.name);
                 WindManager.Notify_PlantMaterialCreated(__result);

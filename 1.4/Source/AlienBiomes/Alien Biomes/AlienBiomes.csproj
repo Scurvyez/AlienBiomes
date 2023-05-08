@@ -81,9 +81,11 @@
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
     <Compile Include="MapComps\MapComponent_ShimmerUpdate.cs" />
     <Compile Include="MapComps\MapComponent_PlantGetter.cs" />
+    <Compile Include="SectionLayers\SectionLayer_PlantShimmer.cs" />
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="Settings\AlienBiomesContentDatabase.cs" />
+    <Compile Include="ThingClasses\Plant_Shimmering.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Mobile.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_PlantReactive.cs" />

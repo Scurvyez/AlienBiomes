@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
@@ -16,7 +11,8 @@ namespace AlienBiomes
         private static AssetBundle bundleInt;
         private static Dictionary<string, Shader> lookupShaders;
         public static readonly Shader TransparentPlantShimmer = LoadShader(Path.Combine("Assets", "TransparentPlantShimmer.shader"));
-
+        public static readonly Shader TransparentPlantPulse = LoadShader(Path.Combine("Assets", "TransparentPlantPulse.shader"));
+        
         public static AssetBundle AlienBiomesBundle
         {
             get
@@ -49,7 +45,7 @@ namespace AlienBiomes
             }
             if (shader != null)
             {
-                //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Loaded shader: " + shaderName);
+                Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Loaded shader: " + shaderName);
             }
             return shader;
         }

@@ -10,12 +10,15 @@
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.50</Nutrition>
+            <Nutrition>0.09</Nutrition>
         </statBases>
         <graphicData>
             <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlantShimmer</shaderType>
+            <shaderParameters>
+                <_ShimmerSpeed>0.55</_ShimmerSpeed>
+            </shaderParameters>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -51,13 +54,16 @@
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.50</Nutrition>
+            <Nutrition>0.09</Nutrition>
         </statBases>
         <pathCost>14</pathCost>
         <graphicData>
             <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
+            <shaderType>TransparentPlantShimmer</shaderType>
+            <shaderParameters>
+                <_ShimmerSpeed>0.75</_ShimmerSpeed>
+            </shaderParameters>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -93,11 +99,15 @@
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
-            <Nutrition>0.08</Nutrition>
+            <Nutrition>0.12</Nutrition>
         </statBases>
         <graphicData>
             <texPath>Things/Plants/LushGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlantShimmer</shaderType>
+            <shaderParameters>
+                <_ShimmerSpeed>0.95</_ShimmerSpeed>
+            </shaderParameters>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -108,7 +118,7 @@
             <growDays>4.75</growDays>
             <leaflessGraphicPath>Things/Plants/LushGrass_Leafless</leaflessGraphicPath>
             <maxMeshCount>9</maxMeshCount>
-            <visualSizeRange>0.4~0.8</visualSizeRange>
+            <visualSizeRange>0.7~1.58</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
             <wildOrder>1</wildOrder>
         </plant>
@@ -125,7 +135,7 @@
     <!--==================== Fiddlehead Plant ====================-->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_BulbusSanitas</defName>
+        <defName>SZ_BulbousSanitas</defName>
         <label>bulbus sanitas</label>
         <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
         <statBases>
@@ -136,6 +146,12 @@
         <graphicData>
             <texPath>Things/Plants/BulbusSanitas</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlantPulse</shaderType> <!-- make a DefModExtension for the values in this shader -->
+            <shaderParameters>
+                <_PulseSpeed>0.75</_PulseSpeed>
+                <_PulseLength>0.09</_PulseLength>
+                <_PulseOrigin>(0.9, 0.9, 0, 0)</_PulseOrigin>
+            </shaderParameters>
         </graphicData>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -258,7 +274,7 @@
         </graphicData>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <altitudeLayer>LowPlant</altitudeLayer>
         <tickerType>Long</tickerType>
         <fillPercent>0.20</fillPercent>
         <pathCost>30</pathCost>
@@ -326,7 +342,7 @@
         </graphicData>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <altitudeLayer>LowPlant</altitudeLayer>
         <tickerType>Long</tickerType>
         <fillPercent>0.80</fillPercent>
         <pathCost>6</pathCost>
@@ -382,13 +398,10 @@
     <!--==================== Lily of the Plains Plant ====================-->
     <!-- Decorative, wild, no fruit or real benefits. lol -->
     <!-- Only spawns in water. -->
-    <!-- Can move around in the water. -->
-    <!-- thingClass = AlienBiomes.Plant_Mobile -->
-    <!-- tickType = Long -->
 
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_LilyOfThePlains</defName>
-        <thingClass>AlienBiomes.Plant_Mobile</thingClass>
+        <!-- <thingClass>AlienBiomes.Plant_Mobile</thingClass> -->
         <label>lily of the plains</label>
         <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
         <statBases>
@@ -400,7 +413,7 @@
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <selectable>false</selectable>
-        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <altitudeLayer>LowPlant</altitudeLayer>
         <tickerType>Long</tickerType>
         <fillPercent>0.20</fillPercent>
         <pathCost>2</pathCost>
@@ -426,15 +439,18 @@
                     <li>Muddy</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_Mobile_ModExtension">
+            <!-- <li Class="AlienBiomes.Plant_Mobile_ModExtension">
                 <startTime>0.75</startTime>
                 <stopTime>0.20</stopTime>
-            </li>
+            </li> -->
         </modExtensions>
     </ThingDef>
 
     <!--==================== Elder Blushing Tree ====================-->
     <!-- This tree will produce a woody pulp which can then be manufactured into a "WoodLog" variant -->
+    <!-- Can move around at night. -->
+    <!-- thingClass = AlienBiomes.Plant_Mobile -->
+    <!-- tickType = Long -->
     <!-- Glows at night. -->
 
     <ThingDef ParentName="AlienDeciduousTreeBase" Name="SZ_ElderBlushingTree">
@@ -472,7 +488,7 @@
             <harvestYield>2</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.45</harvestAfterGrowth>
-            <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef>
+            <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef> <!-- CHANGE THIS SHIT, AGAIN... -->
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
             <visualSizeRange>0.10~5.00</visualSizeRange>
@@ -504,6 +520,9 @@
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantShimmer</shaderType>
+                        <shaderParameters>
+                            <_ShimmerSpeed>1.2</_ShimmerSpeed>
+                        </shaderParameters>
                         <drawSize>1.00</drawSize>
                         <damageData>
                             <enabled>false</enabled>
@@ -513,6 +532,9 @@
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantShimmer</shaderType>
+                        <shaderParameters>
+                            <_ShimmerSpeed>1.4</_ShimmerSpeed>
+                        </shaderParameters>
                         <drawSize>0.80</drawSize>
                         <damageData>
                             <enabled>false</enabled>
@@ -521,7 +543,12 @@
                     <li>
                         <texPath>Things/Trees/Overlays/ElderBlushingTree/GlowingSpots</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPlantShimmer</shaderType>
+                        <shaderType>TransparentPlantPulse</shaderType> <!-- make a DefModExtension for the values in this shader -->
+                        <shaderParameters>
+                            <_PulseSpeed>0.5</_PulseSpeed>
+                            <_PulseLength>1.0</_PulseLength>
+                            <_PulseOrigin>(0.5, 0.5, 0, 0)</_PulseOrigin>
+                        </shaderParameters>
                         <drawSize>1.00</drawSize>
                         <damageData>
                             <enabled>false</enabled>
