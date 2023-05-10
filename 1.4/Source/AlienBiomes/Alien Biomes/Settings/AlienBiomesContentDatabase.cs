@@ -12,6 +12,7 @@ namespace AlienBiomes
         private static Dictionary<string, Shader> lookupShaders;
         public static readonly Shader TransparentPlantShimmer = LoadShader(Path.Combine("Assets", "TransparentPlantShimmer.shader"));
         public static readonly Shader TransparentPlantPulse = LoadShader(Path.Combine("Assets", "TransparentPlantPulse.shader"));
+        public static readonly Shader TransparentPlantFloating = LoadShader(Path.Combine("Assets", "TransparentPlantFloating.shader"));
         
         public static AssetBundle AlienBiomesBundle
         {

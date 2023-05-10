@@ -10,5 +10,10 @@
 		<defName>TransparentPlantPulse</defName>
 		<shaderPath>TransparentPlantPulse</shaderPath>
 	</AlienBiomes.ABShaderTypeDef>
+
+	<AlienBiomes.ABShaderTypeDef> 
+		<defName>TransparentPlantFloating</defName>
+		<shaderPath>TransparentPlantFloating</shaderPath>
+	</AlienBiomes.ABShaderTypeDef>
   
 </Defs>

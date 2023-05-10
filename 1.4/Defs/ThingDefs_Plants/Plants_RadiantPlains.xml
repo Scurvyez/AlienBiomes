@@ -411,6 +411,10 @@
         <graphicData>
             <texPath>Things/Plants/LilyOfThePlains</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlantFloating</shaderType>
+            <shaderParameters>
+                <_DistortionAmount>0.65</_DistortionAmount>
+            </shaderParameters>
         </graphicData>
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
