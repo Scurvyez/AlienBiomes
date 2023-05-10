@@ -1,10 +1,12 @@
-﻿Shader "Unlit/TransparentPlantShimmer"
+Shader "Unlit/TransparentPlantPulse"
 {
     Properties
     {
         _MainTex ("Main Texture", 2D) = "white" {} // the main texture
         _MainTex_ST ("Texture tiling and offset", Vector) = (1, 1, 0, 0)
-        _ShimmerSpeed ("Shimmer speed", Float) = 1
+        _PulseSpeed ("Pulse speed", Float) = 1
+        _PulseLength ("Pulse length", Float) = 1
+        _PulseOrigin ("Pulse origin", Vector) = (0.5, 0.5, 0, 0) // default is center of texture
     }
 
     SubShader
@@ -46,7 +48,9 @@
 			float _SwayHead; // some shit in c# that makes no sense to me :D
 			sampler2D _MainTex; // declares the main texture
             float _GameSeconds; // declares passage of time in-game, in seconds
-            float _ShimmerSpeed; // declares the rate of our cascading shimmer effect
+            float _PulseSpeed; // declares the pulse speed factor
+            float _PulseLength; // declares te pulse length of the effect
+            float2 _PulseOrigin; // declares where the pulse effect should originate from
 			
 			v2f vert(appdata_full v)
 			{
@@ -76,8 +80,11 @@
                 fout o;
                 float2 uv = inp.texcoord.xy;
 
-                // Calculate the brightness adjustment factor based on time and vertical position
-                float brightness = sin((_GameSeconds * _ShimmerSpeed/*speed*/) + uv.y * 7.5/*shimmer length*/) * 0.25 + 0.75;
+                // Calculate the distance between the current pixel and the center of the circle
+                float dist = distance(uv, _PulseOrigin);
+
+                // Calculate the brightness adjustment factor based on time and distance from the center of the circle
+                float brightness = max(0.0, 1.0 - dist * _PulseLength) * sin((_GameSeconds * _PulseSpeed) + uv.y * 7.5) * 0.25 + 0.75;
 
                 // Get the original color from the texture
                 fixed4 col = tex2D(_MainTex, uv);
