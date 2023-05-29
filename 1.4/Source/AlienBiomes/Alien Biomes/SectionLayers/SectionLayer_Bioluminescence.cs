@@ -9,16 +9,14 @@ namespace AlienBiomes
     [StaticConstructorOnStartup]
     public class SectionLayer_Bioluminescence : SectionLayer
     {
-        //private static readonly Material BioluminescenceMat = MaterialPool.MatFrom("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceA", ShaderDatabase.MoteGlowDistorted);
-        //private static readonly string BioluminescenceTexFolder = "Mods/AlienBiomes/Textures/Things/Special/ShallowOceanWaterBioluminescence";
-        private static readonly Texture2D BioluminescenceDistortionTex = ContentFinder<Texture2D>.Get("Things/Mote/SmokeTiled", true);
+        private static readonly Texture2D BioDistTex = ContentFinder<Texture2D>.Get("Things/Mote/SmokeTiled", true);
         private static readonly Texture2D BioTexA = ContentFinder<Texture2D>.Get("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceA", true);
         private static readonly Texture2D BioTexB = ContentFinder<Texture2D>.Get("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceB", true);
         private static readonly Texture2D BioTexC = ContentFinder<Texture2D>.Get("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceC", true);
         private static readonly Texture2D BioTexD = ContentFinder<Texture2D>.Get("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceD", true);
         private MaterialPropertyBlock propertyBlock;
         private IEnumerable<IntVec3> affectedCells;
-        private readonly int bioReach = 3; // how many cells out, from the shoreline, the bioluminescence displays
+        private int bioReach = 3; // how many cells out, from the shoreline, the bioluminescence displays
 
         private static readonly List<Texture2D> BioluminescenceTextures = new ();
         private Material BioluminescenceMat;
@@ -36,7 +34,7 @@ namespace AlienBiomes
                 Texture2D randomTexture = BioluminescenceTextures[UnityEngine.Random.Range(0, BioluminescenceTextures.Count)];
 
                 Log.Message("[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>randomTexture is:</color> "
-                + randomTexture.ToString().Colorize(Color.green));
+                    + randomTexture.ToString().Colorize(Color.green));
 
                 // Create a material using the random texture
                 Material material = new (ShaderDatabase.MoteGlowDistorted);
@@ -49,9 +47,6 @@ namespace AlienBiomes
             return MaterialPool.MatFrom("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceA", ShaderDatabase.MoteGlowDistorted);
         }
 
-        /// <summary>
-        /// Updates the collection of cells of x terrain type to display bioluminescence.
-        /// </summary>
         public override void Regenerate()
         {
             affectedCells = AffectedCells();
@@ -69,18 +64,14 @@ namespace AlienBiomes
             BioluminescenceMat = GetRandomBioluminescenceMaterial();
         }
 
-        /// <summary>
-        /// Draws the bioluminescence.
-        /// </summary>
         public override void DrawLayer()
         {
             // Draw the bioluminescent mesh on affected cells
             foreach (IntVec3 cell in affectedCells)
             {
                 Vector3 center = new (cell.x + 0.5f, AltitudeLayer.Terrain.AltitudeFor(), cell.z + 0.5f);
-                //Graphics.DrawMesh(MeshPool.plane10, center, Quaternion.identity, Mat, 0);
 
-                propertyBlock.SetTexture("_DistortionTex", BioluminescenceDistortionTex);
+                propertyBlock.SetTexture("_DistortionTex", BioDistTex);
                 propertyBlock.SetFloat("_distortionScrollSpeed", 0.09f);
                 propertyBlock.SetFloat("_distortionIntensity", 0.125f);
                 propertyBlock.SetFloat("_distortionScale", 0.20f);
@@ -89,13 +80,12 @@ namespace AlienBiomes
             }
         }
 
-        /// <summary>
-        /// Grabs all the cells of x terrain type to be used for displaying bioluminescence.
-        /// </summary>
         private IEnumerable<IntVec3> AffectedCells()
         {
             List<IntVec3> affectedCells = new ();
             
+            // CHECK IF ITS THE RADIANT PLAINS FIRST!!!
+
             foreach (IntVec3 cell in section.CellRect)
             {
                 TerrainDef terrain = cell.GetTerrain(Map);
