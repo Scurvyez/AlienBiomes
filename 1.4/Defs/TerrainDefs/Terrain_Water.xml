@@ -136,7 +136,6 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Water</li>
-                    <li>Salty</li>
                     <li>ChestDeep</li>
                 </terrainTags>
             </li>

@@ -62,7 +62,7 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlantShimmer</shaderType>
             <shaderParameters>
-                <_ShimmerSpeed>0.75</_ShimmerSpeed>
+                <_ShimmerSpeed>0.70</_ShimmerSpeed>
             </shaderParameters>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
@@ -127,6 +127,8 @@
                 <terrainTags>
                     <li>Soil</li>
                     <li>Sandy</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -146,7 +148,7 @@
         <graphicData>
             <texPath>Things/Plants/BulbusSanitas</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantPulse</shaderType> <!-- make a DefModExtension for the values in this shader -->
+            <shaderType>TransparentPlantPulse</shaderType>
             <shaderParameters>
                 <_PulseSpeed>0.75</_PulseSpeed>
                 <_PulseLength>0.09</_PulseLength>
@@ -171,6 +173,8 @@
                 <terrainTags>
                     <li>Soil</li>
                     <li>Sandy</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -325,6 +329,7 @@
     <!--==================== Copacetic Cone Plant ====================-->
     <!-- Only spawns on radiant soil and rich radiant soil. -->
     <!-- Emits a hediff to calm nearby pawns. -->
+    <!-- tickerType == Long -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
@@ -411,10 +416,10 @@
         <graphicData>
             <texPath>Things/Plants/LilyOfThePlains</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantFloating</shaderType>
-            <shaderParameters>
+            <shaderType>TransparentPlant</shaderType> <!-- TransparentPlantFloating(?)... one day... perhaps. -->
+            <!-- <shaderParameters>
                 <_DistortionAmount>0.65</_DistortionAmount>
-            </shaderParameters>
+            </shaderParameters> -->
         </graphicData>
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -450,21 +455,21 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Elder Blushing Tree ====================-->
+    <!--==================== Cerulean Honeytree ====================-->
     <!-- This tree will produce a woody pulp which can then be manufactured into a "WoodLog" variant -->
     <!-- Can move around at night. -->
     <!-- thingClass = AlienBiomes.Plant_Mobile -->
     <!-- tickType = Long -->
     <!-- Glows at night. -->
 
-    <ThingDef ParentName="AlienDeciduousTreeBase" Name="SZ_ElderBlushingTree">
-        <defName>SZ_ElderBlushingTree</defName>
+    <ThingDef ParentName="AlienDeciduousTreeBase" Name="SZ_CeruleanHoneytree">
+        <defName>SZ_CeruleanHoneytree</defName>
         <thingClass>AlienBiomes.Plant_Mobile</thingClass>
         <drawerType>MapMeshAndRealTime</drawerType>
-        <label>elder blushing tree</label>
-        <description>These trees attract clawed predators who love the fragrant bark beneath their razor-like claws. Generations of animals scratching at the surface and subsequent evolutionary softening of the trees' woody trunks has led to the loss of natural woody bi-products.\n\nInstead, these trees produce a pulp-like substance that can be harvested and refined into wood planks.</description>
+        <label>cerulean honeytree</label>
+        <description>These trees attract a plethora of small invertebrate life as inside their blueish-green exterior lies a sweet, yet immediately sickly to humanlikes, nectar with similar viscosity to terrestrial honey.</description>
         <graphicData>
-            <texPath>Things/Trees/ElderBlushingTree</texPath>
+            <texPath>Things/Trees/CeruleanHoneytree</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
             <drawSize>1.00</drawSize>
@@ -480,19 +485,19 @@
         </statBases>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>Building</altitudeLayer>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
         <tickerType>Long</tickerType>
         <fillPercent>0.90</fillPercent>
         <plant>
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
             <growDays>40</growDays>
-            <leaflessGraphicPath>Things/Trees/ElderBlushingTree_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>Things/Trees/CeruleanHoneytree_Leafless</leaflessGraphicPath>
             <harvestWork>250</harvestWork>
-            <harvestYield>2</harvestYield>
+            <harvestYield>5</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.45</harvestAfterGrowth>
-            <harvestedThingDef>SZ_FragrantWoodShavings</harvestedThingDef> <!-- CHANGE THIS SHIT, AGAIN... -->
+            <harvestedThingDef>SZ_CeruleanHoney</harvestedThingDef> <!-- CHANGE THIS SHIT, AGAIN... -->
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
             <visualSizeRange>0.10~5.00</visualSizeRange>
@@ -502,8 +507,8 @@
             </sowTags>
             <wildOrder>2</wildOrder>
             <mustBeWildToSow>false</mustBeWildToSow>
-            <wildClusterRadius>22</wildClusterRadius>
-            <wildClusterWeight>250</wildClusterWeight>
+            <wildClusterRadius>12</wildClusterRadius>
+            <wildClusterWeight>150</wildClusterWeight>
         </plant>
         <comps>
             <li Class="CompProperties_HeatPusher">
@@ -513,15 +518,23 @@
             </li>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>2.50</overlightRadius>
-                <glowRadius>3.20</glowRadius>
+                <glowRadius>5.20</glowRadius>
                 <glowColor>(63, 216, 188, 0)</glowColor>
                 <startTime>0.75</startTime>
                 <stopTime>0.20</stopTime>
             </li>
+            <li Class="AlienBiomes.CompProperties_TimedHarvest">
+                <harvestStartTime>0.75</harvestStartTime>
+                <harvestStopTime>0.20</harvestStopTime>
+                <harvestSeasons>
+                    <li>Spring</li>
+                    <li>Summer</li>
+                </harvestSeasons>
+            </li>
             <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
                 <graphicElements>
                     <li>
-                        <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
+                        <texPath>Things/Trees/Overlays/CeruleanHoneytree/OverLeaf</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantShimmer</shaderType>
                         <shaderParameters>
@@ -533,7 +546,7 @@
                         </damageData>
                     </li>
                     <li>
-                        <texPath>Things/Trees/Overlays/ElderBlushingTree/OverLeaf</texPath>
+                        <texPath>Things/Trees/Overlays/CeruleanHoneytree/OverLeaf</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantShimmer</shaderType>
                         <shaderParameters>
@@ -545,9 +558,9 @@
                         </damageData>
                     </li>
                     <li>
-                        <texPath>Things/Trees/Overlays/ElderBlushingTree/GlowingSpots</texPath>
+                        <texPath>Things/Trees/Overlays/CeruleanHoneytree/GlowingSpots</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPlantPulse</shaderType> <!-- make a DefModExtension for the values in this shader -->
+                        <shaderType>TransparentPlantPulse</shaderType>
                         <shaderParameters>
                             <_PulseSpeed>0.5</_PulseSpeed>
                             <_PulseLength>1.0</_PulseLength>
@@ -605,7 +618,9 @@
             <leaflessGraphicPath>Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
             <visualSizeRange>1.00~3.25</visualSizeRange>
             <topWindExposure>0.10</topWindExposure>
-            <wildOrder>1</wildOrder>
+            <wildOrder>2</wildOrder>
+            <wildClusterRadius>10</wildClusterRadius>
+            <wildClusterWeight>80</wildClusterWeight>
             <sowTags>
                 <li>Ground</li>
             </sowTags>
@@ -623,5 +638,59 @@
             </li>
         </modExtensions>
     </ThingDef>
+
+    <!--==================== Shallow Ocean Bioluminescence ====================-->
+    <!-- Decorative. -->
+    <!-- Only spawns in shallow ocean water. -->
+
+    <!-- <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_ShallowOceanWaterBioluminescence</defName>
+        <label>bioluminescence</label>
+        <description>PLACEHOLDER</description>
+        <statBases>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/ShallowOceanWaterBioluminescence</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>MoteGlowDistorted</shaderType>
+            <shaderParameters>
+                <_DistortionTex>/Things/Mote/SmokeTiled</_DistortionTex>
+                <_distortionScrollSpeed>0.15</_distortionScrollSpeed>
+                <_distortionIntensity>0.2</_distortionIntensity>
+            </shaderParameters>
+        </graphicData>
+        <selectable>false</selectable>
+        <altitudeLayer>FloorCoverings</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>0</pathCost>
+        <plant>
+            <fertilityMin>0.01</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>1</growDays>
+            <maxMeshCount>16</maxMeshCount>
+            <wildClusterRadius>50</wildClusterRadius>
+            <wildClusterWeight>20</wildClusterWeight>
+            <visualSizeRange>0.25~1.00</visualSizeRange>
+            <topWindExposure>0.50</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>1.14</glowRadius>
+                <glowColor>(142,225,225,0)</glowColor>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Salty</li>
+                    <li>Shallow</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
 
 </Defs>

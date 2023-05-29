@@ -10,6 +10,7 @@ TO DO LIST...
     - Add new filth types for the soils and sand.
     - [done] Add some ambient FleckDefs for the plants (check performance).
     - [done] Add ambient sounds for when a pawn walks through certain plants.
+    - Bioluminescence in water, close to sandy shores.
 
 - Soothing Stalk
     - [done] Art.
@@ -26,17 +27,15 @@ TO DO LIST...
     - [done] Produces raw honey.
     - [done] Hediff effector.
 
-- Elder Blushing Tree
+- Cerulean Honeytree
     - [done] Art.
     - [done] XML.
     - [done] Only spawns on radiant soil and rich radiant soil.
-    - [done] Produces wood shavings.
     - [done] Timed glower.
 
 - Grass that grows seeds in naturally-produced high-pressure methane capsules that are
     triggered by proximity and fires seeds into the skin and flesh of nearby animals.
     They draw nutrients from the bloodstream and then eventually kill their host,
-    bursting from their bodies to continue their lifecycle. -->
+    bursting from their bodies to continue their lifecycle.
 
 - [done] Plants that can move from cell to cell sporadically throughout the day/week/quadrum
-

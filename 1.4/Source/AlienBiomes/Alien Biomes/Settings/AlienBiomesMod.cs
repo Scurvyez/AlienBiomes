@@ -36,7 +36,7 @@ namespace AlienBiomes
                 ___shaderInt = AlienBiomesContentDatabase.AlienBiomesBundle.LoadAsset<Shader>(__instance.shaderPath);
                 if (___shaderInt is null)
                 {
-                    Log.Error($"[<color=#4494E3FF>AlienBiomes</color>] Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text>");
+                    Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text></color>");
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace AlienBiomes
                 // Check if the bundle is not null
                 if (bundle == null)
                 {
-                    Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Failed to load bundle at path: " + bundlePath);
+                    Log.Message("[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Failed to load bundle at path:</color> " + bundlePath);
                 }
 
                 foreach (var allAssetName in bundle.GetAllAssetNames())

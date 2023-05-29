@@ -21,6 +21,13 @@ namespace AlienBiomes
             mat.SetFloat("_distortionIntensity", extraGraphicProp.shaderIntensityFactor + (curWindSpeed / 10f));
         }
 
+        public override void CompTickLong()
+        {
+            base.CompTickLong();
+            curWindSpeed = parent.Map.windManager.WindSpeed;
+            //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Current wind speed: </color>" + parent.Map.windManager.WindSpeed);
+        }
+
         /// <summary>
         /// Renders additional graphics on a parent thing.
         /// XML, drawerType = RealtimeOnly || MapMeshAndRealTime.
@@ -40,33 +47,31 @@ namespace AlienBiomes
                 Graphic extraGraphic = Props.graphicElements[i].Graphic;
                 GraphicDataAB extraGraphicProp = Props.graphicElements[i];
 
-                if ((dP > extraGraphicProp.timeRangeDisplayed.min && dP < 1f) 
-                    || (dP < extraGraphicProp.timeRangeDisplayed.max && dP > 0f))
+                if ((dP > extraGraphicProp.timeRangeDisplayed.min && dP < 1f) || (dP < extraGraphicProp.timeRangeDisplayed.max && dP > 0f))
                 {
                     float plantSize = parentPlant.def.graphicData.drawSize.x * pGrowth;
                     float graphicSize = extraGraphic.data.drawSize.y * extraGraphic.data.drawSize.y;
                     float offset = (plantSize - graphicSize) / 2f;
                     Material mat = extraGraphic.data.Graphic.MatSingle;
+                    Rot4 rotation = parent.Rotation;
                     
                     Vector3 pos = parentPlant.TrueCenter();
                     pos.y += 0.01f;
                     pos.z += offset;
                     extraGraphic.drawSize = new Vector2(plantSize, plantSize);
 
-                    if (extraGraphic.data.shaderType.ToString() == "MoteGlowDistorted"
-                        || extraGraphic.data.shaderType.ToString() == "MoteDistorted")
+                    if (extraGraphic.data.shaderType.ToString() == "MoteGlowDistorted" || extraGraphic.data.shaderType.ToString() == "MoteDistorted")
                     {
                         curWindSpeed = parent.Map.windManager.WindSpeed;
                         UpdateShaderParams(mat, curWindSpeed, extraGraphicProp);
                     }
 
-                    extraGraphic.Draw(pos, parent.Rotation, parent);
+                    extraGraphic.Draw(pos, rotation, parent);
 
                     // Extra step for crystals only.
                     if (parent.def.plant.visualSizeRange.max == maxG)
                     {
-                        if (parent.def.defName == "SZ_BlueColossalCrystalOne" 
-                            || parent.def.defName == "SZ_GreenColossalCrystalOne")
+                        if (parent.def.defName == "SZ_BlueColossalCrystalOne" || parent.def.defName == "SZ_GreenColossalCrystalOne")
                         {
                             float z2 = 0.83f;
 
@@ -74,8 +79,7 @@ namespace AlienBiomes
                             Props.graphicElements[1].drawOffset.z = (pGrowth * z2) + 0.75f;
                         }
 
-                        if (parent.def.defName == "SZ_BlueColossalCrystalTwo" 
-                            || parent.def.defName == "SZ_GreenColossalCrystalTwo")
+                        if (parent.def.defName == "SZ_BlueColossalCrystalTwo" || parent.def.defName == "SZ_GreenColossalCrystalTwo")
                         {
                             float z2 = 0.67f;
 

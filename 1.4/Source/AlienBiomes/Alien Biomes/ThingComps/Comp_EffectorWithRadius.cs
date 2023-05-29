@@ -7,14 +7,8 @@ namespace AlienBiomes
 {
     public class Comp_EffectorWithRadius : ThingComp
     {
-        public CompProperties_EffectorWithRadius Props
-        {
-            get
-            {
-                return (CompProperties_EffectorWithRadius)props;
-            }
-        }
-        
+        public CompProperties_EffectorWithRadius Props => (CompProperties_EffectorWithRadius)props;
+
         public int TickCounter = 0;
 
         /// <summary>
@@ -36,12 +30,9 @@ namespace AlienBiomes
                     foreach (Thing t in GenRadial.RadialDistinctThingsAround(parent.Position, parent.Map, Props.releaseRadius, true))
                     {
                         // If thing is a pawn, is alive, and (doesn't affect humanlife OR is humanlike)...
-                        if (t is Pawn p && !p.Dead 
-                            && (!Props.onlyAffectHumanlike 
-                            || p.RaceProps.Humanlike))
+                        if (t is Pawn p && !p.Dead && (!Props.onlyAffectHumanlike || p.RaceProps.Humanlike))
                         {
-                            if (Props.appliedHediff != null 
-                                && Props.appliedHediff != AlienBiomes_HediffDefOf.SZ_Crystallize)
+                            if (Props.appliedHediff != null && Props.appliedHediff != AlienBiomes_HediffDefOf.SZ_Crystallize)
                             {
                                 if (AlienBiomesSettings.ShowSpecialEffects == true)
                                 {
@@ -49,8 +40,7 @@ namespace AlienBiomes
                                 }
 
                                 // Null check the SoundDef. Otherwise... Behold, error.
-                                if (Props.soundOnRelease != null 
-                                    && AlienBiomesSettings.AllowCompEffectSounds == true)
+                                if (Props.soundOnRelease != null && AlienBiomesSettings.AllowCompEffectSounds == true)
                                 {
                                     SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
                                     sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
@@ -60,8 +50,7 @@ namespace AlienBiomes
                                 p.health.AddHediff(Props.appliedHediff);
                             }
 
-                            else if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize 
-                                && !p.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
+                            else if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize && !p.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
                             {
                                 if (AlienBiomesSettings.AllowCrystallizing == true)
                                 {
@@ -75,8 +64,7 @@ namespace AlienBiomes
                                         FleckMaker.AttachedOverlay(parent, Props.fleckReleased, Vector3.zero, 1f, -1f);
                                     }
 
-                                    if (Props.soundOnRelease != null 
-                                        && AlienBiomesSettings.AllowCompEffectSounds == true)
+                                    if (Props.soundOnRelease != null && AlienBiomesSettings.AllowCompEffectSounds == true)
                                     {
                                         SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
                                         sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
@@ -96,8 +84,7 @@ namespace AlienBiomes
         {
             if (parent.Map != null)
             {
-                MapComponent_ThingCompsGetter mC = 
-                    parent.Map.GetComponent<MapComponent_ThingCompsGetter>(); // map comp
+                MapComponent_ThingCompsGetter mC = parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
                 if (mC != null)
                 {
                     mC.AddCompInstancesToMap(this);
@@ -109,8 +96,7 @@ namespace AlienBiomes
         {
             if (parent.Map != null)
             {
-                MapComponent_ThingCompsGetter mC = 
-                    parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
+                MapComponent_ThingCompsGetter mC = parent.Map.GetComponent<MapComponent_ThingCompsGetter>();
                 if (mC != null)
                 {
                     mC.RemoveCompInstancesFromMap(this);

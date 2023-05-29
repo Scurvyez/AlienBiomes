@@ -6,8 +6,8 @@ namespace AlienBiomes
 {
     public class CompProperties_EffectorWithRadius : CompProperties
     {
-        public FleckDef fleckReleased;
-        public int releaseRadius;
+        public FleckDef fleckReleased = null;
+        public int releaseRadius = 2;
         public HediffDef appliedHediff = null;
         public ThoughtDef appliedThought = null;
         public SoundDef soundOnRelease;

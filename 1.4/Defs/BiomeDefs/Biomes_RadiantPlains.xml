@@ -14,7 +14,7 @@
         <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all and ancient trees grow in small clusters as the local fauna congregates nearby.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
         <workerClass>BiomesKit.UniversalBiomeWorker</workerClass>
         <animalDensity>1.7</animalDensity>
-        <plantDensity>1.2</plantDensity>
+        <plantDensity>1.4</plantDensity>
         <settlementSelectionWeight>1</settlementSelectionWeight>
         <movementDifficulty>1</movementDifficulty>
         <texture>World/Biomes/SZ_RadiantPlains</texture>
@@ -94,13 +94,13 @@
             <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>2.85</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
-            <SZ_ElderBlushingTree>0.10</SZ_ElderBlushingTree>
-            <SZ_RadiantGrass>5.00</SZ_RadiantGrass>
+            <SZ_CeruleanHoneytree>0.10</SZ_CeruleanHoneytree>
+            <SZ_RadiantGrass>20.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
             <SZ_LushGrass>3.75</SZ_LushGrass>
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
-
             <SZ_FiddleheadWall>0.35</SZ_FiddleheadWall>
+            <!-- <SZ_ShallowOceanWaterBioluminescence>10.0</SZ_ShallowOceanWaterBioluminescence> -->
         </wildPlants>
         <wildAnimals>
             <Horse>0.20</Horse>
