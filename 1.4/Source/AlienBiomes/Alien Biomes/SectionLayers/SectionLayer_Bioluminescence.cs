@@ -16,7 +16,8 @@ namespace AlienBiomes
         private static readonly List<Texture2D> BioluminescenceTextures = new ();
 
         private MaterialPropertyBlock propertyBlock;
-        private IEnumerable<IntVec3> affectedCells;
+        private HashSet<IntVec3> affectedCells;
+        private HashSet<IntVec3> newAffectedCells;
         private readonly int bioReach = 2; // how many cells out, from the shoreline, the bioluminescence displays
         private const int numberOfTextures = 4; // number of available textures to randomly pick for each cell
 
@@ -54,12 +55,20 @@ namespace AlienBiomes
             BioluminescenceTextures.Add(BioTexB);
             BioluminescenceTextures.Add(BioTexC);
             BioluminescenceTextures.Add(BioTexD);
+
+            newAffectedCells = AffectedCells();
+
+            if (!affectedCells.SetEquals(newAffectedCells))
+            {
+                // The affected cells have changed, update the affectedCells HashSet
+                affectedCells = newAffectedCells;
+            }
         }
 
         public override void DrawLayer()
         {
             // Draw the bioluminescent mesh on affected cells
-            foreach (IntVec3 cell in affectedCells)
+            foreach (IntVec3 cell in newAffectedCells)
             {
                 Texture2D randomTexture = BioluminescenceTextures[Mathf.Abs(cell.GetHashCode()) % numberOfTextures];
                 Material bioluminescenceMaterial = GetBioluminescenceMaterial(cell, randomTexture);
@@ -74,7 +83,7 @@ namespace AlienBiomes
             }
         }
 
-        private IEnumerable<IntVec3> AffectedCells()
+        private HashSet<IntVec3> AffectedCells()
         {
             HashSet<IntVec3> affectedCells = new HashSet<IntVec3>();
             BiomeDef radiantPlainsBiome = DefDatabase<BiomeDef>.GetNamed("SZ_RadiantPlains");
@@ -83,6 +92,7 @@ namespace AlienBiomes
             if (Map.Biome == radiantPlainsBiome)
             {
                 float noiseThreshold1 = 0.75f;
+                float noiseThreshold2 = 0.8f;
 
                 foreach (IntVec3 cell in section.CellRect)
                 {
@@ -114,7 +124,6 @@ namespace AlienBiomes
                                     break;
                             }
 
-                            float noiseThreshold2 = 0.8f;
                             float noiseValue2 = Random.value;
 
                             if (isNearShoreline && noiseValue2 <= noiseThreshold2)
