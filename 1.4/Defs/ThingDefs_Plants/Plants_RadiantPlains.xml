@@ -126,7 +126,6 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
-                    <li>Sandy</li>
                     <li>Stony</li>
                     <li>Rocky</li>
                 </terrainTags>
@@ -172,7 +171,6 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
-                    <li>Sandy</li>
                     <li>Stony</li>
                     <li>Rocky</li>
                 </terrainTags>
@@ -294,7 +292,7 @@
             <harvestAfterGrowth>0.30</harvestAfterGrowth>
             <harvestedThingDef>SZ_RawSoothingHoney</harvestedThingDef>
             <wildClusterRadius>5</wildClusterRadius>
-            <wildClusterWeight>250</wildClusterWeight>
+            <wildClusterWeight>30</wildClusterWeight>
             <visualSizeRange>0.95~1.7</visualSizeRange>
             <topWindExposure>0.3</topWindExposure>
             <wildOrder>2</wildOrder>
@@ -629,9 +627,6 @@
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
-                    <li>Sandy</li>
-                    <li>Boggy</li>
-                    <li>Loose</li>
                     <li>Stony</li>
                     <li>Rocky</li>
                 </terrainTags>
