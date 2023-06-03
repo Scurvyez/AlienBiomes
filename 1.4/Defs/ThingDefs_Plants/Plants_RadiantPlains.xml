@@ -104,10 +104,10 @@
         <graphicData>
             <texPath>Things/Plants/LushGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantShimmer</shaderType>
-            <shaderParameters>
+            <shaderType>TransparentPlant</shaderType>
+            <!-- <shaderParameters>
                 <_ShimmerSpeed>0.95</_ShimmerSpeed>
-            </shaderParameters>
+            </shaderParameters> -->
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>

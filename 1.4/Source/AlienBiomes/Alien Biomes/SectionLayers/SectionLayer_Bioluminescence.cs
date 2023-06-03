@@ -27,6 +27,7 @@ namespace AlienBiomes
         public SectionLayer_Bioluminescence(Section section) : base(section)
         {
             propertyBlock = new MaterialPropertyBlock();
+            relevantChangeTypes = MapMeshFlag.Terrain;
         }
 
         private Material GetBioluminescenceMaterial(IntVec3 cell, Texture2D texture)
@@ -47,22 +48,28 @@ namespace AlienBiomes
 
         public override void Regenerate()
         {
-            affectedCells = AffectedCells();
-
-            // Generate the list of available bioluminescence textures
-            BioluminescenceTextures.Clear();
-            BioluminescenceTextures.Add(BioTexA);
-            BioluminescenceTextures.Add(BioTexB);
-            BioluminescenceTextures.Add(BioTexC);
-            BioluminescenceTextures.Add(BioTexD);
-
-            newAffectedCells = AffectedCells();
-
-            if (!affectedCells.SetEquals(newAffectedCells))
+            if (affectedCells == null)
             {
-                // The affected cells have changed, update the affectedCells HashSet
+                // Initial run, populate affectedCells for the first time
+                affectedCells = AffectedCells();
+
+                // Generate the list of available bioluminescence textures
+                BioluminescenceTextures.Clear();
+                BioluminescenceTextures.Add(BioTexA);
+                BioluminescenceTextures.Add(BioTexB);
+                BioluminescenceTextures.Add(BioTexC);
+                BioluminescenceTextures.Add(BioTexD);
+
+                newAffectedCells = affectedCells;
+            }
+            else if (affectedCells != null)
+            {
+                newAffectedCells = AffectedCells();
                 affectedCells = newAffectedCells;
             }
+
+            Log.Message("[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>affectedCells total count:</color> " + affectedCells.Count.ToString().Colorize(Color.red));
+            Log.Message("[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>newAffectedCells total count:</color> " + newAffectedCells.Count.ToString().Colorize(Color.red));
         }
 
         public override void DrawLayer()
@@ -85,7 +92,7 @@ namespace AlienBiomes
 
         private HashSet<IntVec3> AffectedCells()
         {
-            HashSet<IntVec3> affectedCells = new HashSet<IntVec3>();
+            affectedCells = new ();
             BiomeDef radiantPlainsBiome = DefDatabase<BiomeDef>.GetNamed("SZ_RadiantPlains");
             TerrainGrid terrainGrid = Map.terrainGrid;
 

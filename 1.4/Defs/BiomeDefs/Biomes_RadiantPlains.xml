@@ -92,15 +92,14 @@
             <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
             <SZ_CupheadMold>1.10</SZ_CupheadMold>
             <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
-            <SZ_SoothingStalk>2.85</SZ_SoothingStalk>
+            <SZ_SoothingStalk>1.12</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
-            <SZ_CeruleanHoneytree>0.10</SZ_CeruleanHoneytree>
+            <SZ_CeruleanHoneytree>0.055</SZ_CeruleanHoneytree>
             <SZ_RadiantGrass>20.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
             <SZ_LushGrass>3.75</SZ_LushGrass>
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
             <SZ_FiddleheadWall>0.35</SZ_FiddleheadWall>
-            <!-- <SZ_ShallowOceanWaterBioluminescence>10.0</SZ_ShallowOceanWaterBioluminescence> -->
         </wildPlants>
         <wildAnimals>
             <Horse>0.20</Horse>
