@@ -219,17 +219,19 @@
     <!--==================== Cuphead Mold Plant ====================-->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_CupheadMold</defName>
-        <label>cuphead mold</label>
+        <defName>SZ_PyroclasticChaliceFungus</defName>
+        <label>pyroclastic chalice fungus</label>
         <description>PLACEHOLDER</description>
+        <drawerType>MapMeshAndRealTime</drawerType>
         <statBases>
             <MaxHitPoints>46</MaxHitPoints>
             <Flammability>1.00</Flammability>
             <Nutrition>0.02</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/CupheadMold</texPath>
+            <texPath>Things/Plants/PyroclasticChaliceFungus</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -238,12 +240,29 @@
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>30</growDays>
-            <leaflessGraphicPath>Things/Plants/CupheadMold_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>Things/Plants/PyroclasticChaliceFungus_Leafless</leaflessGraphicPath>
             <maxMeshCount>4</maxMeshCount>
             <visualSizeRange>0.5~1.6</visualSizeRange>
             <topWindExposure>0.75</topWindExposure>
             <wildOrder>1</wildOrder>
         </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_NasticMovementTemp">
+                <reactsToCold>false</reactsToCold>
+                <reactsToHeat>true</reactsToHeat>
+                <nasticGraphicData>
+                    <texPath>Things/Plants/Special/PyroclasticChaliceFungus/Nastic</texPath>
+                    <graphicClass>Graphic_Random</graphicClass>
+                    <shaderType>MoteGlowDistorted</shaderType>
+                    <shaderParameters>
+                        <_DistortionTex>/Other/Ripples</_DistortionTex>
+                        <shaderScrollSpeedFactor>1.25</shaderScrollSpeedFactor>
+                        <shaderScaleFactor>1.25</shaderScaleFactor>
+                        <shaderIntensityFactor>2.75</shaderIntensityFactor>
+                    </shaderParameters>
+                </nasticGraphicData>
+            </li>
+        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
@@ -442,8 +461,8 @@
                     <li>Fresh</li>
                     <li>Shallow</li>
                     <li>River</li>
-                    <li>Boggy</li>
-                    <li>Muddy</li>
+                    <li>Boggy</li> <!-- ??? -->
+                    <li>Muddy</li> <!-- ??? -->
                 </terrainTags>
             </li>
             <!-- <li Class="AlienBiomes.Plant_Mobile_ModExtension">
@@ -633,59 +652,5 @@
             </li>
         </modExtensions>
     </ThingDef>
-
-    <!--==================== Shallow Ocean Bioluminescence ====================-->
-    <!-- Decorative. -->
-    <!-- Only spawns in shallow ocean water. -->
-
-    <!-- <ThingDef ParentName="PlantBaseNonEdible">
-        <defName>SZ_ShallowOceanWaterBioluminescence</defName>
-        <label>bioluminescence</label>
-        <description>PLACEHOLDER</description>
-        <statBases>
-            <DeteriorationRate>0.00</DeteriorationRate>
-        </statBases>
-        <graphicData>
-            <texPath>Things/Plants/ShallowOceanWaterBioluminescence</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>MoteGlowDistorted</shaderType>
-            <shaderParameters>
-                <_DistortionTex>/Things/Mote/SmokeTiled</_DistortionTex>
-                <_distortionScrollSpeed>0.15</_distortionScrollSpeed>
-                <_distortionIntensity>0.2</_distortionIntensity>
-            </shaderParameters>
-        </graphicData>
-        <selectable>false</selectable>
-        <altitudeLayer>FloorCoverings</altitudeLayer>
-        <tickerType>Long</tickerType>
-        <fillPercent>0.20</fillPercent>
-        <pathCost>0</pathCost>
-        <plant>
-            <fertilityMin>0.01</fertilityMin>
-            <fertilitySensitivity>0.1</fertilitySensitivity>
-            <growDays>1</growDays>
-            <maxMeshCount>16</maxMeshCount>
-            <wildClusterRadius>50</wildClusterRadius>
-            <wildClusterWeight>20</wildClusterWeight>
-            <visualSizeRange>0.25~1.00</visualSizeRange>
-            <topWindExposure>0.50</topWindExposure>
-            <wildOrder>2</wildOrder>
-        </plant>
-        <comps>
-            <li Class="CompProperties_Glower">
-                <glowRadius>1.14</glowRadius>
-                <glowColor>(142,225,225,0)</glowColor>
-            </li>
-        </comps>
-        <modExtensions>
-            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Salty</li>
-                    <li>Shallow</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
-    </ThingDef> -->
 
 </Defs>

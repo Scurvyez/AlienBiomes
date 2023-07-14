@@ -13,10 +13,10 @@ namespace AlienBiomes
         private static readonly Texture2D BioDistTex = ContentFinder<Texture2D>.Get("Things/Mote/SmokeTiled", true);
         private static readonly Texture2D BioTexA = ContentFinder<Texture2D>.Get("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceA", true);
 
-        private Material bioluminescenceMaterial; // Single shared material
-        private MaterialPropertyBlock propertyBlock;
-        private HashSet<IntVec3> affectedCells;
-        private HashSet<IntVec3> newAffectedCells;
+        private Material bioluminescenceMaterial; // bioluminescent material (contains our Texture2D), what we see in each cell
+        private MaterialPropertyBlock propertyBlock; // shader property access
+        private HashSet<IntVec3> affectedCells;  // first pass of cells to have bioluminescence
+        private HashSet<IntVec3> newAffectedCells; // all other passes
         private readonly int bioReach = 1; // how many cells out, from the shoreline, the bioluminescence displays
         public SectionLayer_Bioluminescence(Section section) : base(section)
         {
@@ -61,8 +61,6 @@ namespace AlienBiomes
             // Calculate altitude once before the loop
             float terrainAltitude = AltitudeLayer.Terrain.AltitudeFor();
 
-            //Stopwatch loopTimer = Stopwatch.StartNew();
-
             // Iterate over each affected cell within the 8x8 area
             foreach (IntVec3 cell in affectedCells)
             {
@@ -72,10 +70,6 @@ namespace AlienBiomes
                 // Draw the bioluminescent mesh at the position of the current cell
                 Graphics.DrawMesh(MeshPool.plane10, position, Quaternion.identity, bioluminescenceMaterial, 0, null, 0, propertyBlock);
             }
-
-            //loopTimer.Stop();
-            //float loopTime = loopTimer.ElapsedTicks;
-            //Log.Message($"Bioluminescence Draw Time: {loopTime:F0}ms");
         }
 
         private HashSet<IntVec3> AffectedCells()

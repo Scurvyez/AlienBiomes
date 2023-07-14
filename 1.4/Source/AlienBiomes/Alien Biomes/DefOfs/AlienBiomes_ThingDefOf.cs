@@ -17,7 +17,7 @@ namespace AlienBiomes
         public static ThingDef SZ_LushGrass;
         public static ThingDef SZ_BulbousSanitas;
         public static ThingDef SZ_Fiddlehead;
-        public static ThingDef SZ_CupheadMold;
+        public static ThingDef SZ_PyroclasticChaliceFungus;
         public static ThingDef SZ_SoothingStalk;
         public static ThingDef SZ_CopaceticCone;
         public static ThingDef SZ_LilyOfThePlains;
@@ -42,7 +42,10 @@ namespace AlienBiomes
         public static ThingDef SZ_WindingFernAloe;
 
         // Structures
-        public static KCSG.StructureLayoutDef SZAB_OminousGrove;
+        //public static KCSG.StructureLayoutDef SZAB_OminousGrove;
+
+        // Shaders
+        public static ShaderTypeDef MoteGlowDistorted;
 
         static AlienBiomes_ThingDefOf()
         {

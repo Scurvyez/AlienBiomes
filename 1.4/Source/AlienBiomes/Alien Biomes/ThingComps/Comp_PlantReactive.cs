@@ -8,6 +8,7 @@ namespace AlienBiomes
 {
     public class Comp_PlantReactive : ThingComp
     {
+        /*
         private CompProperties_PlantReactive Props => (CompProperties_PlantReactive)props;
 
         public override void CompTick()
@@ -41,5 +42,6 @@ namespace AlienBiomes
                 }
             }
         }
+        */
     }
 }

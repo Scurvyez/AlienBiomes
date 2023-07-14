@@ -83,14 +83,14 @@
             </li>
         </terrainPatchMakers>
         <baseWeatherCommonalities>
-            <Clear>18</Clear>
-            <Rain>8</Rain>
+            <Clear>20</Clear>
+            <Rain>0</Rain>
             <DryThunderstorm>1</DryThunderstorm>
             <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
             <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
-            <SZ_CupheadMold>1.10</SZ_CupheadMold>
+            <SZ_PyroclasticChaliceFungus>1.10</SZ_PyroclasticChaliceFungus>
             <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>1.12</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>

@@ -8,6 +8,7 @@ using RimWorld;
 
 namespace AlienBiomes
 {
+    /*
     public class Medicine_Aloe : Medicine
     {
         private static List<Hediff> tendableHediffsInTendPriorityOrder = new ();
@@ -55,4 +56,5 @@ namespace AlienBiomes
             return num3;
         }
     }
+    */
 }
