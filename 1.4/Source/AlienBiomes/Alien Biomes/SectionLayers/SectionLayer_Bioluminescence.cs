@@ -2,8 +2,6 @@
 using Verse;
 using RimWorld;
 using UnityEngine;
-using System.Diagnostics;
-using System.Linq;
 
 namespace AlienBiomes
 {
@@ -17,7 +15,9 @@ namespace AlienBiomes
         private MaterialPropertyBlock propertyBlock; // shader property access
         private HashSet<IntVec3> affectedCells;  // first pass of cells to have bioluminescence
         private HashSet<IntVec3> newAffectedCells; // all other passes
+        private List<Color> randomColors; // colors to set our bio mat too for each affected cell
         private readonly int bioReach = 1; // how many cells out, from the shoreline, the bioluminescence displays
+
         public SectionLayer_Bioluminescence(Section section) : base(section)
         {
             propertyBlock = new MaterialPropertyBlock();
@@ -26,6 +26,8 @@ namespace AlienBiomes
             // Create the bioluminescent material with BioTexA as the texture
             bioluminescenceMaterial = new Material(ShaderDatabase.MoteGlowDistorted);
             bioluminescenceMaterial.SetTexture("_MainTex", BioTexA);
+
+            randomColors = GenerateRandomColors(10);
         }
 
         public override void Regenerate()
@@ -34,6 +36,16 @@ namespace AlienBiomes
             {
                 // Initial run, populate affectedCells for the first time
                 affectedCells = AffectedCells();
+
+                // Assign random colors to affected cells' materials
+                foreach (IntVec3 cell in affectedCells)
+                {
+                    int randomIndex = Random.Range(0, randomColors.Count);
+                    Color randomColor = randomColors[randomIndex];
+
+                    // Set the color in the propertyBlock for the cell's material
+                    propertyBlock.SetColor("_Color", randomColor);
+                }
             }
 
             newAffectedCells = AffectedCells();
@@ -70,6 +82,17 @@ namespace AlienBiomes
                 // Draw the bioluminescent mesh at the position of the current cell
                 Graphics.DrawMesh(MeshPool.plane10, position, Quaternion.identity, bioluminescenceMaterial, 0, null, 0, propertyBlock);
             }
+        }
+
+        private List<Color> GenerateRandomColors(int count)
+        {
+            List<Color> colors = new ();
+            for (int i = 0; i < count; i++)
+            {
+                Color randomColor = new (Random.value, Random.value, Random.value);
+                colors.Add(randomColor);
+            }
+            return colors;
         }
 
         private HashSet<IntVec3> AffectedCells()

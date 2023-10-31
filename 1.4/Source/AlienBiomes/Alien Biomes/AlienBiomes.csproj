@@ -76,9 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
+    <Compile Include="FireImprovement.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
     <Compile Include="Harmony\PostFix_MatFrom.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
+    <Compile Include="MapComps\MapComponent_Resurrection.cs" />
     <Compile Include="MapComps\MapComponent_NasticPlantPawnGetter.cs" />
     <Compile Include="MapComps\MapComponent_MobilePlantCellsGetter.cs" />
     <Compile Include="MapComps\MapComponent_PlantGetter.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="ThingClasses\Plant_Shimmering.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Mobile.cs" />
+    <Compile Include="ThingComps\Comp_TestInvisAnimal.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_NasticMovementTemp.cs" />
     <Compile Include="ThingComps\Comp_NasticMovementTemp.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_PlantReactive.cs" />

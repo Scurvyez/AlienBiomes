@@ -6,6 +6,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantGrass</defName>
         <label>radiant grass</label>
+        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
@@ -138,6 +139,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_BulbousSanitas</defName>
         <label>bulbus sanitas</label>
+        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>

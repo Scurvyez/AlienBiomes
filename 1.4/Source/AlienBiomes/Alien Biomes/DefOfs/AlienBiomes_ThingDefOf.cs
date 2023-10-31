@@ -46,6 +46,8 @@ namespace AlienBiomes
 
         // Shaders
         public static ShaderTypeDef MoteGlowDistorted;
+        public static ShaderTypeDef TransparentPlantShimmer;
+        public static ShaderTypeDef TransparentPlantPulse;
 
         static AlienBiomes_ThingDefOf()
         {

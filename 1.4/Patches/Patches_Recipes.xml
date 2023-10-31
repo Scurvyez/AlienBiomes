@@ -10,4 +10,25 @@
         </value>
     </Operation>
 
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Fire"]/graphicData/shaderType</xpath>
+        <value>
+			<shaderType>ImprovedFire</shaderType>
+		</value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Fire"]/graphicData/graphicClass</xpath>
+        <value>
+			<graphicClass>Graphic_Random</graphicClass>
+		</value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Muffalo"]/comps</xpath>
+        <value>
+			<li Class="AlienBiomes.CompProperties_TestInvisAnimal" />
+		</value>
+    </Operation>
+
 </Patch>

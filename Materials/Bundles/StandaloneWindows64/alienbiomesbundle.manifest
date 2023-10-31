@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2587248144
+CRC: 2716488365
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 58bfbbc4b4139217e3c7f40b7520c7c0
+    Hash: 18d00dccb73bc8c6dd725dd2ac761a90
   TypeTreeHash:
     serializedVersion: 2
     Hash: 55d48f4ad9c3b13330b9eb5ee5686477
@@ -13,7 +13,9 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/TransparentAlphaToggle.shader
 - Assets/TransparentPlantPulse.shader
+- Assets/ImprovedFire.shader
 - Assets/TransparentPlantFloating.shader
 - Assets/TransparentPlantShimmer.shader
 Dependencies: []

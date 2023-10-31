@@ -15,5 +15,10 @@
 		<defName>TransparentPlantFloating</defName>
 		<shaderPath>TransparentPlantFloating</shaderPath>
 	</AlienBiomes.ABShaderTypeDef>
+
+	<AlienBiomes.ABShaderTypeDef> 
+		<defName>ImprovedFire</defName>
+		<shaderPath>ImprovedFire</shaderPath>
+	</AlienBiomes.ABShaderTypeDef>
   
 </Defs>
