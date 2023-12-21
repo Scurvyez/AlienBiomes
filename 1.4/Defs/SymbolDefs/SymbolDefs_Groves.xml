@@ -3,7 +3,7 @@
 
     <!--==================== Ominous Grove Symbols Data ====================-->
 
-    <KCSG.SymbolDef>
+    <!-- <KCSG.SymbolDef>
         <defName>SZ_CrystallineSoil</defName>
         <thing>SZ_CrystallineSoil</thing>
     </KCSG.SymbolDef>
@@ -41,6 +41,6 @@
     <KCSG.SymbolDef>
         <defName>SZ_BlueMoonberry</defName>
         <thing>SZ_BlueMoonberry</thing>
-    </KCSG.SymbolDef>
+    </KCSG.SymbolDef> -->
 
 </Defs>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using RimWorld;
-using UnityEngine;
-using Verse;
+﻿using Verse;
 
 namespace AlienBiomes
 {
@@ -32,12 +27,14 @@ namespace AlienBiomes
             }
         }
 
+        /*
         public static bool AllowCrystallizing
         {
             get {
                 return _instance._allowCrystallizing;
             }
         }
+        */
 
         public static bool UseAlienSand
         {
@@ -77,7 +74,7 @@ namespace AlienBiomes
         public bool _showPlantGlow = true;
         public bool _showEffecterOverlay = true;
         public bool _showSpecialEffects = true;
-        public bool _allowCrystallizing = true;
+        //public bool _allowCrystallizing = true;
         public bool _useAlienSand = true;
         public bool _useAlienGravel = true;
         public bool _useAlienWater = true;
@@ -95,7 +92,7 @@ namespace AlienBiomes
             Scribe_Values.Look(ref _showPlantGlow, "allowPlantGlow", true);
             Scribe_Values.Look(ref _showEffecterOverlay, "allowEffecterOverlay", true);
             Scribe_Values.Look(ref _showSpecialEffects, "showSpecialEffects", true);
-            Scribe_Values.Look(ref _allowCrystallizing, "allowCrystallizing", true);
+            //Scribe_Values.Look(ref _allowCrystallizing, "allowCrystallizing", true);
             Scribe_Values.Look(ref _useAlienSand, "useAlienSand", true);
             Scribe_Values.Look(ref _useAlienGravel, "useAlienGravel", true);
             Scribe_Values.Look(ref _useAlienWater, "useAlienWater", true);

@@ -45,7 +45,7 @@
 			</li>
 			<li>
 				<diseaseInc>Disease_AnimalPlague</diseaseInc>
-				<commonality>100</commonality>
+				<commonality>20</commonality>
 			</li>
         </diseases>
         <terrainsByFertility>
@@ -86,7 +86,7 @@
             <Clear>20</Clear>
             <Rain>0</Rain>
             <DryThunderstorm>1</DryThunderstorm>
-            <RainyThunderstorm>5</RainyThunderstorm>
+            <RainyThunderstorm>11</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
             <SZ_Fiddlehead>2.75</SZ_Fiddlehead>

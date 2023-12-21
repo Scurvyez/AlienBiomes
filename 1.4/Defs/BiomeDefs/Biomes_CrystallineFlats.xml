@@ -5,7 +5,7 @@
 
     <!-- No animal diseases. :) -->
 
-    <BiomeDef>
+    <!-- <BiomeDef>
         <defName>SZ_CrystallineFlats</defName>
         <label>crystalline flats</label>
         <description>These lands are uncharacteristically sterile and covered in gigantic crystal pillars, flanked by smaller scatterings of crystalline formations.\n\nYou'll find many exotic materials here, however, a severe lack in vegetation. Yet, with less than desirable plant density, the flora growing in these parts reaches maturity at an astounding rate because of the elevated levels of minerals within the soil. You'll also find pools of water so deep and curious they almost... invite creatures down into their unending depths.</description>
@@ -42,11 +42,11 @@
                 <min>-999</min>
                 <max>0.80</max>
             </li>
-            <!-- <li>
+            <li>
                 <terrain>SZ_CrystallineSand</terrain>
                 <min>0.87</min>
                 <max>0.91</max>
-            </li> -->
+            </li>
             <li>
                 <terrain>SZ_CrystallineRichSoil</terrain>
                 <min>0.80</min>
@@ -75,7 +75,6 @@
                 </thresholds>
             </li>
             
-            <!--==================== GROVE PATCHES ====================-->
             <li>
                 <perlinFrequency>0.01</perlinFrequency>
                 <thresholds>
@@ -120,7 +119,6 @@
             <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
             <SZ_LushGreenGrass>5.78</SZ_LushGreenGrass>
             <SZ_GlassyBroadLeafedBirch>2.45</SZ_GlassyBroadLeafedBirch>
-            <!--==================== FOR GROVES ====================-->
             <SZ_OpulentOrchid>2.555</SZ_OpulentOrchid>
             <SZ_BlueMoonberry>4.75</SZ_BlueMoonberry>
             <SZ_WindingFern>3.85</SZ_WindingFern>
@@ -146,9 +144,9 @@
             <Bast_Lightning_Elemental MayRequire="Scurvyez.Bastyon">0.07</Bast_Lightning_Elemental>
             <Bast_Scire MayRequire="Scurvyez.Bastyon">0.20</Bast_Scire>
         </wildAnimals>
-        <modExtensions> <!-- CHANGE -->
+        <modExtensions>
 			<li Class="BiomesKit.BiomesKitControls">
-                <!-- <maxHilliness>Flat</maxHilliness> -->
+                <maxHilliness>Flat</maxHilliness>
                 <allowOnLand>True</allowOnLand>
                 <frequency>100</frequency>
                 <spawnOnBiomes>
@@ -177,6 +175,6 @@
                 <canSpawnOnWaterTerrain>false</canSpawnOnWaterTerrain>
             </li>
 		</modExtensions>
-    </BiomeDef>
+    </BiomeDef> -->
 
 </Defs>

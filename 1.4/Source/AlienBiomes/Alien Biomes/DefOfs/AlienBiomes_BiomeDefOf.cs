@@ -1,5 +1,4 @@
-﻿using Verse;
-using RimWorld;
+﻿using RimWorld;
 
 namespace AlienBiomes
 {
@@ -7,7 +6,7 @@ namespace AlienBiomes
     public class AlienBiomes_BiomeDefOf
     {
         public static BiomeDef SZ_RadiantPlains;
-        public static BiomeDef SZ_CrystallineFlats;
+        //public static BiomeDef SZ_CrystallineFlats;
 
         static AlienBiomes_BiomeDefOf()
         {

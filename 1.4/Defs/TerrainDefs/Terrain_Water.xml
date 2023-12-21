@@ -3,7 +3,7 @@
 
     <!--==================== Blood Water ====================-->
 
-    <TerrainDef ParentName="WaterShallowBase">
+    <!-- <TerrainDef ParentName="WaterShallowBase">
         <defName>SZ_BloodWaterMovingShallow</defName>
         <label>shallow moving bloody water</label>
         <texturePath>Terrain/Surfaces/BloodWaterShallowRamp</texturePath>
@@ -54,7 +54,7 @@
         <affordances>
             <li>Bridgeable</li>
         </affordances>
-    </TerrainDef>
+    </TerrainDef> -->
 
     <!--==================== Radiant Water ====================-->
 
@@ -178,7 +178,7 @@
 
     <!--==================== Crystalline Water ====================-->
 
-    <TerrainDef ParentName="WaterShallowBase">
+    <!-- <TerrainDef ParentName="WaterShallowBase">
         <defName>SZ_CrystallineWaterMovingShallow</defName>
         <label>shallow moving water</label>
         <texturePath>Terrain/Surfaces/CrystallineWaterShallowRamp</texturePath>
@@ -245,6 +245,6 @@
         <label>deep ocean water</label>
         <texturePath>Terrain/Surfaces/CrystallineWaterDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
-    </TerrainDef>
+    </TerrainDef> -->
 
 </Defs>

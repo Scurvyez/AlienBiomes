@@ -111,7 +111,7 @@
 
     <!--==================== Blue Crystal Fragments ====================-->
 
-    <ThingDef ParentName="ResourceBase">
+    <!-- <ThingDef ParentName="ResourceBase">
         <defName>SZ_BlueCrystalFragment</defName>
         <label>blue crystal fragments</label>
         <description>These small crystal fragments are valued by many and sell for a decent amount in markets.</description>
@@ -137,11 +137,11 @@
         <thingCategories>
             <li>ResourcesRaw</li>
         </thingCategories>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Green Crystal Fragments ====================-->
 
-    <ThingDef ParentName="ResourceBase">
+    <!-- <ThingDef ParentName="ResourceBase">
         <defName>SZ_GreenCrystalFragment</defName>
         <label>green crystal fragments</label>
         <description>These small crystal fragments are valued by many and sell for a decent amount in markets.</description>
@@ -167,6 +167,6 @@
         <thingCategories>
             <li>ResourcesRaw</li>
         </thingCategories>
-    </ThingDef>
+    </ThingDef> -->
 
 </Defs>

@@ -3,7 +3,7 @@
 
     <!--==================== Ominous Grove ====================-->
 
-    <SitePartDef>
+    <!-- <SitePartDef>
         <defName>SZ_OminousGrove</defName>
         <label>ominous grove</label>
         <description>PLACEHOLDER</description>
@@ -23,6 +23,6 @@
                 <li>SZAB_OminousGroveTwo</li>
             </structureLayoutDefs>
         </genStep>
-    </GenStepDef>
+    </GenStepDef> -->
 
 </Defs>

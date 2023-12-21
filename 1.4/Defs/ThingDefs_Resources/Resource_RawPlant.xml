@@ -82,7 +82,7 @@
 
     <!--==================== Winding Fern Aloe ====================-->
 
-    <ThingDef ParentName="MedicineBase">
+    <!-- <ThingDef ParentName="MedicineBase">
         <defName>SZ_WindingFernAloe</defName>
         <label>winding fern aloe</label>
         <description>A natural soothing, jelly-like liquid that feels cold to the touch when applied on wounds.</description>
@@ -106,6 +106,6 @@
                 <rotDestroys>true</rotDestroys>
             </li>
         </comps>
-    </ThingDef>
+    </ThingDef> -->
 
 </Defs>

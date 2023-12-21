@@ -3,6 +3,7 @@ using RimWorld;
 
 namespace AlienBiomes
 {
+    /*
     [DefOf]
     public class AlienBiomes_HediffDefOf
     {
@@ -13,4 +14,5 @@ namespace AlienBiomes
             DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_HediffDefOf));
         }
     }
+    */
 }

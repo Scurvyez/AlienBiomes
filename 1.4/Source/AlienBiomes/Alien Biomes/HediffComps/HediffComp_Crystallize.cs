@@ -1,10 +1,9 @@
 ﻿using RimWorld;
 using Verse;
-using UnityEngine;
-using System.Collections.Generic;
 
 namespace AlienBiomes
 {
+    /*
     public class HediffComp_Crystallize : HediffComp
     {
         public HediffCompProperties_Crystallize Props => (HediffCompProperties_Crystallize)props;
@@ -48,4 +47,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

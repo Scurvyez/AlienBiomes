@@ -3,7 +3,7 @@
 
     <!--==================== Ominous Grove Structure Data ====================-->
 
-    <KCSG.StructureLayoutDef>
+    <!-- <KCSG.StructureLayoutDef>
         <defName>SZAB_OminousGrove</defName>
         <layouts>
             <li>
@@ -365,6 +365,6 @@
                 <li>.,.,.,.,.,.,SZ_GlisteningTallGrass,.,.,.,.,.,.,.</li>
             </li>
         </layouts>
-    </KCSG.StructureLayoutDef>
+    </KCSG.StructureLayoutDef> -->
 
 </Defs>

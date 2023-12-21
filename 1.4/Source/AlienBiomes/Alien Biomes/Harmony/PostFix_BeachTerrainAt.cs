@@ -23,11 +23,13 @@ namespace AlienBiomes
                     __result = TerrainDef.Named("SZ_SoothingSand");
                     // If the above check is true, terrain def "SZ_SoothingSand" is used instead of vanilla sand.
                 }
+                /*
                 if (__result == TerrainDefOf.Sand && biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats
                     && AlienBiomesSettings.UseAlienSand == true)
                 {
                     __result = TerrainDef.Named("SZ_CrystallineSand");
                 }
+                */
             }
         }
     }

@@ -32,7 +32,7 @@ namespace AlienBiomes
                         // If thing is a pawn, is alive, and (doesn't affect humanlife OR is humanlike)...
                         if (t is Pawn p && !p.Dead && (!Props.onlyAffectHumanlike || p.RaceProps.Humanlike))
                         {
-                            if (Props.appliedHediff != null && Props.appliedHediff != AlienBiomes_HediffDefOf.SZ_Crystallize)
+                            if (Props.appliedHediff != null /*&& Props.appliedHediff != AlienBiomes_HediffDefOf.SZ_Crystallize*/)
                             {
                                 if (AlienBiomesSettings.ShowSpecialEffects == true)
                                 {
@@ -50,6 +50,7 @@ namespace AlienBiomes
                                 p.health.AddHediff(Props.appliedHediff);
                             }
 
+                            /*
                             else if (Props.appliedHediff == AlienBiomes_HediffDefOf.SZ_Crystallize && !p.health.hediffSet.HasHediff(AlienBiomes_HediffDefOf.SZ_Crystallize))
                             {
                                 if (AlienBiomesSettings.AllowCrystallizing == true)
@@ -73,6 +74,7 @@ namespace AlienBiomes
                                     p.health.AddHediff(Props.appliedHediff);
                                 }
                             }
+                            */
                         }
                     }
                 }

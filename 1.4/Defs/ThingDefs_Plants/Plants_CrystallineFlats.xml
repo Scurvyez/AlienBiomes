@@ -3,7 +3,7 @@
 
     <!--==================== Shimmering Grass Plant ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_ShimmeringGrass</defName>
         <label>shimmering grass</label>
         <description>A lush and beautiful grass found all over the crystalline flats.</description>
@@ -37,11 +37,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Shimmering Tall Grass Plant ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_ShimmeringTallGrass</defName>
         <label>tall shimmering grass</label>
         <description>A lush and beautiful grass found all over the crystalline plains.</description>
@@ -76,11 +76,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Glistening Grass Plant ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_GlisteningGrass</defName>
         <label>glistening grass</label>
         <description>A lush and vibrant grass found all over the crystalline flats.</description>
@@ -116,11 +116,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Glistening Tall Grass Plant ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_GlisteningTallGrass</defName>
         <label>tall glistening grass</label>
         <description>A lush and vibrant grass found all over the crystalline plains.</description>
@@ -157,11 +157,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Lush Green Grass Plant ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_LushGreenGrass</defName>
         <label>lush grass</label>
         <description>A lush and beautiful grass found all over the crystalline flats. It grows taller than most grasses and its roots run deep underground.</description>
@@ -195,11 +195,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Blue Colossal Crystal One ====================-->
 
-    <ThingDef ParentName="PlantBaseNonEdible" Name="BlueColossalCrystal">
+    <!-- <ThingDef ParentName="PlantBaseNonEdible" Name="BlueColossalCrystal">
         <defName>SZ_BlueColossalCrystalOne</defName>
         <label>blue colossal crystal</label>
         <description>A massive, living crystal. It dwarfs those who gaze upon its magnificence.</description>
@@ -261,8 +261,6 @@
             <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
                 <graphicElements>
                     <li>
-                        <!-- 1-pixel on a 512x512 canvas. -->
-                        <!-- For some reason the first array element here doesn't obey the code. -->
                         <texPath>Things/Special/Overlays/Crystals/ColossalCrystalError/ColossalCrystalA</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlant</shaderType>
@@ -270,7 +268,7 @@
                         <drawSize>0.05</drawSize>
                         <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
                     </li>
-                    <li> <!-- MIDDLE -->
+                    <li>
                         <texPath>Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
                         <graphicClass>Graphic_Random</graphicClass>
                         <shaderType>TransparentPlant</shaderType>
@@ -288,11 +286,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Blue Colossal Crystal Two ====================-->
 
-    <ThingDef ParentName="BlueColossalCrystal">
+    <!-- <ThingDef ParentName="BlueColossalCrystal">
         <defName>SZ_BlueColossalCrystalTwo</defName>
         <label>blue colossal crystal</label>
         <graphicData>
@@ -300,11 +298,11 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Green Colossal Crystal One ====================-->
 
-    <ThingDef ParentName="BlueColossalCrystal" Name="GreenColossalCrystal">
+    <!-- <ThingDef ParentName="BlueColossalCrystal" Name="GreenColossalCrystal">
         <defName>SZ_GreenColossalCrystalOne</defName>
         <label>green colossal crystal</label>
         <graphicData>
@@ -312,11 +310,11 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Green Colossal Crystal Two ====================-->
 
-    <ThingDef ParentName="GreenColossalCrystal">
+    <!-- <ThingDef ParentName="GreenColossalCrystal">
         <defName>SZ_GreenColossalCrystalTwo</defName>
         <label>green colossal crystal</label>
         <graphicData>
@@ -324,11 +322,11 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Red Colossal Crystal ====================-->
 
-    <ThingDef ParentName="PlantBaseNonEdible">
+    <!-- <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_RedColossalCrystal</defName>
         <label>red colossal crystal</label>
         <description>Here lies that which once lived free of restraint, a loved colonist who met their untimely demise as a result of the areas treacherous flora. This crystal stands as both a memorial to the soul it took and as a reminder to those still living that mother nature holds all the power on the Rim.</description>
@@ -373,11 +371,11 @@
                 <stopTime>0.20</stopTime>
             </li>
         </comps>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Inferior Crystal ====================-->
 
-    <ThingDef ParentName="PlantBaseNonEdible">
+    <!-- <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_InferiorCrystal</defName>
         <label>inferior crystal</label>
         <description>A much smaller crystal. While nowhere near the size of its colossal sibling, it will still produce products.</description>
@@ -430,11 +428,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Opulent Orchid ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_OpulentOrchid</defName>
         <label>opulent orchid</label>
         <description>PLACEHOLDER</description>
@@ -464,7 +462,7 @@
             <harvestYield>4</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.4</harvestAfterGrowth>
-            <harvestedThingDef>Ambrosia</harvestedThingDef> <!-- PLACEHOLDER -->
+            <harvestedThingDef>Ambrosia</harvestedThingDef>
             <visualSizeRange>0.5~2.85</visualSizeRange>
             <topWindExposure>0.25</topWindExposure>
             <maxMeshCount>4</maxMeshCount>
@@ -482,11 +480,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Blue Moonberry ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_BlueMoonberry</defName>
         <label>blue moonberry</label>
         <description>Only able to grow in the uncharacteristically fertile sands of crystalline groves, around pools of bloody water, these elastic-stemmed plants produce sweet berries over time.</description>
@@ -516,7 +514,7 @@
             <harvestYield>5</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.4</harvestAfterGrowth>
-            <harvestedThingDef>Ambrosia</harvestedThingDef> <!-- PLACEHOLDER -->
+            <harvestedThingDef>Ambrosia</harvestedThingDef>
             <visualSizeRange>0.65~2.25</visualSizeRange>
             <topWindExposure>0.625</topWindExposure>
             <wildOrder>2</wildOrder>
@@ -540,11 +538,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Winding Fern ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_WindingFern</defName>
         <label>winding fern</label>
         <description>These tall and spiraling ferns are soft to the touch and over time they will produce a healing aloe which can be used to treat wounds.</description>
@@ -590,9 +588,9 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
-    <ThingDef ParentName="AlienDeciduousTreeBase">
+    <!-- <ThingDef ParentName="AlienDeciduousTreeBase">
         <defName>SZ_GlassyBroadLeafedBirch</defName>
         <label>glassy broad-leafed birch</label>
         <description>A hardwood tree? Yeah, that sounds right. Wood can be harvested from this tree and its planks exhibit a dull yet pleasent greenish hue.</description>
@@ -637,6 +635,6 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
 </Defs>

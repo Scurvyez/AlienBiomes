@@ -3,7 +3,7 @@
 
     <!--==================== Crystalline Soil ====================-->
 
-    <TerrainDef ParentName="NaturalTerrainBase">
+    <!-- <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineSoil</defName>
         <label>crystalline soil</label>
         <texturePath>Terrain/Surfaces/SZ_CrystallineSoil</texturePath>
@@ -43,11 +43,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef>
+    </TerrainDef> -->
 
     <!--==================== Crystalline Rich Soil ====================-->
 
-    <TerrainDef ParentName="NaturalTerrainBase">
+    <!-- <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineRichSoil</defName>
         <label>rich crystalline soil</label>
         <texturePath>Terrain/Surfaces/SZ_CrystallineRichSoil</texturePath>
@@ -86,11 +86,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef>
+    </TerrainDef> -->
 
     <!--==================== Crystalline Stony Soil ====================-->
 
-    <TerrainDef ParentName="NaturalTerrainBase">
+    <!-- <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineStonySoil</defName>
         <label>crystalline stony soil</label>
         <texturePath>Terrain/Surfaces/SZ_CrystallineStonySoil</texturePath>
@@ -130,11 +130,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef>
+    </TerrainDef> -->
 
     <!--==================== Crystalline Sand ====================-->
 
-    <TerrainDef ParentName="NaturalTerrainBase">
+    <!-- <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineSand</defName>
         <label>crystalline sand</label>
         <texturePath>Terrain/Surfaces/SZ_CrystallineSand</texturePath>
@@ -172,9 +172,9 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef>
+    </TerrainDef> -->
 
-    <TerrainDef ParentName="NaturalTerrainBase">
+    <!-- <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineSand_Grove</defName>
         <label>crystalline sand</label>
         <texturePath>Terrain/Surfaces/SZ_CrystallineSand</texturePath>
@@ -212,6 +212,6 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef>
+    </TerrainDef> -->
 
 </Defs>

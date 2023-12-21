@@ -3,6 +3,7 @@ using RimWorld;
 
 namespace AlienBiomes
 {
+    /*
     [DefOf]
     public class AlienBiomes_LetterDefOf
     {
@@ -14,4 +15,5 @@ namespace AlienBiomes
             DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_LetterDefOf));
         }
     }
+    */
 }

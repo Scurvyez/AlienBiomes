@@ -15,13 +15,15 @@ namespace AlienBiomes
         {
             // Gravel checks.
             // Per Biome.
-            if (map.Biome.defName == "SZ_CrystallineFlats")
+            /*
+            if (map.Biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats)
             {
                 if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineStonySoil;
                 }
             }
-            if (map.Biome.defName == "SZ_RadiantPlains")
+            */
+            if (map.Biome == AlienBiomes_BiomeDefOf.SZ_RadiantPlains)
             {
                 if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantStonySoil;
@@ -33,13 +35,15 @@ namespace AlienBiomes
             // Additional mod check required since GL patches the same method with vanilla sand.
             if (ModsConfig.IsActive("m00nl1ght.geologicallandforms"))
             {
-                if (map.Biome.defName == "SZ_CrystallineFlats")
+                /*
+                if (map.Biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats)
                 {
                     if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
                         __result = AlienBiomes_TerrainDefOf.SZ_CrystallineSand;
                     }
                 }
-                if (map.Biome.defName == "SZ_RadiantPlains")
+                */
+                if (map.Biome == AlienBiomes_BiomeDefOf.SZ_RadiantPlains)
                 {
                     if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
                         __result = AlienBiomes_TerrainDefOf.SZ_SoothingSand;
@@ -49,7 +53,8 @@ namespace AlienBiomes
 
             // Water checks.
             // Per Biome.
-            if (map.Biome.defName == "SZ_CrystallineFlats")
+            /*
+            if (map.Biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats)
             {
                 if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterShallow;
@@ -67,7 +72,8 @@ namespace AlienBiomes
                     __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterMovingChestDeep;
                 }
             }
-            if (map.Biome.defName == "SZ_RadiantPlains")
+            */
+            if (map.Biome == AlienBiomes_BiomeDefOf.SZ_RadiantPlains)
             {
                 if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
                     __result = AlienBiomes_TerrainDefOf.SZ_RadiantWaterShallow;

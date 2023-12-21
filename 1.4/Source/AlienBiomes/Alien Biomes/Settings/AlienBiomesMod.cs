@@ -101,7 +101,7 @@ namespace AlienBiomes
             parPos1.height = 12f;
             GUI.DrawTexture(parPos1, partition1, ScaleMode.StretchToFill, true);
             list.Gap(3.00f);
-            list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(), ref settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
+            //list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(), ref settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingUseAlienSand".Translate(), ref settings._useAlienSand, "AlienBiomes_SettingUseAlienSandDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingUseAlienGravel".Translate(), ref settings._useAlienGravel, "AlienBiomes_SettingUseAlienGravelDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingUseAlienWater".Translate(), ref settings._useAlienWater, "AlienBiomes_SettingUseAlienWaterDesc".Translate());
