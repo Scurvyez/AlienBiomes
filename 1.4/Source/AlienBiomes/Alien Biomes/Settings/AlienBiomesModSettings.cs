@@ -27,6 +27,14 @@ namespace AlienBiomes
             }
         }
 
+        public static bool EnableScreenPosEffects
+        {
+            get
+            {
+                return _instance._enableScreenPosEffects;
+            }
+        }
+
         /*
         public static bool AllowCrystallizing
         {
@@ -74,6 +82,7 @@ namespace AlienBiomes
         public bool _showPlantGlow = true;
         public bool _showEffecterOverlay = true;
         public bool _showSpecialEffects = true;
+        public bool _enableScreenPosEffects = true;
         //public bool _allowCrystallizing = true;
         public bool _useAlienSand = true;
         public bool _useAlienGravel = true;
@@ -92,6 +101,7 @@ namespace AlienBiomes
             Scribe_Values.Look(ref _showPlantGlow, "allowPlantGlow", true);
             Scribe_Values.Look(ref _showEffecterOverlay, "allowEffecterOverlay", true);
             Scribe_Values.Look(ref _showSpecialEffects, "showSpecialEffects", true);
+            Scribe_Values.Look(ref _enableScreenPosEffects, "enableScreenPosEffects", true);
             //Scribe_Values.Look(ref _allowCrystallizing, "allowCrystallizing", true);
             Scribe_Values.Look(ref _useAlienSand, "useAlienSand", true);
             Scribe_Values.Look(ref _useAlienGravel, "useAlienGravel", true);

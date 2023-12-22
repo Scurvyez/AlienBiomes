@@ -3,7 +3,7 @@
 
     <!--==================== Elder Woody Pulp ====================-->
 
-    <RecipeDef>
+    <!-- <RecipeDef>
         <defName>SZ_ProcessElderWoodLog</defName>
         <label>process elder wood log</label>
         <description>Process elder wood shavings for industrial uses. The resulting logs can be used for walls and weaponry.</description>
@@ -32,6 +32,6 @@
                 <li>SZ_FragrantWoodShavings</li>
             </thingDefs>
         </fixedIngredientFilter>
-    </RecipeDef>
+    </RecipeDef> -->
 
 </Defs>

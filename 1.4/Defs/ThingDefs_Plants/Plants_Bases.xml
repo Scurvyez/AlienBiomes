@@ -3,7 +3,7 @@
 
     <!--==================== Alien Deciduous Tree Base ====================-->
 
-    <ThingDef ParentName="TreeBase" Name="AlienDeciduousTreeBase" Abstract="True">
+    <!-- <ThingDef ParentName="TreeBase" Name="AlienDeciduousTreeBase" Abstract="True">
         <graphicData>
             <shaderParameters>
                 <_FallColorSource>(0.3803, 0.4352, 0.1451)</_FallColorSource>
@@ -12,6 +12,6 @@
                 <_FallBehaviorEnabled>1</_FallBehaviorEnabled>
             </shaderParameters>
         </graphicData>
-    </ThingDef>
+    </ThingDef> -->
 
 </Defs>

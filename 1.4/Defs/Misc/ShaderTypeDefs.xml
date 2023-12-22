@@ -17,8 +17,8 @@
 	</AlienBiomes.ABShaderTypeDef>
 
 	<AlienBiomes.ABShaderTypeDef> 
-		<defName>ImprovedFire</defName>
-		<shaderPath>ImprovedFire</shaderPath>
+		<defName>ScreenPosEffects</defName>
+		<shaderPath>ScreenPosEffects</shaderPath>
 	</AlienBiomes.ABShaderTypeDef>
   
 </Defs>

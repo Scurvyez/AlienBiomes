@@ -78,10 +78,11 @@
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="FireImprovement.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
+    <Compile Include="Harmony\PostfixCurrentNotify_LoadedSceneChanged.cs" />
     <Compile Include="Harmony\PostFix_MatFrom.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
     <Compile Include="MapComps\MapComponent_Resurrection.cs" />
-    <Compile Include="MapComps\MapComponent_NasticPlantPawnGetter.cs" />
+    <Compile Include="MapComps\MapComponent_PlantEffects.cs" />
     <Compile Include="MapComps\MapComponent_MobilePlantCellsGetter.cs" />
     <Compile Include="MapComps\MapComponent_PlantGetter.cs" />
     <Compile Include="SectionLayers\SectionLayer_Bioluminescence.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ABShaderTypeDef.cs" />
     <Compile Include="Utils\ABShaderPropertyIDs.cs" />
+    <Compile Include="Utils\FullScreenEffects.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

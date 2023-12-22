@@ -3,6 +3,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     public class MapComponent_Resurrection : MapComponent
     {
         private int ticksToResurrection = 120;
@@ -70,4 +71,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

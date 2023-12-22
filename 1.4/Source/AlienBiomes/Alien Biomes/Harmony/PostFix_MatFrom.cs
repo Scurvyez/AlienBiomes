@@ -14,9 +14,7 @@ namespace AlienBiomes
             if (__result != null 
                 && (__result.shader == AlienBiomesContentDatabase.TransparentPlantShimmer
                 || __result.shader == AlienBiomesContentDatabase.TransparentPlantPulse
-                || __result.shader == AlienBiomesContentDatabase.TransparentPlantFloating
-                || __result.shader == AlienBiomesContentDatabase.ImprovedFire
-                || __result.shader == AlienBiomesContentDatabase.TransparentAlphaToggle))
+                || __result.shader == AlienBiomesContentDatabase.TransparentPlantFloating))
             {
                 //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] MatFrom_Patch: Material shader = " + __result.shader.name);
                 WindManager.Notify_PlantMaterialCreated(__result);

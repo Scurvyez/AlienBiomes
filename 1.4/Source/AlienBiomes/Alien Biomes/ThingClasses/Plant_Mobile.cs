@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace AlienBiomes
@@ -27,10 +21,9 @@ namespace AlienBiomes
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            // Get the Plant_Mobile_ModExtension for this plant
             plantExt = def.GetModExtension<Plant_Mobile_ModExtension>();
-            // Get the MapComponent_MobilePlantCellsGetter from the map
             mapComponent = map.GetComponent<MapComponent_MobilePlantCellsGetter>();
+
             // Store a reference to the GlowGrid for the map
             glowGrid = map.glowGrid;
             // Store a reference to the MapDrawer for the map

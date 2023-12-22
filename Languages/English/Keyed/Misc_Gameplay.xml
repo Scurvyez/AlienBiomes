@@ -22,6 +22,9 @@
     <AlienBiomes_SettingSpecialEffects>Show special effects.</AlienBiomes_SettingSpecialEffects>
     <AlienBiomes_SettingSpecialEffectsDesc>Many things in Alien Biomes have special effects in the form of flecks and motes which can be performance heavy. Turn this off if it becomes a problem.</AlienBiomes_SettingSpecialEffectsDesc>
 
+    <AlienBiomes_EnableScreenPositionEffects>Use position tracking screen effects?</AlienBiomes_EnableScreenPositionEffects>
+    <AlienBiomes_EnableScreenPositionEffectsDesc>Check to allow visual effects on the map with post processing.</AlienBiomes_EnableScreenPositionEffectsDesc>
+
     <!-- <AlienBiomes_SettingCrystallizing>Allow colonists to be crystallized in the Crystalline Flats.</AlienBiomes_SettingCrystallizing>
     <AlienBiomes_SettingCrystallizingDesc>This can make for some fun gameplay but is also a fair challenge. Pawns afflicted with the crystallizing hediff will eventually die and be replaced by a magnificent red crystal.</AlienBiomes_SettingCrystallizingDesc> -->
 

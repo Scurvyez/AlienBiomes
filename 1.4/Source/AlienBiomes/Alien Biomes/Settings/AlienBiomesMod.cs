@@ -119,6 +119,7 @@ namespace AlienBiomes
             list.Gap(3.00f);
             list.CheckboxLabeled("AlienBiomes_SettingPlantGlow".Translate(), ref settings._showPlantGlow, "AlienBiomes_SettingPlantGlowDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingEffectorOverlay".Translate(), ref settings._showEffecterOverlay, "AlienBiomes_SettingEffectorOverlayDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_EnableScreenPositionEffects".Translate(), ref settings._enableScreenPosEffects, "AlienBiomes_EnableScreenPositionEffectsDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingSpecialEffects".Translate(), ref settings._showSpecialEffects, "AlienBiomes_SettingSpecialEffectsDesc".Translate());
             list.Gap(12.0f);
 

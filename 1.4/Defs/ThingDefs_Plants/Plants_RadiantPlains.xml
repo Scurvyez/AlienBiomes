@@ -18,10 +18,12 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlantShimmer</shaderType>
             <shaderParameters>
-                <_ShimmerSpeed>0.55</_ShimmerSpeed>
+                <_ShimmerSpeed>0.45</_ShimmerSpeed>
+                <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex>
+                <_NoiseTint>(0.25, 1, 1, 1)</_NoiseTint>
             </shaderParameters>
         </graphicData>
-        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <hideAtSnowDepth>0.9</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
         <plant>
@@ -63,7 +65,9 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlantShimmer</shaderType>
             <shaderParameters>
-                <_ShimmerSpeed>0.70</_ShimmerSpeed>
+                <_ShimmerSpeed>0.6</_ShimmerSpeed>
+                <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex>
+                <_NoiseTint>(0.25, 1, 1, 1)</_NoiseTint>
             </shaderParameters>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
@@ -105,10 +109,7 @@
         <graphicData>
             <texPath>Things/Plants/LushGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
-            <!-- <shaderParameters>
-                <_ShimmerSpeed>0.95</_ShimmerSpeed>
-            </shaderParameters> -->
+            <shaderType>CutoutPlant</shaderType>
         </graphicData>
         <hideAtSnowDepth>0.5</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -194,6 +195,7 @@
         <graphicData>
             <texPath>Things/Plants/Fiddlehead</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
         </graphicData>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -219,12 +221,13 @@
     </ThingDef>
 
     <!--==================== Cuphead Mold Plant ====================-->
+    <!-- Reacts to pawn movement. Shader(?) -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_PyroclasticChaliceFungus</defName>
         <label>pyroclastic chalice fungus</label>
         <description>PLACEHOLDER</description>
-        <drawerType>MapMeshAndRealTime</drawerType>
+        <!-- <drawerType>MapMeshAndRealTime</drawerType> -->
         <statBases>
             <MaxHitPoints>46</MaxHitPoints>
             <Flammability>1.00</Flammability>
@@ -248,7 +251,7 @@
             <topWindExposure>0.75</topWindExposure>
             <wildOrder>1</wildOrder>
         </plant>
-        <comps>
+        <!-- <comps>
             <li Class="AlienBiomes.CompProperties_NasticMovementTemp">
                 <reactsToCold>false</reactsToCold>
                 <reactsToHeat>true</reactsToHeat>
@@ -264,7 +267,7 @@
                     </shaderParameters>
                 </nasticGraphicData>
             </li>
-        </comps>
+        </comps> -->
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
@@ -294,6 +297,7 @@
         <graphicData>
             <texPath>Things/Plants/SoothingStalk</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
         </graphicData>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
@@ -349,6 +353,7 @@
     <!-- Only spawns on radiant soil and rich radiant soil. -->
     <!-- Emits a hediff to calm nearby pawns. -->
     <!-- tickerType == Long -->
+    <!-- Make new post processing shader for the twinkle effects. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
@@ -363,6 +368,7 @@
         <graphicData>
             <texPath>Things/Plants/CopaceticCone</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
         </graphicData>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
@@ -422,10 +428,10 @@
     <!--==================== Lily of the Plains Plant ====================-->
     <!-- Decorative, wild, no fruit or real benefits. lol -->
     <!-- Only spawns in water. -->
+    <!-- New shader + shadows?. -->
 
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_LilyOfThePlains</defName>
-        <!-- <thingClass>AlienBiomes.Plant_Mobile</thingClass> -->
         <label>lily of the plains</label>
         <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
         <statBases>
@@ -435,10 +441,7 @@
         <graphicData>
             <texPath>Things/Plants/LilyOfThePlains</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType> <!-- TransparentPlantFloating(?)... one day... perhaps. -->
-            <!-- <shaderParameters>
-                <_DistortionAmount>0.65</_DistortionAmount>
-            </shaderParameters> -->
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -467,10 +470,6 @@
                     <li>Muddy</li> <!-- ??? -->
                 </terrainTags>
             </li>
-            <!-- <li Class="AlienBiomes.Plant_Mobile_ModExtension">
-                <startTime>0.75</startTime>
-                <stopTime>0.20</stopTime>
-            </li> -->
         </modExtensions>
     </ThingDef>
 
@@ -481,7 +480,7 @@
     <!-- tickType = Long -->
     <!-- Glows at night. -->
 
-    <ThingDef ParentName="AlienDeciduousTreeBase" Name="SZ_CeruleanHoneytree">
+    <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_CeruleanHoneytree</defName>
         <thingClass>AlienBiomes.Plant_Mobile</thingClass>
         <drawerType>MapMeshAndRealTime</drawerType>
@@ -500,13 +499,12 @@
         <statBases>
             <Beauty>2</Beauty>
             <BeautyOutdoors>2</BeautyOutdoors>
-            <Nutrition>0.01</Nutrition>
         </statBases>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
         <tickerType>Long</tickerType>
-        <fillPercent>0.90</fillPercent>
+        <fillPercent>0.9</fillPercent>
         <plant>
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
@@ -520,7 +518,7 @@
             <harvestFailable>true</harvestFailable>
             <topWindExposure>0.70</topWindExposure>
             <visualSizeRange>0.10~5.00</visualSizeRange>
-            <sowMinSkill>7</sowMinSkill>
+            <sowMinSkill>9</sowMinSkill>
             <sowTags>
                 <li>Ground</li>
             </sowTags>
@@ -538,7 +536,7 @@
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>2.50</overlightRadius>
                 <glowRadius>5.20</glowRadius>
-                <glowColor>(63, 216, 188, 0)</glowColor>
+                <glowColor>(242, 13, 13, 0)</glowColor>
                 <startTime>0.75</startTime>
                 <stopTime>0.20</stopTime>
             </li>
@@ -557,21 +555,12 @@
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantShimmer</shaderType>
                         <shaderParameters>
-                            <_ShimmerSpeed>1.2</_ShimmerSpeed>
+                            <_ShimmerSpeed>0.85</_ShimmerSpeed>
+                            <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex>
+                            <_NoiseTint>(0.9, 0.3, 1, 1)</_NoiseTint>
                         </shaderParameters>
                         <drawSize>1.00</drawSize>
-                        <damageData>
-                            <enabled>false</enabled>
-                        </damageData>
-                    </li>
-                    <li>
-                        <texPath>Things/Trees/Overlays/CeruleanHoneytree/OverLeaf</texPath>
-                        <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPlantShimmer</shaderType>
-                        <shaderParameters>
-                            <_ShimmerSpeed>1.4</_ShimmerSpeed>
-                        </shaderParameters>
-                        <drawSize>0.80</drawSize>
+                        <drawOffset>(0, 0, 0.1)</drawOffset>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>
@@ -581,11 +570,12 @@
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantPulse</shaderType>
                         <shaderParameters>
-                            <_PulseSpeed>0.5</_PulseSpeed>
+                            <_PulseSpeed>1.75</_PulseSpeed>
                             <_PulseLength>1.0</_PulseLength>
                             <_PulseOrigin>(0.5, 0.5, 0, 0)</_PulseOrigin>
                         </shaderParameters>
                         <drawSize>1.00</drawSize>
+                        <drawOffset>(0, 0, 0.2)</drawOffset>
                         <damageData>
                             <enabled>false</enabled>
                         </damageData>
@@ -619,7 +609,7 @@
         <holdsRoof>true</holdsRoof>
         <blockLight>false</blockLight>
         <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>Building</altitudeLayer>
+        <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
         <statBases>
             <MaxHitPoints>500</MaxHitPoints>

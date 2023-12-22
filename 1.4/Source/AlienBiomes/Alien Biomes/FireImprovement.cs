@@ -6,6 +6,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     [StaticConstructorOnStartup]
     public static class FireImprovement
     {
@@ -34,4 +35,5 @@ namespace AlienBiomes
             FireGraphicField.SetValue(null, improvedFireGraphic);
         }
     }
+    */
 }

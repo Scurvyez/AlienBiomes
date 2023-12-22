@@ -14,8 +14,7 @@ namespace AlienBiomes
         public static readonly Shader TransparentPlantShimmer = LoadShader(Path.Combine("Assets", "TransparentPlantShimmer.shader"));
         public static readonly Shader TransparentPlantPulse = LoadShader(Path.Combine("Assets", "TransparentPlantPulse.shader"));
         public static readonly Shader TransparentPlantFloating = LoadShader(Path.Combine("Assets", "TransparentPlantFloating.shader"));
-        public static readonly Shader ImprovedFire = LoadShader(Path.Combine("Assets", "ImprovedFire.shader"));
-        public static readonly Shader TransparentAlphaToggle = LoadShader(Path.Combine("Assets", "TransparentAlphaToggle.shader"));
+        public static readonly Shader ScreenPosEffects = LoadShader(Path.Combine("Assets", "ScreenPosEffects.shader"));
 
         public static AssetBundle AlienBiomesBundle
         {
