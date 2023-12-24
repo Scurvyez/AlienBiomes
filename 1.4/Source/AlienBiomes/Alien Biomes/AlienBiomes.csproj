@@ -78,6 +78,7 @@
     <Compile Include="AlienBiomesWelcomeNote.cs" />
     <Compile Include="FireImprovement.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
+    <Compile Include="Harmony\Prefix_TryEnterNextPathCell.cs" />
     <Compile Include="Harmony\PostfixCurrentNotify_LoadedSceneChanged.cs" />
     <Compile Include="Harmony\PostFix_MatFrom.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
@@ -89,6 +90,8 @@
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="Settings\AlienBiomesContentDatabase.cs" />
+    <Compile Include="ThingClasses\DefModExtensions\Plant_Nastic_ModExtension.cs" />
+    <Compile Include="ThingClasses\Plant_Nastic.cs" />
     <Compile Include="ThingClasses\Plant_Shimmering.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Mobile.cs" />

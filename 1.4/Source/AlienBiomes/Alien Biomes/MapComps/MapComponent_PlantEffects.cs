@@ -4,6 +4,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     [StaticConstructorOnStartup]
     public class MapComponent_PlantEffects : MapComponent
     {
@@ -44,4 +45,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

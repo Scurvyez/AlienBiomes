@@ -227,7 +227,7 @@
         <defName>SZ_PyroclasticChaliceFungus</defName>
         <label>pyroclastic chalice fungus</label>
         <description>PLACEHOLDER</description>
-        <!-- <drawerType>MapMeshAndRealTime</drawerType> -->
+        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <statBases>
             <MaxHitPoints>46</MaxHitPoints>
             <Flammability>1.00</Flammability>
@@ -275,6 +275,10 @@
                     <li>Stony</li>
                     <li>Rocky</li>
                 </terrainTags>
+            </li>
+            <li Class="AlienBiomes.Plant_Nastic_ModExtension">
+                <effectRadius>3</effectRadius>
+                <emitFlecks>true</emitFlecks>
             </li>
         </modExtensions>
     </ThingDef>
