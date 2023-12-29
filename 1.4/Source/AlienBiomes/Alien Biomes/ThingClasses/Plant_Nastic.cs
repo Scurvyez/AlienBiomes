@@ -10,11 +10,11 @@ namespace AlienBiomes
     {
         private Plant_Nastic_ModExtension plantExt;
 
-        public float currentScale {  get; set; }
+        public float currentScale = 1f;
         public float minScale = 0.1f;
-        public float scaleChangeRate = 0.05f;
-        public bool touchSensitiveSwitch;
-        public int delayTimer = 180;
+        public float scaleDeltaDecrease = 0.08f;
+        public float scaleDeltaIncrease = 0.01f;
+        public int touchSensitiveStartTime;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -51,19 +51,12 @@ namespace AlienBiomes
         public override void Tick()
         {
             base.Tick();
-            if (touchSensitiveSwitch) // check if pawn in range
+            int timeSinceLastStep = Find.TickManager.TicksGame - touchSensitiveStartTime;
+            if (timeSinceLastStep < 720)
             {
-                delayTimer--; // start counting down from 180
-                if (delayTimer > 0)
-                {
-                    currentScale = Mathf.Max(currentScale - scaleChangeRate, minScale); // scale down
-                }
-                else
-                {
-                    currentScale = Mathf.Min(currentScale + scaleChangeRate, 1.0f); // scale back up
-                }
+                float scaleChangeRate = timeSinceLastStep < 360 ? -scaleDeltaDecrease : scaleDeltaIncrease;
+                currentScale = Mathf.Clamp(currentScale + scaleChangeRate, minScale, 1);
             }
-            touchSensitiveSwitch = false;
         }
 
         public void DrawEffects()
@@ -81,6 +74,13 @@ namespace AlienBiomes
                     FleckMaker.AttachedOverlay(this, plantExt.nasticEffectDef, new Vector3(Rand.Value, 1f, Rand.Value), 1f, -1f);
                 }
             }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref currentScale, "currentScale", 1f);
+            Scribe_Values.Look(ref touchSensitiveStartTime, "touchSensitiveStartTime", 0);
         }
     }
 }

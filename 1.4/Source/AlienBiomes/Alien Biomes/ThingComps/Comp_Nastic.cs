@@ -53,7 +53,8 @@ namespace AlienBiomes
             for (int i = 0; i < instanceOffsets.Count; i++)
             {
                 // Draw the mesh with the modified UV coordinates
-                Matrix4x4 matrix = Matrix4x4.TRS(new Vector3(instanceOffsets[i].x, 0, instanceOffsets[i].z + offset), rotation.AsQuat, new Vector3(parentPlant.currentScale, 1f, parentPlant.currentScale));
+                Vector3 drawPos = new Vector3(instanceOffsets[i].x, parentPlant.def.altitudeLayer.AltitudeFor(), instanceOffsets[i].z + offset);
+                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, rotation.AsQuat, new Vector3(parentPlant.currentScale, 1f, parentPlant.currentScale));
                 Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0, null, 0, null, false, false, false);
             }
         }

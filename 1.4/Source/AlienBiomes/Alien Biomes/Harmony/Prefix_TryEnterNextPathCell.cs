@@ -35,32 +35,10 @@ namespace AlienBiomes
 
                     if (plantExt.isTouchSensitive)
                     {
-                        plant.touchSensitiveSwitch = true;
+                        plant.touchSensitiveStartTime = GenTicks.TicksGame;
                     }
-
-                }
-            }
-
-            /*
-            else
-            {
-                // Set touchSensitiveSwitch to false if the pawn is not about to move into any cells
-                SetTouchSensitiveSwitchFalse(___pawn.Map.GetComponent<MapComponent_PlantGetter>());
-            }
-            */
-        }
-
-        /*
-        private static void SetTouchSensitiveSwitchFalse(MapComponent_PlantGetter plantGetter)
-        {
-            foreach (HashSet<Plant_Nastic> plantsInCell in plantGetter.ActiveLocationTriggers.Values)
-            {
-                foreach (Plant_Nastic plant in plantsInCell)
-                {
-                    plant.touchSensitiveSwitch = false;
                 }
             }
         }
-        */
     }
 }
