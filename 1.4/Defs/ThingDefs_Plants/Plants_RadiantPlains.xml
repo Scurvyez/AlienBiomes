@@ -112,7 +112,7 @@
         <graphicData>
             <texPath>Things/Plants/LushGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>CutoutPlant</shaderType>
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
             <fertilityMin>0.025</fertilityMin>
@@ -140,7 +140,6 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_BulbousSanitas</defName>
         <label>bulbus sanitas</label>
-        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -215,12 +214,12 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Pyroclastic Chalice Fungus ====================-->
+    <!--==================== Chalice Fungus ====================-->
     <!-- Reacts to pawn movement. Shader(?) -->
 
     <ThingDef ParentName="PlantBase">
-        <defName>SZ_PyroclasticChaliceFungus</defName>
-        <label>pyroclastic chalice fungus</label>
+        <defName>SZ_ChaliceFungus</defName>
+        <label>chalice fungus</label>
         <description>PLACEHOLDER</description>
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <tickerType>Normal</tickerType>
@@ -234,7 +233,7 @@
             <Nutrition>0.02</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/PyroclasticChaliceFungus/Blanks</texPath>
+            <texPath>Things/Plants/ChaliceFungus/Blanks</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
@@ -242,7 +241,7 @@
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>30</growDays>
-            <leaflessGraphicPath>Things/Plants/PyroclasticChaliceFungus_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>Things/Plants/ChaliceFungus_Leafless</leaflessGraphicPath>
             <maxMeshCount>4</maxMeshCount>
             <visualSizeRange>0.5~1.6</visualSizeRange>
             <topWindExposure>0.75</topWindExposure>
@@ -251,9 +250,9 @@
         <comps>
             <li Class="AlienBiomes.CompProperties_Nastic">
                 <graphicElement>
-                    <texPath>Things/Plants/PyroclasticChaliceFungus/PyroclasticChaliceFungusA</texPath>
+                    <texPath>Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>TransparentPlant</shaderType>
+                    <shaderType>Transparent</shaderType>
                     <drawOffset>(0.0, 0.1, 0.0)</drawOffset>
                 </graphicElement>
             </li>
@@ -267,10 +266,11 @@
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExtension">
-                <effectRadius>2</effectRadius>
-                <emitFlecks>false</emitFlecks>
                 <isTouchSensitive>true</isTouchSensitive>
-                <nasticEffectDef>SZ_ChaliceFungusEffect</nasticEffectDef>
+                <minScale>0.35</minScale>
+                <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
+                <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
+                <effectRadius>2</effectRadius>
             </li>
         </modExtensions>
     </ThingDef>

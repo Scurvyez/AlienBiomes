@@ -11,19 +11,19 @@
         <randomGraphics>
             <li>
               <graphicClass>Graphic_Fleck</graphicClass>
-              <texPath>Things/Plants/Overlays/PyroclasticChaliceFungus/ChaliceFungusEffect1</texPath>
+              <texPath>Things/Plants/Overlays/ChaliceFungus/ChaliceFungusEffect1</texPath>
               <shaderType>TransparentPostLight</shaderType>
               <renderInstanced>true</renderInstanced>
             </li>
             <li>
               <graphicClass>Graphic_Fleck</graphicClass>
-              <texPath>Things/Plants/Overlays/PyroclasticChaliceFungus/ChaliceFungusEffect2</texPath>
+              <texPath>Things/Plants/Overlays/ChaliceFungus/ChaliceFungusEffect2</texPath>
               <shaderType>TransparentPostLight</shaderType>
               <renderInstanced>true</renderInstanced>
             </li>
             <li>
               <graphicClass>Graphic_Fleck</graphicClass>
-              <texPath>Things/Plants/Overlays/PyroclasticChaliceFungus/ChaliceFungusEffect3</texPath>
+              <texPath>Things/Plants/Overlays/ChaliceFungus/ChaliceFungusEffect3</texPath>
               <shaderType>TransparentPostLight</shaderType>
               <renderInstanced>true</renderInstanced>
             </li>

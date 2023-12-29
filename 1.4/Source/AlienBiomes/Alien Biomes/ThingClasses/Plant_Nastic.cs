@@ -11,9 +11,6 @@ namespace AlienBiomes
         private Plant_Nastic_ModExtension plantExt;
 
         public float currentScale = 1f;
-        public float minScale = 0.1f;
-        public float scaleDeltaDecrease = 0.08f;
-        public float scaleDeltaIncrease = 0.01f;
         public int touchSensitiveStartTime;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -51,11 +48,14 @@ namespace AlienBiomes
         public override void Tick()
         {
             base.Tick();
-            int timeSinceLastStep = Find.TickManager.TicksGame - touchSensitiveStartTime;
-            if (timeSinceLastStep < 720)
+            if (plantExt != null)
             {
-                float scaleChangeRate = timeSinceLastStep < 360 ? -scaleDeltaDecrease : scaleDeltaIncrease;
-                currentScale = Mathf.Clamp(currentScale + scaleChangeRate, minScale, 1);
+                int timeSinceLastStep = Find.TickManager.TicksGame - touchSensitiveStartTime;
+                if (timeSinceLastStep < 720)
+                {
+                    float scaleChangeRate = timeSinceLastStep < 360 ? -plantExt.scaleDeltaDecrease : plantExt.scaleDeltaIncrease;
+                    currentScale = Mathf.Clamp(currentScale + scaleChangeRate, plantExt.minScale, 1);
+                }
             }
         }
 
