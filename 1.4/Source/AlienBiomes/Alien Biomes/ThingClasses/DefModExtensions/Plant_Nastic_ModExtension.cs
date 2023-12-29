@@ -6,7 +6,7 @@ namespace AlienBiomes
     {
         // states
         public bool isTouchSensitive;
-        public bool isExplosive;
+        public bool isDamaging;
         public bool isAutochorous;
 
         // activation radius for all

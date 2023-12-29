@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -10,8 +9,6 @@ namespace AlienBiomes
         public CompProperties_Nastic Props => (CompProperties_Nastic)props;
         private List<Vector3> instanceOffsets = new ();
         private int texInstances = 4;
-        private Graphic extraGraphic;
-        private Material material;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -41,19 +38,21 @@ namespace AlienBiomes
             base.PostDraw();
             if (parent is not Plant_Nastic parentPlant) return;
 
-            extraGraphic = Props.graphicElement.Graphic;
-            material = extraGraphic.MatSingle;
+            Graphic extraGraphic = Props.graphicElement.Graphic;
+            Material material = extraGraphic.MatSingle;
+            float pGrowth = parent.def.plant.visualSizeRange.LerpThroughRange(parentPlant.Growth);
 
             for (int i = 0; i < instanceOffsets.Count; i++)
             {
                 // Draw the mesh with the modified UV coordinates
                 Vector3 drawPos = instanceOffsets[i];
+                drawPos.y = parentPlant.def.altitudeLayer.AltitudeFor();
 
-                // Calculate the adjusted y-coordinate based on the change in scale
-                float scaleY = Mathf.Lerp(0.5f, 1f, parentPlant.currentScale);  // Adjust the 0.5f value as needed
+                // Calculate the adjusted z-coordinate based on the change in scale
+                float scaleY = Mathf.Lerp(0.5f, 1f, parentPlant.currentScale);
                 drawPos.z += parentPlant.def.graphicData.drawSize.y * scaleY / 2f;
 
-                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, parentPlant.Rotation.AsQuat, new Vector3(parentPlant.currentScale, 0, parentPlant.currentScale));
+                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, parentPlant.Rotation.AsQuat, new Vector3(parentPlant.currentScale * pGrowth, 0, parentPlant.currentScale * pGrowth));
                 Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0, null, 0, null, false, false, false);
             }
         }

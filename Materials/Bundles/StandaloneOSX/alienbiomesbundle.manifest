@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3876776213
+CRC: 775089185
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 57fc437e444801b16d6ec3132d778bb2
+    Hash: 539d3a77a3c7520eeddd4f9a12de5524
   TypeTreeHash:
     serializedVersion: 2
     Hash: 55d48f4ad9c3b13330b9eb5ee5686477
@@ -16,6 +16,6 @@ Assets:
 - Assets/TransparentPlantPulse.shader
 - Assets/TransparentPlantFloating.shader
 - Assets/TransparentPlantShimmer.shader
-- Assets/TransparentPlantReactive.shader
+- Assets/TransparentPlantComp.shader
 - Assets/ScreenPosEffects.shader
 Dependencies: []

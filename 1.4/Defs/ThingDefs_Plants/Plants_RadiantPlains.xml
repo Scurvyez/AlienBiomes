@@ -532,7 +532,7 @@
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>2.50</overlightRadius>
                 <glowRadius>5.20</glowRadius>
-                <glowColor>(242, 13, 13, 0)</glowColor>
+                <glowColor>(204, 102, 255, 0)</glowColor>
                 <startTime>0.75</startTime>
                 <stopTime>0.20</stopTime>
             </li>

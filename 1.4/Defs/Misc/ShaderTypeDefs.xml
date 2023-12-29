@@ -22,8 +22,8 @@
 	</AlienBiomes.ABShaderTypeDef>
   
 	<AlienBiomes.ABShaderTypeDef> 
-		<defName>TransparentPlantReactive</defName>
-		<shaderPath>TransparentPlantReactive</shaderPath>
+		<defName>TransparentPlantComp</defName>
+		<shaderPath>TransparentPlantComp</shaderPath>
 	</AlienBiomes.ABShaderTypeDef>
 
 </Defs>
