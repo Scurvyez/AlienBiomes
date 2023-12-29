@@ -5,13 +5,13 @@ namespace AlienBiomes
 {
     /*
     [DefOf]
-    public class AlienBiomes_HediffDefOf
+    public class AB_HediffDefOf
     {
         public static HediffDef SZ_Crystallize;
 
-        static AlienBiomes_HediffDefOf()
+        static AB_HediffDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_HediffDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AB_HediffDefOf));
         }
     }
     */

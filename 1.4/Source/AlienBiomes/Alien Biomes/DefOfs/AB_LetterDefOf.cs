@@ -5,14 +5,14 @@ namespace AlienBiomes
 {
     /*
     [DefOf]
-    public class AlienBiomes_LetterDefOf
+    public class AB_LetterDefOf
     {
         public static LetterDef SZ_PawnCrystallizing;
         public static LetterDef SZ_PawnCrystallized;
 
-        static AlienBiomes_LetterDefOf()
+        static AB_LetterDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_LetterDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AB_LetterDefOf));
         }
     }
     */

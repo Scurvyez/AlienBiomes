@@ -4,7 +4,7 @@ using RimWorld;
 namespace AlienBiomes
 {
     [DefOf]
-    public static class AlienBiomes_TerrainDefOf
+    public static class AB_TerrainDefOf
     {
         // Solid.
         public static TerrainDef SZ_RadiantSoil;
@@ -45,9 +45,9 @@ namespace AlienBiomes
         public static TerrainDef SZ_RadiantWaterOceanShallow;
         public static TerrainDef SZ_RadiantWaterOceanDeep;
 
-        static AlienBiomes_TerrainDefOf()
+        static AB_TerrainDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_TerrainDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AB_TerrainDefOf));
         }
     }
 }

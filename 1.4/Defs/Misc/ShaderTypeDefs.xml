@@ -21,4 +21,9 @@
 		<shaderPath>ScreenPosEffects</shaderPath>
 	</AlienBiomes.ABShaderTypeDef>
   
+	<AlienBiomes.ABShaderTypeDef> 
+		<defName>TransparentPlantReactive</defName>
+		<shaderPath>TransparentPlantReactive</shaderPath>
+	</AlienBiomes.ABShaderTypeDef>
+
 </Defs>

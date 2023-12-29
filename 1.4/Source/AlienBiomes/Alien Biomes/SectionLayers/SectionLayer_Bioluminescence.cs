@@ -109,7 +109,7 @@ namespace AlienBiomes
                 foreach (IntVec3 cell in section.CellRect)
                 {
                     TerrainDef terrain = terrainGrid.TerrainAt(cell);
-                    if (terrain == AlienBiomes_TerrainDefOf.SZ_RadiantWaterOceanShallow)
+                    if (terrain == AB_TerrainDefOf.SZ_RadiantWaterOceanShallow)
                     {
                         float chunkNoise = Mathf.PerlinNoise(cell.x * 0.1f, cell.z * 0.1f);
                         if (chunkNoise <= chunkNoiseThreshold)
@@ -128,7 +128,7 @@ namespace AlienBiomes
                                 if (neighborCell.InBounds(Map) && neighborCell != cell)
                                 {
                                     TerrainDef neighborTerrain = terrainGrid.TerrainAt(neighborCell);
-                                    if (neighborTerrain == AlienBiomes_TerrainDefOf.SZ_SoothingSand)
+                                    if (neighborTerrain == AB_TerrainDefOf.SZ_SoothingSand)
                                     {
                                         isNearShoreline = true;
                                         break;

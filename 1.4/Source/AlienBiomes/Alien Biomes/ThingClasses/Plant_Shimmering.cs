@@ -14,13 +14,13 @@ namespace AlienBiomes
         {
             base.Print(layer);
 
-            if (Graphic.data.shaderType == AlienBiomes_ThingDefOf.TransparentPlantShimmer)
+            if (Graphic.data.shaderType == AB_ThingDefOf.TransparentPlantShimmer)
             {
                 float randomShimmerSpeed = Random.Range(0.0f, 1.0f);
                 MPB = new MaterialPropertyBlock();
                 MPB.SetFloat("_ShimmerSpeed", randomShimmerSpeed);
             }
-            else if (Graphic.data.shaderType == AlienBiomes_ThingDefOf.TransparentPlantPulse)
+            else if (Graphic.data.shaderType == AB_ThingDefOf.TransparentPlantPulse)
             {
                 float randomShimmerSpeed = Random.Range(0.0f, 10.0f);
                 MPB = new MaterialPropertyBlock();

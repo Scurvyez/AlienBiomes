@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
+    <Compile Include="DefOfs\AB_FleckDefOf.cs" />
     <Compile Include="FireImprovement.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
     <Compile Include="Harmony\Prefix_TryEnterNextPathCell.cs" />
@@ -95,9 +96,11 @@
     <Compile Include="ThingClasses\Plant_Shimmering.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Mobile_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Mobile.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_Nastic.cs" />
+    <Compile Include="ThingComps\Comp_Nastic.cs" />
     <Compile Include="ThingComps\Comp_TestInvisAnimal.cs" />
-    <Compile Include="ThingComps\CompProps\CompProperties_NasticMovementTemp.cs" />
-    <Compile Include="ThingComps\Comp_NasticMovementTemp.cs" />
+    <Compile Include="ThingComps\CompProps\CompProperties_TouchSensitive.cs" />
+    <Compile Include="ThingComps\Comp_TouchSensitive.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_PlantReactive.cs" />
     <Compile Include="ThingComps\Comp_PlantReactive.cs" />
     <Compile Include="ThingComps\Comp_GraphicsOverlay.cs" />
@@ -110,11 +113,11 @@
     <Compile Include="ThingComps\Comp_TimedHarvest.cs" />
     <Compile Include="ThingComps\Comp_TimedGlower.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_TimedGlower.cs" />
-    <Compile Include="DefOfs\AlienBiomes_TerrainDefOf.cs" />
-    <Compile Include="DefOfs\AlienBiomes_ThingDefOf.cs" />
-    <Compile Include="DefOfs\AlienBiomes_BiomeDefOf.cs" />
-    <Compile Include="DefOfs\AlienBiomes_HediffDefOf.cs" />
-    <Compile Include="DefOfs\AlienBiomes_LetterDefOf.cs" />
+    <Compile Include="DefOfs\AB_TerrainDefOf.cs" />
+    <Compile Include="DefOfs\AB_ThingDefOf.cs" />
+    <Compile Include="DefOfs\AB_BiomeDefOf.cs" />
+    <Compile Include="DefOfs\AB_HediffDefOf.cs" />
+    <Compile Include="DefOfs\AB_LetterDefOf.cs" />
     <Compile Include="Harmony\PostFix_CompGlower.cs" />
     <Compile Include="Harmony\PostFix_TerrainFrom.cs" />
     <Compile Include="Harmony\PostFix_BeachTerrainAt.cs" />

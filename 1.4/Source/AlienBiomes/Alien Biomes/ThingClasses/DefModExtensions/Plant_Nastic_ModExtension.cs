@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using System.Collections.Generic;
+using Verse;
 
 namespace AlienBiomes
 {
@@ -6,5 +7,9 @@ namespace AlienBiomes
     {
         public float effectRadius = 2f;
         public bool emitFlecks;
+        public FleckDef nasticEffectDef = null;
+        public bool isTouchSensitive;
+        public bool isExplosive;
+        public bool isAutochorous;
     }
 }

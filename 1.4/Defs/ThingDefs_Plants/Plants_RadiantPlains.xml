@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--==================== Radiant Grass Plant ====================-->
+    <!--==================== Radiant Grass ====================-->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantGrass</defName>
         <label>radiant grass</label>
         <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
+        <hideAtSnowDepth>0.9</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Flammability>1.3</Flammability>
@@ -19,13 +22,10 @@
             <shaderType>TransparentPlantShimmer</shaderType>
             <shaderParameters>
                 <_ShimmerSpeed>0.45</_ShimmerSpeed>
-                <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex>
+                <!-- <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex> -->
                 <_NoiseTint>(0.25, 1, 1, 1)</_NoiseTint>
             </shaderParameters>
         </graphicData>
-        <hideAtSnowDepth>0.9</hideAtSnowDepth>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <ingestible />
         <plant>
             <fertilityMin>0.05</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
@@ -48,12 +48,15 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Radiant Tall Grass Plant ====================-->
+    <!--==================== Radiant Tall Grass ====================-->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantTallGrass</defName>
         <label>tall radiant grass</label>
         <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
             <Flammability>1.3</Flammability>
@@ -66,13 +69,10 @@
             <shaderType>TransparentPlantShimmer</shaderType>
             <shaderParameters>
                 <_ShimmerSpeed>0.6</_ShimmerSpeed>
-                <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex>
+                <!-- <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex> -->
                 <_NoiseTint>(0.25, 1, 1, 1)</_NoiseTint>
             </shaderParameters>
         </graphicData>
-        <hideAtSnowDepth>0.5</hideAtSnowDepth>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <ingestible />
         <plant>
             <fertilitySensitivity>0.7</fertilitySensitivity>
             <growDays>3</growDays>
@@ -95,12 +95,15 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Lush Grass Plant ====================-->
+    <!--==================== Lush Grass ====================-->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_LushGrass</defName>
         <label>lush grass</label>
         <description>A lush and beautiful grass found all over the radiant plains. It grows taller than most grasses and its roots run deep underground.</description>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
@@ -111,9 +114,6 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>CutoutPlant</shaderType>
         </graphicData>
-        <hideAtSnowDepth>0.5</hideAtSnowDepth>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <ingestible />
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
@@ -135,13 +135,16 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Fiddlehead Plant ====================-->
+    <!--==================== Bulbous Sanitas ====================-->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_BulbousSanitas</defName>
         <label>bulbus sanitas</label>
         <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
         <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
@@ -150,16 +153,8 @@
         <graphicData>
             <texPath>Things/Plants/BulbusSanitas</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantPulse</shaderType>
-            <shaderParameters>
-                <_PulseSpeed>0.75</_PulseSpeed>
-                <_PulseLength>0.09</_PulseLength>
-                <_PulseOrigin>(0.9, 0.9, 0, 0)</_PulseOrigin>
-            </shaderParameters>
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
-        <hideAtSnowDepth>0.25</hideAtSnowDepth>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <ingestible />
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
@@ -181,12 +176,15 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Fiddlehead Plant ====================-->
+    <!--==================== Fiddlehead ====================-->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_Fiddlehead</defName>
         <label>fiddlehead</label>
         <description>Named after the more commonly known terrestrial fiddlehead because of their uncanny resemblance to the juvenile fronds of a sprouting Earth-bound fern.</description>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
@@ -197,9 +195,6 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>CutoutPlant</shaderType>
         </graphicData>
-        <hideAtSnowDepth>0.25</hideAtSnowDepth>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <ingestible />
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
@@ -220,7 +215,7 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Cuphead Mold Plant ====================-->
+    <!--==================== Pyroclastic Chalice Fungus ====================-->
     <!-- Reacts to pawn movement. Shader(?) -->
 
     <ThingDef ParentName="PlantBase">
@@ -228,19 +223,21 @@
         <label>pyroclastic chalice fungus</label>
         <description>PLACEHOLDER</description>
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
         <statBases>
             <MaxHitPoints>46</MaxHitPoints>
             <Flammability>1.00</Flammability>
             <Nutrition>0.02</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/PyroclasticChaliceFungus</texPath>
+            <texPath>Things/Plants/PyroclasticChaliceFungus/Blanks</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
-        <hideAtSnowDepth>0.25</hideAtSnowDepth>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <ingestible />
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
@@ -251,23 +248,16 @@
             <topWindExposure>0.75</topWindExposure>
             <wildOrder>1</wildOrder>
         </plant>
-        <!-- <comps>
-            <li Class="AlienBiomes.CompProperties_NasticMovementTemp">
-                <reactsToCold>false</reactsToCold>
-                <reactsToHeat>true</reactsToHeat>
-                <nasticGraphicData>
-                    <texPath>Things/Plants/Special/PyroclasticChaliceFungus/Nastic</texPath>
-                    <graphicClass>Graphic_Random</graphicClass>
-                    <shaderType>MoteGlowDistorted</shaderType>
-                    <shaderParameters>
-                        <_DistortionTex>/Other/Ripples</_DistortionTex>
-                        <shaderScrollSpeedFactor>1.25</shaderScrollSpeedFactor>
-                        <shaderScaleFactor>1.25</shaderScaleFactor>
-                        <shaderIntensityFactor>2.75</shaderIntensityFactor>
-                    </shaderParameters>
-                </nasticGraphicData>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_Nastic">
+                <graphicElement>
+                    <texPath>Things/Plants/PyroclasticChaliceFungus/PyroclasticChaliceFungusA</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+                    <shaderType>TransparentPlant</shaderType>
+                    <drawOffset>(0.0, 0.1, 0.0)</drawOffset>
+                </graphicElement>
             </li>
-        </comps> -->
+        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
@@ -277,13 +267,15 @@
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExtension">
-                <effectRadius>3</effectRadius>
-                <emitFlecks>true</emitFlecks>
+                <effectRadius>2</effectRadius>
+                <emitFlecks>false</emitFlecks>
+                <isTouchSensitive>true</isTouchSensitive>
+                <nasticEffectDef>SZ_ChaliceFungusEffect</nasticEffectDef>
             </li>
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Soothing Stalk Plant ====================-->
+    <!--==================== Soothing Stalk ====================-->
     <!-- Only spawns on soothing sand. -->
     <!-- Produces raw soothing honey. -->
     <!-- Harvestable only at night. -->
@@ -293,6 +285,12 @@
         <defName>SZ_SoothingStalk</defName>
         <label>soothing stalk</label>
         <description>A vibrant plant only found on the pink sands of radiant plains. They can be farmed for their sweet, pinkish honey. They seemingly spring to life at sundown.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>30</pathCost>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <Nutrition>0.25</Nutrition>
@@ -303,12 +301,6 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>CutoutPlant</shaderType>
         </graphicData>
-        <selectable>true</selectable>
-        <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <tickerType>Long</tickerType>
-        <fillPercent>0.20</fillPercent>
-        <pathCost>30</pathCost>
         <plant>
             <fertilityMin>0.1</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
@@ -353,7 +345,7 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Copacetic Cone Plant ====================-->
+    <!--==================== Copacetic Cone ====================-->
     <!-- Only spawns on radiant soil and rich radiant soil. -->
     <!-- Emits a hediff to calm nearby pawns. -->
     <!-- tickerType == Long -->
@@ -363,6 +355,13 @@
         <defName>SZ_CopaceticCone</defName>
         <label>copacetic cone</label>
         <description>Curious-looking plants that resemble urb-world soft serve ice cream. They release an exquisite honey!</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.80</fillPercent>
+        <pathCost>6</pathCost>
+        <ingestible />
         <statBases>
             <Nutrition>0.20</Nutrition>
             <MaxHitPoints>85</MaxHitPoints>
@@ -374,13 +373,6 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>CutoutPlant</shaderType>
         </graphicData>
-        <selectable>true</selectable>
-        <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <tickerType>Long</tickerType>
-        <fillPercent>0.80</fillPercent>
-        <pathCost>6</pathCost>
-        <ingestible />
         <plant>
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
@@ -429,7 +421,7 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Lily of the Plains Plant ====================-->
+    <!--==================== Lily of the Plains ====================-->
     <!-- Decorative, wild, no fruit or real benefits. lol -->
     <!-- Only spawns in water. -->
     <!-- New shader + shadows?. -->
@@ -438,6 +430,11 @@
         <defName>SZ_LilyOfThePlains</defName>
         <label>lily of the plains</label>
         <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
+        <selectable>false</selectable>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>2</pathCost>
         <statBases>
             <MaxHitPoints>20</MaxHitPoints>
             <DeteriorationRate>0.00</DeteriorationRate>
@@ -447,11 +444,6 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
-        <selectable>false</selectable>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <tickerType>Long</tickerType>
-        <fillPercent>0.20</fillPercent>
-        <pathCost>2</pathCost>
         <plant>
             <fertilityMin>0.1</fertilityMin>
             <fertilitySensitivity>0.1</fertilitySensitivity>
@@ -477,7 +469,7 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Cerulean Honeytree ====================-->
+    <!--==================== Cerulean Honey Bush ====================-->
     <!-- This tree will produce a woody pulp which can then be manufactured into a "WoodLog" variant -->
     <!-- Can move around at night. -->
     <!-- thingClass = AlienBiomes.Plant_Mobile -->
@@ -485,13 +477,18 @@
     <!-- Glows at night. -->
 
     <ThingDef ParentName="PlantBaseNonEdible">
-        <defName>SZ_CeruleanHoneytree</defName>
+        <defName>SZ_CeruleanHoneyBush</defName>
         <thingClass>AlienBiomes.Plant_Mobile</thingClass>
         <drawerType>MapMeshAndRealTime</drawerType>
-        <label>cerulean honeytree</label>
-        <description>These trees attract a plethora of small invertebrate life as inside their blueish-green exterior lies a sweet, yet immediately sickly to humanlikes, nectar with similar viscosity to terrestrial honey.</description>
+        <label>cerulean honey bush</label>
+        <description>These bushes attract a plethora of small invertebrate life as inside their blueish-green exterior lies a sweet, yet immediately sickly to humanlikes, nectar with similar viscosity to terrestrial honey.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.9</fillPercent>
         <graphicData>
-            <texPath>Things/Trees/CeruleanHoneytree</texPath>
+            <texPath>Things/Plants/CeruleanHoneyBush</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
             <drawSize>1.00</drawSize>
@@ -504,16 +501,11 @@
             <Beauty>2</Beauty>
             <BeautyOutdoors>2</BeautyOutdoors>
         </statBases>
-        <selectable>true</selectable>
-        <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>BuildingOnTop</altitudeLayer>
-        <tickerType>Long</tickerType>
-        <fillPercent>0.9</fillPercent>
         <plant>
             <fertilityMin>0.5</fertilityMin>
             <fertilitySensitivity>0.5</fertilitySensitivity>
             <growDays>40</growDays>
-            <leaflessGraphicPath>Things/Trees/CeruleanHoneytree_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>Things/Plants/CeruleanHoneyBush_Leafless</leaflessGraphicPath>
             <harvestWork>250</harvestWork>
             <harvestYield>5</harvestYield>
             <harvestTag>Standard</harvestTag>
@@ -555,7 +547,7 @@
             <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
                 <graphicElements>
                     <li>
-                        <texPath>Things/Trees/Overlays/CeruleanHoneytree/OverLeaf</texPath>
+                        <texPath>Things/Plants/Overlays/CeruleanHoneyBush/OverLeaf</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantShimmer</shaderType>
                         <shaderParameters>
@@ -570,7 +562,7 @@
                         </damageData>
                     </li>
                     <li>
-                        <texPath>Things/Trees/Overlays/CeruleanHoneytree/GlowingSpots</texPath>
+                        <texPath>Things/Plants/Overlays/CeruleanHoneyBush/GlowingSpots</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>TransparentPlantPulse</shaderType>
                         <shaderParameters>

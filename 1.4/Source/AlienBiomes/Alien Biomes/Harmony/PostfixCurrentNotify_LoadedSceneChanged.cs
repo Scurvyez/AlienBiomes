@@ -4,6 +4,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     [StaticConstructorOnStartup]
     [HarmonyPatch(typeof(Current), "Notify_LoadedSceneChanged")]
     public class CurrentNotify_LoadedSceneChanged_Postfix
@@ -20,4 +21,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

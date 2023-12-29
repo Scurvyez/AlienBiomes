@@ -16,7 +16,7 @@ namespace AlienBiomes
         {
             if (!ModsConfig.IsActive("m00nl1ght.geologicallandforms"))
             {
-                if (__result == TerrainDefOf.Sand && biome == AlienBiomes_BiomeDefOf.SZ_RadiantPlains
+                if (__result == TerrainDefOf.Sand && biome == AB_BiomeDefOf.SZ_RadiantPlains
                 && AlienBiomesSettings.UseAlienSand == true)
                 // Checks for any Sand terrain def and whether the current map is of biome type "SZ_RadiantPlains".
                 {

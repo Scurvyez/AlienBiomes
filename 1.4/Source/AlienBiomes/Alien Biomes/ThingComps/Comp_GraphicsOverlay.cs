@@ -37,7 +37,7 @@ namespace AlienBiomes
             base.PostDraw();
 
             if (parent is not Plant parentPlant) return;
-
+            
             float dP = GenLocalDate.DayPercent(parent.Map); // Time of day as a %
             float pGrowth = parent.def.plant.visualSizeRange.LerpThroughRange(parentPlant.Growth);
             //float maxG = parent.def.plant.visualSizeRange.TrueMax; // max growth stage of a plant

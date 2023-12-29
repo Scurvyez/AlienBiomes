@@ -9,7 +9,7 @@ namespace AlienBiomes
     /// Allows you to reference the def directly in c# without using strings.
     /// </summary>
     [DefOf]
-    public static class AlienBiomes_ThingDefOf
+    public static class AB_ThingDefOf
     {
         // Plants
         public static ThingDef SZ_RadiantGrass;
@@ -21,7 +21,7 @@ namespace AlienBiomes
         public static ThingDef SZ_SoothingStalk;
         public static ThingDef SZ_CopaceticCone;
         public static ThingDef SZ_LilyOfThePlains;
-        public static ThingDef SZ_CeruleanHoneytree;
+        public static ThingDef SZ_CeruleanHoneyBush;
         public static ThingDef SZ_FiddleheadWall;
         //public static ThingDef SZ_ShallowOceanWaterBioluminescence;
 
@@ -51,9 +51,9 @@ namespace AlienBiomes
         public static ShaderTypeDef TransparentPlantShimmer;
         public static ShaderTypeDef TransparentPlantPulse;
 
-        static AlienBiomes_ThingDefOf()
+        static AB_ThingDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(AlienBiomes_ThingDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AB_ThingDefOf));
         }
     }
 }
