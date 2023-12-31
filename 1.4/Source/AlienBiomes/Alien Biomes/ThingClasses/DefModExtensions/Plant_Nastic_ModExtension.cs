@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using UnityEngine;
+using Verse;
 
 namespace AlienBiomes
 {
@@ -19,6 +20,10 @@ namespace AlienBiomes
 
         // effects
         public bool emitFlecks;
-        public FleckDef nasticEffectDef = null;
+        public FleckDef fleckDef = null;
+        public int fleckBurstCount = 1;
+        public FloatRange fleckScale;
+        public Color colorA = Color.white;
+        public Color colorB = Color.white;
     }
 }

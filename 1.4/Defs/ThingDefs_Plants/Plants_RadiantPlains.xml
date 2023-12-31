@@ -6,9 +6,8 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantGrass</defName>
         <label>radiant grass</label>
-        <thingClass>AlienBiomes.Plant_Shimmering</thingClass>
-        <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
-        <hideAtSnowDepth>0.9</hideAtSnowDepth>
+        <description>A lush and beautiful grass found all over the radiant plains.</description>
+        <hideAtSnowDepth>0.1</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
         <statBases>
@@ -19,12 +18,7 @@
         <graphicData>
             <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantShimmer</shaderType>
-            <shaderParameters>
-                <_ShimmerSpeed>0.45</_ShimmerSpeed>
-                <!-- <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex> -->
-                <_NoiseTint>(0.25, 1, 1, 1)</_NoiseTint>
-            </shaderParameters>
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
             <fertilityMin>0.05</fertilityMin>
@@ -53,8 +47,8 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantTallGrass</defName>
         <label>tall radiant grass</label>
-        <description>A lush and beautiful grass found all over the radiant plains. It shimmers in the light.</description>
-        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <description>A lush and beautiful grass found all over the radiant plains.</description>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
         <statBases>
@@ -66,12 +60,7 @@
         <graphicData>
             <texPath>Things/Plants/RadiantGrass</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlantShimmer</shaderType>
-            <shaderParameters>
-                <_ShimmerSpeed>0.6</_ShimmerSpeed>
-                <!-- <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex> -->
-                <_NoiseTint>(0.25, 1, 1, 1)</_NoiseTint>
-            </shaderParameters>
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
             <fertilitySensitivity>0.7</fertilitySensitivity>
@@ -101,7 +90,7 @@
         <defName>SZ_LushGrass</defName>
         <label>lush grass</label>
         <description>A lush and beautiful grass found all over the radiant plains. It grows taller than most grasses and its roots run deep underground.</description>
-        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <hideAtSnowDepth>0.1</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
         <statBases>
@@ -141,7 +130,7 @@
         <defName>SZ_BulbousSanitas</defName>
         <label>bulbus sanitas</label>
         <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
-        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <hideAtSnowDepth>0.3</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
         <statBases>
@@ -181,7 +170,7 @@
         <defName>SZ_Fiddlehead</defName>
         <label>fiddlehead</label>
         <description>Named after the more commonly known terrestrial fiddlehead because of their uncanny resemblance to the juvenile fronds of a sprouting Earth-bound fern.</description>
-        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <hideAtSnowDepth>0.55</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
         <statBases>
@@ -192,7 +181,7 @@
         <graphicData>
             <texPath>Things/Plants/Fiddlehead</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>CutoutPlant</shaderType>
+            <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
             <fertilityMin>0.025</fertilityMin>
@@ -220,10 +209,12 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_ChaliceFungus</defName>
         <label>chalice fungus</label>
-        <description>PLACEHOLDER</description>
+        <description>A tall, chalice-like shaped fungus that grows in patches all throughout the radiant plains. Chalice fungus is incredibly sensitive and reacts to touch.</description>
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>MapMeshAndRealTime</drawerType>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
@@ -253,7 +244,6 @@
                     <texPath>Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawOffset>(0.0, 0.1, 0.0)</drawOffset>
                 </graphicElement>
             </li>
         </comps>
@@ -348,17 +338,16 @@
     <!--==================== Copacetic Cone ====================-->
     <!-- Only spawns on radiant soil and rich radiant soil. -->
     <!-- Emits a hediff to calm nearby pawns. -->
-    <!-- tickerType == Long -->
-    <!-- Make new post processing shader for the twinkle effects. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
         <label>copacetic cone</label>
+        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <tickerType>Long</tickerType>
         <description>Curious-looking plants that resemble urb-world soft serve ice cream. They release an exquisite honey!</description>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>LowPlant</altitudeLayer>
-        <tickerType>Long</tickerType>
         <fillPercent>0.80</fillPercent>
         <pathCost>6</pathCost>
         <ingestible />
@@ -391,32 +380,20 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
         </plant>
-        <comps>
-            <li Class="AlienBiomes.CompProperties_PlantFleckEmitter">
-                <fleck>Twinkle</fleck>
-                <burstCount>1</burstCount>
-                <offset>(0.0, 0.0, 3.00)</offset>
-                <scale>0.25~0.45</scale>
-                <colorA>(56, 163, 169)</colorA>
-                <colorB>(124, 251, 208)</colorB>
-                <rotationRate>-15~15</rotationRate>
-                <soundOnEmission>SZ_PlantShimmering</soundOnEmission>
-                <velocityX>0.3~0.7</velocityX>
-                <velocityY>0.0~5.75</velocityY>
-            </li>
-            <li Class="AlienBiomes.CompProperties_EffectorWithRadius">
-                <releaseRadius>3</releaseRadius>
-                <fleckReleased>PsycastAreaEffect</fleckReleased>
-                <appliedHediff MayRequire="Ludeon.RimWorld.Iedology">WorkDrive</appliedHediff>
-                <tickInterval>15000</tickInterval>
-                <radiusOutlineColor>(102, 255, 204)</radiusOutlineColor>
-            </li>
-        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
+            </li>
+            <li Class="AlienBiomes.Plant_Nastic_ModExtension">
+                <effectRadius>2</effectRadius>
+                <emitFlecks>true</emitFlecks>
+                <fleckDef>Twinkle</fleckDef>
+                <fleckBurstCount>1</fleckBurstCount>
+                <fleckScale>0.25~0.45</fleckScale>
+                <colorA>(56, 163, 169)</colorA>
+                <colorB>(124, 251, 208)</colorB>
             </li>
         </modExtensions>
     </ThingDef>

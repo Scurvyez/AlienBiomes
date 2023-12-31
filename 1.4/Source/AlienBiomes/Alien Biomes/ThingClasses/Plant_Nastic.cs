@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,6 +12,7 @@ namespace AlienBiomes
 
         public float currentScale = 1f;
         public int touchSensitiveStartTime;
+        public Color fleckEmissionColor;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -72,17 +72,17 @@ namespace AlienBiomes
 
         public void DrawEffects()
         {
-            if (plantExt != null)
+            if (plantExt != null && plantExt.emitFlecks && plantExt.fleckDef != null)
             {
-                if (plantExt.emitFlecks && plantExt.nasticEffectDef != null)
+                for (int i = 0; i < plantExt.fleckBurstCount; ++i)
                 {
-                    for (int i = 0; i < plantExt.nasticEffectDef.randomGraphics.Count; i++)
-                    {
-                        GraphicData randGraphic = plantExt.nasticEffectDef.randomGraphics[i];
-                        var randSize = UnityEngine.Random.Range(0.05f, 0.35f);
-                        randGraphic.drawSize = new Vector2(randSize, randSize);
-                    }
-                    FleckMaker.AttachedOverlay(this, plantExt.nasticEffectDef, new Vector3(Rand.Value, 1f, Rand.Value), 1f, -1f);
+                    fleckEmissionColor = Color.Lerp(plantExt.colorA, plantExt.colorB, Rand.Value);
+                    Vector3 drawPos = new Vector3(DrawPos.x + Rand.InsideUnitCircleVec3.x, DrawPos.y, DrawPos.z + Rand.InsideUnitCircleVec3.z);
+
+                    FleckCreationData fCD = FleckMaker.GetDataStatic(drawPos, Map, plantExt.fleckDef, plantExt.fleckScale.RandomInRange);
+                    fCD.rotationRate = Rand.RangeInclusive(-240, 240);
+                    fCD.instanceColor = new Color?(fleckEmissionColor);
+                    Map.flecks.CreateFleck(fCD);
                 }
             }
         }

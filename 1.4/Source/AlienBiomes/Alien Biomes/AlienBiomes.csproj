@@ -83,8 +83,6 @@
     <Compile Include="Harmony\PostfixCurrentNotify_LoadedSceneChanged.cs" />
     <Compile Include="Harmony\PostFix_MatFrom.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
-    <Compile Include="MapComps\MapComponent_Resurrection.cs" />
-    <Compile Include="MapComps\MapComponent_PlantEffects.cs" />
     <Compile Include="MapComps\MapComponent_MobilePlantCellsGetter.cs" />
     <Compile Include="MapComps\MapComponent_PlantGetter.cs" />
     <Compile Include="SectionLayers\SectionLayer_Bioluminescence.cs" />
@@ -98,15 +96,8 @@
     <Compile Include="ThingClasses\Plant_Mobile.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_Nastic.cs" />
     <Compile Include="ThingComps\Comp_Nastic.cs" />
-    <Compile Include="ThingComps\Comp_TestInvisAnimal.cs" />
-    <Compile Include="ThingComps\CompProps\CompProperties_TouchSensitive.cs" />
-    <Compile Include="ThingComps\Comp_TouchSensitive.cs" />
-    <Compile Include="ThingComps\CompProps\CompProperties_PlantReactive.cs" />
-    <Compile Include="ThingComps\Comp_PlantReactive.cs" />
     <Compile Include="ThingComps\Comp_GraphicsOverlay.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_GraphicsOverlay.cs" />
-    <Compile Include="ThingComps\CompProps\CompProperties_EffecterWithRadius.cs" />
-    <Compile Include="ThingComps\Comp_EffectorWithRadius.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_PlantFleckEmitter.cs" />
     <Compile Include="ThingComps\Comp_PlantFleckEmitter.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_TimedHarvest.cs" />
@@ -125,7 +116,6 @@
     <Compile Include="ThingClasses\DefModExtensions\NightBlooming_ModExtension.cs" />
     <Compile Include="HediffComps\HediffCompProps\HediffCompProperties_Crystallize.cs" />
     <Compile Include="HediffComps\HediffComp_Crystallize.cs" />
-    <Compile Include="MapComps\MapComponent_ThingCompsGetter.cs" />
     <Compile Include="ThingClasses\Medicine_Aloe.cs" />
     <Compile Include="ThingClasses\Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
