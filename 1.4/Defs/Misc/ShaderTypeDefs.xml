@@ -17,13 +17,8 @@
 	</AlienBiomes.ABShaderTypeDef>
 
 	<AlienBiomes.ABShaderTypeDef> 
-		<defName>ScreenPosEffects</defName>
-		<shaderPath>ScreenPosEffects</shaderPath>
-	</AlienBiomes.ABShaderTypeDef>
-  
-	<AlienBiomes.ABShaderTypeDef> 
-		<defName>TransparentPlantComp</defName>
-		<shaderPath>TransparentPlantComp</shaderPath>
+		<defName>TransparentPlantPlus</defName>
+		<shaderPath>TransparentPlantPlus</shaderPath>
 	</AlienBiomes.ABShaderTypeDef>
 
 </Defs>

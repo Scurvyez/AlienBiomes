@@ -35,7 +35,7 @@ namespace AlienBiomes
 
                     if (plantExt.isTouchSensitive)
                     {
-                        plant.touchSensitiveStartTime = GenTicks.TicksGame;
+                        plant.TouchSensitiveStartTime = GenTicks.TicksGame;
                     }
                 }
             }

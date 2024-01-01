@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2619471998
+CRC: 1976311312
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: afa6058bbe39aefe02dc43b23543aea5
+    Hash: b1bf502f639019069a199f2d28e4ff48
   TypeTreeHash:
     serializedVersion: 2
     Hash: 55d48f4ad9c3b13330b9eb5ee5686477
@@ -13,8 +13,8 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/TransparentPlantPlus.shader
 - Assets/TransparentPlantPulse.shader
 - Assets/TransparentPlantFloating.shader
 - Assets/TransparentPlantShimmer.shader
-- Assets/TransparentPlantComp.shader
 Dependencies: []

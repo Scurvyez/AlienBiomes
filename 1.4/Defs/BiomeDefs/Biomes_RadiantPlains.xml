@@ -81,6 +81,16 @@
                     </li>
                 </thresholds>
             </li>
+            <li>
+                <perlinFrequency>0.0235</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_ChaliceSoil</terrain>
+                        <min>0.42</min>
+                        <max>0.85</max>
+                    </li>
+                </thresholds>
+            </li>
         </terrainPatchMakers>
         <baseWeatherCommonalities>
             <Clear>20</Clear>

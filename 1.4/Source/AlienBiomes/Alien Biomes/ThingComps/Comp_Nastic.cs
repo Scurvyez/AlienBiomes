@@ -6,9 +6,6 @@ namespace AlienBiomes
 {
     public class Comp_Nastic : ThingComp
     {
-        [TweakValue("AB_Plant_OffsetY", 0f, 50f)]
-        private static float AB_GlobalPlant_OffsetY = 0f;
-        
         public CompProperties_Nastic Props => (CompProperties_Nastic)props;
         private List<Vector3> instanceOffsets = new ();
         private int texInstances = 4;
@@ -49,14 +46,13 @@ namespace AlienBiomes
             {
                 // Draw the mesh with the modified UV coordinates
                 Vector3 drawPos = instanceOffsets[i];
-                drawPos.y += AB_GlobalPlant_OffsetY;
 
                 // Calculate the adjusted z-coordinate based on the change in scale
                 // This ensures our individual textures on the mesh shrink down to their base and not into their center
-                float scaleY = Mathf.Lerp(0.5f, 1f, parentPlant.currentScale);
+                float scaleY = Mathf.Lerp(0.5f, 1f, parentPlant.CurrentScale);
                 drawPos.z += parentPlant.def.graphicData.drawSize.y * scaleY / 2f;
 
-                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, parentPlant.Rotation.AsQuat, new Vector3(parentPlant.currentScale * pGrowth, 1, parentPlant.currentScale * pGrowth));
+                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, parentPlant.Rotation.AsQuat, new Vector3(parentPlant.CurrentScale * pGrowth, 1, parentPlant.CurrentScale * pGrowth));
                 Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0, null, 0, null, false, false, false);
             }
         }

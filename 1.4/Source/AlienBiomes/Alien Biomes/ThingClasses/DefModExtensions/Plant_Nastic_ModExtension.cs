@@ -17,6 +17,8 @@ namespace AlienBiomes
         public float minScale = 0.1f;
         public float scaleDeltaDecrease = 0.08f;
         public float scaleDeltaIncrease = 0.01f;
+        public int texInstances = 4;
+        public float[] scaleDeltaCache = null;
 
         // effects
         public bool emitFlecks;

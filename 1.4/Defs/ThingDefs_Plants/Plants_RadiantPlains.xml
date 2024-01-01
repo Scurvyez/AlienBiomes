@@ -204,7 +204,7 @@
     </ThingDef>
 
     <!--==================== Chalice Fungus ====================-->
-    <!-- Reacts to pawn movement. Shader(?) -->
+    <!-- Reacts to pawn movement. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_ChaliceFungus</defName>
@@ -212,7 +212,7 @@
         <description>A tall, chalice-like shaped fungus that grows in patches all throughout the radiant plains. Chalice fungus is incredibly sensitive and reacts to touch.</description>
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <tickerType>Normal</tickerType>
-        <drawerType>MapMeshAndRealTime</drawerType>
+        <drawerType>RealtimeOnly</drawerType>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
@@ -224,9 +224,9 @@
             <Nutrition>0.02</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/ChaliceFungus/Blanks</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
+            <texPath>Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPlantPlus</shaderType>
         </graphicData>
         <plant>
             <fertilityMin>0.025</fertilityMin>
@@ -235,24 +235,13 @@
             <leaflessGraphicPath>Things/Plants/ChaliceFungus_Leafless</leaflessGraphicPath>
             <maxMeshCount>4</maxMeshCount>
             <visualSizeRange>0.5~1.6</visualSizeRange>
-            <topWindExposure>0.75</topWindExposure>
+            <topWindExposure>0.33</topWindExposure>
             <wildOrder>1</wildOrder>
         </plant>
-        <comps>
-            <li Class="AlienBiomes.CompProperties_Nastic">
-                <graphicElement>
-                    <texPath>Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                </graphicElement>
-            </li>
-        </comps>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
                 <terrainTags>
-                    <li>Soil</li>
-                    <li>Stony</li>
-                    <li>Rocky</li>
+                    <li>ChaliceSoil</li>
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExtension">
@@ -260,6 +249,7 @@
                 <minScale>0.35</minScale>
                 <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
                 <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
+                <texInstances>3</texInstances>
                 <effectRadius>2</effectRadius>
             </li>
         </modExtensions>
@@ -278,7 +268,6 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>LowPlant</altitudeLayer>
-        <tickerType>Long</tickerType>
         <fillPercent>0.20</fillPercent>
         <pathCost>30</pathCost>
         <statBases>
@@ -343,7 +332,7 @@
         <defName>SZ_CopaceticCone</defName>
         <label>copacetic cone</label>
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
-        <tickerType>Long</tickerType>
+        <tickerType>Normal</tickerType>
         <description>Curious-looking plants that resemble urb-world soft serve ice cream. They release an exquisite honey!</description>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
@@ -409,7 +398,6 @@
         <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
-        <tickerType>Long</tickerType>
         <fillPercent>0.20</fillPercent>
         <pathCost>2</pathCost>
         <statBases>
@@ -462,7 +450,6 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>BuildingOnTop</altitudeLayer>
-        <tickerType>Long</tickerType>
         <fillPercent>0.9</fillPercent>
         <graphicData>
             <texPath>Things/Plants/CeruleanHoneyBush</texPath>
