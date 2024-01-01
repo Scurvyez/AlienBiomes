@@ -37,6 +37,7 @@
                     <li>Soil</li>
                     <li>Stony</li>
                     <li>Rocky</li>
+                    <li>SZ_ChaliceSoil</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -79,6 +80,7 @@
                     <li>Soil</li>
                     <li>Stony</li>
                     <li>Rocky</li>
+                    <li>SZ_ChaliceSoil</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -119,6 +121,7 @@
                     <li>Soil</li>
                     <li>Stony</li>
                     <li>Rocky</li>
+                    <li>SZ_ChaliceSoil</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -224,8 +227,8 @@
             <Nutrition>0.02</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Plants/ChaliceFungus</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlantPlus</shaderType>
         </graphicData>
         <plant>

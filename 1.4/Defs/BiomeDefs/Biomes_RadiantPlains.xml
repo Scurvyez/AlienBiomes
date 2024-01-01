@@ -100,16 +100,16 @@
         </baseWeatherCommonalities>
         <wildPlants>
             <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
-            <SZ_ChaliceFungus>9.10</SZ_ChaliceFungus>
+            <SZ_ChaliceFungus>5.10</SZ_ChaliceFungus>
             <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>1.12</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
             <SZ_CeruleanHoneyBush>0.085</SZ_CeruleanHoneyBush>
-            <SZ_RadiantGrass>20.00</SZ_RadiantGrass>
+            <SZ_RadiantGrass>24.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
             <SZ_LushGrass>3.75</SZ_LushGrass>
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
-            <SZ_FiddleheadWall>0.35</SZ_FiddleheadWall>
+            <SZ_FiddleheadWall>0.45</SZ_FiddleheadWall>
         </wildPlants>
         <wildAnimals>
             <Horse>0.20</Horse>
