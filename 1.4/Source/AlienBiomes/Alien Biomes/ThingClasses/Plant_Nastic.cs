@@ -15,9 +15,11 @@ namespace AlienBiomes
         public int TouchSensitiveStartTime;
         public Color FleckEmissionColor;
         private List<Vector3> InstanceOffsets = new ();
+        private int timeSinceLastStep;
         private const int MaxTicks = 720;
         private float CurPlantGrowth;
         protected Graphic cachedGraphic;
+        private Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -63,7 +65,7 @@ namespace AlienBiomes
 
             if (plantExt != null)
             {
-                int timeSinceLastStep = Find.TickManager.TicksGame - TouchSensitiveStartTime;
+                timeSinceLastStep = Find.TickManager.TicksGame - TouchSensitiveStartTime;
                 if (timeSinceLastStep < MaxTicks)
                 {
                     float scaleChangeRate = plantExt.scaleDeltaCache[timeSinceLastStep];
@@ -91,14 +93,7 @@ namespace AlienBiomes
                 if (cachedGraphic == null)
                 {
                     Graphic graphic = def.graphicData.GraphicColoredFor(this);
-                    if (graphic is Graphic_Random random)
-                    {
-                        cachedGraphic = random.SubGraphicFor(this);
-                    }
-                    else
-                    {
-                        cachedGraphic = graphic;
-                    }
+                    cachedGraphic = graphic is Graphic_Random random ? random.SubGraphicFor(this) : graphic;
                 }
                 return cachedGraphic;
             }
@@ -116,17 +111,17 @@ namespace AlienBiomes
                 float scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
                 drawPos.z += def.graphicData.drawSize.y * scaleY / 2f;
 
-                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
-                Graphics.DrawMesh(MeshPool.plane10, matrix, Graphic.MatSingle, 0, null, 0, null, false, false, false);
+                matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
             }
+            Graphics.DrawMesh(MeshPool.plane10, matrix, Graphic.MatSingle, 0, null, 0, null, false, false, false);
         }
 
         private void InitializeRandomOffsets()
         {
             for (int i = 0; i < plantExt.texInstances; i++)
             {
-                float xOffset = Rand.Range(-0.25f, 0.25f);
-                float zOffset = Rand.Range(-0.25f, 0.25f);
+                float xOffset = Rand.Range(-0.5f, 0.5f);
+                float zOffset = Rand.Range(-0.5f, 0.5f);
 
                 Vector3 instancePos = DrawPos;
                 instancePos.x += xOffset;

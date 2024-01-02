@@ -14,7 +14,7 @@
         <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all and ancient trees grow in small clusters as the local fauna congregates nearby.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
         <workerClass>BiomesKit.UniversalBiomeWorker</workerClass>
         <animalDensity>1.7</animalDensity>
-        <plantDensity>1.4</plantDensity>
+        <plantDensity>1.75</plantDensity>
         <settlementSelectionWeight>1</settlementSelectionWeight>
         <movementDifficulty>1</movementDifficulty>
         <texture>World/Biomes/SZ_RadiantPlains</texture>
@@ -86,8 +86,8 @@
                 <thresholds>
                     <li>
                         <terrain>SZ_ChaliceSoil</terrain>
-                        <min>0.42</min>
-                        <max>0.85</max>
+                        <min>0.42</min> 
+                        <max>0.65</max>
                     </li>
                 </thresholds>
             </li>
@@ -100,13 +100,14 @@
         </baseWeatherCommonalities>
         <wildPlants>
             <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
+            <SZ_FiddleheadWater>2.35</SZ_FiddleheadWater>
             <SZ_ChaliceFungus>5.10</SZ_ChaliceFungus>
             <SZ_LilyOfThePlains>0.05</SZ_LilyOfThePlains>
             <SZ_SoothingStalk>1.12</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
             <SZ_CeruleanHoneyBush>0.085</SZ_CeruleanHoneyBush>
-            <SZ_RadiantGrass>24.00</SZ_RadiantGrass>
-            <SZ_RadiantTallGrass>4.10</SZ_RadiantTallGrass>
+            <SZ_RadiantGrass>20.00</SZ_RadiantGrass>
+            <SZ_RadiantTallGrass>8.10</SZ_RadiantTallGrass>
             <SZ_LushGrass>3.75</SZ_LushGrass>
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
             <SZ_FiddleheadWall>0.45</SZ_FiddleheadWall>

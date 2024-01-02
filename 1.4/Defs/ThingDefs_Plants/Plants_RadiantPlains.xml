@@ -37,7 +37,7 @@
                     <li>Soil</li>
                     <li>Stony</li>
                     <li>Rocky</li>
-                    <li>SZ_ChaliceSoil</li>
+                    <li>ChaliceSoil</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -80,7 +80,7 @@
                     <li>Soil</li>
                     <li>Stony</li>
                     <li>Rocky</li>
-                    <li>SZ_ChaliceSoil</li>
+                    <li>ChaliceSoil</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -121,7 +121,6 @@
                     <li>Soil</li>
                     <li>Stony</li>
                     <li>Rocky</li>
-                    <li>SZ_ChaliceSoil</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -206,6 +205,49 @@
         </modExtensions>
     </ThingDef>
 
+    <!--==================== Fiddlehead Water Based ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_FiddleheadWater</defName>
+        <label>fiddlehead</label>
+        <description>Named after the more commonly known terrestrial fiddlehead because of their uncanny resemblance to the juvenile fronds of a sprouting Earth-bound fern.</description>
+        <hideAtSnowDepth>0.55</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/FiddleheadWater</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
+            <maxMeshCount>4</maxMeshCount>
+            <visualSizeRange>0.5~1.425</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Shallow</li>
+                    <li>River</li>
+                    <li>Boggy</li> 
+                    <li>Muddy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
     <!--==================== Chalice Fungus ====================-->
     <!-- Reacts to pawn movement. -->
 
@@ -216,8 +258,8 @@
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
-        <selectable>true</selectable>
-        <neverMultiSelect>false</neverMultiSelect>
+        <!-- <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect> -->
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
@@ -234,12 +276,14 @@
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
-            <growDays>30</growDays>
+            <growDays>22</growDays>
             <leaflessGraphicPath>Things/Plants/ChaliceFungus_Leafless</leaflessGraphicPath>
-            <maxMeshCount>4</maxMeshCount>
+            <maxMeshCount>1</maxMeshCount>
             <visualSizeRange>0.5~1.6</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
-            <wildOrder>1</wildOrder>
+            <wildClusterRadius>2</wildClusterRadius>
+            <wildClusterWeight>3.2</wildClusterWeight>
+            <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
             <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
@@ -252,7 +296,7 @@
                 <minScale>0.35</minScale>
                 <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
                 <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
-                <texInstances>3</texInstances>
+                <texInstances>4</texInstances>
                 <effectRadius>2</effectRadius>
             </li>
         </modExtensions>
