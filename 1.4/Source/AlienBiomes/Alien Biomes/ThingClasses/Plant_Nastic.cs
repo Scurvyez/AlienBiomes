@@ -112,8 +112,8 @@ namespace AlienBiomes
                 drawPos.z += def.graphicData.drawSize.y * scaleY / 2f;
 
                 matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
+                Graphics.DrawMesh(MeshPool.plane10, matrix, Graphic.MatSingle, 0, null, 0, null, false, false, false);
             }
-            Graphics.DrawMesh(MeshPool.plane10, matrix, Graphic.MatSingle, 0, null, 0, null, false, false, false);
         }
 
         private void InitializeRandomOffsets()

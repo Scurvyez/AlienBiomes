@@ -258,8 +258,8 @@
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
-        <!-- <selectable>true</selectable>
-        <neverMultiSelect>false</neverMultiSelect> -->
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
         <ingestible />
@@ -281,8 +281,8 @@
             <maxMeshCount>1</maxMeshCount>
             <visualSizeRange>0.5~1.6</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
-            <wildClusterRadius>2</wildClusterRadius>
-            <wildClusterWeight>3.2</wildClusterWeight>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
@@ -296,7 +296,7 @@
                 <minScale>0.35</minScale>
                 <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
                 <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
-                <texInstances>4</texInstances>
+                <texInstances>8</texInstances>
                 <effectRadius>2</effectRadius>
             </li>
         </modExtensions>
@@ -481,6 +481,53 @@
         </modExtensions>
     </ThingDef>
 
+    <!--==================== Star of the Plains ====================-->
+    <!-- Decorative, wild, no fruit or real benefits. lol -->
+    <!-- Only spawns in water. -->
+
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_StarOfThePlains</defName>
+        <label>star of the plains</label>
+        <description>A deep-red, waterborne, flower perched upon a small yet durable lilypad-like base which floats on shallow water. The flower can be eaten in a pinch to sustain life.</description>
+        <selectable>false</selectable>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>2</pathCost>
+        <statBases>
+            <MaxHitPoints>20</MaxHitPoints>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plants/StarOfThePlains</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>8</growDays>
+            <leaflessGraphicPath>Things/Plants/StarOfThePlains_Leafless</leaflessGraphicPath>
+            <maxMeshCount>1</maxMeshCount>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
+            <visualSizeRange>0.25~1.75</visualSizeRange>
+            <topWindExposure>0.75</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Shallow</li>
+                    <li>River</li>
+                    <li>Boggy</li> <!-- ??? -->
+                    <li>Muddy</li> <!-- ??? -->
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
     <!--==================== Cerulean Honey Bush ====================-->
     <!-- This tree will produce a woody pulp which can then be manufactured into a "WoodLog" variant -->
     <!-- Can move around at night. -->
@@ -490,7 +537,7 @@
 
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_CeruleanHoneyBush</defName>
-        <thingClass>AlienBiomes.Plant_Mobile</thingClass>
+        <!-- <thingClass>AlienBiomes.Plant_Mobile</thingClass> -->
         <drawerType>MapMeshAndRealTime</drawerType>
         <label>cerulean honey bush</label>
         <description>These bushes attract a plethora of small invertebrate life as inside their blueish-green exterior lies a sweet, yet immediately sickly to humanlikes, nectar with similar viscosity to terrestrial honey.</description>
