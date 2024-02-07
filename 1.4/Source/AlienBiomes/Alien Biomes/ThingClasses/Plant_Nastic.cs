@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using Verse;
 
@@ -19,19 +18,21 @@ namespace AlienBiomes
         private const int MaxTicks = 720;
         private float CurPlantGrowth;
         protected Graphic cachedGraphic;
+        private Vector3 drawPos = new Vector3 (0, 0, 0);
+        private Mesh mesh = MeshPool.plane10;
+        private float scaleY;
         private Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             plantExt = def.GetModExtension<Plant_Nastic_ModExtension>();
-
-            overrideGraphicIndex = thingIDNumber;
-
-            if (Graphic is Graphic_Random random) overrideGraphicIndex %= random.SubGraphicsCount;
+            //overrideGraphicIndex = thingIDNumber;
+            //if (Graphic is Graphic_Random random) overrideGraphicIndex %= random.SubGraphicsCount;
 
             InitializeRandomOffsets();
             PrecomputeScaleDeltas();
+
             IntVec3[] cells = GenRadial.RadialCellsAround(Position, plantExt.effectRadius, useCenter: true).ToArray();
             MapComponent_PlantGetter plantGetter = map.GetComponent<MapComponent_PlantGetter>();
             foreach (IntVec3 cell in cells)
@@ -74,6 +75,7 @@ namespace AlienBiomes
             }
         }
 
+        /*
         public void ChangeGraphic()
         {
             overrideGraphicIndex++;
@@ -85,6 +87,7 @@ namespace AlienBiomes
         {
             cachedGraphic = null;
         }
+        */
 
         public override Graphic Graphic
         {
@@ -104,15 +107,15 @@ namespace AlienBiomes
             for (int i = 0; i < InstanceOffsets.Count; i++)
             {
                 // Draw the mesh with the modified UV coordinates
-                Vector3 drawPos = InstanceOffsets[i];
+                drawPos = InstanceOffsets[i];
 
                 // Calculate the adjusted z-coordinate based on the change in scale
                 // This ensures our individual textures on the mesh shrink down to their base and not into their center
-                float scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
+                scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
                 drawPos.z += def.graphicData.drawSize.y * scaleY / 2f;
 
                 matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
-                Graphics.DrawMesh(MeshPool.plane10, matrix, Graphic.MatSingle, 0, null, 0, null, false, false, false);
+                Graphics.DrawMesh(mesh, matrix, Graphic.MatSingle, 0, null, 0, null, false, false, false);
             }
         }
 

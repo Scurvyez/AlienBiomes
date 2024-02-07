@@ -134,7 +134,9 @@
                 <maxTemperature>300.5</maxTemperature>
                 <maxHilliness>Flat</maxHilliness>
 			</li>
-            <li Class="BiomesCore.DefModExtensions.BiomesMap">
+            <li Class="BiomesCore.DefModExtensions.BiomesMap" />
+            <li Class="AlienBiomes.Bioluminescence_ModExtension">
+                <reachFromShore>2</reachFromShore>
             </li>
 		</modExtensions>
     </BiomeDef>

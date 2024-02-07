@@ -8,26 +8,26 @@ namespace AlienBiomes
     [StaticConstructorOnStartup]
     public class SectionLayer_Bioluminescence : SectionLayer
     {
-        private static readonly Texture2D BioDistTex = ContentFinder<Texture2D>.Get("Things/Mote/SmokeTiled", true);
-        private static readonly Texture2D BioTexA = ContentFinder<Texture2D>.Get("Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceA", true);
-
-        private Material bioluminescenceMaterial; // bioluminescent material (contains our Texture2D), what we see in each cell
-        private MaterialPropertyBlock propertyBlock; // shader property access
+        private Material bioluminescenceMaterial;
+        private MaterialPropertyBlock propertyBlock;
         private HashSet<IntVec3> affectedCells;  // first pass of cells to have bioluminescence
         private HashSet<IntVec3> newAffectedCells; // all other passes
-        private List<Color> randomColors; // colors to set our bio mat too for each affected cell
-        private readonly int bioReach = 1; // how many cells out, from the shoreline, the bioluminescence displays
+        private List<Color> randomColors;
+        private float terrainAltitude;
+        private Mesh mesh;
+        private Bioluminescence_ModExtension bioluminescenceExt;
 
         public SectionLayer_Bioluminescence(Section section) : base(section)
         {
+            bioluminescenceExt = Map.Biome.GetModExtension<Bioluminescence_ModExtension>();
+            terrainAltitude = AltitudeLayer.Terrain.AltitudeFor();
+            mesh = MeshPool.plane10;
             propertyBlock = new MaterialPropertyBlock();
             relevantChangeTypes = MapMeshFlag.Terrain;
-
-            // Create the bioluminescent material with BioTexA as the texture
             bioluminescenceMaterial = new Material(ShaderDatabase.MoteGlowDistorted);
-            bioluminescenceMaterial.SetTexture("_MainTex", BioTexA);
+            bioluminescenceMaterial.SetTexture("_MainTex", TextureAssets.BioTexA);
 
-            randomColors = GenerateRandomColors(10);
+            randomColors = GenerateRandomColors(9);
         }
 
         public override void Regenerate()
@@ -65,13 +65,10 @@ namespace AlienBiomes
                 return;
             }
 
-            propertyBlock.SetTexture("_DistortionTex", BioDistTex);
+            propertyBlock.SetTexture("_DistortionTex", TextureAssets.BioDistTex);
             propertyBlock.SetFloat("_distortionScrollSpeed", 0.09f);
             propertyBlock.SetFloat("_distortionIntensity", 0.125f);
             propertyBlock.SetFloat("_distortionScale", 0.20f);
-
-            // Calculate altitude once before the loop
-            float terrainAltitude = AltitudeLayer.Terrain.AltitudeFor();
 
             // Iterate over each affected cell within the 8x8 area
             foreach (IntVec3 cell in affectedCells)
@@ -80,7 +77,7 @@ namespace AlienBiomes
                 Vector3 position = new (cell.x + 0.5f, terrainAltitude, cell.z + 0.5f);
 
                 // Draw the bioluminescent mesh at the position of the current cell
-                Graphics.DrawMesh(MeshPool.plane10, position, Quaternion.identity, bioluminescenceMaterial, 0, null, 0, propertyBlock);
+                Graphics.DrawMesh(mesh, position, Quaternion.identity, bioluminescenceMaterial, 0, null, 0, propertyBlock);
             }
         }
 
@@ -89,7 +86,11 @@ namespace AlienBiomes
             List<Color> colors = new ();
             for (int i = 0; i < count; i++)
             {
-                Color randomColor = new (Random.value, Random.value, Random.value);
+                float r = Random.Range(0f, 0.1f);
+                float g = Random.Range(0.8f, 1f);
+                float b = Random.Range(0.5f, 0.7f);
+                float a = Random.Range(0.2f, 0.9f);
+                Color randomColor = new (r, g, b, a);
                 colors.Add(randomColor);
             }
             return colors;
@@ -109,26 +110,26 @@ namespace AlienBiomes
                 foreach (IntVec3 cell in section.CellRect)
                 {
                     TerrainDef terrain = terrainGrid.TerrainAt(cell);
-                    if (terrain == AB_TerrainDefOf.SZ_RadiantWaterOceanShallow)
+                    if (terrain == ABDefOf.SZ_RadiantWaterOceanShallow)
                     {
                         float chunkNoise = Mathf.PerlinNoise(cell.x * 0.1f, cell.z * 0.1f);
                         if (chunkNoise <= chunkNoiseThreshold)
                         {
                             bool isNearShoreline = false;
 
-                            int cellRange = 2 * bioReach + 1; // Calculate the range of cells in each dimension
+                            int cellRange = 2 * bioluminescenceExt.reachFromShore + 1; // Calculate the range of cells in each dimension
                             int cellCount = cellRange * cellRange; // Total number of cells in the range
 
                             for (int i = 0; i < cellCount; i++)
                             {
-                                int x = i % cellRange - bioReach; // Calculate the x coordinate based on the linear index
-                                int z = i / cellRange - bioReach; // Calculate the z coordinate based on the linear index
+                                int x = i % cellRange - bioluminescenceExt.reachFromShore; // Calculate the x coordinate based on the linear index
+                                int z = i / cellRange - bioluminescenceExt.reachFromShore; // Calculate the z coordinate based on the linear index
 
                                 IntVec3 neighborCell = cell + new IntVec3(x, 0, z);
                                 if (neighborCell.InBounds(Map) && neighborCell != cell)
                                 {
                                     TerrainDef neighborTerrain = terrainGrid.TerrainAt(neighborCell);
-                                    if (neighborTerrain == AB_TerrainDefOf.SZ_SoothingSand)
+                                    if (neighborTerrain == ABDefOf.SZ_SoothingSand)
                                     {
                                         isNearShoreline = true;
                                         break;

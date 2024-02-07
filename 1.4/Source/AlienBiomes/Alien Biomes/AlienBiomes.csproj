@@ -44,10 +44,6 @@
       <HintPath>E:\DOWNLOADS\BiomesCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="KCSG">
-      <HintPath>C:\Users\steve\Downloads\KCSG.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -76,11 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlienBiomesWelcomeNote.cs" />
-    <Compile Include="DefOfs\AB_FleckDefOf.cs" />
     <Compile Include="FireImprovement.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
     <Compile Include="Harmony\Prefix_TryEnterNextPathCell.cs" />
-    <Compile Include="Harmony\PostfixCurrentNotify_LoadedSceneChanged.cs" />
+    <Compile Include="Harmony\Postfix_CurrentNotify_LoadedSceneChanged.cs" />
     <Compile Include="Harmony\PostFix_MatFrom.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
     <Compile Include="MapComps\MapComponent_MobilePlantCellsGetter.cs" />
@@ -89,6 +84,7 @@
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="Settings\AlienBiomesContentDatabase.cs" />
+    <Compile Include="ThingClasses\DefModExtensions\Bioluminescence_ModExtension.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Nastic_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Nastic.cs" />
     <Compile Include="ThingClasses\Plant_Shimmering.cs" />
@@ -104,11 +100,7 @@
     <Compile Include="ThingComps\Comp_TimedHarvest.cs" />
     <Compile Include="ThingComps\Comp_TimedGlower.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_TimedGlower.cs" />
-    <Compile Include="DefOfs\AB_TerrainDefOf.cs" />
-    <Compile Include="DefOfs\AB_ThingDefOf.cs" />
-    <Compile Include="DefOfs\AB_BiomeDefOf.cs" />
-    <Compile Include="DefOfs\AB_HediffDefOf.cs" />
-    <Compile Include="DefOfs\AB_LetterDefOf.cs" />
+    <Compile Include="DefOfs\ABDefOf.cs" />
     <Compile Include="Harmony\PostFix_CompGlower.cs" />
     <Compile Include="Harmony\PostFix_TerrainFrom.cs" />
     <Compile Include="Harmony\PostFix_BeachTerrainAt.cs" />
@@ -122,6 +114,7 @@
     <Compile Include="Utils\ABShaderTypeDef.cs" />
     <Compile Include="Utils\ABShaderPropertyIDs.cs" />
     <Compile Include="Utils\ABEasingFunctions.cs" />
+    <Compile Include="Utils\TextureAssets.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -16,17 +16,17 @@ namespace AlienBiomes
             // Gravel checks.
             // Per Biome.
             /*
-            if (map.Biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats)
+            if (map.Biome == ABDefOf.SZ_CrystallineFlats)
             {
                 if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
-                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineStonySoil;
+                    __result = ABDefOf.SZ_CrystallineStonySoil;
                 }
             }
             */
-            if (map.Biome == AB_BiomeDefOf.SZ_RadiantPlains)
+            if (map.Biome == ABDefOf.SZ_RadiantPlains)
             {
                 if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
-                    __result = AB_TerrainDefOf.SZ_RadiantStonySoil;
+                    __result = ABDefOf.SZ_RadiantStonySoil;
                 }
             }
 
@@ -36,17 +36,17 @@ namespace AlienBiomes
             if (ModsConfig.IsActive("m00nl1ght.geologicallandforms"))
             {
                 /*
-                if (map.Biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats)
+                if (map.Biome == ABDefOf.SZ_CrystallineFlats)
                 {
                     if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
-                        __result = AlienBiomes_TerrainDefOf.SZ_CrystallineSand;
+                        __result = ABDefOf.SZ_CrystallineSand;
                     }
                 }
                 */
-                if (map.Biome == AB_BiomeDefOf.SZ_RadiantPlains)
+                if (map.Biome == ABDefOf.SZ_RadiantPlains)
                 {
                     if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
-                        __result = AB_TerrainDefOf.SZ_SoothingSand;
+                        __result = ABDefOf.SZ_SoothingSand;
                     }
                 }
             }
@@ -54,41 +54,41 @@ namespace AlienBiomes
             // Water checks.
             // Per Biome.
             /*
-            if (map.Biome == AlienBiomes_BiomeDefOf.SZ_CrystallineFlats)
+            if (map.Biome == ABDefOf.SZ_CrystallineFlats)
             {
                 if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterShallow;
+                    __result = ABDefOf.SZ_CrystallineWaterShallow;
                 }
                 else if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterOceanShallow;
+                    __result = ABDefOf.SZ_CrystallineWaterOceanShallow;
                 }
                 else if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterOceanDeep;
+                    __result = ABDefOf.SZ_CrystallineWaterOceanDeep;
                 }
                 else if (__result == TerrainDefOf.WaterMovingShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterMovingShallow;
+                    __result = ABDefOf.SZ_CrystallineWaterMovingShallow;
                 }
                 else if (__result == TerrainDefOf.WaterMovingChestDeep && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AlienBiomes_TerrainDefOf.SZ_CrystallineWaterMovingChestDeep;
+                    __result = ABDefOf.SZ_CrystallineWaterMovingChestDeep;
                 }
             }
             */
-            if (map.Biome == AB_BiomeDefOf.SZ_RadiantPlains)
+            if (map.Biome == ABDefOf.SZ_RadiantPlains)
             {
                 if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AB_TerrainDefOf.SZ_RadiantWaterShallow;
+                    __result = ABDefOf.SZ_RadiantWaterShallow;
                 }
                 else if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AB_TerrainDefOf.SZ_RadiantWaterOceanShallow;
+                    __result = ABDefOf.SZ_RadiantWaterOceanShallow;
                 }
                 else if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AB_TerrainDefOf.SZ_RadiantWaterOceanDeep;
+                    __result = ABDefOf.SZ_RadiantWaterOceanDeep;
                 }
                 else if (__result == TerrainDefOf.WaterMovingShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AB_TerrainDefOf.SZ_RadiantWaterMovingShallow;
+                    __result = ABDefOf.SZ_RadiantWaterMovingShallow;
                 }
                 else if (__result == TerrainDefOf.WaterMovingChestDeep && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = AB_TerrainDefOf.SZ_RadiantWaterMovingChestDeep;
+                    __result = ABDefOf.SZ_RadiantWaterMovingChestDeep;
                 }
             }
         }
