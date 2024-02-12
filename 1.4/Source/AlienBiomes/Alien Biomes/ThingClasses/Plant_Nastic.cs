@@ -30,18 +30,21 @@ namespace AlienBiomes
             //overrideGraphicIndex = thingIDNumber;
             //if (Graphic is Graphic_Random random) overrideGraphicIndex %= random.SubGraphicsCount;
 
-            InitializeRandomOffsets();
-            PrecomputeScaleDeltas();
-
-            IntVec3[] cells = GenRadial.RadialCellsAround(Position, plantExt.effectRadius, useCenter: true).ToArray();
-            MapComponent_PlantGetter plantGetter = map.GetComponent<MapComponent_PlantGetter>();
-            foreach (IntVec3 cell in cells)
+            if (plantExt != null)
             {
-                if (!plantGetter.ActiveLocationTriggers.ContainsKey(cell))
+                InitializeRandomOffsets();
+                PrecomputeScaleDeltas();
+
+                IntVec3[] cells = GenRadial.RadialCellsAround(Position, plantExt.effectRadius, useCenter: true).ToArray();
+                MapComponent_PlantGetter plantGetter = map.GetComponent<MapComponent_PlantGetter>();
+                foreach (IntVec3 cell in cells)
                 {
-                    plantGetter.ActiveLocationTriggers[cell] = new HashSet<Plant_Nastic>();
+                    if (!plantGetter.ActiveLocationTriggers.ContainsKey(cell))
+                    {
+                        plantGetter.ActiveLocationTriggers[cell] = new HashSet<Plant_Nastic>();
+                    }
+                    plantGetter.ActiveLocationTriggers[cell].Add(this);
                 }
-                plantGetter.ActiveLocationTriggers[cell].Add(this);
             }
         }
 
@@ -136,24 +139,21 @@ namespace AlienBiomes
 
         private void PrecomputeScaleDeltas()
         {
-            if (plantExt != null)
+            int cycleTicks = MaxTicks; // Assuming one full cycle
+            plantExt.scaleDeltaCache = new float[cycleTicks];
+
+            for (int i = 0; i < cycleTicks; i++)
             {
-                int cycleTicks = MaxTicks; // Assuming one full cycle
-                plantExt.scaleDeltaCache = new float[cycleTicks];
+                float easedTime = (float)i / 360f;
 
-                for (int i = 0; i < cycleTicks; i++)
-                {
-                    float easedTime = (float)i / 360f;
+                float scaleDeltaDecreaseEased = easedTime;
+                float scaleChangeRateDecrease = Mathf.Lerp(-plantExt.scaleDeltaDecrease, 0f, scaleDeltaDecreaseEased);
 
-                    float scaleDeltaDecreaseEased = easedTime;
-                    float scaleChangeRateDecrease = Mathf.Lerp(-plantExt.scaleDeltaDecrease, 0f, scaleDeltaDecreaseEased);
+                float scaleDeltaIncreaseEased = ABEasingFunctions.EaseOutQuad(easedTime);
+                float scaleChangeRateIncrease = Mathf.Lerp(0f, plantExt.scaleDeltaIncrease, scaleDeltaIncreaseEased);
 
-                    float scaleDeltaIncreaseEased = ABEasingFunctions.EaseOutQuad(easedTime);
-                    float scaleChangeRateIncrease = Mathf.Lerp(0f, plantExt.scaleDeltaIncrease, scaleDeltaIncreaseEased);
-
-                    float scaleChangeRate = scaleChangeRateDecrease + scaleChangeRateIncrease;
-                    plantExt.scaleDeltaCache[i] = scaleChangeRate;
-                }
+                float scaleChangeRate = scaleChangeRateDecrease + scaleChangeRateIncrease;
+                plantExt.scaleDeltaCache[i] = scaleChangeRate;
             }
         }
 
