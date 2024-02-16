@@ -122,6 +122,9 @@ namespace AlienBiomes
             }
         }
 
+        /// <summary>
+        /// Calculates the initial position of each texture on our mesh on spawn.
+        /// </summary>
         private void InitializeRandomOffsets()
         {
             for (int i = 0; i < plantExt.texInstances; i++)
@@ -137,6 +140,9 @@ namespace AlienBiomes
             }
         }
 
+        /// <summary>
+        /// Calculates one full scale cycle for the plant on spawn.
+        /// </summary>
         private void PrecomputeScaleDeltas()
         {
             int cycleTicks = MaxTicks; // Assuming one full cycle
@@ -144,7 +150,7 @@ namespace AlienBiomes
 
             for (int i = 0; i < cycleTicks; i++)
             {
-                float easedTime = (float)i / 360f;
+                float easedTime = i / 360f;
 
                 float scaleDeltaDecreaseEased = easedTime;
                 float scaleChangeRateDecrease = Mathf.Lerp(-plantExt.scaleDeltaDecrease, 0f, scaleDeltaDecreaseEased);

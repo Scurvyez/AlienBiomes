@@ -109,7 +109,7 @@
             <SZ_CeruleanHoneyBush>0.085</SZ_CeruleanHoneyBush>
             <SZ_RadiantGrass>20.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>8.10</SZ_RadiantTallGrass>
-            <SZ_LushGrass>3.75</SZ_LushGrass>
+            <!-- <SZ_LushGrass>3.75</SZ_LushGrass> -->
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
             <SZ_FiddleheadWall>0.45</SZ_FiddleheadWall>
         </wildPlants>

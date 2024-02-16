@@ -55,7 +55,7 @@ namespace AlienBiomes
 
         public static ThingDef SZ_RadiantGrass;
         public static ThingDef SZ_RadiantTallGrass;
-        public static ThingDef SZ_LushGrass;
+        //public static ThingDef SZ_LushGrass;
         public static ThingDef SZ_BulbousSanitas;
         public static ThingDef SZ_Fiddlehead;
         public static ThingDef SZ_ChaliceFungus;

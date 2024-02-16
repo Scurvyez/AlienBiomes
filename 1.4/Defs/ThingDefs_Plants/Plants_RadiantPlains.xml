@@ -88,7 +88,7 @@
 
     <!--==================== Lush Grass ====================-->
 
-    <ThingDef ParentName="PlantBase">
+    <!-- <ThingDef ParentName="PlantBase">
         <defName>SZ_LushGrass</defName>
         <label>lush grass</label>
         <description>A lush and beautiful grass found all over the radiant plains. It grows taller than most grasses and its roots run deep underground.</description>
@@ -124,7 +124,7 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef>
+    </ThingDef> -->
 
     <!--==================== Bulbous Sanitas ====================-->
 
@@ -269,18 +269,18 @@
             <Nutrition>0.02</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plants/ChaliceFungus</texPath>
-			<graphicClass>Graphic_Random</graphicClass>
+            <texPath>Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
             <shaderType>TransparentPlantPlus</shaderType>
         </graphicData>
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>22</growDays>
-            <leaflessGraphicPath>Things/Plants/ChaliceFungus_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>Things/Plants/ChaliceFungus_Leafless/ChaliceFungusA</leaflessGraphicPath>
             <maxMeshCount>1</maxMeshCount>
-            <visualSizeRange>0.5~1.6</visualSizeRange>
-            <topWindExposure>0.33</topWindExposure>
+            <visualSizeRange>0.5~2.25</visualSizeRange>
+            <topWindExposure>0.35</topWindExposure>
             <wildClusterRadius>4</wildClusterRadius>
             <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>2</wildOrder>
@@ -296,8 +296,8 @@
                 <minScale>0.35</minScale>
                 <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
                 <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
-                <texInstances>8</texInstances>
-                <effectRadius>2</effectRadius>
+                <texInstances>3</texInstances>
+                <effectRadius>3</effectRadius>
             </li>
         </modExtensions>
     </ThingDef>
