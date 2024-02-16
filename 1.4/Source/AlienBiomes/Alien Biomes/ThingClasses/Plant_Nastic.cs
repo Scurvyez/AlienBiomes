@@ -17,7 +17,7 @@ namespace AlienBiomes
         private int timeSinceLastStep;
         private const int MaxTicks = 720;
         private float CurPlantGrowth;
-        protected Graphic cachedGraphic;
+        //protected Graphic cachedGraphic;
         private Vector3 drawPos = new Vector3 (0, 0, 0);
         private Mesh mesh = MeshPool.plane10;
         private float scaleY;
@@ -92,6 +92,7 @@ namespace AlienBiomes
         }
         */
 
+        /*
         public override Graphic Graphic
         {
             get
@@ -104,6 +105,7 @@ namespace AlienBiomes
                 return cachedGraphic;
             }
         }
+        */
 
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
