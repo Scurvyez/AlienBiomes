@@ -1,69 +1,65 @@
-﻿using System.Collections.Generic;
-using Verse;
-using RimWorld;
+﻿using RimWorld;
+using System.Collections.Generic;
 using UnityEngine;
+using Verse;
 
 namespace AlienBiomes
 {
     /*
     [StaticConstructorOnStartup]
-    public class SectionLayer_Bioluminescence : SectionLayer
+    public class MapComponent_Bioluminescence : MapComponent
     {
-        private Material bioluminescenceMaterial;
-        private MaterialPropertyBlock propertyBlock;
-        private HashSet<IntVec3> affectedCells;  // first pass of cells to have bioluminescence
-        private HashSet<IntVec3> newAffectedCells; // all other passes
-        private List<Color> randomColors;
+        private Bioluminescence_ModExtension bioluminescenceExt;
         private float terrainAltitude;
         private Mesh mesh;
-        private Bioluminescence_ModExtension bioluminescenceExt;
+        private Vector3 position;
 
-        public SectionLayer_Bioluminescence(Section section) : base(section)
+        private HashSet<IntVec3> affectedCells = new ();  // first pass of cells to have bioluminescence
+        private HashSet<IntVec3> newAffectedCells = new (); // all other passes
+
+        private Material bioluminescenceMaterial;
+        private MaterialPropertyBlock propertyBlock;
+        private List<Color> randomColors;
+
+        public MapComponent_Bioluminescence(Map map) : base(map) { }
+
+        public override void FinalizeInit()
         {
-            bioluminescenceExt = Map.Biome.GetModExtension<Bioluminescence_ModExtension>();
+            base.FinalizeInit();
+
+            bioluminescenceExt = map.Biome.GetModExtension<Bioluminescence_ModExtension>();
             terrainAltitude = AltitudeLayer.Terrain.AltitudeFor();
             mesh = MeshPool.plane10;
             propertyBlock = new MaterialPropertyBlock();
-            relevantChangeTypes = MapMeshFlag.Terrain;
             bioluminescenceMaterial = new Material(ShaderDatabase.MoteGlowDistorted);
             bioluminescenceMaterial.SetTexture("_MainTex", TextureAssets.BioTexA);
             propertyBlock.SetTexture("_DistortionTex", TextureAssets.BioDistTex);
             propertyBlock.SetFloat("_distortionScrollSpeed", 0.09f);
             propertyBlock.SetFloat("_distortionIntensity", 0.125f);
             propertyBlock.SetFloat("_distortionScale", 0.20f);
-
             randomColors = GenerateRandomColors(16);
+
+            Log.Message($"affectedCells: {affectedCells}");
+            Log.Message($"newAffectedCells: {newAffectedCells}");
+
+            Generate();
         }
 
-        public override void Regenerate()
+        public override void MapComponentTick()
         {
-            if (affectedCells == null)
+            base.MapComponentTick();
+
+            foreach (IntVec3 cell in affectedCells)
             {
-                // Initial run, populate affectedCells for the first time
-                affectedCells = AffectedCells();
-
-                // Assign random colors to affected cells' materials
-                foreach (IntVec3 cell in affectedCells)
-                {
-                    int randomIndex = Random.Range(0, randomColors.Count);
-                    Color randomColor = randomColors[randomIndex];
-
-                    // Set the color in the propertyBlock for the cell's material
-                    propertyBlock.SetColor("_Color", randomColor);
-                }
-            }
-
-            newAffectedCells = AffectedCells();
-
-            if (!affectedCells.SetEquals(newAffectedCells))
-            {
-                // The affected cells have changed, update the affectedCells HashSet
-                affectedCells = newAffectedCells;
+                // Calculate the position of the current cell within the 8x8 area
+                position = new(cell.x + 0.5f, terrainAltitude, cell.z + 0.5f);
             }
         }
 
-        public override void DrawLayer()
+        public override void MapComponentUpdate()
         {
+            base.MapComponentUpdate();
+
             // Check if affectedCells is empty, return early if true
             if (affectedCells.Count == 0)
             {
@@ -73,9 +69,6 @@ namespace AlienBiomes
             // Iterate over each affected cell within the 8x8 area
             foreach (IntVec3 cell in affectedCells)
             {
-                // Calculate the position of the current cell within the 8x8 area
-                Vector3 position = new (cell.x + 0.5f, terrainAltitude, cell.z + 0.5f);
-
                 // Draw the bioluminescent mesh at the position of the current cell
                 Graphics.DrawMesh(mesh, position, Quaternion.identity, bioluminescenceMaterial, 0, null, 0, propertyBlock);
             }
@@ -83,35 +76,44 @@ namespace AlienBiomes
 
         private List<Color> GenerateRandomColors(int count)
         {
-            List<Color> colors = new ();
+            List<Color> colors = new();
             for (int i = 0; i < count; i++)
             {
-                //float r = Random.Range(0f, 0.1f);
-                //float g = Random.Range(0.8f, 1f);
-                //float b = Random.Range(0.5f, 0.7f);
-
-                float r = Random.Range(0.8f, 1f);
-                float g = Random.Range(0.1f, 0.35f);
-                float b = Random.Range(0.1f, 0.35f);
+                float r = Random.Range(0f, 0.1f);
+                float g = Random.Range(0.8f, 1f);
+                float b = Random.Range(0.5f, 0.7f);
                 float a = Random.Range(0.2f, 0.9f);
-                Color randomColor = new (r, g, b, a);
+                Color randomColor = new(r, g, b, a);
                 colors.Add(randomColor);
             }
             return colors;
         }
 
+        private void Generate()
+        {
+            // Populate newAffectedCells regardless of biome
+            newAffectedCells = AffectedCells();
+
+            // Check if newAffectedCells is empty
+            if (newAffectedCells.Count > 0 && !affectedCells.SetEquals(newAffectedCells))
+            {
+                // Update affectedCells
+                affectedCells = new HashSet<IntVec3>(newAffectedCells);
+            }
+        }
+
         private HashSet<IntVec3> AffectedCells()
         {
-            HashSet<IntVec3> cells = new ();
-            BiomeDef radiantPlainsBiome = DefDatabase<BiomeDef>.GetNamed("SZ_RadiantPlains");
-            TerrainGrid terrainGrid = Map.terrainGrid;
+            HashSet<IntVec3> cells = new();
+            BiomeDef radiantPlainsBiome = ABDefOf.SZ_RadiantPlains;
+            TerrainGrid terrainGrid = map.terrainGrid;
 
             float chunkNoiseThreshold = 0.875f;
             float scatterNoiseThreshold = 0.875f;
 
-            if (Map.Biome == radiantPlainsBiome)
+            if (map.Biome == radiantPlainsBiome)
             {
-                foreach (IntVec3 cell in section.CellRect)
+                foreach (IntVec3 cell in map.AllCells)
                 {
                     TerrainDef terrain = terrainGrid.TerrainAt(cell);
                     if (terrain == ABDefOf.SZ_RadiantWaterOceanShallow)
@@ -130,7 +132,7 @@ namespace AlienBiomes
                                 int z = i / cellRange - bioluminescenceExt.reachFromShore; // Calculate the z coordinate based on the linear index
 
                                 IntVec3 neighborCell = cell + new IntVec3(x, 0, z);
-                                if (neighborCell.InBounds(Map) && neighborCell != cell)
+                                if (neighborCell.InBounds(map) && neighborCell != cell)
                                 {
                                     TerrainDef neighborTerrain = terrainGrid.TerrainAt(neighborCell);
                                     if (neighborTerrain == ABDefOf.SZ_SoothingSand)

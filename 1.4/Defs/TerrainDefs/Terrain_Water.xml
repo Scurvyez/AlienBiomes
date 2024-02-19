@@ -155,6 +155,7 @@
                     <li>Water</li>
                     <li>Salty</li>
                     <li>Shallow</li>
+                    <li>ABSaltyShallow</li>
                 </terrainTags>
             </li>
         </modExtensions>

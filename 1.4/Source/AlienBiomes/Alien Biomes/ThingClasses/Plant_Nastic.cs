@@ -85,8 +85,8 @@ namespace AlienBiomes
                 drawPos = InstanceOffsets[i];
 
                 // Calculate the adjusted z-coordinate based on the change in scale
-                // This ensures our individual textures on the mesh shrink down to their base and not into their center
                 scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
+                // This ensures our individual textures on the mesh shrink down to their base and not into their center
                 drawPos.z += drawSizeY * scaleY / 2f;
 
                 matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
@@ -156,6 +156,7 @@ namespace AlienBiomes
         {
             base.ExposeData();
             Scribe_Values.Look(ref CurrentScale, "CurrentScale", 1f);
+            Scribe_Values.Look(ref CurPlantGrowth, "CurPlantGrowth");
             Scribe_Values.Look(ref TouchSensitiveStartTime, "TouchSensitiveStartTime", 0);
         }
     }

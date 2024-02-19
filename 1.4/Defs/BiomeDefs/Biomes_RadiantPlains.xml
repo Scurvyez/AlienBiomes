@@ -112,6 +112,7 @@
             <!-- <SZ_LushGrass>3.75</SZ_LushGrass> -->
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
             <SZ_FiddleheadWall>0.45</SZ_FiddleheadWall>
+            <SZ_RadiantBioluminescence>400.0</SZ_RadiantBioluminescence>
         </wildPlants>
         <wildAnimals>
             <Horse>0.20</Horse>
@@ -135,9 +136,9 @@
                 <maxHilliness>Flat</maxHilliness>
 			</li>
             <li Class="BiomesCore.DefModExtensions.BiomesMap" />
-            <li Class="AlienBiomes.Bioluminescence_ModExtension">
+            <!-- <li Class="AlienBiomes.Bioluminescence_ModExtension">
                 <reachFromShore>2</reachFromShore>
-            </li>
+            </li> -->
 		</modExtensions>
     </BiomeDef>
 
