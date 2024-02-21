@@ -106,12 +106,11 @@
             <SZ_StarOfThePlains>0.15</SZ_StarOfThePlains>
             <SZ_SoothingStalk>1.12</SZ_SoothingStalk>
             <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
-            <SZ_CeruleanHoneyBush>0.085</SZ_CeruleanHoneyBush>
             <SZ_RadiantGrass>20.00</SZ_RadiantGrass>
             <SZ_RadiantTallGrass>8.10</SZ_RadiantTallGrass>
-            <!-- <SZ_LushGrass>3.75</SZ_LushGrass> -->
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
-            <SZ_FiddleheadWall>0.45</SZ_FiddleheadWall>
+            <SZ_FiddleheadWall>0.25</SZ_FiddleheadWall>
+            <SZ_ElderBamboo>0.25</SZ_ElderBamboo>
             <SZ_RadiantBioluminescence>400.0</SZ_RadiantBioluminescence>
         </wildPlants>
         <wildAnimals>
@@ -136,9 +135,6 @@
                 <maxHilliness>Flat</maxHilliness>
 			</li>
             <li Class="BiomesCore.DefModExtensions.BiomesMap" />
-            <!-- <li Class="AlienBiomes.Bioluminescence_ModExtension">
-                <reachFromShore>2</reachFromShore>
-            </li> -->
 		</modExtensions>
     </BiomeDef>
 

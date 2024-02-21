@@ -62,9 +62,10 @@ namespace AlienBiomes
         public static ThingDef SZ_SoothingStalk;
         public static ThingDef SZ_CopaceticCone;
         public static ThingDef SZ_LilyOfThePlains;
-        public static ThingDef SZ_CeruleanHoneyBush;
+        //public static ThingDef SZ_CeruleanHoneyBush;
         public static ThingDef SZ_FiddleheadWall;
         //public static ThingDef SZ_ShallowOceanWaterBioluminescence;
+        public static ThingDef SZ_ElderBamboo;
 
         /*
         public static ThingDef SZ_BlueColossalCrystalOne;
@@ -77,7 +78,7 @@ namespace AlienBiomes
 
         public static ThingDef SZ_RawSoothingHoney;
         public static ThingDef SZ_RawCopaceticHoney;
-        public static ThingDef SZ_CeruleanHoney;
+        //public static ThingDef SZ_CeruleanHoney;
 
         //public static ThingDef SZ_WindingFernAloe;
 

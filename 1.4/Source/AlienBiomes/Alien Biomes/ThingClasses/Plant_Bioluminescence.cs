@@ -15,7 +15,7 @@ namespace AlienBiomes
 
             RandomColor();
             propertyBlock = new MaterialPropertyBlock();
-            if (!respawningAfterLoad && propertyBlock != null && def.graphicData.shaderType.Shader == ShaderDatabase.MoteGlowDistorted)
+            if (propertyBlock != null && def.graphicData.shaderType.Shader == ShaderDatabase.MoteGlowDistorted)
             {
                 propertyBlock.SetColor("_Color", randomColor);
             }

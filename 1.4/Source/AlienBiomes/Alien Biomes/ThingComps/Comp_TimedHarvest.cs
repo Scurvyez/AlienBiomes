@@ -1,6 +1,5 @@
 ﻿using RimWorld;
 using Verse;
-using UnityEngine;
 
 namespace AlienBiomes
 {
@@ -10,7 +9,6 @@ namespace AlienBiomes
 
         private float dayPercent;
         private Season season;
-        public int TickCounter = 0;
 
         public bool AdditionalPlantHarvestLogic()
         {
