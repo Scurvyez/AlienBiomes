@@ -53,59 +53,6 @@
         </ingestible>
     </ThingDef>
 
-    <!--==================== Raw Cerulean Honey ====================-->
-
-    <ThingDef ParentName="PlantFoodRawBase">
-        <defName>SZ_CeruleanHoney</defName>
-        <label>raw cerulean honey</label>
-        <description>Raw honey from a cerulean honeytree. A marvelous raw ingredient!</description>
-        <graphicData>
-            <texPath>Things/Items/Resources/PlantFoodRaw/Honey/SZ_CeruleanHoney</texPath>
-        </graphicData>
-        <statBases>
-            <MarketValue>1.3</MarketValue>
-            <Mass>0.027</Mass>
-            <FoodPoisonChanceFixedHuman>1.0</FoodPoisonChanceFixedHuman>
-        </statBases>
-        <comps>
-            <li Class="CompProperties_Rottable">
-                <daysToRotStart>30</daysToRotStart>
-                <rotDestroys>true</rotDestroys>
-            </li>
-        </comps>
-        <ingestible>
-            <preferability>RawTasty</preferability>
-            <tasteThought>SZ_AteCopaceticHoney</tasteThought>
-            <foodType>VegetableOrFruit</foodType>
-        </ingestible>
-    </ThingDef>
-
-    <!--==================== Winding Fern Aloe ====================-->
-
-    <!-- <ThingDef ParentName="MedicineBase">
-        <defName>SZ_WindingFernAloe</defName>
-        <label>winding fern aloe</label>
-        <description>A natural soothing, jelly-like liquid that feels cold to the touch when applied on wounds.</description>
-        <techLevel>Neolithic</techLevel>
-        <tickerType>Rare</tickerType>
-        <graphicData>
-            <texPath>Things/Items/Resources/PlantResourceRaw/Aloe/SZ_WindingFernAloe</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <statBases>
-            <MarketValue>6.65</MarketValue>
-            <Mass>0.17</Mass>
-            <Flammability>1.15</Flammability>
-            <MedicalPotency>0.60</MedicalPotency>
-            <MedicalQualityMax>0.55</MedicalQualityMax>
-            <DeteriorationRate>4</DeteriorationRate>
-        </statBases>
-        <comps>
-            <li Class="CompProperties_Rottable">
-                <daysToRotStart>150</daysToRotStart>
-                <rotDestroys>true</rotDestroys>
-            </li>
-        </comps>
-    </ThingDef> -->
+    
 
 </Defs>

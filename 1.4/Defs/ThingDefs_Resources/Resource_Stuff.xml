@@ -1,43 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--==================== Elder Woody Shavings ====================-->
-
-    <ThingDef ParentName="ResourceBase">
-        <defName>SZ_FragrantWoodShavings</defName>
-        <label>elder wood shavings</label>
-        <description>The woody shavings of an elder blushing tree. They can be refined into elder wood logs.</description>
-        <graphicData>
-            <texPath>Things/Items/Resources/FragrantWoodShavings</texPath>
-            <graphicClass>Graphic_StackCount</graphicClass>
-        </graphicData>
-        <statBases>
-            <MarketValue>0.85</MarketValue>
-            <MaxHitPoints>105</MaxHitPoints>
-            <Mass>0.1</Mass>
-            <Flammability>1.0</Flammability>
-            <DeteriorationRate>0.5</DeteriorationRate>
-        </statBases>
-        <burnableByRecipe>true</burnableByRecipe>
-        <healthAffectsPrice>false</healthAffectsPrice>
-        <minRewardCount>10</minRewardCount>
-        <stuffProps>
-            <commonality>1.00</commonality>
-            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
-        </stuffProps>
-        <thingCategories>
-            <li>ResourcesRaw</li>
-        </thingCategories>
-    </ThingDef>
-
-    <!--==================== Elder Wood Log ====================-->
+    <!--==================== Elder Bamboo Log ====================-->
 
     <ThingDef ParentName="ResourceVerbBase">
-        <defName>SZ_ElderWoodLog</defName>
-        <label>elder wood log</label>
-        <description>These logs can be used just like any other. They are the product of elder tree wood shavings and leave a pleasant aroma amidst the air.</description>
+        <defName>SZ_ElderBambooLog</defName>
+        <label>elder bamboo log</label>
+        <description>These logs can be used just like any other and leave a pleasant aroma amidst the air.</description>
         <graphicData>
-            <texPath>Things/Items/Resources/ElderWoodLog</texPath>
+            <texPath>Things/Items/Resources/ElderBambooLog</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <equippedAngleOffset>-20</equippedAngleOffset>
@@ -45,7 +16,7 @@
         <soundDrop>Wood_Drop</soundDrop>
         <statBases>
             <MarketValue>1.35</MarketValue>
-            <MaxHitPoints>150</MaxHitPoints>
+            <MaxHitPoints>215</MaxHitPoints>
             <Mass>0.4</Mass>
             <Beauty>0.50</Beauty>
             <Flammability>1.0</Flammability>
@@ -62,12 +33,12 @@
         <healthAffectsPrice>false</healthAffectsPrice>
         <minRewardCount>10</minRewardCount>
         <stuffProps>
-            <stuffAdjective>elder wood</stuffAdjective>
+            <stuffAdjective>elder bamboo</stuffAdjective>
             <categories>
                 <li>Woody</li>
             </categories>
             <commonality>0.20</commonality>
-            <color>(130, 112, 145)</color>
+            <color>(11, 184, 107)</color>
             <constructEffect>ConstructWood</constructEffect>
             <appearance>Planks</appearance>
             <soundImpactStuff>BulletImpact_Wood</soundImpactStuff>
@@ -97,7 +68,7 @@
         </weaponClasses>
         <tools>
             <li>
-                <label>elder log</label>
+                <label>elder bamboo</label>
                 <capacities>
                     <li>Blunt</li>
                 </capacities>

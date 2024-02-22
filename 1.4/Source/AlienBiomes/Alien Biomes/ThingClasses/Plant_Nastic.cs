@@ -137,7 +137,7 @@ namespace AlienBiomes
 
         public void DrawEffects()
         {
-            if (plantExt != null && plantExt.emitFlecks && plantExt.fleckDef != null)
+            if (Map != null && plantExt != null && plantExt.emitFlecks && plantExt.fleckDef != null)
             {
                 for (int i = 0; i < plantExt.fleckBurstCount; ++i)
                 {

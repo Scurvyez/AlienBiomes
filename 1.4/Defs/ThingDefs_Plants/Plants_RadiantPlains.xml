@@ -222,7 +222,7 @@
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <hideAtSnowDepth>0.25</hideAtSnowDepth>
-        <altitudeLayer>Building</altitudeLayer>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
         <ingestible />
         <statBases>
             <MaxHitPoints>46</MaxHitPoints>
@@ -431,7 +431,7 @@
             <harvestWork>1100</harvestWork>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.30</harvestAfterGrowth>
-            <harvestedThingDef>SZ_ElderBamboo</harvestedThingDef>
+            <harvestedThingDef>SZ_ElderBambooLog</harvestedThingDef>
             <wildClusterRadius>10</wildClusterRadius>
             <wildClusterWeight>160</wildClusterWeight>
             <visualSizeRange>0.85~5.15</visualSizeRange>
