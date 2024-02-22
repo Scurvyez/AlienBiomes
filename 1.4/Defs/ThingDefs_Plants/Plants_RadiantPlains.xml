@@ -2,7 +2,6 @@
 <Defs>
 
     <!--==================== Radiant Grass ====================-->
-    <!-- DONE -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantGrass</defName>
@@ -45,7 +44,6 @@
     </ThingDef>
 
     <!--==================== Radiant Tall Grass ====================-->
-    <!-- DONE -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_RadiantTallGrass</defName>
@@ -88,48 +86,7 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Lush Grass ====================-->
-
-    <!-- <ThingDef ParentName="PlantBase">
-        <defName>SZ_LushGrass</defName>
-        <label>lush grass</label>
-        <description>A lush and beautiful grass found all over the radiant plains. It grows taller than most grasses and its roots run deep underground.</description>
-        <hideAtSnowDepth>0.1</hideAtSnowDepth>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <ingestible />
-        <statBases>
-            <MaxHitPoints>25</MaxHitPoints>
-            <Flammability>1.15</Flammability>
-            <Nutrition>0.12</Nutrition>
-        </statBases>
-        <graphicData>
-            <texPath>Things/Plants/LushGrass</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
-        </graphicData>
-        <plant>
-            <fertilityMin>0.025</fertilityMin>
-            <fertilitySensitivity>0.3</fertilitySensitivity>
-            <growDays>4.75</growDays>
-            <leaflessGraphicPath>Things/Plants/LushGrass_Leafless</leaflessGraphicPath>
-            <maxMeshCount>9</maxMeshCount>
-            <visualSizeRange>0.7~1.58</visualSizeRange>
-            <topWindExposure>0.33</topWindExposure>
-            <wildOrder>1</wildOrder>
-        </plant>
-        <modExtensions>
-            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Stony</li>
-                    <li>Rocky</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
-    </ThingDef> -->
-
     <!--==================== Bulbous Sanitas ====================-->
-    <!-- DONE -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_BulbousSanitas</defName>
@@ -170,7 +127,6 @@
     </ThingDef>
 
     <!--==================== Fiddlehead ====================-->
-    <!-- DONE -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_Fiddlehead</defName>
@@ -210,7 +166,6 @@
     </ThingDef>
 
     <!--==================== Fiddlehead Water Based ====================-->
-    <!-- DONE -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_FiddleheadWater</defName>
@@ -254,8 +209,8 @@
     </ThingDef>
 
     <!--==================== Chalice Fungus ====================-->
+    <!-- Only spawns on chalice soil. -->
     <!-- Reacts to pawn movement. -->
-    <!-- DONE -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_ChaliceFungus</defName>
@@ -378,7 +333,7 @@
 
     <!--==================== Copacetic Cone ====================-->
     <!-- Only spawns on radiant soil and rich radiant soil. -->
-    <!-- Emits a hediff to calm nearby pawns. -->
+    <!-- Reacts to pawn movement. -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
@@ -497,8 +452,6 @@
     <!--==================== Lily of the Plains ====================-->
     <!-- Decorative, wild, no fruit or real benefits. lol -->
     <!-- Only spawns in water. -->
-    <!-- New shader + shadows?. -->
-    <!-- DONE -->
 
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_LilyOfThePlains</defName>
@@ -535,8 +488,8 @@
                     <li>Fresh</li>
                     <li>Shallow</li>
                     <li>River</li>
-                    <li>Boggy</li> <!-- ??? -->
-                    <li>Muddy</li> <!-- ??? -->
+                    <li>Boggy</li>
+                    <li>Muddy</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -544,15 +497,18 @@
 
     <!--==================== Radiant Bioluminescence ====================-->
     <!-- Only spawns in shallow salty radiant water. -->
+    <!-- Fades in and out (alpha channel) at sunset/sunrise. -->
 
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_RadiantBioluminescence</defName>
         <thingClass>AlienBiomes.Plant_Bioluminescence</thingClass>
+        <drawerType>RealtimeOnly</drawerType>
+        <tickerType>Long</tickerType>
         <label>radiant bioluminescence</label>
-        <description>PLACEHOLDER</description>
+        <description>A pretty, bright, and vibrant algae found along the shorelines of radiant plains.</description>
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
-        <fillPercent>0.05</fillPercent>
+        <fillPercent>0.01</fillPercent>
         <pathCost>0.01</pathCost>
         <statBases>
             <MaxHitPoints>1</MaxHitPoints>
@@ -574,7 +530,6 @@
             <fertilityMin>0.1</fertilityMin>
             <fertilitySensitivity>0.1</fertilitySensitivity>
             <growDays>1</growDays>
-            <maxMeshCount>9</maxMeshCount>
             <wildClusterRadius>2</wildClusterRadius>
             <wildClusterWeight>20</wildClusterWeight>
             <visualSizeRange>0.8~1.0</visualSizeRange>
@@ -590,6 +545,9 @@
                     <li>ABSaltyShallow</li>
                 </terrainTags>
             </li>
+            <li Class="AlienBiomes.Plant_Bioluminescence_ModExtension">
+                <alphaMultiplier>2.575</alphaMultiplier>
+			</li>
         </modExtensions>
     </ThingDef>
 
@@ -639,128 +597,6 @@
             </li>
         </modExtensions>
     </ThingDef>
-
-    <!--==================== Cerulean Honey Bush ====================-->
-    <!-- This tree will produce a woody pulp which can then be manufactured into a "WoodLog" variant -->
-    <!-- Can move around at night. -->
-    <!-- thingClass = AlienBiomes.Plant_Mobile -->
-    <!-- tickType = Long -->
-    <!-- Glows at night. -->
-
-    <!-- <ThingDef ParentName="PlantBaseNonEdible">
-        <defName>SZ_CeruleanHoneyBush</defName>
-        <thingClass>AlienBiomes.Plant_Mobile</thingClass>
-        <drawerType>MapMeshAndRealTime</drawerType>
-        <label>cerulean honey bush</label>
-        <description>These bushes attract a plethora of small invertebrate life as inside their blueish-green exterior lies a sweet, yet immediately sickly to humanlikes, nectar with similar viscosity to terrestrial honey.</description>
-        <selectable>true</selectable>
-        <neverMultiSelect>false</neverMultiSelect>
-        <altitudeLayer>Building</altitudeLayer>
-        <fillPercent>0.9</fillPercent>
-        <graphicData>
-            <texPath>Things/Plants/CeruleanHoneyBush</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
-            <drawSize>1.00</drawSize>
-            <shadowData>
-                <volume>(0, 0, 0)</volume>
-                <offset>(0, 0, 0)</offset>
-            </shadowData>
-        </graphicData>
-        <statBases>
-            <Beauty>2</Beauty>
-            <BeautyOutdoors>2</BeautyOutdoors>
-        </statBases>
-        <plant>
-            <fertilityMin>0.5</fertilityMin>
-            <fertilitySensitivity>0.5</fertilitySensitivity>
-            <growDays>40</growDays>
-            <leaflessGraphicPath>Things/Plants/CeruleanHoneyBush_Leafless</leaflessGraphicPath>
-            <harvestWork>250</harvestWork>
-            <harvestYield>5</harvestYield>
-            <harvestTag>Standard</harvestTag>
-            <harvestAfterGrowth>0.45</harvestAfterGrowth>
-            <harvestedThingDef>SZ_CeruleanHoney</harvestedThingDef>
-            <harvestFailable>true</harvestFailable>
-            <topWindExposure>0.70</topWindExposure>
-            <visualSizeRange>0.10~5.00</visualSizeRange>
-            <sowMinSkill>9</sowMinSkill>
-            <sowTags>
-                <li>Ground</li>
-            </sowTags>
-            <wildOrder>2</wildOrder>
-            <mustBeWildToSow>false</mustBeWildToSow>
-            <wildClusterRadius>12</wildClusterRadius>
-            <wildClusterWeight>150</wildClusterWeight>
-        </plant>
-        <comps>
-            <li Class="CompProperties_HeatPusher">
-                <compClass>CompHeatPusher</compClass>
-                <heatPerSecond>2</heatPerSecond>
-                <heatPushMaxTemperature>4</heatPushMaxTemperature>
-            </li>
-            <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <overlightRadius>2.50</overlightRadius>
-                <glowRadius>5.20</glowRadius>
-                <glowColor>(204, 102, 255, 0)</glowColor>
-                <startTime>0.75</startTime>
-                <stopTime>0.20</stopTime>
-            </li>
-            <li Class="AlienBiomes.CompProperties_TimedHarvest">
-                <harvestStartTime>0.75</harvestStartTime>
-                <harvestStopTime>0.20</harvestStopTime>
-                <harvestSeasons>
-                    <li>Spring</li>
-                    <li>Summer</li>
-                </harvestSeasons>
-            </li>
-            <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
-                <graphicElements>
-                    <li>
-                        <texPath>Things/Plants/Overlays/CeruleanHoneyBush/OverLeaf</texPath>
-                        <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPlantShimmer</shaderType>
-                        <shaderParameters>
-                            <_ShimmerSpeed>0.85</_ShimmerSpeed>
-                            <_NoiseTex>/Other/whiteOnlyNoise</_NoiseTex>
-                            <_NoiseTint>(0.9, 0.3, 1, 1)</_NoiseTint>
-                        </shaderParameters>
-                        <drawSize>1.00</drawSize>
-                        <drawOffset>(0, 0, 0.1)</drawOffset>
-                        <damageData>
-                            <enabled>false</enabled>
-                        </damageData>
-                    </li>
-                    <li>
-                        <texPath>Things/Plants/Overlays/CeruleanHoneyBush/GlowingSpots</texPath>
-                        <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPlantPulse</shaderType>
-                        <shaderParameters>
-                            <_PulseSpeed>1.75</_PulseSpeed>
-                            <_PulseLength>1.0</_PulseLength>
-                            <_PulseOrigin>(0.5, 0.5, 0, 0)</_PulseOrigin>
-                        </shaderParameters>
-                        <drawSize>1.00</drawSize>
-                        <drawOffset>(0, 0, 0.2)</drawOffset>
-                        <damageData>
-                            <enabled>false</enabled>
-                        </damageData>
-                    </li>
-                </graphicElements>
-            </li>
-        </comps>
-        <modExtensions>
-            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-            <li Class="AlienBiomes.Plant_Mobile_ModExtension">
-                <startTime>0.75</startTime>
-                <stopTime>0.20</stopTime>
-            </li>
-        </modExtensions>
-    </ThingDef> -->
 
     <!--==================== Fiddlehead Wall ====================-->
 

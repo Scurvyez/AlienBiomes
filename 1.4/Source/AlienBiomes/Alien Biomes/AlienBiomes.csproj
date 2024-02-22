@@ -78,15 +78,13 @@
     <Compile Include="Harmony\Postfix_CurrentNotify_LoadedSceneChanged.cs" />
     <Compile Include="Harmony\PostFix_MatFrom.cs" />
     <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
-    <Compile Include="MapComps\MapComponent_Bioluminescence.cs" />
     <Compile Include="MapComps\MapComponent_MobilePlantCellsGetter.cs" />
     <Compile Include="MapComps\MapComponent_PlantGetter.cs" />
-    <Compile Include="SectionLayers\SectionLayer_Bioluminescence.cs" />
     <Compile Include="Settings\AlienBiomesMod.cs" />
     <Compile Include="Settings\AlienBiomesModSettings.cs" />
     <Compile Include="Settings\AlienBiomesContentDatabase.cs" />
+    <Compile Include="ThingClasses\DefModExtensions\Plant_Bioluminescence_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Bioluminescence.cs" />
-    <Compile Include="ThingClasses\DefModExtensions\Bioluminescence_ModExtension.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Nastic_ModExtension.cs" />
     <Compile Include="ThingClasses\Plant_Nastic.cs" />
     <Compile Include="ThingClasses\Plant_Shimmering.cs" />

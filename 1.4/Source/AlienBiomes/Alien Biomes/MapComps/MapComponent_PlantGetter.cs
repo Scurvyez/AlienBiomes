@@ -8,5 +8,12 @@ namespace AlienBiomes
         public Dictionary<IntVec3, HashSet<Plant_Nastic>> ActiveLocationTriggers = new ();
 
         public MapComponent_PlantGetter(Map map) : base(map) { }
+
+        public override void MapComponentTick()
+        {
+            base.MapComponentTick();
+
+            // USE THIS SPACE FOR TESTING STUFF SINCE WE DON'T USE IT FOR ANYTHING ELSE :)
+        }
     }
 }
