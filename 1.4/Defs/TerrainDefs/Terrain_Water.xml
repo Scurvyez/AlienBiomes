@@ -142,6 +142,21 @@
         </modExtensions>
     </TerrainDef>
 
+    <TerrainDef ParentName="WaterDeepBase">
+        <defName>SZ_RadiantWaterDeep</defName>
+        <label>deep water</label>
+        <texturePath>Terrain/Surfaces/RadiantWaterChestDeepRamp</texturePath>
+        <renderPrecedence>397</renderPrecedence>
+        <modExtensions>
+            <li Class="BiomesCore.DefModExtensions.Biomes_PlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Deep</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </TerrainDef>
+
     <TerrainDef ParentName="WaterShallowBase">
         <defName>SZ_RadiantWaterOceanShallow</defName>
         <label>shallow ocean water</label>
