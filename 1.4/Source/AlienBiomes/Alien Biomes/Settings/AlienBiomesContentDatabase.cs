@@ -48,7 +48,7 @@ namespace AlienBiomes
             }
             if (shader != null)
             {
-                Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Loaded shader: " + shaderName);
+                //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Loaded shader: " + shaderName);
             }
             return shader;
         }

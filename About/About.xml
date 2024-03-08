@@ -2,7 +2,7 @@
 
 <ModMetaData>
     <name>Alien Biomes</name>
-    <author>Scurvyez, Evelyn, Odeum</author>
+    <author>Steve, Evelyn, Odeum</author>
     <packageId>Scurvyez.AlienBiomes</packageId>
     <supportedVersions>
         <li>1.3</li>
@@ -10,7 +10,7 @@
     </supportedVersions>
 
     <description>
-Discord: Steve o.O#1151
+Discord: steveo.o
 steam: Scurvyez
 
 Step into an alien world filled with new dangers and exquisite curiosities!\n\nStake your claim on the pink shores of a radiant landscape or brave the soul-draining nights of a world lost in darkness. Stay mesmerized night after night as indigenous flora spring to life in stunningly colorful fashion. Learn new methods of survival and indulge in unorthodox herbal recreation.
@@ -23,11 +23,6 @@ Step into an alien world filled with new dangers and exquisite curiosities!\n\nS
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
-        <!-- <li>
-			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
-			<displayName>Vanilla Expanded Framework</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
-		</li> -->
         <li>
             <packageId>BiomesTeam.BiomesCore</packageId>
             <displayName>Biomes! Core</displayName>

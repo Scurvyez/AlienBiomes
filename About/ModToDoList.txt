@@ -1,6 +1,6 @@
 ERRORS / BUGS...
 - [fixed] TerrainTags error(s) on plant defs and terrain defs.
-- edificeGrid erroring for moving plants -_-
+- [fixed/moving plants axed for now] edificeGrid erroring for moving plants -_-
 
 TO DO LIST...
 - Radiant Plains
@@ -10,7 +10,7 @@ TO DO LIST...
     - Add new filth types for the soils and sand.
     - [done] Add some ambient FleckDefs for the plants (check performance).
     - [done] Add ambient sounds for when a pawn walks through certain plants.
-    - Bioluminescence in water, close to sandy shores.
+    - [done] Bioluminescence in water, close to sandy shores.
 
 - Soothing Stalk
     - [done] Art.

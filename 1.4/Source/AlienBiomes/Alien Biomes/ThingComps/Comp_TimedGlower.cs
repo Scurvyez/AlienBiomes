@@ -12,8 +12,7 @@ namespace AlienBiomes
         public bool AdditionalGlowerLogic()
         {
             var dP = GenLocalDate.DayPercent(parent.Map);
-            return (dP > TimeProps.startTime && dP < 1f) 
-                || (dP < TimeProps.stopTime && dP > 0f);
+            return (dP > TimeProps.startTime && dP < 1f) || (dP < TimeProps.stopTime && dP > 0f);
         }
         
         public override void CompTickLong()
