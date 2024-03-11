@@ -541,7 +541,7 @@
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_RadiantBioluminescence</defName>
         <thingClass>AlienBiomes.Plant_Bioluminescence</thingClass>
-        <drawerType>RealtimeOnly</drawerType>
+        <drawerType>MapMeshOnly</drawerType>
         <tickerType>Long</tickerType>
         <label>radiant bioluminescence</label>
         <description>A pretty, bright, and vibrant algae found along the shorelines of radiant plains.</description>
@@ -585,7 +585,7 @@
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Bioluminescence_ModExtension">
-                <alphaMultiplier>2.575</alphaMultiplier>
+                <alphaMultiplier>5.575</alphaMultiplier>
 			</li>
         </modExtensions>
     </ThingDef>

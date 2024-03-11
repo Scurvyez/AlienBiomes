@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace AlienBiomes
@@ -6,6 +7,7 @@ namespace AlienBiomes
     public class MapComponent_PlantGetter : MapComponent
     {
         public Dictionary<IntVec3, HashSet<Plant_Nastic>> ActiveLocationTriggers = new ();
+        public float SunStrength;
 
         public MapComponent_PlantGetter(Map map) : base(map) { }
 
@@ -14,6 +16,7 @@ namespace AlienBiomes
             base.MapComponentTick();
 
             // USE THIS SPACE FOR TESTING STUFF SINCE WE DON'T USE IT FOR ANYTHING ELSE :)
+            SunStrength = GenCelestial.CurCelestialSunGlow(map);
         }
     }
 }

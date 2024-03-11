@@ -111,7 +111,7 @@
             <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
             <SZ_FiddleheadWall>0.25</SZ_FiddleheadWall>
             <SZ_ElderBamboo>0.25</SZ_ElderBamboo>
-            <SZ_RadiantBioluminescence>200.0</SZ_RadiantBioluminescence>
+            <SZ_RadiantBioluminescence>100.0</SZ_RadiantBioluminescence>
             <SZ_NebulousVeilMoss>60.0</SZ_NebulousVeilMoss>
         </wildPlants>
         <wildAnimals>

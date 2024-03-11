@@ -8,8 +8,9 @@ namespace AlienBiomes
     {
         private Color defaultColor;
         private Color modifiedColor;
-        private float sunStrength;
+        //private float sunStrength;
         private Plant_Bioluminescence_ModExtension bioExt;
+        private MapComponent_PlantGetter plantGetter;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -17,15 +18,15 @@ namespace AlienBiomes
             defaultColor = Graphic.Color;
             modifiedColor = defaultColor;
             bioExt = def.GetModExtension<Plant_Bioluminescence_ModExtension>();
+            plantGetter = map.GetComponent<MapComponent_PlantGetter>();
         }
 
-        public override void Draw()
+        public override void Print(SectionLayer layer)
         {
-            base.Draw();
-            if (bioExt != null)
+            base.Print(layer);
+            if (bioExt != null && (plantGetter.SunStrength > 0 && plantGetter.SunStrength < 1))
             {
-                sunStrength = GenCelestial.CurCelestialSunGlow(Map);
-                modifiedColor.a = Mathf.Clamp01((0.5f - sunStrength)) * bioExt.alphaMultiplier;
+                modifiedColor.a = Mathf.Clamp01(0.5f - plantGetter.SunStrength) * bioExt.alphaMultiplier;
                 Graphic.MatSingleFor(this).SetColor("_Color", modifiedColor);
             }
         }
