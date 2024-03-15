@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Shimmering Grass Plant ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_ShimmeringGrass</defName>
+        <label>shimmering grass</label>
+        <description>A lush and beautiful grass found all over the crystalline flats.</description>
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.05</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/ShimmeringGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.05</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>2.5</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/ShimmeringGrass_Leafless</leaflessGraphicPath>
+            <harvestWork>40</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.4~0.6</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Shimmering Tall Grass Plant ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_ShimmeringTallGrass</defName>
+        <label>tall shimmering grass</label>
+        <description>A lush and beautiful grass found all over the crystalline plains.</description>
+        <statBases>
+            <MaxHitPoints>90</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.05</Nutrition>
+        </statBases>
+        <pathCost>14</pathCost>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/ShimmeringGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilitySensitivity>0.7</fertilitySensitivity>
+            <growDays>3</growDays>
+            <harvestWork>60</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.7~0.85</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildClusterRadius>6</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Glistening Grass Plant ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_GlisteningGrass</defName>
+        <label>glistening grass</label>
+        <description>A lush and vibrant grass found all over the crystalline flats.</description>
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.05</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/GlisteningGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.05</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>2.5</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/GlisteningGrass_Leafless</leaflessGraphicPath>
+            <harvestWork>40</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.4~0.6</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Glistening Tall Grass Plant ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_GlisteningTallGrass</defName>
+        <label>tall glistening grass</label>
+        <description>A lush and vibrant grass found all over the crystalline plains.</description>
+        <statBases>
+            <MaxHitPoints>90</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.05</Nutrition>
+        </statBases>
+        <pathCost>14</pathCost>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/GlisteningGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilitySensitivity>0.7</fertilitySensitivity>
+            <growDays>3</growDays>
+            <harvestWork>60</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.7~1.00</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildClusterRadius>6</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Lush Green Grass Plant ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_LushGreenGrass</defName>
+        <label>lush grass</label>
+        <description>A lush and beautiful grass found all over the crystalline flats. It grows taller than most grasses and its roots run deep underground.</description>
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/LushGreenGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/LushGreenGrass_Leafless</leaflessGraphicPath>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.2~1.35</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Blue Colossal Crystal One ====================-->
+
+    <!-- <ThingDef ParentName="PlantBaseNonEdible" Name="BlueColossalCrystal">
+        <defName>SZ_BlueColossalCrystalOne</defName>
+        <label>blue colossal crystal</label>
+        <description>A massive, living crystal. It dwarfs those who gaze upon its magnificence.</description>
+        <descriptionHyperlinks>
+            <HediffDef>SZ_Crystallize</HediffDef>
+        </descriptionHyperlinks>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <passability>Impassable</passability>
+        <selectable>true</selectable>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <neverMultiSelect>false</neverMultiSelect>
+        <rotatable>false</rotatable>
+        <blockLight>false</blockLight>
+        <tickerType>Long</tickerType>
+        <size>(1,1)</size>
+        <hideAtSnowDepth>1.0</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <statBases>
+            <MaxHitPoints>4500</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+            <BeautyOutdoors>2.50</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Crystals/BlueColossalCrystalOne</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <harvestedThingDef>SZ_BlueCrystalFragment</harvestedThingDef>
+            <blockAdjacentSow>true</blockAdjacentSow>
+            <harvestYield>3</harvestYield>
+            <fertilityMin>0.2</fertilityMin>
+            <fertilitySensitivity>0.9</fertilitySensitivity>
+            <growDays>30</growDays>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.35</harvestAfterGrowth>
+            <visualSizeRange>2.25~10.25</visualSizeRange>
+            <topWindExposure>0.0</topWindExposure>
+            <wildClusterRadius>12</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>5.0</overlightRadius>
+                <glowRadius>6.0</glowRadius>
+                <glowColor>(21, 177, 217, 0)</glowColor>
+                <startTime>0.75</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+            <li Class="AlienBiomes.CompProperties_EffectorWithRadius">
+                <releaseRadius>3</releaseRadius>
+                <fleckReleased>PsycastAreaEffect</fleckReleased>
+                <appliedHediff>SZ_Crystallize</appliedHediff>
+                <tickInterval>2500</tickInterval>
+                <radiusOutlineColor>(253, 1, 33)</radiusOutlineColor>
+            </li>
+            <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
+                <graphicElements>
+                    <li>
+                        <texPath>AlienBiomes/Things/Special/Overlays/Crystals/ColossalCrystalError/ColossalCrystalA</texPath>
+                        <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPlant</shaderType>
+                        <drawOffset>(0, 0, 1.15)</drawOffset>
+                        <drawSize>0.05</drawSize>
+                        <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
+                    </li>
+                    <li>
+                        <texPath>AlienBiomes/Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
+                        <graphicClass>Graphic_Random</graphicClass>
+                        <shaderType>TransparentPlant</shaderType>
+                        <drawOffset>(0, 0, 1.15)</drawOffset>
+                        <drawSize>1.50</drawSize>
+                        <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
+                    </li>
+                </graphicElements>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Blue Colossal Crystal Two ====================-->
+
+    <!-- <ThingDef ParentName="BlueColossalCrystal">
+        <defName>SZ_BlueColossalCrystalTwo</defName>
+        <label>blue colossal crystal</label>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Crystals/BlueColossalCrystalTwo</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+    </ThingDef> -->
+
+    <!--==================== Green Colossal Crystal One ====================-->
+
+    <!-- <ThingDef ParentName="BlueColossalCrystal" Name="GreenColossalCrystal">
+        <defName>SZ_GreenColossalCrystalOne</defName>
+        <label>green colossal crystal</label>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Crystals/GreenColossalCrystalOne</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+    </ThingDef> -->
+
+    <!--==================== Green Colossal Crystal Two ====================-->
+
+    <!-- <ThingDef ParentName="GreenColossalCrystal">
+        <defName>SZ_GreenColossalCrystalTwo</defName>
+        <label>green colossal crystal</label>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Crystals/GreenColossalCrystalTwo</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+    </ThingDef> -->
+
+    <!--==================== Red Colossal Crystal ====================-->
+
+    <!-- <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_RedColossalCrystal</defName>
+        <label>red colossal crystal</label>
+        <description>Here lies that which once lived free of restraint, a loved colonist who met their untimely demise as a result of the areas treacherous flora. This crystal stands as both a memorial to the soul it took and as a reminder to those still living that mother nature holds all the power on the Rim.</description>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <passability>Impassable</passability>
+        <selectable>true</selectable>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <neverMultiSelect>false</neverMultiSelect>
+        <rotatable>false</rotatable>
+        <blockLight>false</blockLight>
+        <tickerType>Long</tickerType>
+        <size>(1,1)</size>
+        <hideAtSnowDepth>1.0</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <statBases>
+            <MaxHitPoints>7000</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+            <BeautyOutdoors>5.75</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Crystals/RedColossalCrystal</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilitySensitivity>0.9</fertilitySensitivity>
+            <interferesWithRoof>true</interferesWithRoof>
+            <growDays>30</growDays>
+            <visualSizeRange>7.25~12.25</visualSizeRange>
+            <topWindExposure>0.0</topWindExposure>
+            <wildClusterRadius>12</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>4.0</overlightRadius>
+                <glowRadius>6.0</glowRadius>
+                <glowColor>(253, 1, 33, 0)</glowColor>
+                <startTime>0.75</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+        </comps>
+    </ThingDef> -->
+
+    <!--==================== Inferior Crystal ====================-->
+
+    <!-- <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_InferiorCrystal</defName>
+        <label>inferior crystal</label>
+        <description>A much smaller crystal. While nowhere near the size of its colossal sibling, it will still produce products.</description>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <passability>Impassable</passability>
+        <selectable>true</selectable>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <neverMultiSelect>false</neverMultiSelect>
+        <rotatable>false</rotatable>
+        <blockLight>false</blockLight>
+        <tickerType>Long</tickerType>
+        <size>(1,1)</size>
+        <hideAtSnowDepth>1.0</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+            <BeautyOutdoors>1.75</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Buildings/Natural/ResouceProducers/Crystals/InferiorCrystal</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <harvestedThingDef>SZ_BlueCrystalFragment</harvestedThingDef>
+            <harvestYield>1</harvestYield>
+            <fertilitySensitivity>0.9</fertilitySensitivity>
+            <growDays>10</growDays>
+            <visualSizeRange>2.75~6.12</visualSizeRange>
+            <topWindExposure>0.0</topWindExposure>
+            <wildClusterRadius>5</wildClusterRadius>
+            <wildClusterWeight>11</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>4.50</overlightRadius>
+                <glowRadius>5.10</glowRadius>
+                <glowColor>(21, 177, 217, 0)</glowColor>
+                <startTime>0.65</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Opulent Orchid ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_OpulentOrchid</defName>
+        <label>opulent orchid</label>
+        <description>PLACEHOLDER</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <pathCost>14</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>135</MaxHitPoints>
+            <Nutrition>1.50</Nutrition>
+            <BeautyOutdoors>1.75</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/OpulentOrchid</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.35</fertilityMin>
+            <fertilitySensitivity>0.02</fertilitySensitivity>
+            <growDays>45</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/OpulentOrchid_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>AlienBiomes/Things/Plants/OpulentOrchid_Immature</immatureGraphicPath>
+            <harvestYield>4</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.4</harvestAfterGrowth>
+            <harvestedThingDef>Ambrosia</harvestedThingDef>
+            <visualSizeRange>0.5~2.85</visualSizeRange>
+            <topWindExposure>0.25</topWindExposure>
+            <maxMeshCount>4</maxMeshCount>
+            <wildClusterRadius>6</wildClusterRadius>
+            <wildClusterWeight>22</wildClusterWeight>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+            <allowAutoCut>false</allowAutoCut>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Blue Moonberry ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_BlueMoonberry</defName>
+        <label>blue moonberry</label>
+        <description>Only able to grow in the uncharacteristically fertile sands of crystalline groves, around pools of bloody water, these elastic-stemmed plants produce sweet berries over time.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <pathCost>23</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>156</MaxHitPoints>
+            <Nutrition>1.50</Nutrition>
+            <BeautyOutdoors>1.10</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/BlueMoonberry</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.35</fertilityMin>
+            <fertilitySensitivity>0.02</fertilitySensitivity>
+            <growDays>37</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/BlueMoonberry_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>AlienBiomes/Things/Plants/BlueMoonberry_Immature</immatureGraphicPath>
+            <harvestYield>5</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.4</harvestAfterGrowth>
+            <harvestedThingDef>Ambrosia</harvestedThingDef>
+            <visualSizeRange>0.65~2.25</visualSizeRange>
+            <topWindExposure>0.625</topWindExposure>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+            <allowAutoCut>false</allowAutoCut>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>2.20</overlightRadius>
+                <glowRadius>2.50</glowRadius>
+                <glowColor>(253, 1, 33, 0)</glowColor>
+                <startTime>0.75</startTime>
+                <stopTime>0.15</stopTime>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!--==================== Winding Fern ====================-->
+
+    <!-- <ThingDef ParentName="PlantBase">
+        <defName>SZ_WindingFern</defName>
+        <label>winding fern</label>
+        <description>These tall and spiraling ferns are soft to the touch and over time they will produce a healing aloe which can be used to treat wounds.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <pathCost>19</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>47.5</MaxHitPoints>
+            <BeautyOutdoors>1.04</BeautyOutdoors>
+            <Nutrition>0.05</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/WindingFern</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.50</fertilityMin>
+            <fertilitySensitivity>0.75</fertilitySensitivity>
+            <growDays>30</growDays>
+            <wildClusterRadius>9</wildClusterRadius>
+            <wildClusterWeight>11</wildClusterWeight>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/WindingFern_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>AlienBiomes/Things/Plants/WindingFern_Immature</immatureGraphicPath>
+            <harvestYield>5</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.25</harvestAfterGrowth>
+            <harvestedThingDef>SZ_WindingFernAloe</harvestedThingDef>
+            <visualSizeRange>0.25~1.65</visualSizeRange>
+            <topWindExposure>0.72</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>Soil</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+    <!-- <ThingDef ParentName="AlienDeciduousTreeBase">
+        <defName>SZ_GlassyBroadLeafedBirch</defName>
+        <label>glassy broad-leafed birch</label>
+        <description>A hardwood tree? Yeah, that sounds right. Wood can be harvested from this tree and its planks exhibit a dull yet pleasent greenish hue.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Trees/GlassyBroadLeafedBirch</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <statBases>
+            <Beauty>2</Beauty>
+            <BeautyOutdoors>2</BeautyOutdoors>
+        </statBases>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <tickerType>Long</tickerType>
+        <fillPercent>0.90</fillPercent>
+        <plant>
+            <fertilityMin>0.5</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <growDays>30</growDays>
+            <harvestWork>250</harvestWork>
+            <harvestYield>10</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <leaflessGraphicPath>AlienBiomes/Things/Trees/GlassyBroadLeafedBirch_Leafless</leaflessGraphicPath>
+            <harvestAfterGrowth>0.45</harvestAfterGrowth>
+            <harvestedThingDef>WoodLog</harvestedThingDef>
+            <topWindExposure>0.80</topWindExposure>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>45</wildClusterWeight>
+            <visualSizeRange>1.00~4.15</visualSizeRange>
+            <sowMinSkill>7</sowMinSkill>
+            <sowTags>
+                <li>Ground</li>
+            </sowTags>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                    <li>Soil</li>
+                    <li>CrystallineSand_Grove</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef> -->
+
+</Defs>

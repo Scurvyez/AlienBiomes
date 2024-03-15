@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Radiant Grass ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_RadiantGrass</defName>
+        <label>radiant grass</label>
+        <description>A lush and beautiful grass found all over the radiant plains.</description>
+        <hideAtSnowDepth>0.1</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.09</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/RadiantGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.05</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>2.5</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/RadiantGrass_Leafless</leaflessGraphicPath>
+            <harvestWork>40</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.4~0.6</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
+                    <li>ChaliceSoil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Radiant Tall Grass ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_RadiantTallGrass</defName>
+        <label>tall radiant grass</label>
+        <description>A lush and beautiful grass found all over the radiant plains.</description>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>90</MaxHitPoints>
+            <Flammability>1.3</Flammability>
+            <Nutrition>0.09</Nutrition>
+        </statBases>
+        <pathCost>14</pathCost>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/RadiantGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilitySensitivity>0.7</fertilitySensitivity>
+            <growDays>3</growDays>
+            <harvestWork>60</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.7~0.85</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
+                    <li>ChaliceSoil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Nebulous Veil Moss ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_NebulousVeilMoss</defName>
+        <label>nebulous veil moss</label>
+        <description>A resilient moss species which thrives on rocky terrain. It forms dense mats that cling to mineral surfaces, creating a lush carpet of verdant greenery. Despite its name, nebulous veil moss lacks any luminescent properties, thriving instead in the dimly lit crevices and shadows of the rocky outcrops. Its tenacious growth and ability to colonize even the most inhospitable terrain make it a vital component of many ecosystems, stabilizing soil, retaining moisture, and providing habitat for a variety of other organisms.</description>
+        <hideAtSnowDepth>0.05</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.55</Flammability>
+            <Nutrition>0.09</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/NebulousVeilMoss</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.05</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>2.5</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/NebulousVeilMoss_Leafless</leaflessGraphicPath>
+            <maxMeshCount>16</maxMeshCount>
+            <visualSizeRange>0.4~0.9</visualSizeRange>
+            <topWindExposure>0</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Stony</li>
+                    <li>Rocky</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Bulbous Sanitas ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_BulbousSanitas</defName>
+        <label>bulbus sanitas</label>
+        <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
+        <hideAtSnowDepth>0.3</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/BulbusSanitas</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/BulbusSanitas_Leafless</leaflessGraphicPath>
+            <maxMeshCount>16</maxMeshCount>
+            <visualSizeRange>0.5~1.2</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Fiddlehead ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_Fiddlehead</defName>
+        <label>fiddlehead</label>
+        <description>Named after the more commonly known terrestrial fiddlehead because of their uncanny resemblance to the juvenile fronds of a sprouting Earth-bound fern.</description>
+        <hideAtSnowDepth>0.55</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Fiddlehead</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.5~1.2</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Sandy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Fiddlehead Water Based ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_FiddleheadWater</defName>
+        <label>fiddlehead</label>
+        <description>Named after the more commonly known terrestrial fiddlehead because of their uncanny resemblance to the juvenile fronds of a sprouting Earth-bound fern.</description>
+        <hideAtSnowDepth>0.55</hideAtSnowDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>25</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.08</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/FiddleheadWater</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>4.75</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
+            <maxMeshCount>4</maxMeshCount>
+            <visualSizeRange>0.5~1.425</visualSizeRange>
+            <topWindExposure>0.33</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Shallow</li>
+                    <li>River</li>
+                    <li>Boggy</li> 
+                    <li>Muddy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Chalice Fungus ====================-->
+    <!-- Only spawns on chalice soil. -->
+    <!-- Reacts to pawn movement. -->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_ChaliceFungus</defName>
+        <label>chalice fungus</label>
+        <description>A tall, chalice-like shaped fungus that grows in patches all throughout the radiant plains. Chalice fungus is incredibly sensitive and reacts to touch.</description>
+        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <hideAtSnowDepth>0.25</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>46</MaxHitPoints>
+            <Flammability>1.00</Flammability>
+            <Nutrition>0.02</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.025</fertilityMin>
+            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <growDays>22</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/ChaliceFungus_Leafless/ChaliceFungusA</leaflessGraphicPath>
+            <visualSizeRange>0.5~2.25</visualSizeRange>
+            <topWindExposure>0.35</topWindExposure>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>ChaliceSoil</li>
+                </terrainTags>
+            </li>
+            <li Class="AlienBiomes.Plant_Nastic_ModExtension">
+                <isTouchSensitive>true</isTouchSensitive>
+                <minScale>0.25</minScale>
+                <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
+                <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
+                <texInstances>3</texInstances>
+                <effectRadius>3</effectRadius>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Soothing Stalk ====================-->
+    <!-- Only spawns on soothing sand. -->
+    <!-- Produces raw soothing honey. -->
+    <!-- Harvestable only at night. -->
+    <!-- Glows at night. -->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_SoothingStalk</defName>
+        <label>soothing stalk</label>
+        <description>A vibrant plant only found on the pink sands of radiant plains. They can be farmed for their sweet, pinkish honey. They seemingly spring to life at sundown.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>30</pathCost>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Nutrition>0.25</Nutrition>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/SoothingStalk</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <growDays>16</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/SoothingStalk_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>AlienBiomes/Things/Plants/SoothingStalk_Immature</immatureGraphicPath>
+            <harvestYield>10</harvestYield>
+            <harvestWork>250</harvestWork>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestedThingDef>SZ_RawSoothingHoney</harvestedThingDef>
+            <wildClusterRadius>5</wildClusterRadius>
+            <wildClusterWeight>30</wildClusterWeight>
+            <visualSizeRange>0.95~1.7</visualSizeRange>
+            <topWindExposure>0.3</topWindExposure>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>2.25</overlightRadius>
+                <glowRadius>3.25</glowRadius>
+                <glowColor>(250, 180, 188, 5)</glowColor>
+                <startTime>0.80</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+            <li Class="AlienBiomes.CompProperties_TimedHarvest">
+                <harvestStartTime>0.80</harvestStartTime>
+                <harvestStopTime>0.30</harvestStopTime>
+                <harvestSeasons>
+                    <li>Spring</li>
+                    <li>Summer</li>
+                </harvestSeasons>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Copacetic Cone ====================-->
+    <!-- Only spawns on radiant soil and rich radiant soil. -->
+    <!-- Reacts to pawn movement. -->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_CopaceticCone</defName>
+        <label>copacetic cone</label>
+        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <description>Curious-looking plants that resemble urb-world soft serve ice cream. They release an exquisite honey!</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.80</fillPercent>
+        <pathCost>6</pathCost>
+        <ingestible />
+        <statBases>
+            <Nutrition>0.20</Nutrition>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>1.30</Flammability>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/CopaceticCone</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.5</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <growDays>14</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/CopaceticCone_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>AlienBiomes/Things/Plants/CopaceticCone_Immature</immatureGraphicPath>
+            <harvestYield>10</harvestYield>
+            <harvestWork>250</harvestWork>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestedThingDef>SZ_RawCopaceticHoney</harvestedThingDef>
+            <wildClusterRadius>5</wildClusterRadius>
+            <wildClusterWeight>250</wildClusterWeight>
+            <visualSizeRange>0.85~2.85</visualSizeRange>
+            <topWindExposure>0.3</topWindExposure>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+            <li Class="AlienBiomes.Plant_Nastic_ModExtension">
+                <effectRadius>2</effectRadius>
+                <emitFlecks>true</emitFlecks>
+                <fleckDef>Twinkle</fleckDef>
+                <fleckBurstCount>1</fleckBurstCount>
+                <fleckScale>0.25~0.45</fleckScale>
+                <colorA>(56, 163, 169)</colorA>
+                <colorB>(124, 251, 208)</colorB>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Elder Bamboo ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_ElderBamboo</defName>
+        <label>elder bamboo</label>
+        <description>An incredibly durable alien plant similar in structure and strength to terrestrial bamboo species. Can be harvested for woody material used in construction.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.10</fillPercent>
+        <pathCost>20</pathCost>
+        <statBases>
+            <MaxHitPoints>115</MaxHitPoints>
+            <Flammability>1.15</Flammability>
+            <Nutrition>0.35</Nutrition>
+            <Mass>100</Mass>
+        </statBases>
+        <ingestible>
+            <foodType>Tree</foodType>
+            <preferability>RawBad</preferability>
+        </ingestible>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/ElderBamboo</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.5</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <soundHarvesting>Harvest_Tree</soundHarvesting>
+            <soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
+            <growDays>14</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/ElderBamboo_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>AlienBiomes/Things/Plants/ElderBamboo_Immature</immatureGraphicPath>
+            <harvestYield>25</harvestYield>
+            <harvestWork>1100</harvestWork>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestedThingDef>SZ_ElderBambooLog</harvestedThingDef>
+            <wildClusterRadius>10</wildClusterRadius>
+            <wildClusterWeight>160</wildClusterWeight>
+            <visualSizeRange>0.85~5.15</visualSizeRange>
+            <topWindExposure>0.05</topWindExposure>
+            <maxMeshCount>4</maxMeshCount>
+            <wildOrder>2</wildOrder>
+            <interferesWithRoof>true</interferesWithRoof>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Lily of the Plains ====================-->
+    <!-- Decorative, wild, no fruit or real benefits. lol -->
+    <!-- Only spawns in water. -->
+
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_LilyOfThePlains</defName>
+        <label>lily of the plains</label>
+        <description>A small and visually pleasing water-dwelling lily only found amid the shallow waters of radiant plains.</description>
+        <selectable>false</selectable>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>2</pathCost>
+        <statBases>
+            <MaxHitPoints>20</MaxHitPoints>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/LilyOfThePlains</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>8</growDays>
+            <maxMeshCount>9</maxMeshCount>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
+            <visualSizeRange>0.15~1.00</visualSizeRange>
+            <topWindExposure>0.65</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Shallow</li>
+                    <li>River</li>
+                    <li>Boggy</li>
+                    <li>Muddy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Radiant Bioluminescence ====================-->
+    <!-- Only spawns in shallow salty radiant water. -->
+    <!-- Fades in and out (alpha channel) at sunset/sunrise. -->
+
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_RadiantBioluminescence</defName>
+        <thingClass>AlienBiomes.Plant_Bioluminescence</thingClass>
+        <drawerType>MapMeshOnly</drawerType>
+        <tickerType>Long</tickerType>
+        <label>radiant bioluminescence</label>
+        <description>A pretty, bright, and vibrant algae found along the shorelines of radiant plains.</description>
+        <selectable>false</selectable>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <fillPercent>0.01</fillPercent>
+        <pathCost>0.01</pathCost>
+        <statBases>
+            <MaxHitPoints>1</MaxHitPoints>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Special/ShallowOceanWaterBioluminescence</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>MoteGlowDistorted</shaderType>
+            <shaderParameters>
+                <_Color>(0.8, 0.15, 0.3, 0)</_Color>
+                <_DistortionTex>/Other/Ripples</_DistortionTex>
+                <_distortionIntensity>0.05</_distortionIntensity>
+                <_DistortionScale>0.4</_DistortionScale>
+                <_distortionScrollSpeed>(0.07, 0.07, 0.0)</_distortionScrollSpeed>
+            </shaderParameters>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>1</growDays>
+            <wildClusterRadius>2</wildClusterRadius>
+            <wildClusterWeight>20</wildClusterWeight>
+            <visualSizeRange>0.8~1.0</visualSizeRange>
+            <topWindExposure>0.025</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Salty</li>
+                    <li>Shallow</li>
+                    <li>ABSaltyShallow</li>
+                </terrainTags>
+            </li>
+            <li Class="AlienBiomes.Plant_Bioluminescence_ModExtension">
+                <alphaMultiplier>5.575</alphaMultiplier>
+			</li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Star of the Plains ====================-->
+    <!-- Decorative, wild, no fruit or real benefits. lol -->
+    <!-- Only spawns in water. -->
+
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_StarOfThePlains</defName>
+        <label>star of the plains</label>
+        <description>A deep-red, waterborne, flower perched upon a small yet durable lilypad-like base which floats on shallow water. The flower can be eaten in a pinch to sustain life.</description>
+        <selectable>false</selectable>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>2</pathCost>
+        <statBases>
+            <MaxHitPoints>20</MaxHitPoints>
+            <DeteriorationRate>0.00</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/StarOfThePlains</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>8</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/StarOfThePlains_Leafless</leaflessGraphicPath>
+            <maxMeshCount>1</maxMeshCount>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
+            <visualSizeRange>0.25~1.75</visualSizeRange>
+            <topWindExposure>0.75</topWindExposure>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Fresh</li>
+                    <li>Shallow</li>
+                    <li>River</li>
+                    <li>Boggy</li> <!-- ??? -->
+                    <li>Muddy</li> <!-- ??? -->
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Fiddlehead Wall ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_FiddleheadWall</defName>
+        <label>fiddlehead wall</label>
+        <description>This closely related variant of the much smaller fiddlehead towers above all who embrace its presence. The fiddlehead walls' roots burrow deep underground, offering strong structural support to the rest of the plant, even in the soggiest of places. Their steel-like stalks provide adequate cover in times of projectile onslaught.</description>
+        <passability>Impassable</passability>
+        <blockWind>true</blockWind>
+        <fillPercent>0.99</fillPercent>
+        <selectable>true</selectable>
+        <holdsRoof>true</holdsRoof>
+        <blockLight>false</blockLight>
+        <neverMultiSelect>false</neverMultiSelect>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <Flammability>0.035</Flammability>
+            <Nutrition>0.01</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/FiddleheadWall</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.10</fertilityMin>
+            <fertilitySensitivity>0.750</fertilitySensitivity>
+            <growDays>0.25</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
+            <visualSizeRange>1.00~3.25</visualSizeRange>
+            <topWindExposure>0.10</topWindExposure>
+            <wildOrder>2</wildOrder>
+            <wildClusterRadius>10</wildClusterRadius>
+            <wildClusterWeight>50</wildClusterWeight>
+            <sowTags>
+                <li>Ground</li>
+            </sowTags>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                    <li>Stony</li>
+                    <li>Rocky</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

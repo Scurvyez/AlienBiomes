@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Crystalline Flats ====================-->
+
+    <!-- No animal diseases. :) -->
+
+    <!-- <BiomeDef>
+        <defName>SZ_CrystallineFlats</defName>
+        <label>crystalline flats</label>
+        <description>These lands are uncharacteristically sterile and covered in gigantic crystal pillars, flanked by smaller scatterings of crystalline formations.\n\nYou'll find many exotic materials here, however, a severe lack in vegetation. Yet, with less than desirable plant density, the flora growing in these parts reaches maturity at an astounding rate because of the elevated levels of minerals within the soil. You'll also find pools of water so deep and curious they almost... invite creatures down into their unending depths.</description>
+        <workerClass>AlienBiomes.UniversalBiomeWorker</workerClass>
+        <animalDensity>1.2</animalDensity>
+        <plantDensity>0.75</plantDensity>
+        <settlementSelectionWeight>1</settlementSelectionWeight>
+        <movementDifficulty>1</movementDifficulty>
+        <texture>AlienBiomes/World/Biomes/SZ_CrystallineFlats</texture>
+        <forageability>1</forageability>
+        <foragedFood>RawBerries</foragedFood>
+        <wildPlantRegrowDays>20</wildPlantRegrowDays>
+        <soundsAmbient>
+            <li>Ambient_NightInsects_Standard</li>
+        </soundsAmbient>
+        <diseaseMtbDays>120</diseaseMtbDays>
+        <diseases>
+            <li>
+                <diseaseInc>Disease_Flu</diseaseInc>
+                <commonality>75</commonality>
+            </li>
+            <li>
+				<diseaseInc>Disease_Plague</diseaseInc>
+				<commonality>60</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_GutWorms</diseaseInc>
+				<commonality>75</commonality>
+			</li>
+        </diseases>
+        <terrainsByFertility>
+            <li>
+                <terrain>SZ_CrystallineSoil</terrain>
+                <min>-999</min>
+                <max>0.80</max>
+            </li>
+            <li>
+                <terrain>SZ_CrystallineSand</terrain>
+                <min>0.87</min>
+                <max>0.91</max>
+            </li>
+            <li>
+                <terrain>SZ_CrystallineRichSoil</terrain>
+                <min>0.80</min>
+                <max>999</max>
+            </li>
+        </terrainsByFertility>
+        <terrainPatchMakers>
+            <li>
+                <perlinFrequency>0.009</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_CrystallineRichSoil</terrain>
+                        <min>0.80</min>
+                        <max>0.83</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_CrystallineSand</terrain>
+                        <min>0.83</min>
+                        <max>0.92</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_CrystallineWaterChestDeep</terrain>
+                        <min>0.92</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li>
+            
+            <li>
+                <perlinFrequency>0.01</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_CrystallineRichSoil</terrain>
+                        <min>0.75</min>
+                        <max>0.80</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_CrystallineSand_Grove</terrain>
+                        <min>0.80</min>
+                        <max>0.93</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_BloodWaterShallow</terrain>
+                        <min>0.93</min>
+                        <max>0.98</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_BloodWaterChestDeep</terrain>
+                        <min>0.98</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li>
+        </terrainPatchMakers>
+        <baseWeatherCommonalities>
+            <Clear>16</Clear>
+            <Rain>6</Rain>
+            <DryThunderstorm>2.5</DryThunderstorm>
+            <RainyThunderstorm>5</RainyThunderstorm>
+        </baseWeatherCommonalities>
+        <wildPlants>
+            <SZ_BlueColossalCrystalOne>0.01</SZ_BlueColossalCrystalOne>
+            <SZ_BlueColossalCrystalTwo>0.01</SZ_BlueColossalCrystalTwo>
+            <SZ_GreenColossalCrystalOne>0.01</SZ_GreenColossalCrystalOne>
+            <SZ_GreenColossalCrystalTwo>0.01</SZ_GreenColossalCrystalTwo>
+            <SZ_InferiorCrystal>0.06</SZ_InferiorCrystal>
+            <SZ_ShimmeringGrass>7.50</SZ_ShimmeringGrass>
+            <SZ_ShimmeringTallGrass>12.0</SZ_ShimmeringTallGrass>
+            <SZ_GlisteningGrass>5.50</SZ_GlisteningGrass>
+            <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
+            <SZ_LushGreenGrass>5.78</SZ_LushGreenGrass>
+            <SZ_GlassyBroadLeafedBirch>2.45</SZ_GlassyBroadLeafedBirch>
+            <SZ_OpulentOrchid>2.555</SZ_OpulentOrchid>
+            <SZ_BlueMoonberry>4.75</SZ_BlueMoonberry>
+            <SZ_WindingFern>3.85</SZ_WindingFern>
+        </wildPlants>
+        <wildAnimals>
+            <Donkey>0.20</Donkey>
+            <GuineaPig>0.45</GuineaPig>
+            <Horse>0.20</Horse>
+            <Hare>1.0</Hare>
+            <Squirrel>1.0</Squirrel>
+            <Rat>1.0</Rat>
+            <Deer>0.5</Deer>
+            <WildBoar>0.5</WildBoar>
+            <Turkey>0.5</Turkey>
+            <Raccoon>0.5</Raccoon>
+            <Muffalo>0.5</Muffalo>
+            <Tortoise>0.3</Tortoise>
+            <Fox_Red>0.07</Fox_Red>
+            <AA_CrystallineCaracal MayRequire="sarg.alphaanimals">0.03</AA_CrystallineCaracal>
+            <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.03</Bast_Alluvium>
+            <Bast_Gleaming_Cervus MayRequire="Scurvyez.Bastyon">0.30</Bast_Gleaming_Cervus>
+            <Bast_Ethereal_Lion MayRequire="Scurvyez.Bastyon">0.05</Bast_Ethereal_Lion>
+            <Bast_Lightning_Elemental MayRequire="Scurvyez.Bastyon">0.07</Bast_Lightning_Elemental>
+            <Bast_Scire MayRequire="Scurvyez.Bastyon">0.20</Bast_Scire>
+        </wildAnimals>
+        <modExtensions>
+			<li Class="AlienBiomes.BiomeControls">
+                <maxHilliness>Flat</maxHilliness>
+                <allowOnLand>True</allowOnLand>
+                <frequency>100</frequency>
+                <spawnOnBiomes>
+                    <li>
+                        <li>Desert</li>
+                    </li>
+                    <li>
+                        <li>ExtremeDesert</li>
+                    </li>
+                </spawnOnBiomes>
+			</li>
+            </li>
+            <li Class="KCSG.BiomeStructGenExtension">
+                <structures>
+                    <li>
+                        <layout>SZAB_OminousGroveTwo</layout>
+                        <commonality>1.0</commonality>
+                    </li>
+                </structures>
+                <canSpawnInMontains>true</canSpawnInMontains>
+                <clearCellRadiusAround>1</clearCellRadiusAround>
+                <spawnCount>1</spawnCount>
+                <countScaleHiliness>false</countScaleHiliness>
+                <postGenerateOre>true</postGenerateOre>
+                <canSpawnOnWaterTerrain>false</canSpawnOnWaterTerrain>
+            </li>
+		</modExtensions>
+    </BiomeDef> -->
+
+</Defs>
