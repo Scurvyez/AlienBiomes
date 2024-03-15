@@ -80,6 +80,7 @@
     <Compile Include="BiomeUtils\LateBiomeWorker.cs" />
     <Compile Include="BiomeUtils\UniversalBiomeWorker.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
+    <Compile Include="Harmony\Class1.cs" />
     <Compile Include="Harmony\Prefix_CanEverPlantAt.cs" />
     <Compile Include="Harmony\Prefix_TryEnterNextPathCell.cs" />
     <Compile Include="Harmony\Postfix_CurrentNotify_LoadedSceneChanged.cs" />
