@@ -24,4 +24,10 @@ Discord: steveo.o
 		</li>
     </modDependencies>
 
+    <loadAfter>
+        <li>Ludeon.RimWorld.royalty</li>
+        <li>Ludeon.RimWorld.ideology</li>
+        <li>Ludeon.RimWorld.biotech</li>
+    </loadAfter>
+
 </ModMetaData>

@@ -7,6 +7,7 @@ namespace AlienBiomes
     public class ABDefOf
     {
         public static BiomeDef SZ_RadiantPlains;
+        public static BiomeDef SZ_DeliriousDunes;
         //public static BiomeDef SZ_CrystallineFlats;
 
         public static FleckDef SZ_ChaliceFungusEffect;
@@ -16,11 +17,15 @@ namespace AlienBiomes
         //public static LetterDef SZ_PawnCrystallizing;
         //public static LetterDef SZ_PawnCrystallized;
 
+        public static TerrainDef SoftSand;
         public static TerrainDef SZ_RadiantSoil;
         public static TerrainDef SZ_RadiantRichSoil;
         public static TerrainDef SZ_RadiantMud;
         public static TerrainDef SZ_RadiantStonySoil;
         public static TerrainDef SZ_SoothingSand;
+        public static TerrainDef SZ_DeliriousStonySoil;
+        public static TerrainDef SZ_DeliriousSmolderingSand;
+        public static TerrainDef SZ_DeliriousMellowSand;
 
         /*
         public static TerrainDef SZ_CrystallineSoil;

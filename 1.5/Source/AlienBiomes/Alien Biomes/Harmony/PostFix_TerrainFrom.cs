@@ -20,6 +20,12 @@ namespace AlienBiomes
                     __result = ABDefOf.SZ_RadiantStonySoil;
                 }
             }
+            if (map.Biome == ABDefOf.SZ_DeliriousDunes)
+            {
+                if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
+                    __result = ABDefOf.SZ_DeliriousStonySoil;
+                }
+            }
 
             // Sand checks.
             // Additional mod check required since GL patches the same method with vanilla sand.
@@ -29,6 +35,15 @@ namespace AlienBiomes
                 {
                     if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
                         __result = ABDefOf.SZ_SoothingSand;
+                    }
+                }
+                else if (map.Biome == ABDefOf.SZ_DeliriousDunes)
+                {
+                    if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
+                        __result = ABDefOf.SZ_DeliriousSmolderingSand;
+                    }
+                    else if (__result == ABDefOf.SoftSand && AlienBiomesSettings.UseAlienSand == true) {
+                        __result = ABDefOf.SZ_DeliriousMellowSand;
                     }
                 }
             }

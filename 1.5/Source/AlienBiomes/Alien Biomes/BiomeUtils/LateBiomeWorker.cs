@@ -46,19 +46,19 @@ namespace AlienBiomes
             }
             foreach (BiomeDef firstOrderBiome in firstOrderBiomes)
             {
-                BiomesKitCalcs(firstOrderBiome);
+                BiomeCalcs(firstOrderBiome);
             }
             foreach (BiomeDef secondOrderBiome in secondOrderBiomes)
             {
-                BiomesKitCalcs(secondOrderBiome);
+                BiomeCalcs(secondOrderBiome);
             }
             foreach (BiomeDef thirdOrderBiome in thirdOrderBiomes)
             {
-                BiomesKitCalcs(thirdOrderBiome);
+                BiomeCalcs(thirdOrderBiome);
             }
         }
-
-        private void BiomesKitCalcs(BiomeDef biomeDef)
+        
+        private void BiomeCalcs(BiomeDef biomeDef)
         {
             BiomeControls modExtension = biomeDef.GetModExtension<BiomeControls>();
             float num = modExtension.minSouthLatitude * -1f;

@@ -6,8 +6,6 @@
     <!-- Belt around middle of planet. -->
     <!-- Temperate, sprawling with life and resources. -->
 
-    <!-- Add new filth types for the soils and sand. -->
-
     <BiomeDef>
         <defName>SZ_RadiantPlains</defName>
         <label>radiant plains</label>
@@ -124,16 +122,18 @@
             <Megasloth>0.2</Megasloth>
             <AA_Aerofleet MayRequire="sarg.alphaanimals">0.02</AA_Aerofleet>
             <AA_ChameleonYak MayRequire="sarg.alphaanimals">0.05</AA_ChameleonYak>
+            <AA_AuroraSylph MayRequire="sarg.alphaanimals">0.05</AA_AuroraSylph>
             <Bast_Bastyon MayRequire="Scurvyez.Bastyon">0.02</Bast_Bastyon>
             <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.02</Bast_Alluvium>
         </wildAnimals>
         <modExtensions>
 			<li Class="AlienBiomes.BiomeControls">
                 <allowOnLand>True</allowOnLand>
-                <frequency>100</frequency>
-                <minTemperature>-20.5</minTemperature>
-                <maxTemperature>300.5</maxTemperature>
-                <maxHilliness>Flat</maxHilliness>
+                <frequency>90</frequency>
+                <minTemperature>-5.5</minTemperature>
+                <maxTemperature>95.5</maxTemperature>
+                <minHilliness>Flat</minHilliness>
+                <maxHilliness>SmallHills</maxHilliness>
 			</li>
 		</modExtensions>
     </BiomeDef>

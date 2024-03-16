@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Delirious Stony Soil ====================-->
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_DeliriousStonySoil</defName>
+        <label>delirious stony soil</label>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SZ_DeliriousStonySoil</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>320</renderPrecedence>
+        <pathCost>2</pathCost>
+        <statBases>
+            <Beauty>-2</Beauty>
+            <BeautyOutdoors>-2</BeautyOutdoors>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <scatterType>Rocky</scatterType>
+        <affordances>
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Heavy</li>
+            <li>GrowSoil</li>
+            <li>Diggable</li>
+        </affordances>
+        <generatedFilth>Filth_Dirt</generatedFilth>
+        <fertility>0.7</fertility>
+        <takeFootprints>True</takeFootprints>
+        <tools>
+            <li>
+                <label>rough dirt</label>
+                <capacities>
+                    <li>KickMaterialInEyes</li>
+                </capacities>
+                <hediff>DirtInEyes</hediff>
+                <cooldownTime>1.5</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Rocky</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </TerrainDef>
+
+    <!--==================== Delirious Smoldering Sand ====================-->
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_DeliriousSmolderingSand</defName>
+        <label>smoldering sand</label>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SZ_DeliriousSmolderingSand</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>350</renderPrecedence>
+        <pathCost>4</pathCost>
+        <statBases>
+            <Beauty>1</Beauty>
+            <BeautyOutdoors>1</BeautyOutdoors>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <scatterType>SoftDry</scatterType>
+        <affordances>
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Heavy</li>
+            <li>Diggable</li>
+        </affordances>
+        <generatedFilth>Filth_Sand</generatedFilth>
+        <fertility>0.10</fertility>
+        <takeFootprints>True</takeFootprints>
+        <tools>
+            <li>
+                <label>soothing sand</label>
+                <capacities>
+                    <li>KickMaterialInEyes</li>
+                </capacities>
+                <hediff>SandInEyes</hediff>
+                <cooldownTime>1.5</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Sandy</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </TerrainDef>
+
+    <!--==================== Delirious Mellow Sand ====================-->
+
+    <TerrainDef ParentName="NaturalTerrainBase">
+        <defName>SZ_DeliriousMellowSand</defName>
+        <label>mellow sand</label>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SZ_DeliriousMellowSand</texturePath>
+        <edgeType>FadeRough</edgeType>
+        <renderPrecedence>352</renderPrecedence>
+        <pathCost>14</pathCost>
+        <driesTo>Sand</driesTo>
+        <categoryType>Sand</categoryType>
+        <statBases>
+            <Beauty>-3</Beauty>
+            <BeautyOutdoors>0</BeautyOutdoors>
+            <Cleanliness>-1</Cleanliness>
+        </statBases>
+        <affordances>
+            <li>Light</li>
+            <li>Diggable</li>
+        </affordances>
+        <generatedFilth>Filth_Sand</generatedFilth>
+        <fertility>0</fertility>
+        <takeFootprints>true</takeFootprints>
+        <tools>
+            <li>
+                <label>sand</label>
+                <capacities>
+                    <li>KickMaterialInEyes</li>
+                </capacities>
+                <hediff>SandInEyes</hediff>
+                <cooldownTime>1.5</cooldownTime>
+            </li>
+        </tools>
+        <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
+    </TerrainDef>
+
+</Defs>
