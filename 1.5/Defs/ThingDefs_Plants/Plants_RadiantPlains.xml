@@ -269,15 +269,15 @@
             <Nutrition>0.02</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>AlienBiomes/Things/Plants/ChaliceFungus/ChaliceFungusA</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+            <texPath>AlienBiomes/Things/Plants/ChaliceFungus</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
             <shaderType>Transparent</shaderType>
         </graphicData>
         <plant>
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>22</growDays>
-            <leaflessGraphicPath>AlienBiomes/Things/Plants/ChaliceFungus_Leafless/ChaliceFungusA</leaflessGraphicPath>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/ChaliceFungus_Leafless</leaflessGraphicPath>
             <visualSizeRange>0.5~2.25</visualSizeRange>
             <topWindExposure>0.35</topWindExposure>
             <wildClusterRadius>4</wildClusterRadius>
@@ -290,7 +290,8 @@
                     <li>ChaliceSoil</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_Nastic_ModExtension">
+            <li Class="AlienBiomes.PlantNastic_ModExtension">
+                <isVisuallyReactive>true</isVisuallyReactive>
                 <isTouchSensitive>true</isTouchSensitive>
                 <minScale>0.25</minScale>
                 <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
@@ -420,7 +421,7 @@
                     <li>Soil</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_Nastic_ModExtension">
+            <li Class="AlienBiomes.PlantNastic_ModExtension">
                 <effectRadius>2</effectRadius>
                 <emitFlecks>true</emitFlecks>
                 <fleckDef>Twinkle</fleckDef>

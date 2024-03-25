@@ -192,12 +192,12 @@
         </modExtensions>
     </TerrainDef>
 
-    <!--==================== Crystalline Water ====================-->
+    <!--==================== Delirious Dunes Water ====================-->
 
-    <!-- <TerrainDef ParentName="WaterShallowBase">
-        <defName>SZ_CrystallineWaterMovingShallow</defName>
+    <TerrainDef ParentName="WaterShallowBase">
+        <defName>SZ_SmolderingWaterMovingShallow</defName>
         <label>shallow moving water</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterShallowRamp</texturePath>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterShallowRamp</texturePath>
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>398</renderPrecedence>
         <affordances>
@@ -212,18 +212,18 @@
     </TerrainDef>
 
     <TerrainDef ParentName="WaterShallowBase">
-        <defName>SZ_CrystallineWaterShallow</defName>
+        <defName>SZ_SmolderingWaterShallow</defName>
         <label>shallow water</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterShallowRamp</texturePath>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterShallowRamp</texturePath>
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>394</renderPrecedence>
-        <driesTo>SZ_CrystallineStonySoil</driesTo>
+        <driesTo>SZ_DeliriousStonySoil</driesTo>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterChestDeepBase">
-        <defName>SZ_CrystallineWaterMovingChestDeep</defName>
+        <defName>SZ_SmolderingWaterMovingChestDeep</defName>
         <label>chest-deep moving water</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterChestDeepRamp</texturePath>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterChestDeepRamp</texturePath>
         <renderPrecedence>399</renderPrecedence>
         <affordances>
             <li>MovingFluid</li>
@@ -237,9 +237,9 @@
     </TerrainDef>
 
     <TerrainDef ParentName="WaterChestDeepBase">
-        <defName>SZ_CrystallineWaterChestDeep</defName>
+        <defName>SZ_SmolderingWaterChestDeep</defName>
         <label>chest deep water</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterChestDeepRamp</texturePath>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterChestDeepRamp</texturePath>
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <pathCost>42</pathCost>
         <affordances>
@@ -247,20 +247,35 @@
         </affordances>
     </TerrainDef>
 
+    <TerrainDef ParentName="WaterDeepBase">
+        <defName>SZ_SmolderingWaterDeep</defName>
+        <label>deep water</label>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterChestDeepRamp</texturePath>
+        <renderPrecedence>397</renderPrecedence>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Water</li>
+                    <li>Deep</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </TerrainDef>
+
     <TerrainDef ParentName="WaterShallowBase">
-        <defName>SZ_CrystallineWaterOceanShallow</defName>
+        <defName>SZ_SmolderingWaterOceanShallow</defName>
         <label>shallow ocean water</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterShallowRamp</texturePath>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterShallowRamp</texturePath>
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>396</renderPrecedence>
-        <driesTo>SZ_CrystallineStonySoil</driesTo>
+        <driesTo>SZ_DeliriousStonySoil</driesTo>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterDeepBase">
-        <defName>SZ_CrystallineWaterOceanDeep</defName>
+        <defName>SZ_SmolderingWaterOceanDeep</defName>
         <label>deep ocean water</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterDeepRamp</texturePath>
+        <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
-    </TerrainDef> -->
+    </TerrainDef>
 
 </Defs>

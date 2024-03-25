@@ -37,7 +37,7 @@
             <categories>
                 <li>Woody</li>
             </categories>
-            <commonality>0.20</commonality>
+            <commonality>0.05</commonality>
             <color>(11, 184, 107)</color>
             <constructEffect>ConstructWood</constructEffect>
             <appearance>Planks</appearance>

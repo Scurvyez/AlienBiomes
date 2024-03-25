@@ -13,20 +13,50 @@ namespace AlienBiomes
         [HarmonyPostfix]
         public static void ReplaceTerrain(Map map, ref TerrainDef __result)
         {
-            // Gravel checks.
-            if (map.Biome == ABDefOf.SZ_RadiantPlains)
+            if (map.Biome.HasModExtension<BiomeControls>())
             {
-                if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
-                    __result = ABDefOf.SZ_RadiantStonySoil;
+                BiomeControls ext = map.Biome.GetModExtension<BiomeControls>();
+
+                // gravel
+                if (ext.newGravel != null && __result == TerrainDefOf.Gravel)
+                {
+                    __result = ext.newGravel;
                 }
-            }
-            if (map.Biome == ABDefOf.SZ_DeliriousDunes)
-            {
-                if (__result == TerrainDefOf.Gravel && AlienBiomesSettings.UseAlienGravel == true) {
-                    __result = ABDefOf.SZ_DeliriousStonySoil;
+
+                // sand
+                if (ext.newSand != null && __result == TerrainDefOf.Sand)
+                {
+                    __result = ext.newSand;
+                }
+
+                // water
+                if (ext.newShallowWater != null && __result == TerrainDefOf.WaterShallow)
+                {
+                    __result = ext.newShallowWater;
+                }
+                else if (ext.newWaterMovingShallow != null && __result == TerrainDefOf.WaterMovingShallow)
+                {
+                    __result = ext.newWaterMovingShallow;
+                }
+                else if (ext.newWaterOceanShallow != null && __result == TerrainDefOf.WaterOceanShallow)
+                {
+                    __result = ext.newWaterOceanShallow;
+                }
+                else if (ext.newWaterDeep != null && __result == TerrainDefOf.WaterDeep)
+                {
+                    __result = ext.newWaterDeep;
+                }
+                else if (ext.newWaterOceanDeep != null && __result == TerrainDefOf.WaterOceanDeep)
+                {
+                    __result = ext.newWaterOceanDeep;
+                }
+                else if (ext.newWaterMovingChestDeep != null && __result == TerrainDefOf.WaterMovingChestDeep)
+                {
+                    __result = ext.newWaterMovingChestDeep;
                 }
             }
 
+            /*
             // Sand checks.
             // Additional mod check required since GL patches the same method with vanilla sand.
             if (ModsConfig.IsActive("m00nl1ght.geologicallandforms"))
@@ -47,29 +77,7 @@ namespace AlienBiomes
                     }
                 }
             }
-
-            // Water checks.
-            if (map.Biome == ABDefOf.SZ_RadiantPlains)
-            {
-                if (__result == TerrainDefOf.WaterShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = ABDefOf.SZ_RadiantWaterShallow;
-                }
-                else if (__result == TerrainDefOf.WaterDeep && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = ABDefOf.SZ_RadiantWaterDeep;
-                }
-                else if (__result == TerrainDefOf.WaterOceanShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = ABDefOf.SZ_RadiantWaterOceanShallow;
-                }
-                else if (__result == TerrainDefOf.WaterOceanDeep && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = ABDefOf.SZ_RadiantWaterOceanDeep;
-                }
-                else if (__result == TerrainDefOf.WaterMovingShallow && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = ABDefOf.SZ_RadiantWaterMovingShallow;
-                }
-                else if (__result == TerrainDefOf.WaterMovingChestDeep && AlienBiomesSettings.UseAlienWater == true) {
-                    __result = ABDefOf.SZ_RadiantWaterMovingChestDeep;
-                }
-            }
+            */
         }
     }
 }

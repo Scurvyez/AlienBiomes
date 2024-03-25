@@ -59,13 +59,26 @@ namespace AlienBiomes
         public float minRainfall = -9999f;
         public float maxRainfall = 9999f;
         public int frequency = 100;
+
+        // perlin noise for scattered world spawning
         public bool useAlternativePerlinSeedPreset;
         public bool usePerlin;
         public int? perlinCustomSeed;
         public float perlinCulling = 0.99f;
-        public double perlinFrequency;
-        public double perlinLacunarity;
-        public double perlinPersistence;
-        public int perlinOctaves;
+        public float perlinFrequency = 0.1f;
+        public float perlinLacunarity = 10.0f;
+        public float perlinPersistence = 0.6f;
+        public int perlinOctaves = 12;
+
+        // terrain overrides
+        public TerrainDef newSand;
+        public TerrainDef newBeachSand;
+        public TerrainDef newGravel;
+        public TerrainDef newShallowWater;
+        public TerrainDef newWaterMovingShallow;
+        public TerrainDef newWaterOceanShallow;
+        public TerrainDef newWaterDeep;
+        public TerrainDef newWaterOceanDeep;
+        public TerrainDef newWaterMovingChestDeep;
     }
 }

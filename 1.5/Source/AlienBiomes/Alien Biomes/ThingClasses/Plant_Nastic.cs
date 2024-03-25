@@ -8,17 +8,20 @@ namespace AlienBiomes
 {
     public class Plant_Nastic : Plant
     {
-        private Plant_Nastic_ModExtension plantExt;
-
+        private PlantNastic_ModExtension plantExt;
+        
+        public bool GasExpelled;
         public float CurrentScale = 1f;
         public int TouchSensitiveStartTime;
         public Color FleckEmissionColor;
+        private int GasCounter = 0;
         private List<Vector3> InstanceOffsets = new ();
+        private Material randMat = null;
         private int timeSinceLastStep;
         private const int MaxTicks = 720;
         private float CurPlantGrowth;
         private Vector3 drawPos = new Vector3 (0, 0, 0);
-        private Mesh mesh = MeshPool.plane10;
+        private Mesh mesh;
         private float scaleY;
         private float drawSizeY;
         private Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
@@ -26,13 +29,24 @@ namespace AlienBiomes
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            plantExt = def.GetModExtension<Plant_Nastic_ModExtension>();
-            drawSizeY = def.graphicData.drawSize.y;
+            plantExt = def.GetModExtension<PlantNastic_ModExtension>();
 
             if (plantExt != null)
             {
-                InitializeRandomOffsets();
-                PrecomputeScaleDeltas();
+                if (plantExt.isVisuallyReactive)
+                {
+                    InitializeRandomOffsets();
+                    PrecomputeScaleDeltas();
+
+                    for (int i = 0; i < InstanceOffsets.Count; i++)
+                    {
+                        if (def.graphicData != null)
+                        {
+                            randMat = Graphic.MatSingle;
+                            drawSizeY = def.graphicData.drawSize.y;
+                        }
+                    }
+                }
 
                 IntVec3[] cells = GenRadial.RadialCellsAround(Position, plantExt.effectRadius, useCenter: true).ToArray();
                 MapComponent_PlantGetter plantGetter = map.GetComponent<MapComponent_PlantGetter>();
@@ -63,34 +77,52 @@ namespace AlienBiomes
 
         public override void Tick()
         {
-            base.Tick();
-            CurPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
-
-            if (plantExt != null)
+            if (plantExt.isVisuallyReactive)
             {
-                timeSinceLastStep = Find.TickManager.TicksGame - TouchSensitiveStartTime;
-                if (timeSinceLastStep < MaxTicks)
+                CurPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
+
+                if (plantExt != null)
                 {
-                    float scaleChangeRate = plantExt.scaleDeltaCache[timeSinceLastStep];
-                    CurrentScale = Mathf.Clamp(CurrentScale + scaleChangeRate, plantExt.minScale, 1);
+                    timeSinceLastStep = Find.TickManager.TicksGame - TouchSensitiveStartTime;
+                    if (timeSinceLastStep < MaxTicks)
+                    {
+                        float scaleChangeRate = plantExt.scaleDeltaCache[timeSinceLastStep];
+                        CurrentScale = Mathf.Clamp(CurrentScale + scaleChangeRate, plantExt.minScale, 1);
+                    }
                 }
+            }
+
+            if (GasExpelled)
+            {
+                GasCounter++;
+                if (GasCounter > plantExt.gasReleaseCooldown)
+                {
+                    GasExpelled = false;
+                }
+            }
+            else
+            {
+                GasCounter = 0;
             }
         }
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            for (int i = 0; i < InstanceOffsets.Count; i++)
+            if (plantExt.isVisuallyReactive)
             {
-                // Draw the mesh with the modified UV coordinates
-                drawPos = InstanceOffsets[i];
+                for (int i = 0; i < InstanceOffsets.Count; i++)
+                {
+                    // Draw the mesh with the modified UV coordinates
+                    drawPos = InstanceOffsets[i];
 
-                // Calculate the adjusted z-coordinate based on the change in scale
-                scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
-                // This ensures our individual textures on the mesh shrink down to their base and not into their center
-                drawPos.z += drawSizeY * scaleY / 2f;
+                    // Calculate the adjusted z-coordinate based on the change in scale
+                    scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
+                    // This ensures our individual textures on the mesh shrink down to their base and not into their center
+                    drawPos.z += drawSizeY * scaleY / 10f;
 
-                matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
-                Graphics.DrawMesh(mesh, matrix, Graphic.MatSingle, 0, null, 0, null, false, false, false);
+                    matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
+                    Graphics.DrawMesh(mesh, matrix, randMat, 0, null, 0, null, false, false, false);
+                }
             }
         }
 
@@ -152,9 +184,19 @@ namespace AlienBiomes
             }
         }
 
+        public void ExpelGas()
+        {
+            GenExplosion.DoExplosion(Position, Map, 2, ABDefOf.SZ_PlantAcid, null, 
+                (plantExt.gasDamageRange.RandomInRange), -1, null, null, null, 
+                null, null, 0, 0, null, false, null, 0, 0, 0, false, null,
+                null, null, true, 1, 0, true, null, 0.02f);
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref GasExpelled, "GasExpelled");
+            Scribe_Values.Look(ref GasCounter, "GasCounter");
             Scribe_Values.Look(ref CurrentScale, "CurrentScale", 1f);
             Scribe_Values.Look(ref CurPlantGrowth, "CurPlantGrowth");
             Scribe_Values.Look(ref TouchSensitiveStartTime, "TouchSensitiveStartTime", 0);

@@ -11,7 +11,7 @@ namespace AlienBiomes
         [HarmonyPostfix]
         public static void Prefix(Pawn ___pawn)
         {
-            if (!___pawn.IsColonist || ___pawn.Map == null)
+            if (___pawn.Map == null || !___pawn.RaceProps.Humanlike)
                 return;
 
             IntVec3 nextCell = ___pawn.pather.nextCell;
@@ -24,7 +24,7 @@ namespace AlienBiomes
             {
                 foreach (Plant_Nastic plant in plantsInCell)
                 {
-                    Plant_Nastic_ModExtension plantExt = plant.def.GetModExtension<Plant_Nastic_ModExtension>();
+                    PlantNastic_ModExtension plantExt = plant.def.GetModExtension<PlantNastic_ModExtension>();
                     if (plantExt == null)
                         continue;
 
@@ -35,7 +35,15 @@ namespace AlienBiomes
 
                     if (plantExt.isTouchSensitive)
                     {
-                        plant.TouchSensitiveStartTime = GenTicks.TicksGame;
+                        if (plantExt.isVisuallyReactive)
+                        {
+                            plant.TouchSensitiveStartTime = GenTicks.TicksGame;
+                        }
+                        if (plantExt.isDamaging && !plant.GasExpelled)
+                        {
+                            plant.ExpelGas();
+                            plant.GasExpelled = true;
+                        }
                     }
                 }
             }

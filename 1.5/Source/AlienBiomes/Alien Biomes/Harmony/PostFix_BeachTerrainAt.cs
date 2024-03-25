@@ -14,15 +14,12 @@ namespace AlienBiomes
         [HarmonyPostfix]
         public static void ReplaceBeachTerrain(BiomeDef biome, ref TerrainDef __result)
         {
-            if (__result == TerrainDefOf.Sand)
+            if (biome.HasModExtension<BiomeControls>())
             {
-                if (biome == ABDefOf.SZ_RadiantPlains && AlienBiomesSettings.UseAlienSand == true)
+                BiomeControls ext = biome.GetModExtension<BiomeControls>();
+                if (ext.newBeachSand != null && __result == TerrainDefOf.Sand)
                 {
-                    __result = ABDefOf.SZ_SoothingSand;
-                }
-                else if (biome == ABDefOf.SZ_DeliriousDunes && AlienBiomesSettings.UseAlienSand == true)
-                {
-                    __result = ABDefOf.SZ_DeliriousSmolderingSand;
+                    __result = ext.newBeachSand;
                 }
             }
         }

@@ -84,8 +84,8 @@ namespace AlienBiomes
         {
             base.DoSettingsWindowContents(inRect);
             Listing_Standard list = new();
-            Rect viewRect = new(inRect.x, inRect.y, inRect.width, inRect.height / 2 + 25f); // Adjust height here if more settings are added :)
-            Rect vROffset = new(0f, 0f, inRect.width - 20, inRect.height);
+            Rect viewRect = new(inRect.x, inRect.y, inRect.width, inRect.height / 2);
+            Rect vROffset = new(0f, 0f, inRect.width - 20, inRect.height - 225); // Adjust last value here for more height :)
             Widgets.BeginScrollView(viewRect, ref scrollPosition, vROffset, true);
 
             list.Begin(vROffset);
@@ -140,6 +140,7 @@ namespace AlienBiomes
             list.End();
             Widgets.EndScrollView();
 
+            /*
             // Left hand side image Rect to display example map gen with settings turned on.
             // Right hand side image Rect to display example map gen with settings turned off.
 
@@ -190,6 +191,7 @@ namespace AlienBiomes
                 Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseNoVanillaTerrain", false);
                 GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
             }
+            */
         }
 
         public override string SettingsCategory()

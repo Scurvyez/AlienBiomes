@@ -122,7 +122,7 @@
     <Compile Include="Utils\ABShaderTypeDef.cs" />
     <Compile Include="Utils\ABShaderPropertyIDs.cs" />
     <Compile Include="Utils\ABEasingFunctions.cs" />
-    <Compile Include="Utils\TextureAssets.cs" />
+    <Compile Include="Utils\ABTextureAssets.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -11,8 +11,7 @@ namespace AlienBiomes
 {
     public class LateBiomeWorker : WorldGenStep
     {
-        public static ModuleBase PerlinNoise;
-        public bool validForPrinting = true;
+        private static ModuleBase PerlinNoise;
         private List<BiomeDef> firstOrderBiomes = new List<BiomeDef>();
         private List<BiomeDef> secondOrderBiomes = new List<BiomeDef>();
         private List<BiomeDef> thirdOrderBiomes = new List<BiomeDef>();
@@ -60,10 +59,11 @@ namespace AlienBiomes
         
         private void BiomeCalcs(BiomeDef biomeDef)
         {
-            BiomeControls modExtension = biomeDef.GetModExtension<BiomeControls>();
-            float num = modExtension.minSouthLatitude * -1f;
-            float num2 = modExtension.maxSouthLatitude * -1f;
+            BiomeControls bioExt = biomeDef.GetModExtension<BiomeControls>();
+            float minSLAT = bioExt.minSouthLatitude * -1f;
+            float maxSLAT = bioExt.maxSouthLatitude * -1f;
             WorldGrid worldGrid = Find.WorldGrid;
+
             for (int i = 0; i < worldGrid.TilesCount; i++)
             {
                 Tile tile = worldGrid[i];
@@ -71,7 +71,7 @@ namespace AlienBiomes
                 int seed = Find.World.info.Seed;
                 Vector3 tileCenter = worldGrid.GetTileCenter(i);
                 bool flag = true;
-                foreach (BiomeDef spawnOnBiome in modExtension.spawnOnBiomes)
+                foreach (BiomeDef spawnOnBiome in bioExt.spawnOnBiomes)
                 {
                     if (tile.biome == spawnOnBiome)
                     {
@@ -85,39 +85,39 @@ namespace AlienBiomes
                     continue;
                 }
                 bool flag2 = true;
-                flag2 = ((y < num && y > num2) ? true : false);
+                flag2 = ((y < minSLAT && y > maxSLAT) ? true : false);
                 bool flag3 = true;
-                flag3 = ((y > modExtension.minNorthLatitude && y < modExtension.maxNorthLatitude) ? true : false);
-                if ((!flag3 && !flag2 && modExtension.minSouthLatitude != -9999f && modExtension.minNorthLatitude != -9999f && modExtension.maxSouthLatitude != -9999f && modExtension.maxNorthLatitude != 9999f) || (tile.WaterCovered && !modExtension.allowOnWater) || (!tile.WaterCovered && !modExtension.allowOnLand) || (modExtension.needRiver && (tile.Rivers == null || tile.Rivers.Count == 0)))
+                flag3 = ((y > bioExt.minNorthLatitude && y < bioExt.maxNorthLatitude) ? true : false);
+                if ((!flag3 && !flag2 && bioExt.minSouthLatitude != -9999f && bioExt.minNorthLatitude != -9999f && bioExt.maxSouthLatitude != -9999f && bioExt.maxNorthLatitude != 9999f) || (tile.WaterCovered && !bioExt.allowOnWater) || (!tile.WaterCovered && !bioExt.allowOnLand) || (bioExt.needRiver && (tile.Rivers == null || tile.Rivers.Count == 0)))
                 {
                     continue;
                 }
-                if (modExtension.perlinCustomSeed.HasValue)
+                if (bioExt.perlinCustomSeed.HasValue)
                 {
-                    seed = modExtension.perlinCustomSeed.Value;
+                    seed = bioExt.perlinCustomSeed.Value;
                 }
-                else if (modExtension.useAlternativePerlinSeedPreset)
+                else if (bioExt.useAlternativePerlinSeedPreset)
                 {
                     seed = i;
                 }
-                if (modExtension.usePerlin)
+                if (bioExt.usePerlin)
                 {
-                    PerlinNoise = new Perlin(0.1, 10.0, 0.6, 12, seed, QualityMode.Low);
-                    if (PerlinNoise.GetValue(tileCenter) <= modExtension.perlinCulling)
+                    PerlinNoise = new Perlin(bioExt.perlinFrequency, bioExt.perlinLacunarity, bioExt.perlinPersistence, bioExt.perlinOctaves, seed, QualityMode.Low);
+                    if (PerlinNoise.GetValue(tileCenter) <= bioExt.perlinCulling)
                     {
                         continue;
                     }
                 }
-                if ((double)Rand.Value > Math.Pow(modExtension.frequency, 2.0) / 10000.0 || tile.elevation < modExtension.minElevation || tile.elevation > modExtension.maxElevation || tile.temperature < modExtension.minTemperature || tile.temperature > modExtension.maxTemperature || tile.rainfall < modExtension.minRainfall || tile.rainfall > modExtension.maxRainfall || (int)tile.hilliness < (int)modExtension.minHilliness || (int)tile.hilliness > (int)modExtension.maxHilliness)
+                if ((double)Rand.Value > Math.Pow(bioExt.frequency, 2.0) / 10000.0 || tile.elevation < bioExt.minElevation || tile.elevation > bioExt.maxElevation || tile.temperature < bioExt.minTemperature || tile.temperature > bioExt.maxTemperature || tile.rainfall < bioExt.minRainfall || tile.rainfall > bioExt.maxRainfall || (int)tile.hilliness < (int)bioExt.minHilliness || (int)tile.hilliness > (int)bioExt.maxHilliness)
                 {
                     continue;
                 }
-                List<int> list = new List<int>();
+                List<int> list = new ();
                 worldGrid.GetTileNeighbors(i, list);
                 int j = 0;
                 int num3 = 0;
                 bool flag4 = true;
-                if (modExtension.minimumWaterNeighbors > 0)
+                if (bioExt.minimumWaterNeighbors > 0)
                 {
                     for (int count = list.Count; j < count; j++)
                     {
@@ -126,11 +126,11 @@ namespace AlienBiomes
                             num3++;
                             Log.Message("Water Neighbors =" + num3);
                         }
-                        if (num3 < modExtension.minimumWaterNeighbors)
+                        if (num3 < bioExt.minimumWaterNeighbors)
                         {
                             flag4 = false;
                         }
-                        if (num3 == modExtension.minimumWaterNeighbors)
+                        if (num3 == bioExt.minimumWaterNeighbors)
                         {
                             flag4 = true;
                         }
@@ -142,7 +142,7 @@ namespace AlienBiomes
                 }
                 int num4 = 0;
                 bool flag5 = true;
-                if (modExtension.minimumWaterNeighbors > 0)
+                if (bioExt.minimumWaterNeighbors > 0)
                 {
                     for (int count2 = list.Count; j < count2; j++)
                     {
@@ -150,11 +150,11 @@ namespace AlienBiomes
                         {
                             num4++;
                         }
-                        if (num3 < modExtension.minimumLandNeighbors)
+                        if (num3 < bioExt.minimumLandNeighbors)
                         {
                             flag5 = false;
                         }
-                        if (num3 == modExtension.minimumLandNeighbors)
+                        if (num3 == bioExt.minimumLandNeighbors)
                         {
                             flag5 = true;
                         }
@@ -168,17 +168,17 @@ namespace AlienBiomes
                 {
                     tile.biome = biomeDef;
                 }
-                if (modExtension.setHills.HasValue)
+                if (bioExt.setHills.HasValue)
                 {
-                    _ = modExtension.setHills.Value;
-                    if (modExtension.spawnHills.HasValue && !modExtension.setHills.HasValue)
+                    _ = bioExt.setHills.Value;
+                    if (bioExt.spawnHills.HasValue && !bioExt.setHills.HasValue)
                     {
-                        _ = modExtension.spawnHills.Value;
-                        modExtension.setHills = modExtension.spawnHills;
+                        _ = bioExt.spawnHills.Value;
+                        bioExt.setHills = bioExt.spawnHills;
                     }
-                    if (modExtension.setHills == BiomeHilliness.Random)
+                    if (bioExt.setHills == BiomeHilliness.Random)
                     {
-                        switch (Rand.Range((int)modExtension.minRandomHills.Value, (int)modExtension.maxRandomHills.Value))
+                        switch (Rand.Range((int)bioExt.minRandomHills.Value, (int)bioExt.maxRandomHills.Value))
                         {
                             case 1:
                                 tile.hilliness = Hilliness.Flat;
@@ -194,14 +194,14 @@ namespace AlienBiomes
                                 break;
                         }
                     }
-                    else if (modExtension.setHills < BiomeHilliness.Random)
+                    else if (bioExt.setHills < BiomeHilliness.Random)
                     {
-                        tile.hilliness = (Hilliness)modExtension.setHills.Value;
+                        tile.hilliness = (Hilliness)bioExt.setHills.Value;
                     }
                 }
-                if (modExtension.setElevation.HasValue)
+                if (bioExt.setElevation.HasValue)
                 {
-                    tile.elevation = modExtension.setElevation.Value;
+                    tile.elevation = bioExt.setElevation.Value;
                 }
             }
             Log.Message("finished biome cycle");

@@ -9,7 +9,7 @@ namespace AlienBiomes
         {
             DefDatabase<WorldGenStepDef>.Add(new WorldGenStepDef
             {
-                defName = "BiomesKitWorldGenStep",
+                defName = "ABWorldGenStep",
                 order = 999f,
                 worldGenStep = new LateBiomeWorker()
             });

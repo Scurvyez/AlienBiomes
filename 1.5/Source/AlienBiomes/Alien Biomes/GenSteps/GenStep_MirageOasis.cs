@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using RimWorld;
 
 namespace AlienBiomes
 {
@@ -18,6 +19,9 @@ namespace AlienBiomes
         public TerrainDef innerWaterDef = null;
         public TerrainDef outerWaterDef = null;
         public TerrainDef outlayingSandDef = null;
+        public List<ThingDef> plantsToGen = new List<ThingDef>();
+        public float plantGenChance = 1f;
+        public float plantGenRadius = 10f;
 
         public override void Generate(Map map, GenStepParams parms)
         {
@@ -34,8 +38,10 @@ namespace AlienBiomes
                     {
                         GeneratePatch(map, center1, waterRadiusOneFinal);
                         GeneratePatch(map, center2, waterRadiusTwoFinal);
-                        GenerateInnerWater(map, center1, waterRadiusOneFinal);
-                        GenerateInnerWater(map, center2, waterRadiusTwoFinal);
+                        GenerateInnerWater(map, center1);
+                        GenerateInnerWater(map, center2);
+                        GenerateThings(map, center1);
+                        GenerateThings(map, center2);
                     }
                 }
             }
@@ -69,7 +75,7 @@ namespace AlienBiomes
             }
         }
 
-        private void GenerateInnerWater(Map map, IntVec3 center, int waterRadius)
+        private void GenerateInnerWater(Map map, IntVec3 center)
         {
             // Generate deep water within our original water terrain
             foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, 4, true))
@@ -77,6 +83,28 @@ namespace AlienBiomes
                 if (cell.GetTerrain(map) == outerWaterDef)
                 {
                     map.terrainGrid.SetTerrain(cell, innerWaterDef);
+                }
+            }
+        }
+
+        private void GenerateThings(Map map, IntVec3 center)
+        {
+            HashSet<IntVec3> usedCells = new HashSet<IntVec3>();
+
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, plantGenRadius, true))
+            {
+                if (cell.GetTerrain(map) == outlayingSandDef && cell.Standable(map) && !usedCells.Contains(cell))
+                {
+                    if (plantsToGen != null && Rand.Chance(plantGenChance))
+                    {
+                        ThingDef plantDef = plantsToGen.RandomElement();
+                        Plant plant = (Plant)ThingMaker.MakeThing(plantDef);
+                        plant.Growth = Rand.Value;
+                        GenSpawn.Spawn(plant, cell, map);
+
+                        // Mark the cell as used
+                        usedCells.Add(cell);
+                    }
                 }
             }
         }

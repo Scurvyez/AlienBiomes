@@ -13,17 +13,19 @@
         <workerClass>AlienBiomes.UniversalBiomeWorker</workerClass>
         <animalDensity>1.7</animalDensity>
         <plantDensity>1.75</plantDensity>
+        <diseaseMtbDays>75</diseaseMtbDays>
+        <hasVirtualPlants>true</hasVirtualPlants>
         <settlementSelectionWeight>1</settlementSelectionWeight>
         <movementDifficulty>1</movementDifficulty>
         <texture>AlienBiomes/World/Biomes/SZ_RadiantPlains</texture>
         <forageability>1</forageability>
         <foragedFood>RawBerries</foragedFood>
+        <allowPollution>true</allowPollution>
         <wildPlantRegrowDays>10</wildPlantRegrowDays>
         <soundsAmbient>
             <li>Ambient_NightInsects_Jungle</li>
             <li>Ambient_DayInsects_Jungle</li>
         </soundsAmbient>
-        <diseaseMtbDays>75</diseaseMtbDays>
         <diseases>
             <li>
                 <diseaseInc>Disease_Flu</diseaseInc>
@@ -92,9 +94,14 @@
         </terrainPatchMakers>
         <baseWeatherCommonalities>
             <Clear>20</Clear>
-            <Rain>0</Rain>
+            <Rain>1</Rain>
             <DryThunderstorm>1</DryThunderstorm>
             <RainyThunderstorm>11</RainyThunderstorm>
+            <RG_Overcast MayRequire="ReGrowth.BOTR.Core">1</RG_Overcast>
+            <RG_Windy MayRequire="ReGrowth.BOTR.Core">2</RG_Windy>
+            <RG_Drizzle MayRequire="ReGrowth.BOTR.Core">2</RG_Drizzle>
+            <RG_Monsoon MayRequire="ReGrowth.BOTR.Core">4</RG_Monsoon>
+            <RG_FogStorm MayRequire="ReGrowth.BOTR.Core">2</RG_FogStorm>
         </baseWeatherCommonalities>
         <wildPlants>
             <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
@@ -126,15 +133,39 @@
             <Bast_Bastyon MayRequire="Scurvyez.Bastyon">0.02</Bast_Bastyon>
             <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.02</Bast_Alluvium>
         </wildAnimals>
+        <pollutionWildAnimals MayRequire="Ludeon.RimWorld.Biotech">
+            <Megascarab>1</Megascarab>
+        </pollutionWildAnimals>
+        <allowedPackAnimals>
+            <li>Muffalo</li>
+            <li>Dromedary</li>
+        </allowedPackAnimals>
         <modExtensions>
 			<li Class="AlienBiomes.BiomeControls">
                 <allowOnLand>True</allowOnLand>
-                <frequency>90</frequency>
-                <minTemperature>-5.5</minTemperature>
-                <maxTemperature>95.5</maxTemperature>
+                <frequency>100</frequency>
+                <minElevation>0</minElevation>
+                <maxElevation>1500</maxElevation>
+                <minTemperature>-7.5</minTemperature>
+                <maxTemperature>25.5</maxTemperature>
+                <minRainfall>900</minRainfall>
+                <maxRainfall>2000</maxRainfall>
                 <minHilliness>Flat</minHilliness>
                 <maxHilliness>SmallHills</maxHilliness>
+                <newSand>SZ_SoothingSand</newSand>
+                <newBeachSand>SZ_SoothingSand</newBeachSand>
+                <newGravel>SZ_RadiantStonySoil</newGravel>
+                <newShallowWater>SZ_RadiantWaterShallow</newShallowWater>
+                <newWaterMovingShallow>SZ_RadiantWaterMovingShallow</newWaterMovingShallow>
+                <newWaterOceanShallow>SZ_RadiantWaterOceanShallow</newWaterOceanShallow>
+                <newWaterDeep>SZ_RadiantWaterDeep</newWaterDeep>
+                <newWaterOceanDeep>SZ_RadiantWaterOceanDeep</newWaterOceanDeep>
+                <newWaterMovingChestDeep>SZ_RadiantWaterMovingChestDeep</newWaterMovingChestDeep>
 			</li>
+            <li Class="GeologicalLandforms.BiomeProperties" MayRequire="m00nl1ght.GeologicalLandforms">
+                <allowLandforms>true</allowLandforms>
+                <allowBiomeTransitions>true</allowBiomeTransitions>
+            </li>
 		</modExtensions>
     </BiomeDef>
 

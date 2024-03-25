@@ -7,22 +7,26 @@
 
     <BiomeDef>
         <defName>SZ_DeliriousDunes</defName>
-        <label>delirious sands</label>
-        <description>PLACEHOLDER</description>
+        <label>delirious dunes</label>
+        <description>These dunes are a harsh place for any organism to thrive in. Infrequent rains and high temperatures plague the delirious dunes. Be sure to use the oasis to its full potential.</description>
         <workerClass>AlienBiomes.UniversalBiomeWorker</workerClass>
         <allowFarmingCamps>false</allowFarmingCamps>
         <animalDensity>0.1</animalDensity>
-        <plantDensity>0.02</plantDensity>
+        <plantDensity>0.175</plantDensity>
         <hasVirtualPlants>false</hasVirtualPlants>
-        <settlementSelectionWeight>0.15</settlementSelectionWeight>
+        <settlementSelectionWeight>1.00</settlementSelectionWeight>
         <campSelectionWeight>0.1</campSelectionWeight>
         <movementDifficulty>0.85</movementDifficulty>
-        <texture>AlienBiomes/World/Biomes/SZ_DeliriousDunes</texture> <!-- MAKE TEXTURE -->
+        <texture>AlienBiomes/World/Biomes/SZ_DeliriousDunes</texture>
         <forageability>0.05</forageability>
+        <foragedFood>RawFungus</foragedFood>
         <wildPlantsCareAboutLocalFertility>false</wildPlantsCareAboutLocalFertility>
         <wildPlantRegrowDays>35</wildPlantRegrowDays>
-        <diseaseMtbDays>90</diseaseMtbDays>
+        <diseaseMtbDays>110</diseaseMtbDays>
         <isExtremeBiome>true</isExtremeBiome>
+        <soundsAmbient>
+            <li>Ambient_NightInsects_Standard</li>
+        </soundsAmbient>
         <diseases>
             <li>
                 <diseaseInc>Disease_Flu</diseaseInc>
@@ -66,6 +70,21 @@
             <li>
                 <terrain>SZ_DeliriousSmolderingSand</terrain>
                 <min>-999</min>
+                <max>0.50</max>
+            </li>
+            <li>
+                <terrain>SZ_DeliriousCoarseSand</terrain>
+                <min>0.50</min>
+                <max>0.87</max>
+            </li>
+            <li>
+                <terrain>SZ_DeliriousRichBlackSand</terrain>
+                <min>0.87</min>
+                <max>0.92</max>
+            </li>
+            <li>
+                <terrain>SZ_DeliriousBlackSand</terrain>
+                <min>0.92</min>
                 <max>999</max>
             </li>
         </terrainsByFertility>
@@ -89,13 +108,17 @@
             <DryThunderstorm>2</DryThunderstorm>
             <RainyThunderstorm>1</RainyThunderstorm>
             <GrayPall MayRequire="Ludeon.RimWorld.Anomaly">1</GrayPall>
+            <RG_Overcast MayRequire="ReGrowth.BOTR.Core">5</RG_Overcast>
+            <RG_Windy MayRequire="ReGrowth.BOTR.Core">2</RG_Windy>
+            <RG_Drizzle MayRequire="ReGrowth.BOTR.Core">2</RG_Drizzle>
+            <RG_FoggySandstorm MayRequire="ReGrowth.BOTR.Core">7</RG_FoggySandstorm>
+            <RG_SandStorm MayRequire="ReGrowth.BOTR.Core">9</RG_SandStorm>
+            <RG_SandStormHard MayRequire="ReGrowth.BOTR.Core">3</RG_SandStormHard>
         </baseWeatherCommonalities>
         <wildPlants>
-            <Plant_Grass>6</Plant_Grass>
-            <Plant_GrayGrass MayRequire="Ludeon.RimWorld.Biotech">5</Plant_GrayGrass>
-            <Plant_SaguaroCactus>1</Plant_SaguaroCactus>
-            <Plant_Agave>0.25</Plant_Agave>
-            <Plant_PebbleCactus MayRequire="Ludeon.RimWorld.Biotech">1</Plant_PebbleCactus>
+            <SZ_DeliriousGrass>30</SZ_DeliriousGrass>
+            <SZ_StarburstCactus>0.95</SZ_StarburstCactus>
+            <SZ_DesertGlowPod>0.001</SZ_DesertGlowPod>
         </wildPlants>
         <wildAnimals>
             <Donkey>0.20</Donkey>
@@ -114,13 +137,30 @@
         </allowedPackAnimals>
         <modExtensions>
 			<li Class="AlienBiomes.BiomeControls">
-                <allowOnLand>True</allowOnLand>
+                <allowOnLand>true</allowOnLand>
                 <frequency>100</frequency>
-                <minTemperature>22.5</minTemperature>
+                <minElevation>0</minElevation>
+                <maxElevation>1200</maxElevation>
+                <minTemperature>15.5</minTemperature>
                 <maxTemperature>300.5</maxTemperature>
+                <minRainfall>0</minRainfall>
+                <maxRainfall>600</maxRainfall>
                 <minHilliness>Flat</minHilliness>
                 <maxHilliness>Mountainous</maxHilliness>
+                <newSand>SZ_DeliriousBlackSand</newSand>
+                <newBeachSand>SZ_DeliriousBlackSand</newBeachSand>
+                <newGravel>SZ_DeliriousStonySoil</newGravel>
+                <newShallowWater>SZ_SmolderingWaterShallow</newShallowWater>
+                <newWaterMovingShallow>SZ_SmolderingWaterMovingShallow</newWaterMovingShallow>
+                <newWaterOceanShallow>SZ_SmolderingWaterOceanShallow</newWaterOceanShallow>
+                <newWaterDeep>SZ_SmolderingWaterDeep</newWaterDeep>
+                <newWaterOceanDeep>SZ_SmolderingWaterOceanDeep</newWaterOceanDeep>
+                <newWaterMovingChestDeep>SZ_SmolderingWaterMovingChestDeep</newWaterMovingChestDeep>
 			</li>
+            <li Class="GeologicalLandforms.BiomeProperties" MayRequire="m00nl1ght.GeologicalLandforms">
+                <allowLandforms>true</allowLandforms>
+                <allowBiomeTransitions>true</allowBiomeTransitions>
+            </li>
 		</modExtensions>
     </BiomeDef>
 

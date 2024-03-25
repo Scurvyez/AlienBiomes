@@ -10,7 +10,13 @@
             <outerSandRadius>1~4</outerSandRadius>
             <innerWaterDef>SZ_RadiantWaterChestDeep</innerWaterDef>
             <outerWaterDef>SZ_RadiantWaterShallow</outerWaterDef>
-            <outlayingSandDef>SZ_DeliriousMellowSand</outlayingSandDef>
+            <outlayingSandDef>SZ_DeliriousBlackSand</outlayingSandDef>
+            <plantsToGen>
+                <li>SZ_DesertGlowPod</li>
+                <li>SZ_QuasarBlossom</li>
+            </plantsToGen>
+            <plantGenChance>0.20</plantGenChance>
+            <plantGenRadius>15.0</plantGenRadius>
         </genStep>
     </GenStepDef>
 

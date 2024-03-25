@@ -58,6 +58,13 @@ namespace AlienBiomes
         public static TerrainDef SZ_RadiantWaterChestDeep;
         public static TerrainDef SZ_RadiantWaterOceanShallow;
         public static TerrainDef SZ_RadiantWaterOceanDeep;
+        public static TerrainDef SZ_SmolderingWaterMovingShallow;
+        public static TerrainDef SZ_SmolderingWaterShallow;
+        public static TerrainDef SZ_SmolderingWaterDeep;
+        public static TerrainDef SZ_SmolderingWaterMovingChestDeep;
+        public static TerrainDef SZ_SmolderingWaterChestDeep;
+        public static TerrainDef SZ_SmolderingWaterOceanShallow;
+        public static TerrainDef SZ_SmolderingWaterOceanDeep;
 
         public static ThingDef SZ_RadiantGrass;
         public static ThingDef SZ_RadiantTallGrass;
@@ -69,6 +76,9 @@ namespace AlienBiomes
         public static ThingDef SZ_LilyOfThePlains;
         public static ThingDef SZ_FiddleheadWall;
         public static ThingDef SZ_ElderBamboo;
+        public static ThingDef SZ_DeliriousGrass;
+        public static ThingDef SZ_StarburstCactus;
+        public static ThingDef SZ_DesertGlowPod;
 
         /*
         public static ThingDef SZ_BlueColossalCrystalOne;
@@ -83,6 +93,8 @@ namespace AlienBiomes
         public static ThingDef SZ_RawCopaceticHoney;
 
         //public static KCSG.StructureLayoutDef SZAB_OminousGrove;
+
+        public static DamageDef SZ_PlantAcid;
 
         public static ShaderTypeDef MoteGlowDistorted;
         public static ShaderTypeDef TransparentPlantShimmer;
