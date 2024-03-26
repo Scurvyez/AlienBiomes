@@ -5,18 +5,35 @@
         <defName>SZ_DeliriousDunesOasis</defName>
         <order>220</order>
         <genStep Class="AlienBiomes.GenStep_DeliriousDunesOasis">
-            <waterRadiusOne>8~12</waterRadiusOne>
-            <waterRadiusTwo>3~8</waterRadiusTwo>
-            <outerSandRadius>1~4</outerSandRadius>
-            <innerWaterDef>SZ_RadiantWaterChestDeep</innerWaterDef>
-            <outerWaterDef>SZ_RadiantWaterShallow</outerWaterDef>
-            <outlayingSandDef>SZ_DeliriousBlackSand</outlayingSandDef>
+            <spawnOnTerDef>SZ_DeliriousBlackSand</spawnOnTerDef>
+            <outerWaterDef>SZ_DelOasisWaterShallow</outerWaterDef>
+            <outerSandDef>SZ_SoothingSand</outerSandDef>
             <plantsToGen>
                 <li>SZ_DesertGlowPod</li>
                 <li>SZ_QuasarBlossom</li>
             </plantsToGen>
             <plantGenChance>0.20</plantGenChance>
             <plantGenRadius>15.0</plantGenRadius>
+            <waterRadiusOne>
+                <li>4~5</li>
+                <li>4~7</li>
+                <li>4~9</li>
+                <li>4~11</li>
+                <li>4~13</li>
+            </waterRadiusOne>
+            <waterRadiusTwo>
+                <li>2~4</li>
+                <li>2~6</li>
+                <li>2~8</li>
+            </waterRadiusTwo>
+            <outerSandRadius>1~3</outerSandRadius>
+            <mapSizeRadiusAdjust>
+                <li>3~4</li>
+                <li>2~6</li>
+                <li>1~10</li>
+                <li>1~16</li>
+                <li>1~22</li>
+            </mapSizeRadiusAdjust>
         </genStep>
     </GenStepDef>
 

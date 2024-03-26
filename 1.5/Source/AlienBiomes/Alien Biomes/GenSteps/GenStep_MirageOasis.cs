@@ -2,6 +2,7 @@
 using UnityEngine;
 using Verse;
 using RimWorld;
+using Verse.Noise;
 
 namespace AlienBiomes
 {
@@ -13,15 +14,18 @@ namespace AlienBiomes
     public class GenStep_DeliriousDunesOasis : GenStep
     {
         public override int SeedPart => 931457342;
-        public IntRange? waterRadiusOne;
-        public IntRange? waterRadiusTwo;
-        public IntRange? outerSandRadius;
-        public TerrainDef innerWaterDef = null;
+        public TerrainDef spawnOnTerDef = null;
         public TerrainDef outerWaterDef = null;
-        public TerrainDef outlayingSandDef = null;
-        public List<ThingDef> plantsToGen = new List<ThingDef>();
+        public TerrainDef outerSandDef = null;
+        public List<ThingDef> plantsToGen = new();
         public float plantGenChance = 1f;
         public float plantGenRadius = 10f;
+        public List<IntRange> waterRadiusOne = new();
+        public List<IntRange> waterRadiusTwo = new();
+        public IntRange outerSandRadius = new();
+        public List<IntRange> mapSizeRadiusAdjust = new();
+
+        private HashSet<IntVec3> waterCells = new HashSet<IntVec3>();
 
         public override void Generate(Map map, GenStepParams parms)
         {
@@ -30,31 +34,40 @@ namespace AlienBiomes
                 IntVec3 center1 = ValidCentralSpawnCell(map);
                 if (center1.IsValid)
                 {
-                    int waterRadiusOneFinal = waterRadiusOne.Value.RandomInRange;
-                    int waterRadiusTwoFinal = waterRadiusOne.Value.RandomInRange;
+                    int mapAdjustmentFactor = AdjustedRadiusByMapSize(map, mapSizeRadiusAdjust).RandomInRange;
+                    int waterRadiusOneFinal = AdjustedRadiusByMapSize(map, waterRadiusOne).RandomInRange + mapAdjustmentFactor;
+                    int waterRadiusTwoFinal = AdjustedRadiusByMapSize(map, waterRadiusTwo).RandomInRange + mapAdjustmentFactor;
+
+                    Log.Message($"Map adjustment factor: <color=#ff8c66>{mapAdjustmentFactor}</color>");
+                    Log.Message($"Final water 1 radius: <color=#ff8c66>{waterRadiusOneFinal}</color>");
+                    Log.Message($"Final water 2 radius: <color=#ff8c66>{waterRadiusTwoFinal}</color>");
 
                     IntVec3 center2 = FindSecondPatchCenter(map, center1, waterRadiusOneFinal);
                     if (center2.IsValid)
                     {
                         GeneratePatch(map, center1, waterRadiusOneFinal);
-                        GeneratePatch(map, center2, waterRadiusTwoFinal);
-                        GenerateInnerWater(map, center1);
-                        GenerateInnerWater(map, center2);
+                        //GeneratePatch(map, center2, waterRadiusTwoFinal);
                         GenerateThings(map, center1);
-                        GenerateThings(map, center2);
+                        //GenerateThings(map, center2);
+
+                        Log.Message($"Total oasis water cells: <color=#ff8c66>{waterCells.Count}</color>");
                     }
                 }
             }
         }
+        
+        private IntRange AdjustedRadiusByMapSize(Map map, List<IntRange> range)
+        {
+            int mapSizeIndex = Mathf.FloorToInt(map.Size.x / 100);
+            return mapSizeIndex < range.Count ? range[mapSizeIndex] : new IntRange(1, 1);
+        }
 
         private void GeneratePatch(Map map, IntVec3 center, int waterRadius)
         {
-            HashSet<IntVec3> waterCells = new HashSet<IntVec3>();
-
             // Generate water terrain (our first pass for the entire oasis)
-            foreach (IntVec3 cell in CellRect.CenteredOn(center, waterRadius))
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, waterRadius, true))
             {
-                if (cell.GetTerrain(map) == ABDefOf.SZ_DeliriousMellowSand)
+                if (cell.GetTerrain(map) == spawnOnTerDef)
                 {
                     map.terrainGrid.SetTerrain(cell, outerWaterDef);
                     waterCells.Add(cell);
@@ -64,25 +77,15 @@ namespace AlienBiomes
             // Generate sand terrain around the waters' edge
             foreach (IntVec3 waterCell in waterCells)
             {
-                int outerSandRadiusFinal = outerSandRadius.Value.RandomInRange;
-                foreach (IntVec3 cell in GenRadial.RadialCellsAround(waterCell, outerSandRadiusFinal, true))
+                int outerSandRadiusFinal = outerSandRadius.RandomInRange;
+                Log.Message($"Final sand radius for {waterCell}: <color=#ff8c66>{outerSandRadiusFinal}</color>");
+
+                foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, outerSandRadiusFinal, true))
                 {
                     if (cell.InBounds(map) && cell.GetTerrain(map) != outerWaterDef)
                     {
-                        map.terrainGrid.SetTerrain(cell, outlayingSandDef);
+                        map.terrainGrid.SetTerrain(cell, outerSandDef);
                     }
-                }
-            }
-        }
-
-        private void GenerateInnerWater(Map map, IntVec3 center)
-        {
-            // Generate deep water within our original water terrain
-            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, 4, true))
-            {
-                if (cell.GetTerrain(map) == outerWaterDef)
-                {
-                    map.terrainGrid.SetTerrain(cell, innerWaterDef);
                 }
             }
         }
@@ -93,7 +96,7 @@ namespace AlienBiomes
 
             foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, plantGenRadius, true))
             {
-                if (cell.GetTerrain(map) == outlayingSandDef && cell.Standable(map) && !usedCells.Contains(cell))
+                if (cell.GetTerrain(map) == outerSandDef && cell.Standable(map) && !usedCells.Contains(cell))
                 {
                     if (plantsToGen != null && Rand.Chance(plantGenChance))
                     {
@@ -119,7 +122,7 @@ namespace AlienBiomes
                 cell.DistanceTo(mapCenter) <= maxDistFromCenter &&
                 cell.Standable(map) &&
                 !cell.Fogged(map) &&
-                cell.GetTerrain(map) == ABDefOf.SZ_DeliriousMellowSand, map, 1000);
+                cell.GetTerrain(map) == spawnOnTerDef, map, 1000);
         }
 
         /// <summary>

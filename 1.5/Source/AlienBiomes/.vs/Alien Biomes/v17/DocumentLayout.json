@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\gensteps\\genstep_mirageoasis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\defofs\\abdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\defofs\\abdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\alienbiomeswelcomenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\alienbiomeswelcomenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\thingclasses\\defmodextensions\\plant_nastic_modextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingclasses\\defmodextensions\\plant_nastic_modextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\thingclasses\\plant_nastic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingclasses\\plant_nastic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\thingclasses\\defmodextensions\\plant_nastic_modextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingclasses\\defmodextensions\\plant_nastic_modextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\harmony\\prefix_tryenternextpathcell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,14 +39,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ABDefOf.cs",
-              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "RelativeDocumentMoniker": "Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "RelativeToolTip": "Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAQwFAAAAAvAAAA",
+              "Title": "AlienBiomesWelcomeNote.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\AlienBiomesWelcomeNote.cs",
+              "RelativeDocumentMoniker": "Alien Biomes\\AlienBiomesWelcomeNote.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\AlienBiomesWelcomeNote.cs",
+              "RelativeToolTip": "Alien Biomes\\AlienBiomesWelcomeNote.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T04:03:51.724Z",
+              "WhenOpened": "2024-03-26T11:55:03.465Z",
               "EditorCaption": ""
             },
             {
@@ -57,14 +57,14 @@
               "RelativeDocumentMoniker": "Alien Biomes\\GenSteps\\GenStep_MirageOasis.cs",
               "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\GenSteps\\GenStep_MirageOasis.cs",
               "RelativeToolTip": "Alien Biomes\\GenSteps\\GenStep_MirageOasis.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwDcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-25T03:54:48.038Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Plant_Nastic_ModExtension.cs",
               "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingClasses\\DefModExtensions\\Plant_Nastic_ModExtension.cs",
               "RelativeDocumentMoniker": "Alien Biomes\\ThingClasses\\DefModExtensions\\Plant_Nastic_ModExtension.cs",
@@ -85,12 +85,11 @@
               "RelativeToolTip": "Alien Biomes\\Harmony\\Prefix_TryEnterNextPathCell.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAgwDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T17:08:59.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-21T17:08:59.195Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Plant_Nastic.cs",
               "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingClasses\\Plant_Nastic.cs",
               "RelativeDocumentMoniker": "Alien Biomes\\ThingClasses\\Plant_Nastic.cs",
@@ -98,8 +97,7 @@
               "RelativeToolTip": "Alien Biomes\\ThingClasses\\Plant_Nastic.cs",
               "ViewState": "AQIAAKoAAAAAAAAAAAAAAMEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T11:45:31.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-21T11:45:31.743Z"
             }
           ]
         }

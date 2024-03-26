@@ -49,7 +49,7 @@
         <defName>SZ_StarburstCactus</defName>
         <label>starburst cactus</label>
         <description>A vibrant species of cactus found in harsh alien deserts. It spews harmful acid if pawns wander too close.</description>
-        <pathCost>35</pathCost>
+        <pathCost>75</pathCost>
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <tickerType>Normal</tickerType>
         <selectable>true</selectable>
@@ -197,6 +197,50 @@
                 <terrainTags>
                     <li>DeliriousRichBlackSand</li>
                     <li>DeliriousBlackSand</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Aurora Agava ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_AuroraAgave</defName>
+        <label>aurora agave</label>
+        <description>A large-leafed desert plant with edible fruit. Found only in the delirious dunes.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>30</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Nutrition>0.2</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/AuroraAgave</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.1</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <growDays>6</growDays>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestedThingDef>RawAgave</harvestedThingDef>
+            <harvestYield>10</harvestYield>
+            <harvestWork>300</harvestWork>
+            <visualSizeRange>0.9~1.4</visualSizeRange>
+            <topWindExposure>0.3</topWindExposure>
+            <wildClusterRadius>8</wildClusterRadius>
+            <wildClusterWeight>300</wildClusterWeight>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>DeliriousRichBlackSand</li>
                 </terrainTags>
             </li>
         </modExtensions>

@@ -14,11 +14,11 @@
         <animalDensity>0.1</animalDensity>
         <plantDensity>0.175</plantDensity>
         <hasVirtualPlants>false</hasVirtualPlants>
-        <settlementSelectionWeight>1.00</settlementSelectionWeight>
+        <settlementSelectionWeight>0.42</settlementSelectionWeight>
         <campSelectionWeight>0.1</campSelectionWeight>
         <movementDifficulty>0.85</movementDifficulty>
         <texture>AlienBiomes/World/Biomes/SZ_DeliriousDunes</texture>
-        <forageability>0.05</forageability>
+        <forageability>0.0</forageability>
         <foragedFood>RawFungus</foragedFood>
         <wildPlantsCareAboutLocalFertility>false</wildPlantsCareAboutLocalFertility>
         <wildPlantRegrowDays>35</wildPlantRegrowDays>
@@ -117,8 +117,10 @@
         </baseWeatherCommonalities>
         <wildPlants>
             <SZ_DeliriousGrass>30</SZ_DeliriousGrass>
+            <Plant_GrayGrass MayRequire="Ludeon.RimWorld.Biotech">3</Plant_GrayGrass>
             <SZ_StarburstCactus>0.95</SZ_StarburstCactus>
             <SZ_DesertGlowPod>0.001</SZ_DesertGlowPod>
+            <SZ_AuroraAgave>0.001</SZ_AuroraAgave>
         </wildPlants>
         <wildAnimals>
             <Donkey>0.20</Donkey>
