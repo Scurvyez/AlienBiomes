@@ -296,23 +296,4 @@
         </modExtensions>
     </TerrainDef>
 
-    <TerrainDef ParentName="WaterChestDeepBase">
-        <defName>SZ_DelOasisWaterChestDeep</defName>
-        <label>chest deep water</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/DelOasisWaterChestDeepRamp</texturePath>
-        <waterDepthShader>Map/WaterDepth</waterDepthShader>
-        <pathCost>42</pathCost>
-        <affordances>
-            <li>Bridgeable</li>
-        </affordances>
-        <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>ChestDeep</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
-    </TerrainDef>
-
 </Defs>

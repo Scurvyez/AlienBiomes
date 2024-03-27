@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\gensteps\\genstep_mirageoasis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\alienbiomeswelcomenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\alienbiomeswelcomenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\alienbiomeswelcomenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -46,8 +46,7 @@
               "RelativeToolTip": "Alien Biomes\\AlienBiomesWelcomeNote.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T11:55:03.465Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-26T11:55:03.465Z"
             },
             {
               "$type": "Document",
@@ -57,7 +56,7 @@
               "RelativeDocumentMoniker": "Alien Biomes\\GenSteps\\GenStep_MirageOasis.cs",
               "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\GenSteps\\GenStep_MirageOasis.cs",
               "RelativeToolTip": "Alien Biomes\\GenSteps\\GenStep_MirageOasis.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwDcAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-25T03:54:48.038Z",
               "EditorCaption": ""
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Alien Biomes\\ThingClasses\\DefModExtensions\\Plant_Nastic_ModExtension.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T17:30:16.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-21T17:30:16.325Z"
             },
             {
               "$type": "Document",
