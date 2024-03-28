@@ -93,30 +93,39 @@ namespace AlienBiomes
 
             // GENERAL SETTINGS
             list.Label("<color=cyan>General</color>");
+
             list.Gap(3.00f);
+
             Texture2D partition1 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
             Rect parPos1 = vROffset.AtZero();
             parPos1.y = vROffset.yMin + 32f; // from top of rect
             parPos1.width = vROffset.width;
             parPos1.height = 12f;
             GUI.DrawTexture(parPos1, partition1, ScaleMode.StretchToFill, true);
+
             list.Gap(3.00f);
+
             //list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(), ref settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingUseAlienSand".Translate(), ref settings._useAlienSand, "AlienBiomes_SettingUseAlienSandDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingUseAlienGravel".Translate(), ref settings._useAlienGravel, "AlienBiomes_SettingUseAlienGravelDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingUseAlienWater".Translate(), ref settings._useAlienWater, "AlienBiomes_SettingUseAlienWaterDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingShowTerrainDebris".Translate(), ref settings._showTerrainDebris, "AlienBiomes_SettingShowTerrainDebrisDesc".Translate());
             list.Gap(12.0f);
 
             // GRAPHICS & PERFORMANCE SETTINGS
             list.Label("<color=cyan>Graphics</color> / <color=cyan>Performance</color>");
+
             list.Gap(3.00f);
+
             Texture2D partition2 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
             Rect parPos2 = vROffset.AtZero();
             parPos2.y = vROffset.yMin + 170f;
             parPos2.width = vROffset.width;
             parPos2.height = 12f;
             GUI.DrawTexture(parPos2, partition2, ScaleMode.StretchToFill, true);
+
             list.Gap(3.00f);
+
             list.CheckboxLabeled("AlienBiomes_SettingPlantGlow".Translate(), ref settings._showPlantGlow, "AlienBiomes_SettingPlantGlowDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_SettingEffectorOverlay".Translate(), ref settings._showEffecterOverlay, "AlienBiomes_SettingEffectorOverlayDesc".Translate());
             list.CheckboxLabeled("AlienBiomes_EnableScreenPositionEffects".Translate(), ref settings._enableScreenPosEffects, "AlienBiomes_EnableScreenPositionEffectsDesc".Translate());
@@ -125,14 +134,18 @@ namespace AlienBiomes
 
             // AUDIO SETTINGS
             list.Label("<color=cyan>Audio</color>");
+
             list.Gap(3.00f);
+
             Texture2D partition3 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
             Rect parPos3 = vROffset.AtZero();
             parPos3.y = vROffset.yMin + 284f;
             parPos3.width = vROffset.width;
             parPos3.height = 12f;
             GUI.DrawTexture(parPos3, partition3, ScaleMode.StretchToFill, true);
+
             list.Gap(3.00f);
+
             list.CheckboxLabeled("AlienBiomes_SettingCompEffectSounds".Translate(), ref settings._allowCompEffectSounds, "AlienBiomes_SettingCompEffectSoundsDesc".Translate());
             list.Label(label: "AlienBiomes_PlantSoundEffectVolume".Translate((100f * settings._plantSoundEffectVolume).ToString("F0")), tooltip: "AlienBiomes_PlantSoundEffectVolumeDesc".Translate());
             settings._plantSoundEffectVolume = Mathf.Round(list.Slider(100f * settings._plantSoundEffectVolume, 0f, 100f)) / 100f;

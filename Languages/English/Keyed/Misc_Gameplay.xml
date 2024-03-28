@@ -37,6 +37,9 @@
     <AlienBiomes_SettingUseAlienWater>Use alien water.</AlienBiomes_SettingUseAlienWater>
     <AlienBiomes_SettingUseAlienWaterDesc>Each alien biome also has its' own new, vibrant, warm, or otherwise water textures. Turn this off to insult me and use the vanilla water.</AlienBiomes_SettingUseAlienWaterDesc>
 
+    <AlienBiomes_SettingShowTerrainDebris>Show terrain debris.</AlienBiomes_SettingShowTerrainDebris>
+    <AlienBiomes_SettingShowTerrainDebrisDesc>If unchecked, vanilla terrain-related debris (sand and soil smears) will not be generated on map creation.</AlienBiomes_SettingShowTerrainDebrisDesc>
+
     <AlienBiomes_SettingCompEffectSounds>Allow plants to emit ambient sounds.</AlienBiomes_SettingCompEffectSounds>
     <AlienBiomes_SettingCompEffectSoundsDesc>Certain plants added by Alien Biomes have unique behaviors and some emit short ambient queues when pawns are nearby or are walking through them. Turn this off if you prefer total silence and dislike nature.</AlienBiomes_SettingCompEffectSoundsDesc>
 

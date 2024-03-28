@@ -65,6 +65,13 @@ namespace AlienBiomes
             }
         }
 
+        public static bool ShowTerrainDebris
+        {
+            get {
+                return _instance._showTerrainDebris;
+            }
+        }
+
         public static bool AllowCompEffectSounds
         {
             get {
@@ -87,6 +94,7 @@ namespace AlienBiomes
         public bool _useAlienSand = true;
         public bool _useAlienGravel = true;
         public bool _useAlienWater = true;
+        public bool _showTerrainDebris = true;
         public bool _allowCompEffectSounds = true;
         public float _plantSoundEffectVolume = 1.00f;
 
@@ -106,6 +114,7 @@ namespace AlienBiomes
             Scribe_Values.Look(ref _useAlienSand, "useAlienSand", true);
             Scribe_Values.Look(ref _useAlienGravel, "useAlienGravel", true);
             Scribe_Values.Look(ref _useAlienWater, "useAlienWater", true);
+            Scribe_Values.Look(ref _showTerrainDebris, "showTerrainDebris", true);
             Scribe_Values.Look(ref _allowCompEffectSounds, "allowCompEffectSounds", true);
             Scribe_Values.Look(ref _plantSoundEffectVolume, "plantSoundEffectVolume", 1.00f);
         }

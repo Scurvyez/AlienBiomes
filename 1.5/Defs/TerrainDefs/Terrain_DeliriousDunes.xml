@@ -23,7 +23,7 @@
             <li>GrowSoil</li>
             <li>Diggable</li>
         </affordances>
-        <generatedFilth>Filth_Dirt</generatedFilth>
+        <generatedFilth>SZ_Filth_DeliriousStonySoil</generatedFilth>
         <fertility>0.7</fertility>
         <takeFootprints>True</takeFootprints>
         <tools>
@@ -57,15 +57,15 @@
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>350</renderPrecedence>
         <pathCost>4</pathCost>
-        <generatedFilth>Filth_Sand</generatedFilth>
+        <generatedFilth>SZ_Filth_DeliriousSmolderingSand</generatedFilth>
         <fertility>0.4</fertility>
         <takeFootprints>True</takeFootprints>
+        <scatterType>SoftDry</scatterType>
         <statBases>
             <Beauty>1</Beauty>
             <BeautyOutdoors>1</BeautyOutdoors>
             <Cleanliness>-1</Cleanliness>
         </statBases>
-        <scatterType>SoftDry</scatterType>
         <affordances>
             <li>Light</li>
             <li>Medium</li>
@@ -101,9 +101,10 @@
         <renderPrecedence>352</renderPrecedence>
         <pathCost>7</pathCost>
         <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
-        <generatedFilth>Filth_Sand</generatedFilth>
+        <generatedFilth>SZ_Filth_DeliriousMellowSand</generatedFilth>
         <fertility>0.4</fertility>
         <takeFootprints>true</takeFootprints>
+        <scatterType>SoftDry</scatterType>
         <statBases>
             <Beauty>-3</Beauty>
             <BeautyOutdoors>0</BeautyOutdoors>
@@ -142,9 +143,10 @@
         <renderPrecedence>353</renderPrecedence>
         <pathCost>9</pathCost>
         <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
-        <generatedFilth>Filth_Sand</generatedFilth>
+        <generatedFilth>SZ_Filth_DeliriousCoarseSand</generatedFilth>
         <fertility>0.4</fertility>
         <takeFootprints>true</takeFootprints>
+        <scatterType>SoftDry</scatterType>
         <statBases>
             <Beauty>-3</Beauty>
             <BeautyOutdoors>0</BeautyOutdoors>
@@ -182,10 +184,11 @@
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>354</renderPrecedence>
         <pathCost>3</pathCost>
-        <generatedFilth>Filth_Sand</generatedFilth>
+        <generatedFilth>SZ_Filth_DeliriousBlackSand</generatedFilth>
         <fertility>0.4</fertility>
         <takeFootprints>true</takeFootprints>
         <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
+        <scatterType>SoftDry</scatterType>
         <statBases>
             <Beauty>-2</Beauty>
             <BeautyOutdoors>0</BeautyOutdoors>
@@ -223,10 +226,11 @@
         <edgeType>FadeRough</edgeType>
         <renderPrecedence>354</renderPrecedence>
         <pathCost>2</pathCost>
-        <generatedFilth>Filth_Sand</generatedFilth>
+        <generatedFilth>SZ_Filth_DeliriousBlackSand</generatedFilth>
         <fertility>0.65</fertility>
         <takeFootprints>true</takeFootprints>
         <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
+        <scatterType>SoftDry</scatterType>
         <statBases>
             <Beauty>-2</Beauty>
             <BeautyOutdoors>0</BeautyOutdoors>

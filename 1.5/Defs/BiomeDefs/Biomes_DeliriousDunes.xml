@@ -141,7 +141,7 @@
 			<li Class="AlienBiomes.BiomeControls">
                 <allowOnLand>true</allowOnLand>
                 <frequency>100</frequency>
-                <minElevation>0</minElevation>
+                <minElevation>-100</minElevation>
                 <maxElevation>1200</maxElevation>
                 <minTemperature>15.5</minTemperature>
                 <maxTemperature>300.5</maxTemperature>

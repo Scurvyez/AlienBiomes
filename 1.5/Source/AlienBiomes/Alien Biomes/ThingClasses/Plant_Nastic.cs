@@ -8,23 +8,24 @@ namespace AlienBiomes
 {
     public class Plant_Nastic : Plant
     {
-        private PlantNastic_ModExtension plantExt;
-        
         public bool GasExpelled;
-        public float CurrentScale = 1f;
         public int TouchSensitiveStartTime;
+        public float CurrentScale = 1f;
         public Color FleckEmissionColor;
-        private int GasCounter = 0;
-        private List<Vector3> InstanceOffsets = new ();
-        private Material randMat = null;
+
         private int timeSinceLastStep;
-        private const int MaxTicks = 720;
+        private int GasCounter = 0;
         private float CurPlantGrowth;
-        private Vector3 drawPos = new Vector3 (0, 0, 0);
-        private Mesh mesh;
         private float scaleY;
         private float drawSizeY;
+        private PlantNastic_ModExtension plantExt;
+        private List<Vector3> InstanceOffsets = new ();
+        private Material randMat = null;
+        private Vector3 drawPos = new Vector3 (0, 0, 0);
+        private Mesh mesh;
         private Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
+
+        private const int MaxTicks = 720;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {

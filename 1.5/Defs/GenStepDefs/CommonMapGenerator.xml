@@ -14,6 +14,7 @@
             <plantsToGen>
                 <li>SZ_DesertGlowPod</li>
                 <li>SZ_QuasarBlossom</li>
+                <li>SZ_Fiddlehead</li>
             </plantsToGen>
             <waterRadius>
                 <li>4~5</li>

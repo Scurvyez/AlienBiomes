@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Radiant Plains -->
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_RadiantSoil</defName>
+        <label>dirt</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(1, 43, 23, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <rainWashes>true</rainWashes>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_RadiantRichSoil</defName>
+        <label>dirt</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(1, 74, 26, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <rainWashes>true</rainWashes>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_RadiantStonySoil</defName>
+        <label>dirt</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(18, 28, 15, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <rainWashes>true</rainWashes>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_SoothingSand</defName>
+        <label>soothing sand</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(128, 111, 152, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <!-- Delirious Dunes -->
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_DeliriousStonySoil</defName>
+        <label>dirt</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(81, 37, 16, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <rainWashes>true</rainWashes>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_DeliriousSmolderingSand</defName>
+        <label>smoldering sand</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(121, 40, 31, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_DeliriousMellowSand</defName>
+        <label>mellow sand</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(117, 21, 15, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_DeliriousCoarseSand</defName>
+        <label>coarse sand</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(66, 23, 17, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_DeliriousBlackSand</defName>
+        <label>black sand</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(31, 26, 20, 97)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+</Defs>
