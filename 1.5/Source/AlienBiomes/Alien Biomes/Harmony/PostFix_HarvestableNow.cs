@@ -3,6 +3,7 @@ using RimWorld;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(Plant), "HarvestableNow", MethodType.Getter)]
     public static class HarvestableNow_Patch
     {
@@ -22,4 +23,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

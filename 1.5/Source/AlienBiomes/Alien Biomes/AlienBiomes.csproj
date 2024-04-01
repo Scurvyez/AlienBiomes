@@ -81,6 +81,7 @@
     <Compile Include="BiomeUtils\UniversalBiomeWorker.cs" />
     <Compile Include="GenSteps\GenStep_DeliriousDunesOasis.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
+    <Compile Include="Harmony\HarmonyPatches.cs" />
     <Compile Include="Harmony\Prefix_Visible.cs" />
     <Compile Include="Harmony\Prefix_CanEverPlantAt.cs" />
     <Compile Include="Harmony\Prefix_TryEnterNextPathCell.cs" />

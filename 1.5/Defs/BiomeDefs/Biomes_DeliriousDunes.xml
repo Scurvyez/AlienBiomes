@@ -148,7 +148,7 @@
                 <minRainfall>0</minRainfall>
                 <maxRainfall>600</maxRainfall>
                 <minHilliness>Flat</minHilliness>
-                <maxHilliness>Mountainous</maxHilliness>
+                <maxHilliness>SmallHills</maxHilliness>
                 <newSand>SZ_DeliriousBlackSand</newSand>
                 <newBeachSand>SZ_DeliriousBlackSand</newBeachSand>
                 <newGravel>SZ_DeliriousStonySoil</newGravel>

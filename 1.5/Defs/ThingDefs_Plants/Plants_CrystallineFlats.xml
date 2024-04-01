@@ -3,7 +3,7 @@
 
     <!--==================== Shimmering Grass Plant ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_ShimmeringGrass</defName>
         <label>shimmering grass</label>
         <description>A lush and beautiful grass found all over the crystalline flats.</description>
@@ -37,11 +37,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
     <!--==================== Shimmering Tall Grass Plant ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_ShimmeringTallGrass</defName>
         <label>tall shimmering grass</label>
         <description>A lush and beautiful grass found all over the crystalline plains.</description>
@@ -76,11 +76,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
     <!--==================== Glistening Grass Plant ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_GlisteningGrass</defName>
         <label>glistening grass</label>
         <description>A lush and vibrant grass found all over the crystalline flats.</description>
@@ -116,11 +116,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
     <!--==================== Glistening Tall Grass Plant ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_GlisteningTallGrass</defName>
         <label>tall glistening grass</label>
         <description>A lush and vibrant grass found all over the crystalline plains.</description>
@@ -157,11 +157,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
     <!--==================== Lush Green Grass Plant ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_LushGreenGrass</defName>
         <label>lush grass</label>
         <description>A lush and beautiful grass found all over the crystalline flats. It grows taller than most grasses and its roots run deep underground.</description>
@@ -195,14 +195,15 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
-    <!--==================== Blue Colossal Crystal One ====================-->
+    <!--==================== Blue Colossal Crystal  ====================-->
 
-    <!-- <ThingDef ParentName="PlantBaseNonEdible" Name="BlueColossalCrystal">
-        <defName>SZ_BlueColossalCrystalOne</defName>
+    <ThingDef ParentName="PlantBaseNonEdible" Name="BlueColossalCrystal">
+        <defName>SZ_BlueColossalCrystal</defName>
         <label>blue colossal crystal</label>
         <description>A massive, living crystal. It dwarfs those who gaze upon its magnificence.</description>
+        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <descriptionHyperlinks>
             <HediffDef>SZ_Crystallize</HediffDef>
         </descriptionHyperlinks>
@@ -224,19 +225,16 @@
             <BeautyOutdoors>2.50</BeautyOutdoors>
         </statBases>
         <graphicData>
-            <texPath>AlienBiomes/Things/Plants/Crystals/BlueColossalCrystalOne</texPath>
+            <texPath>AlienBiomes/Things/Plants/Crystals/BlueColossalCrystal</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
-            <harvestedThingDef>SZ_BlueCrystalFragment</harvestedThingDef>
             <blockAdjacentSow>true</blockAdjacentSow>
             <harvestYield>3</harvestYield>
             <fertilityMin>0.2</fertilityMin>
             <fertilitySensitivity>0.9</fertilitySensitivity>
             <growDays>30</growDays>
-            <harvestTag>Standard</harvestTag>
-            <harvestAfterGrowth>0.35</harvestAfterGrowth>
             <visualSizeRange>2.25~10.25</visualSizeRange>
             <topWindExposure>0.0</topWindExposure>
             <wildClusterRadius>12</wildClusterRadius>
@@ -245,38 +243,11 @@
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <overlightRadius>5.0</overlightRadius>
-                <glowRadius>6.0</glowRadius>
+                <overlightRadius>7.0</overlightRadius>
+                <glowRadius>7.0</glowRadius>
                 <glowColor>(21, 177, 217, 0)</glowColor>
                 <startTime>0.75</startTime>
                 <stopTime>0.20</stopTime>
-            </li>
-            <li Class="AlienBiomes.CompProperties_EffectorWithRadius">
-                <releaseRadius>3</releaseRadius>
-                <fleckReleased>PsycastAreaEffect</fleckReleased>
-                <appliedHediff>SZ_Crystallize</appliedHediff>
-                <tickInterval>2500</tickInterval>
-                <radiusOutlineColor>(253, 1, 33)</radiusOutlineColor>
-            </li>
-            <li Class="AlienBiomes.CompProperties_GraphicsOverlay">
-                <graphicElements>
-                    <li>
-                        <texPath>AlienBiomes/Things/Special/Overlays/Crystals/ColossalCrystalError/ColossalCrystalA</texPath>
-                        <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPlant</shaderType>
-                        <drawOffset>(0, 0, 1.15)</drawOffset>
-                        <drawSize>0.05</drawSize>
-                        <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
-                    </li>
-                    <li>
-                        <texPath>AlienBiomes/Things/Special/Overlays/Crystals/ColossalCrystal</texPath>
-                        <graphicClass>Graphic_Random</graphicClass>
-                        <shaderType>TransparentPlant</shaderType>
-                        <drawOffset>(0, 0, 1.15)</drawOffset>
-                        <drawSize>1.50</drawSize>
-                        <timeRangeDisplayed>0.65~0.20</timeRangeDisplayed>
-                    </li>
-                </graphicElements>
             </li>
         </comps>
         <modExtensions>
@@ -285,48 +256,29 @@
                     <li>Soil</li>
                 </terrainTags>
             </li>
+            <li Class="AlienBiomes.PlantNastic_ModExtension">
+                <effectRadius>2</effectRadius>
+                <givesHediff>true</givesHediff>
+                <hediffToGive>SZ_Crystallize</hediffToGive>
+            </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
-    <!--==================== Blue Colossal Crystal Two ====================-->
+    <!--==================== Green Colossal Crystal ====================-->
 
-    <!-- <ThingDef ParentName="BlueColossalCrystal">
-        <defName>SZ_BlueColossalCrystalTwo</defName>
-        <label>blue colossal crystal</label>
-        <graphicData>
-            <texPath>AlienBiomes/Things/Plants/Crystals/BlueColossalCrystalTwo</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
-        </graphicData>
-    </ThingDef> -->
-
-    <!--==================== Green Colossal Crystal One ====================-->
-
-    <!-- <ThingDef ParentName="BlueColossalCrystal" Name="GreenColossalCrystal">
-        <defName>SZ_GreenColossalCrystalOne</defName>
+    <ThingDef ParentName="BlueColossalCrystal" Name="GreenColossalCrystal">
+        <defName>SZ_GreenColossalCrystal</defName>
         <label>green colossal crystal</label>
         <graphicData>
-            <texPath>AlienBiomes/Things/Plants/Crystals/GreenColossalCrystalOne</texPath>
+            <texPath>AlienBiomes/Things/Plants/Crystals/GreenColossalCrystal</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
-    </ThingDef> -->
-
-    <!--==================== Green Colossal Crystal Two ====================-->
-
-    <!-- <ThingDef ParentName="GreenColossalCrystal">
-        <defName>SZ_GreenColossalCrystalTwo</defName>
-        <label>green colossal crystal</label>
-        <graphicData>
-            <texPath>AlienBiomes/Things/Plants/Crystals/GreenColossalCrystalTwo</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>TransparentPlant</shaderType>
-        </graphicData>
-    </ThingDef> -->
+    </ThingDef>
 
     <!--==================== Red Colossal Crystal ====================-->
 
-    <!-- <ThingDef ParentName="PlantBaseNonEdible">
+    <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_RedColossalCrystal</defName>
         <label>red colossal crystal</label>
         <description>Here lies that which once lived free of restraint, a loved colonist who met their untimely demise as a result of the areas treacherous flora. This crystal stands as both a memorial to the soul it took and as a reminder to those still living that mother nature holds all the power on the Rim.</description>
@@ -364,19 +316,19 @@
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <overlightRadius>4.0</overlightRadius>
-                <glowRadius>6.0</glowRadius>
+                <overlightRadius>7.0</overlightRadius>
+                <glowRadius>7.0</glowRadius>
                 <glowColor>(253, 1, 33, 0)</glowColor>
                 <startTime>0.75</startTime>
                 <stopTime>0.20</stopTime>
             </li>
         </comps>
-    </ThingDef> -->
+    </ThingDef>
 
-    <!--==================== Inferior Crystal ====================-->
+    <!--==================== Blue Inferior Crystal ====================-->
 
-    <!-- <ThingDef ParentName="PlantBaseNonEdible">
-        <defName>SZ_InferiorCrystal</defName>
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_BlueInferiorCrystal</defName>
         <label>inferior crystal</label>
         <description>A much smaller crystal. While nowhere near the size of its colossal sibling, it will still produce products.</description>
         <drawerType>MapMeshAndRealTime</drawerType>
@@ -397,13 +349,11 @@
             <BeautyOutdoors>1.75</BeautyOutdoors>
         </statBases>
         <graphicData>
-            <texPath>AlienBiomes/Things/Buildings/Natural/ResouceProducers/Crystals/InferiorCrystal</texPath>
+            <texPath>AlienBiomes/Things/Plants/Crystals/BlueInferiorCrystal</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
-            <harvestedThingDef>SZ_BlueCrystalFragment</harvestedThingDef>
-            <harvestYield>1</harvestYield>
             <fertilitySensitivity>0.9</fertilitySensitivity>
             <growDays>10</growDays>
             <visualSizeRange>2.75~6.12</visualSizeRange>
@@ -414,8 +364,8 @@
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
-                <overlightRadius>4.50</overlightRadius>
-                <glowRadius>5.10</glowRadius>
+                <overlightRadius>4.0</overlightRadius>
+                <glowRadius>4.0</glowRadius>
                 <glowColor>(21, 177, 217, 0)</glowColor>
                 <startTime>0.65</startTime>
                 <stopTime>0.20</stopTime>
@@ -428,14 +378,69 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
+
+    <!--==================== Green Inferior Crystal ====================-->
+
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>SZ_GreenInferiorCrystal</defName>
+        <label>inferior crystal</label>
+        <description>A much smaller crystal. While nowhere near the size of its colossal sibling, it will still produce products.</description>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <passability>Impassable</passability>
+        <selectable>true</selectable>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <neverMultiSelect>false</neverMultiSelect>
+        <rotatable>false</rotatable>
+        <blockLight>false</blockLight>
+        <tickerType>Long</tickerType>
+        <size>(1,1)</size>
+        <hideAtSnowDepth>1.0</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+            <BeautyOutdoors>1.75</BeautyOutdoors>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Crystals/GreenInferiorCrystal</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilitySensitivity>0.9</fertilitySensitivity>
+            <growDays>10</growDays>
+            <visualSizeRange>2.75~6.12</visualSizeRange>
+            <topWindExposure>0.0</topWindExposure>
+            <wildClusterRadius>5</wildClusterRadius>
+            <wildClusterWeight>11</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>4.0</overlightRadius>
+                <glowRadius>4.0</glowRadius>
+                <glowColor>(21, 177, 217, 0)</glowColor>
+                <startTime>0.65</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
 
     <!--==================== Opulent Orchid ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_OpulentOrchid</defName>
         <label>opulent orchid</label>
-        <description>PLACEHOLDER</description>
+        <description>A beautiful red-leafed flowering plant which produces delicious berries in spring and summer.</description>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <drawerType>MapMeshAndRealTime</drawerType>
@@ -462,7 +467,7 @@
             <harvestYield>4</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.4</harvestAfterGrowth>
-            <harvestedThingDef>Ambrosia</harvestedThingDef>
+            <harvestedThingDef>RawBerries</harvestedThingDef>
             <visualSizeRange>0.5~2.85</visualSizeRange>
             <topWindExposure>0.25</topWindExposure>
             <maxMeshCount>4</maxMeshCount>
@@ -472,6 +477,14 @@
             <purpose>Food</purpose>
             <allowAutoCut>false</allowAutoCut>
         </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedHarvest">
+                <harvestSeasons>
+                    <li>Spring</li>
+                    <li>Summer</li>
+                </harvestSeasons>
+            </li>
+        </comps>
         <modExtensions>
             <li Class="AlienBiomes.BiomePlantControl">
                 <terrainTags>
@@ -480,11 +493,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
     <!--==================== Blue Moonberry ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_BlueMoonberry</defName>
         <label>blue moonberry</label>
         <description>Only able to grow in the uncharacteristically fertile sands of crystalline groves, around pools of bloody water, these elastic-stemmed plants produce sweet berries over time.</description>
@@ -514,7 +527,7 @@
             <harvestYield>5</harvestYield>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.4</harvestAfterGrowth>
-            <harvestedThingDef>Ambrosia</harvestedThingDef>
+            <harvestedThingDef>RawBerries</harvestedThingDef>
             <visualSizeRange>0.65~2.25</visualSizeRange>
             <topWindExposure>0.625</topWindExposure>
             <wildOrder>2</wildOrder>
@@ -529,6 +542,12 @@
                 <startTime>0.75</startTime>
                 <stopTime>0.15</stopTime>
             </li>
+            <li Class="AlienBiomes.CompProperties_TimedHarvest">
+                <harvestSeasons>
+                    <li>Spring</li>
+                    <li>Summer</li>
+                </harvestSeasons>
+            </li>
         </comps>
         <modExtensions>
             <li Class="AlienBiomes.BiomePlantControl">
@@ -538,7 +557,7 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
     <!--==================== Winding Fern ====================-->
 

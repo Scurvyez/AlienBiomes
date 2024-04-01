@@ -3,7 +3,7 @@
 
     <!--==================== Crystalline Soil ====================-->
 
-    <!-- <TerrainDef ParentName="NaturalTerrainBase">
+    <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineSoil</defName>
         <label>crystalline soil</label>
         <texturePath>AlienBiomes/Terrain/Surfaces/SZ_CrystallineSoil</texturePath>
@@ -43,11 +43,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef> -->
+    </TerrainDef>
 
     <!--==================== Crystalline Rich Soil ====================-->
 
-    <!-- <TerrainDef ParentName="NaturalTerrainBase">
+    <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineRichSoil</defName>
         <label>rich crystalline soil</label>
         <texturePath>AlienBiomes/Terrain/Surfaces/SZ_CrystallineRichSoil</texturePath>
@@ -86,11 +86,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef> -->
+    </TerrainDef>
 
     <!--==================== Crystalline Stony Soil ====================-->
 
-    <!-- <TerrainDef ParentName="NaturalTerrainBase">
+    <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineStonySoil</defName>
         <label>crystalline stony soil</label>
         <texturePath>AlienBiomes/Terrain/Surfaces/SZ_CrystallineStonySoil</texturePath>
@@ -130,11 +130,11 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef> -->
+    </TerrainDef>
 
     <!--==================== Crystalline Sand ====================-->
 
-    <!-- <TerrainDef ParentName="NaturalTerrainBase">
+    <TerrainDef ParentName="NaturalTerrainBase">
         <defName>SZ_CrystallineSand</defName>
         <label>crystalline sand</label>
         <texturePath>AlienBiomes/Terrain/Surfaces/SZ_CrystallineSand</texturePath>
@@ -172,46 +172,6 @@
                 </terrainTags>
             </li>
         </modExtensions>
-    </TerrainDef> -->
-
-    <!-- <TerrainDef ParentName="NaturalTerrainBase">
-        <defName>SZ_CrystallineSand_Grove</defName>
-        <label>crystalline sand</label>
-        <texturePath>AlienBiomes/Terrain/Surfaces/SZ_CrystallineSand</texturePath>
-        <edgeType>FadeRough</edgeType>
-        <renderPrecedence>350</renderPrecedence>
-        <pathCost>4</pathCost>
-        <statBases>
-            <Beauty>-1</Beauty>
-            <BeautyOutdoors>0</BeautyOutdoors>
-            <Cleanliness>-1</Cleanliness>
-        </statBases>
-        <affordances>
-            <li>Light</li>
-            <li>Medium</li>
-            <li>Heavy</li>
-            <li>Diggable</li>
-        </affordances>
-        <fertility>0.45</fertility>
-        <takeFootprints>True</takeFootprints>
-        <tools>
-            <li>
-                <label>crystalline sand</label>
-                <capacities>
-                    <li>KickMaterialInEyes</li>
-                </capacities>
-                <hediff>SandInEyes</hediff>
-                <cooldownTime>1.5</cooldownTime>
-            </li>
-        </tools>
-        <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
-                <terrainTags>
-                    <li>Sandy</li>
-                    <li>CrystallineSand_Grove</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
-    </TerrainDef> -->
+    </TerrainDef>
 
 </Defs>

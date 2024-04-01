@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!-- <HediffDef ParentName="InfectionBase">
+    <HediffDef ParentName="InfectionBase">
 		<defName>SZ_Crystallize</defName>
 		<label>crystallizing</label>
 		<description>A colossal crystal released some of its life-threatening toxins into the surrounding air. If the toxins are not fought with medicine the pawn will succumb to the deadly toxin and ultimately be consumed in a violent and transformative death.</description>
@@ -86,6 +86,6 @@
 				</capMods>
 			</li>
 		</stages>
-	</HediffDef> -->
+	</HediffDef>
 
 </Defs>

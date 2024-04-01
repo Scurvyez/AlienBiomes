@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(TerrainDefGenerator_Stone), "ImpliedTerrainDefs")]
     public static class ImpliedTerrainDefs_Patch
     {
@@ -36,4 +37,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

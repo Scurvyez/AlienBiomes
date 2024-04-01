@@ -5,7 +5,7 @@
 
     <!-- No animal diseases. :) -->
 
-    <!-- <BiomeDef>
+    <BiomeDef>
         <defName>SZ_CrystallineFlats</defName>
         <label>crystalline flats</label>
         <description>These lands are uncharacteristically sterile and covered in gigantic crystal pillars, flanked by smaller scatterings of crystalline formations.\n\nYou'll find many exotic materials here, however, a severe lack in vegetation. Yet, with less than desirable plant density, the flora growing in these parts reaches maturity at an astounding rate because of the elevated levels of minerals within the soil. You'll also find pools of water so deep and curious they almost... invite creatures down into their unending depths.</description>
@@ -13,7 +13,7 @@
         <animalDensity>1.2</animalDensity>
         <plantDensity>0.75</plantDensity>
         <settlementSelectionWeight>1</settlementSelectionWeight>
-        <movementDifficulty>1</movementDifficulty>
+        <movementDifficulty>0.9</movementDifficulty>
         <texture>AlienBiomes/World/Biomes/SZ_CrystallineFlats</texture>
         <forageability>1</forageability>
         <foragedFood>RawBerries</foragedFood>
@@ -43,11 +43,6 @@
                 <max>0.80</max>
             </li>
             <li>
-                <terrain>SZ_CrystallineSand</terrain>
-                <min>0.87</min>
-                <max>0.91</max>
-            </li>
-            <li>
                 <terrain>SZ_CrystallineRichSoil</terrain>
                 <min>0.80</min>
                 <max>999</max>
@@ -65,16 +60,15 @@
                     <li>
                         <terrain>SZ_CrystallineSand</terrain>
                         <min>0.83</min>
-                        <max>0.92</max>
+                        <max>0.90</max>
                     </li>
                     <li>
-                        <terrain>SZ_CrystallineWaterChestDeep</terrain>
-                        <min>0.92</min>
+                        <terrain>SZ_CrystallineWaterShallow</terrain>
+                        <min>0.90</min>
                         <max>999</max>
                     </li>
                 </thresholds>
             </li>
-            
             <li>
                 <perlinFrequency>0.01</perlinFrequency>
                 <thresholds>
@@ -84,13 +78,8 @@
                         <max>0.80</max>
                     </li>
                     <li>
-                        <terrain>SZ_CrystallineSand_Grove</terrain>
-                        <min>0.80</min>
-                        <max>0.93</max>
-                    </li>
-                    <li>
                         <terrain>SZ_BloodWaterShallow</terrain>
-                        <min>0.93</min>
+                        <min>0.80</min>
                         <max>0.98</max>
                     </li>
                     <li>
@@ -108,20 +97,19 @@
             <RainyThunderstorm>5</RainyThunderstorm>
         </baseWeatherCommonalities>
         <wildPlants>
-            <SZ_BlueColossalCrystalOne>0.01</SZ_BlueColossalCrystalOne>
-            <SZ_BlueColossalCrystalTwo>0.01</SZ_BlueColossalCrystalTwo>
-            <SZ_GreenColossalCrystalOne>0.01</SZ_GreenColossalCrystalOne>
-            <SZ_GreenColossalCrystalTwo>0.01</SZ_GreenColossalCrystalTwo>
-            <SZ_InferiorCrystal>0.06</SZ_InferiorCrystal>
+            <SZ_BlueColossalCrystal>0.01</SZ_BlueColossalCrystal>
+            <SZ_GreenColossalCrystal>0.01</SZ_GreenColossalCrystal>
+            <SZ_BlueInferiorCrystal>0.06</SZ_BlueInferiorCrystal>
+            <SZ_GreenInferiorCrystal>0.06</SZ_GreenInferiorCrystal>
             <SZ_ShimmeringGrass>7.50</SZ_ShimmeringGrass>
             <SZ_ShimmeringTallGrass>12.0</SZ_ShimmeringTallGrass>
             <SZ_GlisteningGrass>5.50</SZ_GlisteningGrass>
             <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
             <SZ_LushGreenGrass>5.78</SZ_LushGreenGrass>
-            <SZ_GlassyBroadLeafedBirch>2.45</SZ_GlassyBroadLeafedBirch>
+            <!-- <SZ_GlassyBroadLeafedBirch>2.45</SZ_GlassyBroadLeafedBirch> -->
             <SZ_OpulentOrchid>2.555</SZ_OpulentOrchid>
             <SZ_BlueMoonberry>4.75</SZ_BlueMoonberry>
-            <SZ_WindingFern>3.85</SZ_WindingFern>
+            <!-- <SZ_WindingFern>3.85</SZ_WindingFern> -->
         </wildPlants>
         <wildAnimals>
             <Donkey>0.20</Donkey>
@@ -146,34 +134,31 @@
         </wildAnimals>
         <modExtensions>
 			<li Class="AlienBiomes.BiomeControls">
-                <maxHilliness>Flat</maxHilliness>
-                <allowOnLand>True</allowOnLand>
+                <allowOnLand>true</allowOnLand>
                 <frequency>100</frequency>
-                <spawnOnBiomes>
-                    <li>
-                        <li>Desert</li>
-                    </li>
-                    <li>
-                        <li>ExtremeDesert</li>
-                    </li>
-                </spawnOnBiomes>
+                <minElevation>-100</minElevation>
+                <maxElevation>700</maxElevation>
+                <minTemperature>0.0</minTemperature>
+                <maxTemperature>20.0</maxTemperature>
+                <minRainfall>0</minRainfall>
+                <maxRainfall>1300</maxRainfall>
+                <minHilliness>Flat</minHilliness>
+                <maxHilliness>SmallHills</maxHilliness>
+                <newSand>SZ_CrystallineSand</newSand>
+                <newBeachSand>SZ_CrystallineSand</newBeachSand>
+                <newGravel>SZ_CrystallineStonySoil</newGravel>
+                <newShallowWater>SZ_CrystallineWaterShallow</newShallowWater>
+                <newWaterMovingShallow>SZ_CrystallineWaterMovingShallow</newWaterMovingShallow>
+                <newWaterOceanShallow>SZ_CrystallineWaterOceanShallow</newWaterOceanShallow>
+                <newWaterDeep>SZ_CrystallineWaterDeep</newWaterDeep>
+                <newWaterOceanDeep>SZ_CrystallineWaterOceanDeep</newWaterOceanDeep>
+                <newWaterMovingChestDeep>SZ_CrystallineWaterMovingChestDeep</newWaterMovingChestDeep>
 			</li>
-            </li>
-            <li Class="KCSG.BiomeStructGenExtension">
-                <structures>
-                    <li>
-                        <layout>SZAB_OminousGroveTwo</layout>
-                        <commonality>1.0</commonality>
-                    </li>
-                </structures>
-                <canSpawnInMontains>true</canSpawnInMontains>
-                <clearCellRadiusAround>1</clearCellRadiusAround>
-                <spawnCount>1</spawnCount>
-                <countScaleHiliness>false</countScaleHiliness>
-                <postGenerateOre>true</postGenerateOre>
-                <canSpawnOnWaterTerrain>false</canSpawnOnWaterTerrain>
+            <li Class="GeologicalLandforms.BiomeProperties" MayRequire="m00nl1ght.GeologicalLandforms">
+                <allowLandforms>true</allowLandforms>
+                <allowBiomeTransitions>true</allowBiomeTransitions>
             </li>
 		</modExtensions>
-    </BiomeDef> -->
+    </BiomeDef>
 
 </Defs>

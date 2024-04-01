@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(MaterialPool), "MatFrom", new Type[] { typeof(MaterialRequest) })]
     public static class MatFrom_Patch
     {
@@ -22,4 +23,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

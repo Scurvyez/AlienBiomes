@@ -10,6 +10,7 @@ namespace AlienBiomes
         public bool isTouchSensitive;
         public bool isDamaging;
         public bool isAutochorous;
+        public bool givesHediff;
 
         // graphics
         public bool isVisuallyReactive;
@@ -31,5 +32,6 @@ namespace AlienBiomes
         public int gasReleaseCooldown = 2000;
         public float effectRadius = 2f;
         public IntRange gasDamageRange = new IntRange(1, 2);
+        public HediffDef hediffToGive = null;
     }
 }

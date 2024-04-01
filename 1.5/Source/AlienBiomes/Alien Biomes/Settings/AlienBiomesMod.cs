@@ -17,6 +17,8 @@ namespace AlienBiomes
         {
             mod = this;
             settings = GetSettings<AlienBiomesSettings>();
+
+            /*
             var harmony = new Harmony("com.alienbiomes");
 
             harmony.Patch(original: AccessTools.PropertyGetter(typeof(ShaderTypeDef), nameof(ShaderTypeDef.Shader)),
@@ -24,12 +26,14 @@ namespace AlienBiomes
                 nameof(ShaderFromAssetBundle)));
 
             harmony.PatchAll();
+            */
         }
 
         /// <summary>
 		/// Load shader asset for AlienBiomes shader types
 		/// </summary>
-		public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
+		/*
+        public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
         {
             if (__instance is ABShaderTypeDef)
             {
@@ -40,6 +44,7 @@ namespace AlienBiomes
                 }
             }
         }
+        */
 
         public AssetBundle MainBundle
         {

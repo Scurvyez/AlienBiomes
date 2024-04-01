@@ -4,6 +4,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(GenStep_Terrain), "TerrainFrom")]
     public static class TerrainFrom_Patch
     {
@@ -55,29 +56,7 @@ namespace AlienBiomes
                     __result = ext.newWaterMovingChestDeep;
                 }
             }
-
-            /*
-            // Sand checks.
-            // Additional mod check required since GL patches the same method with vanilla sand.
-            if (ModsConfig.IsActive("m00nl1ght.geologicallandforms"))
-            {
-                if (map.Biome == ABDefOf.SZ_RadiantPlains)
-                {
-                    if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
-                        __result = ABDefOf.SZ_SoothingSand;
-                    }
-                }
-                else if (map.Biome == ABDefOf.SZ_DeliriousDunes)
-                {
-                    if (__result == TerrainDefOf.Sand && AlienBiomesSettings.UseAlienSand == true) {
-                        __result = ABDefOf.SZ_DeliriousSmolderingSand;
-                    }
-                    else if (__result == ABDefOf.SoftSand && AlienBiomesSettings.UseAlienSand == true) {
-                        __result = ABDefOf.SZ_DeliriousMellowSand;
-                    }
-                }
-            }
-            */
         }
     }
+    */
 }

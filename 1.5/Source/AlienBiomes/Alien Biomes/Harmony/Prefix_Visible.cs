@@ -3,6 +3,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(SectionLayer_TerrainScatter), "Visible", MethodType.Getter)]
     public static class SectionLayerTerrainScatterVisible_Patch
     {
@@ -14,4 +15,5 @@ namespace AlienBiomes
 		    return false;
 	    }
     }
+    */
 }

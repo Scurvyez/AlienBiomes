@@ -3,6 +3,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(CompGlower), "ShouldBeLitNow", MethodType.Getter)]
     public static class CompGlower_Patch
     {
@@ -16,4 +17,5 @@ namespace AlienBiomes
                     && AlienBiomesSettings.ShowPlantGlow && glower.AdditionalGlowerLogic();
         }
     }
+    */
 }

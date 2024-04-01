@@ -4,6 +4,7 @@ using Verse;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(BeachMaker), "BeachTerrainAt")]
     public static class BeachTerrainAt_Patch
     {
@@ -24,4 +25,5 @@ namespace AlienBiomes
             }
         }
     }
+    */
 }

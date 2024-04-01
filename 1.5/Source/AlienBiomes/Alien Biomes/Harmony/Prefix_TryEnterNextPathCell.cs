@@ -5,6 +5,7 @@ using Verse.AI;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(Pawn_PathFollower), "TryEnterNextPathCell")]
     public class TryEnterNextPathCell_Patch
     {
@@ -33,20 +34,25 @@ namespace AlienBiomes
                         plant.DrawEffects();
                     }
 
-                    if (plantExt.isTouchSensitive)
+                    else if (plantExt.isTouchSensitive)
                     {
                         if (plantExt.isVisuallyReactive)
                         {
                             plant.TouchSensitiveStartTime = GenTicks.TicksGame;
                         }
-                        if (plantExt.isDamaging && !plant.GasExpelled)
+                        else if (plantExt.isDamaging && !plant.GasExpelled)
                         {
                             plant.ExpelGas();
                             plant.GasExpelled = true;
                         }
                     }
+                    else if (plantExt.givesHediff)
+                    {
+                        plant.GiveHediff(___pawn);
+                    }
                 }
             }
         }
     }
+    */
 }

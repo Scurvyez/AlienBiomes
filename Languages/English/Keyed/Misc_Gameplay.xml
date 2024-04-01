@@ -3,11 +3,11 @@
 
     <!--==================== Letters ====================-->
 
-    <!-- <SZ_LetterLabelCrystallizing>Colonist crystallizing</SZ_LetterLabelCrystallizing>
+    <SZ_LetterLabelCrystallizing>Colonist crystallizing</SZ_LetterLabelCrystallizing>
     <SZ_LetterCrystallizing>{0} has been exposed to an aggressive form of living cyrstal parasites. These microscopic glass-like invaders will begin attacking {0_possessive} capillaries and immune system. Early treatment is essential here! Once {0_possessive} body has been weakened enough the parasites will spread to more vital regions of the body as they feed on {0_possessive} soul. Upon full synthesis with the host body and once all nutrients have been depleted, {0} will be obliterated and a magnificent red crystal will arise from the pooling blood.</SZ_LetterCrystallizing>
 
     <SZ_LetterLabelCrystallized>Colonist crystallized</SZ_LetterLabelCrystallized>
-    <SZ_LetterCrystallized>{0} has perished as a result of microscopic parasites released from a colossal crystal. Colonists will mourn {0_possessive} death and they will forever be remembered in crimson fervor.</SZ_LetterCrystallized> -->
+    <SZ_LetterCrystallized>{0} has perished as a result of microscopic parasites released from a colossal crystal. Colonists will mourn {0_possessive} death and they will forever be remembered in crimson fervor.</SZ_LetterCrystallized>
 
     <!--==================== Mod Settings ====================-->
 
@@ -25,8 +25,8 @@
     <AlienBiomes_EnableScreenPositionEffects>Use position tracking screen effects?</AlienBiomes_EnableScreenPositionEffects>
     <AlienBiomes_EnableScreenPositionEffectsDesc>Check to allow visual effects on the map with post processing.</AlienBiomes_EnableScreenPositionEffectsDesc>
 
-    <!-- <AlienBiomes_SettingCrystallizing>Allow colonists to be crystallized in the Crystalline Flats.</AlienBiomes_SettingCrystallizing>
-    <AlienBiomes_SettingCrystallizingDesc>This can make for some fun gameplay but is also a fair challenge. Pawns afflicted with the crystallizing hediff will eventually die and be replaced by a magnificent red crystal.</AlienBiomes_SettingCrystallizingDesc> -->
+    <AlienBiomes_SettingCrystallizing>Allow colonists to be crystallized in the Crystalline Flats.</AlienBiomes_SettingCrystallizing>
+    <AlienBiomes_SettingCrystallizingDesc>This can make for some fun gameplay but is also a fair challenge. Pawns afflicted with the crystallizing hediff will eventually die and be replaced by a magnificent red crystal.</AlienBiomes_SettingCrystallizingDesc>
 
     <AlienBiomes_SettingUseAlienSand>Use alien sand.</AlienBiomes_SettingUseAlienSand>
     <AlienBiomes_SettingUseAlienSandDesc>Certain plants added by Alien Biomes only spawn on the new sand terrains and they look better so I'd recommend leaving this on and letting the new sand variants take over. But if you still want a touch of familiarity then at least you have the choice.</AlienBiomes_SettingUseAlienSandDesc>

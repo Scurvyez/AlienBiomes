@@ -2,7 +2,6 @@
 
 namespace AlienBiomes
 {
-    /*
     public class HediffCompProperties_Crystallize : HediffCompProperties
     {
         public string targetCrystal = "";
@@ -12,5 +11,4 @@ namespace AlienBiomes
             compClass = typeof(HediffComp_Crystallize);
         }
     }
-    */
 }

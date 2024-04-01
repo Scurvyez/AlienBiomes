@@ -193,6 +193,20 @@ namespace AlienBiomes
                 null, null, true, 1, 0, true, null, 0.02f);
         }
 
+        public void GiveHediff(Pawn pawn)
+        {
+            if (!pawn.health.hediffSet.HasHediff(plantExt.hediffToGive))
+            {
+                pawn.health.AddHediff(plantExt.hediffToGive, null, null, null);
+                HealthUtility.AdjustSeverity(pawn, plantExt.hediffToGive, 0.01f);
+
+                if (plantExt.hediffToGive == ABDefOf.SZ_Crystallize)
+                {
+                    Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizing);
+                }
+            }
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();

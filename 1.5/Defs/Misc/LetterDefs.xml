@@ -3,7 +3,7 @@
 
     <!--==================== Pawn Crystallizing ====================-->
 
-    <!-- <LetterDef Name="PawnCrystallizing">
+    <LetterDef Name="PawnCrystallizing">
         <defName>SZ_PawnCrystallizing</defName>
         <color>(253, 1, 33)</color>
         <flashColor>(253, 1, 33)</flashColor>
@@ -11,11 +11,11 @@
         <bounce>true</bounce>
         <arriveSound>LetterArrive_BadUrgentSmall</arriveSound>
         <pauseMode>AnyThreat</pauseMode>
-    </LetterDef> -->
+    </LetterDef>
 
     <!--==================== Pawn Crystallizing ====================-->
 
-    <!-- <LetterDef Name="PawnCrystallized">
+    <LetterDef Name="PawnCrystallized">
         <defName>SZ_PawnCrystallized</defName>
         <color>(253, 1, 33)</color>
         <flashColor>(253, 1, 33)</flashColor>
@@ -23,6 +23,6 @@
         <bounce>false</bounce>
         <arriveSound>LetterArrive_BadUrgent</arriveSound>
         <pauseMode>AnyThreat</pauseMode>
-    </LetterDef> -->
+    </LetterDef>
 
 </Defs>

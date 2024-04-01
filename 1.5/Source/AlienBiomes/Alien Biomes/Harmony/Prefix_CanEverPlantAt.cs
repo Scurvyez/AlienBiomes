@@ -5,6 +5,7 @@ using System;
 
 namespace AlienBiomes
 {
+    /*
     [HarmonyPatch(typeof(PlantUtility), "CanEverPlantAt", new Type[] { typeof(ThingDef), typeof(IntVec3), typeof(Map), typeof(bool) })]
     public static class PlantUtilityCanEverPlantAt_Patch
     {
@@ -74,4 +75,5 @@ namespace AlienBiomes
             return true;
         }
     }
+    */
 }

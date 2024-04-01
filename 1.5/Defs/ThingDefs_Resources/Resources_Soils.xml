@@ -77,7 +77,7 @@
 
     <!--==================== CRYSTALLINE FLATS ====================-->
 
-    <!-- <ThingDef ParentName="ResourceBase">
+    <ThingDef ParentName="ResourceBase">
         <defName>SZ_CrystallineSoil_Resource</defName>
         <label>radiant soil</label>
         <description>This stuff is dark blue and lends average fertility for indeginous plants.</description>
@@ -165,6 +165,6 @@
             <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
         </thingCategories>
         <stackLimit>75</stackLimit>
-    </ThingDef> -->
+    </ThingDef>
 
 </Defs>
