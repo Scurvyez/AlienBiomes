@@ -21,8 +21,8 @@ namespace AlienBiomes
         private PlantNastic_ModExtension plantExt;
         private List<Vector3> InstanceOffsets = new ();
         private Material randMat = null;
-        private Vector3 drawPos = new Vector3 (0, 0, 0);
-        private Mesh mesh;
+        private Vector3 drawPos = new (0, 0, 0);
+        private Mesh mesh = MeshPool.plane10;
         private Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
 
         private const int MaxTicks = 720;

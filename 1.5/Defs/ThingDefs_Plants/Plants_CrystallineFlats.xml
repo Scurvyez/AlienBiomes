@@ -561,7 +561,7 @@
 
     <!--==================== Winding Fern ====================-->
 
-    <!-- <ThingDef ParentName="PlantBase">
+    <ThingDef ParentName="PlantBase">
         <defName>SZ_WindingFern</defName>
         <label>winding fern</label>
         <description>These tall and spiraling ferns are soft to the touch and over time they will produce a healing aloe which can be used to treat wounds.</description>
@@ -589,11 +589,6 @@
             <wildClusterRadius>9</wildClusterRadius>
             <wildClusterWeight>11</wildClusterWeight>
             <leaflessGraphicPath>AlienBiomes/Things/Plants/WindingFern_Leafless</leaflessGraphicPath>
-            <immatureGraphicPath>AlienBiomes/Things/Plants/WindingFern_Immature</immatureGraphicPath>
-            <harvestYield>5</harvestYield>
-            <harvestTag>Standard</harvestTag>
-            <harvestAfterGrowth>0.25</harvestAfterGrowth>
-            <harvestedThingDef>SZ_WindingFernAloe</harvestedThingDef>
             <visualSizeRange>0.25~1.65</visualSizeRange>
             <topWindExposure>0.72</topWindExposure>
             <wildOrder>2</wildOrder>
@@ -603,11 +598,10 @@
                 <terrainTags>
                     <li>Sandy</li>
                     <li>Soil</li>
-                    <li>CrystallineSand_Grove</li>
                 </terrainTags>
             </li>
         </modExtensions>
-    </ThingDef> -->
+    </ThingDef>
 
     <!-- <ThingDef ParentName="AlienDeciduousTreeBase">
         <defName>SZ_GlassyBroadLeafedBirch</defName>
@@ -650,7 +644,6 @@
                 <terrainTags>
                     <li>Sandy</li>
                     <li>Soil</li>
-                    <li>CrystallineSand_Grove</li>
                 </terrainTags>
             </li>
         </modExtensions>

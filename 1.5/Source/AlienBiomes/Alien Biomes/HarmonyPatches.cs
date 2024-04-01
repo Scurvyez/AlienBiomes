@@ -27,9 +27,6 @@ namespace AlienBiomes
             harmony.Patch(original: AccessTools.PropertyGetter(typeof(Plant), "HarvestableNow"),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(HarvestableNowPostFix)));
 
-            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
-                postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(AddBiomesCoreDefModExtensionsPostfix)));
-
             harmony.Patch(original: AccessTools.Method(typeof(MaterialPool), nameof(MaterialPool.MatFrom), new Type[] { typeof(MaterialRequest) }),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(MatFromPostFix)));
 
@@ -85,25 +82,6 @@ namespace AlienBiomes
             if (comp != null)
             {
                 __result = __result && comp.AdditionalPlantHarvestLogic();
-            }
-        }
-
-        public static IEnumerable<TerrainDef> AddBiomesCoreDefModExtensionsPostfix(IEnumerable<TerrainDef> __result)
-        {
-            foreach (var terrainDef in __result)
-            {
-                BiomePlantControl plantControl = new();
-                plantControl.terrainTags.Add("Stony");
-                plantControl.terrainTags.Add("Rocky");
-                if (terrainDef.modExtensions == null)
-                {
-                    terrainDef.modExtensions = new List<DefModExtension>();
-                }
-
-                terrainDef.modExtensions.Add(plantControl);
-                terrainDef.fertility = 0.35f;
-
-                yield return terrainDef;
             }
         }
 
@@ -254,7 +232,7 @@ namespace AlienBiomes
                         plant.DrawEffects();
                     }
 
-                    else if (plantExt.isTouchSensitive)
+                    if (plantExt.isTouchSensitive)
                     {
                         if (plantExt.isVisuallyReactive)
                         {
@@ -266,7 +244,7 @@ namespace AlienBiomes
                             plant.GasExpelled = true;
                         }
                     }
-                    else if (plantExt.givesHediff)
+                    if (plantExt.givesHediff)
                     {
                         plant.GiveHediff(___pawn);
                     }

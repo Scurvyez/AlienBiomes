@@ -109,7 +109,7 @@
             <!-- <SZ_GlassyBroadLeafedBirch>2.45</SZ_GlassyBroadLeafedBirch> -->
             <SZ_OpulentOrchid>2.555</SZ_OpulentOrchid>
             <SZ_BlueMoonberry>4.75</SZ_BlueMoonberry>
-            <!-- <SZ_WindingFern>3.85</SZ_WindingFern> -->
+            <SZ_WindingFern>3.85</SZ_WindingFern>
         </wildPlants>
         <wildAnimals>
             <Donkey>0.20</Donkey>

@@ -4,6 +4,7 @@ using RimWorld;
 using HarmonyLib;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Collections.Generic;
 
 namespace AlienBiomes
 {
@@ -18,33 +19,30 @@ namespace AlienBiomes
             mod = this;
             settings = GetSettings<AlienBiomesSettings>();
 
-            /*
-            var harmony = new Harmony("com.alienbiomes");
+            Harmony harmony = new (id: "rimworld.scurvyez.alienbiomes-preSCOS");
 
-            harmony.Patch(original: AccessTools.PropertyGetter(typeof(ShaderTypeDef), nameof(ShaderTypeDef.Shader)),
-                prefix: new HarmonyMethod(typeof(AlienBiomesMod),
-                nameof(ShaderFromAssetBundle)));
-
-            harmony.PatchAll();
-            */
+            // implied defs are generated before SCOS runs so this patch needs to be run before then, hence why it's here
+            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
+                postfix: new HarmonyMethod(typeof(AlienBiomesMod), nameof(AddBiomesDefModExtensionsPostfix)));
         }
 
-        /// <summary>
-		/// Load shader asset for AlienBiomes shader types
-		/// </summary>
-		/*
-        public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
+        public static IEnumerable<TerrainDef> AddBiomesDefModExtensionsPostfix(IEnumerable<TerrainDef> __result)
         {
-            if (__instance is ABShaderTypeDef)
+            foreach (var terrainDef in __result)
             {
-                ___shaderInt = AlienBiomesContentDatabase.AlienBiomesBundle.LoadAsset<Shader>(__instance.shaderPath);
-                if (___shaderInt is null)
+                BiomePlantControl plantControl = new();
+                plantControl.terrainTags.Add("Stony");
+                plantControl.terrainTags.Add("Rocky");
+                if (terrainDef.modExtensions == null)
                 {
-                    Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text></color>");
+                    terrainDef.modExtensions = new List<DefModExtension>();
                 }
+
+                terrainDef.modExtensions.Add(plantControl);
+                terrainDef.fertility = 0.35f;
+                yield return terrainDef;
             }
         }
-        */
 
         public AssetBundle MainBundle
         {

@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\harmonypatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\harmonypatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\settings\\alienbiomesmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\settings\\alienbiomesmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,14 +32,23 @@
               "RelativeDocumentMoniker": "Alien Biomes\\HarmonyPatches.cs",
               "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\HarmonyPatches.cs",
               "RelativeToolTip": "Alien Biomes\\HarmonyPatches.cs",
-              "ViewState": "AQIAAPEAAAAAAAAAAAAAAAcBAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T01:45:02.022Z",
+              "WhenOpened": "2024-04-01T04:44:03.969Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AlienBiomesMod.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\Settings\\AlienBiomesMod.cs",
+              "RelativeDocumentMoniker": "Alien Biomes\\Settings\\AlienBiomesMod.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\Settings\\AlienBiomesMod.cs",
+              "RelativeToolTip": "Alien Biomes\\Settings\\AlienBiomesMod.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T04:10:04.764Z",
+              "EditorCaption": ""
             }
           ]
         }
