@@ -27,6 +27,9 @@ Discord: steveo.o
         <li>Ludeon.RimWorld.royalty</li>
         <li>Ludeon.RimWorld.ideology</li>
         <li>Ludeon.RimWorld.biotech</li>
+        <li>m00nl1ght.geologicallandforms</li>
+        <li>m00nl1ght.geologicallandforms.biometransitions</li>
+        <li>m00nl1ght.mappreview</li>
     </loadAfter>
 
 </ModMetaData>

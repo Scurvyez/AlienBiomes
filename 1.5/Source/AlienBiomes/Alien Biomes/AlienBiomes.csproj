@@ -81,13 +81,7 @@
     <Compile Include="BiomeUtils\UniversalBiomeWorker.cs" />
     <Compile Include="GenSteps\GenStep_DeliriousDunesOasis.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
-    <Compile Include="Harmony\HarmonyPatches.cs" />
-    <Compile Include="Harmony\Prefix_Visible.cs" />
-    <Compile Include="Harmony\Prefix_CanEverPlantAt.cs" />
-    <Compile Include="Harmony\Prefix_TryEnterNextPathCell.cs" />
-    <Compile Include="Harmony\Postfix_CurrentNotify_LoadedSceneChanged.cs" />
-    <Compile Include="Harmony\PostFix_MatFrom.cs" />
-    <Compile Include="Harmony\PostFix_ImpliedTerrainDefs.cs" />
+    <Compile Include="HarmonyPatches.cs" />
     <Compile Include="MapComps\MapComponent_MobilePlantCellsGetter.cs" />
     <Compile Include="MapComps\MapComponent_PlantGetter.cs" />
     <Compile Include="Settings\AlienBiomesMod.cs" />
@@ -111,10 +105,6 @@
     <Compile Include="ThingComps\Comp_TimedGlower.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_TimedGlower.cs" />
     <Compile Include="DefOfs\ABDefOf.cs" />
-    <Compile Include="Harmony\PostFix_CompGlower.cs" />
-    <Compile Include="Harmony\PostFix_TerrainFrom.cs" />
-    <Compile Include="Harmony\PostFix_BeachTerrainAt.cs" />
-    <Compile Include="Harmony\PostFix_HarvestableNow.cs" />
     <Compile Include="ThingClasses\DefModExtensions\NightBlooming_ModExtension.cs" />
     <Compile Include="HediffComps\HediffCompProps\HediffCompProperties_Crystallize.cs" />
     <Compile Include="HediffComps\HediffComp_Crystallize.cs" />
