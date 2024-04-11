@@ -79,6 +79,7 @@
     <Compile Include="BiomeUtils\WorldGenStepConstructor.cs" />
     <Compile Include="BiomeUtils\LateBiomeWorker.cs" />
     <Compile Include="BiomeUtils\UniversalBiomeWorker.cs" />
+    <Compile Include="GameConditions\GameCondition_CrystallineRedshift.cs" />
     <Compile Include="GenSteps\GenStep_DeliriousDunesOasis.cs" />
     <Compile Include="GraphicData\GraphicDataAB.cs" />
     <Compile Include="HarmonyPatches.cs" />

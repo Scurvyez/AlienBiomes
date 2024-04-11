@@ -44,7 +44,22 @@ namespace AlienBiomes
 
             harmony.Patch(original: AccessTools.Method(typeof(RiverMaker), "ValidatePassage"),
                 prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(ValidatePassagePrefix)));
+
+            //harmony.Patch(original: AccessTools.Method(typeof(Pawn), "DoKillSideEffects"),
+                //postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(DoKillSideEffectsPostfix)));
         }
+
+        /*
+        public static void DoKillSideEffectsPostfix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit, bool spawned)
+        {
+            if (dinfo?.Instigator != null && dinfo.Value.Instigator is Pawn pawn)
+            {
+                ThoughtDef thought = ThoughtDefOf.AteCorpse;
+                pawn.needs.mood.thoughts.memories.TryGainMemory(thought);
+                Log.Message($"<color=#4494E3FF>{pawn.Name}</color> has been given the <color=#ff8c66>{thought}</color> thought.");
+            }
+        }
+        */
 
         public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
         {

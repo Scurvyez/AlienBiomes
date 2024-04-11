@@ -33,6 +33,7 @@ namespace AlienBiomes
                 BiomePlantControl plantControl = new();
                 plantControl.terrainTags.Add("Stony");
                 plantControl.terrainTags.Add("Rocky");
+
                 if (terrainDef.modExtensions == null)
                 {
                     terrainDef.modExtensions = new List<DefModExtension>();

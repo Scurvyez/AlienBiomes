@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <GameConditionDef>
+        <defName>SZ_CrystallineRedshift</defName>
+        <conditionClass>AlienBiomes.GameCondition_CrystallineRedshift</conditionClass>
+        <label>crystalline redshift</label>
+        <description>A colonist has succumbed to injuries sustained by a living crystal. The world chills and the sky reddens. All who witness this phenomenon will be saddened.</description>
+        <endMessage>The crystalline redshift is ending.</endMessage>
+        <letterText>A forboding redshift is occuring in the sky above.\n\nThe shift in colors will drag moods down and the day will be darker, the night even more so.</letterText>
+        <letterDef>NegativeEvent</letterDef>
+        <canBePermanent>false</canBePermanent>
+        <allowUnderground>true</allowUnderground>
+        <pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+    </GameConditionDef>
+
+</Defs>
