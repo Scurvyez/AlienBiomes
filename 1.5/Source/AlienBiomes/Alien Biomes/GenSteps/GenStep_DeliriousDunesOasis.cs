@@ -6,9 +6,9 @@ using RimWorld;
 namespace AlienBiomes
 {
     /// <summary>
-    /// Generates a single little oasis patch on the map.
+    /// Generates a single oasis patch on the map.
     /// Make sure to use the correct order in the map gen process to avoid things like
-    /// generating steam geysers in the middle of the oasis. lol
+    /// generating steam geysers in the middle of the oasis dumbass. lol
     /// </summary>
     public class GenStep_DeliriousDunesOasis : GenStep
     {

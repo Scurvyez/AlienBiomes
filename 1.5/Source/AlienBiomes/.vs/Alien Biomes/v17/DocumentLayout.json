@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\defofs\\abdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\defofs\\abdefof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\thingclasses\\plant_bioluminescence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingclasses\\plant_bioluminescence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\harmonypatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\harmonypatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\alienbiomeswelcomenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\alienbiomeswelcomenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\alienbiomes\\1.5\\source\\alienbiomes\\alien biomes\\thingclasses\\defmodextensions\\plant_nastic_modextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingclasses\\defmodextensions\\plant_nastic_modextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\thingclasses\\plant_bioluminescence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingclasses\\plant_bioluminescence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\thingcomps\\compprops\\compproperties_timedharvest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingcomps\\compprops\\compproperties_timedharvest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\thingcomps\\comp_timedharvest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\thingcomps\\comp_timedharvest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\alien biomes\\gensteps\\genstep_deliriousdunesoasis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B26FF1F-B87C-439F-9EEC-172C297A553F}|Alien Biomes\\AlienBiomes.csproj|solutionrelative:alien biomes\\gensteps\\genstep_deliriousdunesoasis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,53 +42,77 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ABDefOf.cs",
-              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "RelativeDocumentMoniker": "Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "RelativeToolTip": "Alien Biomes\\DefOfs\\ABDefOf.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "Plant_Nastic_ModExtension.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingClasses\\DefModExtensions\\Plant_Nastic_ModExtension.cs",
+              "RelativeDocumentMoniker": "Alien Biomes\\ThingClasses\\DefModExtensions\\Plant_Nastic_ModExtension.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingClasses\\DefModExtensions\\Plant_Nastic_ModExtension.cs",
+              "RelativeToolTip": "Alien Biomes\\ThingClasses\\DefModExtensions\\Plant_Nastic_ModExtension.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T13:51:13.506Z",
+              "WhenOpened": "2024-04-24T13:07:09.507Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "Comp_TimedHarvest.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingComps\\Comp_TimedHarvest.cs",
+              "RelativeDocumentMoniker": "Alien Biomes\\ThingComps\\Comp_TimedHarvest.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingComps\\Comp_TimedHarvest.cs",
+              "RelativeToolTip": "Alien Biomes\\ThingComps\\Comp_TimedHarvest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T06:39:21.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompProperties_TimedHarvest.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingComps\\CompProps\\CompProperties_TimedHarvest.cs",
+              "RelativeDocumentMoniker": "Alien Biomes\\ThingComps\\CompProps\\CompProperties_TimedHarvest.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingComps\\CompProps\\CompProperties_TimedHarvest.cs",
+              "RelativeToolTip": "Alien Biomes\\ThingComps\\CompProps\\CompProperties_TimedHarvest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T06:39:20.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GenStep_DeliriousDunesOasis.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\GenSteps\\GenStep_DeliriousDunesOasis.cs",
+              "RelativeDocumentMoniker": "Alien Biomes\\GenSteps\\GenStep_DeliriousDunesOasis.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\GenSteps\\GenStep_DeliriousDunesOasis.cs",
+              "RelativeToolTip": "Alien Biomes\\GenSteps\\GenStep_DeliriousDunesOasis.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T19:53:15.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Plant_Bioluminescence.cs",
               "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingClasses\\Plant_Bioluminescence.cs",
               "RelativeDocumentMoniker": "Alien Biomes\\ThingClasses\\Plant_Bioluminescence.cs",
               "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\ThingClasses\\Plant_Bioluminescence.cs",
               "RelativeToolTip": "Alien Biomes\\ThingClasses\\Plant_Bioluminescence.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA2AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T03:20:12.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T03:20:12.251Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AlienBiomesWelcomeNote.cs",
-              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\AlienBiomesWelcomeNote.cs",
-              "RelativeDocumentMoniker": "Alien Biomes\\AlienBiomesWelcomeNote.cs",
-              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\AlienBiomesWelcomeNote.cs",
-              "RelativeToolTip": "Alien Biomes\\AlienBiomesWelcomeNote.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T00:03:11.905Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HarmonyPatches.cs",
               "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\HarmonyPatches.cs",
               "RelativeDocumentMoniker": "Alien Biomes\\HarmonyPatches.cs",
               "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.5\\Source\\AlienBiomes\\Alien Biomes\\HarmonyPatches.cs",
               "RelativeToolTip": "Alien Biomes\\HarmonyPatches.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T04:44:03.969Z"
+              "WhenOpened": "2024-04-01T04:44:03.969Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -212,6 +212,7 @@
         <neverMultiSelect>false</neverMultiSelect>
         <fillPercent>0.20</fillPercent>
         <pathCost>30</pathCost>
+        <!-- <size>(2, 2)</size> -->
         <ingestible />
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>

@@ -8,7 +8,6 @@ namespace AlienBiomes
     {
         private Color defaultColor;
         private Color modifiedColor;
-        //private float sunStrength;
         private Plant_Bioluminescence_ModExtension bioExt;
         private MapComponent_PlantGetter plantGetter;
 
