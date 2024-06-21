@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <TerrainDef  ParentName="FloorBase">
+        <defName>SZ_ElderBambooFloor</defName>
+        <label>elder bamboo floor</label>
+        <renderPrecedence>250</renderPrecedence>
+        <description>Wood plank flooring for that warm, homey feeling. While it is quick to lay, it is also very flammable.</description>
+        <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+        <burnedDef>BurnedWoodPlankFloor</burnedDef>
+        <color>(11, 184, 107)</color>
+        <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughSoftLight</pollutionShaderType>
+        <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionFloorSmooth</pollutionOverlayTexturePath>
+        <isPaintable>true</isPaintable>
+        <statBases>
+            <WorkToBuild>85</WorkToBuild>
+            <Flammability>0.22</Flammability>
+        </statBases>
+        <costList>
+            <SZ_ElderBambooLog>3</SZ_ElderBambooLog>
+        </costList>
+        <constructEffect>ConstructWood</constructEffect>
+        <designationHotKey>Misc9</designationHotKey>
+        <uiOrder>2000</uiOrder>
+    </TerrainDef>
+
+</Defs>

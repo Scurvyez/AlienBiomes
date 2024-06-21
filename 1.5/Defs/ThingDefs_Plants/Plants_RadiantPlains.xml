@@ -13,7 +13,7 @@
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.09</Nutrition>
+            <Nutrition>0.70</Nutrition>
         </statBases>
         <graphicData>
             <texPath>AlienBiomes/Things/Plants/RadiantGrass</texPath>
@@ -55,7 +55,7 @@
         <statBases>
             <MaxHitPoints>90</MaxHitPoints>
             <Flammability>1.3</Flammability>
-            <Nutrition>0.09</Nutrition>
+            <Nutrition>0.70</Nutrition>
         </statBases>
         <pathCost>14</pathCost>
         <graphicData>
@@ -98,7 +98,7 @@
         <statBases>
             <MaxHitPoints>150</MaxHitPoints>
             <Flammability>0.55</Flammability>
-            <Nutrition>0.09</Nutrition>
+            <Nutrition>0.35</Nutrition>
         </statBases>
         <graphicData>
             <texPath>AlienBiomes/Things/Plants/NebulousVeilMoss</texPath>
@@ -177,7 +177,7 @@
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
-            <Nutrition>0.08</Nutrition>
+            <Nutrition>0.15</Nutrition>
         </statBases>
         <graphicData>
             <texPath>AlienBiomes/Things/Plants/Fiddlehead</texPath>
@@ -216,7 +216,7 @@
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
-            <Nutrition>0.08</Nutrition>
+            <Nutrition>0.15</Nutrition>
         </statBases>
         <graphicData>
             <texPath>AlienBiomes/Things/Plants/FiddleheadWater</texPath>

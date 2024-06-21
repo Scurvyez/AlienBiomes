@@ -39,11 +39,15 @@ namespace AlienBiomes
                                     ABDefOf.SZ_BloodWaterMovingChestDeep);
                         }
                     }
-                    Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(),
-                        "SZ_LetterCrystallized".Translate(parent.pawn),
-                        ABDefOf.SZ_PawnCrystallized, null, null, null);
-                    Find.TickManager.slower.SignalForceNormalSpeedShort();
 
+                    if (!parent.pawn.IsColonist)
+                    {
+                        Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(),
+                            "SZ_LetterCrystallized".Translate(parent.pawn),
+                            ABDefOf.SZ_PawnCrystallized, null, null, null);
+                        Find.TickManager.slower.SignalForceNormalSpeedShort();
+                    }
+                    
                     GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal), TryFindRandomValidCell(map), map, WipeMode.Vanish);
                     FilthMaker.TryMakeFilth(GenRadial.RadialCellsAround(pawnPos, 1f, true).RandomElement(), parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);
                     parent.pawn.Corpse.Destroy();
