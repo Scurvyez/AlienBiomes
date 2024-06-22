@@ -24,6 +24,7 @@ Discord: steveo.o
     </modDependencies>
 
     <loadAfter>
+        <li>Ludeon.RimWorld.anomaly</li>
         <li>Ludeon.RimWorld.royalty</li>
         <li>Ludeon.RimWorld.ideology</li>
         <li>Ludeon.RimWorld.biotech</li>

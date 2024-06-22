@@ -154,6 +154,16 @@
                 <newWaterOceanDeep>SZ_CrystallineWaterOceanDeep</newWaterOceanDeep>
                 <newWaterMovingChestDeep>SZ_CrystallineWaterMovingChestDeep</newWaterMovingChestDeep>
 			</li>
+            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+                <allowedRockTypes>
+                    <li>SZ_Zephyrite</li>
+                    <li>SZ_Helioclase</li>
+                </allowedRockTypes>
+                <disallowedRockTypes>
+                    <li>SZ_Obelidian</li>
+                    <li>SZ_Volbitrine</li>
+                </disallowedRockTypes>
+            </li>
             <li Class="GeologicalLandforms.BiomeProperties" MayRequire="m00nl1ght.GeologicalLandforms">
                 <allowLandforms>true</allowLandforms>
                 <allowBiomeTransitions>true</allowBiomeTransitions>

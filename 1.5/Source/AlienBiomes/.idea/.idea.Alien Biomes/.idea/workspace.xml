@@ -5,20 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3026ae6e-2d55-43ba-bbf5-c57136e0dcbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_Floors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Misc/Various_Stone.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Patches/Patches_BiomeGenCore.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/Biome_Rocks_ModExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/Utils/ABLog.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Anomaly/1.5/Patches/Patches_BiomeGenAnomaly.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Ideology/1.5/Defs/Terrain_Defs/Terrain_Floors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Royalty/1.5/Defs/Terrain_Defs/Terrain_Floors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Alien Biomes/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Alien Biomes/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Alien Biomes/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Alien Biomes/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_Floors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_Floors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Patches/Patches_MapGeneration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/HarmonyPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HarmonyPatches.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../About/About.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../About/About.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../LoadFolders.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../LoadFolders.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +41,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2gowRUftkPE67g9FUv7WjUPoYj6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -82,6 +93,7 @@
       <workItem from="1718477767507" duration="1984000" />
       <workItem from="1718884090414" duration="111000" />
       <workItem from="1718887427776" duration="1258000" />
+      <workItem from="1718985373797" duration="16256000" />
     </task>
     <servers />
   </component>

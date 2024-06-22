@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ================ Obelidian ================ -->
+
+    <ColorDef ParentName="StructureColorBase">
+        <defName>SZ_Structure_Obelidian</defName>
+        <label>obelidian</label>
+        <color>(92, 40, 97)</color>
+        <displayOrder>700</displayOrder>
+    </ColorDef>
+
+    <ThingDef ParentName="UglyRockBase" Name="SZ_ObelidianBase">
+        <defName>SZ_Obelidian</defName>
+        <label>obelidian</label>
+        <description>A very hard, dark purple rock.</description>
+        <graphicData>
+            <color>(92, 40, 97)</color>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>1100</MaxHitPoints>
+        </statBases>
+        <building>
+            <mineableThing>SZ_ChunkObelidian</mineableThing>
+            <mineableDropChance>0.25</mineableDropChance>
+            <smoothedThing>SZ_SmoothedObelidian</smoothedThing>
+        </building>
+    </ThingDef>
+
+    <!-- ================ Obelidian Smoothed ================ -->
+
+    <ThingDef ParentName="SZ_ObelidianBase">
+        <defName>SZ_SmoothedObelidian</defName>
+        <label>smoothed obelidian</label>
+        <description>A very hard igneous rock. The shining surface is filled with a mosaic of pitch black and pearlescent crystalline speckles.</description>
+        <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+        <graphicData>
+            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+        </graphicData>
+        <statBases>
+            <Beauty>2</Beauty>
+            <MarketValue>8</MarketValue>
+        </statBases>
+        <building>
+            <isNaturalRock>false</isNaturalRock>
+            <canBuildNonEdificesUnder>true</canBuildNonEdificesUnder>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+            <smoothedThing />
+            <paintable>true</paintable>
+        </building>
+        <saveCompressible>false</saveCompressible>
+        <repairEffect>Repair</repairEffect>
+    </ThingDef>
+
+    <!-- ================ Obelidian Chunk ================ -->
+
+    <ThingDef ParentName="ChunkRockBase">
+        <defName>SZ_ChunkObelidian</defName>
+        <label>obelidian chunk</label>
+        <graphicData>
+            <color>(92, 40, 97)</color>
+        </graphicData>
+        <statBases>
+            <Mass>30</Mass>
+        </statBases>
+        <soundDrop>ChunkRock_Drop</soundDrop>
+        <butcherProducts>
+            <SZ_BlocksObelidian>20</SZ_BlocksObelidian>
+        </butcherProducts>
+    </ThingDef>
+
+    <!-- ================ Obelidian Blocks ================ -->
+
+    <ThingDef ParentName="StoneBlocksBase">
+        <defName>SZ_BlocksObelidian</defName>
+        <label>obelidian blocks</label>
+        <description>Blocks of solid obelidian. Obelidian is a notoriously hard stone.</description>
+        <tradeability>Sellable</tradeability>
+        <graphicData>
+            <color>(92, 40, 97)</color>
+        </graphicData>
+        <statBases>
+            <Mass>1.45</Mass>
+            <SharpDamageMultiplier>0.85</SharpDamageMultiplier>
+        </statBases>
+        <stuffProps>
+            <commonality>0.075</commonality>
+            <color>(92, 40, 97)</color>
+            <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+            <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+            <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+            <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
+            <stuffAdjective>obelidian</stuffAdjective>
+            <statFactors>
+                <MaxHitPoints>2.1</MaxHitPoints>
+            </statFactors>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+    </ThingDef>
+
+    <!-- ================ Obelidian Blocks: Recipe ================ -->
+
+    <RecipeDef ParentName="MakeStoneBlocksBase">
+        <defName>SZ_Make_StoneBlocksObelidian</defName>
+        <label>make obelidian blocks</label>
+        <description>Cuts obelidian chunks into usable blocks.</description>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SZ_ChunkObelidian</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>SZ_ChunkObelidian</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <SZ_BlocksObelidian>20</SZ_BlocksObelidian>
+        </products>
+    </RecipeDef>
+
+    <!-- ================ Volbitrine ================ -->
+
+    <ColorDef ParentName="StructureColorBase">
+        <defName>SZ_Structure_Volbitrine</defName>
+        <label>volbitrine</label>
+        <color>(219, 77, 61)</color>
+        <displayOrder>710</displayOrder>
+    </ColorDef>
+
+    <ThingDef ParentName="UglyRockBase" Name="SZ_VolbitrineBase">
+        <defName>SZ_Volbitrine</defName>
+        <label>volbitrine</label>
+        <description>A bright orange rock. Less dense than most other igneous rock types yet more than durable enough for all manner of construction.</description>
+        <graphicData>
+            <color>(219, 77, 61)</color>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>760</MaxHitPoints>
+        </statBases>
+        <building>
+            <mineableThing>SZ_ChunkVolbitrine</mineableThing>
+            <mineableDropChance>0.65</mineableDropChance>
+            <smoothedThing>SZ_SmoothedVolbitrine</smoothedThing>
+        </building>
+    </ThingDef>
+
+    <!-- ================ Volbitrine Smoothed ================ -->
+
+    <ThingDef ParentName="SZ_VolbitrineBase">
+        <defName>SZ_SmoothedVolbitrine</defName>
+        <label>smoothed volbitrine</label>
+        <description>The fine-grain, smoothed texture seems to reflect the world around it. In its microscopic canyons are endless scars of shining quartz-like minerals.</description>
+        <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+        <graphicData>
+            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+        </graphicData>
+        <statBases>
+            <Beauty>1.75</Beauty>
+            <MarketValue>8</MarketValue>
+        </statBases>
+        <building>
+            <isNaturalRock>false</isNaturalRock>
+            <canBuildNonEdificesUnder>true</canBuildNonEdificesUnder>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+            <smoothedThing />
+            <paintable>true</paintable>
+        </building>
+        <saveCompressible>false</saveCompressible>
+        <repairEffect>Repair</repairEffect>
+    </ThingDef>
+
+    <!-- ================ Volbitrine Chunk ================ -->
+
+    <ThingDef ParentName="ChunkRockBase">
+        <defName>SZ_ChunkVolbitrine</defName>
+        <label>volbitrine chunk</label>
+        <graphicData>
+            <color>(219, 77, 61)</color>
+        </graphicData>
+        <statBases>
+            <Mass>22</Mass>
+        </statBases>
+        <soundDrop>ChunkRock_Drop</soundDrop>
+        <butcherProducts>
+            <SZ_BlocksVolbitrine>20</SZ_BlocksVolbitrine>
+        </butcherProducts>
+    </ThingDef>
+
+    <!-- ================ Volbitrine Blocks ================ -->
+
+    <ThingDef ParentName="StoneBlocksBase">
+        <defName>SZ_BlocksVolbitrine</defName>
+        <label>volbitrine blocks</label>
+        <description>Blocks of solid volbitrine. Volbitrine is a fairly hard stone.</description>
+        <tradeability>Sellable</tradeability>
+        <graphicData>
+            <color>(219, 77, 61)</color>
+        </graphicData>
+        <statBases>
+            <Mass>1.25</Mass>
+            <SharpDamageMultiplier>0.45</SharpDamageMultiplier>
+        </statBases>
+        <stuffProps>
+            <commonality>0.075</commonality>
+            <color>(219, 77, 61)</color>
+            <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+            <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+            <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+            <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
+            <stuffAdjective>volbitrine</stuffAdjective>
+            <statFactors>
+                <MaxHitPoints>1.825</MaxHitPoints>
+            </statFactors>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+    </ThingDef>
+
+    <!-- ================ Volbitrine Blocks: Recipe ================ -->
+
+    <RecipeDef ParentName="MakeStoneBlocksBase">
+        <defName>SZ_Make_StoneBlocksVolbitrine</defName>
+        <label>make volbitrine blocks</label>
+        <description>Cuts volbitrine chunks into usable blocks.</description>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SZ_ChunkVolbitrine</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>SZ_ChunkVolbitrine</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <SZ_BlocksVolbitrine>20</SZ_BlocksVolbitrine>
+        </products>
+    </RecipeDef>
+
+    <!-- ================ Zephyrite ================ -->
+
+    <ColorDef ParentName="StructureColorBase">
+        <defName>SZ_Structure_Zephyrite</defName>
+        <label>zephyrite</label>
+        <color>(55, 73, 58)</color>
+        <displayOrder>720</displayOrder>
+    </ColorDef>
+
+    <ThingDef ParentName="UglyRockBase" Name="SZ_ZephyriteBase">
+        <defName>SZ_Zephyrite</defName>
+        <label>zephyrite</label>
+        <description>A relatively hard and incredibly dense rock.</description>
+        <graphicData>
+            <color>(55, 73, 58)</color>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>900</MaxHitPoints>
+        </statBases>
+        <building>
+            <mineableThing>SZ_ChunkZephyrite</mineableThing>
+            <mineableDropChance>0.25</mineableDropChance>
+            <smoothedThing>SZ_SmoothedZephyrite</smoothedThing>
+        </building>
+    </ThingDef>
+
+    <!-- ================ Zephyrite Smoothed ================ -->
+
+    <ThingDef ParentName="SZ_ZephyriteBase">
+        <defName>SZ_SmoothedZephyrite</defName>
+        <label>smoothed zephyrite</label>
+        <description>Although very dense and thus heavier than most rocks types, it is undeniably beautiful to look at. The alluring green and blue crystalline streaks call out from the void.</description>
+        <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+        <graphicData>
+            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+        </graphicData>
+        <statBases>
+            <Beauty>4</Beauty>
+            <MarketValue>13</MarketValue>
+        </statBases>
+        <building>
+            <isNaturalRock>false</isNaturalRock>
+            <canBuildNonEdificesUnder>true</canBuildNonEdificesUnder>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+            <smoothedThing />
+            <paintable>true</paintable>
+        </building>
+        <saveCompressible>false</saveCompressible>
+        <repairEffect>Repair</repairEffect>
+    </ThingDef>
+
+    <!-- ================ Zephyrite Chunk ================ -->
+
+    <ThingDef ParentName="ChunkRockBase">
+        <defName>SZ_ChunkZephyrite</defName>
+        <label>zephyrite chunk</label>
+        <graphicData>
+            <color>(55, 73, 58)</color>
+        </graphicData>
+        <statBases>
+            <Mass>48</Mass>
+        </statBases>
+        <soundDrop>ChunkRock_Drop</soundDrop>
+        <butcherProducts>
+            <SZ_BlocksZephyrite>20</SZ_BlocksZephyrite>
+        </butcherProducts>
+    </ThingDef>
+
+    <!-- ================ Zephyrite Blocks ================ -->
+
+    <ThingDef ParentName="StoneBlocksBase">
+        <defName>SZ_BlocksZephyrite</defName>
+        <label>zephyrite blocks</label>
+        <description>Blocks of solid zephyrite. Zephyrite is a notoriously hard stone.</description>
+        <tradeability>Sellable</tradeability>
+        <graphicData>
+            <color>(55, 73, 58)</color>
+        </graphicData>
+        <statBases>
+            <Mass>3.125</Mass>
+            <SharpDamageMultiplier>0.95</SharpDamageMultiplier>
+        </statBases>
+        <stuffProps>
+            <commonality>0.075</commonality>
+            <color>(55, 73, 58)</color>
+            <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+            <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+            <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+            <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
+            <stuffAdjective>zephyrite</stuffAdjective>
+            <statFactors>
+                <MaxHitPoints>5.15</MaxHitPoints>
+            </statFactors>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+    </ThingDef>
+
+    <!-- ================ Zephyrite Blocks: Recipe ================ -->
+
+    <RecipeDef ParentName="MakeStoneBlocksBase">
+        <defName>SZ_Make_StoneBlocksZephyrite</defName>
+        <label>make zephyrite blocks</label>
+        <description>Cuts zephyrite chunks into usable blocks.</description>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SZ_ChunkZephyrite</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>SZ_ChunkZephyrite</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <SZ_BlocksZephyrite>20</SZ_BlocksZephyrite>
+        </products>
+    </RecipeDef>
+
+    <!-- ================ Helioclase ================ -->
+
+    <ColorDef ParentName="StructureColorBase">
+        <defName>SZ_Structure_Helioclase</defName>
+        <label>helioclase</label>
+        <color>(0, 187, 204)</color>
+        <displayOrder>730</displayOrder>
+    </ColorDef>
+
+    <ThingDef ParentName="UglyRockBase" Name="SZ_HelioclaseBase">
+        <defName>SZ_Helioclase</defName>
+        <label>helioclase</label>
+        <description>A soft, yet gorgeous metamorphic rock with a stunning blueish tint.</description>
+        <graphicData>
+            <color>(0, 187, 204)</color>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>525</MaxHitPoints>
+        </statBases>
+        <building>
+            <mineableThing>SZ_ChunkHelioclase</mineableThing>
+            <mineableDropChance>0.25</mineableDropChance>
+            <smoothedThing>SZ_SmoothedHelioclase</smoothedThing>
+        </building>
+    </ThingDef>
+
+    <!-- ================ Helioclase Smoothed ================ -->
+
+    <ThingDef ParentName="SZ_HelioclaseBase">
+        <defName>SZ_SmoothedHelioclase</defName>
+        <label>smoothed helioclase</label>
+        <description>The reflections in this polished stone carry an ominous haze. Almost as if the crystals in their native biomes are calling out with a ravenous hunger.</description>
+        <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+        <graphicData>
+            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+        </graphicData>
+        <statBases>
+            <Beauty>3</Beauty>
+            <MarketValue>9</MarketValue>
+        </statBases>
+        <building>
+            <isNaturalRock>false</isNaturalRock>
+            <canBuildNonEdificesUnder>true</canBuildNonEdificesUnder>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+            <smoothedThing />
+            <paintable>true</paintable>
+        </building>
+        <saveCompressible>false</saveCompressible>
+        <repairEffect>Repair</repairEffect>
+    </ThingDef>
+
+    <!-- ================ Helioclase Chunk ================ -->
+
+    <ThingDef ParentName="ChunkRockBase">
+        <defName>SZ_ChunkHelioclase</defName>
+        <label>helioclase chunk</label>
+        <graphicData>
+            <color>(0, 187, 204)</color>
+        </graphicData>
+        <statBases>
+            <Mass>23</Mass>
+        </statBases>
+        <soundDrop>ChunkRock_Drop</soundDrop>
+        <butcherProducts>
+            <SZ_BlocksHelioclase>20</SZ_BlocksHelioclase>
+        </butcherProducts>
+    </ThingDef>
+
+    <!-- ================ Helioclase Blocks ================ -->
+
+    <ThingDef ParentName="StoneBlocksBase">
+        <defName>SZ_BlocksHelioclase</defName>
+        <label>helioclase blocks</label>
+        <description>Blocks of solid helioclase. Helioclase is a notoriously hard stone.</description>
+        <tradeability>Sellable</tradeability>
+        <graphicData>
+            <color>(0, 187, 204)</color>
+        </graphicData>
+        <statBases>
+            <Mass>1.2</Mass>
+            <SharpDamageMultiplier>0.35</SharpDamageMultiplier>
+        </statBases>
+        <stuffProps>
+            <commonality>0.075</commonality>
+            <color>(0, 187, 204)</color>
+            <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+            <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+            <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+            <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
+            <stuffAdjective>helioclase</stuffAdjective>
+            <statFactors>
+                <MaxHitPoints>5.15</MaxHitPoints>
+            </statFactors>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+    </ThingDef>
+
+    <!-- ================ Helioclase Blocks: Recipe ================ -->
+
+    <RecipeDef ParentName="MakeStoneBlocksBase">
+        <defName>SZ_Make_StoneBlocksHelioclase</defName>
+        <label>make helioclase blocks</label>
+        <description>Cuts helioclase chunks into usable blocks.</description>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SZ_ChunkHelioclase</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>SZ_ChunkHelioclase</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <SZ_BlocksHelioclase>20</SZ_BlocksHelioclase>
+        </products>
+    </RecipeDef>
+
+</Defs>

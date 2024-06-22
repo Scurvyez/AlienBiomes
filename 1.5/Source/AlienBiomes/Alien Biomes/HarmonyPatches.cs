@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Linq;
 using HarmonyLib;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -45,8 +47,11 @@ namespace AlienBiomes
             harmony.Patch(original: AccessTools.Method(typeof(RiverMaker), "ValidatePassage"),
                 prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(ValidatePassagePrefix)));
 
+            harmony.Patch(original: AccessTools.Method(typeof(World), "NaturalRockTypesIn"),
+                postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(NaturalRockTypesInPostfix)));
+
             //harmony.Patch(original: AccessTools.Method(typeof(Pawn), "DoKillSideEffects"),
-                //postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(DoKillSideEffectsPostfix)));
+            //postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(DoKillSideEffectsPostfix)));
         }
 
         /*
@@ -280,6 +285,53 @@ namespace AlienBiomes
                 || map.Biome == ABDefOf.SZ_CrystallineFlats
                 || map.Biome == ABDefOf.SZ_DeliriousDunes) return false;
             return true;
+        }
+        
+        public static void NaturalRockTypesInPostfix(ref IEnumerable<ThingDef> __result, int tile, World __instance)
+        {
+            Tile tile2 = __instance.grid[tile];
+            if (tile2 == null) return;
+
+            BiomeDef biome = tile2.biome;
+            List<ThingDef> list = __result.ToList();
+            Rand.PushState(tile);
+            int num = Rand.RangeInclusive(2, 3);
+
+            Biome_Rocks_ModExtension modExt = biome.GetModExtension<Biome_Rocks_ModExtension>();
+            if (modExt == null)
+            {
+                Rand.PopState();
+                return;
+            }
+
+            if (modExt.allowedRockTypes != null)
+            {
+                List<ThingDef> allowedRocks = new List<ThingDef>();
+                foreach (ThingDef rockDef in modExt.allowedRockTypes)
+                {
+                    if (rockDef != null && !list.Contains(rockDef))
+                    {
+                        allowedRocks.Add(rockDef);
+                    }
+                }
+
+                if (allowedRocks.Any())
+                {
+                    while (list.Count + allowedRocks.Count > num && list.Count > 0)
+                    {
+                        list.Remove(list.RandomElement());
+                    }
+                    list.AddRange(allowedRocks);
+                }
+            }
+
+            if (modExt.disallowedRockTypes != null)
+            {
+                list.RemoveAll(rockDef => modExt.disallowedRockTypes.Contains(rockDef));
+            }
+
+            Rand.PopState();
+            __result = list;
         }
     }
 }

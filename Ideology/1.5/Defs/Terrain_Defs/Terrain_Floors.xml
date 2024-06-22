@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ================ Obelidian Morbid Tile ================ -->
+
+    <TerrainDef ParentName="MorbidStoneTile">
+        <defName>SZ_Tile_MorbidObelidian</defName>
+        <label>morbid obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>20</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Volbitrine Morbid Tile ================ -->
+
+    <TerrainDef ParentName="MorbidStoneTile">
+        <defName>SZ_Tile_MorbidVolbitrine</defName>
+        <label>morbid volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>20</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Zephyrite Morbid Tile ================ -->
+
+    <TerrainDef ParentName="MorbidStoneTile">
+        <defName>SZ_Tile_MorbidZephyrite</defName>
+        <label>morbid zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>20</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Helioclase Morbid Tile ================ -->
+
+    <TerrainDef ParentName="MorbidStoneTile">
+        <defName>SZ_Tile_MorbidHelioclase</defName>
+        <label>morbid helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>20</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+</Defs>

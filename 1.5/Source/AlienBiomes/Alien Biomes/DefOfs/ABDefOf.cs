@@ -78,6 +78,11 @@ namespace AlienBiomes
         public static ThingDef SZ_RawSoothingHoney;
         public static ThingDef SZ_RawCopaceticHoney;
 
+        public static ThingDef SZ_Obelidian;
+        public static ThingDef SZ_Volbitrine;
+        public static ThingDef SZ_Zephyrite;
+        public static ThingDef SZ_Helioclase;
+
         public static ShaderTypeDef MoteGlowDistorted;
         public static ShaderTypeDef TransparentPlantShimmer;
         public static ShaderTypeDef TransparentPlantPulse;

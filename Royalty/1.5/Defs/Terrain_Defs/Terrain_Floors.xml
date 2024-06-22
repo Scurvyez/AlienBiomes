@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ================ Obelidian Fine Tile ================ -->
+
+    <TerrainDef ParentName="FineTileStoneBase">
+        <defName>SZ_FineTileObelidian</defName>
+        <label>fine obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>20</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Volbitrine Fine Tile ================ -->
+
+    <TerrainDef ParentName="FineTileStoneBase">
+        <defName>SZ_FineTileVolbitrine</defName>
+        <label>fine volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>20</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Zephyrite Fine Tile ================ -->
+
+    <TerrainDef ParentName="FineTileStoneBase">
+        <defName>SZ_FineTileZephyrite</defName>
+        <label>fine zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>20</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Helioclase Fine Tile ================ -->
+
+    <TerrainDef ParentName="FineTileStoneBase">
+        <defName>SZ_FineTileHelioclase</defName>
+        <label>fine helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>20</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+</Defs>
