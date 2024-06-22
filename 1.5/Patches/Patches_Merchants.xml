@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Base_Neolithic_Standard"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+            </li>
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Base_Outlander_Standard"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+            </li>
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Caravan_Neolithic_BulkGoods"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+            </li>
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+            </li>
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Orbital_BulkGoods"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+            </li>
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+                <countRange>300~600</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+                <countRange>300~600</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+                <countRange>300~600</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+                <countRange>300~600</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+                <countRange>300~600</countRange>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Visitor_Neolithic_Standard"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+            </li>
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+                <countRange>100~300</countRange>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TraderKindDef[defName="Visitor_Outlander_Standard"]/stockGenerators</xpath>
+        <value>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+            </li>
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_ElderBambooLog</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksObelidian</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksVolbitrine</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksZephyrite</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>SZ_BlocksHelioclase</thingDef>
+                <countRange>250~425</countRange>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

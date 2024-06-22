@@ -75,7 +75,7 @@
         <defName>SZ_BlocksObelidian</defName>
         <label>obelidian blocks</label>
         <description>Blocks of solid obelidian. Obelidian is a notoriously hard stone.</description>
-        <tradeability>Sellable</tradeability>
+        <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(92, 40, 97)</color>
         </graphicData>
@@ -198,7 +198,7 @@
         <defName>SZ_BlocksVolbitrine</defName>
         <label>volbitrine blocks</label>
         <description>Blocks of solid volbitrine. Volbitrine is a fairly hard stone.</description>
-        <tradeability>Sellable</tradeability>
+        <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(219, 77, 61)</color>
         </graphicData>
@@ -321,7 +321,7 @@
         <defName>SZ_BlocksZephyrite</defName>
         <label>zephyrite blocks</label>
         <description>Blocks of solid zephyrite. Zephyrite is a notoriously hard stone.</description>
-        <tradeability>Sellable</tradeability>
+        <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(55, 73, 58)</color>
         </graphicData>
@@ -444,7 +444,7 @@
         <defName>SZ_BlocksHelioclase</defName>
         <label>helioclase blocks</label>
         <description>Blocks of solid helioclase. Helioclase is a notoriously hard stone.</description>
-        <tradeability>Sellable</tradeability>
+        <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(0, 187, 204)</color>
         </graphicData>
