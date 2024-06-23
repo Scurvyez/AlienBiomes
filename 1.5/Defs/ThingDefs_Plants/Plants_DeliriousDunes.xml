@@ -88,7 +88,8 @@
             <li Class="AlienBiomes.PlantNastic_ModExtension">
                 <isTouchSensitive>true</isTouchSensitive>
                 <isDamaging>true</isDamaging>
-                <effectRadius>4</effectRadius>
+                <effectRadius>2</effectRadius>
+                <gasDamageEffectRadius>3</gasDamageEffectRadius>
                 <gasReleaseCooldown>7500</gasReleaseCooldown>
                 <gasDamageRange>1~3</gasDamageRange>
             </li>
@@ -202,7 +203,7 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Aurora Agava ====================-->
+    <!--==================== Aurora Agave ====================-->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_AuroraAgave</defName>

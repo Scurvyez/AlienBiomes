@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+    <!-- ================ Alien Rock Base ================ -->
+
+    <ThingDef Name="SZ_AlienRockBase" ParentName="RockBase" Abstract="True">
+        <graphicData>
+            <texPath>AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Shiny</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <linkType>CornerFiller</linkType>
+            <linkFlags>
+                <li>Rock</li>
+                <li>MapEdge</li>
+            </linkFlags>
+        </graphicData>
+    </ThingDef>
+
     <!-- ================ Obelidian ================ -->
 
     <ColorDef ParentName="StructureColorBase">
@@ -74,7 +89,7 @@
     <ThingDef ParentName="StoneBlocksBase">
         <defName>SZ_BlocksObelidian</defName>
         <label>obelidian blocks</label>
-        <description>Blocks of solid obelidian. Obelidian is a notoriously hard stone.</description>
+        <description>Blocks of solid obelidian. Obelidian is a notoriously hard stone with deep purple tones.</description>
         <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(92, 40, 97)</color>
@@ -92,7 +107,10 @@
             <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
             <stuffAdjective>obelidian</stuffAdjective>
             <statFactors>
+                <Beauty>1.5</Beauty>
                 <MaxHitPoints>2.1</MaxHitPoints>
+                <WorkToBuild>7.5</WorkToBuild>
+                <WorkToMake>1.75</WorkToMake>
             </statFactors>
             <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
         </stuffProps>
@@ -197,7 +215,7 @@
     <ThingDef ParentName="StoneBlocksBase">
         <defName>SZ_BlocksVolbitrine</defName>
         <label>volbitrine blocks</label>
-        <description>Blocks of solid volbitrine. Volbitrine is a fairly hard stone.</description>
+        <description>Blocks of solid volbitrine. Volbitrine is a fairly hard stone with lustrious red hues.</description>
         <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(219, 77, 61)</color>
@@ -215,7 +233,10 @@
             <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
             <stuffAdjective>volbitrine</stuffAdjective>
             <statFactors>
-                <MaxHitPoints>1.825</MaxHitPoints>
+                <Beauty>1.05</Beauty>
+                <MaxHitPoints>1.35</MaxHitPoints>
+                <WorkToBuild>3.75</WorkToBuild>
+                <WorkToMake>1.05</WorkToMake>
             </statFactors>
             <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
         </stuffProps>
@@ -320,7 +341,7 @@
     <ThingDef ParentName="StoneBlocksBase">
         <defName>SZ_BlocksZephyrite</defName>
         <label>zephyrite blocks</label>
-        <description>Blocks of solid zephyrite. Zephyrite is a notoriously hard stone.</description>
+        <description>Blocks of solid zephyrite. Though dull in color, zephyrite makes up for in durability.</description>
         <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(55, 73, 58)</color>
@@ -338,7 +359,10 @@
             <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
             <stuffAdjective>zephyrite</stuffAdjective>
             <statFactors>
-                <MaxHitPoints>5.15</MaxHitPoints>
+                <Beauty>1.6</Beauty>
+                <MaxHitPoints>3.25</MaxHitPoints>
+                <WorkToBuild>6.0</WorkToBuild>
+                <WorkToMake>1.225</WorkToMake>
             </statFactors>
             <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
         </stuffProps>
@@ -443,14 +467,14 @@
     <ThingDef ParentName="StoneBlocksBase">
         <defName>SZ_BlocksHelioclase</defName>
         <label>helioclase blocks</label>
-        <description>Blocks of solid helioclase. Helioclase is a notoriously hard stone.</description>
+        <description>Blocks of solid helioclase. Helioclase is much more malleable than other stones and will not withstand as much physical punishment though it's color is quite pleasing.</description>
         <tradeability>Buyable</tradeability>
         <graphicData>
             <color>(0, 187, 204)</color>
         </graphicData>
         <statBases>
             <Mass>1.2</Mass>
-            <SharpDamageMultiplier>0.35</SharpDamageMultiplier>
+            <SharpDamageMultiplier>0.15</SharpDamageMultiplier>
         </statBases>
         <stuffProps>
             <commonality>0.075</commonality>
@@ -461,7 +485,10 @@
             <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
             <stuffAdjective>helioclase</stuffAdjective>
             <statFactors>
-                <MaxHitPoints>5.15</MaxHitPoints>
+                <Beauty>1.125</Beauty>
+                <MaxHitPoints>0.925</MaxHitPoints>
+                <WorkToBuild>2.5</WorkToBuild>
+                <WorkToMake>0.95</WorkToMake>
             </statFactors>
             <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
         </stuffProps>
@@ -490,6 +517,258 @@
         </fixedIngredientFilter>
         <products>
             <SZ_BlocksHelioclase>20</SZ_BlocksHelioclase>
+        </products>
+    </RecipeDef>
+
+    <!-- ================ Cryoquartz ================ -->
+
+    <ColorDef ParentName="StructureColorBase">
+        <defName>SZ_Structure_Cryoquartz</defName>
+        <label>cryoquartz</label>
+        <color>(78, 121, 190)</color>
+        <displayOrder>740</displayOrder>
+    </ColorDef>
+
+    <ThingDef ParentName="UglyRockBase" Name="SZ_CryoquartzBase">
+        <defName>SZ_Cryoquartz</defName>
+        <label>cryoquartz</label>
+        <description>A granite-like rock filled with tiny bits of hardened blue quartz.</description>
+        <graphicData>
+            <color>(78, 121, 190)</color>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>920</MaxHitPoints>
+        </statBases>
+        <building>
+            <mineableThing>SZ_ChunkCryoquartz</mineableThing>
+            <mineableDropChance>0.25</mineableDropChance>
+            <smoothedThing>SZ_SmoothedCryoquartz</smoothedThing>
+        </building>
+    </ThingDef>
+
+    <!-- ================ Cryoquartz Smoothed ================ -->
+
+    <ThingDef ParentName="SZ_CryoquartzBase">
+        <defName>SZ_SmoothedCryoquartz</defName>
+        <label>smoothed cryoquartz</label>
+        <description>The once small and insignificant speckles of blue quartz now shin vibrantly in winding streams across the polished face of this rock.</description>
+        <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+        <graphicData>
+            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+        </graphicData>
+        <statBases>
+            <Beauty>3</Beauty>
+            <MarketValue>10</MarketValue>
+        </statBases>
+        <building>
+            <isNaturalRock>false</isNaturalRock>
+            <canBuildNonEdificesUnder>true</canBuildNonEdificesUnder>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+            <smoothedThing />
+            <paintable>true</paintable>
+        </building>
+        <saveCompressible>false</saveCompressible>
+        <repairEffect>Repair</repairEffect>
+    </ThingDef>
+
+    <!-- ================ Cryoquartz Chunk ================ -->
+
+    <ThingDef ParentName="ChunkRockBase">
+        <defName>SZ_ChunkCryoquartz</defName>
+        <label>cryoquartz chunk</label>
+        <graphicData>
+            <color>(78, 121, 190)</color>
+        </graphicData>
+        <statBases>
+            <Mass>23</Mass>
+        </statBases>
+        <soundDrop>ChunkRock_Drop</soundDrop>
+        <butcherProducts>
+            <SZ_BlocksCryoquartz>20</SZ_BlocksCryoquartz>
+        </butcherProducts>
+    </ThingDef>
+
+    <!-- ================ Cryoquartz Blocks ================ -->
+
+    <ThingDef ParentName="StoneBlocksBase">
+        <defName>SZ_BlocksCryoquartz</defName>
+        <label>cryoquartz blocks</label>
+        <description>Blocks of solid cryoquartz. A soothing hue of purplish-blue emanates from this cryoquartz.</description>
+        <tradeability>Buyable</tradeability>
+        <graphicData>
+            <color>(78, 121, 190)</color>
+        </graphicData>
+        <statBases>
+            <Mass>1.2</Mass>
+            <SharpDamageMultiplier>0.45</SharpDamageMultiplier>
+        </statBases>
+        <stuffProps>
+            <commonality>0.075</commonality>
+            <color>(78, 121, 190)</color>
+            <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+            <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+            <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+            <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
+            <stuffAdjective>cryoquartz</stuffAdjective>
+            <statFactors>
+                <Beauty>1.25</Beauty>
+                <MaxHitPoints>1.8</MaxHitPoints>
+                <WorkToBuild>5.95</WorkToBuild>
+                <WorkToMake>1.5</WorkToMake>
+            </statFactors>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+    </ThingDef>
+
+    <!-- ================ Cryoquartz Blocks: Recipe ================ -->
+
+    <RecipeDef ParentName="MakeStoneBlocksBase">
+        <defName>SZ_Make_StoneBlocksCryoquartz</defName>
+        <label>make cryoquartz blocks</label>
+        <description>Cuts cryoquartz chunks into usable blocks.</description>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SZ_ChunkCryoquartz</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>SZ_ChunkCryoquartz</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <SZ_BlocksCryoquartz>20</SZ_BlocksCryoquartz>
+        </products>
+    </RecipeDef>
+
+    <!-- ================ Luminshale ================ -->
+
+    <ColorDef ParentName="StructureColorBase">
+        <defName>SZ_Structure_Luminshale</defName>
+        <label>luminshale</label>
+        <color>(113, 106, 154)</color>
+        <displayOrder>750</displayOrder>
+    </ColorDef>
+
+    <ThingDef ParentName="UglyRockBase" Name="SZ_LuminshaleBase">
+        <defName>SZ_Luminshale</defName>
+        <label>luminshale</label>
+        <description>A granite-like rock filled with tiny bits of hardened blue quartz.</description>
+        <graphicData>
+            <color>(113, 106, 154)</color>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>450</MaxHitPoints>
+        </statBases>
+        <building>
+            <mineableThing>SZ_ChunkLuminshale</mineableThing>
+            <mineableDropChance>0.25</mineableDropChance>
+            <smoothedThing>SZ_SmoothedLuminshale</smoothedThing>
+        </building>
+    </ThingDef>
+
+    <!-- ================ Luminshale Smoothed ================ -->
+
+    <ThingDef ParentName="SZ_LuminshaleBase">
+        <defName>SZ_SmoothedLuminshale</defName>
+        <label>smoothed luminshale</label>
+        <description>The once small and insignificant speckles of blue quartz now shin vibrantly in winding streams across the polished face of this rock.</description>
+        <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
+        <graphicData>
+            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+        </graphicData>
+        <statBases>
+            <Beauty>1.2</Beauty>
+            <MarketValue>8</MarketValue>
+        </statBases>
+        <building>
+            <isNaturalRock>false</isNaturalRock>
+            <canBuildNonEdificesUnder>true</canBuildNonEdificesUnder>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+            <smoothedThing />
+            <paintable>true</paintable>
+        </building>
+        <saveCompressible>false</saveCompressible>
+        <repairEffect>Repair</repairEffect>
+    </ThingDef>
+
+    <!-- ================ Luminshale Chunk ================ -->
+
+    <ThingDef ParentName="ChunkRockBase">
+        <defName>SZ_ChunkLuminshale</defName>
+        <label>luminshale chunk</label>
+        <graphicData>
+            <color>(113, 106, 154)</color>
+        </graphicData>
+        <statBases>
+            <Mass>21</Mass>
+        </statBases>
+        <soundDrop>ChunkRock_Drop</soundDrop>
+        <butcherProducts>
+            <SZ_BlocksLuminshale>20</SZ_BlocksLuminshale>
+        </butcherProducts>
+    </ThingDef>
+
+    <!-- ================ Luminshale Blocks ================ -->
+
+    <ThingDef ParentName="StoneBlocksBase">
+        <defName>SZ_BlocksLuminshale</defName>
+        <label>luminshale blocks</label>
+        <description>Blocks of solid luminshale.</description>
+        <tradeability>Buyable</tradeability>
+        <graphicData>
+            <color>(113, 106, 154)</color>
+        </graphicData>
+        <statBases>
+            <Mass>1.1</Mass>
+            <SharpDamageMultiplier>0.45</SharpDamageMultiplier>
+        </statBases>
+        <stuffProps>
+            <commonality>0.075</commonality>
+            <color>(113, 106, 154)</color>
+            <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+            <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+            <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+            <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
+            <stuffAdjective>luminshale</stuffAdjective>
+            <statFactors>
+                <Beauty>1.1</Beauty>
+                <MaxHitPoints>1.4</MaxHitPoints>
+                <WorkToBuild>4.1</WorkToBuild>
+                <WorkToMake>1.1</WorkToMake>
+            </statFactors>
+            <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+        </stuffProps>
+    </ThingDef>
+
+    <!-- ================ Luminshale Blocks: Recipe ================ -->
+
+    <RecipeDef ParentName="MakeStoneBlocksBase">
+        <defName>SZ_Make_StoneBlocksLuminshale</defName>
+        <label>make luminshale blocks</label>
+        <description>Cuts luminshale chunks into usable blocks.</description>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>SZ_ChunkLuminshale</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>SZ_ChunkLuminshale</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <SZ_BlocksCryoquartz>20</SZ_BlocksCryoquartz>
         </products>
     </RecipeDef>
 

@@ -177,7 +177,7 @@ namespace AlienBiomes
 
         public void ExpelGas()
         {
-            GenExplosion.DoExplosion(Position, Map, 2, ABDefOf.SZ_PlantAcid, null, 
+            GenExplosion.DoExplosion(Position, Map, plantExt.gasDamageEffectRadius, ABDefOf.SZ_PlantAcid, null, 
                 (plantExt.gasDamageRange.RandomInRange), -1, null, null, null, 
                 null, null, 0, 0, null, 
                 false, null, 0, 0, 0, 

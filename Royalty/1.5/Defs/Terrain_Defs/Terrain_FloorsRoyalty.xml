@@ -45,4 +45,26 @@
         </costList>
     </TerrainDef>
 
+    <!-- ================ Cryoquartz Fine Tile ================ -->
+
+    <TerrainDef ParentName="FineTileStoneBase">
+        <defName>SZ_FineTileCryoquartz</defName>
+        <label>fine cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>20</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Luminshale Fine Tile ================ -->
+
+    <TerrainDef ParentName="FineTileStoneBase">
+        <defName>SZ_FineTileLuminshale</defName>
+        <label>fine luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>20</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
 </Defs>

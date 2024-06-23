@@ -44,7 +44,7 @@ namespace AlienBiomes
         
         private IntRange AdjustedRadiusByMapSize(Map map, List<IntRange> range)
         {
-            int mapSizeIndex = Mathf.FloorToInt(map.Size.x / 100);
+            int mapSizeIndex = Mathf.FloorToInt(map.Size.x / 100.0f);
             return mapSizeIndex < range.Count ? range[mapSizeIndex] : new IntRange(1, 1);
         }
 

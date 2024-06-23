@@ -31,6 +31,7 @@ namespace AlienBiomes
         public int gasReleaseCooldown = 2000;
         public float effectRadius = 2f;
         public IntRange gasDamageRange = new IntRange(1, 2);
+        public float gasDamageEffectRadius = 2f;
         public HediffDef hediffToGive = null;
     }
 }

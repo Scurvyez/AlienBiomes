@@ -10,6 +10,8 @@
                     <li>SZ_Volbitrine</li>
                     <li>SZ_Zephyrite</li>
                     <li>SZ_Helioclase</li>
+                    <li>SZ_Cryoquartz</li>
+                    <li>SZ_Luminshale</li>
                 </disallowedRockTypes>
             </li>
         </value>
@@ -24,6 +26,8 @@
                     <li>SZ_Volbitrine</li>
                     <li>SZ_Zephyrite</li>
                     <li>SZ_Helioclase</li>
+                    <li>SZ_Cryoquartz</li>
+                    <li>SZ_Luminshale</li>
                 </disallowedRockTypes>
             </li>
         </value>
@@ -38,6 +42,8 @@
                     <li>SZ_Volbitrine</li>
                     <li>SZ_Zephyrite</li>
                     <li>SZ_Helioclase</li>
+                    <li>SZ_Cryoquartz</li>
+                    <li>SZ_Luminshale</li>
                 </disallowedRockTypes>
             </li>
         </value>

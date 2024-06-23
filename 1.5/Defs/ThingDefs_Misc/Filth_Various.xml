@@ -8,7 +8,7 @@
         <label>dirt</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(1, 43, 23, 97)</color>
+            <color>(1, 43, 23, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -27,7 +27,7 @@
         <label>dirt</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(1, 74, 26, 97)</color>
+            <color>(1, 74, 26, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -46,7 +46,7 @@
         <label>dirt</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(18, 28, 15, 97)</color>
+            <color>(18, 28, 15, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -65,7 +65,7 @@
         <label>soothing sand</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(128, 111, 152, 97)</color>
+            <color>(128, 111, 152, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -85,7 +85,7 @@
         <label>dirt</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(81, 37, 16, 97)</color>
+            <color>(81, 37, 16, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -104,7 +104,7 @@
         <label>smoldering sand</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(121, 40, 31, 97)</color>
+            <color>(121, 40, 31, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -122,7 +122,7 @@
         <label>mellow sand</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(117, 21, 15, 97)</color>
+            <color>(117, 21, 15, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -140,7 +140,7 @@
         <label>coarse sand</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(66, 23, 17, 97)</color>
+            <color>(66, 23, 17, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -158,7 +158,7 @@
         <label>black sand</label>
         <graphicData>
             <texPath>Things/Filth/Grainy</texPath>
-            <color>(31, 26, 20, 97)</color>
+            <color>(31, 26, 20, 100)</color>
         </graphicData>
         <filth>
             <placementMask>
@@ -173,6 +173,60 @@
 
     <!-- Crystalline Flats -->
 
-    
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_CrystallineSoil</defName>
+        <label>dirt</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(1, 55, 77, 100)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <rainWashes>true</rainWashes>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_CrystallineRichSoil</defName>
+        <label>dirt</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(1, 73, 102, 100)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <rainWashes>true</rainWashes>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseFilth">
+        <defName>SZ_Filth_CrystallineSand</defName>
+        <label>crystalline sand</label>
+        <graphicData>
+            <texPath>Things/Filth/Grainy</texPath>
+            <color>(25, 152, 150, 100)</color>
+        </graphicData>
+        <filth>
+            <placementMask>
+                <li>Terrain</li>
+            </placementMask>
+            <disappearsInDays>45~50</disappearsInDays>
+            <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+            <canFilthAttach>true</canFilthAttach>
+            <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+        </filth>
+    </ThingDef>
 
 </Defs>

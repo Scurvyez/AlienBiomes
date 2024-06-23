@@ -143,7 +143,7 @@
                 <minRainfall>0</minRainfall>
                 <maxRainfall>1300</maxRainfall>
                 <minHilliness>Flat</minHilliness>
-                <maxHilliness>SmallHills</maxHilliness>
+                <maxHilliness>LargeHills</maxHilliness>
                 <newSand>SZ_CrystallineSand</newSand>
                 <newBeachSand>SZ_CrystallineSand</newBeachSand>
                 <newGravel>SZ_CrystallineStonySoil</newGravel>
@@ -162,6 +162,8 @@
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
+                    <li>SZ_Cryoquartz</li>
+                    <li>SZ_Luminshale</li>
                 </disallowedRockTypes>
             </li>
             <li Class="GeologicalLandforms.BiomeProperties" MayRequire="m00nl1ght.GeologicalLandforms">

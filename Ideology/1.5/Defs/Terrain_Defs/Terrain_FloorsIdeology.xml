@@ -45,4 +45,26 @@
         </costList>
     </TerrainDef>
 
+    <!-- ================ Cryoquartz Morbid Tile ================ -->
+
+    <TerrainDef ParentName="MorbidStoneTile">
+        <defName>SZ_Tile_MorbidCryoquartz</defName>
+        <label>morbid cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>20</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Luminshale Morbid Tile ================ -->
+
+    <TerrainDef ParentName="MorbidStoneTile">
+        <defName>SZ_Tile_MorbidLuminshale</defName>
+        <label>morbid luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>20</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
 </Defs>
