@@ -21,38 +21,35 @@ namespace AlienBiomes
             Map map = parent.pawn.Corpse.MapHeld;
             pawnPos = parent.pawn.Position;
 
-            if (map != null)
-            {
-                CrystalDeath = true;
-                if (CrystalDeath)
-                {
-                    if (map.Biome == ABDefOf.SZ_CrystallineFlats)
-                    {
-                        for (int i = 0; i < map.cellIndices.NumGridCells; i++)
-                        {
-                            var terrain = map.terrainGrid.TerrainAt(i);
-                            if (terrain == TerrainDefOf.WaterMovingShallow)
-                                map.terrainGrid.SetTerrain(map.cellIndices.IndexToCell(i),
-                                    ABDefOf.SZ_BloodWaterMovingShallow);
-                            else if (terrain == TerrainDefOf.WaterMovingChestDeep)
-                                map.terrainGrid.SetTerrain(map.cellIndices.IndexToCell(i),
-                                    ABDefOf.SZ_BloodWaterMovingChestDeep);
-                        }
-                    }
+            if (map == null) return;
+            CrystalDeath = true;
 
-                    if (!parent.pawn.IsColonist)
-                    {
-                        Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(),
-                            "SZ_LetterCrystallized".Translate(parent.pawn),
-                            ABDefOf.SZ_PawnCrystallized, null, null, null);
-                        Find.TickManager.slower.SignalForceNormalSpeedShort();
-                    }
-                    
-                    GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal), TryFindRandomValidCell(map), map, WipeMode.Vanish);
-                    FilthMaker.TryMakeFilth(GenRadial.RadialCellsAround(pawnPos, 1f, true).RandomElement(), parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);
-                    parent.pawn.Corpse.Destroy();
+            if (!CrystalDeath) return;
+            if (map.Biome == ABDefOf.SZ_CrystallineFlats)
+            {
+                for (int i = 0; i < map.cellIndices.NumGridCells; i++)
+                {
+                    TerrainDef terrain = map.terrainGrid.TerrainAt(i);
+                    if (terrain == TerrainDefOf.WaterMovingShallow)
+                        map.terrainGrid.SetTerrain(map.cellIndices.IndexToCell(i),
+                            ABDefOf.SZ_BloodWaterMovingShallow);
+                    else if (terrain == TerrainDefOf.WaterMovingChestDeep)
+                        map.terrainGrid.SetTerrain(map.cellIndices.IndexToCell(i),
+                            ABDefOf.SZ_BloodWaterMovingChestDeep);
                 }
             }
+
+            if (!parent.pawn.IsColonist)
+            {
+                Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(),
+                    "SZ_LetterCrystallized".Translate(parent.pawn),
+                    ABDefOf.SZ_PawnCrystallizedLetter, null, null, null);
+                Find.TickManager.slower.SignalForceNormalSpeedShort();
+            }
+                    
+            GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal), TryFindRandomValidCell(map), map, WipeMode.Vanish);
+            FilthMaker.TryMakeFilth(GenRadial.RadialCellsAround(pawnPos, 1f, true).RandomElement(), parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);
+            parent.pawn.Corpse.Destroy();
         }
 
         private IntVec3 TryFindRandomValidCell(Map map)
@@ -68,12 +65,7 @@ namespace AlienBiomes
                 }
             }
 
-            if (potentialSpawnCells.Count > 0)
-            {
-                return potentialSpawnCells.RandomElement();
-            }
-
-            return IntVec3.Invalid;
+            return potentialSpawnCells.Count > 0 ? potentialSpawnCells.RandomElement() : IntVec3.Invalid;
         }
     }
 }

@@ -7,11 +7,28 @@
         <label>crystalline redshift</label>
         <description>A colonist has succumbed to injuries sustained by a living crystal. The world chills and the sky reddens. All who witness this phenomenon will be saddened.</description>
         <endMessage>The crystalline redshift is ending.</endMessage>
-        <letterText>A forboding redshift is occuring in the sky above.\n\nThe shift in colors will drag moods down and the day will be darker, the night even more so.</letterText>
+        <letterText>A foreboding redshift is occurring in the sky above.\n\nThe shift in colors will drag moods down and the day will be darker, the night even more so.</letterText>
         <letterDef>NegativeEvent</letterDef>
         <canBePermanent>false</canBePermanent>
         <allowUnderground>true</allowUnderground>
         <pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+    </GameConditionDef>
+
+    <GameConditionDef>
+        <defName>SZ_DesertBloomWeatherShift</defName>
+        <conditionClass>AlienBiomes.GameCondition_DesertBloomWeatherShift</conditionClass>
+        <weatherDef>RainyThunderstorm</weatherDef>
+        <label>desert bloom weather shift</label>
+        <description>The desert has sprung to life after a long period of heat and drought.</description>
+        <endMessage>The rain is ending. The landscape has been transformed in glorious fashion.</endMessage>
+        <letterText>A pleasant coolness fills the typically hot and dry air. Not far behind are water droplets. Their intensity grows and within minutes the sky sings a thunderous song of divine water droplets smashing against rock and stone. Almost instantly, plants not usually seen spring to life as their hibernation is interrupted by the deluge of water.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <canBePermanent>false</canBePermanent>
+        <allowUnderground>false</allowUnderground>
+        <exclusiveConditions>
+            <li>ColdSnap</li>
+            <li>VolcanicWinter</li>
+        </exclusiveConditions>
     </GameConditionDef>
 
 </Defs>

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using RimWorld;
+﻿using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -7,13 +6,14 @@ namespace AlienBiomes
 {
     public class GameCondition_CrystallineRedshift : GameCondition
     {
-        private List<SkyOverlay> overlays = new List<SkyOverlay>();
-        private static Color skyColor = new Color(0.9f, 0.1f, 0.1f);
-        private static Color shadowColor = Color.white;
-        private static Color overlayColor = new Color(1f, 1f, 1f);
-        private static float saturation = 0.75f;
-        private float glow = 0.25f;
-        private int duration = 720;
+        private static readonly Color _skyColor = new (0.9f, 0.1f, 0.1f);
+        private static readonly Color _shadowColor = Color.white;
+        private static readonly Color _overlayColor = new (1f, 1f, 1f);
+        private const float SATURATION = 0.75f;
+        private const float GLOW = 0.25f;
+        private const int DURATION = 720;
+        
+        public static readonly SkyColorSet _skyColors = new (_skyColor, _shadowColor, _overlayColor, SATURATION);
 
         public override int TransitionTicks => 360;
 
@@ -22,11 +22,9 @@ namespace AlienBiomes
             return GameConditionUtility.LerpInOutValue(this, TransitionTicks);
         }
 
-        public static readonly SkyColorSet TestSkyColors = new SkyColorSet(skyColor, shadowColor, overlayColor, saturation);
-
         public override SkyTarget? SkyTarget(Map map)
         {
-            return new SkyTarget(glow, TestSkyColors, 1f, 1f);
+            return new SkyTarget(GLOW, _skyColors, 1f, 1f);
         }
 
         public override bool Expired
@@ -35,30 +33,9 @@ namespace AlienBiomes
             {
                 if (!Permanent)
                 {
-                    return Find.TickManager.TicksGame > startTick + duration;
+                    return Find.TickManager.TicksGame > startTick + DURATION;
                 }
                 return false;
-            }
-        }
-
-        public override void GameConditionTick()
-        {
-            base.GameConditionTick();
-            List<Map> affectedMaps = base.AffectedMaps;
-            for (int i = 0; i < overlays.Count; i++)
-            {
-                for (int j = 0; j < affectedMaps.Count; j++)
-                {
-                    overlays[i].TickOverlay(affectedMaps[j]);
-                }
-            }
-        }
-
-        public override void GameConditionDraw(Map map)
-        {
-            for (int i = 0; i < overlays.Count; i++)
-            {
-                overlays[i].DrawOverlay(map);
             }
         }
     }

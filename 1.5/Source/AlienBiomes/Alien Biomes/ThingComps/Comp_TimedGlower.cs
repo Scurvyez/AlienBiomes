@@ -1,6 +1,8 @@
 ﻿using RimWorld;
 using Verse;
-using System;
+using System.Text;
+using UnityEngine;
+using Random = System.Random;
 
 namespace AlienBiomes
 {
@@ -39,6 +41,30 @@ namespace AlienBiomes
                 lastUpdateTick = curTick + randomness;
                 UpdateLit(parent.Map);
             }
+        }
+
+        public override string CompInspectStringExtra()
+        {
+            StringBuilder stringBuilder = new ();
+            
+            // Format the start and stop times into hours
+            int startHour = Mathf.FloorToInt(TimeProps.startTime * 24);
+            int stopHour = Mathf.FloorToInt(TimeProps.stopTime * 24);
+
+            // Add leading zeros for single digit hours
+            string startTimeFormatted = $"{startHour:D2}00";
+            string stopTimeFormatted = $"{stopHour:D2}00";
+
+            // Append the information to the string builder
+            stringBuilder.AppendLine("SZ_PlantGlowerInfo".Translate(startTimeFormatted, stopTimeFormatted));
+            
+            // Include any additional information from base components
+            string baseInspectString = base.CompInspectStringExtra();
+            if (!string.IsNullOrEmpty(baseInspectString))
+            {
+                stringBuilder.AppendLine(baseInspectString);
+            }
+            return stringBuilder.ToString().TrimEndNewlines();
         }
     }
 }

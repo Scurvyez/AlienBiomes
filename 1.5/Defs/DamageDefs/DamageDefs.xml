@@ -4,7 +4,7 @@
     <DamageDef Name="SZ_PlantAcid">
         <defName>SZ_PlantAcid</defName>
         <workerClass>DamageWorker_Flame</workerClass>
-        <label>flame</label>
+        <label>chemical burn</label>
         <hasForcefulImpact>false</hasForcefulImpact>
         <makesBlood>false</makesBlood>
         <canInterruptJobs>false</canInterruptJobs>

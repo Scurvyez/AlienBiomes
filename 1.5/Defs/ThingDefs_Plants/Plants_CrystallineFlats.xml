@@ -231,7 +231,6 @@
         </graphicData>
         <plant>
             <blockAdjacentSow>true</blockAdjacentSow>
-            <harvestYield>3</harvestYield>
             <fertilityMin>0.2</fertilityMin>
             <fertilitySensitivity>0.9</fertilitySensitivity>
             <growDays>30</growDays>
@@ -242,6 +241,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <comps>
+            <li Class="AlienBiomes.CompProperties_NasticInfo" />
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>7.0</overlightRadius>
                 <glowRadius>7.0</glowRadius>
@@ -266,14 +266,58 @@
 
     <!--==================== Green Colossal Crystal ====================-->
 
-    <ThingDef ParentName="BlueColossalCrystal" Name="GreenColossalCrystal">
+    <ThingDef ParentName="PlantBaseNonEdible" Name="GreenColossalCrystal">
         <defName>SZ_GreenColossalCrystal</defName>
         <label>green colossal crystal</label>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <passability>Impassable</passability>
+        <selectable>true</selectable>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <neverMultiSelect>false</neverMultiSelect>
+        <rotatable>false</rotatable>
+        <blockLight>false</blockLight>
+        <tickerType>Long</tickerType>
+        <size>(1,1)</size>
+        <hideAtSnowDepth>1.0</hideAtSnowDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <statBases>
+            <MaxHitPoints>4500</MaxHitPoints>
+            <Flammability>0.0</Flammability>
+            <BeautyOutdoors>2.50</BeautyOutdoors>
+        </statBases>
+        <plant>
+            <blockAdjacentSow>true</blockAdjacentSow>
+            <fertilityMin>0.2</fertilityMin>
+            <fertilitySensitivity>0.9</fertilitySensitivity>
+            <growDays>30</growDays>
+            <visualSizeRange>2.25~10.25</visualSizeRange>
+            <topWindExposure>0.0</topWindExposure>
+            <wildClusterRadius>12</wildClusterRadius>
+            <wildClusterWeight>14</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>7.0</overlightRadius>
+                <glowRadius>7.0</glowRadius>
+                <glowColor>(21, 177, 217, 0)</glowColor>
+                <startTime>0.75</startTime>
+                <stopTime>0.20</stopTime>
+            </li>
+        </comps>
         <graphicData>
             <texPath>AlienBiomes/Things/Plants/Crystals/GreenColossalCrystal</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
+        <modExtensions>
+            <li Class="AlienBiomes.BiomePlantControl">
+                <terrainTags>
+                    <li>Soil</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
     </ThingDef>
 
     <!--==================== Red Colossal Crystal ====================-->

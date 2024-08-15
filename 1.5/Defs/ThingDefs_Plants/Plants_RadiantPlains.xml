@@ -137,7 +137,7 @@
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
-            <Nutrition>0.08</Nutrition>
+            <Nutrition>0.125</Nutrition>
         </statBases>
         <graphicData>
             <texPath>AlienBiomes/Things/Plants/BulbusSanitas</texPath>
@@ -177,7 +177,7 @@
         <statBases>
             <MaxHitPoints>25</MaxHitPoints>
             <Flammability>1.15</Flammability>
-            <Nutrition>0.15</Nutrition>
+            <Nutrition>0.75</Nutrition>
         </statBases>
         <graphicData>
             <texPath>AlienBiomes/Things/Plants/Fiddlehead</texPath>
@@ -319,7 +319,7 @@
         <pathCost>30</pathCost>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
-            <Nutrition>0.25</Nutrition>
+            <Nutrition>0.625</Nutrition>
             <DeteriorationRate>0.00</DeteriorationRate>
         </statBases>
         <graphicData>

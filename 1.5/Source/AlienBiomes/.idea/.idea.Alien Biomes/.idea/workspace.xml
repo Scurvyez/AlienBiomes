@@ -5,39 +5,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3026ae6e-2d55-43ba-bbf5-c57136e0dcbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Shiny.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Shiny_m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Defs/Storyteller/Incidents_Map_Misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/GameConditions/GameCondition_DesertBloomWeatherShift.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/Incident/DesertBloomExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/Incident/IncidentWorker_DesertBloom.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_DesertBloomTracker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_DesertBloom_ModExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_NasticInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_NasticInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Alien Biomes/Utils/ABRangeMaker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/RockSmooth_Atlas_Shiny.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/RockSmooth_Atlas_Shiny_m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/RockSmooth_Atlas_Streaks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/RockSmooth_Atlas_Streaks_m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Streaks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Streaks_m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/PlantFoodRaw/Fruit/SZ_RawAuroraAgave.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/Durasalve/DurasalveA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/Durasalve/DurasalveB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/Durasalve_Immature/DurasalveA.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_CrystallineFlats.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_Floors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_Floors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Misc/Filth_Various.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Misc/Filth_Various.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/DamageDefs/DamageDefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/DamageDefs/DamageDefs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/GameConditions/GameConditionDefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/GameConditions/GameConditionDefs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/Misc/LetterDefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/Misc/LetterDefs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Misc/Various_Stone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Misc/Various_Stone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Patches/Patches_BiomeGenCore.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Patches/Patches_BiomeGenCore.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Patches/Patches_Merchants.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Patches/Patches_MerchantsCore.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Patches/Patches_Soils.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Patches/Patches_SoilsCore.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Patches/Patches_Terrain.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Patches/Patches_TerrainCore.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Resources/Resource_RawPlant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Resources/Resource_RawPlant.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Resources/Resources_Unfinished.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomePlantControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomePlantControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/GameConditions/GameCondition_CrystallineRedshift.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GameConditions/GameCondition_CrystallineRedshift.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/GenSteps/GenStep_DeliriousDunesOasis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GenSteps/GenStep_DeliriousDunesOasis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/HarmonyPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HarmonyPatches.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Bioluminescence_ModExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Bioluminescence_ModExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_GraphicsOverlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_GraphicsOverlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedGlower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedGlower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedHarvest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedHarvest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Anomaly/1.5/Patches/Patches_BiomeGenAnomaly.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Anomaly/1.5/Patches/Patches_BiomeGenAnomaly.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Ideology/1.5/Defs/Terrain_Defs/Terrain_Floors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Ideology/1.5/Defs/Terrain_Defs/Terrain_FloorsIdeology.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Royalty/1.5/Defs/Terrain_Defs/Terrain_Floors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Royalty/1.5/Defs/Terrain_Defs/Terrain_FloorsRoyalty.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Terrain/Surfaces/DelOasisWaterChestDeepRamp.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Terrain/Surfaces/DelOasisWaterChestDeepRamp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Terrain/Surfaces/DelOasisWaterShallowRamp.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Terrain/Surfaces/DelOasisWaterShallowRamp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/CrystalWalls/Blue/SZ_BlueCrystalWall_Atlas_Bricks.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/CrystalWalls/Blue/SZ_BlueCrystalWall_Atlas_Planks.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/CrystalWalls/Blue/SZ_BlueCrystalWall_Atlas_Smooth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/SZ_BlueCrystalWall_MenuIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/SZ_CrystalWall_Blueprint_Atlas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/AuroraAgave/AuroraAgaveA.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/AuroraAgave/AuroraAgaveA.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/AuroraAgave/AuroraAgaveB.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/AuroraAgave/AuroraAgaveB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Languages/English/Keyed/Misc_Gameplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Languages/English/Keyed/Misc_Gameplay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Shiny_m.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Shiny_m.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/ElderBambooLog/ElderBambooLog_a.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/ElderBambooLog/ElderBambooLog_a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/ElderBambooLog/ElderBambooLog_b.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/ElderBambooLog/ElderBambooLog_b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/ElderBambooLog/ElderBambooLog_c.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/ElderBambooLog/ElderBambooLog_c.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/FragrantWoodShavings/FragrantWoodShavings_a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/FragrantWoodShavings/FragrantWoodShavings_b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/FragrantWoodShavings/FragrantWoodShavings_c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/PlantFoodRaw/Honey/SZ_RawCopaceticHoney.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/PlantFoodRaw/Honey/SZ_RawCopaceticHoney.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/PlantFoodRaw/Honey/SZ_RawSoothingHoney.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/PlantFoodRaw/Honey/SZ_RawSoothingHoney.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Items/Resources/Unfinished/UnfinishedElderWoodLog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasA.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasB.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasC.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas_Leafless/BulbusSanitasA.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas_Leafless/BulbusSanitasA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsA.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsB.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsC.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsD.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsE.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsF.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/LilyOfThePlains/LilyOfThePlainsF.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass/OLDRadiantGrassA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass/OLDRadiantGrassB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass/RadiantGrassA.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass/RadiantGrassA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass/RadiantGrassB.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass/RadiantGrassB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass_Leafless/RadiantGrassA.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/RadiantGrass_Leafless/RadiantGrassA.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +85,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../../../workshop/content/294100/2361775777/1.4/Source/HarmonyPatches.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -107,6 +149,24 @@
       <workItem from="1718985373797" duration="16256000" />
       <workItem from="1719035791277" duration="3873000" />
       <workItem from="1719130090159" duration="5126000" />
+      <workItem from="1719174732155" duration="765000" />
+      <workItem from="1719216840438" duration="643000" />
+      <workItem from="1719237096430" duration="31618000" />
+      <workItem from="1719311384996" duration="4522000" />
+      <workItem from="1719455649834" duration="53023000" />
+      <workItem from="1719623305861" duration="3210000" />
+      <workItem from="1719786650645" duration="38000" />
+      <workItem from="1719787805302" duration="130000" />
+      <workItem from="1719788435543" duration="78000" />
+      <workItem from="1720060498179" duration="35000" />
+      <workItem from="1720061613593" duration="7000" />
+      <workItem from="1720149846917" duration="1087000" />
+      <workItem from="1720718757296" duration="45000" />
+      <workItem from="1722460568967" duration="264000" />
+      <workItem from="1722561102238" duration="22000" />
+      <workItem from="1722862608709" duration="517000" />
+      <workItem from="1722868410451" duration="938000" />
+      <workItem from="1722877469588" duration="26000" />
     </task>
     <servers />
   </component>

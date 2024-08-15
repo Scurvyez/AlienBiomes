@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!--==================== Desert Bloom ====================-->
+
+    <LetterDef Name="DesertBloom">
+        <defName>SZ_DesertBloomLetter</defName>
+        <color>(102, 255, 140)</color>
+        <flashColor>(102, 255, 140)</flashColor>
+        <flashInterval>3</flashInterval>
+        <bounce>true</bounce>
+        <arriveSound>LetterArrive_Good</arriveSound>
+        <pauseMode>Never</pauseMode>
+    </LetterDef>
+
     <!--==================== Pawn Crystallizing ====================-->
 
     <LetterDef Name="PawnCrystallizing">
-        <defName>SZ_PawnCrystallizing</defName>
+        <defName>SZ_PawnCrystallizingLetter</defName>
         <color>(253, 1, 33)</color>
         <flashColor>(253, 1, 33)</flashColor>
         <flashInterval>3</flashInterval>
@@ -16,7 +28,7 @@
     <!--==================== Pawn Crystallizing ====================-->
 
     <LetterDef Name="PawnCrystallized">
-        <defName>SZ_PawnCrystallized</defName>
+        <defName>SZ_PawnCrystallizedLetter</defName>
         <color>(253, 1, 33)</color>
         <flashColor>(253, 1, 33)</flashColor>
         <flashInterval>3</flashInterval>

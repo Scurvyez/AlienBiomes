@@ -90,7 +90,7 @@ namespace AlienBiomes
             if (GasExpelled)
             {
                 GasCounter++;
-                if (GasCounter > plantExt.gasReleaseCooldown)
+                if (GasCounter > plantExt.explosionReleaseCooldown)
                 {
                     GasExpelled = false;
                 }
@@ -175,10 +175,10 @@ namespace AlienBiomes
             }
         }
 
-        public void ExpelGas()
+        public void DoExplosion()
         {
-            GenExplosion.DoExplosion(Position, Map, plantExt.gasDamageEffectRadius, ABDefOf.SZ_PlantAcid, null, 
-                (plantExt.gasDamageRange.RandomInRange), -1, null, null, null, 
+            GenExplosion.DoExplosion(Position, Map, plantExt.explosionDamageEffectRadius, plantExt.explosionDamageDef, null, 
+                (plantExt.explosionDamage.RandomInRange), -1, null, null, null, 
                 null, null, 0, 0, null, 
                 false, null, 0, 0, 0, 
                 false, null, null, null, true, 1, 
@@ -192,7 +192,7 @@ namespace AlienBiomes
             
             pawn.health.AddHediff(plantExt.hediffToGive, null, null, null);
             HealthUtility.AdjustSeverity(pawn, plantExt.hediffToGive, 0.01f);
-            Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizing);
+            Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter);
         }
 
         public override void ExposeData()

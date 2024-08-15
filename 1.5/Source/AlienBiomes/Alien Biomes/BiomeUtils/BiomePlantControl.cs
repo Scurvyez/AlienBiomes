@@ -5,6 +5,6 @@ namespace AlienBiomes
 {
     public class BiomePlantControl : DefModExtension
     {
-        public List<string> terrainTags = new List<string>();
+        public List<string> terrainTags = new ();
     }
 }

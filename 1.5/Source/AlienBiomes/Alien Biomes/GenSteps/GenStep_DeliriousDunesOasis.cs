@@ -28,18 +28,15 @@ namespace AlienBiomes
         public override void Generate(Map map, GenStepParams parms)
         {
             waterCells.Clear();
-            if (map.Biome == ABDefOf.SZ_DeliriousDunes)
-            {
-                IntVec3 center = ValidCentralSpawnCell(map);
-                if (center.IsValid)
-                {
-                    int mapAdjustmentFactor = AdjustedRadiusByMapSize(map, mapSizeRadiusAdjust).RandomInRange;
-                    int waterRadiusFinal = AdjustedRadiusByMapSize(map, waterRadius).RandomInRange + mapAdjustmentFactor;
-                    GenerateWaterPatch(map, center, waterRadiusFinal);
-                    GenerateSandAroundWater(map);
-                    GenerateThings(map, center);
-                }
-            }
+            if (map.Biome != ABDefOf.SZ_DeliriousDunes) return;
+            IntVec3 center = ValidCentralSpawnCell(map);
+
+            if (!center.IsValid) return;
+            int mapAdjustmentFactor = AdjustedRadiusByMapSize(map, mapSizeRadiusAdjust).RandomInRange;
+            int waterRadiusFinal = AdjustedRadiusByMapSize(map, waterRadius).RandomInRange + mapAdjustmentFactor;
+            GenerateWaterPatch(map, center, waterRadiusFinal);
+            GenerateSandAroundWater(map);
+            GenerateThings(map, center);
         }
         
         private IntRange AdjustedRadiusByMapSize(Map map, List<IntRange> range)
@@ -52,11 +49,9 @@ namespace AlienBiomes
         {
             foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true))
             {
-                if (cell.GetTerrain(map) == spawnOnTerDef)
-                {
-                    map.terrainGrid.SetTerrain(cell, waterDef);
-                    waterCells.Add(cell);
-                }
+                if (cell.GetTerrain(map) != spawnOnTerDef) continue;
+                map.terrainGrid.SetTerrain(cell, waterDef);
+                waterCells.Add(cell);
             }
         }
 
@@ -67,10 +62,8 @@ namespace AlienBiomes
                 int sandRadiusFinal = sandRadius.RandomInRange;
                 foreach (IntVec3 cell in GenRadial.RadialCellsAround(waterCell, sandRadiusFinal, true))
                 {
-                    if (cell.InBounds(map) && cell.GetTerrain(map) != waterDef)
-                    {
-                        map.terrainGrid.SetTerrain(cell, sandDef);
-                    }
+                    if (!cell.InBounds(map) || cell.GetTerrain(map) == waterDef) continue;
+                    map.terrainGrid.SetTerrain(cell, sandDef);
                 }
             }
         }
@@ -80,18 +73,13 @@ namespace AlienBiomes
             HashSet<IntVec3> usedCells = new HashSet<IntVec3>();
             foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, plantGenRadius, true))
             {
-                if (cell.GetTerrain(map) == sandDef && cell.Standable(map) && !usedCells.Contains(cell))
-                {
-                    if (plantsToGen != null && Rand.Chance(plantGenChance))
-                    {
-                        ThingDef plantDef = plantsToGen.RandomElement();
-                        Plant plant = (Plant)ThingMaker.MakeThing(plantDef);
-                        plant.Growth = Rand.Value;
-                        GenSpawn.Spawn(plant, cell, map);
-
-                        usedCells.Add(cell);
-                    }
-                }
+                if (cell.GetTerrain(map) != sandDef || !cell.Standable(map) || usedCells.Contains(cell)) continue;
+                if (plantsToGen == null || !Rand.Chance(plantGenChance)) continue;
+                ThingDef plantDef = plantsToGen.RandomElement();
+                Plant plant = (Plant)ThingMaker.MakeThing(plantDef);
+                plant.Growth = Rand.Value;
+                GenSpawn.Spawn(plant, cell, map);
+                usedCells.Add(cell);
             }
         }
 

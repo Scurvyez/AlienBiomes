@@ -10,6 +10,7 @@ namespace AlienBiomes
         private Color modifiedColor;
         private Plant_Bioluminescence_ModExtension bioExt;
         private MapComponent_PlantGetter plantGetter;
+        private static readonly int Color1 = Shader.PropertyToID("_Color");
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -23,11 +24,15 @@ namespace AlienBiomes
         public override void Print(SectionLayer layer)
         {
             base.Print(layer);
-            if (bioExt != null && (plantGetter.SunStrength > 0 && plantGetter.SunStrength < 1))
+            Rand.PushState();
+            Rand.Seed = Position.GetHashCode();
+            
+            if (bioExt != null && plantGetter.SunStrength is > 0 and < 1)
             {
                 modifiedColor.a = Mathf.Clamp01(0.5f - plantGetter.SunStrength) * bioExt.alphaMultiplier;
-                Graphic.MatSingleFor(this).SetColor("_Color", modifiedColor);
+                Graphic.MatSingleFor(this).SetColor(Color1, modifiedColor);
             }
+            Rand.PopState();
         }
     }
 }

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!-- ================ Alien Rock Base ================ -->
+    <!-- ================ Alien Rock Bases ================ -->
 
-    <ThingDef Name="SZ_AlienRockBase" ParentName="RockBase" Abstract="True">
+    <ThingDef Name="SZ_AlienShinyUglyRockBase" ParentName="RockBase" Abstract="True">
         <graphicData>
             <texPath>AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Shiny</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <linkType>CornerFiller</linkType>
+            <linkFlags>
+                <li>Rock</li>
+                <li>MapEdge</li>
+            </linkFlags>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef Name="SZ_AlienStreaksUglyRockBase" ParentName="RockBase" Abstract="True">
+        <graphicData>
+            <texPath>AlienBiomes/Things/Buildings/Linked/Rock_Atlas_Streaks</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <linkType>CornerFiller</linkType>
@@ -151,12 +164,13 @@
         <displayOrder>710</displayOrder>
     </ColorDef>
 
-    <ThingDef ParentName="UglyRockBase" Name="SZ_VolbitrineBase">
+    <ThingDef ParentName="SZ_AlienStreaksUglyRockBase" Name="SZ_VolbitrineBase">
         <defName>SZ_Volbitrine</defName>
         <label>volbitrine</label>
         <description>A bright orange rock. Less dense than most other igneous rock types yet more than durable enough for all manner of construction.</description>
         <graphicData>
             <color>(219, 77, 61)</color>
+            <colorTwo>(255, 219, 153)</colorTwo>
         </graphicData>
         <statBases>
             <MaxHitPoints>760</MaxHitPoints>
@@ -176,7 +190,16 @@
         <description>The fine-grain, smoothed texture seems to reflect the world around it. In its microscopic canyons are endless scars of shining quartz-like minerals.</description>
         <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
         <graphicData>
-            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+            <texPath>AlienBiomes/Things/Buildings/Linked/RockSmooth_Atlas_Streaks</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <linkType>CornerFiller</linkType>
+            <linkFlags>
+                <li>Rock</li>
+                <li>MapEdge</li>
+            </linkFlags>
+            <color>(219, 77, 61)</color>
+            <colorTwo>(255, 219, 153)</colorTwo>
         </graphicData>
         <statBases>
             <Beauty>1.75</Beauty>
@@ -655,12 +678,13 @@
         <displayOrder>750</displayOrder>
     </ColorDef>
 
-    <ThingDef ParentName="UglyRockBase" Name="SZ_LuminshaleBase">
+    <ThingDef ParentName="SZ_AlienShinyUglyRockBase" Name="SZ_LuminshaleBase">
         <defName>SZ_Luminshale</defName>
         <label>luminshale</label>
-        <description>A granite-like rock filled with tiny bits of hardened blue quartz.</description>
+        <description>A granite-like rock filled with tiny bits of hardened pink quartz.</description>
         <graphicData>
             <color>(113, 106, 154)</color>
+            <colorTwo>(246, 179, 255)</colorTwo>
         </graphicData>
         <statBases>
             <MaxHitPoints>450</MaxHitPoints>
@@ -677,10 +701,19 @@
     <ThingDef ParentName="SZ_LuminshaleBase">
         <defName>SZ_SmoothedLuminshale</defName>
         <label>smoothed luminshale</label>
-        <description>The once small and insignificant speckles of blue quartz now shin vibrantly in winding streams across the polished face of this rock.</description>
+        <description>The once small and insignificant speckles of pink quartz now shine vibrantly in winding streams across the polished face of this rock.</description>
         <uiIconPath>Things/Building/Linked/WallSmooth_MenuIcon</uiIconPath>
         <graphicData>
-            <texPath>Things/Building/Linked/RockSmooth_Atlas</texPath>
+            <texPath>AlienBiomes/Things/Buildings/Linked/RockSmooth_Atlas_Shiny</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <linkType>CornerFiller</linkType>
+            <linkFlags>
+                <li>Rock</li>
+                <li>MapEdge</li>
+            </linkFlags>
+            <color>(113, 106, 154)</color>
+            <colorTwo>(246, 179, 255)</colorTwo>
         </graphicData>
         <statBases>
             <Beauty>1.2</Beauty>

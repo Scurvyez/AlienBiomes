@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IncidentDef>
+        <defName>SZ_DesertBloom</defName>
+        <label>desert bloom</label>
+        <category>Misc</category>
+        <workerClass>AlienBiomes.IncidentWorker_DesertBloom</workerClass>
+        <gameCondition>SZ_DesertBloomWeatherShift</gameCondition>
+        <baseChance>0.08</baseChance> <!-- RARE EVENT -->
+        <minRefireDays>20</minRefireDays>
+        <durationDays>0.5~1.0</durationDays>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <allowedBiomes>
+            <li>SZ_DeliriousDunes</li>
+        </allowedBiomes>
+        <modExtensions>
+            <li Class="AlienBiomes.DesertBloomExtension">
+                <plantsToSpawn>
+                    <li>SZ_DeliriousGrass</li>
+                    <li>SZ_Sandblossom</li>
+                    <li>SZ_Durasalve</li>
+                </plantsToSpawn>
+                <sandblossomSpawnCurve>
+                    <points>
+                        <li>(200, 400)</li>
+                        <li>(225, 506)</li>
+                        <li>(250, 625)</li>
+                        <li>(275, 756)</li>
+                        <li>(300, 900)</li>
+                        <li>(325, 1056)</li>
+                    </points>
+                </sandblossomSpawnCurve>
+            </li>
+        </modExtensions>
+    </IncidentDef>
+
+</Defs>

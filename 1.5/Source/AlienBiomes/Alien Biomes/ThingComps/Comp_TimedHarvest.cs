@@ -1,4 +1,6 @@
-﻿using RimWorld;
+﻿using System.Text;
+using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace AlienBiomes
@@ -20,6 +22,34 @@ namespace AlienBiomes
             return (dayPercent >= Props.harvestStartTime && dayPercent <= 1f) 
                 || (dayPercent <= Props.harvestStopTime && dayPercent >= 0f) 
                 && Props.harvestSeasons.Contains(season);
+        }
+        
+        public override string CompInspectStringExtra()
+        {
+            StringBuilder stringBuilder = new ();
+            
+            // Format the start and stop times into hours
+            int startHour = Mathf.FloorToInt(Props.harvestStartTime * 24);
+            int stopHour = Mathf.FloorToInt(Props.harvestStopTime * 24);
+
+            // Add leading zeros for single digit hours
+            string startTimeFormatted = $"{startHour:D2}00";
+            string stopTimeFormatted = $"{stopHour:D2}00";
+            
+            // Format the seasons into a readable string
+            string seasonsFormatted = string.Join(", ", Props.harvestSeasons);
+
+            // Append the information to the string builder
+            stringBuilder.AppendLine("SZ_PlantHarvestSeasonInfo".Translate(seasonsFormatted));
+            stringBuilder.AppendLine("SZ_PlantHarvestTimeInfo".Translate(startTimeFormatted, stopTimeFormatted));
+            
+            // Include any additional information from base components
+            string baseInspectString = base.CompInspectStringExtra();
+            if (!string.IsNullOrEmpty(baseInspectString))
+            {
+                stringBuilder.AppendLine(baseInspectString);
+            }
+            return stringBuilder.ToString().TrimEndNewlines();
         }
     }
 }

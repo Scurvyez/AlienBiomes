@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Text;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -49,6 +50,9 @@ namespace AlienBiomes
 
             harmony.Patch(original: AccessTools.Method(typeof(World), "NaturalRockTypesIn"),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(NaturalRockTypesInPostfix)));
+            
+            harmony.Patch(original: AccessTools.Method(typeof(Designator_PlantsCut), "AffectsThing"),
+                postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(AffectsThingPostfix)));
 
             //harmony.Patch(original: AccessTools.Method(typeof(Pawn), "DoKillSideEffects"),
             //postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(DoKillSideEffectsPostfix)));
@@ -260,7 +264,7 @@ namespace AlienBiomes
                         }
                         else if (plantExt.isDamaging && !plant.GasExpelled)
                         {
-                            plant.ExpelGas();
+                            plant.DoExplosion();
                             plant.GasExpelled = true;
                         }
                     }
@@ -332,6 +336,11 @@ namespace AlienBiomes
 
             Rand.PopState();
             __result = list;
+        }
+
+        public static void AffectsThingPostfix(ref bool __result, Thing t)
+        {
+            __result = __result && t is Plant_Bioluminescence;
         }
     }
 }
