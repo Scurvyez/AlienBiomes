@@ -72,7 +72,7 @@
 			<li>
 				<lifeThreatening>true</lifeThreatening>
 				<minSeverity>0.95</minSeverity>
-				<label>excrutiating pain</label>
+				<label>excruciating pain</label>
 				<painOffset>0.95</painOffset>
 				<capMods>
 					<li>

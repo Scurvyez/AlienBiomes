@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System;
 using System.Linq;
-using System.Text;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -30,13 +28,13 @@ namespace AlienBiomes
             harmony.Patch(original: AccessTools.PropertyGetter(typeof(Plant), "HarvestableNow"),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(HarvestableNowPostFix)));
 
-            harmony.Patch(original: AccessTools.Method(typeof(MaterialPool), nameof(MaterialPool.MatFrom), new Type[] { typeof(MaterialRequest) }),
+            harmony.Patch(original: AccessTools.Method(typeof(MaterialPool), nameof(MaterialPool.MatFrom), new[] { typeof(MaterialRequest) }),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(MatFromPostFix)));
 
             harmony.Patch(original: AccessTools.Method(typeof(GenStep_Terrain), "TerrainFrom"),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(ReplaceTerrainPostfix)));
 
-            harmony.Patch(original: AccessTools.Method(typeof(PlantUtility), nameof(PlantUtility.CanEverPlantAt), new Type[] { typeof(ThingDef), typeof(IntVec3), typeof(Map), typeof(bool) }),
+            harmony.Patch(original: AccessTools.Method(typeof(PlantUtility), nameof(PlantUtility.CanEverPlantAt), new [] { typeof(ThingDef), typeof(IntVec3), typeof(Map), typeof(bool) }),
                 prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CanEverPlantAtPrefix)));
 
             harmony.Patch(original: AccessTools.Method(typeof(Pawn_PathFollower), "TryEnterNextPathCell"),
@@ -72,25 +70,23 @@ namespace AlienBiomes
 
         public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
         {
-            if (__instance is ABShaderTypeDef)
+            if (__instance is not ABShaderTypeDef) return;
+            ___shaderInt = AlienBiomesContentDatabase.AlienBiomesBundle.LoadAsset<Shader>(__instance.shaderPath);
+            
+            if (___shaderInt is null)
             {
-                ___shaderInt = AlienBiomesContentDatabase.AlienBiomesBundle.LoadAsset<Shader>(__instance.shaderPath);
-                if (___shaderInt is null)
-                {
-                    Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text></color>");
-                }
+                Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text></color>");
             }
         }
 
         public static void ReplaceBeachTerrainPostfix(BiomeDef biome, ref TerrainDef __result)
         {
-            if (biome.HasModExtension<BiomeControls>())
+            if (!biome.HasModExtension<BiomeControls>()) return;
+            BiomeControls ext = biome.GetModExtension<BiomeControls>();
+            
+            if (ext.newBeachSand != null && __result == TerrainDefOf.Sand)
             {
-                BiomeControls ext = biome.GetModExtension<BiomeControls>();
-                if (ext.newBeachSand != null && __result == TerrainDefOf.Sand)
-                {
-                    __result = ext.newBeachSand;
-                }
+                __result = ext.newBeachSand;
             }
         }
 
@@ -102,7 +98,7 @@ namespace AlienBiomes
 
         public static void HarvestableNowPostFix(Plant __instance, ref bool __result)
         {
-            var comp = __instance.GetComp<Comp_TimedHarvest>();
+            Comp_TimedHarvest comp = __instance.GetComp<Comp_TimedHarvest>();
             if (comp != null)
             {
                 __result = __result && comp.AdditionalPlantHarvestLogic();
@@ -123,47 +119,42 @@ namespace AlienBiomes
 
         public static void ReplaceTerrainPostfix(Map map, ref TerrainDef __result)
         {
-            if (map.Biome.HasModExtension<BiomeControls>())
+            if (!map.Biome.HasModExtension<BiomeControls>()) return;
+            BiomeControls ext = map.Biome.GetModExtension<BiomeControls>();
+
+            if (ext.newGravel != null && __result == TerrainDefOf.Gravel)
             {
-                BiomeControls ext = map.Biome.GetModExtension<BiomeControls>();
+                __result = ext.newGravel;
+            }
+            
+            if (ext.newSand != null && __result == TerrainDefOf.Sand)
+            {
+                __result = ext.newSand;
+            }
 
-                // gravel
-                if (ext.newGravel != null && __result == TerrainDefOf.Gravel)
-                {
-                    __result = ext.newGravel;
-                }
-
-                // sand
-                if (ext.newSand != null && __result == TerrainDefOf.Sand)
-                {
-                    __result = ext.newSand;
-                }
-
-                // water
-                if (ext.newShallowWater != null && __result == TerrainDefOf.WaterShallow)
-                {
-                    __result = ext.newShallowWater;
-                }
-                else if (ext.newWaterMovingShallow != null && __result == TerrainDefOf.WaterMovingShallow)
-                {
-                    __result = ext.newWaterMovingShallow;
-                }
-                else if (ext.newWaterOceanShallow != null && __result == TerrainDefOf.WaterOceanShallow)
-                {
-                    __result = ext.newWaterOceanShallow;
-                }
-                else if (ext.newWaterDeep != null && __result == TerrainDefOf.WaterDeep)
-                {
-                    __result = ext.newWaterDeep;
-                }
-                else if (ext.newWaterOceanDeep != null && __result == TerrainDefOf.WaterOceanDeep)
-                {
-                    __result = ext.newWaterOceanDeep;
-                }
-                else if (ext.newWaterMovingChestDeep != null && __result == TerrainDefOf.WaterMovingChestDeep)
-                {
-                    __result = ext.newWaterMovingChestDeep;
-                }
+            if (ext.newShallowWater != null && __result == TerrainDefOf.WaterShallow)
+            {
+                __result = ext.newShallowWater;
+            }
+            else if (ext.newWaterMovingShallow != null && __result == TerrainDefOf.WaterMovingShallow)
+            {
+                __result = ext.newWaterMovingShallow;
+            }
+            else if (ext.newWaterOceanShallow != null && __result == TerrainDefOf.WaterOceanShallow)
+            {
+                __result = ext.newWaterOceanShallow;
+            }
+            else if (ext.newWaterDeep != null && __result == TerrainDefOf.WaterDeep)
+            {
+                __result = ext.newWaterDeep;
+            }
+            else if (ext.newWaterOceanDeep != null && __result == TerrainDefOf.WaterOceanDeep)
+            {
+                __result = ext.newWaterOceanDeep;
+            }
+            else if (ext.newWaterMovingChestDeep != null && __result == TerrainDefOf.WaterMovingChestDeep)
+            {
+                __result = ext.newWaterMovingChestDeep;
             }
         }
 
@@ -186,11 +177,9 @@ namespace AlienBiomes
 
             foreach (Thing item in map.thingGrid.ThingsListAt(c))
             {
-                if (item?.def.building != null && plantDef.plant.sowTags.Contains(item.def.building.sowTag))
-                {
-                    __result = plantDef.plant.sowTags.Contains(item.def.building.sowTag);
-                    return plantDef.plant.sowTags.Contains(item.def.building.sowTag);
-                }
+                if (item?.def.building == null || !plantDef.plant.sowTags.Contains(item.def.building.sowTag)) continue;
+                __result = plantDef.plant.sowTags.Contains(item.def.building.sowTag);
+                return plantDef.plant.sowTags.Contains(item.def.building.sowTag);
             }
 
             if (terrainExt != null && plantExt != null)
@@ -204,11 +193,9 @@ namespace AlienBiomes
                     }
                     foreach (string terrainTag in terrainExt.terrainTags)
                     {
-                        if (!plantExt.terrainTags.Contains(terrainTag))
-                        {
-                            __result = false;
-                            return false;
-                        }
+                        if (plantExt.terrainTags.Contains(terrainTag)) continue;
+                        __result = false;
+                        return false;
                     }
                 }
                 else if (terrain.HasTag("Water") || terrain.IsWater)
@@ -223,13 +210,10 @@ namespace AlienBiomes
                 return false;
             }
 
-            if (plantExt != null && !plantExt.terrainTags.NullOrEmpty() && (terrainExt == null || terrainExt.terrainTags.NullOrEmpty()))
-            {
-                __result = false;
-                return false;
-            }
-
-            return true;
+            if (plantExt == null || plantExt.terrainTags.NullOrEmpty() ||
+                (terrainExt != null && !terrainExt.terrainTags.NullOrEmpty())) return true;
+            __result = false;
+            return false;
         }
 
         public static void TryEnterNextPathCellPostfix(Pawn ___pawn)
@@ -243,35 +227,34 @@ namespace AlienBiomes
             if (plantGetter == null)
                 return;
 
-            if (plantGetter.ActiveLocationTriggers.TryGetValue(nextCell, out HashSet<Plant_Nastic> plantsInCell))
+            if (!plantGetter.ActiveLocationTriggers.TryGetValue(nextCell, out HashSet<Plant_Nastic> plantsInCell))
+                return;
+            foreach (Plant_Nastic plant in plantsInCell)
             {
-                foreach (Plant_Nastic plant in plantsInCell)
+                PlantNastic_ModExtension plantExt = plant.def.GetModExtension<PlantNastic_ModExtension>();
+                if (plantExt == null)
+                    continue;
+
+                if (plantExt.emitFlecks)
                 {
-                    PlantNastic_ModExtension plantExt = plant.def.GetModExtension<PlantNastic_ModExtension>();
-                    if (plantExt == null)
-                        continue;
+                    plant.DrawEffects();
+                }
 
-                    if (plantExt.emitFlecks)
+                if (plantExt.isTouchSensitive)
+                {
+                    if (plantExt.isVisuallyReactive)
                     {
-                        plant.DrawEffects();
+                        plant.TouchSensitiveStartTime = GenTicks.TicksGame;
                     }
-
-                    if (plantExt.isTouchSensitive)
+                    else if (plantExt.isDamaging && !plant.GasExpelled)
                     {
-                        if (plantExt.isVisuallyReactive)
-                        {
-                            plant.TouchSensitiveStartTime = GenTicks.TicksGame;
-                        }
-                        else if (plantExt.isDamaging && !plant.GasExpelled)
-                        {
-                            plant.DoExplosion();
-                            plant.GasExpelled = true;
-                        }
+                        plant.DoExplosion();
+                        plant.GasExpelled = true;
                     }
-                    if (plantExt.givesHediff)
-                    {
-                        plant.GiveHediff(___pawn);
-                    }
+                }
+                if (plantExt.givesHediff)
+                {
+                    plant.GiveHediff(___pawn);
                 }
             }
         }
@@ -285,23 +268,23 @@ namespace AlienBiomes
 
         private static bool ValidatePassagePrefix(Map map)
         {
-            if (map.Biome == ABDefOf.SZ_RadiantPlains
-                || map.Biome == ABDefOf.SZ_CrystallineFlats
-                || map.Biome == ABDefOf.SZ_DeliriousDunes) return false;
-            return true;
+            return map.Biome != ABDefOf.SZ_RadiantPlains
+                   && map.Biome != ABDefOf.SZ_CrystallineFlats
+                   && map.Biome != ABDefOf.SZ_DeliriousDunes;
         }
         
         public static void NaturalRockTypesInPostfix(ref IEnumerable<ThingDef> __result, int tile, World __instance)
         {
             Tile tile2 = __instance.grid[tile];
+            
             if (tile2 == null) return;
-
             BiomeDef biome = tile2.biome;
             List<ThingDef> list = __result.ToList();
+            
             Rand.PushState(tile);
             int num = Rand.RangeInclusive(2, 3);
-
             Biome_Rocks_ModExtension modExt = biome.GetModExtension<Biome_Rocks_ModExtension>();
+            
             if (modExt == null)
             {
                 Rand.PopState();

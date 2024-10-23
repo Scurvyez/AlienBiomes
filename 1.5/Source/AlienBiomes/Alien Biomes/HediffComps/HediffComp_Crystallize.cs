@@ -46,13 +46,13 @@ namespace AlienBiomes
                     ABDefOf.SZ_PawnCrystallizedLetter, null, null, null);
                 Find.TickManager.slower.SignalForceNormalSpeedShort();
             }
-                    
+            
             GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal), TryFindRandomValidCell(map), map, WipeMode.Vanish);
             FilthMaker.TryMakeFilth(GenRadial.RadialCellsAround(pawnPos, 1f, true).RandomElement(), parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);
             parent.pawn.Corpse.Destroy();
         }
 
-        private IntVec3 TryFindRandomValidCell(Map map)
+        private static IntVec3 TryFindRandomValidCell(Map map)
         {
             List<IntVec3> potentialSpawnCells = new List<IntVec3>();
 
@@ -64,7 +64,6 @@ namespace AlienBiomes
                     potentialSpawnCells.Add(cell);
                 }
             }
-
             return potentialSpawnCells.Count > 0 ? potentialSpawnCells.RandomElement() : IntVec3.Invalid;
         }
     }
