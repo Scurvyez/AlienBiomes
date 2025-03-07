@@ -9,19 +9,19 @@ namespace AlienBiomes
     {
         public CompProperties_TimedHarvest Props => (CompProperties_TimedHarvest)props;
 
-        private float dayPercent;
-        private Season season;
+        private float _dayPercent;
+        private Season _season;
 
         public bool AdditionalPlantHarvestLogic()
         {
             base.CompTickLong();
-            dayPercent = GenLocalDate.DayPercent(parent.Map);
-            season = GenLocalDate.Season(parent.Map);
+            _dayPercent = GenLocalDate.DayPercent(parent.Map);
+            _season = GenLocalDate.Season(parent.Map);
 
             //Example: if (dayPercent > 0.8 && dayPercent < 1.0 || dayPercent < 0.2 && dayPercent > 0.0)
-            return (dayPercent >= Props.harvestStartTime && dayPercent <= 1f) 
-                || (dayPercent <= Props.harvestStopTime && dayPercent >= 0f) 
-                && Props.harvestSeasons.Contains(season);
+            return (_dayPercent >= Props.harvestStartTime && _dayPercent <= 1f) 
+                || (_dayPercent <= Props.harvestStopTime && _dayPercent >= 0f) 
+                && Props.harvestSeasons.Contains(_season);
         }
         
         public override string CompInspectStringExtra()

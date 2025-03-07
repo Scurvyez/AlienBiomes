@@ -96,7 +96,7 @@
             </li>
         </modExtensions>
         <comps>
-            <li Class="AlienBiomes.CompProperties_NasticInfo" />
+            <!-- <li Class="AlienBiomes.CompProperties_NasticInfo" /> -->
         </comps>
     </ThingDef>
 

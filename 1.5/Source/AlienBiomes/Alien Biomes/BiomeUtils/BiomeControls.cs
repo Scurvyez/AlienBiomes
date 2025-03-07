@@ -7,7 +7,7 @@ namespace AlienBiomes
 {
     public class BiomeControls : DefModExtension
     {
-        public List<BiomeDef> spawnOnBiomes = new List<BiomeDef>();
+        public List<BiomeDef> spawnOnBiomes = new();
         public int? biomePriority;
         public string materialPath = "World/MapGraphics/Default";
         public bool forested;

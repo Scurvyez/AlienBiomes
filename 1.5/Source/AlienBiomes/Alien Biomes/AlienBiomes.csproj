@@ -10,7 +10,7 @@
     <RootNamespace>Alien_Biomes</RootNamespace>
     <AssemblyName>Alien Biomes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>Latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -38,10 +38,6 @@
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="BiomesCore">
-      <HintPath>E:\DOWNLOADS\BiomesCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -80,6 +76,7 @@
     <Compile Include="BiomeUtils\WorldGenStepConstructor.cs" />
     <Compile Include="BiomeUtils\LateBiomeWorker.cs" />
     <Compile Include="BiomeUtils\UniversalBiomeWorker.cs" />
+    <Compile Include="Debugging\ABLog.cs" />
     <Compile Include="GameConditions\GameCondition_CrystallineRedshift.cs" />
     <Compile Include="GameConditions\GameCondition_DesertBloomWeatherShift.cs" />
     <Compile Include="GenSteps\GenStep_DeliriousDunesOasis.cs" />
@@ -119,7 +116,6 @@
     <Compile Include="HediffComps\HediffComp_Crystallize.cs" />
     <Compile Include="ThingClasses\Plant_NightBlooming.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\ABLog.cs" />
     <Compile Include="Utils\ABRangeMaker.cs" />
     <Compile Include="Utils\ABShaderTypeDef.cs" />
     <Compile Include="Utils\ABShaderPropertyIDs.cs" />

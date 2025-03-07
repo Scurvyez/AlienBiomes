@@ -2,7 +2,7 @@
 
 namespace AlienBiomes
 {
-    public class GraphicDataAB : GraphicData
+    /*public class GraphicDataAB : GraphicData
     {
         public float shaderScrollSpeedFactor; // _distortionScrollSpeed
         public float shaderScaleFactor; // _distortionScale
@@ -14,5 +14,5 @@ namespace AlienBiomes
         {
 
         }
-    }
+    }*/
 }

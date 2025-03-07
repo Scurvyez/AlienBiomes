@@ -17,7 +17,7 @@ namespace AlienBiomes
         public void RegisterPlant(Plant_Mobile plant)
         {
             // Register a Plant_Mobile instance and create an empty list for its valid next cells
-            validNextCellsDict.Add(plant, new List<IntVec3>());
+            validNextCellsDict.Add(plant, []);
         }
 
         public void UnregisterPlant(Plant_Mobile plant)
@@ -29,14 +29,11 @@ namespace AlienBiomes
         public List<IntVec3> GetValidNextCells(Plant_Mobile plant)
         {
             // Get the valid next cells for a specific Plant_Mobile instance
-            if (validNextCellsDict.TryGetValue(plant, out List<IntVec3> validNextCells))
-            {
-                return validNextCells;
-            }
-            // Return null if the Plant_Mobile instance is not registered
-            return null;
+            return validNextCellsDict.TryGetValue(plant, out List<IntVec3> validNextCells) 
+                ? validNextCells 
+                : null;
         }
-
+        
         public override void MapComponentTick()
         {
             base.MapComponentTick();

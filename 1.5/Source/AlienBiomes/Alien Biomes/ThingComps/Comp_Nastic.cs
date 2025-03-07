@@ -4,12 +4,13 @@ using Verse;
 
 namespace AlienBiomes
 {
-    public class Comp_Nastic : ThingComp
+    /*public class Comp_Nastic : ThingComp
     {
         public CompProperties_Nastic Props => (CompProperties_Nastic)props;
-        private List<Vector3> instanceOffsets = new ();
-        private int texInstances = 4;
-
+        
+        private List<Vector3> _instanceOffsets = [];
+        private int _texInstances = 4;
+        
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -20,7 +21,7 @@ namespace AlienBiomes
         {
             if (parent is not Plant_Nastic parentPlant) return;
 
-            for (int i = 0; i < texInstances; i++)
+            for (int i = 0; i < _texInstances; i++)
             {
                 float xOffset = Rand.Range(-0.5f, 0.5f);
                 float zOffset = Rand.Range(-0.5f, 0.5f);
@@ -29,7 +30,7 @@ namespace AlienBiomes
                 instancePos.x += xOffset;
                 instancePos.z += zOffset;
 
-                instanceOffsets.Add(instancePos);
+                _instanceOffsets.Add(instancePos);
             }
         }
 
@@ -42,19 +43,23 @@ namespace AlienBiomes
             Material material = extraGraphic.MatSingle;
             float pGrowth = parent.def.plant.visualSizeRange.LerpThroughRange(parentPlant.Growth);
 
-            for (int i = 0; i < instanceOffsets.Count; i++)
+            for (int i = 0; i < _instanceOffsets.Count; i++)
             {
                 // Draw the mesh with the modified UV coordinates
-                Vector3 drawPos = instanceOffsets[i];
+                Vector3 drawPos = _instanceOffsets[i];
 
                 // Calculate the adjusted z-coordinate based on the change in scale
                 // This ensures our individual textures on the mesh shrink down to their base and not into their center
                 float scaleY = Mathf.Lerp(0.5f, 1f, parentPlant.CurrentScale);
                 drawPos.z += parentPlant.def.graphicData.drawSize.y * scaleY / 2f;
 
-                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, parentPlant.Rotation.AsQuat, new Vector3(parentPlant.CurrentScale * pGrowth, 1, parentPlant.CurrentScale * pGrowth));
-                Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0, null, 0, null, false, false, false);
+                Matrix4x4 matrix = Matrix4x4.TRS(drawPos, parentPlant.Rotation.AsQuat,
+                    new Vector3(parentPlant.CurrentScale * pGrowth, 1,
+                        parentPlant.CurrentScale * pGrowth));
+                
+                Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0, null,
+                    0, null, false, false, false);
             }
         }
-    }
+    }*/
 }

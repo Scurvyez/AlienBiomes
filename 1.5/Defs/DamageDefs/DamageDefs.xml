@@ -19,7 +19,7 @@
         <explosionCellFleck>HeatGlow</explosionCellFleck>
         <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
         <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
-        <soundExplosion>Toxifier_Pollute</soundExplosion>
+        <soundExplosion>GeyserSpray</soundExplosion>
         <combatLogRules>Damage_Flame</combatLogRules>
         <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
         <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>

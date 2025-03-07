@@ -424,7 +424,7 @@
             <li Class="AlienBiomes.PlantNastic_ModExtension">
                 <effectRadius>2</effectRadius>
                 <emitFlecks>true</emitFlecks>
-                <fleckDef>Twinkle</fleckDef>
+                <fleckDef>MicroSparksFast</fleckDef>
                 <fleckBurstCount>1</fleckBurstCount>
                 <fleckScale>0.25~0.45</fleckScale>
                 <colorA>(56, 163, 169)</colorA>

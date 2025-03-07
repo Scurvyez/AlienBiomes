@@ -6,20 +6,21 @@ namespace AlienBiomes
 {
     public class GameCondition_DesertBloomWeatherShift : GameCondition
     {
-        public override int TransitionTicks => 60;
+        private const float SATURATION = 0.85f;
+        private const float GLOW = 0.25f;
         
         private static readonly Color _skyColor = new (0.4f, 0.85f, 1.0f);
         private static readonly Color _shadowColor = new (0.4f, 0.85f, 1.0f);
         private static readonly Color _overlayColor = new (0f, 0.75f, 1.0f);
-        private const float SATURATION = 0.85f;
-        private const float GLOW = 0.25f;
         private static readonly SkyColorSet _skyColors = new (_skyColor, _shadowColor, _overlayColor, SATURATION);
-
+        
+        public override int TransitionTicks => 60;
+        
         public override WeatherDef ForcedWeather()
         {
             return def.weatherDef;
         }
-
+        
         public override void End()
         {
             base.End();
@@ -33,7 +34,7 @@ namespace AlienBiomes
         {
             return GameConditionUtility.LerpInOutValue(this, TransitionTicks);
         }
-
+        
         public override SkyTarget? SkyTarget(Map map)
         {
             return new SkyTarget(GLOW, _skyColors, 1f, 1f);

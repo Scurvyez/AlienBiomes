@@ -12,21 +12,23 @@ namespace AlienBiomes
     {
         private CompProperties_PlantFleckEmitter Props => (CompProperties_PlantFleckEmitter)props;
         private Color EmissionColor => Color.Lerp(Props.colorA, Props.colorB, Rand.Value);
-        private HashSet<Pawn> pawnsTouchingPlants = new();
-
+        
+        private readonly HashSet<Pawn> _pawnsTouchingPlants = [];
+        
         public override void CompTickLong()
         {
             if (!AlienBiomesSettings.ShowSpecialEffects) return;
-
-            IEnumerable<Pawn> pawns = parent.Position.GetThingList(parent.Map).OfType<Pawn>();
+            IEnumerable<Pawn> pawns = parent.Position
+                .GetThingList(parent.Map).OfType<Pawn>();
+            
             foreach (Pawn pawn in pawns)
             {
-                if (pawnsTouchingPlants.Add(pawn))
+                if (_pawnsTouchingPlants.Add(pawn))
                 {
                     Emit();
                 }
             }
-            pawnsTouchingPlants.RemoveWhere(pawn => !pawn.Spawned || pawn.Position != parent.Position);
+            _pawnsTouchingPlants.RemoveWhere(pawn => !pawn.Spawned || pawn.Position != parent.Position);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,18 +39,18 @@ namespace AlienBiomes
 
             for (int i = 0; i < Props.burstCount; ++i)
             {
-                FleckCreationData fCD = FleckMaker.GetDataStatic(parent.DrawPos, parent.Map, Props.fleck, Props.scale.RandomInRange);
+                FleckCreationData fCD = FleckMaker.GetDataStatic(parent.DrawPos, parent.Map, 
+                    Props.fleck, Props.scale.RandomInRange);
                 fCD.rotationRate = Rand.RangeInclusive(-240, 240);
-                fCD.instanceColor = new Color?(EmissionColor);
+                fCD.instanceColor = EmissionColor;
                 fCD.velocity = vel;
+                
                 parent.Map.flecks.CreateFleck(fCD);
 
-                if (AlienBiomesSettings.AllowCompEffectSounds)
-                {
-                    SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
-                    sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
-                    sDef.PlayOneShot(sI);
-                }
+                if (!AlienBiomesSettings.AllowCompEffectSounds) continue;
+                SoundInfo sI = new TargetInfo(parent.Position, parent.Map);
+                sI.volumeFactor = AlienBiomesSettings.PlantSoundEffectVolume;
+                sDef.PlayOneShot(sI);
             }
         }
     }

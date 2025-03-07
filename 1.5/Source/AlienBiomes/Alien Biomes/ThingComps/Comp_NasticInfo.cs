@@ -23,12 +23,14 @@ namespace AlienBiomes
                 if (plantExt.explosionDamageDef != null)
                 {
                     string effectRadiusFormatted = $"{plantExt.explosionDamageEffectRadius:F2}";
-                    stringBuilder.AppendLine("SZ_PlantNasticHarmfulInfo".Translate(effectRadiusFormatted, plantExt.explosionDamageDef.label));
+                    stringBuilder.AppendLine("SZ_PlantNasticHarmfulInfo"
+                        .Translate(effectRadiusFormatted, plantExt.explosionDamageDef.label));
                 }
                 else if (plantExt.givesHediff)
                 {
                     string effectRadiusFormatted = $"{plantExt.effectRadius:F2}";
-                    stringBuilder.AppendLine("SZ_PlantNasticHediffGiverInfo".Translate(effectRadiusFormatted, plantExt.hediffToGive.label));
+                    stringBuilder.AppendLine("SZ_PlantNasticHediffGiverInfo"
+                        .Translate(effectRadiusFormatted, plantExt.hediffToGive.label));
                 }
             }
             

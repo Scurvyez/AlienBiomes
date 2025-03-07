@@ -4,28 +4,33 @@ using UnityEngine;
 
 namespace AlienBiomes
 {
-    [StaticConstructorOnStartup]
+    /*[StaticConstructorOnStartup]
     public class Comp_GraphicsOverlay : ThingComp
     {
         public CompProperties_GraphicsOverlay Props => (CompProperties_GraphicsOverlay)props;
-
-        private float curWindSpeed; // initialize current speed to default value
-
+        
+        private static readonly int DistortionScrollSpeed = Shader.PropertyToID("_distortionScrollSpeed");
+        private static readonly int DistortionScale = Shader.PropertyToID("_distortionScale");
+        private static readonly int DistortionIntensity = Shader.PropertyToID("_distortionIntensity");
+        
+        private float _curWindSpeed;
+        
         /// <summary>
         /// Updates each shader parameter attached to each additional graphic.
         /// </summary>
-        private void UpdateShaderParams(Material mat, float curWindSpeed, GraphicDataAB extraGraphicProp)
+        private static void UpdateShaderParams(Material mat, float curWindSpeed, GraphicDataAB extraGraphicProp)
         {
-            mat.SetFloat("_distortionScrollSpeed", extraGraphicProp.shaderScrollSpeedFactor + (curWindSpeed / 10f));
-            mat.SetFloat("_distortionScale", extraGraphicProp.shaderScaleFactor + (curWindSpeed / 10f));
-            mat.SetFloat("_distortionIntensity", extraGraphicProp.shaderIntensityFactor + (curWindSpeed / 10f));
+            float windFactor = curWindSpeed / 10f;
+            
+            mat.SetFloat(DistortionScrollSpeed, extraGraphicProp.shaderScrollSpeedFactor + windFactor);
+            mat.SetFloat(DistortionScale, extraGraphicProp.shaderScaleFactor + windFactor);
+            mat.SetFloat(DistortionIntensity, extraGraphicProp.shaderIntensityFactor + windFactor);
         }
 
         public override void CompTickLong()
         {
             base.CompTickLong();
-            curWindSpeed = parent.Map.windManager.WindSpeed;
-            //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Current wind speed: </color>" + parent.Map.windManager.WindSpeed);
+            _curWindSpeed = parent.Map.windManager.WindSpeed;
         }
 
         /// <summary>
@@ -62,14 +67,14 @@ namespace AlienBiomes
 
                     if (extraGraphic.data.shaderType.ToString() == "MoteGlowDistorted" || extraGraphic.data.shaderType.ToString() == "MoteDistorted")
                     {
-                        curWindSpeed = parent.Map.windManager.WindSpeed;
-                        UpdateShaderParams(mat, curWindSpeed, extraGraphicProp);
+                        _curWindSpeed = parent.Map.windManager.WindSpeed;
+                        UpdateShaderParams(mat, _curWindSpeed, extraGraphicProp);
                     }
 
                     extraGraphic.Draw(pos, rotation, parent);
 
                     // Extra step for crystals only.
-                    if (parent.def.plant.visualSizeRange.max == maxG)
+                    if (Mathf.Approximately(parent.def.plant.visualSizeRange.max, maxG))
                     {
                         if (parent.def.defName == "SZ_BlueColossalCrystalOne" || parent.def.defName == "SZ_GreenColossalCrystalOne")
                         {
@@ -90,5 +95,5 @@ namespace AlienBiomes
                 }
             }
         }
-    }
+    }*/
 }

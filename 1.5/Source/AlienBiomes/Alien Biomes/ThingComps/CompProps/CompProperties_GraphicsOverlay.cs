@@ -3,7 +3,7 @@ using Verse;
 
 namespace AlienBiomes
 {
-    public class CompProperties_GraphicsOverlay : CompProperties
+    /*public class CompProperties_GraphicsOverlay : CompProperties
     {
         public List<GraphicDataAB> graphicElements; // all added graphics
 
@@ -20,5 +20,5 @@ namespace AlienBiomes
                 yield return "[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Oops! No textures found for <graphicElements>, please provide at least one.</color>";
             }
         }
-    }
+    }*/
 }

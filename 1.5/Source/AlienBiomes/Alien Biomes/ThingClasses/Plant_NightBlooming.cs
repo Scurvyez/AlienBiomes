@@ -7,7 +7,10 @@ namespace AlienBiomes
     [StaticConstructorOnStartup]
     public class Plant_NightBlooming : Plant
     {
-        public static Graphic GraphicSowing = GraphicDatabase.Get<Graphic_Single>("Things/Plant/Plant_Sowing", ShaderDatabase.Cutout, Vector2.one, Color.white);
+        public static Graphic GraphicSowing = GraphicDatabase
+            .Get<Graphic_Single>("Things/Plant/Plant_Sowing", 
+                ShaderDatabase.Cutout, Vector2.one, Color.white);
+        
         //public string nightfallGraphicPath;
         private Graphic graphicNightFallCache;
         public Graphic GraphicNightFall => graphicNightFallCache;

@@ -8,29 +8,25 @@ namespace AlienBiomes
     {
         private MapComponent_DesertBloomTracker plantTracker;
         
-        protected override bool CanFireNowSub(IncidentParms parms)
-        {
-            if (!base.CanFireNowSub(parms)) return false;
-            Map map = (Map)parms.target;
-            return true;
-        }
-
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             base.TryExecuteWorker(parms);
+            
             Map map = (Map)parms.target;
             plantTracker = map.GetComponent<MapComponent_DesertBloomTracker>();
             plantTracker.trackedIncidentPlants.Clear();
             DesertBloomExtension incidentExt = def.GetModExtension<DesertBloomExtension>();
+            
             if (incidentExt == null) return false;
-
+            
             int spawnedCount = 0;
             float curveMidpoint = incidentExt.sandblossomSpawnCurve.Evaluate(map.Size.x);
-            IntRange plantsToSpawnCount = ABRangeMaker.GetRangeWithMidpointValue((int)curveMidpoint, (int)(curveMidpoint * 0.15f));
+            IntRange plantsToSpawnCount = ABRangeMaker
+                .GetRangeWithMidpointValue((int)curveMidpoint, (int)(curveMidpoint * 0.15f));
             int totalPlantsToSpawn = plantsToSpawnCount.RandomInRange;
 
-            // Filter the list to only include plants with the Plant_DesertBloom_ModExtension
-            List<ThingDef> validPlantsToSpawn = incidentExt.plantsToSpawn.FindAll(plantDef => plantDef.HasModExtension<Plant_DesertBloom_ModExtension>());
+            List<ThingDef> validPlantsToSpawn = incidentExt.plantsToSpawn
+                .FindAll(plantDef => plantDef.HasModExtension<Plant_DesertBloom_ModExtension>());
 
             if (validPlantsToSpawn.Count == 0)
             {
@@ -46,7 +42,8 @@ namespace AlienBiomes
                         => CanSpawnAt(x, map, plantDef, incidentExt), map, out IntVec3 result)) continue;
 
                 Thing plant = GenSpawn.Spawn(plantDef, result, map);
-                Plant_DesertBloom_ModExtension plantModExtension = plantDef.GetModExtension<Plant_DesertBloom_ModExtension>();
+                Plant_DesertBloom_ModExtension plantModExtension = plantDef
+                    .GetModExtension<Plant_DesertBloom_ModExtension>();
 
                 int lifetime = plantModExtension.lifeTime.RandomInRange;
                 plantTracker.AddPlant(plant, lifetime);
@@ -60,8 +57,8 @@ namespace AlienBiomes
                 null, null, null);
             return true;
         }
-
-        private bool CanSpawnAt(IntVec3 c, Map map, ThingDef plantDef, DesertBloomExtension extension)
+        
+        private static bool CanSpawnAt(IntVec3 c, Map map, ThingDef plantDef, DesertBloomExtension extension)
         {
             BiomePlantControl bPC = plantDef.GetModExtension<BiomePlantControl>();
             

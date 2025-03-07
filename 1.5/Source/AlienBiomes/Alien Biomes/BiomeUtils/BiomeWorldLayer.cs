@@ -7,26 +7,28 @@ namespace AlienBiomes
 {
     public class BiomeWorldLayer : WorldLayer
     {
-        private static readonly IntVec2 TexturesInAtlas = new IntVec2(2, 2);
+        private static readonly IntVec2 TexturesInAtlas = new(2, 2);
 
         public override IEnumerable Regenerate()
         {
             foreach (object item in base.Regenerate())
-            {
                 yield return item;
-            }
+            
             Rand.PushState();
             Rand.Seed = Find.World.info.Seed;
             WorldGrid worldGrid = Find.WorldGrid;
+            
             for (int i = 0; i < Find.WorldGrid.TilesCount; i++)
             {
                 Tile tile = Find.WorldGrid[i];
                 Vector3 tileCenter = worldGrid.GetTileCenter(i);
+                
                 if (tile.biome.HasModExtension<BiomeControls>())
                 {
                     bool flag = tile.Roads.NullOrEmpty();
                     bool flag2 = tile.Rivers.NullOrEmpty();
                     BiomeControls modExtension = tile.biome.GetModExtension<BiomeControls>();
+                    
                     if (modExtension.uniqueHills)
                     {
                         if (flag2 && flag)

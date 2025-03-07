@@ -30,6 +30,9 @@
     </ThingDef>
 
     <!-- ================ Obelidian ================ -->
+    <!--
+        Color = (92, 40, 97)
+    -->
 
     <ColorDef ParentName="StructureColorBase">
         <defName>SZ_Structure_Obelidian</defName>
@@ -156,6 +159,10 @@
     </RecipeDef>
 
     <!-- ================ Volbitrine ================ -->
+    <!--
+        Color = (219, 77, 61)
+        ColorTwo = (255, 219, 153)
+    -->
 
     <ColorDef ParentName="StructureColorBase">
         <defName>SZ_Structure_Volbitrine</defName>
@@ -292,6 +299,9 @@
     </RecipeDef>
 
     <!-- ================ Zephyrite ================ -->
+    <!--
+        Color = (55, 73, 58)
+    -->
 
     <ColorDef ParentName="StructureColorBase">
         <defName>SZ_Structure_Zephyrite</defName>
@@ -418,6 +428,9 @@
     </RecipeDef>
 
     <!-- ================ Helioclase ================ -->
+    <!--
+        Color = (0, 187, 204)
+    -->
 
     <ColorDef ParentName="StructureColorBase">
         <defName>SZ_Structure_Helioclase</defName>
@@ -544,6 +557,9 @@
     </RecipeDef>
 
     <!-- ================ Cryoquartz ================ -->
+    <!--
+        Color = (78, 121, 190)
+    -->
 
     <ColorDef ParentName="StructureColorBase">
         <defName>SZ_Structure_Cryoquartz</defName>
@@ -670,6 +686,10 @@
     </RecipeDef>
 
     <!-- ================ Luminshale ================ -->
+    <!--
+        Color = (113, 106, 154)
+        ColorTwo = (246, 179, 255)
+    -->
 
     <ColorDef ParentName="StructureColorBase">
         <defName>SZ_Structure_Luminshale</defName>
@@ -801,7 +821,7 @@
             </thingDefs>
         </fixedIngredientFilter>
         <products>
-            <SZ_BlocksCryoquartz>20</SZ_BlocksCryoquartz>
+            <SZ_BlocksLuminshale>20</SZ_BlocksLuminshale>
         </products>
     </RecipeDef>
 

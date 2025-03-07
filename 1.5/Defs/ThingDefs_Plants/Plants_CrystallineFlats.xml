@@ -241,7 +241,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <comps>
-            <li Class="AlienBiomes.CompProperties_NasticInfo" />
+            <!-- <li Class="AlienBiomes.CompProperties_NasticInfo" /> -->
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>7.0</overlightRadius>
                 <glowRadius>7.0</glowRadius>

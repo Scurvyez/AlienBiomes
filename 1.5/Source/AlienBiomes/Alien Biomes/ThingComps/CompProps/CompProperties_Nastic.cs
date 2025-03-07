@@ -3,7 +3,7 @@ using Verse;
 
 namespace AlienBiomes
 {
-    public class CompProperties_Nastic : CompProperties
+    /*public class CompProperties_Nastic : CompProperties
     {
         public FleckDef nasticEffectDef;
         public GraphicDataAB graphicElement;
@@ -18,8 +18,8 @@ namespace AlienBiomes
             }
             if (graphicElement == null)
             {
-                yield return "[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Oops! No texture found for <graphicElement>, please provide at least one.</color>";
+                yield return "Oops! No texture found for graphicElement, please provide at least one.";
             }
         }
-    }
+    }*/
 }

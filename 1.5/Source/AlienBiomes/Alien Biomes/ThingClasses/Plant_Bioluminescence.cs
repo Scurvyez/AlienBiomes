@@ -6,11 +6,12 @@ namespace AlienBiomes
 {
     public class Plant_Bioluminescence : Plant
     {
+        private static readonly int Color1 = Shader.PropertyToID("_Color");
+        
         private Color defaultColor;
         private Color modifiedColor;
         private Plant_Bioluminescence_ModExtension bioExt;
         private MapComponent_PlantGetter plantGetter;
-        private static readonly int Color1 = Shader.PropertyToID("_Color");
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -20,7 +21,7 @@ namespace AlienBiomes
             bioExt = def.GetModExtension<Plant_Bioluminescence_ModExtension>();
             plantGetter = map.GetComponent<MapComponent_PlantGetter>();
         }
-
+        
         public override void Print(SectionLayer layer)
         {
             base.Print(layer);

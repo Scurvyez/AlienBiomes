@@ -28,13 +28,15 @@ namespace AlienBiomes
             harmony.Patch(original: AccessTools.PropertyGetter(typeof(Plant), "HarvestableNow"),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(HarvestableNowPostFix)));
 
-            harmony.Patch(original: AccessTools.Method(typeof(MaterialPool), nameof(MaterialPool.MatFrom), new[] { typeof(MaterialRequest) }),
+            harmony.Patch(original: AccessTools.Method(typeof(MaterialPool), nameof(MaterialPool.MatFrom), 
+                    new[] { typeof(MaterialRequest) }),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(MatFromPostFix)));
 
             harmony.Patch(original: AccessTools.Method(typeof(GenStep_Terrain), "TerrainFrom"),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(ReplaceTerrainPostfix)));
 
-            harmony.Patch(original: AccessTools.Method(typeof(PlantUtility), nameof(PlantUtility.CanEverPlantAt), new [] { typeof(ThingDef), typeof(IntVec3), typeof(Map), typeof(bool) }),
+            harmony.Patch(original: AccessTools.Method(typeof(PlantUtility), nameof(PlantUtility.CanEverPlantAt), 
+                    new [] { typeof(ThingDef), typeof(IntVec3), typeof(Map), typeof(bool) }),
                 prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CanEverPlantAtPrefix)));
 
             harmony.Patch(original: AccessTools.Method(typeof(Pawn_PathFollower), "TryEnterNextPathCell"),
@@ -71,11 +73,12 @@ namespace AlienBiomes
         public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
         {
             if (__instance is not ABShaderTypeDef) return;
-            ___shaderInt = AlienBiomesContentDatabase.AlienBiomesBundle.LoadAsset<Shader>(__instance.shaderPath);
+            ___shaderInt = AlienBiomesContentDatabase.AlienBiomesBundle
+                .LoadAsset<Shader>(__instance.shaderPath);
             
             if (___shaderInt is null)
             {
-                Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text></color>");
+                ABLog.Message($"Failed to load Shader from path {__instance.shaderPath}");
             }
         }
 
@@ -99,12 +102,11 @@ namespace AlienBiomes
         public static void HarvestableNowPostFix(Plant __instance, ref bool __result)
         {
             Comp_TimedHarvest comp = __instance.GetComp<Comp_TimedHarvest>();
-            if (comp != null)
-            {
-                __result = __result && comp.AdditionalPlantHarvestLogic();
-            }
+            
+            if (comp == null) return;
+            __result = __result && comp.AdditionalPlantHarvestLogic();
         }
-
+        
         public static void MatFromPostFix(MaterialRequest req, ref Material __result)
         {
             if (__result != null
@@ -116,7 +118,7 @@ namespace AlienBiomes
                 WindManager.Notify_PlantMaterialCreated(__result);
             }
         }
-
+        
         public static void ReplaceTerrainPostfix(Map map, ref TerrainDef __result)
         {
             if (!map.Biome.HasModExtension<BiomeControls>()) return;
@@ -222,16 +224,21 @@ namespace AlienBiomes
                 return;
 
             IntVec3 nextCell = ___pawn.pather.nextCell;
-            MapComponent_PlantGetter plantGetter = ___pawn.Map.GetComponent<MapComponent_PlantGetter>();
+            MapComponent_PlantGetter plantGetter = ___pawn.Map
+                .GetComponent<MapComponent_PlantGetter>();
 
             if (plantGetter == null)
                 return;
 
-            if (!plantGetter.ActiveLocationTriggers.TryGetValue(nextCell, out HashSet<Plant_Nastic> plantsInCell))
+            if (!plantGetter.ActiveLocationTriggers
+                    .TryGetValue(nextCell, out HashSet<Plant_Nastic> plantsInCell))
                 return;
+            
             foreach (Plant_Nastic plant in plantsInCell)
             {
-                PlantNastic_ModExtension plantExt = plant.def.GetModExtension<PlantNastic_ModExtension>();
+                PlantNastic_ModExtension plantExt = plant.def
+                    .GetModExtension<PlantNastic_ModExtension>();
+                
                 if (plantExt == null)
                     continue;
 
@@ -258,14 +265,14 @@ namespace AlienBiomes
                 }
             }
         }
-
+        
         public static bool VisiblePrefix(ref bool __result)
         {
             bool showTerrainDebris = AlienBiomesSettings.ShowTerrainDebris;
             __result = showTerrainDebris;
             return false;
         }
-
+        
         private static bool ValidatePassagePrefix(Map map)
         {
             return map.Biome != ABDefOf.SZ_RadiantPlains
@@ -301,7 +308,7 @@ namespace AlienBiomes
                         allowedRocks.Add(rockDef);
                     }
                 }
-
+                
                 if (allowedRocks.Any())
                 {
                     while (list.Count + allowedRocks.Count > num && list.Count > 0)
@@ -311,19 +318,19 @@ namespace AlienBiomes
                     list.AddRange(allowedRocks);
                 }
             }
-
+            
             if (modExt.disallowedRockTypes != null)
             {
                 list.RemoveAll(rockDef => modExt.disallowedRockTypes.Contains(rockDef));
             }
-
+            
             Rand.PopState();
             __result = list;
         }
-
+        
         public static void AffectsThingPostfix(ref bool __result, Thing t)
         {
-            __result = __result && t is Plant_Bioluminescence;
+            if (t is Plant_Bioluminescence) __result = false;
         }
     }
 }

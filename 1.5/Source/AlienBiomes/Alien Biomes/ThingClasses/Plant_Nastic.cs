@@ -8,6 +8,8 @@ namespace AlienBiomes
 {
     public class Plant_Nastic : Plant
     {
+        private const int MaxTicks = 720;
+        
         public bool GasExpelled;
         public int TouchSensitiveStartTime;
         public float CurrentScale = 1f;
@@ -19,14 +21,12 @@ namespace AlienBiomes
         private float scaleY;
         private float drawSizeY;
         private PlantNastic_ModExtension plantExt;
-        private List<Vector3> InstanceOffsets = new ();
+        private List<Vector3> InstanceOffsets = [];
         private Material randMat = null;
         private Vector3 drawPos = new (0, 0, 0);
         private Mesh mesh = MeshPool.plane10;
         private Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
-
-        private const int MaxTicks = 720;
-
+        
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -52,7 +52,7 @@ namespace AlienBiomes
             {
                 if (!plantGetter.ActiveLocationTriggers.ContainsKey(cell))
                 {
-                    plantGetter.ActiveLocationTriggers[cell] = new HashSet<Plant_Nastic>();
+                    plantGetter.ActiveLocationTriggers[cell] = [];
                 }
                 plantGetter.ActiveLocationTriggers[cell].Add(this);
             }
@@ -114,8 +114,10 @@ namespace AlienBiomes
                 // This ensures our individual textures on the mesh shrink down to their base and not into their center
                 drawPos.z += drawSizeY * scaleY / 10f;
 
-                matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
-                Graphics.DrawMesh(mesh, matrix, randMat, 0, null, 0, null, false, false, false);
+                matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, 
+                    new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
+                Graphics.DrawMesh(mesh, matrix, randMat, 0, null, 0, null, 
+                    false, false, false);
             }
         }
 
@@ -159,18 +161,22 @@ namespace AlienBiomes
                 plantExt.scaleDeltaCache[i] = scaleChangeRate;
             }
         }
-
+        
         public void DrawEffects()
         {
-            if (Map == null || plantExt == null || !plantExt.emitFlecks || plantExt.fleckDef == null) return;
+            if (Map == null || plantExt is not { emitFlecks: true } 
+                            || plantExt.fleckDef == null) return;
+            
             for (int i = 0; i < plantExt.fleckBurstCount; ++i)
             {
                 FleckEmissionColor = Color.Lerp(plantExt.colorA, plantExt.colorB, Rand.Value);
-                Vector3 drawPos = new Vector3(DrawPos.x + Rand.InsideUnitCircleVec3.x, DrawPos.y, DrawPos.z + Rand.InsideUnitCircleVec3.z);
+                Vector3 drawPos = new (DrawPos.x + Rand.InsideUnitCircleVec3.x, 
+                    DrawPos.y, DrawPos.z + Rand.InsideUnitCircleVec3.z);
 
-                FleckCreationData fCD = FleckMaker.GetDataStatic(drawPos, Map, plantExt.fleckDef, plantExt.fleckScale.RandomInRange);
+                FleckCreationData fCD = FleckMaker.GetDataStatic(drawPos, Map, 
+                    plantExt.fleckDef, plantExt.fleckScale.RandomInRange);
                 fCD.rotationRate = Rand.RangeInclusive(-240, 240);
-                fCD.instanceColor = new Color?(FleckEmissionColor);
+                fCD.instanceColor = FleckEmissionColor;
                 Map.flecks.CreateFleck(fCD);
             }
         }
@@ -188,11 +194,13 @@ namespace AlienBiomes
         public void GiveHediff(Pawn pawn)
         {
             if (pawn.health.hediffSet.HasHediff(plantExt.hediffToGive)) return;
-            if (plantExt.hediffToGive != ABDefOf.SZ_Crystallize || !pawn.IsColonist || pawn.IsColonyMech) return;
+            if (plantExt.hediffToGive != ABDefOf.SZ_Crystallize 
+                || !pawn.IsColonist || pawn.IsColonyMech) return;
             
             pawn.health.AddHediff(plantExt.hediffToGive, null, null, null);
             HealthUtility.AdjustSeverity(pawn, plantExt.hediffToGive, 0.01f);
-            Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter);
+            Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), 
+                "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter);
         }
 
         public override void ExposeData()

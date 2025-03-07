@@ -9,12 +9,14 @@ namespace AlienBiomes
     public class Comp_TimedGlower : CompGlower
     {
         public CompProperties_TimedGlower TimeProps => (CompProperties_TimedGlower)props;
+        
         protected int lastUpdateTick = 0;
 
         public bool AdditionalGlowerLogic()
         {
-            var dP = GenLocalDate.DayPercent(parent.Map);
-            return (dP > TimeProps.startTime && dP < 1f) || (dP < TimeProps.stopTime && dP > 0f);
+            float dP = GenLocalDate.DayPercent(parent.Map);
+            return (dP > TimeProps.startTime && dP < 1f) 
+                   || (dP < TimeProps.stopTime && dP > 0f);
         }
         
         public override void CompTickLong()
@@ -23,11 +25,9 @@ namespace AlienBiomes
             int randomness = rand.Next(120, 240);
             int curTick = Find.TickManager.TicksGame;
 
-            if (curTick - lastUpdateTick > 2500) // Once per hour only.
-            {
-                lastUpdateTick = curTick + randomness;
-                UpdateLit(parent.Map);
-            }
+            if (curTick - lastUpdateTick <= 2500) return; // Once per hour only.
+            lastUpdateTick = curTick + randomness;
+            UpdateLit(parent.Map);
         }
 
         public override void CompTick()
@@ -36,11 +36,9 @@ namespace AlienBiomes
             int randomness = rand.Next(640, 1280);
             int curTick = Find.TickManager.TicksGame;
 
-            if (curTick - lastUpdateTick > 2500)
-            {
-                lastUpdateTick = curTick + randomness;
-                UpdateLit(parent.Map);
-            }
+            if (curTick - lastUpdateTick <= 2500) return;
+            lastUpdateTick = curTick + randomness;
+            UpdateLit(parent.Map);
         }
 
         public override string CompInspectStringExtra()
