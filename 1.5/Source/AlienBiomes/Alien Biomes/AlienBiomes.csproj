@@ -75,7 +75,6 @@
     <Compile Include="BiomeUtils\BiomeGenHelper.cs" />
     <Compile Include="BiomeUtils\BiomeHilliness.cs" />
     <Compile Include="BiomeUtils\DefModExtensions\Biome_Generation_ModExt.cs" />
-    <Compile Include="BiomeUtils\BiomeWorldLayer.cs" />
     <Compile Include="BiomeUtils\DefModExtensions\Biome_Rocks_ModExt.cs" />
     <Compile Include="BiomeWorkers\BiomeWorker_Universal.cs" />
     <Compile Include="Debugging\ABLog.cs" />

@@ -5,73 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3026ae6e-2d55-43ba-bbf5-c57136e0dcbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Alien Biomes/AssetUtils/AlienBiomesContentDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Alien Biomes/BiomeWorkers/BiomeWorker_Universal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Bioluminescence_ModExt.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_TerrainControl_ModExt.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/Storyteller/Incidents_Map_Misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/Storyteller/Incidents_Map_Misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_CrystallineFlats.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_DeliriousDunes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_RadiantPlains.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_Water.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_Water.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Patches/Patches_BiomeGenCore.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Patches/Patches_BiomeGenCore.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/AlienBiomesWelcomeNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AlienBiomesWelcomeNote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/DefModExtensions/Biome_Generation_ModExt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeHilliness.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeHilliness.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomePlantControl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeWorldLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeWorldLayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/Biome_Rocks_ModExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/DefModExtensions/Biome_Rocks_ModExt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/LateBiomeWorker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GenSteps/World/WorldGenStep_Late.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/UniversalBiomeWorker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/WorldGenStepConstructor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GenSteps/World/WorldGenStepConstructor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Debugging/ABLog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Debugging/ABLog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/GenSteps/GenStep_DeliriousDunesOasis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GenSteps/Map/GenStep_DeliriousDunesOasis.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/GraphicData/GraphicDataAB.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/HarmonyPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Harmony/HarmonyPatches.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffCompProps/HediffCompProperties_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffCompProps/HediffCompProperties_Crystallize.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Incident/DesertBloomExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Incidents/DefModExtensions/Incident_DesertBloom_ModExt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Incident/IncidentWorker_DesertBloom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Incidents/IncidentWorker_DesertBloom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_MobilePlantCellsGetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesContentDatabase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesMod.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesMod.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesModSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesModSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/NightBlooming_ModExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Bioluminescence_ModExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_DesertBloom_ModExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_DesertBloom_ModExt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Mobile_ModExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Mobile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_NightBlooming.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Shimmering.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_GraphicsOverlay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_Nastic.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_NasticInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_NasticInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_PlantFleckEmitter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_GraphicsOverlay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_Nastic.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_NasticInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_NasticInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_PlantFleckEmitter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Utils/ABEasingFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/MathUtils/ABEasingFunctions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Utils/ABRangeMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/MathUtils/ABRangeMaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Utils/ABShaderPropertyIDs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AssetUtils/ABShaderPropertyIDs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Utils/ABShaderTypeDef.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AssetUtils/ABShaderTypeDef.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Utils/ABTextureAssets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AssetUtils/ABTextureAssets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeGenHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeGenHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeWorldLayer.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Anomaly/1.5/Patches/Patches_BiomeGenAnomaly.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Anomaly/1.5/Patches/Patches_BiomeGenAnomaly.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +22,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/29/a3f574ea/Hilliness.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Alien Biomes/GenSteps/World/WorldGenStepConstructor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -207,6 +148,7 @@
       <workItem from="1741349130390" duration="6919000" />
       <workItem from="1741369998677" duration="19000" />
       <workItem from="1741446818472" duration="20506000" />
+      <workItem from="1741469791198" duration="1836000" />
     </task>
     <servers />
   </component>

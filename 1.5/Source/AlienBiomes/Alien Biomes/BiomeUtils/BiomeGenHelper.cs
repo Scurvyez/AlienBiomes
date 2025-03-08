@@ -192,7 +192,6 @@ namespace AlienBiomes
             if (bioExt.setHills.HasValue)
             {
                 _ = bioExt.setHills.Value;
-                
                 if (bioExt.spawnHills.HasValue && !bioExt.setHills.HasValue)
                 {
                     _ = bioExt.spawnHills.Value;
