@@ -68,7 +68,7 @@
             <li>MovingFluid</li>
         </affordances>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -90,7 +90,7 @@
         <renderPrecedence>394</renderPrecedence>
         <driesTo>SZ_RadiantStonySoil</driesTo>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -109,7 +109,7 @@
             <li>MovingFluid</li>
         </affordances>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -133,7 +133,7 @@
             <li>Bridgeable</li>
         </affordances>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>ChestDeep</li>
@@ -148,7 +148,7 @@
         <texturePath>AlienBiomes/Terrain/Surfaces/RadiantWaterChestDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Deep</li>
@@ -165,7 +165,7 @@
         <renderPrecedence>396</renderPrecedence>
         <driesTo>SZ_RadiantStonySoil</driesTo>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Salty</li>
@@ -182,7 +182,7 @@
         <texturePath>AlienBiomes/Terrain/Surfaces/RadiantWaterDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Salty</li>
@@ -253,7 +253,7 @@
         <texturePath>AlienBiomes/Terrain/Surfaces/SmolderingWaterChestDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Deep</li>
@@ -286,7 +286,7 @@
         <renderPrecedence>394</renderPrecedence>
         <driesTo>SZ_DeliriousStonySoil</driesTo>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -308,7 +308,7 @@
             <li>Bridgeable</li>
         </affordances>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>ChestDeep</li>
@@ -325,7 +325,7 @@
         <renderPrecedence>394</renderPrecedence>
         <driesTo>SZ_CrystallineStonySoil</driesTo>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -341,7 +341,7 @@
         <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterChestDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Deep</li>
@@ -360,7 +360,7 @@
             <li>MovingFluid</li>
         </affordances>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -383,7 +383,7 @@
             <li>MovingFluid</li>
         </affordances>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -405,7 +405,7 @@
         <renderPrecedence>396</renderPrecedence>
         <driesTo>SZ_CrystallineStonySoil</driesTo>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Salty</li>
@@ -422,7 +422,7 @@
         <texturePath>AlienBiomes/Terrain/Surfaces/CrystallineWaterDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Salty</li>

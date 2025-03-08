@@ -9,7 +9,7 @@
         <defName>SZ_CrystallineFlats</defName>
         <label>crystalline flats</label>
         <description>These lands are uncharacteristically sterile and covered in gigantic crystal pillars, flanked by smaller scatterings of crystalline formations.\n\nYou'll find many exotic materials here, however, a severe lack in vegetation. Yet, with less than desirable plant density, the flora growing in these parts reaches maturity at an astounding rate because of the elevated levels of minerals within the soil. You'll also find pools of water so deep and curious they almost... invite creatures down into their unending depths.</description>
-        <workerClass>AlienBiomes.UniversalBiomeWorker</workerClass>
+        <workerClass>AlienBiomes.BiomeWorker_Universal</workerClass>
         <animalDensity>1.2</animalDensity>
         <plantDensity>0.75</plantDensity>
         <settlementSelectionWeight>1</settlementSelectionWeight>
@@ -133,7 +133,7 @@
             <Bast_Scire MayRequire="Scurvyez.Bastyon">0.20</Bast_Scire>
         </wildAnimals>
         <modExtensions>
-			<li Class="AlienBiomes.BiomeControls">
+			<li Class="AlienBiomes.Biome_Generation_ModExt">
                 <allowOnLand>true</allowOnLand>
                 <frequency>100</frequency>
                 <minElevation>-100</minElevation>
@@ -154,7 +154,7 @@
                 <newWaterOceanDeep>SZ_CrystallineWaterOceanDeep</newWaterOceanDeep>
                 <newWaterMovingChestDeep>SZ_CrystallineWaterMovingChestDeep</newWaterMovingChestDeep>
 			</li>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <allowedRockTypes>
                     <li>SZ_Zephyrite</li>
                     <li>SZ_Helioclase</li>

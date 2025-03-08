@@ -11,7 +11,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="BorealForest"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -27,7 +27,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="Tundra"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -43,7 +43,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="ColdBog"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -59,7 +59,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="IceSheet"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -75,7 +75,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="SeaIce"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -91,7 +91,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="TemperateForest"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -107,7 +107,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="TemperateSwamp"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -123,7 +123,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="TropicalRainforest"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -139,7 +139,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="TropicalSwamp"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -155,7 +155,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="AridShrubland"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -171,7 +171,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="Desert"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -187,7 +187,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="ExtremeDesert"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>

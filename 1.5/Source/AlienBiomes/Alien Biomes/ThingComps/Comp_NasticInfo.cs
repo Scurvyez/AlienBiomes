@@ -6,31 +6,31 @@ namespace AlienBiomes
     public class Comp_NasticInfo : ThingComp
     {
         public CompProperties_NasticInfo Props => (CompProperties_NasticInfo)props;
-        private PlantNastic_ModExtension plantExt;
-
+        private Plant_Nastic_ModExt _ext;
+        
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            plantExt = parent.def.GetModExtension<PlantNastic_ModExtension>();
+            _ext = parent.def.GetModExtension<Plant_Nastic_ModExt>();
         }
-
+        
         public override string CompInspectStringExtra()
         {
             StringBuilder stringBuilder = new ();
-
-            if (plantExt != null)
+            
+            if (_ext != null)
             {
-                if (plantExt.explosionDamageDef != null)
+                if (_ext.explosionDamageDef != null)
                 {
-                    string effectRadiusFormatted = $"{plantExt.explosionDamageEffectRadius:F2}";
+                    string effectRadiusFormatted = $"{_ext.explosionDamageEffectRadius:F2}";
                     stringBuilder.AppendLine("SZ_PlantNasticHarmfulInfo"
-                        .Translate(effectRadiusFormatted, plantExt.explosionDamageDef.label));
+                        .Translate(effectRadiusFormatted, _ext.explosionDamageDef.label));
                 }
-                else if (plantExt.givesHediff)
+                else if (_ext.givesHediff)
                 {
-                    string effectRadiusFormatted = $"{plantExt.effectRadius:F2}";
+                    string effectRadiusFormatted = $"{_ext.effectRadius:F2}";
                     stringBuilder.AppendLine("SZ_PlantNasticHediffGiverInfo"
-                        .Translate(effectRadiusFormatted, plantExt.hediffToGive.label));
+                        .Translate(effectRadiusFormatted, _ext.hediffToGive.label));
                 }
             }
             

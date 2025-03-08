@@ -10,7 +10,7 @@
         <defName>SZ_RadiantPlains</defName>
         <label>radiant plains</label>
         <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all and ancient trees grow in small clusters as the local fauna congregates nearby.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
-        <workerClass>AlienBiomes.UniversalBiomeWorker</workerClass>
+        <workerClass>AlienBiomes.BiomeWorker_Universal</workerClass>
         <animalDensity>1.7</animalDensity>
         <plantDensity>1.75</plantDensity>
         <diseaseMtbDays>75</diseaseMtbDays>
@@ -141,7 +141,7 @@
             <li>Dromedary</li>
         </allowedPackAnimals>
         <modExtensions>
-			<li Class="AlienBiomes.BiomeControls">
+			<li Class="AlienBiomes.Biome_Generation_ModExt">
                 <allowOnLand>True</allowOnLand>
                 <frequency>100</frequency>
                 <minElevation>-100</minElevation>
@@ -162,7 +162,7 @@
                 <newWaterOceanDeep>SZ_RadiantWaterOceanDeep</newWaterOceanDeep>
                 <newWaterMovingChestDeep>SZ_RadiantWaterMovingChestDeep</newWaterMovingChestDeep>
 			</li>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <allowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Luminshale</li>

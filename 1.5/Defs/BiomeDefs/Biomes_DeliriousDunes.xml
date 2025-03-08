@@ -9,7 +9,7 @@
         <defName>SZ_DeliriousDunes</defName>
         <label>delirious dunes</label>
         <description>These dunes are a harsh place for any organism to thrive in. Infrequent rains and high temperatures plague the delirious dunes. Be sure to use the oasis to its full potential.</description>
-        <workerClass>AlienBiomes.UniversalBiomeWorker</workerClass>
+        <workerClass>AlienBiomes.BiomeWorker_Universal</workerClass>
         <allowFarmingCamps>false</allowFarmingCamps>
         <animalDensity>0.1</animalDensity>
         <plantDensity>0.175</plantDensity>
@@ -138,7 +138,7 @@
             <li>Dromedary</li>
         </allowedPackAnimals>
         <modExtensions>
-			<li Class="AlienBiomes.BiomeControls">
+			<li Class="AlienBiomes.Biome_Generation_ModExt">
                 <allowOnLand>true</allowOnLand>
                 <frequency>100</frequency>
                 <minElevation>-100</minElevation>
@@ -159,7 +159,7 @@
                 <newWaterOceanDeep>SZ_SmolderingWaterOceanDeep</newWaterOceanDeep>
                 <newWaterMovingChestDeep>SZ_SmolderingWaterMovingChestDeep</newWaterMovingChestDeep>
 			</li>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <allowedRockTypes>
                     <li>SZ_Volbitrine</li>
                     <li>SZ_Cryoquartz</li>

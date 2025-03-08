@@ -10,7 +10,7 @@ namespace AlienBiomes
         
         private Color defaultColor;
         private Color modifiedColor;
-        private Plant_Bioluminescence_ModExtension bioExt;
+        private Plant_Bioluminescence_ModExt bioExt;
         private MapComponent_PlantGetter plantGetter;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -18,7 +18,7 @@ namespace AlienBiomes
             base.SpawnSetup(map, respawningAfterLoad);
             defaultColor = Graphic.Color;
             modifiedColor = defaultColor;
-            bioExt = def.GetModExtension<Plant_Bioluminescence_ModExtension>();
+            bioExt = def.GetModExtension<Plant_Bioluminescence_ModExt>();
             plantGetter = map.GetComponent<MapComponent_PlantGetter>();
         }
         

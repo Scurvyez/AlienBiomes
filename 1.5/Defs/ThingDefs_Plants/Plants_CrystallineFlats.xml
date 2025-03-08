@@ -31,7 +31,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -70,7 +70,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -108,7 +108,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Sandy</li>
@@ -149,7 +149,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Sandy</li>
@@ -188,7 +188,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Sandy</li>
@@ -241,7 +241,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <comps>
-            <!-- <li Class="AlienBiomes.CompProperties_NasticInfo" /> -->
+            <li Class="AlienBiomes.CompProperties_NasticInfo" />
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>7.0</overlightRadius>
                 <glowRadius>7.0</glowRadius>
@@ -251,14 +251,15 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.PlantNastic_ModExtension">
+            <li Class="AlienBiomes.Plant_Nastic_ModExt">
                 <effectRadius>2</effectRadius>
                 <givesHediff>true</givesHediff>
+                <hediffChance>0.1</hediffChance>
                 <hediffToGive>SZ_Crystallize</hediffToGive>
             </li>
         </modExtensions>
@@ -312,7 +313,7 @@
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -416,7 +417,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -471,7 +472,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -530,7 +531,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Sandy</li>
                     <li>CrystallineSand_Grove</li>
@@ -594,7 +595,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Sandy</li>
                     <li>CrystallineSand_Grove</li>
@@ -638,7 +639,7 @@
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Sandy</li>
                     <li>Soil</li>
@@ -684,7 +685,7 @@
             </sowTags>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Sandy</li>
                     <li>Soil</li>

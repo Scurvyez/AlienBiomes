@@ -3,7 +3,7 @@ using RimWorld;
 
 namespace AlienBiomes
 {
-    public class UniversalBiomeWorker : BiomeWorker
+    public class BiomeWorker_Universal : BiomeWorker
     {
         public override float GetScore(Tile tile, int tileID)
         {

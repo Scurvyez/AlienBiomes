@@ -4,7 +4,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="Labyrinth"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -20,7 +20,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="MetalHell"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>
@@ -36,7 +36,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/BiomeDef[defName="Undercave"]</xpath>
         <value>
-            <li Class="AlienBiomes.Biome_Rocks_ModExtension">
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
                 <disallowedRockTypes>
                     <li>SZ_Obelidian</li>
                     <li>SZ_Volbitrine</li>

@@ -37,7 +37,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -80,7 +80,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -161,7 +161,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Rocky</li>
                 </terrainTags>
@@ -204,7 +204,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Sandy</li>
                 </terrainTags>
@@ -248,7 +248,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>ChaliceSoil</li>
                 </terrainTags>

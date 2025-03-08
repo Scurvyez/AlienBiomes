@@ -23,11 +23,11 @@ namespace AlienBiomes
                 Tile tile = Find.WorldGrid[i];
                 Vector3 tileCenter = worldGrid.GetTileCenter(i);
                 
-                if (tile.biome.HasModExtension<BiomeControls>())
+                if (tile.biome.HasModExtension<Biome_Generation_ModExt>())
                 {
                     bool flag = tile.Roads.NullOrEmpty();
                     bool flag2 = tile.Rivers.NullOrEmpty();
-                    BiomeControls modExtension = tile.biome.GetModExtension<BiomeControls>();
+                    Biome_Generation_ModExt modExtension = tile.biome.GetModExtension<Biome_Generation_ModExt>();
                     
                     if (modExtension.uniqueHills)
                     {

@@ -1,5 +1,4 @@
-﻿
-namespace AlienBiomes
+﻿namespace AlienBiomes
 {
     public enum BiomeHilliness
     {

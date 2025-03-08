@@ -34,7 +34,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousCoarseSand</li>
                 </terrainTags>
@@ -80,12 +80,12 @@
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousCoarseSand</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.PlantNastic_ModExtension">
+            <li Class="AlienBiomes.Plant_Nastic_ModExt">
                 <isTouchSensitive>true</isTouchSensitive>
                 <isDamaging>true</isDamaging>
                 <effectRadius>2</effectRadius>
@@ -96,7 +96,7 @@
             </li>
         </modExtensions>
         <comps>
-            <!-- <li Class="AlienBiomes.CompProperties_NasticInfo" /> -->
+            <li Class="AlienBiomes.CompProperties_NasticInfo" />
         </comps>
     </ThingDef>
 
@@ -147,7 +147,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousRichBlackSand</li>
                     <li>DeliriousBlackSand</li>
@@ -198,7 +198,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousRichBlackSand</li>
                     <li>DeliriousBlackSand</li>
@@ -243,7 +243,7 @@
             <purpose>Food</purpose>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousRichBlackSand</li>
                 </terrainTags>
@@ -286,14 +286,14 @@
             <allowAutoCut>false</allowAutoCut>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>SZ_DeliriousCoarseSand</li>
                     <li>SZ_DeliriousRichBlackSand</li>
                     <li>SZ_DeliriousBlackSand</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_DesertBloom_ModExtension">
+            <li Class="AlienBiomes.Plant_DesertBloom_ModExt">
                 <lifeTime>400000~700000</lifeTime>
             </li>
         </modExtensions>
@@ -336,14 +336,14 @@
             <allowAutoCut>false</allowAutoCut>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>SZ_DeliriousCoarseSand</li>
                     <li>SZ_DeliriousRichBlackSand</li>
                     <li>SZ_DeliriousBlackSand</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_DesertBloom_ModExtension">
+            <li Class="AlienBiomes.Plant_DesertBloom_ModExt">
                 <lifeTime>400000~700000</lifeTime>
             </li>
         </modExtensions>

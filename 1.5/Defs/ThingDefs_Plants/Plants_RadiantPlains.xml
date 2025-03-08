@@ -32,7 +32,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Stony</li>
@@ -75,7 +75,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Stony</li>
@@ -116,7 +116,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Stony</li>
                     <li>Rocky</li>
@@ -155,7 +155,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Stony</li>
@@ -195,7 +195,7 @@
             <wildOrder>1</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Sandy</li>
@@ -234,7 +234,7 @@
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -285,12 +285,12 @@
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>ChaliceSoil</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.PlantNastic_ModExtension">
+            <li Class="AlienBiomes.Plant_Nastic_ModExt">
                 <isVisuallyReactive>true</isVisuallyReactive>
                 <isTouchSensitive>true</isTouchSensitive>
                 <minScale>0.25</minScale>
@@ -363,7 +363,7 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Sandy</li>
                 </terrainTags>
@@ -416,12 +416,12 @@
             <purpose>Food</purpose>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.PlantNastic_ModExtension">
+            <li Class="AlienBiomes.Plant_Nastic_ModExt">
                 <effectRadius>2</effectRadius>
                 <emitFlecks>true</emitFlecks>
                 <fleckDef>MicroSparksFast</fleckDef>
@@ -481,7 +481,7 @@
             <interferesWithRoof>true</interferesWithRoof>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
@@ -522,7 +522,7 @@
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -577,7 +577,7 @@
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Salty</li>
@@ -585,7 +585,7 @@
                     <li>ABSaltyShallow</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_Bioluminescence_ModExtension">
+            <li Class="AlienBiomes.Plant_Bioluminescence_ModExt">
                 <alphaMultiplier>5.575</alphaMultiplier>
 			</li>
         </modExtensions>
@@ -625,7 +625,7 @@
             <wildOrder>2</wildOrder>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Water</li>
                     <li>Fresh</li>
@@ -677,7 +677,7 @@
             </sowTags>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Stony</li>

@@ -2,7 +2,6 @@
 
 namespace AlienBiomes
 {
-    /*
     public static class ABShaderPropertyIDs
     {
         private static readonly string ShimmerSpeedName = "_ShimmerSpeed";
@@ -27,5 +26,4 @@ namespace AlienBiomes
         public static int DistortionSpeed = Shader.PropertyToID(DistortionSpeedName);
         public static int ToggleAlpha = Shader.PropertyToID(ToggleAlphaName);
     }
-    */
 }

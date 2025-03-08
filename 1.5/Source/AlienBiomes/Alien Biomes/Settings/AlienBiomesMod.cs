@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Verse;
 using RimWorld;
 using HarmonyLib;
@@ -10,90 +11,77 @@ namespace AlienBiomes
 {
     public class AlienBiomesMod : Mod
     {
-        AlienBiomesSettings settings;
-        private Vector2 scrollPosition = Vector2.zero;
-        public static AlienBiomesMod mod;
-
+        public static AlienBiomesMod ABMod;
+        
+        private readonly AlienBiomesSettings _settings;
+        private Vector2 _scrollPos = Vector2.zero;
+        
         public AlienBiomesMod(ModContentPack content) : base(content)
         {
-            mod = this;
-            settings = GetSettings<AlienBiomesSettings>();
-
+            ABMod = this;
+            _settings = GetSettings<AlienBiomesSettings>();
+            
             Harmony harmony = new (id: "rimworld.scurvyez.alienbiomes-preSCOS");
-
-            // implied defs are generated before SCOS runs so this patch needs to be run before then, hence why it's here
-            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
-                postfix: new HarmonyMethod(typeof(AlienBiomesMod), nameof(AddBiomesDefModExtensionsPostfix)));
+            
+            // implied defs are generated before SCOS runs
+            // so this patch needs to be run before then, hence why it's here
+            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), 
+                    nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
+                postfix: new HarmonyMethod(typeof(AlienBiomesMod), 
+                    nameof(AddBiomesDefModExtensionsPostfix)));
         }
-
+        
         public static IEnumerable<TerrainDef> AddBiomesDefModExtensionsPostfix(IEnumerable<TerrainDef> __result)
         {
-            foreach (var terrainDef in __result)
+            foreach (TerrainDef terrainDef in __result)
             {
-                BiomePlantControl plantControl = new();
-                plantControl.terrainTags.Add("Stony");
-                plantControl.terrainTags.Add("Rocky");
-
-                if (terrainDef.modExtensions == null)
-                {
-                    terrainDef.modExtensions = new List<DefModExtension>();
-                }
-
-                terrainDef.modExtensions.Add(plantControl);
+                Plant_TerrainControl_ModExt plantTerrainControlModExt = new();
+                plantTerrainControlModExt.terrainTags.Add("Stony");
+                plantTerrainControlModExt.terrainTags.Add("Rocky");
+                terrainDef.modExtensions ??= [];
+                terrainDef.modExtensions.Add(plantTerrainControlModExt);
                 terrainDef.fertility = 0.35f;
                 yield return terrainDef;
             }
         }
-
+        
         public AssetBundle MainBundle
         {
             get
             {
-                string text = "";
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                {
-                    text = "StandaloneOSX";
-                }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    text = "StandaloneWindows64";
-                }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                {
-                    text = "StandaloneLinux64";
-                }
-                string bundlePath = Path.Combine(base.Content.RootDir, "Materials\\Bundles\\" + text + "\\alienbiomesbundle");
-                //Log.Message("[<color=#4494E3FF>AlienBiomes</color>] Bundle Path: " + bundlePath);
-
-                // Load the bundle as a local variable
+                string text = RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "StandaloneOSX"
+                    : RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "StandaloneWindows64"
+                    : RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? "StandaloneLinux64"
+                    : throw new PlatformNotSupportedException("Unsupported Platform");
+                
+                string bundlePath = Path.Combine(Content.RootDir, 
+                    @"Materials\\Bundles\\" + text + "\\alienbiomesbundle");
+                //ABLog.Message("Bundle Path: " + bundlePath);
+                
                 AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);
-
-                // Check if the bundle is not null
                 if (bundle == null)
                 {
-                    Log.Message("[<color=#4494E3FF>AlienBiomes</color>] <color=#e36c45FF>Failed to load bundle at path:</color> " + bundlePath);
+                    ABLog.Message("Failed to load bundle at path: " + bundlePath);
                 }
-
-                foreach (var allAssetName in bundle.GetAllAssetNames())
-                {
-                    //Log.Message($"[<color=#4494E3FF>AlienBiomes</color>] - [{allAssetName}]");
-                }
-
-                // Return the bundle
+                
+                // foreach (string allAssetName in bundle.GetAllAssetNames())
+                // {
+                //     ABLog.Message($" - {allAssetName}");
+                // }
                 return bundle;
             }
         }
-
+        
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
             Listing_Standard list = new();
             Rect viewRect = new(inRect.x, inRect.y, inRect.width, inRect.height / 2);
             Rect vROffset = new(0f, 0f, inRect.width - 20, inRect.height - 225); // Adjust last value here for more height :)
-            Widgets.BeginScrollView(viewRect, ref scrollPosition, vROffset, true);
+            Widgets.BeginScrollView(viewRect, ref _scrollPos, vROffset, true);
 
             list.Begin(vROffset);
-            list.Gap(12.0f);
+            list.Gap();
 
             // GENERAL SETTINGS
             list.Label("<color=cyan>General</color>");
@@ -108,14 +96,19 @@ namespace AlienBiomes
             GUI.DrawTexture(parPos1, partition1, ScaleMode.StretchToFill, true);
 
             list.Gap(3.00f);
-
-            //list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(), ref settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseAlienSand".Translate(), ref settings._useAlienSand, "AlienBiomes_SettingUseAlienSandDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseAlienGravel".Translate(), ref settings._useAlienGravel, "AlienBiomes_SettingUseAlienGravelDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseAlienWater".Translate(), ref settings._useAlienWater, "AlienBiomes_SettingUseAlienWaterDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingShowTerrainDebris".Translate(), ref settings._showTerrainDebris, "AlienBiomes_SettingShowTerrainDebrisDesc".Translate());
-            list.Gap(12.0f);
-
+            
+            list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(),
+                ref _settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseAlienSand".Translate(), 
+                ref _settings._useAlienSand, "AlienBiomes_SettingUseAlienSandDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseAlienGravel".Translate(), 
+                ref _settings._useAlienGravel, "AlienBiomes_SettingUseAlienGravelDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingUseAlienWater".Translate(), 
+                ref _settings._useAlienWater, "AlienBiomes_SettingUseAlienWaterDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingShowTerrainDebris".Translate(), 
+                ref _settings._showTerrainDebris, "AlienBiomes_SettingShowTerrainDebrisDesc".Translate());
+            list.Gap();
+            
             // GRAPHICS & PERFORMANCE SETTINGS
             list.Label("<color=cyan>Graphics</color> / <color=cyan>Performance</color>");
 
@@ -130,11 +123,15 @@ namespace AlienBiomes
 
             list.Gap(3.00f);
 
-            list.CheckboxLabeled("AlienBiomes_SettingPlantGlow".Translate(), ref settings._showPlantGlow, "AlienBiomes_SettingPlantGlowDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingEffectorOverlay".Translate(), ref settings._showEffecterOverlay, "AlienBiomes_SettingEffectorOverlayDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_EnableScreenPositionEffects".Translate(), ref settings._enableScreenPosEffects, "AlienBiomes_EnableScreenPositionEffectsDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingSpecialEffects".Translate(), ref settings._showSpecialEffects, "AlienBiomes_SettingSpecialEffectsDesc".Translate());
-            list.Gap(12.0f);
+            list.CheckboxLabeled("AlienBiomes_SettingPlantGlow".Translate(), 
+                ref _settings._showPlantGlow, "AlienBiomes_SettingPlantGlowDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingEffectorOverlay".Translate(), 
+                ref _settings._showEffecterOverlay, "AlienBiomes_SettingEffectorOverlayDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_EnableScreenPositionEffects".Translate(), 
+                ref _settings._enableScreenPosEffects, "AlienBiomes_EnableScreenPositionEffectsDesc".Translate());
+            list.CheckboxLabeled("AlienBiomes_SettingSpecialEffects".Translate(),
+                ref _settings._showSpecialEffects, "AlienBiomes_SettingSpecialEffectsDesc".Translate());
+            list.Gap();
 
             // AUDIO SETTINGS
             list.Label("<color=cyan>Audio</color>");
@@ -150,9 +147,13 @@ namespace AlienBiomes
 
             list.Gap(3.00f);
 
-            list.CheckboxLabeled("AlienBiomes_SettingCompEffectSounds".Translate(), ref settings._allowCompEffectSounds, "AlienBiomes_SettingCompEffectSoundsDesc".Translate());
-            list.Label(label: "AlienBiomes_PlantSoundEffectVolume".Translate((100f * settings._plantSoundEffectVolume).ToString("F0")), tooltip: "AlienBiomes_PlantSoundEffectVolumeDesc".Translate());
-            settings._plantSoundEffectVolume = Mathf.Round(list.Slider(100f * settings._plantSoundEffectVolume, 0f, 100f)) / 100f;
+            list.CheckboxLabeled("AlienBiomes_SettingCompEffectSounds".Translate(), 
+                ref _settings._allowCompEffectSounds, "AlienBiomes_SettingCompEffectSoundsDesc".Translate());
+            list.Label(label: "AlienBiomes_PlantSoundEffectVolume".Translate(
+                    (100f * _settings._plantSoundEffectVolume).ToString("F0")), 
+                tooltip: "AlienBiomes_PlantSoundEffectVolumeDesc".Translate());
+            _settings._plantSoundEffectVolume = Mathf.Round(list.Slider(
+                100f * _settings._plantSoundEffectVolume, 0f, 100f)) / 100f;
 
             list.End();
             Widgets.EndScrollView();

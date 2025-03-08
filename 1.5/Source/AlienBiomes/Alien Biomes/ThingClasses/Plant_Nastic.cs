@@ -12,42 +12,48 @@ namespace AlienBiomes
         
         public bool GasExpelled;
         public int TouchSensitiveStartTime;
-        public float CurrentScale = 1f;
-        public Color FleckEmissionColor;
-
-        private int timeSinceLastStep;
-        private int GasCounter = 0;
-        private float CurPlantGrowth;
-        private float scaleY;
-        private float drawSizeY;
-        private PlantNastic_ModExtension plantExt;
-        private List<Vector3> InstanceOffsets = [];
-        private Material randMat = null;
-        private Vector3 drawPos = new (0, 0, 0);
-        private Mesh mesh = MeshPool.plane10;
-        private Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
+        
+        private float _currentScale = 1f;
+        private Color _fleckEmissionColor;
+        private int _timeSinceLastStep;
+        private int _gasCounter;
+        private float _curPlantGrowth;
+        private float _scaleY;
+        private float _drawSizeY;
+        private Plant_Nastic_ModExt _ext;
+        private List<Vector3> _instanceOffsets = [];
+        private Material _randMat;
+        private Vector3 _drawPos = new (0, 0, 0);
+        private Mesh _mesh = MeshPool.plane10;
+        private Matrix4x4 _matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
         
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            plantExt = def.GetModExtension<PlantNastic_ModExtension>();
-
-            if (plantExt == null) return;
-            if (plantExt.isVisuallyReactive)
+            _ext = def.GetModExtension<Plant_Nastic_ModExt>();
+            
+            if (_ext == null)
+            {
+                ABLog.Warning($"PlantNastic_ModExtension is null for {def.defName}");
+                return;
+            }
+            
+            if (_ext.isVisuallyReactive)
             {
                 InitializeRandomOffsets();
                 PrecomputeScaleDeltas();
-
-                for (int i = 0; i < InstanceOffsets.Count; i++)
+                
+                for (int i = 0; i < _instanceOffsets.Count; i++)
                 {
                     if (def.graphicData == null) continue;
-                    randMat = Graphic.MatSingle;
-                    drawSizeY = def.graphicData.drawSize.y;
+                    _randMat = Graphic.MatSingle;
+                    _drawSizeY = def.graphicData.drawSize.y;
                 }
             }
-
-            IntVec3[] cells = GenRadial.RadialCellsAround(Position, plantExt.effectRadius, useCenter: true).ToArray();
+            
+            IntVec3[] cells = GenRadial.RadialCellsAround(Position, _ext.effectRadius, useCenter: true).ToArray();
             MapComponent_PlantGetter plantGetter = map.GetComponent<MapComponent_PlantGetter>();
+            
             foreach (IntVec3 cell in cells)
             {
                 if (!plantGetter.ActiveLocationTriggers.ContainsKey(cell))
@@ -61,62 +67,61 @@ namespace AlienBiomes
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             base.DeSpawn(mode);
-
             MapComponent_PlantGetter plantGetter = Map?.GetComponent<MapComponent_PlantGetter>();
+            
             if (plantGetter == null) return;
             foreach (HashSet<Plant_Nastic> set in plantGetter.ActiveLocationTriggers.Values)
             {
                 set.Remove(this);
             }
         }
-
+        
         public override void Tick()
         {
-            if (plantExt.isVisuallyReactive)
+            if (_ext.isVisuallyReactive)
             {
-                CurPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
-
-                if (plantExt != null)
+                _curPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
+                if (_ext != null)
                 {
-                    timeSinceLastStep = Find.TickManager.TicksGame - TouchSensitiveStartTime;
-                    if (timeSinceLastStep < MaxTicks)
+                    _timeSinceLastStep = Find.TickManager.TicksGame - TouchSensitiveStartTime;
+                    if (_timeSinceLastStep < MaxTicks)
                     {
-                        float scaleChangeRate = plantExt.scaleDeltaCache[timeSinceLastStep];
-                        CurrentScale = Mathf.Clamp(CurrentScale + scaleChangeRate, plantExt.minScale, 1);
+                        float scaleChangeRate = _ext.scaleDeltaCache[_timeSinceLastStep];
+                        _currentScale = Mathf.Clamp(_currentScale + scaleChangeRate, _ext.minScale, 1);
                     }
                 }
             }
-
+            
             if (GasExpelled)
             {
-                GasCounter++;
-                if (GasCounter > plantExt.explosionReleaseCooldown)
+                _gasCounter++;
+                if (_gasCounter > _ext.explosionReleaseCooldown)
                 {
                     GasExpelled = false;
                 }
             }
             else
             {
-                GasCounter = 0;
+                _gasCounter = 0;
             }
         }
-
+        
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            if (!plantExt.isVisuallyReactive) return;
-            for (int i = 0; i < InstanceOffsets.Count; i++)
+            if (!_ext.isVisuallyReactive) return;
+            for (int i = 0; i < _instanceOffsets.Count; i++)
             {
                 // Draw the mesh with the modified UV coordinates
-                drawPos = InstanceOffsets[i];
-
+                _drawPos = _instanceOffsets[i];
+                
                 // Calculate the adjusted z-coordinate based on the change in scale
-                scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
+                _scaleY = Mathf.Lerp(-1f, 0.5f, _currentScale);
                 // This ensures our individual textures on the mesh shrink down to their base and not into their center
-                drawPos.z += drawSizeY * scaleY / 10f;
-
-                matrix = Matrix4x4.TRS(drawPos, Rotation.AsQuat, 
-                    new Vector3(CurrentScale * CurPlantGrowth, 1, CurrentScale * CurPlantGrowth));
-                Graphics.DrawMesh(mesh, matrix, randMat, 0, null, 0, null, 
+                _drawPos.z += _drawSizeY * _scaleY / 10f;
+                
+                _matrix = Matrix4x4.TRS(_drawPos, Rotation.AsQuat, 
+                    new Vector3(_currentScale * _curPlantGrowth, 1, _currentScale * _curPlantGrowth));
+                Graphics.DrawMesh(_mesh, _matrix, _randMat, 0, null, 0, null, 
                     false, false, false);
             }
         }
@@ -126,7 +131,7 @@ namespace AlienBiomes
         /// </summary>
         private void InitializeRandomOffsets()
         {
-            for (int i = 0; i < plantExt.texInstances; i++)
+            for (int i = 0; i < _ext.texInstances; i++)
             {
                 float xOffset = Rand.Range(-0.5f, 0.5f);
                 float zOffset = Rand.Range(-0.5f, 0.5f);
@@ -135,7 +140,7 @@ namespace AlienBiomes
                 instancePos.x += xOffset;
                 instancePos.z += zOffset;
 
-                InstanceOffsets.Add(instancePos);
+                _instanceOffsets.Add(instancePos);
             }
         }
 
@@ -144,72 +149,72 @@ namespace AlienBiomes
         /// </summary>
         private void PrecomputeScaleDeltas()
         {
-            int cycleTicks = MaxTicks; // Assuming one full cycle
-            plantExt.scaleDeltaCache = new float[cycleTicks];
-
-            for (int i = 0; i < cycleTicks; i++)
+            _ext.scaleDeltaCache = new float[MaxTicks];
+            
+            for (int i = 0; i < MaxTicks; i++)
             {
                 float easedTime = i / 360f;
-
-                float scaleDeltaDecreaseEased = easedTime;
-                float scaleChangeRateDecrease = Mathf.Lerp(-plantExt.scaleDeltaDecrease, 0f, scaleDeltaDecreaseEased);
-
+                float scaleChangeRateDecrease = Mathf.Lerp(-_ext.scaleDeltaDecrease, 0f, easedTime);
                 float scaleDeltaIncreaseEased = ABEasingFunctions.EaseOutQuad(easedTime);
-                float scaleChangeRateIncrease = Mathf.Lerp(0f, plantExt.scaleDeltaIncrease, scaleDeltaIncreaseEased);
-
+                float scaleChangeRateIncrease = Mathf.Lerp(0f, _ext.scaleDeltaIncrease, scaleDeltaIncreaseEased);
                 float scaleChangeRate = scaleChangeRateDecrease + scaleChangeRateIncrease;
-                plantExt.scaleDeltaCache[i] = scaleChangeRate;
+                
+                _ext.scaleDeltaCache[i] = scaleChangeRate;
             }
         }
         
-        public void DrawEffects()
+        public void DrawNasticFlecks()
         {
-            if (Map == null || plantExt is not { emitFlecks: true } 
-                            || plantExt.fleckDef == null) return;
+            if (Map == null 
+                || _ext is not { emitFlecks: true } 
+                || _ext.fleckDef == null) return;
             
-            for (int i = 0; i < plantExt.fleckBurstCount; ++i)
+            for (int i = 0; i < _ext.fleckBurstCount; ++i)
             {
-                FleckEmissionColor = Color.Lerp(plantExt.colorA, plantExt.colorB, Rand.Value);
+                _fleckEmissionColor = Color.Lerp(_ext.colorA, _ext.colorB, Rand.Value);
                 Vector3 drawPos = new (DrawPos.x + Rand.InsideUnitCircleVec3.x, 
                     DrawPos.y, DrawPos.z + Rand.InsideUnitCircleVec3.z);
 
                 FleckCreationData fCD = FleckMaker.GetDataStatic(drawPos, Map, 
-                    plantExt.fleckDef, plantExt.fleckScale.RandomInRange);
+                    _ext.fleckDef, _ext.fleckScale.RandomInRange);
                 fCD.rotationRate = Rand.RangeInclusive(-240, 240);
-                fCD.instanceColor = FleckEmissionColor;
+                fCD.instanceColor = _fleckEmissionColor;
                 Map.flecks.CreateFleck(fCD);
             }
         }
 
-        public void DoExplosion()
+        public void DoNasticExplosion()
         {
-            GenExplosion.DoExplosion(Position, Map, plantExt.explosionDamageEffectRadius, plantExt.explosionDamageDef, null, 
-                (plantExt.explosionDamage.RandomInRange), -1, null, null, null, 
+            GenExplosion.DoExplosion(Position, Map, _ext.explosionDamageEffectRadius, _ext.explosionDamageDef, null, 
+                (_ext.explosionDamage.RandomInRange), -1, null, null, null, 
                 null, null, 0, 0, null, 
                 false, null, 0, 0, 0, 
                 false, null, null, null, true, 1, 
                 0, true, null, 0.02f);
         }
-
-        public void GiveHediff(Pawn pawn)
+        
+        public void TryGiveNasticHediff(Pawn pawn)
         {
-            if (pawn.health.hediffSet.HasHediff(plantExt.hediffToGive)) return;
-            if (plantExt.hediffToGive != ABDefOf.SZ_Crystallize 
-                || !pawn.IsColonist || pawn.IsColonyMech) return;
+            if (pawn.health.hediffSet.HasHediff(_ext.hediffToGive)) return;
+            if (!Rand.Chance(_ext.hediffChance)) return;
             
-            pawn.health.AddHediff(plantExt.hediffToGive, null, null, null);
-            HealthUtility.AdjustSeverity(pawn, plantExt.hediffToGive, 0.01f);
-            Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), 
-                "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter);
+            if (_ext.hediffToGive == ABDefOf.SZ_Crystallize
+                || pawn.IsColonist || !pawn.IsColonyMech)
+            {
+                pawn.health.AddHediff(_ext.hediffToGive, null, null, null);
+                HealthUtility.AdjustSeverity(pawn, _ext.hediffToGive, 0.01f);
+                Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), 
+                    "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter); 
+            }
         }
-
+        
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref GasExpelled, "GasExpelled");
-            Scribe_Values.Look(ref GasCounter, "GasCounter");
-            Scribe_Values.Look(ref CurrentScale, "CurrentScale", 1f);
-            Scribe_Values.Look(ref CurPlantGrowth, "CurPlantGrowth");
+            Scribe_Values.Look(ref _gasCounter, "GasCounter");
+            Scribe_Values.Look(ref _currentScale, "CurrentScale", 1f);
+            Scribe_Values.Look(ref _curPlantGrowth, "CurPlantGrowth");
             Scribe_Values.Look(ref TouchSensitiveStartTime, "TouchSensitiveStartTime", 0);
         }
     }

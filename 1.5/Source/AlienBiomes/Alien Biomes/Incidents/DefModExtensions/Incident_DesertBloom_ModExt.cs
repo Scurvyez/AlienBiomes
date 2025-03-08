@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Verse;
 
 namespace AlienBiomes
 {
-    public class DesertBloomExtension : DefModExtension
+    [UsedImplicitly]
+    public class Incident_DesertBloom_ModExt : DefModExtension
     {
         public List<ThingDef> plantsToSpawn;
         public SimpleCurve sandblossomSpawnCurve;

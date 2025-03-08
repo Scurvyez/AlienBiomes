@@ -8,7 +8,8 @@ namespace AlienBiomes
     {
         static AlienBiomesMain()
         {
-            ABLog.Message($"{DateTime.Now.Date.ToShortDateString()} " + "[1.5 Release | Nothing to report.]");
+            ABLog.Message($"{DateTime.Now.Date.ToShortDateString()} "
+                          + "[1.5 Release | Nothing to report.]");
         }
     }
 }

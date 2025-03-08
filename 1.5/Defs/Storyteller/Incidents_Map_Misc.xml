@@ -17,7 +17,7 @@
             <li>SZ_DeliriousDunes</li>
         </allowedBiomes>
         <modExtensions>
-            <li Class="AlienBiomes.DesertBloomExtension">
+            <li Class="AlienBiomes.Incident_DesertBloom_ModExt">
                 <plantsToSpawn>
                     <li>SZ_DeliriousGrass</li>
                     <li>SZ_Sandblossom</li>

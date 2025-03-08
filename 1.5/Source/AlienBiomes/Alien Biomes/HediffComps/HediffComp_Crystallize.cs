@@ -7,9 +7,9 @@ namespace AlienBiomes
     public class HediffComp_Crystallize : HediffComp
     {
         public HediffCompProperties_Crystallize Props => (HediffCompProperties_Crystallize)props;
-        public bool CrystalDeath;
-
-        private IntVec3 pawnPos;
+        
+        private bool _crystalDeath;
+        private IntVec3 _pawnPos;
 
         /// <summary>
         /// Generates a new ThingDef where a pawn died if the pawn died with a specific hediff.
@@ -17,14 +17,14 @@ namespace AlienBiomes
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
             base.Notify_PawnDied(dinfo, culprit);
-
+            
             Map map = parent.pawn.Corpse.MapHeld;
-            pawnPos = parent.pawn.Position;
-
+            _pawnPos = parent.pawn.Position;
+            
             if (map == null) return;
-            CrystalDeath = true;
-
-            if (!CrystalDeath) return;
+            _crystalDeath = true;
+            
+            if (!_crystalDeath) return;
             if (map.Biome == ABDefOf.SZ_CrystallineFlats)
             {
                 for (int i = 0; i < map.cellIndices.NumGridCells; i++)
@@ -38,8 +38,8 @@ namespace AlienBiomes
                             ABDefOf.SZ_BloodWaterMovingChestDeep);
                 }
             }
-
-            if (!parent.pawn.IsColonist)
+            
+            if (parent.pawn.IsColonist)
             {
                 Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(),
                     "SZ_LetterCrystallized".Translate(parent.pawn),
@@ -48,7 +48,7 @@ namespace AlienBiomes
             }
             
             GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal), TryFindRandomValidCell(map), map);
-            FilthMaker.TryMakeFilth(GenRadial.RadialCellsAround(pawnPos, 1f, true).RandomElement(), 
+            FilthMaker.TryMakeFilth(GenRadial.RadialCellsAround(_pawnPos, 1f, true).RandomElement(), 
                 parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);
             parent.pawn.Corpse.Destroy();
         }

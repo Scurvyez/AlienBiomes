@@ -37,7 +37,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>Soil</li>
                     <li>Stony</li>
@@ -83,7 +83,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousSmolderingSand</li>
                 </terrainTags>
@@ -125,7 +125,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousMellowSand</li>
                 </terrainTags>
@@ -167,7 +167,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousCoarseSand</li>
                 </terrainTags>
@@ -209,7 +209,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousBlackSand</li>
                 </terrainTags>
@@ -251,7 +251,7 @@
             </li>
         </tools>
         <modExtensions>
-            <li Class="AlienBiomes.BiomePlantControl">
+            <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousRichBlackSand</li>
                 </terrainTags>

@@ -1,8 +1,10 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using Verse;
 
 namespace AlienBiomes
 {
+    [UsedImplicitly]
     public class ABLog
     {
         public static Color ErrorMsgCol = new (0.4f, 0.54902f, 1.0f);

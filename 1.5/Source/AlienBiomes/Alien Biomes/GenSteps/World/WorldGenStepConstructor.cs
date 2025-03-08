@@ -11,7 +11,7 @@ namespace AlienBiomes
             {
                 defName = "ABWorldGenStep",
                 order = 999f,
-                worldGenStep = new LateBiomeWorker()
+                worldGenStep = new WorldGenStep_Late()
             });
         }
     }

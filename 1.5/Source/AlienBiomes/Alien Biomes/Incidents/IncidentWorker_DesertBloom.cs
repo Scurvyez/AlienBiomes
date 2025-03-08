@@ -15,7 +15,7 @@ namespace AlienBiomes
             Map map = (Map)parms.target;
             plantTracker = map.GetComponent<MapComponent_DesertBloomTracker>();
             plantTracker.trackedIncidentPlants.Clear();
-            DesertBloomExtension incidentExt = def.GetModExtension<DesertBloomExtension>();
+            Incident_DesertBloom_ModExt incidentExt = def.GetModExtension<Incident_DesertBloom_ModExt>();
             
             if (incidentExt == null) return false;
             
@@ -26,7 +26,7 @@ namespace AlienBiomes
             int totalPlantsToSpawn = plantsToSpawnCount.RandomInRange;
 
             List<ThingDef> validPlantsToSpawn = incidentExt.plantsToSpawn
-                .FindAll(plantDef => plantDef.HasModExtension<Plant_DesertBloom_ModExtension>());
+                .FindAll(plantDef => plantDef.HasModExtension<Plant_DesertBloom_ModExt>());
 
             if (validPlantsToSpawn.Count == 0)
             {
@@ -42,10 +42,10 @@ namespace AlienBiomes
                         => CanSpawnAt(x, map, plantDef, incidentExt), map, out IntVec3 result)) continue;
 
                 Thing plant = GenSpawn.Spawn(plantDef, result, map);
-                Plant_DesertBloom_ModExtension plantModExtension = plantDef
-                    .GetModExtension<Plant_DesertBloom_ModExtension>();
+                Plant_DesertBloom_ModExt modExt = plantDef
+                    .GetModExtension<Plant_DesertBloom_ModExt>();
 
-                int lifetime = plantModExtension.lifeTime.RandomInRange;
+                int lifetime = modExt.lifeTime.RandomInRange;
                 plantTracker.AddPlant(plant, lifetime);
                 spawnedCount++;
             }
@@ -58,9 +58,9 @@ namespace AlienBiomes
             return true;
         }
         
-        private static bool CanSpawnAt(IntVec3 c, Map map, ThingDef plantDef, DesertBloomExtension extension)
+        private static bool CanSpawnAt(IntVec3 c, Map map, ThingDef plantDef, Incident_DesertBloom_ModExt modExt)
         {
-            BiomePlantControl bPC = plantDef.GetModExtension<BiomePlantControl>();
+            Plant_TerrainControl_ModExt bPC = plantDef.GetModExtension<Plant_TerrainControl_ModExt>();
             
             if (!c.Standable(map) || c.Fogged(map) || map.fertilityGrid.FertilityAt(c) < plantDef.plant.fertilityMin 
                 || !c.GetRoom(map).PsychologicallyOutdoors || c.GetEdifice(map) != null
@@ -72,7 +72,7 @@ namespace AlienBiomes
             List<Thing> thingList = c.GetThingList(map);
             foreach (Thing t in thingList)
             {
-                if (extension.plantsToSpawn.Contains(t.def)) return false;
+                if (modExt.plantsToSpawn.Contains(t.def)) return false;
             }
             return true;
         }
