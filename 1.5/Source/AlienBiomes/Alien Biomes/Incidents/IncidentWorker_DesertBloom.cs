@@ -15,7 +15,9 @@ namespace AlienBiomes
             Map map = (Map)parms.target;
             plantTracker = map.GetComponent<MapComponent_DesertBloomTracker>();
             plantTracker.trackedIncidentPlants.Clear();
-            Incident_DesertBloom_ModExt incidentExt = def.GetModExtension<Incident_DesertBloom_ModExt>();
+            
+            Incident_DesertBloom_ModExt incidentExt = def
+                .GetModExtension<Incident_DesertBloom_ModExt>();
             
             if (incidentExt == null) return false;
             
@@ -38,8 +40,9 @@ namespace AlienBiomes
             {
                 ThingDef plantDef = validPlantsToSpawn.RandomElement();
                 
-                if (!CellFinderLoose.TryFindRandomNotEdgeCellWith(10, (IntVec3 x) 
-                        => CanSpawnAt(x, map, plantDef, incidentExt), map, out IntVec3 result)) continue;
+                if (!CellFinderLoose.TryFindRandomNotEdgeCellWith(10,
+                        x => CanSpawnAt(x, map, plantDef, incidentExt), 
+                        map, out IntVec3 result)) continue;
 
                 Thing plant = GenSpawn.Spawn(plantDef, result, map);
                 Plant_DesertBloom_ModExt modExt = plantDef
@@ -52,23 +55,28 @@ namespace AlienBiomes
 
             if (spawnedCount == 0) return false;
 
-            Find.LetterStack.ReceiveLetter("SZ_LetterLabelDesertBloom".Translate(),
-                "SZ_LetterDesertBloom".Translate(), ABDefOf.SZ_DesertBloomLetter, 
-                null, null, null);
+            Find.LetterStack.ReceiveLetter("SZAB_LetterLabelDesertBloom".Translate(),
+                "SZAB_LetterDesertBloom".Translate(), ABDefOf.SZ_DesertBloomLetter, 
+                null, null);
             return true;
         }
         
-        private static bool CanSpawnAt(IntVec3 c, Map map, ThingDef plantDef, Incident_DesertBloom_ModExt modExt)
+        private static bool CanSpawnAt(IntVec3 c, Map map, ThingDef plantDef, 
+            Incident_DesertBloom_ModExt modExt)
         {
-            Plant_TerrainControl_ModExt bPC = plantDef.GetModExtension<Plant_TerrainControl_ModExt>();
+            Plant_TerrainControl_ModExt bPC = plantDef
+                .GetModExtension<Plant_TerrainControl_ModExt>();
             
-            if (!c.Standable(map) || c.Fogged(map) || map.fertilityGrid.FertilityAt(c) < plantDef.plant.fertilityMin 
+            if (!c.Standable(map) || c.Fogged(map) || 
+                map.fertilityGrid.FertilityAt(c) < plantDef.plant.fertilityMin 
                 || !c.GetRoom(map).PsychologicallyOutdoors || c.GetEdifice(map) != null
                 || !bPC.terrainTags.Contains(c.GetTerrain(map).ToString())) return false;
 
             Plant plant = c.GetPlant(map);
-            if (plant != null && plant.def.plant.growDays > 10f) return false; // TODO: CHANGE THIS TO BE 1/2 PLANT LIFE IN MAPCOMP?
-
+            
+            // TODO: CHANGE THIS TO BE 1/2 PLANT LIFE IN MAPCOMP?
+            if (plant != null && plant.def.plant.growDays > 10f) return false; 
+            
             List<Thing> thingList = c.GetThingList(map);
             foreach (Thing t in thingList)
             {

@@ -1,9 +1,11 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Verse;
 
 namespace AlienBiomes
 {
+    [UsedImplicitly]
     public class MapComponent_PlantGetter : MapComponent
     {
         public Dictionary<IntVec3, HashSet<Plant_Nastic>> ActiveLocationTriggers = new ();

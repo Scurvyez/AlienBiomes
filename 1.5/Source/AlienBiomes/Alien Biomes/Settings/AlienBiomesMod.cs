@@ -12,9 +12,18 @@ namespace AlienBiomes
     public class AlienBiomesMod : Mod
     {
         public static AlienBiomesMod ABMod;
+
+        private const float _newListingGap = 12f;
+        private const float _newSectionGap = 6f;
+        private const float _headerTextGap = 3f;
         
         private readonly AlienBiomesSettings _settings;
-        private Vector2 _scrollPos = Vector2.zero;
+        private float _halfWidth;
+        private Vector2 _leftScrollPos = Vector2.zero;
+        private Vector2 _rightScrollPos = Vector2.zero;
+        
+        private static Color CategoryTextColor => ABLog.MessageMsgCol;
+        public override string SettingsCategory() => "SZAB_ModName".Translate();
         
         public AlienBiomesMod(ModContentPack content) : base(content)
         {
@@ -31,7 +40,8 @@ namespace AlienBiomes
                     nameof(AddBiomesDefModExtensionsPostfix)));
         }
         
-        public static IEnumerable<TerrainDef> AddBiomesDefModExtensionsPostfix(IEnumerable<TerrainDef> __result)
+        public static IEnumerable<TerrainDef> AddBiomesDefModExtensionsPostfix(
+            IEnumerable<TerrainDef> __result)
         {
             foreach (TerrainDef terrainDef in __result)
             {
@@ -74,147 +84,63 @@ namespace AlienBiomes
         
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            base.DoSettingsWindowContents(inRect);
-            Listing_Standard list = new();
-            Rect viewRect = new(inRect.x, inRect.y, inRect.width, inRect.height / 2);
-            Rect vROffset = new(0f, 0f, inRect.width - 20, inRect.height - 225); // Adjust last value here for more height :)
-            Widgets.BeginScrollView(viewRect, ref _scrollPos, vROffset, true);
-
-            list.Begin(vROffset);
-            list.Gap();
-
-            // GENERAL SETTINGS
-            list.Label("<color=cyan>General</color>");
-
-            list.Gap(3.00f);
-
-            Texture2D partition1 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
-            Rect parPos1 = vROffset.AtZero();
-            parPos1.y = vROffset.yMin + 32f; // from top of rect
-            parPos1.width = vROffset.width;
-            parPos1.height = 12f;
-            GUI.DrawTexture(parPos1, partition1, ScaleMode.StretchToFill, true);
-
-            list.Gap(3.00f);
-            
-            list.CheckboxLabeled("AlienBiomes_SettingCrystallizing".Translate(),
-                ref _settings._allowCrystallizing, "AlienBiomes_SettingCrystallizingDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseAlienSand".Translate(), 
-                ref _settings._useAlienSand, "AlienBiomes_SettingUseAlienSandDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseAlienGravel".Translate(), 
-                ref _settings._useAlienGravel, "AlienBiomes_SettingUseAlienGravelDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingUseAlienWater".Translate(), 
-                ref _settings._useAlienWater, "AlienBiomes_SettingUseAlienWaterDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingShowTerrainDebris".Translate(), 
-                ref _settings._showTerrainDebris, "AlienBiomes_SettingShowTerrainDebrisDesc".Translate());
-            list.Gap();
-            
-            // GRAPHICS & PERFORMANCE SETTINGS
-            list.Label("<color=cyan>Graphics</color> / <color=cyan>Performance</color>");
-
-            list.Gap(3.00f);
-
-            Texture2D partition2 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
-            Rect parPos2 = vROffset.AtZero();
-            parPos2.y = vROffset.yMin + 170f;
-            parPos2.width = vROffset.width;
-            parPos2.height = 12f;
-            GUI.DrawTexture(parPos2, partition2, ScaleMode.StretchToFill, true);
-
-            list.Gap(3.00f);
-
-            list.CheckboxLabeled("AlienBiomes_SettingPlantGlow".Translate(), 
-                ref _settings._showPlantGlow, "AlienBiomes_SettingPlantGlowDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingEffectorOverlay".Translate(), 
-                ref _settings._showEffecterOverlay, "AlienBiomes_SettingEffectorOverlayDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_EnableScreenPositionEffects".Translate(), 
-                ref _settings._enableScreenPosEffects, "AlienBiomes_EnableScreenPositionEffectsDesc".Translate());
-            list.CheckboxLabeled("AlienBiomes_SettingSpecialEffects".Translate(),
-                ref _settings._showSpecialEffects, "AlienBiomes_SettingSpecialEffectsDesc".Translate());
-            list.Gap();
-
-            // AUDIO SETTINGS
-            list.Label("<color=cyan>Audio</color>");
-
-            list.Gap(3.00f);
-
-            Texture2D partition3 = ContentFinder<Texture2D>.Get("UI/Settings/Partition", false);
-            Rect parPos3 = vROffset.AtZero();
-            parPos3.y = vROffset.yMin + 284f;
-            parPos3.width = vROffset.width;
-            parPos3.height = 12f;
-            GUI.DrawTexture(parPos3, partition3, ScaleMode.StretchToFill, true);
-
-            list.Gap(3.00f);
-
-            list.CheckboxLabeled("AlienBiomes_SettingCompEffectSounds".Translate(), 
-                ref _settings._allowCompEffectSounds, "AlienBiomes_SettingCompEffectSoundsDesc".Translate());
-            list.Label(label: "AlienBiomes_PlantSoundEffectVolume".Translate(
-                    (100f * _settings._plantSoundEffectVolume).ToString("F0")), 
-                tooltip: "AlienBiomes_PlantSoundEffectVolumeDesc".Translate());
-            _settings._plantSoundEffectVolume = Mathf.Round(list.Slider(
-                100f * _settings._plantSoundEffectVolume, 0f, 100f)) / 100f;
-
-            list.End();
-            Widgets.EndScrollView();
-
-            /*
-            // Left hand side image Rect to display example map gen with settings turned on.
-            // Right hand side image Rect to display example map gen with settings turned off.
-
-            list.Label("                                        <color=green>Example Map Gen</color>                                                                            <color=red>Boring Example Map Gen</color>");
-
-            // Right Rect (Bottom)
-            Rect useVanillaTerrainImg = inRect.AtZero();
-            useVanillaTerrainImg.x = inRect.center.x - (useVanillaTerrainImg.width / 2f - 300f);
-            useVanillaTerrainImg.y = inRect.center.y - (useVanillaTerrainImg.height / 2f - 350f);
-
-            Texture2D tex2 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaTerrainRight", false);
-            GUI.DrawTexture(useVanillaTerrainImg, tex2, ScaleMode.ScaleToFit, true);
-
-            // Left Rect (Bottom)
-            Rect previewImg = inRect.AtZero();
-            previewImg.x = inRect.center.x - (previewImg.width / 2f + 300f);
-            previewImg.y = inRect.center.y - (previewImg.height / 2f - 350f);
-
-            if (settings._useAlienSand == false && settings._useAlienGravel == false && settings._useAlienWater == false) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseVanillaTerrainLeft", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            else if (settings._useAlienSand == true && settings._useAlienGravel == false && settings._useAlienWater == false) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienSand", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            else if (settings._useAlienSand == false && settings._useAlienGravel == true && settings._useAlienWater == false) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienGravel", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            else if (settings._useAlienSand == false && settings._useAlienGravel == false && settings._useAlienWater == true) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienWater", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            else if (settings._useAlienSand == true && settings._useAlienGravel == true && settings._useAlienWater == false) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienGravelAndSand", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            else if (settings._useAlienSand == false && settings._useAlienGravel == true && settings._useAlienWater == true) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienGravelAndWater", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            else if (settings._useAlienSand == true && settings._useAlienGravel == false && settings._useAlienWater == true) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseAlienSandAndWater", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            else if (settings._useAlienSand == true && settings._useAlienGravel == true && settings._useAlienWater == true) {
-                Texture2D tex1 = ContentFinder<Texture2D>.Get("UI/Settings/UseNoVanillaTerrain", false);
-                GUI.DrawTexture(previewImg, tex1, ScaleMode.ScaleToFit, true);
-            }
-            */
+            _halfWidth = (inRect.width - 30f) / 2;
+            LeftSideScrollViewHandler(new Rect(inRect.x, inRect.y, _halfWidth, inRect.height));
+            RightSideScrollViewHandler(new Rect(inRect.x + _halfWidth + 20, inRect.y, _halfWidth, inRect.height));
         }
-
-        public override string SettingsCategory()
+        
+        private void LeftSideScrollViewHandler(Rect inRect)
         {
-            return "AlienBiomes_ModName".Translate();
+            Listing_Standard listLeft = new();
+            Rect viewRectLeft = new(inRect.x, inRect.y, inRect.width, inRect.height);
+            Rect vROffsetLeft = new(0, 0, inRect.width - 20, inRect.height);
+            
+            Widgets.BeginScrollView(viewRectLeft, ref _leftScrollPos, vROffsetLeft);
+            listLeft.Begin(vROffsetLeft);
+            listLeft.Gap(_newListingGap);
+            
+            listLeft.Label("General".Colorize(CategoryTextColor));
+            listLeft.Gap(_headerTextGap);
+            
+            listLeft.CheckboxLabeled("SZAB_SettingCrystallizing".Translate(),
+                ref _settings._allowCrystallizing, "SZAB_SettingCrystallizingDesc".Translate());
+            listLeft.CheckboxLabeled("SZAB_SettingShowTerrainDebris".Translate(), 
+                ref _settings._showTerrainDebris, "SZAB_SettingShowTerrainDebrisDesc".Translate());
+            
+            listLeft.End();
+            Widgets.EndScrollView();
+        }
+        
+        private void RightSideScrollViewHandler(Rect inRect)
+        {
+            Listing_Standard listRight = new ();
+            Rect viewRectRight = new(inRect.x, inRect.y, inRect.width, inRect.height);
+            Rect vROffsetRight = new(0, 0, inRect.width - 20, inRect.height);
+            
+            Widgets.BeginScrollView(viewRectRight, ref _rightScrollPos, vROffsetRight);
+            listRight.Begin(vROffsetRight);
+            listRight.Gap(_newListingGap);
+            
+            listRight.Label("Graphics / Performance".Colorize(CategoryTextColor));
+            listRight.Gap(_headerTextGap);
+            
+            listRight.CheckboxLabeled("SZAB_SettingPlantGlow".Translate(), 
+                ref _settings._showPlantGlow, "SZAB_SettingPlantGlowDesc".Translate());
+            listRight.Gap(_newListingGap);
+            
+            listRight.Label("Audio".Colorize(CategoryTextColor));
+            listRight.Gap(_headerTextGap);
+            
+            listRight.CheckboxLabeled("SZAB_SettingCompEffectSounds".Translate(), 
+                ref _settings._allowCompEffectSounds, "SZAB_SettingCompEffectSoundsDesc".Translate());
+            listRight.Label(label: "SZAB_PlantSoundEffectVolume".Translate(
+                    (100f * _settings._plantSoundEffectVolume).ToString("F0")), 
+                tooltip: "SZAB_PlantSoundEffectVolumeDesc".Translate());
+            _settings._plantSoundEffectVolume = Mathf.Round(listRight.Slider(
+                100f * _settings._plantSoundEffectVolume, 0f, 100f)) / 100f;
+            
+            listRight.End();
+            Widgets.EndScrollView();
         }
     }
 }

@@ -41,18 +41,22 @@ namespace AlienBiomes
             
             if (parent.pawn.IsColonist)
             {
-                Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallized".Translate(),
-                    "SZ_LetterCrystallized".Translate(parent.pawn),
+                Find.LetterStack.ReceiveLetter("SZAB_LetterLabelCrystallized".Translate(),
+                    "SZAB_LetterCrystallized".Translate(parent.pawn),
                     ABDefOf.SZ_PawnCrystallizedLetter, null, null);
                 Find.TickManager.slower.SignalForceNormalSpeedShort();
             }
             
-            GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal), TryFindRandomValidCell(map), map);
-            FilthMaker.TryMakeFilth(GenRadial.RadialCellsAround(_pawnPos, 1f, true).RandomElement(), 
+            GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal),
+                TryFindRandomValidCell(map), map);
+            
+            FilthMaker.TryMakeFilth(GenRadial
+                    .RadialCellsAround(_pawnPos, 1f, true).RandomElement(), 
                 parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);
+            
             parent.pawn.Corpse.Destroy();
         }
-
+        
         private static IntVec3 TryFindRandomValidCell(Map map)
         {
             List<IntVec3> potentialSpawnCells = [];

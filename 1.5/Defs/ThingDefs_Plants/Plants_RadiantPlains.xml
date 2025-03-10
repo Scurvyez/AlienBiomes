@@ -129,7 +129,7 @@
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_BulbousSanitas</defName>
-        <label>bulbus sanitas</label>
+        <label>bulbous sanitas</label>
         <description>A small oval-shaped plant bearing a pleasant blueish-yellow hue. It often grows in clumps low on the ground.</description>
         <hideAtSnowDepth>0.3</hideAtSnowDepth>
         <altitudeLayer>LowPlant</altitudeLayer>
@@ -140,7 +140,7 @@
             <Nutrition>0.125</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>AlienBiomes/Things/Plants/BulbusSanitas</texPath>
+            <texPath>AlienBiomes/Things/Plants/BulbousSanitas</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
@@ -148,7 +148,7 @@
             <fertilityMin>0.025</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>4.75</growDays>
-            <leaflessGraphicPath>AlienBiomes/Things/Plants/BulbusSanitas_Leafless</leaflessGraphicPath>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/BulbousSanitas_Leafless</leaflessGraphicPath>
             <maxMeshCount>16</maxMeshCount>
             <visualSizeRange>0.5~1.2</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
@@ -291,13 +291,14 @@
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExt">
+                <effectRadius>3</effectRadius>
                 <isVisuallyReactive>true</isVisuallyReactive>
                 <isTouchSensitive>true</isTouchSensitive>
                 <minScale>0.25</minScale>
                 <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
                 <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
                 <texInstances>3</texInstances>
-                <effectRadius>3</effectRadius>
+                <touchSFX>SZ_ChaliceFungusSFX</touchSFX>
             </li>
         </modExtensions>
     </ThingDef>
@@ -350,8 +351,8 @@
                 <overlightRadius>2.25</overlightRadius>
                 <glowRadius>3.25</glowRadius>
                 <glowColor>(250, 180, 188, 5)</glowColor>
-                <startTime>0.80</startTime>
-                <stopTime>0.20</stopTime>
+                <glowStartTime>0.80</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
             </li>
             <li Class="AlienBiomes.CompProperties_TimedHarvest">
                 <harvestStartTime>0.80</harvestStartTime>
@@ -384,7 +385,7 @@
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>Building</altitudeLayer>
         <fillPercent>0.80</fillPercent>
-        <pathCost>6</pathCost>
+        <pathCost>30</pathCost>
         <ingestible />
         <statBases>
             <Nutrition>0.20</Nutrition>
@@ -423,12 +424,9 @@
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExt">
                 <effectRadius>2</effectRadius>
-                <emitFlecks>true</emitFlecks>
-                <fleckDef>MicroSparksFast</fleckDef>
-                <fleckBurstCount>1</fleckBurstCount>
-                <fleckScale>0.25~0.45</fleckScale>
-                <colorA>(56, 163, 169)</colorA>
-                <colorB>(124, 251, 208)</colorB>
+                <isTouchSensitive>true</isTouchSensitive>
+                <isVisuallyReactive>true</isVisuallyReactive>
+                <touchSFX>SZ_PlantShimmeringSFX</touchSFX>
             </li>
         </modExtensions>
     </ThingDef>
@@ -443,7 +441,7 @@
         <neverMultiSelect>false</neverMultiSelect>
         <altitudeLayer>Building</altitudeLayer>
         <fillPercent>0.10</fillPercent>
-        <pathCost>20</pathCost>
+        <pathCost>75</pathCost>
         <statBases>
             <MaxHitPoints>115</MaxHitPoints>
             <Flammability>1.15</Flammability>
@@ -500,7 +498,7 @@
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
         <fillPercent>0.20</fillPercent>
-        <pathCost>2</pathCost>
+        <pathCost>7</pathCost>
         <statBases>
             <MaxHitPoints>20</MaxHitPoints>
             <DeteriorationRate>0.00</DeteriorationRate>
@@ -549,7 +547,7 @@
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
         <fillPercent>0.01</fillPercent>
-        <pathCost>0.01</pathCost>
+        <pathCost>2</pathCost>
         <statBases>
             <MaxHitPoints>1</MaxHitPoints>
             <DeteriorationRate>0.00</DeteriorationRate>
@@ -602,7 +600,7 @@
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
         <fillPercent>0.20</fillPercent>
-        <pathCost>2</pathCost>
+        <pathCost>7</pathCost>
         <statBases>
             <MaxHitPoints>20</MaxHitPoints>
             <DeteriorationRate>0.00</DeteriorationRate>

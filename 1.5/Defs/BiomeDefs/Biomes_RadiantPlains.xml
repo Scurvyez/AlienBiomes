@@ -130,8 +130,6 @@
             <AA_Aerofleet MayRequire="sarg.alphaanimals">0.02</AA_Aerofleet>
             <AA_ChameleonYak MayRequire="sarg.alphaanimals">0.05</AA_ChameleonYak>
             <AA_AuroraSylph MayRequire="sarg.alphaanimals">0.05</AA_AuroraSylph>
-            <Bast_Bastyon MayRequire="Scurvyez.Bastyon">0.02</Bast_Bastyon>
-            <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.02</Bast_Alluvium>
         </wildAnimals>
         <pollutionWildAnimals MayRequire="Ludeon.RimWorld.Biotech">
             <Megascarab>1</Megascarab>
@@ -148,7 +146,7 @@
                 <maxElevation>1500</maxElevation>
                 <minTemperature>-7.5</minTemperature>
                 <maxTemperature>25.5</maxTemperature>
-                <minRainfall>900</minRainfall>
+                <minRainfall>1100</minRainfall>
                 <maxRainfall>2000</maxRainfall>
                 <minHilliness>Flat</minHilliness>
                 <maxHilliness>LargeHills</maxHilliness>

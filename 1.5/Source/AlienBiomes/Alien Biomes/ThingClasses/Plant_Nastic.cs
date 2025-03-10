@@ -1,20 +1,22 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AlienBiomes
 {
+    [UsedImplicitly]
     public class Plant_Nastic : Plant
     {
         private const int MaxTicks = 720;
         
         public bool GasExpelled;
         public int TouchSensitiveStartTime;
+        public float CurrentScale = 1f;
         
-        private float _currentScale = 1f;
-        private Color _fleckEmissionColor;
         private int _timeSinceLastStep;
         private int _gasCounter;
         private float _curPlantGrowth;
@@ -87,7 +89,7 @@ namespace AlienBiomes
                     if (_timeSinceLastStep < MaxTicks)
                     {
                         float scaleChangeRate = _ext.scaleDeltaCache[_timeSinceLastStep];
-                        _currentScale = Mathf.Clamp(_currentScale + scaleChangeRate, _ext.minScale, 1);
+                        CurrentScale = Mathf.Clamp(CurrentScale + scaleChangeRate, _ext.minScale, 1);
                     }
                 }
             }
@@ -115,12 +117,12 @@ namespace AlienBiomes
                 _drawPos = _instanceOffsets[i];
                 
                 // Calculate the adjusted z-coordinate based on the change in scale
-                _scaleY = Mathf.Lerp(-1f, 0.5f, _currentScale);
+                _scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
                 // This ensures our individual textures on the mesh shrink down to their base and not into their center
                 _drawPos.z += _drawSizeY * _scaleY / 10f;
                 
                 _matrix = Matrix4x4.TRS(_drawPos, Rotation.AsQuat, 
-                    new Vector3(_currentScale * _curPlantGrowth, 1, _currentScale * _curPlantGrowth));
+                    new Vector3(CurrentScale * _curPlantGrowth, 1, CurrentScale * _curPlantGrowth));
                 Graphics.DrawMesh(_mesh, _matrix, _randMat, 0, null, 0, null, 
                     false, false, false);
             }
@@ -143,9 +145,10 @@ namespace AlienBiomes
                 _instanceOffsets.Add(instancePos);
             }
         }
-
+        
         /// <summary>
-        /// Calculates one full scale cycle for the plant on spawn.
+        /// Calculates one full scaling cycle (visual change from smallest to largest texture scale)
+        /// for the plant on spawn.
         /// </summary>
         private void PrecomputeScaleDeltas()
         {
@@ -163,48 +166,75 @@ namespace AlienBiomes
             }
         }
         
-        public void DrawNasticFlecks()
+        /// <summary>
+        /// Draws visual effects in the form of flecks when a pawn gets close enough to the plant.
+        /// </summary>
+        public void TryDrawNasticFlecks()
         {
-            if (Map == null 
-                || _ext is not { emitFlecks: true } 
-                || _ext.fleckDef == null) return;
-            
+            if (Map == null || _ext.fleckDef == null) return;
             for (int i = 0; i < _ext.fleckBurstCount; ++i)
             {
-                _fleckEmissionColor = Color.Lerp(_ext.colorA, _ext.colorB, Rand.Value);
                 Vector3 drawPos = new (DrawPos.x + Rand.InsideUnitCircleVec3.x, 
                     DrawPos.y, DrawPos.z + Rand.InsideUnitCircleVec3.z);
-
+                
                 FleckCreationData fCD = FleckMaker.GetDataStatic(drawPos, Map, 
                     _ext.fleckDef, _ext.fleckScale.RandomInRange);
                 fCD.rotationRate = Rand.RangeInclusive(-240, 240);
-                fCD.instanceColor = _fleckEmissionColor;
                 Map.flecks.CreateFleck(fCD);
             }
         }
-
+        
+        /// <summary>
+        /// Triggers an explosion when a pawn gets close enough to the plant.
+        /// </summary>
         public void DoNasticExplosion()
         {
-            GenExplosion.DoExplosion(Position, Map, _ext.explosionDamageEffectRadius, _ext.explosionDamageDef, null, 
-                (_ext.explosionDamage.RandomInRange), -1, null, null, null, 
-                null, null, 0, 0, null, 
-                false, null, 0, 0, 0, 
-                false, null, null, null, true, 1, 
+            GenExplosion.DoExplosion(Position, Map, _ext.explosionDamageEffectRadius, 
+                _ext.explosionDamageDef, null, (_ext.explosionDamage.RandomInRange),
+                -1, null, null, null, null, 
+                null, 0, 0, 
+                null, false, null, 
+                0, 0, 0, false, 
+                null, null, null, true, 1, 
                 0, true, null, 0.02f);
         }
         
+        /// <summary>
+        /// Plays sound effects when a pawn gets close enough to the plant.
+        /// </summary>
+        /// <param name="plant">The plant instance to grab a position from.</param>
+        public void TryDoNasticSFX(Plant_Nastic plant)
+        {
+            if (!AlienBiomesSettings.AllowCompEffectSounds) return;
+            SoundDef touchSensitiveSFX = _ext.touchSFX;
+            
+            if (touchSensitiveSFX == null) return;
+            if (!_ext.isVisuallyReactive) return;
+            if (!Mathf.Approximately(CurrentScale, _ext.minScale))
+            {
+                touchSensitiveSFX.PlayOneShot(new TargetInfo(plant.Position, plant.Map));
+            }
+            else
+            {
+                touchSensitiveSFX.PlayOneShot(new TargetInfo(plant.Position, plant.Map));
+            }
+        }
+        
+        /// <summary>
+        /// Gives a hediff to a pawn if/when the pawn gets too close to the plant.
+        /// </summary>
+        /// <param name="pawn">The pawn instance to give the hediff to.</param>
         public void TryGiveNasticHediff(Pawn pawn)
         {
-            if (pawn.health.hediffSet.HasHediff(_ext.hediffToGive)) return;
             if (!Rand.Chance(_ext.hediffChance)) return;
-            
-            if (_ext.hediffToGive == ABDefOf.SZ_Crystallize
+            if ((_ext.hediffToGive == ABDefOf.SZ_Crystallize && AlienBiomesSettings.AllowCrystallizing) 
                 || pawn.IsColonist || !pawn.IsColonyMech)
             {
+                // give to a specific part maybe?
                 pawn.health.AddHediff(_ext.hediffToGive, null, null, null);
                 HealthUtility.AdjustSeverity(pawn, _ext.hediffToGive, 0.01f);
-                Find.LetterStack.ReceiveLetter("SZ_LetterLabelCrystallizing".Translate(), 
-                    "SZ_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter); 
+                Find.LetterStack.ReceiveLetter("SZAB_LetterLabelCrystallizing".Translate(), 
+                    "SZAB_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter); 
             }
         }
         
@@ -212,9 +242,9 @@ namespace AlienBiomes
         {
             base.ExposeData();
             Scribe_Values.Look(ref GasExpelled, "GasExpelled");
-            Scribe_Values.Look(ref _gasCounter, "GasCounter");
-            Scribe_Values.Look(ref _currentScale, "CurrentScale", 1f);
-            Scribe_Values.Look(ref _curPlantGrowth, "CurPlantGrowth");
+            Scribe_Values.Look(ref _gasCounter, "_gasCounter");
+            Scribe_Values.Look(ref CurrentScale, "_currentScale", 1f);
+            Scribe_Values.Look(ref _curPlantGrowth, "_curPlantGrowth");
             Scribe_Values.Look(ref TouchSensitiveStartTime, "TouchSensitiveStartTime", 0);
         }
     }

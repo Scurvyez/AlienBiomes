@@ -26,28 +26,6 @@ namespace AlienBiomes
         public float forestDenseAbove = 9999f;
         #endregion
         
-        #region Visuals
-        public string materialPath = "World/MapGraphics/Default";
-        public int materialLayer = 3515;
-        public float materialSizeMultiplier = 1f;
-        public float materialOffset = 1f;
-        public bool materialRandomRotation = true;
-        public Hilliness materialMinHilliness;
-        public Hilliness materialMaxHilliness;
-        #endregion
-        
-        #region SnowLimits
-        public float snowpilesBelow = -9999f;
-        public float mountainsSemiSnowyBelow = -9999f;
-        public float mountainsSnowyBelow = -9999f;
-        public float mountainsVerySnowyBelow = -9999f;
-        public float mountainsFullySnowyBelow = -9999f;
-        public float impassableSemiSnowyBelow = -9999f;
-        public float impassableSnowyBelow = -9999f;
-        public float impassableVerySnowyBelow = -9999f;
-        public float impassableFullySnowyBelow = -9999f;
-        #endregion
-        
         #region WeatherLimits
         public float minRainfall = -9999f;
         public float maxRainfall = 9999f;

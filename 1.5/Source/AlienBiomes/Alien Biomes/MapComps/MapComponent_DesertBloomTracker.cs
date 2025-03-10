@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Verse;
 
 namespace AlienBiomes
 {
+    [UsedImplicitly]
     public class MapComponent_DesertBloomTracker : MapComponent
     {
         public HashSet<Thing> trackedIncidentPlants = [];

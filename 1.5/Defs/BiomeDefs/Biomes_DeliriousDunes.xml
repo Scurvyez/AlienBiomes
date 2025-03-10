@@ -142,11 +142,13 @@
                 <allowOnLand>true</allowOnLand>
                 <frequency>100</frequency>
                 <minElevation>-100</minElevation>
-                <maxElevation>1200</maxElevation>
+                <maxElevation>3000</maxElevation>
+                <minRandomHills>SmallHills</minRandomHills>
+                <maxRandomHills>Mountainous</maxRandomHills>
                 <minTemperature>15.5</minTemperature>
                 <maxTemperature>300.5</maxTemperature>
                 <minRainfall>0</minRainfall>
-                <maxRainfall>600</maxRainfall>
+                <maxRainfall>400</maxRainfall>
                 <minHilliness>Flat</minHilliness>
                 <maxHilliness>LargeHills</maxHilliness>
                 <newSand>SZ_DeliriousBlackSand</newSand>

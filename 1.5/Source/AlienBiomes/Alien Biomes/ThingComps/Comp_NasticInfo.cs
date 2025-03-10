@@ -1,4 +1,5 @@
 using System.Text;
+using UnityEngine;
 using Verse;
 
 namespace AlienBiomes
@@ -13,6 +14,12 @@ namespace AlienBiomes
             base.PostSpawnSetup(respawningAfterLoad);
             _ext = parent.def.GetModExtension<Plant_Nastic_ModExt>();
         }
+
+        public override void PostDrawExtraSelectionOverlays()
+        {
+            if (_ext == null) return;
+            GenDraw.DrawRadiusRing(parent.Position, _ext.effectRadius, _ext.hediffEffectRadiusColor);
+        }
         
         public override string CompInspectStringExtra()
         {
@@ -22,15 +29,23 @@ namespace AlienBiomes
             {
                 if (_ext.explosionDamageDef != null)
                 {
-                    string effectRadiusFormatted = $"{_ext.explosionDamageEffectRadius:F2}";
-                    stringBuilder.AppendLine("SZ_PlantNasticHarmfulInfo"
-                        .Translate(effectRadiusFormatted, _ext.explosionDamageDef.label));
+                    string exDmgEffRadFormatted = $"{_ext.explosionDamageEffectRadius:F2}";
+                    stringBuilder.AppendLine("SZAB_PlantNasticHarmfulInfo"
+                        .Translate(exDmgEffRadFormatted, _ext.explosionDamageDef.label));
+                    
+                    string exGrowThrFormatted = $"{_ext.explosionGrowthThreshold * 100f}";
+                    stringBuilder.AppendLine("SZAB_PlantNasticHarmfulInfo_ExThreshold"
+                        .Translate(exGrowThrFormatted));
                 }
-                else if (_ext.givesHediff)
+                else if (_ext.hediffToGive != null)
                 {
-                    string effectRadiusFormatted = $"{_ext.effectRadius:F2}";
-                    stringBuilder.AppendLine("SZ_PlantNasticHediffGiverInfo"
-                        .Translate(effectRadiusFormatted, _ext.hediffToGive.label));
+                    string givesHeRadFormatted = $"{_ext.givesHediffRadius:F2}";
+                    stringBuilder.AppendLine("SZAB_PlantNasticHediffGiverInfo"
+                        .Translate(givesHeRadFormatted, _ext.hediffToGive.label));
+                    
+                    string heGrowThrFormatted = $"{_ext.givesHediffGrowthThreshold * 100f}";
+                    stringBuilder.AppendLine("SZAB_PlantNasticHarmfulInfo_HeThreshold"
+                        .Translate(heGrowThrFormatted, _ext.hediffChance * 100f));
                 }
             }
             

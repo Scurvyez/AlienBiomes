@@ -34,23 +34,28 @@ namespace AlienBiomes
             IntVec3 center = ValidCentralSpawnCell(map);
 
             if (!center.IsValid) return;
-            int mapAdjustmentFactor = AdjustedRadiusByMapSize(map, mapSizeRadiusAdjust).RandomInRange;
-            int waterRadiusFinal = AdjustedRadiusByMapSize(map, waterRadius).RandomInRange + mapAdjustmentFactor;
+            int mapAdjustmentFactor = AdjustedRadiusByMapSize(map, 
+                mapSizeRadiusAdjust).RandomInRange;
+            int waterRadiusFinal = AdjustedRadiusByMapSize(map, 
+                waterRadius).RandomInRange + mapAdjustmentFactor;
             
             GenerateWaterPatch(map, center, waterRadiusFinal);
             GenerateSandAroundWater(map);
             GenerateThings(map, center);
         }
         
-        private IntRange AdjustedRadiusByMapSize(Map map, List<IntRange> range)
+        private static IntRange AdjustedRadiusByMapSize(Map map, List<IntRange> range)
         {
             int mapSizeIndex = Mathf.FloorToInt(map.Size.x / 100.0f);
-            return mapSizeIndex < range.Count ? range[mapSizeIndex] : new IntRange(1, 1);
+            return mapSizeIndex < range.Count 
+                ? range[mapSizeIndex] 
+                : new IntRange(1, 1);
         }
         
         private void GenerateWaterPatch(Map map, IntVec3 center, int radius)
         {
-            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true))
+            foreach (IntVec3 cell in GenRadial
+                         .RadialCellsAround(center, radius, true))
             {
                 if (cell.GetTerrain(map) != spawnOnTerDef) continue;
                 map.terrainGrid.SetTerrain(cell, waterDef);
@@ -63,7 +68,8 @@ namespace AlienBiomes
             foreach (IntVec3 waterCell in _waterCells)
             {
                 int sandRadiusFinal = sandRadius.RandomInRange;
-                foreach (IntVec3 cell in GenRadial.RadialCellsAround(waterCell, sandRadiusFinal, true))
+                foreach (IntVec3 cell in GenRadial
+                             .RadialCellsAround(waterCell, sandRadiusFinal, true))
                 {
                     if (!cell.InBounds(map) || cell.GetTerrain(map) == waterDef) continue;
                     map.terrainGrid.SetTerrain(cell, sandDef);
@@ -74,9 +80,11 @@ namespace AlienBiomes
         private void GenerateThings(Map map, IntVec3 center)
         {
             HashSet<IntVec3> usedCells = [];
-            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, plantGenRadius, true))
+            foreach (IntVec3 cell in GenRadial
+                         .RadialCellsAround(center, plantGenRadius, true))
             {
-                if (cell.GetTerrain(map) != sandDef || !cell.Standable(map) || usedCells.Contains(cell)) continue;
+                if (cell.GetTerrain(map) != sandDef 
+                    || !cell.Standable(map) || usedCells.Contains(cell)) continue;
                 
                 if (plantsToGen == null || !Rand.Chance(plantGenChance)) continue;
                 ThingDef plantDef = plantsToGen.RandomElement();

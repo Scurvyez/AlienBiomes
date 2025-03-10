@@ -55,22 +55,7 @@ namespace AlienBiomes
             
             harmony.Patch(original: AccessTools.Method(typeof(Designator_PlantsCut), "AffectsThing"),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(AffectsThingPostfix)));
-            
-            //harmony.Patch(original: AccessTools.Method(typeof(Pawn), "DoKillSideEffects"),
-            //postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(DoKillSideEffectsPostfix)));
         }
-        
-        /*
-        public static void DoKillSideEffectsPostfix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit, bool spawned)
-        {
-            if (dinfo?.Instigator != null && dinfo.Value.Instigator is Pawn pawn)
-            {
-                ThoughtDef thought = ThoughtDefOf.AteCorpse;
-                pawn.needs.mood.thoughts.memories.TryGainMemory(thought);
-                Log.Message($"<color=#4494E3FF>{pawn.Name}</color> has been given the <color=#ff8c66>{thought}</color> thought.");
-            }
-        }
-        */
         
         public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
         {
@@ -80,7 +65,7 @@ namespace AlienBiomes
             
             if (___shaderInt is null)
             {
-                ABLog.Message($"Failed to load Shader from path {__instance.shaderPath}");
+                ABLog.Error($"Failed to load Shader from path {__instance.shaderPath}");
             }
         }
 
@@ -204,7 +189,6 @@ namespace AlienBiomes
         public static void TryEnterNextPathCellPostfix(Pawn ___pawn)
         {
             if (___pawn.Map == null || !___pawn.RaceProps.Humanlike) return;
-            
             IntVec3 nextCell = ___pawn.pather.nextCell;
             MapComponent_PlantGetter plantGetter = ___pawn.Map
                 .GetComponent<MapComponent_PlantGetter>();
@@ -220,24 +204,26 @@ namespace AlienBiomes
                     .GetModExtension<Plant_Nastic_ModExt>();
                 
                 if (ext == null) continue;
-                if (ext.emitFlecks)
-                {
-                    plant.DrawNasticFlecks();
-                }
-                
                 if (ext.isTouchSensitive)
                 {
-                    if (ext.isVisuallyReactive)
+                    if (ext.isVisuallyReactive &&
+                        plant.Growth >= ext.visuallyReactiveThreshold)
                     {
                         plant.TouchSensitiveStartTime = GenTicks.TicksGame;
+                        plant.TryDoNasticSFX(plant);
+                        plant.TryDrawNasticFlecks();
                     }
-                    else if (ext.isDamaging && !plant.GasExpelled)
+                    
+                    if (ext.isDamaging && !plant.GasExpelled &&
+                        plant.Growth >= ext.explosionGrowthThreshold)
                     {
                         plant.DoNasticExplosion();
                         plant.GasExpelled = true;
                     }
                 }
-                if (ext.givesHediff)
+                if (ext.hediffToGive != null &&
+                    plant.Growth >= ext.givesHediffGrowthThreshold &&
+                    !___pawn.health.hediffSet.HasHediff(ext.hediffToGive))
                 {
                     plant.TryGiveNasticHediff(___pawn);
                 }

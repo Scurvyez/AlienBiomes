@@ -126,11 +126,6 @@
             <Tortoise>0.3</Tortoise>
             <Fox_Red>0.07</Fox_Red>
             <AA_CrystallineCaracal MayRequire="sarg.alphaanimals">0.03</AA_CrystallineCaracal>
-            <Bast_Alluvium MayRequire="Scurvyez.Bastyon">0.03</Bast_Alluvium>
-            <Bast_Gleaming_Cervus MayRequire="Scurvyez.Bastyon">0.30</Bast_Gleaming_Cervus>
-            <Bast_Ethereal_Lion MayRequire="Scurvyez.Bastyon">0.05</Bast_Ethereal_Lion>
-            <Bast_Lightning_Elemental MayRequire="Scurvyez.Bastyon">0.07</Bast_Lightning_Elemental>
-            <Bast_Scire MayRequire="Scurvyez.Bastyon">0.20</Bast_Scire>
         </wildAnimals>
         <modExtensions>
 			<li Class="AlienBiomes.Biome_Generation_ModExt">
@@ -141,7 +136,7 @@
                 <minTemperature>0.0</minTemperature>
                 <maxTemperature>20.0</maxTemperature>
                 <minRainfall>0</minRainfall>
-                <maxRainfall>1300</maxRainfall>
+                <maxRainfall>1100</maxRainfall>
                 <minHilliness>Flat</minHilliness>
                 <maxHilliness>LargeHills</maxHilliness>
                 <newSand>SZ_CrystallineSand</newSand>

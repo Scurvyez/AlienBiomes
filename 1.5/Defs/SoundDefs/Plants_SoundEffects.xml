@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!--==================== Plant Sound Effects ====================-->
-
 	<SoundDef>
-		<defName>SZ_PlantShimmering</defName>
+		<defName>SZ_PlantShimmeringSFX</defName>
 		<context>MapOnly</context>
-        <maxSimultaneous>4</maxSimultaneous>
+        <maxSimultaneous>3</maxSimultaneous>
         <priorityMode>PrioritizeNearest</priorityMode>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Folder">
-						<clipFolderPath>PlantShimmering</clipFolderPath>
+						<clipFolderPath>PlantShimmeringSFX</clipFolderPath>
 					</li>
 				</grains>
 				<sustainLoop>True</sustainLoop>
                 <volumeRange>5~30</volumeRange>
                 <pitchRange>0.95~1.05</pitchRange>
                 <distRange>0~60</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SZ_ChaliceFungusSFX</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>16</maxSimultaneous>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>ChaliceFungusSFX</clipFolderPath>
+					</li>
+				</grains>
+				<sustainLoop>True</sustainLoop>
+				<volumeRange>5~30</volumeRange>
+				<pitchRange>0.95~1.05</pitchRange>
+				<distRange>0~60</distRange>
 			</li>
 		</subSounds>
 	</SoundDef>

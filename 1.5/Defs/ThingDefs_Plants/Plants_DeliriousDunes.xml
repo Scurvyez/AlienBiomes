@@ -48,8 +48,8 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_StarburstCactus</defName>
         <label>starburst cactus</label>
-        <description>A vibrant species of cactus found in harsh alien deserts. It spews harmful acid if pawns wander too close.</description>
-        <pathCost>75</pathCost>
+        <description>A vibrant species of cactus found in harsh alien deserts. It spews harmful, sticky acid if pawns wander too close.</description>
+        <pathCost>135</pathCost>
         <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <tickerType>Normal</tickerType>
         <selectable>true</selectable>
@@ -86,9 +86,10 @@
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExt">
+                <effectRadius>3</effectRadius>
                 <isTouchSensitive>true</isTouchSensitive>
                 <isDamaging>true</isDamaging>
-                <effectRadius>2</effectRadius>
+                <explosionGrowthThreshold>0.75</explosionGrowthThreshold>
                 <explosionDamageEffectRadius>3</explosionDamageEffectRadius>
                 <explosionReleaseCooldown>7500</explosionReleaseCooldown>
                 <explosionDamageDef>SZ_PlantAcid</explosionDamageDef>
@@ -142,8 +143,8 @@
                 <overlightRadius>1.00</overlightRadius>
                 <glowRadius>1.75</glowRadius>
                 <glowColor>(249, 227, 24, 5)</glowColor>
-                <startTime>0.80</startTime>
-                <stopTime>0.20</stopTime>
+                <glowStartTime>0.80</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
         <modExtensions>
@@ -193,8 +194,8 @@
                 <overlightRadius>4.25</overlightRadius>
                 <glowRadius>6.25</glowRadius>
                 <glowColor>(249, 227, 24, 5)</glowColor>
-                <startTime>0.85</startTime>
-                <stopTime>0.15</stopTime>
+                <glowStartTime>0.85</glowStartTime>
+                <glowStopTime>0.15</glowStopTime>
             </li>
         </comps>
         <modExtensions>
@@ -242,6 +243,15 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
         </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>2.25</overlightRadius>
+                <glowRadius>3.25</glowRadius>
+                <glowColor>(62, 114, 202, 5)</glowColor>
+                <glowStartTime>0.80</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
+            </li>
+        </comps>
         <modExtensions>
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>

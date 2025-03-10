@@ -246,8 +246,8 @@
                 <overlightRadius>7.0</overlightRadius>
                 <glowRadius>7.0</glowRadius>
                 <glowColor>(21, 177, 217, 0)</glowColor>
-                <startTime>0.75</startTime>
-                <stopTime>0.20</stopTime>
+                <glowStartTime>0.75</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
         <modExtensions>
@@ -257,8 +257,15 @@
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExt">
-                <effectRadius>2</effectRadius>
-                <givesHediff>true</givesHediff>
+                <effectRadius>4</effectRadius>
+                <isVisuallyReactive>true</isVisuallyReactive>
+                <visuallyReactiveThreshold>0.85</visuallyReactiveThreshold>
+                <hediffEffectRadiusColor>(1, 0.4, 0.55, 1)</hediffEffectRadiusColor>
+                <isTouchSensitive>true</isTouchSensitive>
+                <fleckDef>ElectricalSpark</fleckDef>
+                <touchSFX>Psycast_Skip_Entry</touchSFX>
+                <givesHediffRadius>4</givesHediffRadius>
+                <givesHediffGrowthThreshold>0.85</givesHediffGrowthThreshold>
                 <hediffChance>0.1</hediffChance>
                 <hediffToGive>SZ_Crystallize</hediffToGive>
             </li>
@@ -303,8 +310,8 @@
                 <overlightRadius>7.0</overlightRadius>
                 <glowRadius>7.0</glowRadius>
                 <glowColor>(21, 177, 217, 0)</glowColor>
-                <startTime>0.75</startTime>
-                <stopTime>0.20</stopTime>
+                <glowStartTime>0.75</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
         <graphicData>
@@ -364,8 +371,8 @@
                 <overlightRadius>7.0</overlightRadius>
                 <glowRadius>7.0</glowRadius>
                 <glowColor>(253, 1, 33, 0)</glowColor>
-                <startTime>0.75</startTime>
-                <stopTime>0.20</stopTime>
+                <glowStartTime>0.75</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
     </ThingDef>
@@ -412,8 +419,8 @@
                 <overlightRadius>4.0</overlightRadius>
                 <glowRadius>4.0</glowRadius>
                 <glowColor>(21, 177, 217, 0)</glowColor>
-                <startTime>0.65</startTime>
-                <stopTime>0.20</stopTime>
+                <glowStartTime>0.65</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
         <modExtensions>
@@ -467,8 +474,8 @@
                 <overlightRadius>4.0</overlightRadius>
                 <glowRadius>4.0</glowRadius>
                 <glowColor>(21, 177, 217, 0)</glowColor>
-                <startTime>0.65</startTime>
-                <stopTime>0.20</stopTime>
+                <glowStartTime>0.65</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
         <modExtensions>
@@ -584,8 +591,8 @@
                 <overlightRadius>2.20</overlightRadius>
                 <glowRadius>2.50</glowRadius>
                 <glowColor>(253, 1, 33, 0)</glowColor>
-                <startTime>0.75</startTime>
-                <stopTime>0.15</stopTime>
+                <glowStartTime>0.75</glowStartTime>
+                <glowStopTime>0.15</glowStopTime>
             </li>
             <li Class="AlienBiomes.CompProperties_TimedHarvest">
                 <harvestSeasons>

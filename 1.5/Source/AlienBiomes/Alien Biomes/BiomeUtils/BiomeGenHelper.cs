@@ -197,7 +197,7 @@ namespace AlienBiomes
                     _ = bioExt.spawnHills.Value;
                     bioExt.setHills = bioExt.spawnHills;
                 }
-
+                
                 if (bioExt.minRandomHills != null && bioExt.maxRandomHills != null)
                 {
                     tile.hilliness = bioExt.setHills switch

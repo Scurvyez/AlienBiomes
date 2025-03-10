@@ -6,7 +6,7 @@ namespace AlienBiomes
     [StaticConstructorOnStartup]
     public static class ABTextureAssets
     {
-        public static readonly Texture2D BioDistTex = ContentFinder<Texture2D>.Get("Things/Mote/SmokeTiled", true);
-        public static readonly Texture2D BioTexA = ContentFinder<Texture2D>.Get("AlienBiomes/Things/Special/ShallowOceanWaterBioluminescence/ShallowOceanWaterBioluminescenceA", true);
+        // yeah... deleted everything here as none of it was being used anymore
+        // maybe in the future I'll use this class again, so it stays for now...
     }
 }

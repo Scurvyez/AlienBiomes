@@ -5,13 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3026ae6e-2d55-43ba-bbf5-c57136e0dcbc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Defs/FleckDefs/Fleck_Visual.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/Effects/FleckDefs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/SoundDefs/Plants_SoundEffects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/SoundDefs/Plants_SoundEffects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/AssetUtils/ABShaderTypeDef.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AssetUtils/ABShaderTypeDef.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/AssetUtils/ABTextureAssets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AssetUtils/ABTextureAssets.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeGenHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeGenHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/BiomeWorldLayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/DefModExtensions/Biome_Generation_ModExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/DefModExtensions/Biome_Generation_ModExt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/GenSteps/Map/GenStep_DeliriousDunesOasis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GenSteps/Map/GenStep_DeliriousDunesOasis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/Harmony/HarmonyPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Harmony/HarmonyPatches.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffCompProps/HediffCompProperties_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffCompProps/HediffCompProperties_Crystallize.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/Incidents/IncidentWorker_DesertBloom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Incidents/IncidentWorker_DesertBloom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_DesertBloomTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_DesertBloomTracker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_PlantGetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_PlantGetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesMod.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesMod.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesModSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesModSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_NasticInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_NasticInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_TimedGlower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_TimedGlower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_TimedHarvest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/CompProps/CompProperties_TimedHarvest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_NasticInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_NasticInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedGlower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedGlower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedHarvest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_TimedHarvest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Languages/English/Keyed/Misc_Gameplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Languages/English/Keyed/Misc_Gameplay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sounds/PlantShimmering/PlantShimmering1.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sounds/PlantShimmering/PlantShimmering2.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Sounds/PlantShimmering/PlantShimmering3.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas/BulbusSanitasC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/BulbusSanitas_Leafless/BulbusSanitasA.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +57,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/0a/42c64776/Rand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/29/a3f574ea/Hilliness.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/43/40e4dab1/Season.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/55/42e5d51e/FloatRange.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Alien Biomes/GenSteps/World/WorldGenStepConstructor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -149,6 +187,9 @@
       <workItem from="1741369998677" duration="19000" />
       <workItem from="1741446818472" duration="20506000" />
       <workItem from="1741469791198" duration="1836000" />
+      <workItem from="1741471833481" duration="46000" />
+      <workItem from="1741507085963" duration="6308000" />
+      <workItem from="1741521162245" duration="37121000" />
     </task>
     <servers />
   </component>
