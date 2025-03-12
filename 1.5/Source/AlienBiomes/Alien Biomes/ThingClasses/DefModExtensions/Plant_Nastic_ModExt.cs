@@ -48,6 +48,7 @@ namespace AlienBiomes
         public DamageDef explosionDamageDef = null;
         public IntRange explosionDamage = new (1, 2);
         public float explosionDamageEffectRadius = 2f;
+        public Color explosionEffectRadiusColor = Color.white;
         #endregion
     }
 }

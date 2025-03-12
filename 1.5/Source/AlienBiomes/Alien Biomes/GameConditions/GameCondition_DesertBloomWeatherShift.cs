@@ -14,7 +14,7 @@ namespace AlienBiomes
         private static readonly Color _overlayColor = new (0f, 0.75f, 1.0f);
         private static readonly SkyColorSet _skyColors = new (_skyColor, _shadowColor, _overlayColor, SATURATION);
         
-        public override int TransitionTicks => 60;
+        public override int TransitionTicks => 360;
         
         public override WeatherDef ForcedWeather()
         {

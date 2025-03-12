@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace AlienBiomes
@@ -10,7 +11,7 @@ namespace AlienBiomes
         
         private bool _crystalDeath;
         private IntVec3 _pawnPos;
-
+        
         /// <summary>
         /// Generates a new ThingDef where a pawn died if the pawn died with a specific hediff.
         /// </summary>
@@ -22,7 +23,11 @@ namespace AlienBiomes
             _pawnPos = parent.pawn.Position;
             
             if (map == null) return;
-            _crystalDeath = true;
+            if (Mathf.Approximately(parent.pawn.health.hediffSet
+                    .GetFirstHediffOfDef(ABDefOf.SZ_Crystallize).Severity, 1.0f))
+            {
+                _crystalDeath = true;
+            }
             
             if (!_crystalDeath) return;
             if (map.Biome == ABDefOf.SZ_CrystallineFlats)

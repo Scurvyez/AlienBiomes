@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--==================== Raw Soothing Honey ====================-->
-
     <ThingDef ParentName="PlantFoodRawBase">
         <defName>SZ_RawSoothingHoney</defName>
         <label>raw soothing honey</label>
@@ -26,8 +24,6 @@
             <foodType>VegetableOrFruit</foodType>
         </ingestible>
     </ThingDef>
-
-    <!--==================== Raw Copacetic Honey ====================-->
 
     <ThingDef ParentName="PlantFoodRawBase">
         <defName>SZ_RawCopaceticHoney</defName>
@@ -57,12 +53,32 @@
         <defName>SZ_RawAuroraAgave</defName>
         <label>aurora agave fruit</label>
         <description>Raw aurora agave fruit.</description>
-        <possessionCount>10</possessionCount>
         <graphicData>
             <texPath>AlienBiomes/Things/Items/Resources/PlantFoodRaw/Fruit/SZ_RawAuroraAgave</texPath>
         </graphicData>
         <statBases>
             <MarketValue>1.1</MarketValue>
+        </statBases>
+        <ingestible>
+            <foodType>VegetableOrFruit</foodType>
+        </ingestible>
+        <comps>
+            <li Class="CompProperties_Rottable">
+                <daysToRotStart>25</daysToRotStart>
+                <rotDestroys>true</rotDestroys>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="PlantFoodRawBase">
+        <defName>SZ_RawSandblossomLeaves</defName>
+        <label>sandblossom leaves</label>
+        <description>Freshly picked sandblossom leaves.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Items/Resources/PlantFoodRaw/Leaves/SZ_RawSandblossomLeaves</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>1.2</MarketValue>
         </statBases>
         <ingestible>
             <foodType>VegetableOrFruit</foodType>

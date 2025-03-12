@@ -7,7 +7,7 @@
         <category>Misc</category>
         <workerClass>AlienBiomes.IncidentWorker_DesertBloom</workerClass>
         <gameCondition>SZ_DesertBloomWeatherShift</gameCondition>
-        <baseChance>0.08</baseChance> <!-- RARE EVENT -->
+        <baseChance>0.04</baseChance> <!-- RARE EVENT -->
         <minRefireDays>20</minRefireDays>
         <durationDays>0.5~1.0</durationDays>
         <targetTags>

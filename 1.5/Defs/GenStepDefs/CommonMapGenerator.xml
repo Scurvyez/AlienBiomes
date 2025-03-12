@@ -17,11 +17,11 @@
                 <li>SZ_Fiddlehead</li>
             </plantsToGen>
             <waterRadius>
-                <li>4~5</li>
                 <li>4~7</li>
-                <li>4~9</li>
-                <li>4~11</li>
-                <li>4~13</li>
+                <li>5~8</li>
+                <li>5~9</li>
+                <li>7~11</li>
+                <li>8~13</li>
             </waterRadius>
             <mapSizeRadiusAdjust>
                 <li>3~4</li>

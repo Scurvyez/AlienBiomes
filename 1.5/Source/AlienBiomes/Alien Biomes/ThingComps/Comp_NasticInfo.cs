@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
@@ -7,18 +9,12 @@ namespace AlienBiomes
     public class Comp_NasticInfo : ThingComp
     {
         public CompProperties_NasticInfo Props => (CompProperties_NasticInfo)props;
-        private Plant_Nastic_ModExt _ext;
+        public Plant_Nastic_ModExt _ext;
         
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             _ext = parent.def.GetModExtension<Plant_Nastic_ModExt>();
-        }
-
-        public override void PostDrawExtraSelectionOverlays()
-        {
-            if (_ext == null) return;
-            GenDraw.DrawRadiusRing(parent.Position, _ext.effectRadius, _ext.hediffEffectRadiusColor);
         }
         
         public override string CompInspectStringExtra()

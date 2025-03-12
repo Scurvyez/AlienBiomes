@@ -260,7 +260,7 @@
                 <effectRadius>4</effectRadius>
                 <isVisuallyReactive>true</isVisuallyReactive>
                 <visuallyReactiveThreshold>0.85</visuallyReactiveThreshold>
-                <hediffEffectRadiusColor>(1, 0.4, 0.55, 1)</hediffEffectRadiusColor>
+                <hediffEffectRadiusColor>(0.7, 0.4, 1, 1)</hediffEffectRadiusColor>
                 <isTouchSensitive>true</isTouchSensitive>
                 <fleckDef>ElectricalSpark</fleckDef>
                 <touchSFX>Psycast_Skip_Entry</touchSFX>

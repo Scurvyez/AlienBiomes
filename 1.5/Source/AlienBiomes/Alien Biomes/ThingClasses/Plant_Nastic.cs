@@ -227,14 +227,16 @@ namespace AlienBiomes
         public void TryGiveNasticHediff(Pawn pawn)
         {
             if (!Rand.Chance(_ext.hediffChance)) return;
-            if ((_ext.hediffToGive == ABDefOf.SZ_Crystallize && AlienBiomesSettings.AllowCrystallizing) 
-                || pawn.IsColonist || !pawn.IsColonyMech)
+            if (pawn.NonHumanlikeOrWildMan() || pawn.IsColonyMech) return;
+            if (_ext.hediffToGive == ABDefOf.SZ_Crystallize && AlienBiomesSettings.AllowCrystallizing)
             {
                 // give to a specific part maybe?
                 pawn.health.AddHediff(_ext.hediffToGive, null, null, null);
                 HealthUtility.AdjustSeverity(pawn, _ext.hediffToGive, 0.01f);
+
+                if (!pawn.IsColonist) return;
                 Find.LetterStack.ReceiveLetter("SZAB_LetterLabelCrystallizing".Translate(), 
-                    "SZAB_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter); 
+                    "SZAB_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter);
             }
         }
         

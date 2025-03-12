@@ -2,6 +2,7 @@
 using UnityEngine;
 using Verse;
 using RimWorld;
+using Verse.Noise;
 
 namespace AlienBiomes
 {
@@ -21,7 +22,8 @@ namespace AlienBiomes
         public List<IntRange> waterRadius = [];
         public IntRange sandRadius;
         public List<IntRange> mapSizeRadiusAdjust = [];
-        
+
+        private Perlin _perlin;
         private HashSet<IntVec3> _waterCells = [];
         
         public override int SeedPart => 931457342;
@@ -29,6 +31,8 @@ namespace AlienBiomes
         public override void Generate(Map map, GenStepParams parms)
         {
             _waterCells.Clear();
+            _perlin = new Perlin(0.1, 2.0, 0.5,
+                6, map.Tile, QualityMode.Medium);
             
             if (map.Biome != ABDefOf.SZ_DeliriousDunes) return;
             IntVec3 center = ValidCentralSpawnCell(map);
@@ -57,7 +61,16 @@ namespace AlienBiomes
             foreach (IntVec3 cell in GenRadial
                          .RadialCellsAround(center, radius, true))
             {
-                if (cell.GetTerrain(map) != spawnOnTerDef) continue;
+                if (!cell.InBounds(map) || cell.GetTerrain(map) != spawnOnTerDef) 
+                    continue;
+                
+                float x = (float)cell.x / map.Size.x * 10f;
+                float z = (float)cell.z / map.Size.z * 10f;
+                double noiseValue = _perlin.GetValue(x, 0, z);
+                float distFactor = 1f - (cell.DistanceTo(center) / radius);
+                double threshold = -0.5 + (0.5 * distFactor); // central cells are more likely to be water
+                
+                if (!(noiseValue > threshold)) continue;
                 map.terrainGrid.SetTerrain(cell, waterDef);
                 _waterCells.Add(cell);
             }
@@ -68,11 +81,21 @@ namespace AlienBiomes
             foreach (IntVec3 waterCell in _waterCells)
             {
                 int sandRadiusFinal = sandRadius.RandomInRange;
-                foreach (IntVec3 cell in GenRadial
-                             .RadialCellsAround(waterCell, sandRadiusFinal, true))
+                foreach (IntVec3 cell in GenRadial.RadialCellsAround(waterCell, sandRadiusFinal, true))
                 {
-                    if (!cell.InBounds(map) || cell.GetTerrain(map) == waterDef) continue;
-                    map.terrainGrid.SetTerrain(cell, sandDef);
+                    if (!cell.InBounds(map) || cell.GetTerrain(map) == waterDef) 
+                        continue;
+                    
+                    float x = (float)cell.x / map.Size.x * 10f;
+                    float z = (float)cell.z / map.Size.z * 10f;
+                    double noiseValue = _perlin.GetValue(x, 0, z);
+                    float distFactor = 1f - (cell.DistanceTo(waterCell) / sandRadiusFinal);
+                    double threshold = 0.3 * distFactor; // adjust for smoother blending
+
+                    if (noiseValue > threshold)
+                    {
+                        map.terrainGrid.SetTerrain(cell, sandDef);
+                    }
                 }
             }
         }
