@@ -9,7 +9,7 @@ using Verse.Sound;
 namespace AlienBiomes
 {
     [UsedImplicitly]
-    public class Plant_Nastic : Plant
+    public class Plant_Nastic : Plant_Improved
     {
         private const int MaxTicks = 720;
         
@@ -28,11 +28,13 @@ namespace AlienBiomes
         private Vector3 _drawPos = new (0, 0, 0);
         private Mesh _mesh = MeshPool.plane10;
         private Matrix4x4 _matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
+        private MapComponent_PlantGetter _plantGetter;
         
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             _ext = def.GetModExtension<Plant_Nastic_ModExt>();
+            _plantGetter = map.GetComponent<MapComponent_PlantGetter>();
             
             if (_ext == null)
             {
@@ -54,28 +56,27 @@ namespace AlienBiomes
             }
             
             IntVec3[] cells = GenRadial.RadialCellsAround(Position, _ext.effectRadius, useCenter: true).ToArray();
-            MapComponent_PlantGetter plantGetter = map.GetComponent<MapComponent_PlantGetter>();
             
             foreach (IntVec3 cell in cells)
             {
-                if (!plantGetter.ActiveLocationTriggers.ContainsKey(cell))
+                if (!_plantGetter.ActiveLocationTriggers.ContainsKey(cell))
                 {
-                    plantGetter.ActiveLocationTriggers[cell] = [];
+                    _plantGetter.ActiveLocationTriggers[cell] = [];
                 }
-                plantGetter.ActiveLocationTriggers[cell].Add(this);
+                _plantGetter.ActiveLocationTriggers[cell].Add(this);
             }
         }
-
+        
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             base.DeSpawn(mode);
-            MapComponent_PlantGetter plantGetter = Map?.GetComponent<MapComponent_PlantGetter>();
             
-            if (plantGetter == null) return;
-            foreach (HashSet<Plant_Nastic> set in plantGetter.ActiveLocationTriggers.Values)
-            {
-                set.Remove(this);
-            }
+            _plantGetter?.ActiveLocationTriggers
+                .Where(kvp => kvp.Value.Remove(this) && 
+                              kvp.Value.Count == 0)
+                .Select(kvp => kvp.Key)
+                .ToList()
+                .ForEach(key => _plantGetter.ActiveLocationTriggers.Remove(key));
         }
         
         public override void Tick()

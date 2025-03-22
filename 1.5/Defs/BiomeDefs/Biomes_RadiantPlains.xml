@@ -153,6 +153,8 @@
                 <newSand>SZ_SoothingSand</newSand>
                 <newBeachSand>SZ_SoothingSand</newBeachSand>
                 <newGravel>SZ_RadiantStonySoil</newGravel>
+                <newSoil>SZ_RadiantSoil</newSoil>
+                <newSoilRich>SZ_RadiantRichSoil</newSoilRich>
                 <newShallowWater>SZ_RadiantWaterShallow</newShallowWater>
                 <newWaterMovingShallow>SZ_RadiantWaterMovingShallow</newWaterMovingShallow>
                 <newWaterOceanShallow>SZ_RadiantWaterOceanShallow</newWaterOceanShallow>

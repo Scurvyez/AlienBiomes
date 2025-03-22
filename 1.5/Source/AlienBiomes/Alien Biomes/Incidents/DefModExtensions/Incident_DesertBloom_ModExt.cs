@@ -7,7 +7,8 @@ namespace AlienBiomes
     [UsedImplicitly]
     public class Incident_DesertBloom_ModExt : DefModExtension
     {
-        public List<ThingDef> plantsToSpawn;
+        //public List<ThingDef> plantsToSpawn;
+        public Dictionary<ThingDef, float> plantsToSpawn = [];
         public SimpleCurve sandblossomSpawnCurve;
     }
 }

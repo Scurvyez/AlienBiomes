@@ -19,18 +19,27 @@
         <modExtensions>
             <li Class="AlienBiomes.Incident_DesertBloom_ModExt">
                 <plantsToSpawn>
-                    <li>SZ_DeliriousGrass</li>
-                    <li>SZ_Sandblossom</li>
-                    <li>SZ_Durasalve</li>
+                    <li>
+                        <key>SZ_DeliriousGrass</key>
+                        <value>10</value>
+                    </li>
+                    <li>
+                        <key>SZ_Sandblossom</key>
+                        <value>4</value>
+                    </li>
+                    <li>
+                        <key>SZ_Durasalve</key>
+                        <value>2</value>
+                    </li>
                 </plantsToSpawn>
                 <sandblossomSpawnCurve>
                     <points>
-                        <li>(200, 400)</li>
-                        <li>(225, 506)</li>
-                        <li>(250, 625)</li>
-                        <li>(275, 756)</li>
-                        <li>(300, 900)</li>
-                        <li>(325, 1056)</li>
+                        <li>(200, 300)</li>
+                        <li>(225, 406)</li>
+                        <li>(250, 525)</li>
+                        <li>(275, 656)</li>
+                        <li>(300, 700)</li>
+                        <li>(325, 856)</li>
                     </points>
                 </sandblossomSpawnCurve>
             </li>

@@ -142,6 +142,8 @@
                 <newSand>SZ_CrystallineSand</newSand>
                 <newBeachSand>SZ_CrystallineSand</newBeachSand>
                 <newGravel>SZ_CrystallineStonySoil</newGravel>
+                <newSoil>SZ_CrystallineSoil</newSoil>
+                <newSoilRich>SZ_CrystallineRichSoil</newSoilRich>
                 <newShallowWater>SZ_CrystallineWaterShallow</newShallowWater>
                 <newWaterMovingShallow>SZ_CrystallineWaterMovingShallow</newWaterMovingShallow>
                 <newWaterOceanShallow>SZ_CrystallineWaterOceanShallow</newWaterOceanShallow>

@@ -6,25 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="3026ae6e-2d55-43ba-bbf5-c57136e0dcbc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/GenStepDefs/CommonMapGenerator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/GenStepDefs/CommonMapGenerator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_CrystallineFlats.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_DeliriousDunes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/BiomeDefs/Biomes_RadiantPlains.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/GameConditions/GameConditionDefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/GameConditions/GameConditionDefs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Defs/Storyteller/Incidents_Map_Misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/Storyteller/Incidents_Map_Misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/TerrainDefs/Terrain_DeliriousDunes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_CrystallineFlats.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_DeliriousDunes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Resources/Resource_RawPlant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Resources/Resource_RawPlant.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/GameConditions/GameCondition_DesertBloomWeatherShift.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GameConditions/GameCondition_DesertBloomWeatherShift.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/GenSteps/Map/GenStep_DeliriousDunesOasis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/GenSteps/Map/GenStep_DeliriousDunesOasis.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AlienBiomes.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/DefModExtensions/Biome_Generation_ModExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/BiomeUtils/DefModExtensions/Biome_Generation_ModExt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/Harmony/HarmonyPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Harmony/HarmonyPatches.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/Incidents/DefModExtensions/Incident_DesertBloom_ModExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Incidents/DefModExtensions/Incident_DesertBloom_ModExt.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/Incidents/IncidentWorker_DesertBloom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Incidents/IncidentWorker_DesertBloom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_DesertBloomTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_DesertBloomTracker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_PlantGetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/MapComps/MapComponent_PlantGetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_Nastic_ModExt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_DesertBloom_ModExt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/DefModExtensions/Plant_DesertBloom_ModExt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Bioluminescence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_NasticInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingComps/Comp_NasticInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/CeruleanHoneyBush/ElderBlushingTreeA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Textures/AlienBiomes/Things/Plants/CeruleanHoneyBush_Leafless/CeruleanHoneytree_Leafless.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.CoreCompileInputs.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/29/a3f574ea/Hilliness.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/43/40e4dab1/Season.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69945a8ed6c540cf90b578de735e0605ca2600/55/42e5d51e/FloatRange.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c58bc064d0ed420cb832da9d6d1cf9b6f7400/be/5c85654a/Rect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eace7c774bd84fb7bbbcad91a745ae28ca2600/3a/5e49cbf3/MapComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Alien Biomes/GenSteps/World/WorldGenStepConstructor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,27 +59,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RimWorld.RimWorld.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RimWorld.RimWorld.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\steve\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\steve\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\steve\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\steve\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\steve\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\steve\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="RimWorld.RimWorld">
     <configuration name="RimWorld" type="RimworldRunConfiguration" factoryName="RimworldRunConfiguration">
       <option name="commandLineOptions" value="" />
@@ -175,6 +179,21 @@
       <workItem from="1741706903072" duration="12157000" />
       <workItem from="1741739999195" duration="8072000" />
       <workItem from="1741748145925" duration="724000" />
+      <workItem from="1741795446929" duration="12236000" />
+      <workItem from="1741974659177" duration="2265000" />
+      <workItem from="1742066794340" duration="564000" />
+      <workItem from="1742075467612" duration="21885000" />
+      <workItem from="1742161464885" duration="9637000" />
+      <workItem from="1742179128162" duration="2436000" />
+      <workItem from="1742341479214" duration="401000" />
+      <workItem from="1742342097115" duration="102000" />
+      <workItem from="1742344884574" duration="247000" />
+      <workItem from="1742346291045" duration="366000" />
+      <workItem from="1742350855921" duration="95000" />
+      <workItem from="1742351201472" duration="262000" />
+      <workItem from="1742352367857" duration="74000" />
+      <workItem from="1742359859604" duration="369000" />
+      <workItem from="1742609764055" duration="2268000" />
     </task>
     <servers />
   </component>

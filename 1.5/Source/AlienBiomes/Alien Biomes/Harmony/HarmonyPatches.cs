@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
@@ -12,8 +13,6 @@ namespace AlienBiomes
     [StaticConstructorOnStartup]
     public static class HarmonyPatches
     {
-        private const string WATER = "Water";
-        
         static HarmonyPatches()
         {
             Harmony harmony = new (id: "rimworld.scurvyez.alienbiomes");
@@ -71,15 +70,14 @@ namespace AlienBiomes
 
         public static void ReplaceBeachTerrainPostfix(BiomeDef biome, ref TerrainDef __result)
         {
-            if (!biome.HasModExtension<Biome_Generation_ModExt>()) return;
             Biome_Generation_ModExt ext = biome.GetModExtension<Biome_Generation_ModExt>();
             
-            if (ext.newBeachSand != null && __result == TerrainDefOf.Sand)
+            if (ext?.newBeachSand != null && __result == TerrainDefOf.Sand)
             {
                 __result = ext.newBeachSand;
             }
         }
-
+        
         public static void ShouldBeLitNowPostfix(CompGlower __instance, ref bool __result)
         {
             if (__instance is Comp_TimedGlower glower) __result = __result
@@ -108,25 +106,15 @@ namespace AlienBiomes
         
         public static void ReplaceTerrainPostfix(Map map, ref TerrainDef __result)
         {
-            if (!map.Biome.HasModExtension<Biome_Generation_ModExt>()) return;
             Biome_Generation_ModExt ext = map.Biome.GetModExtension<Biome_Generation_ModExt>();
             
-            var replacements = new Dictionary<TerrainDef, TerrainDef>
-            {
-                { TerrainDefOf.Gravel, ext.newGravel },
-                { TerrainDefOf.Sand, ext.newSand },
-                { TerrainDefOf.WaterShallow, ext.newShallowWater },
-                { TerrainDefOf.WaterMovingShallow, ext.newWaterMovingShallow },
-                { TerrainDefOf.WaterOceanShallow, ext.newWaterOceanShallow },
-                { TerrainDefOf.WaterDeep, ext.newWaterDeep },
-                { TerrainDefOf.WaterOceanDeep, ext.newWaterOceanDeep },
-                { TerrainDefOf.WaterMovingChestDeep, ext.newWaterMovingChestDeep }
-            };
+            if (ext == null) return;
+            if (!HarmonyPatchesUtil.TerrainReplacements.TryGetValue(__result,
+                    out Func<Biome_Generation_ModExt, TerrainDef> replacementFunc)) return;
+            TerrainDef newTerrain = replacementFunc(ext);
             
-            if (replacements.TryGetValue(__result, out TerrainDef newTerrain) && newTerrain != null)
-            {
-                __result = newTerrain;
-            }
+            if (newTerrain == null) return;
+            __result = newTerrain;
         }
         
         public static bool CanEverPlantAtPrefix(ref bool __result, ThingDef plantDef, 
@@ -137,7 +125,7 @@ namespace AlienBiomes
             Plant_TerrainControl_ModExt terrainExt = terrain.GetModExtension<Plant_TerrainControl_ModExt>();
             Plant_TerrainControl_ModExt plantTerrainExt = plantDef.GetModExtension<Plant_TerrainControl_ModExt>();
             
-            if (plantTerrainExt == null && terrain.HasTag(WATER))
+            if (plantTerrainExt == null && terrain.HasTag(HarmonyPatchesUtil.WATER))
             {
                 __result = false;
                 return false;
@@ -168,13 +156,13 @@ namespace AlienBiomes
                         return false;
                     }
                 }
-                else if (terrain.HasTag(WATER) || terrain.IsWater)
+                else if (terrain.HasTag(HarmonyPatchesUtil.WATER) || terrain.IsWater)
                 {
                     __result = true;
                     return true;
                 }
             }
-            else if (terrainExt == null && terrain.HasTag(WATER))
+            else if (terrainExt == null && terrain.HasTag(HarmonyPatchesUtil.WATER))
             {
                 __result = false;
                 return false;
@@ -198,35 +186,33 @@ namespace AlienBiomes
                     .TryGetValue(nextCell, out HashSet<Plant_Nastic> plantsInCell)) 
                 return;
             
-            foreach (Plant_Nastic plant in plantsInCell)
+            Plant_Nastic plant = plantsInCell.FirstOrDefault();
+            Plant_Nastic_ModExt ext = plant?.def
+                .GetModExtension<Plant_Nastic_ModExt>();
+            
+            if (ext == null) return;
+            if (ext.isTouchSensitive)
             {
-                Plant_Nastic_ModExt ext = plant.def
-                    .GetModExtension<Plant_Nastic_ModExt>();
-                
-                if (ext == null) continue;
-                if (ext.isTouchSensitive)
+                if (ext.isVisuallyReactive &&
+                    plant.Growth >= ext.visuallyReactiveThreshold)
                 {
-                    if (ext.isVisuallyReactive &&
-                        plant.Growth >= ext.visuallyReactiveThreshold)
-                    {
-                        plant.TouchSensitiveStartTime = GenTicks.TicksGame;
-                        plant.TryDoNasticSFX(plant);
-                        plant.TryDrawNasticFlecks();
-                    }
+                    plant.TouchSensitiveStartTime = GenTicks.TicksGame;
+                    plant.TryDoNasticSFX(plant);
+                    plant.TryDrawNasticFlecks();
+                }
                     
-                    if (ext.isDamaging && !plant.GasExpelled &&
-                        plant.Growth >= ext.explosionGrowthThreshold)
-                    {
-                        plant.DoNasticExplosion();
-                        plant.GasExpelled = true;
-                    }
-                }
-                if (ext.hediffToGive != null &&
-                    plant.Growth >= ext.givesHediffGrowthThreshold &&
-                    !___pawn.health.hediffSet.HasHediff(ext.hediffToGive))
+                if (ext.isDamaging && !plant.GasExpelled &&
+                    plant.Growth >= ext.explosionGrowthThreshold)
                 {
-                    plant.TryGiveNasticHediff(___pawn);
+                    plant.DoNasticExplosion();
+                    plant.GasExpelled = true;
                 }
+            }
+            if (ext.hediffToGive != null &&
+                plant.Growth >= ext.givesHediffGrowthThreshold &&
+                !___pawn.health.hediffSet.HasHediff(ext.hediffToGive))
+            {
+                plant.TryGiveNasticHediff(___pawn);
             }
         }
         

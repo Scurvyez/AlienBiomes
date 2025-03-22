@@ -10,14 +10,13 @@ namespace AlienBiomes
     [UsedImplicitly]
     public class MapComponent_PlantGetter : MapComponent
     {
-        // don't change this field at all, it's used in other areas of our code for other logic
         public Dictionary<IntVec3, HashSet<Plant_Nastic>> ActiveLocationTriggers = new ();
         public float SunStrength;
         
+        private readonly HashSet<IntVec3> _globalEffectCells = [];
+        private readonly HashSet<IntVec3> _globalExplosionCells = [];
         private List<Plant_Nastic> _selectedPlants = [];
-        private HashSet<IntVec3> _globalEffectCells = [];
-        private HashSet<IntVec3> _globalExplosionCells = [];
-        private Color _hediffColor = Color.white; // Default fallback
+        private Color _hediffColor = Color.white;
         private Color _explosionColor = Color.white;
         
         public MapComponent_PlantGetter(Map map) : base(map) { }

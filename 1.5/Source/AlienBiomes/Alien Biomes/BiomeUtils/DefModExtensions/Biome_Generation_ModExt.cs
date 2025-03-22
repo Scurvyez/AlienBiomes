@@ -16,14 +16,8 @@ namespace AlienBiomes
         public bool allowOnWater;
         public bool allowOnLand = true;
         public bool needRiver;
-        public bool setNotWaterCovered;
         public int minimumWaterNeighbors;
         public int minimumLandNeighbors;
-        public bool forested;
-        public bool uniqueHills;
-        public float forestSnowyBelow = -9999f;
-        public float forestSparseBelow = -9999f;
-        public float forestDenseAbove = 9999f;
         #endregion
         
         #region WeatherLimits
@@ -47,14 +41,9 @@ namespace AlienBiomes
         public BiomeHilliness? setHills;
         public BiomeHilliness? minRandomHills = BiomeHilliness.Flat;
         public BiomeHilliness? maxRandomHills = BiomeHilliness.Mountainous;
-        public bool randomizeHilliness;
         public float minElevation = -9999f;
         public float maxElevation = 9999f;
         public float? setElevation;
-        public float smallHillSizeMultiplier = 1.5f;
-        public float largeHillSizeMultiplier = 2f;
-        public float mountainSizeMultiplier = 1.4f;
-        public float impassableSizeMultiplier = 1.3f;
         #endregion
         
         #region WorldScatteringPerlinNoise
@@ -72,6 +61,8 @@ namespace AlienBiomes
         public TerrainDef newSand;
         public TerrainDef newBeachSand;
         public TerrainDef newGravel;
+        public TerrainDef newSoil;
+        public TerrainDef newSoilRich;
         public TerrainDef newShallowWater;
         public TerrainDef newWaterMovingShallow;
         public TerrainDef newWaterOceanShallow;

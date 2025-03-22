@@ -84,6 +84,7 @@
     <Compile Include="GenSteps\World\WorldGenStep_Late.cs" />
     <Compile Include="GenSteps\World\WorldGenStepConstructor.cs" />
     <Compile Include="Harmony\HarmonyPatches.cs" />
+    <Compile Include="Harmony\HarmonyPatchesUtil.cs" />
     <Compile Include="Incidents\DefModExtensions\Incident_DesertBloom_ModExt.cs" />
     <Compile Include="Incidents\IncidentWorker_DesertBloom.cs" />
     <Compile Include="MapComps\MapComponent_DesertBloomTracker.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="ThingClasses\DefModExtensions\Plant_TerrainControl_ModExt.cs" />
     <Compile Include="ThingClasses\Plant_Bioluminescence.cs" />
     <Compile Include="ThingClasses\DefModExtensions\Plant_Nastic_ModExt.cs" />
+    <Compile Include="ThingClasses\Plant_Improved.cs" />
     <Compile Include="ThingClasses\Plant_Nastic.cs" />
     <Compile Include="ThingComps\CompProps\CompProperties_NasticInfo.cs" />
     <Compile Include="ThingComps\Comp_NasticInfo.cs" />

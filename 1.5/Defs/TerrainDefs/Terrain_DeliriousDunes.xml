@@ -185,7 +185,7 @@
         <renderPrecedence>354</renderPrecedence>
         <pathCost>3</pathCost>
         <generatedFilth>SZ_Filth_DeliriousBlackSand</generatedFilth>
-        <fertility>0.4</fertility>
+        <fertility>0.7</fertility>
         <takeFootprints>true</takeFootprints>
         <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
         <scatterType>SoftDry</scatterType>
@@ -227,7 +227,7 @@
         <renderPrecedence>354</renderPrecedence>
         <pathCost>2</pathCost>
         <generatedFilth>SZ_Filth_DeliriousBlackSand</generatedFilth>
-        <fertility>0.65</fertility>
+        <fertility>1.5</fertility>
         <takeFootprints>true</takeFootprints>
         <pollutionColor>(1, 1, 1, 0.25)</pollutionColor>
         <scatterType>SoftDry</scatterType>

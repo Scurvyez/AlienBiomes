@@ -39,6 +39,7 @@
                     <li>DeliriousCoarseSand</li>
                 </terrainTags>
             </li>
+            <li Class="AlienBiomes.Plant_DesertBloom_ModExt" />
         </modExtensions>
     </ThingDef>
 
@@ -68,8 +69,8 @@
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
-            <fertilityMin>0.025</fertilityMin>
-            <fertilitySensitivity>0.3</fertilitySensitivity>
+            <fertilityMin>0.25</fertilityMin>
+            <fertilitySensitivity>1.0</fertilitySensitivity>
             <growDays>22</growDays>
             <leaflessGraphicPath>AlienBiomes/Things/Plants/StarburstCactus_Leafless</leaflessGraphicPath>
             <visualSizeRange>0.35~2.1</visualSizeRange>
@@ -83,6 +84,7 @@
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
                     <li>DeliriousCoarseSand</li>
+                    <li>DeliriousBlackSand</li>
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.Plant_Nastic_ModExt">
@@ -229,8 +231,8 @@
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <plant>
-            <fertilityMin>0.1</fertilityMin>
-            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <fertilityMin>0.25</fertilityMin>
+            <fertilitySensitivity>0.8</fertilitySensitivity>
             <growDays>6</growDays>
             <harvestTag>Standard</harvestTag>
             <harvestAfterGrowth>0.30</harvestAfterGrowth>
@@ -239,8 +241,8 @@
             <harvestWork>300</harvestWork>
             <visualSizeRange>0.9~1.4</visualSizeRange>
             <topWindExposure>0.3</topWindExposure>
-            <wildClusterRadius>8</wildClusterRadius>
-            <wildClusterWeight>300</wildClusterWeight>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
         </plant>
@@ -256,7 +258,7 @@
         <modExtensions>
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
-                    <li>DeliriousRichBlackSand</li>
+                    <li>DeliriousMellowSand</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -267,6 +269,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_Sandblossom</defName>
         <label>sandblossom</label>
+        <thingClass>AlienBiomes.Plant_Improved</thingClass>
         <description>A rare and delicate desert plant that blooms only after rainfall. Its translucent petals are a suprisingly delicious food source.</description>
         <statBases>
             <MaxHitPoints>115</MaxHitPoints>
@@ -281,9 +284,9 @@
         <pathCost>35</pathCost>
         <ingestible />
         <plant>
-            <fertilityMin>0.025</fertilityMin>
-            <fertilitySensitivity>0.3</fertilitySensitivity>
-            <growDays>0.05</growDays>
+            <fertilityMin>0.4</fertilityMin>
+            <fertilitySensitivity>1.0</fertilitySensitivity>
+            <growDays>3</growDays>
             <dieIfLeafless>false</dieIfLeafless>
             <harvestYield>4</harvestYield>
             <harvestTag>Standard</harvestTag>
@@ -291,21 +294,19 @@
             <harvestedThingDef>SZ_RawSandblossomLeaves</harvestedThingDef>
             <visualSizeRange>1.25~4.15</visualSizeRange>
             <topWindExposure>0.1</topWindExposure>
-            <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
             <allowAutoCut>false</allowAutoCut>
+            <lifespanDaysPerGrowDays>1.75</lifespanDaysPerGrowDays>
         </plant>
         <modExtensions>
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
-                    <li>SZ_DeliriousCoarseSand</li>
-                    <li>SZ_DeliriousRichBlackSand</li>
-                    <li>SZ_DeliriousBlackSand</li>
+                    <li>DeliriousCoarseSand</li>
+                    <li>DeliriousRichBlackSand</li>
+                    <li>DeliriousBlackSand</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_DesertBloom_ModExt">
-                <lifeTime>400000~700000</lifeTime>
-            </li>
+            <li Class="AlienBiomes.Plant_DesertBloom_ModExt" />
         </modExtensions>
     </ThingDef>
 
@@ -314,6 +315,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_Durasalve</defName>
         <label>durasalve</label>
+        <thingClass>AlienBiomes.Plant_Improved</thingClass>
         <description>A rare and hardy desert plant that blooms only after heavy rainfall. Its tough, armored exterior protects the precious, moisture-rich fruit within, which is highly sought after for its potent healing properties. The fruit of the durasalve is packed with nutrients and natural compounds that accelerate healing and restore vitality, making it a treasured resource for any traveler fortunate enough to encounter it in the arid expanse.</description>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
@@ -329,9 +331,9 @@
             <preferability>NeverForNutrition</preferability>
         </ingestible>
         <plant>
-            <fertilityMin>0.025</fertilityMin>
-            <fertilitySensitivity>0.3</fertilitySensitivity>
-            <growDays>0.05</growDays>
+            <fertilityMin>0.4</fertilityMin>
+            <fertilitySensitivity>1.0</fertilitySensitivity>
+            <growDays>2</growDays>
             <dieIfLeafless>false</dieIfLeafless>
             <immatureGraphicPath>AlienBiomes/Things/Plants/Durasalve_Immature</immatureGraphicPath>
             <harvestYield>2</harvestYield>
@@ -341,21 +343,19 @@
             <harvestedThingDef>MedicineHerbal</harvestedThingDef>
             <visualSizeRange>0.8~2.25</visualSizeRange>
             <topWindExposure>0.1</topWindExposure>
-            <wildOrder>2</wildOrder>
             <purpose>Health</purpose>
             <allowAutoCut>false</allowAutoCut>
+            <lifespanDaysPerGrowDays>1.75</lifespanDaysPerGrowDays>
         </plant>
         <modExtensions>
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
-                    <li>SZ_DeliriousCoarseSand</li>
-                    <li>SZ_DeliriousRichBlackSand</li>
-                    <li>SZ_DeliriousBlackSand</li>
+                    <li>DeliriousCoarseSand</li>
+                    <li>DeliriousRichBlackSand</li>
+                    <li>DeliriousBlackSand</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.Plant_DesertBloom_ModExt">
-                <lifeTime>400000~700000</lifeTime>
-            </li>
+            <li Class="AlienBiomes.Plant_DesertBloom_ModExt" />
         </modExtensions>
     </ThingDef>
 

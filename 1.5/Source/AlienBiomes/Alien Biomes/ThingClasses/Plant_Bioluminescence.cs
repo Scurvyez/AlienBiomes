@@ -1,12 +1,11 @@
 ﻿using JetBrains.Annotations;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace AlienBiomes
 {
     [UsedImplicitly]
-    public class Plant_Bioluminescence : Plant
+    public class Plant_Bioluminescence : Plant_Improved
     {
         private static readonly int Color1 = Shader.PropertyToID("_Color");
         
