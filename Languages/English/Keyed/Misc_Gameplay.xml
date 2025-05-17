@@ -28,17 +28,17 @@
 
     <SZAB_SettingPlantGlow>Show glow effects.</SZAB_SettingPlantGlow>
     <SZAB_SettingPlantGlowDesc>Many plants in Alien Biomes glow at various times of the day. This may significantly improve performance on large maps if turned off, depending on hardware, map size, and number of plants able to glow.</SZAB_SettingPlantGlowDesc>
-
-    <SZAB_SettingCrystallizing>Allow colonists to be crystallized in the Crystalline Flats.</SZAB_SettingCrystallizing>
-    <SZAB_SettingCrystallizingDesc>This can make for some challenging gameplay but is also a fair challenge. Pawns afflicted with the crystallizing hediff will eventually die and be replaced by a magnificent red crystal.</SZAB_SettingCrystallizingDesc>
-
+    
     <SZAB_SettingShowTerrainDebris>Show terrain debris.</SZAB_SettingShowTerrainDebris>
     <SZAB_SettingShowTerrainDebrisDesc>If unchecked, vanilla terrain-related debris (sand and soil smears) will not be generated on map creation.</SZAB_SettingShowTerrainDebrisDesc>
 
     <SZAB_SettingCompEffectSounds>Allow plants to emit ambient sounds.</SZAB_SettingCompEffectSounds>
     <SZAB_SettingCompEffectSoundsDesc>Certain plants added by Alien Biomes have unique behaviors and some emit short ambient queues when pawns are nearby or are walking through them. Turn this off if you prefer total silence and dislike nature.</SZAB_SettingCompEffectSoundsDesc>
 
-    <SZAB_PlantSoundEffectVolume>Volume: {0}%</SZAB_PlantSoundEffectVolume>
-    <SZAB_PlantSoundEffectVolumeDesc>Adjust the slider to either increase or decreases the volume of plant sound effects.</SZAB_PlantSoundEffectVolumeDesc>
-
+    <SZAB_SettingPlantSFXChance>Volume: {0}%</SZAB_SettingPlantSFXChance>
+    <SZAB_SettingPlantSFXChanceDesc>Adjust the slider to either increase or decreases the chance a plants' touch reactive sound plays every time a valid pawn gets close enough to the plant.\n\nA value of 0 means the sound will never play.</SZAB_SettingPlantSFXChanceDesc>
+    
+    <SZAB_SettingCrystallizing>Allow colonists to be crystallized in the Crystalline Flats.</SZAB_SettingCrystallizing>
+    <SZAB_SettingCrystallizingDesc>This can make for some challenging gameplay but is also a fair challenge. Pawns afflicted with the crystallizing hediff will eventually die and be replaced by a magnificent red crystal.</SZAB_SettingCrystallizingDesc>
+    
 </LanguageData>

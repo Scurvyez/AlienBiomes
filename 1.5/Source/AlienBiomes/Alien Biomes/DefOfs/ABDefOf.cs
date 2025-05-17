@@ -28,6 +28,10 @@ namespace AlienBiomes
         public static TerrainDef SZ_BloodWaterMovingChestDeep;
         #endregion
         
+        #region PlantDefs
+        public static ThingDef SZ_ChaliceFungus;
+        #endregion
+        
         #region ShaderTypeDefs
         public static ShaderTypeDef TransparentPlantShimmer;
         public static ShaderTypeDef TransparentPlantPulse;

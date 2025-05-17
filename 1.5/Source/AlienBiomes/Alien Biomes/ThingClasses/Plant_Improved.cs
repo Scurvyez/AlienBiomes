@@ -6,6 +6,5 @@ namespace AlienBiomes
     {
         // base class for any and all new weird plants in AB :)
         
-        
     }
 }

@@ -145,7 +145,7 @@
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
-            <fertilityMin>0.025</fertilityMin>
+            <fertilityMin>0.15</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>4.75</growDays>
             <leaflessGraphicPath>AlienBiomes/Things/Plants/BulbousSanitas_Leafless</leaflessGraphicPath>
@@ -185,7 +185,7 @@
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
         <plant>
-            <fertilityMin>0.025</fertilityMin>
+            <fertilityMin>0.15</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>4.75</growDays>
             <leaflessGraphicPath>AlienBiomes/Things/Plants/Fiddlehead_Leafless</leaflessGraphicPath>
@@ -274,7 +274,7 @@
             <shaderType>Transparent</shaderType>
         </graphicData>
         <plant>
-            <fertilityMin>0.025</fertilityMin>
+            <fertilityMin>0.1</fertilityMin>
             <fertilitySensitivity>0.3</fertilitySensitivity>
             <growDays>22</growDays>
             <leaflessGraphicPath>AlienBiomes/Things/Plants/ChaliceFungus_Leafless</leaflessGraphicPath>

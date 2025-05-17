@@ -9,8 +9,18 @@ namespace AlienBiomes
     {
         public HediffCompProperties_Crystallize Props => (HediffCompProperties_Crystallize)props;
         
-        private bool _crystalDeath;
-        private IntVec3 _pawnPos;
+        private bool _crystalDeath = false;
+        private IntVec3 _pawnPos = IntVec3.Invalid;
+        
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            if (Pawn is { IsColonist: false } 
+                && (Pawn.MapHeld == null || Pawn.Destroyed || Pawn.Discarded))
+            {
+                Pawn.health.RemoveHediff(parent);
+            }
+        }
         
         /// <summary>
         /// Generates a new ThingDef where a pawn died if the pawn died with a specific hediff.
@@ -19,11 +29,11 @@ namespace AlienBiomes
         {
             base.Notify_PawnDied(dinfo, culprit);
             
-            Map map = parent.pawn.Corpse.MapHeld;
-            _pawnPos = parent.pawn.Position;
+            Map map = Pawn.Corpse.MapHeld;
+            _pawnPos = Pawn.Position;
             
             if (map == null) return;
-            if (Mathf.Approximately(parent.pawn.health.hediffSet
+            if (Mathf.Approximately(Pawn.health.hediffSet
                     .GetFirstHediffOfDef(ABDefOf.SZ_Crystallize).Severity, 1.0f))
             {
                 _crystalDeath = true;
@@ -44,22 +54,21 @@ namespace AlienBiomes
                 }
             }
             
-            if (parent.pawn.IsColonist)
+            if (Pawn.IsColonist)
             {
                 Find.LetterStack.ReceiveLetter("SZAB_LetterLabelCrystallized".Translate(),
-                    "SZAB_LetterCrystallized".Translate(parent.pawn),
+                    "SZAB_LetterCrystallized".Translate(Pawn),
                     ABDefOf.SZ_PawnCrystallizedLetter, null, null);
                 Find.TickManager.slower.SignalForceNormalSpeedShort();
             }
             
-            GenSpawn.Spawn(ThingDef.Named(Props.targetCrystal),
-                TryFindRandomValidCell(map), map);
-            
+            GenSpawn.Spawn(Props.targetCrystal, TryFindRandomValidCell(map), map);
             FilthMaker.TryMakeFilth(GenRadial
-                    .RadialCellsAround(_pawnPos, 1f, true).RandomElement(), 
-                parent.pawn.Corpse.Map, ThingDefOf.Filth_Blood);
+                    .RadialCellsAround(_pawnPos, 1f, true)
+                    .RandomElement(), 
+                Pawn.Corpse.Map, ThingDefOf.Filth_Blood);
             
-            parent.pawn.Corpse.Destroy();
+            Pawn.Corpse.Destroy();
         }
         
         private static IntVec3 TryFindRandomValidCell(Map map)

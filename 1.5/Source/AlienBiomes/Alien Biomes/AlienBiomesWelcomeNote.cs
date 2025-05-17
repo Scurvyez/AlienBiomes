@@ -9,7 +9,7 @@ namespace AlienBiomes
         static AlienBiomesMain()
         {
             ABLog.Message($"{DateTime.Now.Date.ToShortDateString()} "
-                          + "[1.5 Release | Nothing to report.]");
+                          + "[1.5 Alpha-Build | Nothing to report.]");
         }
     }
 }

@@ -56,6 +56,8 @@ namespace AlienBiomes
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(AffectsThingPostfix)));
         }
         
+        // we're not even using any of the custom shaders anymore... sadge
+        // we may in the future so keep this!
         public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
         {
             if (__instance is not ABShaderTypeDef) return;
@@ -71,7 +73,6 @@ namespace AlienBiomes
         public static void ReplaceBeachTerrainPostfix(BiomeDef biome, ref TerrainDef __result)
         {
             Biome_Generation_ModExt ext = biome.GetModExtension<Biome_Generation_ModExt>();
-            
             if (ext?.newBeachSand != null && __result == TerrainDefOf.Sand)
             {
                 __result = ext.newBeachSand;
@@ -81,17 +82,21 @@ namespace AlienBiomes
         public static void ShouldBeLitNowPostfix(CompGlower __instance, ref bool __result)
         {
             if (__instance is Comp_TimedGlower glower) __result = __result
-                    && AlienBiomesSettings.ShowPlantGlow && glower.AdditionalGlowerLogic();
+                    && AlienBiomesSettings.ShowPlantGlow 
+                    && glower.AdditionalGlowerLogic();
         }
 
         public static void HarvestableNowPostFix(Plant __instance, ref bool __result)
         {
             Comp_TimedHarvest comp = __instance.GetComp<Comp_TimedHarvest>();
-            
             if (comp == null) return;
-            __result = __result && comp.AdditionalPlantHarvestLogic();
+            __result = __result 
+                       && comp.AdditionalPlantHarvestLogic();
         }
         
+        // same as above...
+        // we're not even using any of the custom shaders anymore... sadge
+        // we may in the future so keep this!
         public static void MatFromPostFix(MaterialRequest req, ref Material __result)
         {
             if (__result != null
@@ -111,6 +116,7 @@ namespace AlienBiomes
             if (ext == null) return;
             if (!HarmonyPatchesUtil.TerrainReplacements.TryGetValue(__result,
                     out Func<Biome_Generation_ModExt, TerrainDef> replacementFunc)) return;
+            
             TerrainDef newTerrain = replacementFunc(ext);
             
             if (newTerrain == null) return;
@@ -186,33 +192,35 @@ namespace AlienBiomes
                     .TryGetValue(nextCell, out HashSet<Plant_Nastic> plantsInCell)) 
                 return;
             
-            Plant_Nastic plant = plantsInCell.FirstOrDefault();
-            Plant_Nastic_ModExt ext = plant?.def
-                .GetModExtension<Plant_Nastic_ModExt>();
-            
-            if (ext == null) return;
-            if (ext.isTouchSensitive)
+            foreach (Plant_Nastic plant in plantsInCell)
             {
-                if (ext.isVisuallyReactive &&
-                    plant.Growth >= ext.visuallyReactiveThreshold)
+                Plant_Nastic_ModExt ext = plant.def
+                    .GetModExtension<Plant_Nastic_ModExt>();
+                
+                if (ext == null) continue;
+                if (ext.isTouchSensitive)
                 {
-                    plant.TouchSensitiveStartTime = GenTicks.TicksGame;
-                    plant.TryDoNasticSFX(plant);
-                    plant.TryDrawNasticFlecks();
-                }
+                    if (ext.isVisuallyReactive &&
+                        plant.Growth >= ext.visuallyReactiveThreshold)
+                    {
+                        plant.TouchSensitiveStartTime = GenTicks.TicksGame;
+                        plant.TryDoNasticSFX(plant);
+                        plant.TryDrawNasticFlecks();
+                    }
                     
-                if (ext.isDamaging && !plant.GasExpelled &&
-                    plant.Growth >= ext.explosionGrowthThreshold)
-                {
-                    plant.DoNasticExplosion();
-                    plant.GasExpelled = true;
+                    if (ext.isDamaging && !plant.GasExpelled &&
+                        plant.Growth >= ext.explosionGrowthThreshold)
+                    {
+                        plant.TryDoNasticExplosion();
+                        plant.GasExpelled = true;
+                    }
                 }
-            }
-            if (ext.hediffToGive != null &&
-                plant.Growth >= ext.givesHediffGrowthThreshold &&
-                !___pawn.health.hediffSet.HasHediff(ext.hediffToGive))
-            {
-                plant.TryGiveNasticHediff(___pawn);
+                if (ext.hediffToGive != null &&
+                    plant.Growth >= ext.givesHediffGrowthThreshold &&
+                    !___pawn.health.hediffSet.HasHediff(ext.hediffToGive))
+                {
+                    plant.TryGiveNasticHediff(___pawn);
+                }
             }
         }
         

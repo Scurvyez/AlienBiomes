@@ -12,11 +12,8 @@ namespace AlienBiomes
     public class AlienBiomesMod : Mod
     {
         public static AlienBiomesMod ABMod;
-
-        private const float _newListingGap = 12f;
-        private const float _newSectionGap = 6f;
-        private const float _headerTextGap = 3f;
         
+        private const float HeaderTextGap = 3f;
         private readonly AlienBiomesSettings _settings;
         private float _halfWidth;
         private Vector2 _leftScrollPos = Vector2.zero;
@@ -37,22 +34,28 @@ namespace AlienBiomes
             harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), 
                     nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
                 postfix: new HarmonyMethod(typeof(AlienBiomesMod), 
-                    nameof(AddBiomesDefModExtensionsPostfix)));
+                    nameof(ImpliedTerrainDefsPostfix)));
         }
         
-        public static IEnumerable<TerrainDef> AddBiomesDefModExtensionsPostfix(
-            IEnumerable<TerrainDef> __result)
+        public static void ImpliedTerrainDefsPostfix(ref IEnumerable<TerrainDef> __result)
         {
-            foreach (TerrainDef terrainDef in __result)
+            List<TerrainDef> modifiedList = [];
+            foreach (TerrainDef def in __result)
             {
-                Plant_TerrainControl_ModExt plantTerrainControlModExt = new();
-                plantTerrainControlModExt.terrainTags.Add("Stony");
-                plantTerrainControlModExt.terrainTags.Add("Rocky");
-                terrainDef.modExtensions ??= [];
-                terrainDef.modExtensions.Add(plantTerrainControlModExt);
-                terrainDef.fertility = 0.35f;
-                yield return terrainDef;
+                if (!def.defName.Contains("_Smooth"))
+                {
+                    Plant_TerrainControl_ModExt plantTCExt = new()
+                    {
+                        terrainTags = ["Stony", "Rocky"]
+                    };
+                    
+                    def.modExtensions ??= [];
+                    def.modExtensions.Add(plantTCExt);
+                    def.fertility = 0.3f;
+                }
+                modifiedList.Add(def);
             }
+            __result = modifiedList;
         }
         
         public AssetBundle MainBundle
@@ -97,10 +100,10 @@ namespace AlienBiomes
             
             Widgets.BeginScrollView(viewRectLeft, ref _leftScrollPos, vROffsetLeft);
             listLeft.Begin(vROffsetLeft);
-            listLeft.Gap(_newListingGap);
+            listLeft.Gap();
             
             listLeft.Label("General".Colorize(CategoryTextColor));
-            listLeft.Gap(_headerTextGap);
+            listLeft.Gap(HeaderTextGap);
             
             listLeft.CheckboxLabeled("SZAB_SettingCrystallizing".Translate(),
                 ref _settings._allowCrystallizing, "SZAB_SettingCrystallizingDesc".Translate());
@@ -119,25 +122,26 @@ namespace AlienBiomes
             
             Widgets.BeginScrollView(viewRectRight, ref _rightScrollPos, vROffsetRight);
             listRight.Begin(vROffsetRight);
-            listRight.Gap(_newListingGap);
+            listRight.Gap();
             
             listRight.Label("Graphics / Performance".Colorize(CategoryTextColor));
-            listRight.Gap(_headerTextGap);
+            listRight.Gap(HeaderTextGap);
             
             listRight.CheckboxLabeled("SZAB_SettingPlantGlow".Translate(), 
                 ref _settings._showPlantGlow, "SZAB_SettingPlantGlowDesc".Translate());
-            listRight.Gap(_newListingGap);
+            listRight.Gap();
             
             listRight.Label("Audio".Colorize(CategoryTextColor));
-            listRight.Gap(_headerTextGap);
+            listRight.Gap(HeaderTextGap);
             
             listRight.CheckboxLabeled("SZAB_SettingCompEffectSounds".Translate(), 
                 ref _settings._allowCompEffectSounds, "SZAB_SettingCompEffectSoundsDesc".Translate());
-            listRight.Label(label: "SZAB_PlantSoundEffectVolume".Translate(
-                    (100f * _settings._plantSoundEffectVolume).ToString("F0")), 
-                tooltip: "SZAB_PlantSoundEffectVolumeDesc".Translate());
-            _settings._plantSoundEffectVolume = Mathf.Round(listRight.Slider(
-                100f * _settings._plantSoundEffectVolume, 0f, 100f)) / 100f;
+            
+            listRight.Label(label: "SZAB_SettingPlantSFXChance".Translate(
+                    (100f * _settings._plantSFXChance).ToString("F0")), 
+                tooltip: "SZAB_SettingPlantSFXChanceDesc".Translate());
+            _settings._plantSFXChance = Mathf.Round(listRight.Slider(
+                100f * _settings._plantSFXChance, 0f, 100f)) / 100f;
             
             listRight.End();
             Widgets.EndScrollView();

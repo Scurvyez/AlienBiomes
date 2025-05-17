@@ -23,18 +23,16 @@ namespace AlienBiomes
         private float _scaleY;
         private float _drawSizeY;
         private Plant_Nastic_ModExt _ext;
-        private List<Vector3> _instanceOffsets = [];
         private Material _randMat;
         private Vector3 _drawPos = new (0, 0, 0);
-        private Mesh _mesh = MeshPool.plane10;
         private Matrix4x4 _matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
-        private MapComponent_PlantGetter _plantGetter;
+        private readonly List<Vector3> _instanceOffsets = [];
+        private readonly Mesh _mesh = MeshPool.plane10;
         
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             _ext = def.GetModExtension<Plant_Nastic_ModExt>();
-            _plantGetter = map.GetComponent<MapComponent_PlantGetter>();
             
             if (_ext == null)
             {
@@ -56,6 +54,7 @@ namespace AlienBiomes
             }
             
             IntVec3[] cells = GenRadial.RadialCellsAround(Position, _ext.effectRadius, useCenter: true).ToArray();
+            MapComponent_PlantGetter _plantGetter = map.GetComponent<MapComponent_PlantGetter>();
             
             foreach (IntVec3 cell in cells)
             {
@@ -71,6 +70,7 @@ namespace AlienBiomes
         {
             base.DeSpawn(mode);
             
+            MapComponent_PlantGetter _plantGetter = Map.GetComponent<MapComponent_PlantGetter>();
             _plantGetter?.ActiveLocationTriggers
                 .Where(kvp => kvp.Value.Remove(this) && 
                               kvp.Value.Count == 0)
@@ -81,6 +81,7 @@ namespace AlienBiomes
         
         public override void Tick()
         {
+            base.Tick();
             if (_ext.isVisuallyReactive)
             {
                 _curPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
@@ -167,12 +168,11 @@ namespace AlienBiomes
             }
         }
         
-        /// <summary>
-        /// Draws visual effects in the form of flecks when a pawn gets close enough to the plant.
-        /// </summary>
         public void TryDrawNasticFlecks()
         {
-            if (Map == null || _ext.fleckDef == null) return;
+            if (Map == null || _ext.fleckDef == null) 
+                return;
+            
             for (int i = 0; i < _ext.fleckBurstCount; ++i)
             {
                 Vector3 drawPos = new (DrawPos.x + Rand.InsideUnitCircleVec3.x, 
@@ -185,56 +185,43 @@ namespace AlienBiomes
             }
         }
         
-        /// <summary>
-        /// Triggers an explosion when a pawn gets close enough to the plant.
-        /// </summary>
-        public void DoNasticExplosion()
+        public void TryDoNasticExplosion()
         {
             GenExplosion.DoExplosion(Position, Map, _ext.explosionDamageEffectRadius, 
-                _ext.explosionDamageDef, null, (_ext.explosionDamage.RandomInRange),
-                -1, null, null, null, null, 
-                null, 0, 0, 
-                null, false, null, 
-                0, 0, 0, false, 
-                null, null, null, true, 1, 
-                0, true, null, 0.02f);
+                _ext.explosionDamageDef, instigator: null, damAmount: _ext.explosionDamage.RandomInRange, 
+                postExplosionSpawnThingCount: 0, screenShakeFactor: 0.02f);
         }
         
-        /// <summary>
-        /// Plays sound effects when a pawn gets close enough to the plant.
-        /// </summary>
-        /// <param name="plant">The plant instance to grab a position from.</param>
         public void TryDoNasticSFX(Plant_Nastic plant)
         {
             if (!AlienBiomesSettings.AllowCompEffectSounds) return;
             SoundDef touchSensitiveSFX = _ext.touchSFX;
             
-            if (touchSensitiveSFX == null) return;
-            if (!_ext.isVisuallyReactive) return;
-            if (!Mathf.Approximately(CurrentScale, _ext.minScale))
+            if (touchSensitiveSFX == null || !_ext.isVisuallyReactive
+                || !Rand.Chance(AlienBiomesSettings.PlantSFXChance)) return;
+            
+            if (plant.def == ABDefOf.SZ_ChaliceFungus 
+                && !Mathf.Approximately(CurrentScale, _ext.minScale))
             {
                 touchSensitiveSFX.PlayOneShot(new TargetInfo(plant.Position, plant.Map));
             }
-            else
+            else if (plant.def != ABDefOf.SZ_ChaliceFungus)
             {
                 touchSensitiveSFX.PlayOneShot(new TargetInfo(plant.Position, plant.Map));
             }
         }
         
-        /// <summary>
-        /// Gives a hediff to a pawn if/when the pawn gets too close to the plant.
-        /// </summary>
-        /// <param name="pawn">The pawn instance to give the hediff to.</param>
         public void TryGiveNasticHediff(Pawn pawn)
         {
             if (!Rand.Chance(_ext.hediffChance)) return;
             if (pawn.NonHumanlikeOrWildMan() || pawn.IsColonyMech) return;
-            if (_ext.hediffToGive == ABDefOf.SZ_Crystallize && AlienBiomesSettings.AllowCrystallizing)
+            if (_ext.hediffToGive == ABDefOf.SZ_Crystallize 
+                && AlienBiomesSettings.AllowCrystallizing)
             {
                 // give to a specific part maybe?
-                pawn.health.AddHediff(_ext.hediffToGive, null, null, null);
+                pawn.health.AddHediff(_ext.hediffToGive);
                 HealthUtility.AdjustSeverity(pawn, _ext.hediffToGive, 0.01f);
-
+                
                 if (!pawn.IsColonist) return;
                 Find.LetterStack.ReceiveLetter("SZAB_LetterLabelCrystallizing".Translate(), 
                     "SZAB_LetterCrystallizing".Translate(pawn), ABDefOf.SZ_PawnCrystallizingLetter);
@@ -246,7 +233,7 @@ namespace AlienBiomes
             base.ExposeData();
             Scribe_Values.Look(ref GasExpelled, "GasExpelled");
             Scribe_Values.Look(ref _gasCounter, "_gasCounter");
-            Scribe_Values.Look(ref CurrentScale, "_currentScale", 1f);
+            Scribe_Values.Look(ref CurrentScale, "CurrentScale");
             Scribe_Values.Look(ref _curPlantGrowth, "_curPlantGrowth");
             Scribe_Values.Look(ref TouchSensitiveStartTime, "TouchSensitiveStartTime", 0);
         }
