@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3026ae6e-2d55-43ba-bbf5-c57136e0dcbc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assemblies/Alien Biomes.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Defs/ThingDefs_Plants/Plants_RadiantPlains.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alien Biomes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/AlienBiomesWelcomeNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/AlienBiomesWelcomeNote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/DefOfs/ABDefOf.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Harmony/HarmonyPatches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Harmony/HarmonyPatches.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffCompProps/HediffCompProperties_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffCompProps/HediffCompProperties_Crystallize.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/HediffComps/HediffComp_Crystallize.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesMod.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesMod.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesModSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/Settings/AlienBiomesModSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Improved.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Improved.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/ThingClasses/Plant_Nastic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/Alien Biomes.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Alien Biomes/obj/Debug/AlienBiomes.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Languages/English/Keyed/Misc_Gameplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Languages/English/Keyed/Misc_Gameplay.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +182,7 @@
       <workItem from="1746648466804" duration="10000" />
       <workItem from="1746908905200" duration="12535000" />
       <workItem from="1747254558128" duration="609000" />
+      <workItem from="1747531838410" duration="561000" />
     </task>
     <servers />
   </component>

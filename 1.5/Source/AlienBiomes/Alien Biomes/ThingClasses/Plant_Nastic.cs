@@ -68,15 +68,15 @@ namespace AlienBiomes
         
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            base.DeSpawn(mode);
-            
-            MapComponent_PlantGetter _plantGetter = Map.GetComponent<MapComponent_PlantGetter>();
+            MapComponent_PlantGetter _plantGetter = Map?.GetComponent<MapComponent_PlantGetter>();
             _plantGetter?.ActiveLocationTriggers
                 .Where(kvp => kvp.Value.Remove(this) && 
                               kvp.Value.Count == 0)
                 .Select(kvp => kvp.Key)
                 .ToList()
                 .ForEach(key => _plantGetter.ActiveLocationTriggers.Remove(key));
+            
+            base.DeSpawn(mode);
         }
         
         public override void Tick()
