@@ -17,6 +17,7 @@ namespace AlienBiomes
         public int TouchSensitiveStartTime;
         public float CurrentScale = 1f;
         
+        private Map _cachedMap;
         private int _timeSinceLastStep;
         private int _gasCounter;
         private float _curPlantGrowth;
@@ -32,6 +33,7 @@ namespace AlienBiomes
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            _cachedMap = map;
             _ext = def.GetModExtension<Plant_Nastic_ModExt>();
             
             if (_ext == null)
@@ -68,7 +70,7 @@ namespace AlienBiomes
         
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            MapComponent_PlantGetter _plantGetter = Map?.GetComponent<MapComponent_PlantGetter>();
+            MapComponent_PlantGetter _plantGetter = _cachedMap?.GetComponent<MapComponent_PlantGetter>();
             _plantGetter?.ActiveLocationTriggers
                 .Where(kvp => kvp.Value.Remove(this) && 
                               kvp.Value.Count == 0)
@@ -77,6 +79,7 @@ namespace AlienBiomes
                 .ForEach(key => _plantGetter.ActiveLocationTriggers.Remove(key));
             
             base.DeSpawn(mode);
+            _cachedMap = null;
         }
         
         public override void Tick()
