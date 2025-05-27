@@ -228,7 +228,7 @@
     <!-- ================= Mosaic Stone Floor ================= -->
 
     <TerrainDef ParentName="WDMosaicStoneFloorBase">
-        <defName>SZ_CheckStoneObelidian</defName>
+        <defName>SZ_MosaicStoneObelidian</defName>
         <label>mosaic obelidian tile</label>
         <color>(92, 40, 97)</color>
         <costList>
