@@ -15,7 +15,7 @@
         <plantDensity>1.75</plantDensity>
         <diseaseMtbDays>75</diseaseMtbDays>
         <hasVirtualPlants>true</hasVirtualPlants>
-        <settlementSelectionWeight>1</settlementSelectionWeight>
+        <settlementSelectionWeight>0.42</settlementSelectionWeight>
         <movementDifficulty>1</movementDifficulty>
         <texture>AlienBiomes/World/Biomes/SZ_RadiantPlains</texture>
         <forageability>1</forageability>

@@ -36,6 +36,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
+        <tags>
+            <li>Soil</li>
+        </tags>
         <modExtensions>
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
@@ -79,6 +82,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
+        <tags>
+            <li>Soil</li>
+        </tags>
         <modExtensions>
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>
@@ -123,6 +129,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
+        <tags>
+            <li>Soil</li>
+        </tags>
         <modExtensions>
             <li Class="AlienBiomes.Plant_TerrainControl_ModExt">
                 <terrainTags>

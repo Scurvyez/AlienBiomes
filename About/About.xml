@@ -31,6 +31,8 @@ Discord: steveo.o
         <li>m00nl1ght.geologicallandforms</li>
         <li>m00nl1ght.geologicallandforms.biometransitions</li>
         <li>m00nl1ght.mappreview</li>
+        <li>Wemd.ExpandedFloors</li>
+        <li>Telkir.TMods.MoreFloors</li>
     </loadAfter>
 
 </ModMetaData>

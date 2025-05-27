@@ -12,7 +12,7 @@
         <workerClass>AlienBiomes.BiomeWorker_Universal</workerClass>
         <animalDensity>1.2</animalDensity>
         <plantDensity>0.75</plantDensity>
-        <settlementSelectionWeight>1</settlementSelectionWeight>
+        <settlementSelectionWeight>0.42</settlementSelectionWeight>
         <movementDifficulty>0.9</movementDifficulty>
         <texture>AlienBiomes/World/Biomes/SZ_CrystallineFlats</texture>
         <forageability>1</forageability>
