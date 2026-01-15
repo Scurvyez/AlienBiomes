@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Soil Relocation Framework</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<!--designatorDropdown, costList, designationCategory-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_RadiantSoil"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_RadiantSoil_Resource>10</SZ_RadiantSoil_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_RadiantRichSoil"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_RadiantRichSoil_Resource>10</SZ_RadiantRichSoil_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+			
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_RadiantStonySoil"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_RadiantStonySoil_Resource>10</SZ_RadiantStonySoil_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+			
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_SoothingSand"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_SoothingSand_Resource>10</SZ_SoothingSand_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineSoil"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_CrystallineSoil_Resource>10</SZ_CrystallineSoil_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineRichSoil"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_CrystallineRichSoil_Resource>10</SZ_CrystallineRichSoil_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineStonySoil"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_CrystallineStonySoil_Resource>10</SZ_CrystallineStonySoil_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineSand"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_CrystallineSand_Resource>10</SZ_CrystallineSand_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineSand_Grove"]</xpath>
+					<value>
+						<placeWorkers>
+							<li>SR.PlaceWorker_Soil</li>
+						</placeWorkers>
+						<costList>
+							<SZ_CrystallineSand_Grove_Resource>10</SZ_CrystallineSand_Grove_Resource>
+						</costList>
+						<designatorDropdown>SR</designatorDropdown>
+						<designationCategory>Floors</designationCategory>
+					</value>
+				</li>
+				
+				<!--WorkToBuild, MarketValue-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_RadiantSoil"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_RadiantRichSoil"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_RadiantStonySoil"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_SoothingSand"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineSoil"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineRichSoil"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineStonySoil"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineSand"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName = "SZ_CrystallineSand_Grove"]/statBases</xpath>
+					<value>
+						<WorkToBuild>200</WorkToBuild>
+						<MarketValue>0</MarketValue>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

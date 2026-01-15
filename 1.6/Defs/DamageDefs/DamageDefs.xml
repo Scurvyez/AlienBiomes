@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <DamageDef Name="SZ_PlantAcid">
+        <defName>SZ_PlantAcid</defName>
+        <workerClass>DamageWorker_Flame</workerClass>
+        <label>chemical burn</label>
+        <hasForcefulImpact>false</hasForcefulImpact>
+        <makesBlood>false</makesBlood>
+        <canInterruptJobs>false</canInterruptJobs>
+        <externalViolence>true</externalViolence>
+        <deathMessage>{0} has died to corrosive plant acid.</deathMessage>
+        <hediff>ChemicalBurn</hediff>
+        <armorCategory>Heat</armorCategory>
+        <minDamageToFragment>15</minDamageToFragment>
+        <defaultDamage>10</defaultDamage>
+        <defaultArmorPenetration>0</defaultArmorPenetration>
+        <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+        <explosionCellFleck>HeatGlow</explosionCellFleck>
+        <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+        <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+        <soundExplosion>Explosion_Vaporize</soundExplosion>
+        <combatLogRules>Damage_Flame</combatLogRules>
+        <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+        <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>
+    </DamageDef>
+
+</Defs>

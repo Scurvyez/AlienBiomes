@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ================ Elder Bamboo Floor ================ -->
+
+    <TerrainDef  ParentName="FloorBase">
+        <defName>SZ_ElderBambooFloor</defName>
+        <label>elder bamboo floor</label>
+        <renderPrecedence>250</renderPrecedence>
+        <description>Wood plank flooring for that warm, homey feeling. While it is quick to lay, it is also very flammable.</description>
+        <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+        <burnedDef>BurnedWoodPlankFloor</burnedDef>
+        <color>(11, 184, 107)</color>
+        <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughSoftLight</pollutionShaderType>
+        <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionFloorSmooth</pollutionOverlayTexturePath>
+        <isPaintable>true</isPaintable>
+        <statBases>
+            <WorkToBuild>85</WorkToBuild>
+            <Flammability>0.22</Flammability>
+        </statBases>
+        <costList>
+            <SZ_ElderBambooLog>3</SZ_ElderBambooLog>
+        </costList>
+        <constructEffect>ConstructWood</constructEffect>
+        <designationHotKey>Misc9</designationHotKey>
+        <uiOrder>2000</uiOrder>
+    </TerrainDef>
+
+    <!-- ================ Obelidian Tile ================ -->
+
+    <TerrainDef ParentName="TileStoneBase">
+        <defName>SZ_TileObelidian</defName>
+        <label>obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Volbitrine Tile ================ -->
+
+    <TerrainDef ParentName="TileStoneBase">
+        <defName>SZ_TileVolbitrine</defName>
+        <label>volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Zephyrite Tile ================ -->
+
+    <TerrainDef ParentName="TileStoneBase">
+        <defName>SZ_TileZephyrite</defName>
+        <label>zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Helioclase Tile ================ -->
+
+    <TerrainDef ParentName="TileStoneBase">
+        <defName>SZ_TileHelioclase</defName>
+        <label>helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Cryoquartz Tile ================ -->
+
+    <TerrainDef ParentName="TileStoneBase">
+        <defName>SZ_TileCryoquartz</defName>
+        <label>cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Luminshale Tile ================ -->
+
+    <TerrainDef ParentName="TileStoneBase">
+        <defName>SZ_TileLuminshale</defName>
+        <label>luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Obelidian Flagstone ================ -->
+
+    <TerrainDef ParentName="FlagstoneBase">
+        <defName>SZ_FlagstoneObelidian</defName>
+        <label>obelidian flagstone</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Volbitrine Flagstone ================ -->
+
+    <TerrainDef ParentName="FlagstoneBase">
+        <defName>SZ_FlagstoneVolbitrine</defName>
+        <label>volbitrine flagstone</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Zephyrite Flagstone ================ -->
+
+    <TerrainDef ParentName="FlagstoneBase">
+        <defName>SZ_FlagstoneZephyrite</defName>
+        <label>zephyrite flagstone</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Helioclase Flagstone ================ -->
+
+    <TerrainDef ParentName="FlagstoneBase">
+        <defName>SZ_FlagstoneHelioclase</defName>
+        <label>helioclase flagstone</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Cryoquartz Flagstone ================ -->
+
+    <TerrainDef ParentName="FlagstoneBase">
+        <defName>SZ_FlagstoneCryoquartz</defName>
+        <label>cryoquartz flagstone</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================ Luminshale Flagstone ================ -->
+
+    <TerrainDef ParentName="FlagstoneBase">
+        <defName>SZ_FlagstoneLuminshale</defName>
+        <label>luminshale flagstone</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+</Defs>

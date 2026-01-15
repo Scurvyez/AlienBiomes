@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--<GenStepDef>
+        <defName>SZ_DeliriousDunesOasis</defName>
+        <order>220</order>
+        <genStep Class="AlienBiomes.GenStep_DeliriousDunesOasis">
+            <spawnOnTerDef>SZ_DeliriousBlackSand</spawnOnTerDef>
+            <waterDef>SZ_DelOasisWaterShallow</waterDef>
+            <sandDef>SZ_DeliriousBlackSand</sandDef>
+            <plantGenChance>0.20</plantGenChance>
+            <plantGenRadius>15.0</plantGenRadius>
+            <sandRadius>1~6</sandRadius>
+            <plantsToGen>
+                <li>SZ_DesertGlowPod</li>
+                <li>SZ_QuasarBlossom</li>
+                <li>SZ_Fiddlehead</li>
+            </plantsToGen>
+            <waterRadius>
+                <li>4~7</li>
+                <li>5~8</li>
+                <li>5~9</li>
+                <li>7~11</li>
+                <li>8~13</li>
+            </waterRadius>
+            <mapSizeRadiusAdjust>
+                <li>3~4</li>
+                <li>2~6</li>
+                <li>1~10</li>
+                <li>1~16</li>
+                <li>1~22</li>
+            </mapSizeRadiusAdjust>
+        </genStep>
+    </GenStepDef>-->
+
+</Defs>

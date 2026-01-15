@@ -6,7 +6,7 @@ TO DO LIST...
 - Radiant Plains
     - [done] World tile art.
     - [done] XML.
-    - [done] Belt around middle of planet.
+    - [done] Belt around the middle of the planet.
     - Add new filth types for the soils and sand.
     - [done] Add some ambient FleckDefs for the plants (check performance).
     - [done] Add ambient sounds for when a pawn walks through certain plants.
@@ -33,7 +33,7 @@ TO DO LIST...
     - [done] Only spawns on radiant soil and rich radiant soil.
     - [done] Timed glower.
 
-- Grass that grows seeds in naturally-produced high-pressure methane capsules that are
+- Grass that grows seeds in naturally produced high-pressure methane capsules that are
     triggered by proximity and fires seeds into the skin and flesh of nearby animals.
     They draw nutrients from the bloodstream and then eventually kill their host,
     bursting from their bodies to continue their lifecycle.

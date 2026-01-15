@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Delirious Grass ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_DeliriousGrass</defName>
+        <label>delirious grass</label>
+        <description>A prickly and dull-colored grass found littered throughout the delirious dunes.</description>
+        <hideAtSnowOrSandDepth>0.1</hideAtSnowOrSandDepth>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Flammability>0.15</Flammability>
+            <Nutrition>0.01</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/DeliriousGrass</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.05</fertilityMin>
+            <fertilitySensitivity>0.1</fertilitySensitivity>
+            <growDays>2.5</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/DeliriousGrass_Leafless</leaflessGraphicPath>
+            <harvestWork>40</harvestWork>
+            <maxMeshCount>9</maxMeshCount>
+            <visualSizeRange>0.4~0.6</visualSizeRange>
+            <topWindExposure>0.4</topWindExposure>
+            <wildClusterRadius>15</wildClusterRadius>
+            <wildClusterWeight>75</wildClusterWeight>
+            <wildOrder>1</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
+                <terrainTags>
+                    <li>DeliriousCoarseSand</li>
+                </terrainTags>
+            </li>
+            <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Starburst Cactus ====================-->
+    <!-- Reacts to pawn movement. -->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_StarburstCactus</defName>
+        <label>starburst cactus</label>
+        <description>A vibrant species of cactus found in harsh alien deserts. It spews harmful, sticky acid if pawns wander too close.</description>
+        <pathCost>135</pathCost>
+        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <tickerType>Normal</tickerType>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <hideAtSnowOrSandDepth>0.25</hideAtSnowOrSandDepth>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>325</MaxHitPoints>
+            <Flammability>0.01</Flammability>
+            <Nutrition>0.01</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/StarburstCactus</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+            <shaderType>TransparentPlant</shaderType>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.25</fertilityMin>
+            <fertilitySensitivity>1.0</fertilitySensitivity>
+            <growDays>22</growDays>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/StarburstCactus_Leafless</leaflessGraphicPath>
+            <visualSizeRange>0.35~2.1</visualSizeRange>
+            <topWindExposure>0.35</topWindExposure>
+            <maxMeshCount>1</maxMeshCount>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
+            <wildOrder>2</wildOrder>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
+                <terrainTags>
+                    <li>DeliriousCoarseSand</li>
+                    <li>DeliriousBlackSand</li>
+                </terrainTags>
+            </li>
+            <li Class="AlienBiomes.ModExt_PlantNastic">
+                <effectRadius>3</effectRadius>
+                <isTouchSensitive>true</isTouchSensitive>
+                <isDamaging>true</isDamaging>
+                <explosionGrowthThreshold>0.75</explosionGrowthThreshold>
+                <explosionDamageEffectRadius>3</explosionDamageEffectRadius>
+                <explosionEffectRadiusColor>(1, 0.4, 0.4, 1)</explosionEffectRadiusColor>
+                <explosionReleaseCooldown>7500</explosionReleaseCooldown>
+                <explosionDamageDef>SZ_PlantAcid</explosionDamageDef>
+                <explosionDamage>1~3</explosionDamage>
+            </li>
+        </modExtensions>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_NasticInfo" />
+        </comps>
+    </ThingDef>
+
+    <!--==================== Desert Glow Pod ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_DesertGlowPod</defName>
+        <label>desert glow pod</label>
+        <description>A small, bright yellowish-orange mushroom. It is found in the delirious dunes and will produce a handful of nutritious edibles in a pinch.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <pathCost>14</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Beauty>2</Beauty>
+            <BeautyOutdoors>2</BeautyOutdoors>
+            <Nutrition>0.5</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/DesertGlowPod</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.01</fertilityMin>
+            <fertilitySensitivity>0.15</fertilitySensitivity>
+            <growDays>40</growDays>
+            <harvestYield>2</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestedThingDef>RawFungus</harvestedThingDef>
+            <maxMeshCount>9</maxMeshCount>
+            <neverBlightable>true</neverBlightable>
+            <visualSizeRange>0.4~1.5</visualSizeRange>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/DesertGlowPod_Leafless</leaflessGraphicPath>
+            <topWindExposure>0.05</topWindExposure>
+            <wildClusterRadius>3</wildClusterRadius>
+            <wildClusterWeight>2</wildClusterWeight>
+            <purpose>Food</purpose>
+            <pollution>Any</pollution>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>1.00</overlightRadius>
+                <glowRadius>1.75</glowRadius>
+                <glowColor>(249, 227, 24, 5)</glowColor>
+                <glowStartTime>0.80</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
+                <terrainTags>
+                    <li>DeliriousRichBlackSand</li>
+                    <li>DeliriousBlackSand</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Quasar Blossom ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_QuasarBlossom</defName>
+        <label>quasar blossom</label>
+        <description>A small, exceedingly bright yellowish-orange, orb-like flower. It requires extremely nutritious sources of water to grow and as a result can only be found in the confines of solitary oasis'.</description>
+        <selectable>false</selectable>
+        <pathCost>26</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Beauty>4</Beauty>
+            <BeautyOutdoors>6</BeautyOutdoors>
+            <Nutrition>0.175</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/QuasarBlossom</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.01</fertilityMin>
+            <fertilitySensitivity>0.15</fertilitySensitivity>
+            <growDays>45</growDays>
+            <maxMeshCount>16</maxMeshCount>
+            <neverBlightable>true</neverBlightable>
+            <visualSizeRange>0.4~1.75</visualSizeRange>
+            <leaflessGraphicPath>AlienBiomes/Things/Plants/QuasarBlossom_Leafless</leaflessGraphicPath>
+            <topWindExposure>0.05</topWindExposure>
+            <wildClusterRadius>3</wildClusterRadius>
+            <wildClusterWeight>2</wildClusterWeight>
+            <pollution>Any</pollution>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>4.25</overlightRadius>
+                <glowRadius>6.25</glowRadius>
+                <glowColor>(249, 227, 24, 5)</glowColor>
+                <glowStartTime>0.85</glowStartTime>
+                <glowStopTime>0.15</glowStopTime>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
+                <terrainTags>
+                    <li>DeliriousRichBlackSand</li>
+                    <li>DeliriousBlackSand</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Aurora Agave ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_AuroraAgave</defName>
+        <label>aurora agave</label>
+        <description>A large-leafed desert plant with edible fruit. Found only in the delirious dunes.</description>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>30</pathCost>
+        <ingestible />
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Nutrition>0.2</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/AuroraAgave</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <plant>
+            <fertilityMin>0.25</fertilityMin>
+            <fertilitySensitivity>0.8</fertilitySensitivity>
+            <growDays>6</growDays>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestedThingDef>SZ_RawAuroraAgave</harvestedThingDef>
+            <harvestYield>10</harvestYield>
+            <harvestWork>300</harvestWork>
+            <visualSizeRange>0.9~1.4</visualSizeRange>
+            <topWindExposure>0.3</topWindExposure>
+            <wildClusterRadius>4</wildClusterRadius>
+            <wildClusterWeight>10</wildClusterWeight>
+            <wildOrder>2</wildOrder>
+            <purpose>Food</purpose>
+        </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_TimedGlower">
+                <overlightRadius>2.25</overlightRadius>
+                <glowRadius>3.25</glowRadius>
+                <glowColor>(62, 114, 202, 5)</glowColor>
+                <glowStartTime>0.80</glowStartTime>
+                <glowStopTime>0.20</glowStopTime>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
+                <terrainTags>
+                    <li>DeliriousMellowSand</li>
+                </terrainTags>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Sandblossom ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_Sandblossom</defName>
+        <label>sandblossom</label>
+        <thingClass>AlienBiomes.Plant_Improved</thingClass>
+        <description>A rare and delicate desert plant that blooms only after rainfall. Its translucent petals are a suprisingly delicious food source.</description>
+        <statBases>
+            <MaxHitPoints>115</MaxHitPoints>
+            <Nutrition>0.6</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Sandblossom</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <pathCost>35</pathCost>
+        <ingestible />
+        <plant>
+            <fertilityMin>0.4</fertilityMin>
+            <fertilitySensitivity>1.0</fertilitySensitivity>
+            <growDays>3</growDays>
+            <dieIfLeafless>false</dieIfLeafless>
+            <harvestYield>4</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.3</harvestAfterGrowth>
+            <harvestedThingDef>SZ_RawSandblossomLeaves</harvestedThingDef>
+            <visualSizeRange>1.25~4.15</visualSizeRange>
+            <topWindExposure>0.1</topWindExposure>
+            <purpose>Food</purpose>
+            <allowAutoCut>false</allowAutoCut>
+            <lifespanDaysPerGrowDays>1.75</lifespanDaysPerGrowDays>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
+                <terrainTags>
+                    <li>DeliriousCoarseSand</li>
+                    <li>DeliriousRichBlackSand</li>
+                    <li>DeliriousBlackSand</li>
+                </terrainTags>
+            </li>
+            <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
+        </modExtensions>
+    </ThingDef>
+
+    <!--==================== Durasalve ====================-->
+
+    <ThingDef ParentName="PlantBase">
+        <defName>SZ_Durasalve</defName>
+        <label>durasalve</label>
+        <thingClass>AlienBiomes.Plant_Improved</thingClass>
+        <description>A rare and hardy desert plant that blooms only after heavy rainfall. Its tough, armored exterior protects the precious, moisture-rich fruit within, which is highly sought after for its potent healing properties. The fruit of the durasalve is packed with nutrients and natural compounds that accelerate healing and restore vitality, making it a treasured resource for any traveler fortunate enough to encounter it in the arid expanse.</description>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+        </statBases>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Plants/Durasalve</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <pathCost>64</pathCost>
+        <ingestible>
+            <preferability>NeverForNutrition</preferability>
+        </ingestible>
+        <plant>
+            <fertilityMin>0.4</fertilityMin>
+            <fertilitySensitivity>1.0</fertilitySensitivity>
+            <growDays>2</growDays>
+            <dieIfLeafless>false</dieIfLeafless>
+            <immatureGraphicPath>AlienBiomes/Things/Plants/Durasalve_Immature</immatureGraphicPath>
+            <harvestYield>2</harvestYield>
+            <harvestWork>400</harvestWork>
+            <harvestTag>Standard</harvestTag>
+            <harvestAfterGrowth>0.3</harvestAfterGrowth>
+            <harvestedThingDef>MedicineHerbal</harvestedThingDef>
+            <visualSizeRange>0.8~2.25</visualSizeRange>
+            <topWindExposure>0.1</topWindExposure>
+            <purpose>Health</purpose>
+            <allowAutoCut>false</allowAutoCut>
+            <lifespanDaysPerGrowDays>1.75</lifespanDaysPerGrowDays>
+        </plant>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
+                <terrainTags>
+                    <li>DeliriousCoarseSand</li>
+                    <li>DeliriousRichBlackSand</li>
+                    <li>DeliriousBlackSand</li>
+                </terrainTags>
+            </li>
+            <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="PlantFoodRawBase">
+        <defName>SZ_RawSoothingHoney</defName>
+        <label>raw soothing honey</label>
+        <description>Raw honey from a soothing stalk. Absolutely delicious, even raw!</description>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Items/Resources/PlantFoodRaw/Honey/SZ_RawSoothingHoney</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>1.2</MarketValue>
+            <Mass>0.027</Mass>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Rottable">
+                <daysToRotStart>30</daysToRotStart>
+                <rotDestroys>true</rotDestroys>
+            </li>
+        </comps>
+        <ingestible>
+            <preferability>RawTasty</preferability>
+            <tasteThought>SZ_AteSoothingHoney</tasteThought>
+            <foodType>VegetableOrFruit</foodType>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="PlantFoodRawBase">
+        <defName>SZ_RawCopaceticHoney</defName>
+        <label>raw copacetic honey</label>
+        <description>Raw honey from a copacetic cone. A marvelous raw ingredient!</description>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Items/Resources/PlantFoodRaw/Honey/SZ_RawCopaceticHoney</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>1.3</MarketValue>
+            <Mass>0.027</Mass>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Rottable">
+                <daysToRotStart>30</daysToRotStart>
+                <rotDestroys>true</rotDestroys>
+            </li>
+        </comps>
+        <ingestible>
+            <preferability>RawTasty</preferability>
+            <tasteThought>SZ_AteCopaceticHoney</tasteThought>
+            <foodType>VegetableOrFruit</foodType>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="PlantFoodRawBase">
+        <defName>SZ_RawAuroraAgave</defName>
+        <label>aurora agave fruit</label>
+        <description>Raw aurora agave fruit.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Items/Resources/PlantFoodRaw/Fruit/SZ_RawAuroraAgave</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>1.1</MarketValue>
+        </statBases>
+        <ingestible>
+            <foodType>VegetableOrFruit</foodType>
+        </ingestible>
+        <comps>
+            <li Class="CompProperties_Rottable">
+                <daysToRotStart>25</daysToRotStart>
+                <rotDestroys>true</rotDestroys>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="PlantFoodRawBase">
+        <defName>SZ_RawSandblossomLeaves</defName>
+        <label>sandblossom leaves</label>
+        <description>Freshly picked sandblossom leaves.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Things/Items/Resources/PlantFoodRaw/Leaves/SZ_RawSandblossomLeaves</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>1.2</MarketValue>
+        </statBases>
+        <ingestible>
+            <foodType>VegetableOrFruit</foodType>
+        </ingestible>
+        <comps>
+            <li Class="CompProperties_Rottable">
+                <daysToRotStart>25</daysToRotStart>
+                <rotDestroys>true</rotDestroys>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

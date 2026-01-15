@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- TileMutators_AncientStructures -->
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[@Name="AncientStructureMutBase"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <!-- TileMutators_ManMade -->
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="PlantGrove"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+        </value>
+    </Operation>
+
+    <!-- TileMutators_Modifiers -->
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="ArcheanTrees"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="FoggyMutator"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="WetClimate"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="WindyMutator"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="DryGround"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="ObsidianDeposits"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+    <!-- TileMutators_Natural -->
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[@Name="BaseLakeMut"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Oasis"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="DryLake"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="ToxicLake"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Wetland"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="HotSprings"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Crevasse"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Plateau"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Cliffs"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Basin"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="TerraformingScar"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[@Name="BaseCoastMut"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[@Name="BaseLavaLakeMut"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="LavaFlow"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Marshy"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Sandy"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Fertile"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Muddy"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="MixedBiome"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_RadiantPlains</li>
+            <li>SZ_DeliriousDunes</li>
+            <li>SZ_CrystallineFlats</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TileMutatorDef[defName="Dunes"]/biomeWhitelist</xpath>
+        <value>
+            <li>SZ_DeliriousDunes</li>
+        </value>
+    </Operation>
+
+</Patch>

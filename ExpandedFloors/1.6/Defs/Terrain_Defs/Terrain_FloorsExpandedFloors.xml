@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- ================= Rough Stone Tile ================= -->
+
+    <TerrainDef ParentName="WDRoughStoneTileBase">
+        <defName>SZ_RoughTileObelidian</defName>
+        <label>rough obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDRoughStoneTileBase">
+        <defName>SZ_RoughTileVolbitrine</defName>
+        <label>rough volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDRoughStoneTileBase">
+        <defName>SZ_RoughTileZephyrite</defName>
+        <label>rough zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDRoughStoneTileBase">
+        <defName>SZ_RoughTileHelioclase</defName>
+        <label>rough helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDRoughStoneTileBase">
+        <defName>SZ_RoughTileCryoquartz</defName>
+        <label>rough cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDRoughStoneTileBase">
+        <defName>SZ_RoughTileLuminshale</defName>
+        <label>rough luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================= Smooth Stone tile ================= -->
+
+    <TerrainDef ParentName="WDStoneTileBase">
+        <defName>SZ_SmoothTileObelidian</defName>
+        <label>smooth obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStoneTileBase">
+        <defName>SZ_SmoothTileVolbitrine</defName>
+        <label>smooth volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStoneTileBase">
+        <defName>SZ_SmoothTileZephyrite</defName>
+        <label>smooth zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStoneTileBase">
+        <defName>SZ_SmoothTileHelioclase</defName>
+        <label>smooth helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStoneTileBase">
+        <defName>SZ_SmoothTileCryoquartz</defName>
+        <label>smooth cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStoneTileBase">
+        <defName>SZ_SmoothTileLuminshale</defName>
+        <label>smooth luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================= Check stone tile ================= -->
+
+    <TerrainDef ParentName="WDCheckStoneTileBase">
+        <defName>SZ_CheckTileObelidian</defName>
+        <label>check obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneTileBase">
+        <defName>SZ_CheckTileVolbitrine</defName>
+        <label>check volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneTileBase">
+        <defName>SZ_CheckTileZephyrite</defName>
+        <label>check zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneTileBase">
+        <defName>SZ_CheckTileHelioclase</defName>
+        <label>check helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneTileBase">
+        <defName>SZ_CheckTileCryoquartz</defName>
+        <label>check cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneTileBase">
+        <defName>SZ_CheckTileLuminshale</defName>
+        <label>check luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================= Check Stone Floor ================= -->
+
+    <TerrainDef ParentName="WDCheckStoneFloorBase">
+        <defName>SZ_CheckStoneObelidian</defName>
+        <label>check obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneFloorBase">
+        <defName>SZ_CheckStoneVolbitrine</defName>
+        <label>check volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneFloorBase">
+        <defName>SZ_CheckStoneZephyrite</defName>
+        <label>check zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneFloorBase">
+        <defName>SZ_CheckStoneHelioclase</defName>
+        <label>check helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneFloorBase">
+        <defName>SZ_CheckStoneCryoquartz</defName>
+        <label>check cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDCheckStoneFloorBase">
+        <defName>SZ_CheckStoneLuminshale</defName>
+        <label>check luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================= Mosaic Stone Floor ================= -->
+
+    <TerrainDef ParentName="WDMosaicStoneFloorBase">
+        <defName>SZ_MosaicStoneObelidian</defName>
+        <label>mosaic obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDMosaicStoneFloorBase">
+        <defName>SZ_MosaicStoneVolbitrine</defName>
+        <label>mosaic volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDMosaicStoneFloorBase">
+        <defName>SZ_MosaicStoneZephyrite</defName>
+        <label>mosaic zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDMosaicStoneFloorBase">
+        <defName>SZ_MosaicStoneHelioclase</defName>
+        <label>mosaic helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDMosaicStoneFloorBase">
+        <defName>SZ_MosaicStoneCryoquartz</defName>
+        <label>mosaic cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDMosaicStoneFloorBase">
+        <defName>SZ_MosaicStoneLuminshale</defName>
+        <label>mosaic luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================= Polished Stone Floor ================= -->
+
+    <TerrainDef ParentName="WDPolishedStoneFloorBase">
+        <defName>SZ_PolishedStoneObelidian</defName>
+        <label>polished obelidian tile</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDPolishedStoneFloorBase">
+        <defName>SZ_PolishedStoneVolbitrine</defName>
+        <label>polished volbitrine tile</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDPolishedStoneFloorBase">
+        <defName>SZ_PolishedStoneZephyrite</defName>
+        <label>polished zephyrite tile</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDPolishedStoneFloorBase">
+        <defName>SZ_PolishedStoneHelioclase</defName>
+        <label>polished helioclase tile</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDPolishedStoneFloorBase">
+        <defName>SZ_PolishedStoneCryoquartz</defName>
+        <label>polished cryoquartz tile</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDPolishedStoneFloorBase">
+        <defName>SZ_PolishedStoneLuminshale</defName>
+        <label>polished luminshale tile</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+    <!-- ================= Stone Plate Floor ================= -->
+
+    <TerrainDef ParentName="WDStonePlateFloorBase">
+        <defName>SZ_PlateFloorObelidian</defName>
+        <label>obelidian plate floor</label>
+        <color>(92, 40, 97)</color>
+        <costList>
+            <SZ_BlocksObelidian>4</SZ_BlocksObelidian>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStonePlateFloorBase">
+        <defName>SZ_PlateFloorVolbitrine</defName>
+        <label>volbitrine plate floor</label>
+        <color>(219, 77, 61)</color>
+        <costList>
+            <SZ_BlocksVolbitrine>4</SZ_BlocksVolbitrine>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStonePlateFloorBase">
+        <defName>SZ_PlateFloorZephyrite</defName>
+        <label>zephyrite plate floor</label>
+        <color>(55, 73, 58)</color>
+        <costList>
+            <SZ_BlocksZephyrite>4</SZ_BlocksZephyrite>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStonePlateFloorBase">
+        <defName>SZ_PlateFloorHelioclase</defName>
+        <label>helioclase plate floor</label>
+        <color>(0, 187, 204)</color>
+        <costList>
+            <SZ_BlocksHelioclase>4</SZ_BlocksHelioclase>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStonePlateFloorBase">
+        <defName>SZ_PlateFloorCryoquartz</defName>
+        <label>cryoquartz plate floor</label>
+        <color>(78, 121, 190)</color>
+        <costList>
+            <SZ_BlocksCryoquartz>4</SZ_BlocksCryoquartz>
+        </costList>
+    </TerrainDef>
+
+    <TerrainDef ParentName="WDStonePlateFloorBase">
+        <defName>SZ_PlateFloorLuminshale</defName>
+        <label>luminshale plate floor</label>
+        <color>(113, 106, 154)</color>
+        <costList>
+            <SZ_BlocksLuminshale>4</SZ_BlocksLuminshale>
+        </costList>
+    </TerrainDef>
+
+</Defs>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <loadFolders>
-    <v1.5>
+    <v1.6>
         <li>/</li>
-        <li>1.5</li>
-        <li IfModActive="Ludeon.RimWorld.Royalty">Royalty/1.5</li>
-        <li IfModActive="Ludeon.RimWorld.Ideology">Ideology/1.5</li>
-        <li IfModActive="Ludeon.RimWorld.Anomaly">Anomaly/1.5</li>
-        <li IfModActive="Wemd.ExpandedFloors">ExpandedFloors/1.5</li>
-        <li IfModActive="Telkir.TMods.MoreFloors">MoreFloors/1.5</li>
-    </v1.5>
+        <li>1.6</li>
+        <li IfModActive="Ludeon.RimWorld.Royalty">Royalty/1.6</li>
+        <li IfModActive="Ludeon.RimWorld.Ideology">Ideology/1.6</li>
+        <li IfModActive="Ludeon.RimWorld.Anomaly">Anomaly/1.6</li>
+        <li IfModActive="Ludeon.Rimworld.Odyssey">Odyssey/1.6</li>
+        <li IfModActive="Wemd.ExpandedFloors">ExpandedFloors/1.6</li>
+        <li IfModActive="Telkir.TMods.MoreFloors">MoreFloors/1.6</li>
+    </v1.6>
 </loadFolders>

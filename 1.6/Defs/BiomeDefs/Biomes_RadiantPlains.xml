@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Radiant Plains ====================-->
+
+    <!-- Belt around the middle of the planet. -->
+    <!-- Temperate, sprawling with life and resources. -->
+
+    <BiomeDef>
+        <defName>SZ_RadiantPlains</defName>
+        <label>radiant plains</label>
+        <description>These lands instill peace in those who walk upon them. Vibrant and lush grasses surround all, and ancient trees grow in small clusters as the local fauna congregates nearby.\n\nThe ground here seems to roll and fold as if emulating small sand dunes. Nutrition is plentiful, water flows freely, and occasionally groups of wildlife linger.\n\nWhen night falls, the plains come to life.</description>
+        <workerClass>AlienBiomes.BiomeWorker_RadiantPlains</workerClass>
+        <animalDensity>1.7</animalDensity>
+        <plantDensity>0.75</plantDensity>
+        <diseaseMtbDays>75</diseaseMtbDays>
+        <hasVirtualPlants>true</hasVirtualPlants>
+        <settlementSelectionWeight>0.42</settlementSelectionWeight>
+        <campSelectionWeight>0.22</campSelectionWeight>
+        <movementDifficulty>1</movementDifficulty>
+        <texture>AlienBiomes/World/Biomes/SZ_RadiantPlains</texture>
+        <forageability>1</forageability>
+        <foragedFood>RawBerries</foragedFood>
+        <wildPlantRegrowDays>20</wildPlantRegrowDays>
+        <lakeBeachTerrain>SZ_SoothingSand</lakeBeachTerrain>
+        <riverbankTerrain>SZ_SoothingSand</riverbankTerrain>
+        <riverbankSizeRange>2~9</riverbankSizeRange>
+        <coastalBeachTerrain>SZ_SoothingSand</coastalBeachTerrain>
+        <mudTerrain>SZ_RadiantMud</mudTerrain>
+        <gravelTerrain>SZ_RadiantStonySoil</gravelTerrain>
+        <waterShallowTerrain>SZ_RadiantWaterShallow</waterShallowTerrain>
+        <waterDeepTerrain>SZ_RadiantWaterDeep</waterDeepTerrain>
+        <oceanShallowTerrain>SZ_RadiantWaterOceanShallow</oceanShallowTerrain>
+        <oceanDeepTerrain>SZ_RadiantWaterOceanDeep</oceanDeepTerrain>
+        <waterMovingShallowTerrain>SZ_RadiantWaterMovingShallow</waterMovingShallowTerrain>
+        <waterMovingChestDeepTerrain>SZ_RadiantWaterMovingChestDeep</waterMovingChestDeepTerrain>
+        <maxFishPopulation>520</maxFishPopulation>
+        <soundsAmbient>
+            <li>Ambient_NightInsects_Jungle</li>
+            <li>Ambient_DayInsects_Jungle</li>
+        </soundsAmbient>
+        <diseases>
+            <li>
+                <diseaseInc>Disease_Flu</diseaseInc>
+                <commonality>100</commonality>
+            </li>
+            <li>
+				<diseaseInc>Disease_Plague</diseaseInc>
+				<commonality>100</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_GutWorms</diseaseInc>
+				<commonality>80</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_AnimalFlu</diseaseInc>
+				<commonality>100</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_AnimalPlague</diseaseInc>
+				<commonality>20</commonality>
+			</li>
+        </diseases>
+        <terrainsByFertility>
+            <li>
+                <terrain>SZ_RadiantSoil</terrain>
+                <min>-999</min>
+                <max>0.87</max>
+            </li>
+            <li>
+                <terrain>SZ_RadiantRichSoil</terrain>
+                <min>0.87</min>
+                <max>999</max>
+            </li>
+        </terrainsByFertility>
+        <terrainPatchMakers>
+            <li>
+                <perlinFrequency>0.020</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_RadiantRichSoil</terrain>
+                        <min>0.42</min>
+                        <max>0.78</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_SoothingSand</terrain>
+                        <min>0.78</min>
+                        <max>0.85</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_RadiantWaterShallow</terrain>
+                        <min>0.85</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li>
+            <li>
+                <perlinFrequency>0.0235</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_ChaliceSoil</terrain>
+                        <min>0.42</min> 
+                        <max>0.65</max>
+                    </li>
+                </thresholds>
+            </li>
+        </terrainPatchMakers>
+        <baseWeatherCommonalities>
+            <Clear>20</Clear>
+            <Fog>4</Fog>
+            <Rain>1</Rain>
+            <DryThunderstorm>1</DryThunderstorm>
+            <RainyThunderstorm>8</RainyThunderstorm>
+            <FoggyRain>3</FoggyRain>
+            <SnowHard>1</SnowHard>
+            <SnowGentle>1</SnowGentle>
+            <UnnaturalDarkness_Stage1 MayRequire="Ludeon.Rimworld.Anomaly">1</UnnaturalDarkness_Stage1>
+            <UnnaturalDarkness_Stage2 MayRequire="Ludeon.Rimworld.Anomaly">0</UnnaturalDarkness_Stage2>
+            <BloodRain MayRequire="Ludeon.Rimworld.Anomaly">1</BloodRain>
+            <UnnaturalFog MayRequire="Ludeon.Rimworld.Anomaly">2</UnnaturalFog>
+            <GrayPall MayRequire="Ludeon.Rimworld.Anomaly">0</GrayPall>
+            <Windy MayRequire="Ludeon.Rimworld.Odyssey">2</Windy>
+            <ToxRain MayRequire="Ludeon.Rimworld.Odyssey">1</ToxRain>
+            <Sandstorm MayRequire="Ludeon.Rimworld.Odyssey">0</Sandstorm>
+            <BlindFog MayRequire="Ludeon.Rimworld.Odyssey">1</BlindFog>
+            <Overcast MayRequire="Ludeon.Rimworld.Odyssey">1</Overcast>
+            <Blizzard MayRequire="Ludeon.Rimworld.Odyssey">1</Blizzard>
+            <TorrentialRain MayRequire="Ludeon.Rimworld.Odyssey">3</TorrentialRain>
+            <RG_Overcast MayRequire="ReGrowth.BOTR.Core">1</RG_Overcast>
+            <RG_Windy MayRequire="ReGrowth.BOTR.Core">2</RG_Windy>
+            <RG_Drizzle MayRequire="ReGrowth.BOTR.Core">2</RG_Drizzle>
+            <RG_Monsoon MayRequire="ReGrowth.BOTR.Core">4</RG_Monsoon>
+            <RG_FogStorm MayRequire="ReGrowth.BOTR.Core">2</RG_FogStorm>
+        </baseWeatherCommonalities>
+        <wildPlants>
+            <SZ_Fiddlehead>2.75</SZ_Fiddlehead>
+            <SZ_FiddleheadWater>2.35</SZ_FiddleheadWater>
+            <SZ_ChaliceFungus>7.10</SZ_ChaliceFungus>
+            <SZ_LilyOfThePlains>0.25</SZ_LilyOfThePlains>
+            <SZ_StarOfThePlains>0.15</SZ_StarOfThePlains>
+            <SZ_SoothingStalk>1.12</SZ_SoothingStalk>
+            <SZ_CopaceticCone>0.22</SZ_CopaceticCone>
+            <SZ_RadiantGrass>20.00</SZ_RadiantGrass>
+            <SZ_RadiantTallGrass>8.10</SZ_RadiantTallGrass>
+            <SZ_BulbousSanitas>1.95</SZ_BulbousSanitas>
+            <SZ_FiddleheadWall>0.25</SZ_FiddleheadWall>
+            <SZ_ElderBamboo>0.25</SZ_ElderBamboo>
+            <!--<SZ_RadiantBioluminescence>100.0</SZ_RadiantBioluminescence>-->
+            <SZ_NebulousVeilMoss>60.0</SZ_NebulousVeilMoss>
+        </wildPlants>
+        <wildAnimals>
+            <Donkey>0.20</Donkey>
+            <GuineaPig>0.45</GuineaPig>
+            <Yak>0.06</Yak>
+            <Bison>0.07</Bison>
+            <Horse>0.20</Horse>
+            <Hare>1.0</Hare>
+            <Squirrel>1.0</Squirrel>
+            <Rat>1.0</Rat>
+            <Deer>0.5</Deer>
+            <WildBoar>0.5</WildBoar>
+            <Turkey>0.5</Turkey>
+            <Raccoon>0.5</Raccoon>
+            <Ibex>0.5</Ibex>
+            <Muffalo>0.5</Muffalo>
+            <Alpaca>0.5</Alpaca>
+            <Boomalope>0.4</Boomalope>
+            <Boomrat>0.4</Boomrat>
+            <Tortoise>0.3</Tortoise>
+            <Gazelle>0.3</Gazelle>
+            <Megasloth>0.2</Megasloth>
+            <Rhinoceros>0.1</Rhinoceros>
+            <Bear_Grizzly>0.07</Bear_Grizzly>
+            <Wolf_Timber>0.07</Wolf_Timber>
+            <Fox_Red>0.07</Fox_Red>
+            <Cougar>0.07</Cougar>
+            <Lynx>0.07</Lynx>
+            <Warg>0.07</Warg>
+            <Porcupine MayRequire="Ludeon.RimWorld.Odyssey">0.2</Porcupine>
+            <Wolverine MayRequire="Ludeon.RimWorld.Odyssey">0.07</Wolverine>
+            <Mink MayRequire="Ludeon.RimWorld.Odyssey">0.1</Mink>
+            <Swan MayRequire="Ludeon.RimWorld.Odyssey">0.1</Swan>
+            <Badger MayRequire="Ludeon.RimWorld.Odyssey">0.2</Badger>
+            <Sparrow MayRequire="Ludeon.RimWorld.Odyssey">0.5</Sparrow>
+            <Crow MayRequire="Ludeon.RimWorld.Odyssey">0.5</Crow>
+            <Bluebird MayRequire="Ludeon.RimWorld.Odyssey">0.5</Bluebird>
+            <Quail MayRequire="Ludeon.RimWorld.Odyssey">0.5</Quail>
+            <AA_Aerofleet MayRequire="sarg.alphaanimals">0.02</AA_Aerofleet>
+            <AA_ChameleonYak MayRequire="sarg.alphaanimals">0.05</AA_ChameleonYak>
+            <AA_AuroraSylph MayRequire="sarg.alphaanimals">0.05</AA_AuroraSylph>
+        </wildAnimals>
+        <pollutionWildAnimals MayRequire="Ludeon.RimWorld.Biotech">
+            <Toxalope MayRequire="Ludeon.RimWorld.Biotech">0.4</Toxalope>
+            <WasteRat MayRequire="Ludeon.RimWorld.Biotech">0.1</WasteRat>
+            <Rat>1</Rat>
+            <Raccoon>0.5</Raccoon>
+            <Boomrat>0.4</Boomrat>
+            <Boomalope>0.1</Boomalope>
+            <Warg>0.05</Warg>
+        </pollutionWildAnimals>
+        <coastalWildAnimals>
+            <SeaLion MayRequire="Ludeon.RimWorld.Odyssey">0.1</SeaLion>
+            <Seal MayRequire="Ludeon.RimWorld.Odyssey">0.1</Seal>
+            <StoneCrab MayRequire="Ludeon.RimWorld.Odyssey">0.1</StoneCrab>
+            <Otter MayRequire="Ludeon.RimWorld.Odyssey">0.1</Otter>
+        </coastalWildAnimals>
+        <allowedPackAnimals>
+            <li>Muffalo</li>
+            <li>Dromedary</li>
+            <li>Alpaca</li>
+        </allowedPackAnimals>
+        <fishTypes MayRequire="Ludeon.RimWorld.Odyssey">
+            <freshwater_Common>
+                <Fish_Salmon MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Salmon>
+                <Fish_Bass MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bass>
+            </freshwater_Common>
+            <freshwater_Uncommon>
+                <Fish_Catfish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Catfish>
+            </freshwater_Uncommon>
+            <saltwater_Common>
+                <Fish_Salmon MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Salmon>
+                <Fish_Bluefish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bluefish>
+            </saltwater_Common>
+            <saltwater_Uncommon>
+                <Fish_Marlin MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Marlin>
+                <Fish_Flounder MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Flounder>
+            </saltwater_Uncommon>
+            <rareCatchesSetMaker MayRequire="Ludeon.RimWorld.Odyssey">RareFishingCatches_Temperate</rareCatchesSetMaker>
+        </fishTypes>
+        <forceRockTypes>
+            <li>SZ_Obelidian</li>
+            <li>SZ_Luminshale</li>
+        </forceRockTypes>
+        <extraRockTypes>
+            <li>Granite</li>
+            <li>Limestone</li>
+            <li>Slate</li>
+            <li>Marble</li>
+        </extraRockTypes>
+        <modExtensions>
+			<li Class="AlienBiomes.ModExt_BiomeGeneration">
+                <minRainfall>350</minRainfall>
+                <maxRainfall>970</maxRainfall>
+                <minTemperature>7.5</minTemperature>
+                <maxTemperature>30.5</maxTemperature>
+                <hillsFlatChance>0.85</hillsFlatChance>
+                <hillsSmallChance>0.75</hillsSmallChance>
+                <hillsLargeChance>0.5</hillsLargeChance>
+                <hillsMountainChance>0.25</hillsMountainChance>
+                <hillsImpassableChance>0.05</hillsImpassableChance>
+                <hillsMaxScoreBias>15</hillsMaxScoreBias>
+                <usePerlinNoise>true</usePerlinNoise>
+                <noiseThreshold>0.38</noiseThreshold>
+                <noiseFrequency>0.08</noiseFrequency>
+                <noiseLacunarity>2.0</noiseLacunarity>
+                <noisePersistence>0.40</noisePersistence>
+                <noiseOctaves>2</noiseOctaves>
+            </li>
+            <li Class="AlienBiomes.ModExt_BiomeBiolumColor">
+                <biolumColor>(0.27, 0.87, 0.77, 1)</biolumColor>
+            </li>
+		</modExtensions>
+    </BiomeDef>
+
+</Defs>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--==================== RADIANT PLAINS ====================-->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_RadiantSoil_Resource</defName>
+        <label>radiant soil</label>
+        <description>This stuff is dark green and lends average fertility for indeginous plants.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_RadiantSoil_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.03</MarketValue>
+            <Mass>0.60</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_RadiantRichSoil_Resource</defName>
+        <label>rich radiant soil</label>
+        <description>A much richer variant of radiant soil. Plants thrive here.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_RadiantRichSoil_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.25</MarketValue>
+            <Mass>0.60</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_RadiantStonySoil_Resource</defName>
+        <label>stony radiant soil</label>
+        <description>Soil littered with pebbles and cobble. It's not the best, but plants will grow.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_RadiantStonySoil_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.01</MarketValue>
+            <Mass>0.75</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_SoothingSand_Resource</defName>
+        <label>soothing sand</label>
+        <description>Slightly more beautiful than typical sand. It's soft textures and lavender color relax the soul. Only certain plants will grow on soothing sand.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_SoothingSand_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.50</MarketValue>
+            <Mass>0.50</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <!--==================== CRYSTALLINE FLATS ====================-->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_CrystallineSoil_Resource</defName>
+        <label>radiant soil</label>
+        <description>This stuff is dark blue and lends average fertility for indeginous plants.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_CrystallineSoil_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.03</MarketValue>
+            <Mass>0.60</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_CrystallineRichSoil_Resource</defName>
+        <label>rich radiant soil</label>
+        <description>A much richer variant of crystalline soil. Plants thrive here and the color of the soil is much lighter.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_CrystallineRichSoil_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.25</MarketValue>
+            <Mass>0.60</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_CrystallineStonySoil_Resource</defName>
+        <label>stony radiant soil</label>
+        <description>Soil littered with pebbles and cobble. You can see vibrant veins of alien minerals in this soil with larger patches. It's not the best, but plants will grow.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_CrystallineStonySoil_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.01</MarketValue>
+            <Mass>0.75</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_CrystallineSand_Resource</defName>
+        <label>soothing sand</label>
+        <description>Slightly more beautiful than typical sand. It's soft textures and cyan color relax the soul.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_CrystallineSand_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.50</MarketValue>
+            <Mass>0.50</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>SZ_CrystallineSand_Grove_Resource</defName>
+        <label>soothing sand</label>
+        <description>At a quick glance it appears the same as crystalline sand, but there's something more. Almost as if... the sand itself is living.</description>
+        <graphicData>
+            <texPath>AlienBiomes/Terrain/Resources/SZ_CrystallineSand_Grove_Resource</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>0.50</MarketValue>
+            <Mass>0.50</Mass>
+        </statBases>
+        <thingCategories>
+            <li MayRequire="udderlyevelyn.soilrelocation">Soils</li>
+        </thingCategories>
+        <stackLimit>75</stackLimit>
+    </ThingDef>
+
+</Defs>

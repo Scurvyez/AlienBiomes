@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3896586725
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: be45a3ea491e91d978b410284f57b8de
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0df1dec30b5d061d422d3e6493d27647
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: be45a3ea491e91d978b410284f57b8de
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Materials/Shaders/MoteGlowDistortedVertex.shader
+Dependencies: []

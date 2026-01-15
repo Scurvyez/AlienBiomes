@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "lqX0dhUGhhA=",
+  "success": true,
+  "projectFilePath": "D:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\AlienBiomes\\1.6\\Source\\AlienBiomes\\Alien Biomes\\AlienBiomes.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Steven\\.nuget\\packages\\krafs.publicizer\\2.3.0\\krafs.publicizer.2.3.0.nupkg.sha512",
+    "C:\\Users\\Steven\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4515-beta\\krafs.rimworld.ref.1.6.4515-beta.nupkg.sha512",
+    "C:\\Users\\Steven\\.nuget\\packages\\lib.harmony\\2.3.6\\lib.harmony.2.3.6.nupkg.sha512"
+  ],
+  "logs": []
+}

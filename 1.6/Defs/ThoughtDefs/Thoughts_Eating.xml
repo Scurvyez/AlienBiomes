@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Ate Raw Soothing Honey Thought ====================-->
+
+    <ThoughtDef>
+        <defName>SZ_AteSoothingHoney</defName>
+        <durationDays>1</durationDays>
+        <stages>
+            <li>
+                <label>ate soothing honey</label>
+                <description>Wow, that stuff was amazing! We really need to get more.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!--==================== Ate Raw Copacetic Honey Thought ====================-->
+
+    <ThoughtDef>
+        <defName>SZ_AteCopaceticHoney</defName>
+        <durationDays>1</durationDays>
+        <stages>
+            <li>
+                <label>ate copacetic honey</label>
+                <description>All of a sudden, everything just feels... right.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

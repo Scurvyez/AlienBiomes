@@ -2,16 +2,18 @@
 
 <ModMetaData>
     <name>Alien Biomes</name>
-    <author>Steve, Evelyn, Odeum</author>
+    <author>Steve</author>
     <packageId>Scurvyez.AlienBiomes</packageId>
     <supportedVersions>
-        <li>1.5</li>
+        <li>1.6</li>
     </supportedVersions>
 
     <description>
-Step into an alien world filled with new dangers and exquisite curiosities!\n\nStake your claim on the pink shores of a radiant landscape or brave the soul-draining nights of a world lost in darkness. Stay mesmerized night after night as indigenous flora spring to life in stunningly colorful fashion. Learn new methods of survival and indulge in unorthodox herbal recreation.
-    
 Discord: steveo.o
+
+Thank you to Evelyn and Odeum for all your help years ago when I first started this project.
+
+Step into an alien world filled with new dangers and exquisite curiosities!\n\nStake your claim on the pink shores of a radiant landscape or brave the soul-draining nights of a world lost in darkness. Stay mesmerized night after night as indigenous flora spring to life in stunningly colorful fashion. Learn new methods of survival and indulge in unorthodox herbal recreation.
     </description>
 
     <modDependencies>

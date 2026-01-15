@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!--<Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/BiomeDef[defName="Labyrinth"]</xpath>
+        <value>
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
+                <disallowedRockTypes>
+                    <li>SZ_Obelidian</li>
+                    <li>SZ_Volbitrine</li>
+                    <li>SZ_Zephyrite</li>
+                    <li>SZ_Helioclase</li>
+                    <li>SZ_Cryoquartz</li>
+                    <li>SZ_Luminshale</li>
+                </disallowedRockTypes>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/BiomeDef[defName="MetalHell"]</xpath>
+        <value>
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
+                <disallowedRockTypes>
+                    <li>SZ_Obelidian</li>
+                    <li>SZ_Volbitrine</li>
+                    <li>SZ_Zephyrite</li>
+                    <li>SZ_Helioclase</li>
+                    <li>SZ_Cryoquartz</li>
+                    <li>SZ_Luminshale</li>
+                </disallowedRockTypes>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/BiomeDef[defName="Undercave"]</xpath>
+        <value>
+            <li Class="AlienBiomes.Biome_Rocks_ModExt">
+                <disallowedRockTypes>
+                    <li>SZ_Obelidian</li>
+                    <li>SZ_Volbitrine</li>
+                    <li>SZ_Zephyrite</li>
+                    <li>SZ_Helioclase</li>
+                    <li>SZ_Cryoquartz</li>
+                    <li>SZ_Luminshale</li>
+                </disallowedRockTypes>
+            </li>
+        </value>
+    </Operation>-->
+
+</Patch>

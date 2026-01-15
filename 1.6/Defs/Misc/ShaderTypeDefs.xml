@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AlienBiomes.ABShaderTypeDef>
+        <defName>AB_MoteGlowDistortedVertex</defName>
+        <actualShaderName>Unlit/MoteGlowDistortedVertex</actualShaderName>
+        <shaderPath>AlienBiomes/MoteGlowDistortedVertex</shaderPath>
+    </AlienBiomes.ABShaderTypeDef>
+
+</Defs>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Delirious Sands ====================-->
+
+    <!-- Desert, thin on resources, hot in the day, cold at night. -->
+
+    <BiomeDef>
+        <defName>SZ_DeliriousDunes</defName>
+        <label>delirious dunes</label>
+        <description>These dunes are a harsh place for any organism to thrive in. Infrequent rains and high temperatures plague the delirious dunes. Be sure to use the oasis to its full potential.</description>
+        <workerClass>AlienBiomes.BiomeWorker_DeliriousDunes</workerClass>
+        <allowFarmingCamps>false</allowFarmingCamps>
+        <animalDensity>0.1</animalDensity>
+        <plantDensity>0.175</plantDensity>
+        <hasVirtualPlants>false</hasVirtualPlants>
+        <settlementSelectionWeight>0.42</settlementSelectionWeight>
+        <campSelectionWeight>0.1</campSelectionWeight>
+        <movementDifficulty>0.85</movementDifficulty>
+        <texture>AlienBiomes/World/Biomes/SZ_DeliriousDunes</texture>
+        <forageability>0.1</forageability>
+        <foragedFood>RawFungus</foragedFood>
+        <wildPlantsCareAboutLocalFertility>false</wildPlantsCareAboutLocalFertility>
+        <wildPlantRegrowDays>45</wildPlantRegrowDays>
+        <diseaseMtbDays>110</diseaseMtbDays>
+        <isExtremeBiome>true</isExtremeBiome>
+        <geyserCountFactor>1.25</geyserCountFactor>
+        <lakeBeachTerrain>SZ_DeliriousBlackSand</lakeBeachTerrain>
+        <riverbankTerrain>SZ_DeliriousBlackSand</riverbankTerrain>
+        <riverbankSizeRange>1~5</riverbankSizeRange>
+        <coastalBeachTerrain>SZ_DeliriousBlackSand</coastalBeachTerrain>
+        <mudTerrain>SZ_DeliriousCoarseSand</mudTerrain>
+        <gravelTerrain>SZ_DeliriousStonySoil</gravelTerrain>
+        <waterShallowTerrain>SZ_SmolderingWaterShallow</waterShallowTerrain>
+        <waterDeepTerrain>SZ_SmolderingWaterDeep</waterDeepTerrain>
+        <oceanShallowTerrain>SZ_SmolderingWaterOceanShallow</oceanShallowTerrain>
+        <oceanDeepTerrain>SZ_SmolderingWaterOceanDeep</oceanDeepTerrain>
+        <waterMovingShallowTerrain>SZ_SmolderingWaterMovingShallow</waterMovingShallowTerrain>
+        <waterMovingChestDeepTerrain>SZ_SmolderingWaterMovingChestDeep</waterMovingChestDeepTerrain>
+        <maxFishPopulation>210</maxFishPopulation>
+        <soundsAmbient>
+            <li>Ambient_NightInsects_Standard</li>
+        </soundsAmbient>
+        <diseases>
+            <li>
+                <diseaseInc>Disease_Flu</diseaseInc>
+                <commonality>100</commonality>
+            </li>
+            <li>
+                <diseaseInc>Disease_Plague</diseaseInc>
+                <commonality>80</commonality>
+            </li>
+            <li>
+                <diseaseInc>Disease_GutWorms</diseaseInc>
+                <commonality>40</commonality>
+            </li>
+            <li>
+                <diseaseInc>Disease_MuscleParasites</diseaseInc>
+                <commonality>40</commonality>
+            </li>
+            <li>
+                <diseaseInc>Disease_FibrousMechanites</diseaseInc>
+                <commonality>30</commonality>
+            </li>
+            <li>
+                <diseaseInc>Disease_SensoryMechanites</diseaseInc>
+                <commonality>30</commonality>
+            </li>
+        
+            <li>
+                <diseaseInc>Disease_AnimalFlu</diseaseInc>
+                <commonality>100</commonality>
+            </li>
+            <li>
+                <diseaseInc>Disease_AnimalPlague</diseaseInc>
+                <commonality>80</commonality>
+            </li>
+            <li>
+                <diseaseInc>Disease_OrganDecay</diseaseInc>
+                <commonality>10</commonality>
+            </li>
+        </diseases>
+        <terrainsByFertility>
+            <li>
+                <terrain>SZ_DeliriousSmolderingSand</terrain>
+                <min>-999</min>
+                <max>0.50</max>
+            </li>
+            <li>
+                <terrain>SZ_DeliriousCoarseSand</terrain>
+                <min>0.50</min>
+                <max>0.87</max>
+            </li>
+            <li>
+                <terrain>SZ_DeliriousRichBlackSand</terrain>
+                <min>0.87</min>
+                <max>0.92</max>
+            </li>
+            <li>
+                <terrain>SZ_DeliriousBlackSand</terrain>
+                <min>0.92</min>
+                <max>999</max>
+            </li>
+        </terrainsByFertility>
+        <terrainPatchMakers>
+            <li>
+                <perlinFrequency>0.08</perlinFrequency>
+                <maxFertility>1.0</maxFertility>
+                <minSize>30</minSize>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_DeliriousMellowSand</terrain>
+                        <min>0.50</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li>
+        </terrainPatchMakers>
+        <baseWeatherCommonalities>
+            <Clear>18</Clear>
+            <Fog>3</Fog>
+            <Rain>1</Rain>
+            <DryThunderstorm>2</DryThunderstorm>
+            <RainyThunderstorm>1</RainyThunderstorm>
+            <FoggyRain>2</FoggyRain>
+            <SnowHard>0</SnowHard>
+            <SnowGentle>0</SnowGentle>
+            <UnnaturalDarkness_Stage1 MayRequire="Ludeon.Rimworld.Anomaly">0</UnnaturalDarkness_Stage1>
+            <UnnaturalDarkness_Stage2 MayRequire="Ludeon.Rimworld.Anomaly">0</UnnaturalDarkness_Stage2>
+            <BloodRain MayRequire="Ludeon.Rimworld.Anomaly">2</BloodRain>
+            <UnnaturalFog MayRequire="Ludeon.Rimworld.Anomaly">1</UnnaturalFog>
+            <GrayPall MayRequire="Ludeon.Rimworld.Anomaly">1</GrayPall>
+            <Windy MayRequire="Ludeon.Rimworld.Odyssey">4</Windy>
+            <ToxRain MayRequire="Ludeon.Rimworld.Odyssey">1</ToxRain>
+            <Sandstorm MayRequire="Ludeon.Rimworld.Odyssey">3</Sandstorm>
+            <BlindFog MayRequire="Ludeon.Rimworld.Odyssey">1</BlindFog>
+            <Overcast MayRequire="Ludeon.Rimworld.Odyssey">1</Overcast>
+            <Blizzard MayRequire="Ludeon.Rimworld.Odyssey">0</Blizzard>
+            <TorrentialRain MayRequire="Ludeon.Rimworld.Odyssey">3</TorrentialRain>
+            <RG_Overcast MayRequire="ReGrowth.BOTR.Core">5</RG_Overcast>
+            <RG_Windy MayRequire="ReGrowth.BOTR.Core">2</RG_Windy>
+            <RG_Drizzle MayRequire="ReGrowth.BOTR.Core">2</RG_Drizzle>
+            <RG_FoggySandstorm MayRequire="ReGrowth.BOTR.Core">7</RG_FoggySandstorm>
+            <RG_SandStorm MayRequire="ReGrowth.BOTR.Core">9</RG_SandStorm>
+            <RG_SandStormHard MayRequire="ReGrowth.BOTR.Core">3</RG_SandStormHard>
+        </baseWeatherCommonalities>
+        <wildPlants>
+            <SZ_DeliriousGrass>30</SZ_DeliriousGrass>
+            <Plant_GrayGrass MayRequire="Ludeon.RimWorld.Biotech">3</Plant_GrayGrass>
+            <SZ_StarburstCactus>0.95</SZ_StarburstCactus>
+            <SZ_DesertGlowPod>0.001</SZ_DesertGlowPod>
+            <SZ_AuroraAgave>0.001</SZ_AuroraAgave>
+        </wildPlants>
+        <wildAnimals>
+            <Donkey>0.20</Donkey>
+            <GuineaPig>0.002</GuineaPig>
+            <Iguana>1.5</Iguana>
+            <Dromedary>0.2</Dromedary>
+            <Fox_Fennec>0.1</Fox_Fennec>
+            <Rat>1.00</Rat>
+            <Raccoon>0.5</Raccoon>
+            <Pig>0.07</Pig>
+            <Boomalope>0.4</Boomalope>
+            <Boomrat>0.4</Boomrat>
+            <Panther>0.07</Panther>
+            <BogHound>0.5</BogHound>
+            <MonitorLizard>0.5</MonitorLizard>
+            <Crow>0.5</Crow>
+            <Porcupine MayRequire="Ludeon.RimWorld.Odyssey">0.2</Porcupine>
+        </wildAnimals>
+        <pollutionWildAnimals MayRequire="Ludeon.RimWorld.Biotech">
+            <Toxalope MayRequire="Ludeon.RimWorld.Biotech">0.4</Toxalope>
+            <WasteRat MayRequire="Ludeon.RimWorld.Biotech">0.1</WasteRat>
+            <Rat>1</Rat>
+            <Raccoon>0.5</Raccoon>
+            <Boomrat>0.4</Boomrat>
+            <Boomalope>0.1</Boomalope>
+            <Warg>0.05</Warg>
+        </pollutionWildAnimals>
+        <coastalWildAnimals>
+            <StoneCrab MayRequire="Ludeon.RimWorld.Odyssey">0.1</StoneCrab>
+        </coastalWildAnimals>
+        <allowedPackAnimals>
+            <li>Muffalo</li>
+            <li>Dromedary</li>
+        </allowedPackAnimals>
+        <fishTypes MayRequire="Ludeon.RimWorld.Odyssey">
+            <freshwater_Common>
+                <Fish_Bass MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bass>
+            </freshwater_Common>
+            <freshwater_Uncommon>
+                <Fish_Catfish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Catfish>
+            </freshwater_Uncommon>
+            <saltwater_Common>
+                <Fish_Bluefish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bluefish>
+            </saltwater_Common>
+            <saltwater_Uncommon>
+                <Fish_Flounder MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Flounder>
+                <Fish_Marlin MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Marlin>
+            </saltwater_Uncommon>
+            <rareCatchesSetMaker MayRequire="Ludeon.RimWorld.Odyssey">RareFishingCatches_Hot</rareCatchesSetMaker>
+        </fishTypes>
+        <forceRockTypes>
+            <li>SZ_Volbitrine</li>
+            <li>SZ_Cryoquartz</li>
+        </forceRockTypes>
+        <extraRockTypes>
+            <li>Sandstone</li>
+            <li>Limestone</li>
+        </extraRockTypes>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_BiomeGeneration">
+                <minRainfall>0</minRainfall>
+                <maxRainfall>200</maxRainfall>
+                <minTemperature>10.0</minTemperature>
+                <maxTemperature>300.0</maxTemperature>
+                <hillsFlatChance>0.85</hillsFlatChance>
+                <hillsSmallChance>0.75</hillsSmallChance>
+                <hillsLargeChance>0.5</hillsLargeChance>
+                <hillsMountainChance>0.25</hillsMountainChance>
+                <hillsImpassableChance>0.05</hillsImpassableChance>
+                <hillsMaxScoreBias>15</hillsMaxScoreBias>
+                <usePerlinNoise>true</usePerlinNoise>
+                <noiseThreshold>0.45</noiseThreshold>
+                <noiseFrequency>0.10</noiseFrequency>
+                <noiseLacunarity>2.0</noiseLacunarity>
+                <noisePersistence>0.35</noisePersistence>
+                <noiseOctaves>2</noiseOctaves>
+            </li>
+		</modExtensions>
+    </BiomeDef>
+
+</Defs>

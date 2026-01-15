@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--==================== Crystalline Flats ====================-->
+
+    <!-- No animal diseases. :) -->
+
+    <BiomeDef>
+        <defName>SZ_CrystallineFlats</defName>
+        <label>crystalline flats</label>
+        <description>These lands are uncharacteristically sterile and covered in gigantic crystal pillars, flanked by smaller scatterings of crystalline formations.\n\nYou'll find many exotic materials here, however, a severe lack in vegetation. Yet with less than desirable plant density, the flora growing in these parts reaches maturity at an astounding rate because of the elevated levels of minerals within the soil. You'll also find pools of water so deep and curious they almost... invite creatures down into their unending depths.</description>
+        <workerClass>AlienBiomes.BiomeWorker_CrystallineFlats</workerClass>
+        <animalDensity>1.2</animalDensity>
+        <plantDensity>0.45</plantDensity>
+        <settlementSelectionWeight>0.42</settlementSelectionWeight>
+        <campSelectionWeight>0.18</campSelectionWeight>
+        <movementDifficulty>0.9</movementDifficulty>
+        <texture>AlienBiomes/World/Biomes/SZ_CrystallineFlats</texture>
+        <forageability>0.8</forageability>
+        <diseaseMtbDays>120</diseaseMtbDays>
+        <foragedFood>RawBerries</foragedFood>
+        <wildPlantRegrowDays>25</wildPlantRegrowDays>
+        <lakeBeachTerrain>SZ_CrystallineSand</lakeBeachTerrain>
+        <riverbankTerrain>SZ_CrystallineSand</riverbankTerrain>
+        <riverbankSizeRange>2~7</riverbankSizeRange>
+        <coastalBeachTerrain>SZ_CrystallineSand</coastalBeachTerrain>
+        <mudTerrain>SZ_CrystallineStonySoil</mudTerrain>
+        <gravelTerrain>SZ_CrystallineStonySoil</gravelTerrain>
+        <waterShallowTerrain>SZ_CrystallineWaterShallow</waterShallowTerrain>
+        <waterDeepTerrain>SZ_CrystallineWaterDeep</waterDeepTerrain>
+        <oceanShallowTerrain>SZ_CrystallineWaterOceanShallow</oceanShallowTerrain>
+        <oceanDeepTerrain>SZ_CrystallineWaterOceanDeep</oceanDeepTerrain>
+        <waterMovingShallowTerrain>SZ_CrystallineWaterMovingShallow</waterMovingShallowTerrain>
+        <waterMovingChestDeepTerrain>SZ_CrystallineWaterMovingChestDeep</waterMovingChestDeepTerrain>
+        <maxFishPopulation>370</maxFishPopulation>
+        <soundsAmbient>
+            <li>Ambient_NightInsects_Standard</li>
+        </soundsAmbient>
+        <diseases>
+            <li>
+                <diseaseInc>Disease_Flu</diseaseInc>
+                <commonality>75</commonality>
+            </li>
+            <li>
+				<diseaseInc>Disease_Plague</diseaseInc>
+				<commonality>60</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_GutWorms</diseaseInc>
+				<commonality>75</commonality>
+			</li>
+        </diseases>
+        <terrainsByFertility>
+            <li>
+                <terrain>SZ_CrystallineSoil</terrain>
+                <min>-999</min>
+                <max>0.80</max>
+            </li>
+            <li>
+                <terrain>SZ_CrystallineRichSoil</terrain>
+                <min>0.80</min>
+                <max>999</max>
+            </li>
+        </terrainsByFertility>
+        <terrainPatchMakers>
+            <li>
+                <perlinFrequency>0.009</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_CrystallineRichSoil</terrain>
+                        <min>0.80</min>
+                        <max>0.83</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_CrystallineSand</terrain>
+                        <min>0.83</min>
+                        <max>0.90</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_CrystallineWaterShallow</terrain>
+                        <min>0.90</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li>
+            <li>
+                <perlinFrequency>0.01</perlinFrequency>
+                <thresholds>
+                    <li>
+                        <terrain>SZ_CrystallineRichSoil</terrain>
+                        <min>0.75</min>
+                        <max>0.80</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_BloodWaterShallow</terrain>
+                        <min>0.80</min>
+                        <max>0.98</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_BloodWaterChestDeep</terrain>
+                        <min>0.98</min>
+                        <max>999</max>
+                    </li>
+                </thresholds>
+            </li>
+        </terrainPatchMakers>
+        <baseWeatherCommonalities>
+            <Clear>16</Clear>
+            <Fog>7</Fog>
+            <Rain>6</Rain>
+            <DryThunderstorm>2.5</DryThunderstorm>
+            <RainyThunderstorm>5</RainyThunderstorm>
+            <FoggyRain>6</FoggyRain>
+            <SnowHard>1</SnowHard>
+            <SnowGentle>2</SnowGentle>
+            <UnnaturalDarkness_Stage1 MayRequire="Ludeon.Rimworld.Anomaly">1</UnnaturalDarkness_Stage1>
+            <UnnaturalDarkness_Stage2 MayRequire="Ludeon.Rimworld.Anomaly">2</UnnaturalDarkness_Stage2>
+            <BloodRain MayRequire="Ludeon.Rimworld.Anomaly">4</BloodRain>
+            <UnnaturalFog MayRequire="Ludeon.Rimworld.Anomaly">2</UnnaturalFog>
+            <GrayPall MayRequire="Ludeon.Rimworld.Anomaly">1</GrayPall>
+            <Windy MayRequire="Ludeon.Rimworld.Odyssey">1</Windy>
+            <ToxRain MayRequire="Ludeon.Rimworld.Odyssey">4</ToxRain>
+            <Sandstorm MayRequire="Ludeon.Rimworld.Odyssey">0</Sandstorm>
+            <BlindFog MayRequire="Ludeon.Rimworld.Odyssey">3</BlindFog>
+            <Overcast MayRequire="Ludeon.Rimworld.Odyssey">2</Overcast>
+            <Blizzard MayRequire="Ludeon.Rimworld.Odyssey">0</Blizzard>
+            <TorrentialRain MayRequire="Ludeon.Rimworld.Odyssey">3</TorrentialRain>
+        </baseWeatherCommonalities>
+        <wildPlants>
+            <SZ_BlueColossalCrystal>0.01</SZ_BlueColossalCrystal>
+            <SZ_GreenColossalCrystal>0.01</SZ_GreenColossalCrystal>
+            <SZ_BlueInferiorCrystal>0.06</SZ_BlueInferiorCrystal>
+            <SZ_GreenInferiorCrystal>0.06</SZ_GreenInferiorCrystal>
+            <SZ_ShimmeringGrass>7.50</SZ_ShimmeringGrass>
+            <SZ_ShimmeringTallGrass>12.0</SZ_ShimmeringTallGrass>
+            <SZ_GlisteningGrass>5.50</SZ_GlisteningGrass>
+            <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
+            <SZ_LushGreenGrass>5.78</SZ_LushGreenGrass>
+            <!-- <SZ_GlassyBroadLeafedBirch>2.45</SZ_GlassyBroadLeafedBirch> -->
+            <SZ_OpulentOrchid>2.555</SZ_OpulentOrchid>
+            <SZ_BlueMoonberry>4.75</SZ_BlueMoonberry>
+            <SZ_WindingFern>3.85</SZ_WindingFern>
+        </wildPlants>
+        <wildAnimals>
+            <Squirrel>1</Squirrel>
+            <Hare>1</Hare>
+            <Rat>1</Rat>
+            <Elk>0.5</Elk>
+            <Caribou>0.5</Caribou>
+            <Muskox>0.25</Muskox>
+            <Deer>0.25</Deer>
+            <Ibex>0.5</Ibex>
+            <Raccoon>0.5</Raccoon>
+            <Megasloth>0.1</Megasloth>
+            <Fox_Red>0.07</Fox_Red>
+            <Bear_Grizzly>0.07</Bear_Grizzly>
+            <Wolf_Timber>0.07</Wolf_Timber>
+            <Cougar>0.07</Cougar>
+            <Lynx>0.07</Lynx>
+            <Cat_Scimitar>0.1</Cat_Scimitar>
+            <Mastodon>0.1</Mastodon>
+            <Wolf_Great>0.07</Wolf_Great>
+            <Moose>0.2</Moose>
+            <Wolverine>0.07</Wolverine>
+            <Sparrow>0.5</Sparrow>
+            <Bluebird>0.1</Bluebird>
+            <Donkey>0.20</Donkey>
+            <GuineaPig>0.45</GuineaPig>
+            <Horse>0.20</Horse>
+            <WildBoar>0.5</WildBoar>
+            <Turkey>0.5</Turkey>
+            <Muffalo>0.5</Muffalo>
+            <Tortoise>0.3</Tortoise>
+            <AA_CrystallineCaracal MayRequire="sarg.alphaanimals">0.03</AA_CrystallineCaracal>
+        </wildAnimals>
+        <pollutionWildAnimals>
+            <WasteRat MayRequire="Ludeon.RimWorld.Biotech">1</WasteRat>
+            <Rat>0.5</Rat>
+            <Raccoon>0.25</Raccoon>
+            <Warg>0.05</Warg>
+        </pollutionWildAnimals>
+        <coastalWildAnimals>
+            <SeaLion MayRequire="Ludeon.RimWorld.Odyssey">0.1</SeaLion>
+            <Seal MayRequire="Ludeon.RimWorld.Odyssey">0.1</Seal>
+            <StoneCrab MayRequire="Ludeon.RimWorld.Odyssey">0.1</StoneCrab>
+        </coastalWildAnimals>
+        <allowedPackAnimals>
+            <li>Dromedary</li>
+            <li>Alpaca</li>
+        </allowedPackAnimals>
+        <fishTypes MayRequire="Ludeon.RimWorld.Odyssey">
+            <freshwater_Common>
+                <Fish_Bass MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bass>
+            </freshwater_Common>
+            <freshwater_Uncommon>
+                <Fish_Catfish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Catfish>
+            </freshwater_Uncommon>
+            <saltwater_Common>
+                <Fish_Bluefish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bluefish>
+            </saltwater_Common>
+            <saltwater_Uncommon>
+                <Fish_Marlin MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Marlin>
+                <Fish_Flounder MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Flounder>
+            </saltwater_Uncommon>
+            <rareCatchesSetMaker MayRequire="Ludeon.RimWorld.Odyssey">RareFishingCatches_Temperate</rareCatchesSetMaker>
+        </fishTypes>
+        <forceRockTypes>
+            <li>SZ_Zephyrite</li>
+            <li>SZ_Helioclase</li>
+        </forceRockTypes>
+        <extraRockTypes>
+            <li>Granite</li>
+            <li>Limestone</li>
+            <li>Slate</li>
+            <li>Marble</li>
+        </extraRockTypes>
+        <modExtensions>
+            <li Class="AlienBiomes.ModExt_BiomeGeneration">
+                <minRainfall>350</minRainfall>
+                <maxRainfall>3000</maxRainfall>
+                <minTemperature>-17.0</minTemperature>
+                <maxTemperature>34.0</maxTemperature>
+                <hillsFlatChance>0.85</hillsFlatChance>
+                <hillsSmallChance>0.75</hillsSmallChance>
+                <hillsLargeChance>0.5</hillsLargeChance>
+                <hillsMountainChance>0.25</hillsMountainChance>
+                <hillsImpassableChance>0.05</hillsImpassableChance>
+                <hillsMaxScoreBias>15</hillsMaxScoreBias>
+                <usePerlinNoise>true</usePerlinNoise>
+                <noiseThreshold>0.425</noiseThreshold>
+                <noiseFrequency>0.38</noiseFrequency>
+                <noiseLacunarity>2.0</noiseLacunarity>
+                <noisePersistence>0.32</noisePersistence>
+                <noiseOctaves>2</noiseOctaves>
+            </li>
+		</modExtensions>
+    </BiomeDef>
+
+</Defs>
