@@ -1,10 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 using RimWorld;
 using HarmonyLib;
-using System.Runtime.InteropServices;
-using System.IO;
 using System.Collections.Generic;
 
 namespace AlienBiomes
@@ -31,8 +28,7 @@ namespace AlienBiomes
             
             // implied defs are generated before SCOS runs
             // so this patch needs to be run before then, hence why it's here
-            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), 
-                    nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
+            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
                 postfix: new HarmonyMethod(typeof(AlienBiomesMod), 
                     nameof(ImpliedTerrainDefsPostfix)));
         }
@@ -51,39 +47,13 @@ namespace AlienBiomes
                     
                     def.modExtensions ??= [];
                     def.modExtensions.Add(modExtPlantTcExt);
-                    def.fertility = 0.3f;
+                    def.fertility = 0.98f;
                 }
                 modifiedList.Add(def);
             }
             __result = modifiedList;
         }
         
-        public AssetBundle MainBundle
-        {
-            get
-            {
-                string text = RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "StandaloneOSX"
-                    : RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "StandaloneWindows64"
-                    : RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? "StandaloneLinux64"
-                    : throw new PlatformNotSupportedException("Unsupported Platform");
-                
-                string bundlePath = Path.Combine(Content.RootDir, 
-                    @"Materials\\Bundles\\" + text + "\\alienbiomesbundle");
-                //ABLog.Message("Bundle Path: " + bundlePath);
-                
-                AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);
-                if (bundle == null)
-                {
-                    ABLog.Message("Failed to load bundle at path: " + bundlePath);
-                }
-                
-                // foreach (string allAssetName in bundle.GetAllAssetNames())
-                // {
-                //     ABLog.Message($" - {allAssetName}");
-                // }
-                return bundle;
-            }
-        }
         
         public override void DoSettingsWindowContents(Rect inRect)
         {

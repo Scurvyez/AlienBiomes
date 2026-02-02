@@ -256,7 +256,7 @@
                 <noisePersistence>0.40</noisePersistence>
                 <noiseOctaves>2</noiseOctaves>
             </li>
-            <li Class="AlienBiomes.ModExt_BiomeBiolumColor">
+            <li Class="AlienBiomes.ModExt_BiomeBioluminescence">
                 <biolumColor>(0.27, 0.87, 0.77, 1)</biolumColor>
             </li>
 		</modExtensions>

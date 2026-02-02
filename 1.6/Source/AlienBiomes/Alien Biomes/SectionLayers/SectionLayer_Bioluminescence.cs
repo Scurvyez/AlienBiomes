@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
@@ -8,35 +9,56 @@ namespace AlienBiomes
 {
     public class SectionLayer_Bioluminescence : SectionLayer
     {
-        private const string RequiredTerrainTag = "Shallow";
-        private const float CellsPerTextureRepeat = 4.25f;
+        private const float CellsPerTextureRepeat = 5.66666667f;
+        
+        private const float GlowStartDayPct = 0.7f;
+        private const float GlowEndDayPct = 0.3f;
         
         private const int ShoreMinDistance = 0;
         private const int ShoreMaxDistance = 5;
         
-        private const float NoiseFrequency = 0.13f;
+        private const float NoiseFrequency = 0.13f; // bigger = smaller patches
         private const float NoiseLacunarity = 2.0f;
         private const float NoisePersistence = 0.5f;
-        private const int NoiseOctaves = 6;
-        private const float NoiseThreshold = 0.62f;
-        private const float NoiseCoordScale = 0.20f;
+        private const int NoiseOctaves = 7;
+        private const float NoiseThreshold = 0.62f; // higher = fewer glowing cells
+        private const float NoiseCoordScale = 0.20f; // world-space scaling; tweak with frequency
         
-        // Cache shoreline distance per MAP INSTANCE (not uniqueID) to avoid stale data across sessions/worlds.
         private static Map _cachedMap;
         private static ushort[] _distToShore;
         private static readonly Queue<int> BfsQueue = new();
         
-        // Cache Perlin instance per SEED (seed now includes World seed, so it changes between worlds).
         private static int _cachedPerlinSeed = int.MinValue;
         private static Perlin _perlin;
-        
+
         private readonly List<Vector2> _uv2D = new(2048);
         
-        public override bool Visible => true;
+        public override bool Visible
+        {
+            get
+            {
+                if (!Map.Biome.HasModExtension<ModExt_BiomeBioluminescence>()) return false;
+                
+                float dayPercent = GenLocalDate.DayPercent(Map);
+                bool isVisibleNow = dayPercent is >= GlowStartDayPct or <= GlowEndDayPct;
+
+                if (isVisibleNow && !field)
+                {
+                    field = true;
+                    Dirty = true;
+                }
+                else if (!isVisibleNow)
+                {
+                    field = false;
+                }
+
+                return isVisibleNow;
+            }
+        }
         
         public SectionLayer_Bioluminescence(Section section) : base(section)
         {
-            relevantChangeTypes = MapMeshFlagDefOf.Terrain;
+            relevantChangeTypes = (ulong)MapMeshFlagDefOf.Terrain;
         }
         
         public override void Regenerate()
@@ -47,7 +69,7 @@ namespace AlienBiomes
             _uv2D.Clear();
 
             bool any = false;
-            float altitude = AltitudeLayer.VisEffects.AltitudeFor();
+            float altitude = AltitudeLayer.TerrainScatter.AltitudeFor();
 
             int index = section.botLeft.x;
             foreach (IntVec3 c in section.CellRect)
@@ -127,7 +149,7 @@ namespace AlienBiomes
 
             int n = map.cellIndices.NumGridCells;
 
-            // Rebuild if the map instance changed or the grid size changed.
+            // rebuild if the map instance changed or the grid size changed.
             if (_cachedMap == map && _distToShore != null && _distToShore.Length == n)
                 return;
 
@@ -141,7 +163,7 @@ namespace AlienBiomes
 
             CellIndices ci = map.cellIndices;
 
-            // Seed BFS with shoreline water cells (distance 0)
+            // seed BFS with shoreline water cells (distance 0)
             foreach (IntVec3 c in map.AllCells)
             {
                 TerrainDef t = c.GetTerrain(map);
@@ -218,16 +240,17 @@ namespace AlienBiomes
             TerrainDef t = c.GetTerrain(map);
             if (t is not { IsWater: true }) return 0f;
 
-            ModExt_PlantTerrainControl ext = t.GetModExtension<ModExt_PlantTerrainControl>();
-            if (ext?.terrainTags == null || !ext.terrainTags.Contains(RequiredTerrainTag)) return 0f;
-
+            string terrainDefName = t.defName;
+            if (terrainDefName.IndexOf("Shallow", StringComparison.OrdinalIgnoreCase) < 0) return 0f;
+            
             ushort d = ShoreDistance(map, c);
             if (d == ushort.MaxValue) return 0f;
             if (d > ShoreMaxDistance) return 0f;
 
-            // IMPORTANT: include WORLD seed so new worlds generate different biolum patterns.
-            int seed = Gen.HashCombineInt(Find.World.info.Seed, 9137421);
+            // include WORLD seed so new worlds generate different biolum patterns.
+            int seed = Gen.HashCombineInt(Find.World.info.Seed, 123456789);
             seed = Gen.HashCombineInt(seed, map.uniqueID);
+            seed = Gen.HashCombineInt(seed, GenDate.DaysPassed);
 
             float x = c.x * NoiseCoordScale;
             float z = c.z * NoiseCoordScale;

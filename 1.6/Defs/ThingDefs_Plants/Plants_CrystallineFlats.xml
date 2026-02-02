@@ -203,7 +203,7 @@
         <defName>SZ_BlueColossalCrystal</defName>
         <label>blue colossal crystal</label>
         <description>A massive, living crystal. It dwarfs those who gaze upon its magnificence.</description>
-        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <thingClass>AlienBiomes.Plant_Improved</thingClass>
         <descriptionHyperlinks>
             <HediffDef>SZ_Crystallize</HediffDef>
         </descriptionHyperlinks>
@@ -241,7 +241,6 @@
             <wildOrder>1</wildOrder>
         </plant>
         <comps>
-            <li Class="AlienBiomes.CompProperties_NasticInfo" />
             <li Class="AlienBiomes.CompProperties_TimedGlower">
                 <overlightRadius>7.0</overlightRadius>
                 <glowRadius>7.0</glowRadius>
@@ -249,25 +248,20 @@
                 <glowStartTime>0.75</glowStartTime>
                 <glowStopTime>0.20</glowStopTime>
             </li>
+            <li Class="AlienBiomes.CompProperties_HediffGiver">
+                <triggerRadius>4</triggerRadius>
+                <triggerRadiusColor>(0.7, 0.4, 1, 1)</triggerRadiusColor>
+                <triggerGrowthThreshold>0.925</triggerGrowthThreshold>
+                <triggerReleaseCooldown>340000</triggerReleaseCooldown>
+                <chanceToGive>0.1</chanceToGive>
+                <hediffToGive>SZ_Crystallize</hediffToGive>
+            </li>
         </comps>
         <modExtensions>
             <li Class="AlienBiomes.ModExt_PlantTerrainControl">
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
-            </li>
-            <li Class="AlienBiomes.ModExt_PlantNastic">
-                <effectRadius>4</effectRadius>
-                <isVisuallyReactive>true</isVisuallyReactive>
-                <visuallyReactiveThreshold>0.85</visuallyReactiveThreshold>
-                <hediffEffectRadiusColor>(0.7, 0.4, 1, 1)</hediffEffectRadiusColor>
-                <isTouchSensitive>true</isTouchSensitive>
-                <fleckDef>ElectricalSpark</fleckDef>
-                <touchSFX>Psycast_Skip_Entry</touchSFX>
-                <givesHediffRadius>4</givesHediffRadius>
-                <givesHediffGrowthThreshold>0.85</givesHediffGrowthThreshold>
-                <hediffChance>0.1</hediffChance>
-                <hediffToGive>SZ_Crystallize</hediffToGive>
             </li>
         </modExtensions>
     </ThingDef>
@@ -616,7 +610,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_WindingFern</defName>
         <label>winding fern</label>
-        <description>These tall and spiraling ferns are soft to the touch and over time they will produce a healing aloe which can be used to treat wounds.</description>
+        <description>These tall and spiraling ferns are soft to the touch, and over time they will produce a healing aloe which can be used to treat wounds.</description>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <drawerType>MapMeshAndRealTime</drawerType>

@@ -51,7 +51,7 @@
         <label>starburst cactus</label>
         <description>A vibrant species of cactus found in harsh alien deserts. It spews harmful, sticky acid if pawns wander too close.</description>
         <pathCost>135</pathCost>
-        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <thingClass>AlienBiomes.Plant_Improved</thingClass>
         <tickerType>Normal</tickerType>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
@@ -87,20 +87,16 @@
                     <li>DeliriousBlackSand</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.ModExt_PlantNastic">
-                <effectRadius>3</effectRadius>
-                <isTouchSensitive>true</isTouchSensitive>
-                <isDamaging>true</isDamaging>
-                <explosionGrowthThreshold>0.75</explosionGrowthThreshold>
-                <explosionDamageEffectRadius>3</explosionDamageEffectRadius>
-                <explosionEffectRadiusColor>(1, 0.4, 0.4, 1)</explosionEffectRadiusColor>
-                <explosionReleaseCooldown>7500</explosionReleaseCooldown>
-                <explosionDamageDef>SZ_PlantAcid</explosionDamageDef>
-                <explosionDamage>1~3</explosionDamage>
-            </li>
         </modExtensions>
         <comps>
-            <li Class="AlienBiomes.CompProperties_NasticInfo" />
+            <li Class="AlienBiomes.CompProperties_Explosive">
+                <triggerRadius>3</triggerRadius>
+                <triggerRadiusColor>(1, 0.4, 0.4, 1)</triggerRadiusColor>
+                <triggerGrowthThreshold>0.75</triggerGrowthThreshold>
+                <triggerReleaseCooldown>450000</triggerReleaseCooldown>
+                <triggeredDamageDef>SZ_PlantAcid</triggeredDamageDef>
+                <triggeredDamageAmount>1~3</triggeredDamageAmount>
+            </li>
         </comps>
     </ThingDef>
 
@@ -258,7 +254,8 @@
         <modExtensions>
             <li Class="AlienBiomes.ModExt_PlantTerrainControl">
                 <terrainTags>
-                    <li>DeliriousMellowSand</li>
+                    <!--<li>DeliriousMellowSand</li>-->
+                    <li>DeliriousRichBlackSand</li>
                 </terrainTags>
             </li>
         </modExtensions>
@@ -270,7 +267,7 @@
         <defName>SZ_Sandblossom</defName>
         <label>sandblossom</label>
         <thingClass>AlienBiomes.Plant_Improved</thingClass>
-        <description>A rare and delicate desert plant that blooms only after rainfall. Its translucent petals are a suprisingly delicious food source.</description>
+        <description>A rare and delicate desert plant that blooms only after rainfall. Its translucent petals are a surprisingly delicious food source.</description>
         <statBases>
             <MaxHitPoints>115</MaxHitPoints>
             <Nutrition>0.6</Nutrition>
@@ -301,9 +298,9 @@
         <modExtensions>
             <li Class="AlienBiomes.ModExt_PlantTerrainControl">
                 <terrainTags>
-                    <li>DeliriousCoarseSand</li>
+                    <!--<li>DeliriousCoarseSand</li>-->
                     <li>DeliriousRichBlackSand</li>
-                    <li>DeliriousBlackSand</li>
+                    <!--<li>DeliriousBlackSand</li>-->
                 </terrainTags>
             </li>
             <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
@@ -350,7 +347,7 @@
         <modExtensions>
             <li Class="AlienBiomes.ModExt_PlantTerrainControl">
                 <terrainTags>
-                    <li>DeliriousCoarseSand</li>
+                    <!--<li>DeliriousCoarseSand</li>-->
                     <li>DeliriousRichBlackSand</li>
                     <li>DeliriousBlackSand</li>
                 </terrainTags>

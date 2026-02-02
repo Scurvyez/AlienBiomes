@@ -9,15 +9,13 @@ namespace AlienBiomes
     public static class AssetCompendium
     {
         private const string BiolumWaterOverlayTexPath = "AlienBiomes/Other/BiolumWater1";
-        private static readonly Texture2D ShimmerTex;
+        private static readonly Texture2D ShimmerTex = ContentFinder<Texture2D>.Get("AlienBiomes/Other/Noise_036");
         
         private static readonly Dictionary<int, Material> BiolumMatByBiome = new();
         private static readonly Material BaseBiolumMat;
 
         static AssetCompendium()
         {
-            ShimmerTex = ContentFinder<Texture2D>.Get("AlienBiomes/Other/Noise_036");
-            
             Shader shader = InternalDefOf.AB_MoteGlowDistortedVertex.Shader;
             Material pooled = MaterialPool.MatFrom(BiolumWaterOverlayTexPath, shader);
             BaseBiolumMat = new Material(pooled);
@@ -41,7 +39,7 @@ namespace AlienBiomes
 
             mat = new Material(BaseBiolumMat);
 
-            Color tint = biome?.GetModExtension<ModExt_BiomeBiolumColor>()?.biolumColor
+            Color tint = biome?.GetModExtension<ModExt_BiomeBioluminescence>()?.biolumColor
                          ?? Color.white;
 
             mat.color = tint;

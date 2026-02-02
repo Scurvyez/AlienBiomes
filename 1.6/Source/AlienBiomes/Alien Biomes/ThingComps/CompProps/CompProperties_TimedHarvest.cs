@@ -8,10 +8,10 @@ namespace AlienBiomes
     [UsedImplicitly]
     public class CompProperties_TimedHarvest : CompProperties
     {
-        public CompProperties_TimedHarvest() => compClass = typeof(Comp_TimedHarvest);
-        
         public float harvestStartTime = 0.75f;
         public float harvestStopTime = 0.20f;
         public List<Season> harvestSeasons = [];
+        
+        public CompProperties_TimedHarvest() => compClass = typeof(Comp_TimedHarvest);
     }
 }

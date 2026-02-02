@@ -28,7 +28,7 @@ namespace AlienBiomes
             UpdateLit(parent.Map);
         }
         
-        public override void CompTick()
+        public override void CompTickInterval(int delta)
         {
             int randomness = Rand.RangeInclusive(640, 1280);
             int curTick = Find.TickManager.TicksGame;
@@ -42,19 +42,15 @@ namespace AlienBiomes
         {
             StringBuilder stringBuilder = new ();
             
-            // convert start and stop times to hours
             int startHour = Mathf.FloorToInt(TimeProps.glowStartTime * 24);
             int stopHour = Mathf.FloorToInt(TimeProps.glowStopTime * 24);
             
-            // add leading zeros for single digit hours
             string startTimeFormatted = $"{startHour:D2}00";
             string stopTimeFormatted = $"{stopHour:D2}00";
             
-            // append info to the string builder
             stringBuilder.AppendLine("SZAB_PlantGlowerInfo"
                 .Translate(startTimeFormatted, stopTimeFormatted));
             
-            // include any additional information from base components
             string baseInspectString = base.CompInspectStringExtra();
             if (!string.IsNullOrEmpty(baseInspectString))
             {

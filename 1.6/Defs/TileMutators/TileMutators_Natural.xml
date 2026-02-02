@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <TileMutatorDef>
+        <defName>SZ_DeliriousOasis</defName>
+        <label>delirious oasis</label>
+        <description>A lush spring featuring abundant plant life and water in an otherwise desolate landscape.</description>
+        <priority>1</priority>
+        <workerClass>AlienBiomes.TileMutatorWorker_DeliriousOasis</workerClass>
+        <canSpawnOnRiver>false</canSpawnOnRiver>
+        <averageTemperatureRange>10~300</averageTemperatureRange>
+        <categories>
+            <li>Lake</li>
+            <li>Groundwater</li>
+        </categories>
+        <additionalWildPlants>
+            <SZ_AuroraAgave>5</SZ_AuroraAgave>
+            <SZ_DesertGlowPod>4</SZ_DesertGlowPod>
+            <SZ_QuasarBlossom>6</SZ_QuasarBlossom>
+            <SZ_Fiddlehead>5</SZ_Fiddlehead>
+            <SZ_StarburstCactus>5</SZ_StarburstCactus>
+            <SZ_Sandblossom>7</SZ_Sandblossom>
+            <SZ_Durasalve>2</SZ_Durasalve>
+        </additionalWildPlants>
+        <!--<overrideDensityForFertilityCurve>
+            <points>
+                <li>(0, 0.05)</li>
+                <li>(0.001, -1)</li>
+                <li>(0.999, -1)</li>
+                <li>(1.0, 0.05)</li>
+                <li>(1.4, 0.3)</li>
+            </points>
+        </overrideDensityForFertilityCurve>-->
+        <biomeWhitelist>
+            <li>SZ_DeliriousDunes</li>
+        </biomeWhitelist>
+    </TileMutatorDef>
+
+</Defs>

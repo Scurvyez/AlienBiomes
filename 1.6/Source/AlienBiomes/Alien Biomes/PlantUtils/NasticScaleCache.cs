@@ -9,7 +9,7 @@ namespace AlienBiomes
     {
         private static readonly Dictionary<ThingDef, float[]> Cache = new ();
 
-        public static float[] Get(ThingDef def, ModExt_PlantNastic ext, int maxTicks)
+        public static float[] Get(ThingDef def, ModExt_PlantVisuallyReactive ext, int maxTicks)
         {
             if (def == null || ext == null || maxTicks <= 0)
                 return null;
@@ -23,7 +23,7 @@ namespace AlienBiomes
             return array;
         }
 
-        private static float[] Build(ModExt_PlantNastic ext, int maxTicks)
+        private static float[] Build(ModExt_PlantVisuallyReactive ext, int maxTicks)
         {
             var arr = new float[maxTicks];
 
@@ -34,7 +34,6 @@ namespace AlienBiomes
             {
                 float t = i / denom; // 0..1
 
-                // Your original shape, but driven by per-def ext values.
                 float decrease = Mathf.Lerp(-ext.scaleDeltaDecrease, 0f, t);
                 float increaseT = EasingFunctions.EaseOutQuad(t);
                 float increase = Mathf.Lerp(0f, ext.scaleDeltaIncrease, increaseT);

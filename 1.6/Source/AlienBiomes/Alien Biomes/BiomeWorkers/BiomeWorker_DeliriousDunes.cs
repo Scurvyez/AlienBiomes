@@ -1,5 +1,4 @@
 using JetBrains.Annotations;
-using RimWorld;
 using RimWorld.Planet;
 
 namespace AlienBiomes
@@ -9,8 +8,7 @@ namespace AlienBiomes
     {
         protected override int NoiseSeedPart => 43123466;
 
-        protected override float ComputeBaseScore(BiomeDef biome, Tile tile, 
-            PlanetTile planetTile, ModExt_BiomeGeneration ext, WorldGrid worldGrid)
+        protected override float ComputeBaseScore(Tile tile, ModExt_BiomeGeneration ext)
         {
             return tile.temperature * 2.7f - 13f - tile.rainfall * 0.14f;
         }

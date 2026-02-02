@@ -31,18 +31,18 @@ namespace AlienBiomes
             if (!AdditionalAllowed(biome, tile, planetTile, ext, worldGrid))
                 return GetScoreLowestLimit;
 
-            float score = ComputeBaseScore(biome, tile, planetTile, ext, worldGrid);
+            float score = ComputeBaseScore(tile, ext);
 
             score += BiomeGenHelper.HillinessScoreBias(tile, ext, maxAbsBias: ext.hillsMaxScoreBias);
 
             return score;
         }
         
+        // if we feel like adding more conditions, this is the place to do it :)
         protected virtual bool AdditionalAllowed(BiomeDef biome, Tile tile, 
             PlanetTile planetTile, ModExt_BiomeGeneration ext, WorldGrid worldGrid) => true;
 
-        protected abstract float ComputeBaseScore(BiomeDef biome, Tile tile, 
-            PlanetTile planetTile, ModExt_BiomeGeneration ext, WorldGrid worldGrid);
+        protected abstract float ComputeBaseScore(Tile tile, ModExt_BiomeGeneration ext);
 
         private static bool AllowedByEnvironment(Tile tile, ModExt_BiomeGeneration ext)
         {

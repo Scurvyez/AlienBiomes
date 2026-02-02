@@ -79,12 +79,12 @@
         </value>
     </Operation>
 
-    <Operation Class="PatchOperationAdd">
+    <!--<Operation Class="PatchOperationAdd">
         <xpath>Defs/TileMutatorDef[defName="Oasis"]/biomeWhitelist</xpath>
         <value>
             <li>SZ_DeliriousDunes</li>
         </value>
-    </Operation>
+    </Operation>-->
 
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/TileMutatorDef[defName="DryLake"]/biomeWhitelist</xpath>

@@ -6,17 +6,21 @@ namespace AlienBiomes
 {
     public class GameCondition_CrystallineRedshift : GameCondition
     {
-        private const float SATURATION = 0.75f;
-        private const float GLOW = 0.25f;
-        private const int DURATION = 720;
+        private const float Saturation = 0.75f;
+        private const float Glow = 0.25f;
         
-        private static readonly Color _skyColor = new (0.9f, 0.1f, 0.1f);
-        private static readonly Color _shadowColor = Color.white;
-        private static readonly Color _overlayColor = new (1f, 1f, 1f);
-        private static readonly SkyColorSet _skyColors = new (_skyColor, _shadowColor, _overlayColor, SATURATION);
-        
+        private static readonly Color SkyColor = new (0.9f, 0.1f, 0.1f);
+        private static readonly Color ShadowColor = Color.white;
+        private static readonly Color OverlayColor = new (1f, 1f, 1f);
+        private static readonly SkyColorSet SkyColors = new (SkyColor, ShadowColor, OverlayColor, Saturation);
+
         public override int TransitionTicks => 360;
-        
+
+        public override void Init()
+        {
+            Duration = 720;
+        }
+
         public override float SkyTargetLerpFactor(Map map)
         {
             return GameConditionUtility.LerpInOutValue(this, TransitionTicks);
@@ -24,7 +28,7 @@ namespace AlienBiomes
         
         public override SkyTarget? SkyTarget(Map map)
         {
-            return new SkyTarget(GLOW, _skyColors, 1f, 1f);
+            return new SkyTarget(Glow, SkyColors, 1f, 1f);
         }
         
         public override bool Expired
@@ -33,7 +37,7 @@ namespace AlienBiomes
             {
                 if (!Permanent)
                 {
-                    return Find.TickManager.TicksGame > startTick + DURATION;
+                    return Find.TickManager.TicksGame > startTick + Duration;
                 }
                 return false;
             }

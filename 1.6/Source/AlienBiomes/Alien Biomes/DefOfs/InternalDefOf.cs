@@ -26,6 +26,8 @@ namespace AlienBiomes
         public static TerrainDef SZ_CrystallineSoil;
         public static TerrainDef SZ_BloodWaterMovingShallow;
         public static TerrainDef SZ_BloodWaterMovingChestDeep;
+        public static TerrainDef SZ_DeliriousRichBlackSand;
+        public static TerrainDef SZ_DeliriousBlackSand;
         #endregion
         
         #region PlantDefs
@@ -34,10 +36,6 @@ namespace AlienBiomes
         
         #region ShaderTypeDefs
         public static ShaderTypeDef AB_MoteGlowDistortedVertex;
-        #endregion
-        
-        #region MapMeshFlagDefs
-        public static MapMeshFlagDef SZ_Bioluminescence;
         #endregion
         
         static InternalDefOf()

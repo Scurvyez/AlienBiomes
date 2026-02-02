@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <LandmarkDef>
+        <defName>SZ_DeliriousOasis</defName>
+        <label>delirious oasis</label>
+        <drawScale>0.7</drawScale>
+        <iconTexturePath>World/Landmarks/Oasis</iconTexturePath>
+        <atlasSize>(2, 2)</atlasSize>
+        <commonality>0.25</commonality>
+        <nameMaker>NamerLandmark_Oasis</nameMaker>
+        <category>lake</category>
+        <mutatorChances>
+            <SZ_DeliriousOasis Required="True"/>
+            <Stockpile>0.05</Stockpile>
+            <AnimalLife_Increased>0.75</AnimalLife_Increased>
+            <AnimalHabitat>0.25</AnimalHabitat>
+            <SunnyMutator>0.05</SunnyMutator>
+            <AncientUplink>0.02</AncientUplink>
+        </mutatorChances>
+    </LandmarkDef>
+
+</Defs>

@@ -255,7 +255,7 @@
         <defName>SZ_ChaliceFungus</defName>
         <label>chalice fungus</label>
         <description>A tall, chalice-like shaped fungus that grows in patches all throughout the radiant plains. Chalice fungus is incredibly sensitive and reacts to touch.</description>
-        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
+        <thingClass>AlienBiomes.Plant_VisuallyReactive</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
         <selectable>true</selectable>
@@ -284,21 +284,24 @@
             <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>2</wildOrder>
         </plant>
+        <comps>
+            <li Class="AlienBiomes.CompProperties_SoundEmanate">
+                <triggeredSound>SZ_ChaliceFungusSFX</triggeredSound>
+            </li>
+        </comps>
         <modExtensions>
             <li Class="AlienBiomes.ModExt_PlantTerrainControl">
                 <terrainTags>
                     <li>ChaliceSoil</li>
                 </terrainTags>
             </li>
-            <li Class="AlienBiomes.ModExt_PlantNastic">
-                <effectRadius>3</effectRadius>
-                <isVisuallyReactive>true</isVisuallyReactive>
-                <isTouchSensitive>true</isTouchSensitive>
-                <minScale>0.25</minScale>
+            <li Class="AlienBiomes.ModExt_PlantVisuallyReactive">
+                <triggerRadius>3</triggerRadius>
+                <triggerRadiusColor>(1, 1, 1, 1)</triggerRadiusColor>
+                <textureInstancesPerMesh>3</textureInstancesPerMesh>
+                <minDrawScale>0.25</minDrawScale>
                 <scaleDeltaDecrease>0.08</scaleDeltaDecrease>
                 <scaleDeltaIncrease>0.01</scaleDeltaIncrease>
-                <texInstances>3</texInstances>
-                <touchSFX>SZ_ChaliceFungusSFX</touchSFX>
             </li>
         </modExtensions>
     </ThingDef>
@@ -374,12 +377,11 @@
 
     <!--==================== Copacetic Cone ====================-->
     <!-- Only spawns on radiant soil and rich radiant soil. -->
-    <!-- Reacts to pawn movement. -->
+    <!-- Reacts to pawn movement(???). -->
 
     <ThingDef ParentName="PlantBase">
         <defName>SZ_CopaceticCone</defName>
         <label>copacetic cone</label>
-        <thingClass>AlienBiomes.Plant_Nastic</thingClass>
         <description>Curious-looking plants that resemble urb-world soft serve ice cream. They release an exquisite honey!</description>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
@@ -421,12 +423,6 @@
                 <terrainTags>
                     <li>Soil</li>
                 </terrainTags>
-            </li>
-            <li Class="AlienBiomes.ModExt_PlantNastic">
-                <effectRadius>2</effectRadius>
-                <isTouchSensitive>true</isTouchSensitive>
-                <isVisuallyReactive>true</isVisuallyReactive>
-                <touchSFX>SZ_PlantShimmeringSFX</touchSFX>
             </li>
         </modExtensions>
     </ThingDef>
@@ -533,62 +529,6 @@
         </modExtensions>
     </ThingDef>
 
-    <!--==================== Radiant Bioluminescence ====================-->
-    <!-- Only spawns in shallow salty radiant water. -->
-    <!-- Fades in and out (alpha channel) at sunset/sunrise. -->
-
-    <!--<ThingDef ParentName="PlantBaseNonEdible">
-        <defName>SZ_RadiantBioluminescence</defName>
-        <thingClass>AlienBiomes.Plant_Bioluminescence</thingClass>
-        <drawerType>MapMeshOnly</drawerType>
-        <tickerType>Long</tickerType>
-        <label>radiant bioluminescence</label>
-        <description>A pretty, bright, and vibrant algae found along the shorelines of radiant plains.</description>
-        <selectable>false</selectable>
-        <altitudeLayer>LowPlant</altitudeLayer>
-        <fillPercent>0.01</fillPercent>
-        <pathCost>2</pathCost>
-        <statBases>
-            <MaxHitPoints>1</MaxHitPoints>
-            <DeteriorationRate>0.00</DeteriorationRate>
-        </statBases>
-        <graphicData>
-            <texPath>AlienBiomes/Things/Special/ShallowOceanWaterBioluminescence</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-            <shaderType>MoteGlowDistorted</shaderType>
-            <shaderParameters>
-                <_Color>(0.8, 0.15, 0.3, 0)</_Color>
-                <_DistortionTex>/Other/Ripples</_DistortionTex>
-                <_distortionIntensity>0.05</_distortionIntensity>
-                <_DistortionScale>0.4</_DistortionScale>
-                <_distortionScrollSpeed>(0.07, 0.07, 0.0)</_distortionScrollSpeed>
-            </shaderParameters>
-        </graphicData>
-        <plant>
-            <fertilityMin>0.1</fertilityMin>
-            <fertilitySensitivity>0.1</fertilitySensitivity>
-            <growDays>1</growDays>
-            <wildClusterRadius>2</wildClusterRadius>
-            <wildClusterWeight>20</wildClusterWeight>
-            <visualSizeRange>0.8~1.0</visualSizeRange>
-            <topWindExposure>0.025</topWindExposure>
-            <wildOrder>2</wildOrder>
-        </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Salty</li>
-                    <li>Shallow</li>
-                    <li>ABSaltyShallow</li>
-                </terrainTags>
-            </li>
-            <li Class="AlienBiomes.ModExt_PlantBioluminescence">
-                <alphaMultiplier>5.575</alphaMultiplier>
-			</li>
-        </modExtensions>
-    </ThingDef>-->
-
     <!--==================== Star of the Plains ====================-->
     <!-- Decorative, wild, no fruit or real benefits. lol -->
     <!-- Only spawns in water. -->
@@ -596,7 +536,7 @@
     <ThingDef ParentName="PlantBaseNonEdible">
         <defName>SZ_StarOfThePlains</defName>
         <label>star of the plains</label>
-        <description>A deep-red, waterborne, flower perched upon a small yet durable lilypad-like base which floats on shallow water. The flower can be eaten in a pinch to sustain life.</description>
+        <description>A deep-red, waterborne, flower perched upon a small yet durable lily-pad-like base which floats on shallow water. The flower can be eaten in a pinch to sustain life.</description>
         <selectable>false</selectable>
         <altitudeLayer>LowPlant</altitudeLayer>
         <fillPercent>0.20</fillPercent>

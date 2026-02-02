@@ -50,7 +50,7 @@ namespace AlienBiomes
 
                     if (found == null)
                     {
-                        ABLog.Warning($"[AlienBiomes] Could not find shader by name '{actualShaderName}' in mod bundles.");
+                        ABLog.Warning($"Could not find shader by name '{actualShaderName}' in mod bundles.");
                         return;
                     }
 
