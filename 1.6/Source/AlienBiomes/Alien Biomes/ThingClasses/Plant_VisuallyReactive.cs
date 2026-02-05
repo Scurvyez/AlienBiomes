@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -9,7 +8,8 @@ namespace AlienBiomes
     public class Plant_VisuallyReactive : Plant
     {
         private const int MaxTicks = 720;
-        
+        private const int ScaleUpdateIntervalTicks = 2;
+
         public int TouchSensitiveStartTime;
         public float CurrentScale = 1f;
 
@@ -21,104 +21,132 @@ namespace AlienBiomes
         private float _drawSizeY;
         private ModExt_PlantVisuallyReactive _ext;
         private Material _randMat;
-        private Vector3 _drawPos = new (0, 0, 0);
+        private Vector3 _drawPos = new(0, 0, 0);
         private Matrix4x4 _matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
+
         private readonly List<Vector3> _instanceOffsets = [];
         private readonly Mesh _mesh = MeshPool.plane10;
-        
+
         public ModExt_PlantVisuallyReactive Ext => _ext;
-        
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+
             _ext = def.GetModExtension<ModExt_PlantVisuallyReactive>();
             _cachedMap = map;
-            
+
             if (_ext == null)
             {
-                ABLog.Warning($"{_ext} is null for {def.defName}");
+                ABLog.Warning($"ModExt_PlantVisuallyReactive is null for {def.defName}");
                 return;
             }
-            
+
+            if (def.graphicData == null)
+                return;
+
+            _randMat = Graphic.MatSingle;
+            _drawSizeY = def.graphicData.drawSize.y;
+
+            _instanceOffsets.Clear();
             InitializeRandomOffsets();
+
             _scaleDeltaCache = NasticScaleCache.Get(def, _ext, maxTicks: MaxTicks);
-                
-            for (int i = 0; i < _instanceOffsets.Count; i++)
+
+            if (!respawningAfterLoad)
             {
-                if (def.graphicData == null) continue;
-                _randMat = Graphic.MatSingle;
-                _drawSizeY = def.graphicData.drawSize.y;
+                CurrentScale = 1f;
+                TouchSensitiveStartTime = Find.TickManager.TicksGame - MaxTicks;
             }
             
-            IntVec3[] cells = GenRadial.RadialCellsAround(Position, _ext.triggerRadius, useCenter: true).ToArray();
+            _curPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
+            
             var plantGetterTouchSensitive = map.GetComponent<MapComponent_PlantGetter_VisuallyReactive>();
-            
-            foreach (IntVec3 cell in cells)
+            if (plantGetterTouchSensitive != null)
             {
-                if (!plantGetterTouchSensitive.ActiveLocationTriggers.ContainsKey(cell))
+                foreach (IntVec3 cell in GenRadial.RadialCellsAround(Position, _ext.triggerRadius, useCenter: true))
                 {
-                    plantGetterTouchSensitive.ActiveLocationTriggers[cell] = [];
-                }
-                plantGetterTouchSensitive.ActiveLocationTriggers[cell].Add(this);
-            }
-        }
-        
-        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
-        {
-            var plantGetterTouchSensitive = _cachedMap?.GetComponent<MapComponent_PlantGetter_VisuallyReactive>();
-            plantGetterTouchSensitive?.ActiveLocationTriggers
-                .Where(kvp => kvp.Value.Remove(this) && 
-                              kvp.Value.Count == 0)
-                .Select(kvp => kvp.Key)
-                .ToList()
-                .ForEach(key => plantGetterTouchSensitive.ActiveLocationTriggers.Remove(key));
-            
-            base.DeSpawn(mode);
-            _cachedMap = null;
-        }
-        
-        // using TickInterval may be why we are seeing some weirdness with the visuals
-        // it runs in parallel with the camera logic
-        protected override void Tick()
-        {
-            base.Tick();
-            if (_scaleDeltaCache != null)
-            {
-                _curPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
-                if (_ext != null)
-                {
-                    _timeSinceLastStep = Find.TickManager.TicksGame - TouchSensitiveStartTime;
-                    if (_timeSinceLastStep < MaxTicks)
+                    if (!plantGetterTouchSensitive.ActiveLocationTriggers.TryGetValue(cell, out var set))
                     {
-                        float scaleChangeRate = _scaleDeltaCache[_timeSinceLastStep];
-                        CurrentScale = Mathf.Clamp(CurrentScale + scaleChangeRate, _ext.minDrawScale, 1);
+                        set = new HashSet<Plant_VisuallyReactive>();
+                        plantGetterTouchSensitive.ActiveLocationTriggers[cell] = set;
                     }
+                    set.Add(this);
                 }
-            }
-        }
-        
-        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
-        {
-            for (int i = 0; i < _instanceOffsets.Count; i++)
-            {
-                // Draw the mesh with the modified UV coordinates
-                _drawPos = _instanceOffsets[i];
-                
-                // Calculate the adjusted z-coordinate based on the change in scale
-                _scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
-                // This ensures our individual textures on the mesh shrink down to their base and not into their center
-                _drawPos.z += _drawSizeY * _scaleY / 10f;
-                
-                _matrix = Matrix4x4.TRS(_drawPos, Rotation.AsQuat, 
-                    new Vector3(CurrentScale * _curPlantGrowth, 1, CurrentScale * _curPlantGrowth));
-                Graphics.DrawMesh(_mesh, _matrix, _randMat, 0, null, 0, null, 
-                    false, false, false);
             }
         }
 
-        /// <summary>
-        /// Calculates the initial position of each texture on our mesh on spawn.
-        /// </summary>
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            // no full-dictionary scan)
+            if (_ext != null)
+            {
+                var plantGetterTouchSensitive = _cachedMap?.GetComponent<MapComponent_PlantGetter_VisuallyReactive>();
+                if (plantGetterTouchSensitive != null)
+                {
+                    foreach (IntVec3 cell in GenRadial.RadialCellsAround(Position, _ext.triggerRadius, useCenter: true))
+                    {
+                        if (!plantGetterTouchSensitive.ActiveLocationTriggers.TryGetValue(cell, out var set))
+                            continue;
+
+                        set.Remove(this);
+                        if (set.Count == 0)
+                            plantGetterTouchSensitive.ActiveLocationTriggers.Remove(cell);
+                    }
+                }
+            }
+
+            base.DeSpawn(mode);
+            _cachedMap = null;
+        }
+
+        protected override void Tick()
+        {
+            base.Tick();
+            
+            if (_ext == null || _scaleDeltaCache == null)
+                return;
+            
+            _curPlantGrowth = def.plant.visualSizeRange.LerpThroughRange(Growth);
+            
+            int ticksGame = Find.TickManager.TicksGame;
+            _timeSinceLastStep = ticksGame - TouchSensitiveStartTime;
+            if ((uint)_timeSinceLastStep >= MaxTicks)
+                return;
+            
+            if ((ticksGame & (ScaleUpdateIntervalTicks - 1)) != 0)
+                return;
+            
+            float scaleChangeRate = _scaleDeltaCache[_timeSinceLastStep];
+            if (ScaleUpdateIntervalTicks == 2 && _timeSinceLastStep > 0)
+                scaleChangeRate += _scaleDeltaCache[_timeSinceLastStep - 1];
+            
+            CurrentScale = Mathf.Clamp(CurrentScale + scaleChangeRate, _ext.minDrawScale, 1f);
+        }
+
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            if (_randMat == null || _instanceOffsets.Count == 0)
+                return;
+
+            _scaleY = Mathf.Lerp(-1f, 0.5f, CurrentScale);
+            float zAdjust = _drawSizeY * _scaleY / 10f;
+
+            float scaled = CurrentScale * _curPlantGrowth;
+            var scaleVec = new Vector3(scaled, 1f, scaled);
+            var rot = Rotation.AsQuat;
+
+            for (int i = 0; i < _instanceOffsets.Count; i++)
+            {
+                _drawPos = drawLoc + _instanceOffsets[i];
+                _drawPos.z += zAdjust;
+
+                _matrix = Matrix4x4.TRS(_drawPos, rot, scaleVec);
+                Graphics.DrawMesh(_mesh, _matrix, _randMat, 0, null, 
+                    0, null, false, false, false);
+            }
+        }
+
         private void InitializeRandomOffsets()
         {
             for (int i = 0; i < _ext.textureInstancesPerMesh; i++)
@@ -126,14 +154,10 @@ namespace AlienBiomes
                 float xOffset = Rand.Range(-0.5f, 0.5f);
                 float zOffset = Rand.Range(-0.5f, 0.5f);
 
-                Vector3 instancePos = DrawPos;
-                instancePos.x += xOffset;
-                instancePos.z += zOffset;
-
-                _instanceOffsets.Add(instancePos);
+                _instanceOffsets.Add(new Vector3(xOffset, 0f, zOffset));
             }
         }
-        
+
         public override void ExposeData()
         {
             base.ExposeData();

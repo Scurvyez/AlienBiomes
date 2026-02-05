@@ -28,7 +28,8 @@ namespace AlienBiomes
             
             // implied defs are generated before SCOS runs
             // so this patch needs to be run before then, hence why it's here
-            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
+            harmony.Patch(original: AccessTools.Method(typeof(TerrainDefGenerator_Stone), 
+                    nameof(TerrainDefGenerator_Stone.ImpliedTerrainDefs)),
                 postfix: new HarmonyMethod(typeof(AlienBiomesMod), 
                     nameof(ImpliedTerrainDefsPostfix)));
         }
@@ -105,13 +106,13 @@ namespace AlienBiomes
             listRight.Gap(HeaderTextGap);
             
             listRight.CheckboxLabeled("SZAB_SettingCompEffectSounds".Translate(), 
-                ref _settings._allowCompEffectSounds, "SZAB_SettingCompEffectSoundsDesc".Translate());
+                ref _settings._allowCompSoundEmanate, "SZAB_SettingCompEffectSoundsDesc".Translate());
             
             listRight.Label(label: "SZAB_SettingPlantSFXChance".Translate(
-                    (100f * _settings._plantSFXChance).ToString("F0")), 
+                    (100f * _settings._compSoundEmanateChance).ToString("F0")), 
                 tooltip: "SZAB_SettingPlantSFXChanceDesc".Translate());
-            _settings._plantSFXChance = Mathf.Round(listRight.Slider(
-                100f * _settings._plantSFXChance, 0f, 100f)) / 100f;
+            _settings._compSoundEmanateChance = Mathf.Round(listRight.Slider(
+                100f * _settings._compSoundEmanateChance, 0f, 100f)) / 100f;
             
             listRight.End();
             Widgets.EndScrollView();

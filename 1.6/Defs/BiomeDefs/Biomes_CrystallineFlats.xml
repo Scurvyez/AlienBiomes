@@ -79,6 +79,11 @@
                     <li>
                         <terrain>SZ_CrystallineWaterShallow</terrain>
                         <min>0.90</min>
+                        <max>0.96</max>
+                    </li>
+                    <li>
+                        <terrain>SZ_CrystallineWaterDeep</terrain>
+                        <min>0.96</min>
                         <max>999</max>
                     </li>
                 </thresholds>
@@ -136,7 +141,6 @@
             <SZ_GlisteningGrass>5.50</SZ_GlisteningGrass>
             <SZ_GlisteningTallGrass>11.0</SZ_GlisteningTallGrass>
             <SZ_LushGreenGrass>5.78</SZ_LushGreenGrass>
-            <!-- <SZ_GlassyBroadLeafedBirch>2.45</SZ_GlassyBroadLeafedBirch> -->
             <SZ_OpulentOrchid>2.555</SZ_OpulentOrchid>
             <SZ_BlueMoonberry>4.75</SZ_BlueMoonberry>
             <SZ_WindingFern>3.85</SZ_WindingFern>

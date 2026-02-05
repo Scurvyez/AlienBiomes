@@ -313,7 +313,7 @@
         <defName>SZ_Durasalve</defName>
         <label>durasalve</label>
         <thingClass>AlienBiomes.Plant_Improved</thingClass>
-        <description>A rare and hardy desert plant that blooms only after heavy rainfall. Its tough, armored exterior protects the precious, moisture-rich fruit within, which is highly sought after for its potent healing properties. The fruit of the durasalve is packed with nutrients and natural compounds that accelerate healing and restore vitality, making it a treasured resource for any traveler fortunate enough to encounter it in the arid expanse.</description>
+        <description>A rare and hardy desert plant that blooms only after heavy rainfall. Its tough, armored exterior protects the precious, moisture-rich fruit within, which is highly sought after for its potent healing properties. The fruit of the durasalve is packed with nutrients and natural compounds that speed up healing and restore vitality, making it a treasured resource for any traveler fortunate enough to encounter it in the arid expanse.</description>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
         </statBases>

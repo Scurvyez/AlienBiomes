@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlienBiomesWelcomeNote.cs" />
+    <Compile Include="AlienBiomesMain.cs" />
     <Compile Include="AssetUtils\InternalShaderPropertyIDs.cs" />
     <Compile Include="AssetUtils\ABShaderTypeDef.cs" />
     <Compile Include="AssetUtils\AssetCompendium.cs" />
@@ -52,9 +52,14 @@
     <Compile Include="BiomeWorkers\BiomeWorker_CrystallineFlats.cs" />
     <Compile Include="BiomeWorkers\BiomeWorker_DeliriousDunes.cs" />
     <Compile Include="BiomeWorkers\BiomeWorker_RadiantPlains.cs" />
+    <Compile Include="Damages\DamageWorker_PlantAcid.cs" />
+    <Compile Include="Damages\DamageWorker_PlantAcidSplash.cs" />
+    <Compile Include="Damages\PlantAcidDamageUtility.cs" />
     <Compile Include="Debugging\ABLog.cs" />
     <Compile Include="DefModExtensions\ModExt_BiomeGeneration.cs" />
     <Compile Include="DefModExtensions\ModExt_BiomeBioluminescence.cs" />
+    <Compile Include="DefModExtensions\ModExt_PlantAcidDamage.cs" />
+    <Compile Include="DefModExtensions\ModExt_PlantAcidSplash.cs" />
     <Compile Include="DefModExtensions\ModExt_PlantDesertBloom.cs" />
     <Compile Include="DefModExtensions\ModExt_PlantVisuallyReactive.cs" />
     <Compile Include="DefModExtensions\ModExt_PlantTerrainControl.cs" />
@@ -96,7 +101,7 @@
     <None Include="packages.config" />
   </ItemGroup>
 
-  <ItemGroup Condition="'@(Reference->WithMetadataValue('Identity', 'Assembly-CSharp')->Metadata('HintPath')->Exists())' == ''">
+  <ItemGroup Condition="'@(Reference-&gt;WithMetadataValue('Identity', 'Assembly-CSharp')-&gt;Metadata('HintPath')-&gt;Exists())' == ''">
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4515-beta" />
   </ItemGroup>
   <ItemGroup>

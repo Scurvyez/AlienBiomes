@@ -6,6 +6,8 @@ namespace AlienBiomes
     [StaticConstructorOnStartup]
     public static class AlienBiomesMain
     {
+        public static bool DebugStartOutputLogging = false;
+        
         static AlienBiomesMain()
         {
             ABLog.Message($"{DateTime.Now.Date.ToShortDateString()} "

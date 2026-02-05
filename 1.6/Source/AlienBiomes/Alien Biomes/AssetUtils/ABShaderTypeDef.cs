@@ -57,7 +57,10 @@ namespace AlienBiomes
                     ShaderDatabase.lookup[shaderPath] = found;
                     ShaderDatabase.lookup[found.name] = found;
 
-                    ABLog.Message($"Shader registered. lookup['{shaderPath}'] -> '{found.name}'");
+                    if (AlienBiomesMain.DebugStartOutputLogging)
+                    {
+                        ABLog.Message($"Shader registered. lookup['{shaderPath}'] -> '{found.name}'");
+                    }
                 }
                 catch (Exception e)
                 {

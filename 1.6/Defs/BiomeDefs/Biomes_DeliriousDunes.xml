@@ -132,7 +132,7 @@
             <GrayPall MayRequire="Ludeon.Rimworld.Anomaly">1</GrayPall>
             <Windy MayRequire="Ludeon.Rimworld.Odyssey">4</Windy>
             <ToxRain MayRequire="Ludeon.Rimworld.Odyssey">1</ToxRain>
-            <Sandstorm MayRequire="Ludeon.Rimworld.Odyssey">3</Sandstorm>
+            <Sandstorm MayRequire="Ludeon.Rimworld.Odyssey">2</Sandstorm>
             <BlindFog MayRequire="Ludeon.Rimworld.Odyssey">1</BlindFog>
             <Overcast MayRequire="Ludeon.Rimworld.Odyssey">1</Overcast>
             <Blizzard MayRequire="Ludeon.Rimworld.Odyssey">0</Blizzard>

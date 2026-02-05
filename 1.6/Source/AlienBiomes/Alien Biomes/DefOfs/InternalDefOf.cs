@@ -38,6 +38,10 @@ namespace AlienBiomes
         public static ShaderTypeDef AB_MoteGlowDistortedVertex;
         #endregion
         
+        #region DamageDefs
+        public static DamageDef SZ_PlantAcidSplash;
+        #endregion
+        
         static InternalDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(InternalDefOf));

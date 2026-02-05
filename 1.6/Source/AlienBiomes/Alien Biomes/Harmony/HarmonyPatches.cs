@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -82,7 +81,7 @@ namespace AlienBiomes
                 return false;
             }
             
-            // If a building provides a matching sowTag, allow immediately.
+            // if a building provides a matching sowTag, allow immediately (hydroponics)
             foreach (Thing thing in map.thingGrid.ThingsListAt(c))
             {
                 string sowTag = thing?.def?.building?.sowTag;
@@ -138,9 +137,7 @@ namespace AlienBiomes
             return false;
         }
         
-        // same as above...
-        // we're not even using any of the custom shaders anymore... sadge
-        // we may in the future so keep this!
+        // not even using any of the custom plant shaders atm... sadge
         /*public static void MatFromPostFix(MaterialRequest req, ref Material __result)
         {
             if (__result != null

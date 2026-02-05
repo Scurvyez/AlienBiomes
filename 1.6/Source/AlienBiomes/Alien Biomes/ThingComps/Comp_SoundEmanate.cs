@@ -21,8 +21,8 @@ namespace AlienBiomes
         public void TryPlayTriggeredSound()
         {
             if (Props.triggeredSound == null 
-                || !AlienBiomesSettings.AllowCompEffectSounds
-                || !Rand.Chance(AlienBiomesSettings.PlantSFXChance)) return;
+                || !AlienBiomesSettings.AllowCompSoundEmanate
+                || !Rand.Chance(AlienBiomesSettings.CompSoundEmanateChance)) return;
 
             if (parent is Plant_VisuallyReactive plant)
             {

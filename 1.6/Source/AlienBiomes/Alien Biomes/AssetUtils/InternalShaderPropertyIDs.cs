@@ -4,6 +4,7 @@ namespace AlienBiomes
 {
     public static class InternalShaderPropertyIDs
     {
+        // bioluminescence shader properties
         private static readonly string AlphaFactorName = "_AlphaFactor";
         private static readonly string DistortionTexName = "_DistortionTex";
         private static readonly string ShimmerTexName = "_ShimmerTex";
@@ -23,5 +24,7 @@ namespace AlienBiomes
         public static int DistortionIntensity = Shader.PropertyToID(DistortionIntensityName);
         public static int DistortionScale = Shader.PropertyToID(DistortionScaleName);
         public static int DistortionScrollSpeed = Shader.PropertyToID(DistortionScrollSpeedName);
+        
+        
     }
 }

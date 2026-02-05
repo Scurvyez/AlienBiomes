@@ -3,7 +3,7 @@
 
     <DamageDef Name="SZ_PlantAcid">
         <defName>SZ_PlantAcid</defName>
-        <workerClass>DamageWorker_Flame</workerClass>
+        <workerClass>AlienBiomes.DamageWorker_PlantAcid</workerClass>
         <label>chemical burn</label>
         <hasForcefulImpact>false</hasForcefulImpact>
         <makesBlood>false</makesBlood>
@@ -13,9 +13,9 @@
         <hediff>ChemicalBurn</hediff>
         <armorCategory>Heat</armorCategory>
         <minDamageToFragment>15</minDamageToFragment>
-        <defaultDamage>10</defaultDamage>
+        <defaultDamage>7.5</defaultDamage>
         <defaultArmorPenetration>0</defaultArmorPenetration>
-        <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+        <explosionHeatEnergyPerCell>3</explosionHeatEnergyPerCell>
         <explosionCellFleck>HeatGlow</explosionCellFleck>
         <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
         <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
@@ -23,6 +23,39 @@
         <combatLogRules>Damage_Flame</combatLogRules>
         <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
         <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>
+        <modExtensions>
+            <!-- primary hit selection / weighting -->
+            <li Class="AlienBiomes.ModExt_PlantAcidPrimary">
+                <outsideDepthWeight>4.5</outsideDepthWeight>
+                <partWeights>
+                    <li><part>Eye</part><multiplier>2</multiplier></li>
+                    <li><part>Jaw</part><multiplier>4</multiplier></li>
+                    <li><part>Hand</part><multiplier>6</multiplier></li>
+                    <li><part>Foot</part><multiplier>6</multiplier></li>
+                </partWeights>
+            </li>
+            <!-- splash orchestration settings (read by the PRIMARY worker) -->
+            <li Class="AlienBiomes.ModExt_PlantAcidSplash">
+                <splashChance>0.35</splashChance>
+                <splashHits>2~6</splashHits>
+                <splashDamageFrac>0.15~0.35</splashDamageFrac>
+            </li>
+        </modExtensions>
+    </DamageDef>
+
+    <DamageDef Name="SZ_PlantAcidSplash">
+        <defName>SZ_PlantAcidSplash</defName>
+        <workerClass>AlienBiomes.DamageWorker_PlantAcidSplash</workerClass>
+        <label>chemical burn</label>
+        <hasForcefulImpact>false</hasForcefulImpact>
+        <makesBlood>false</makesBlood>
+        <canInterruptJobs>false</canInterruptJobs>
+        <externalViolence>true</externalViolence>
+        <hediff>ChemicalBurn</hediff>
+        <armorCategory>Heat</armorCategory>
+        <minDamageToFragment>3</minDamageToFragment>
+        <defaultDamage>1</defaultDamage>
+        <combatLogRules>Damage_Flame</combatLogRules>
     </DamageDef>
 
 </Defs>
