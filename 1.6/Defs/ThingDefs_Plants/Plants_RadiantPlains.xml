@@ -30,17 +30,14 @@
             <visualSizeRange>0.4~0.6</visualSizeRange>
             <topWindExposure>0.4</topWindExposure>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>RadiantSoil</li>
+                <li>RadiantRichSoil</li>
+                <li>Stony</li>
+                <li>Rocky</li>
+                <li>ChaliceSoil</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Stony</li>
-                    <li>Rocky</li>
-                    <li>ChaliceSoil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Radiant Tall Grass ====================-->
@@ -73,17 +70,14 @@
             <wildClusterRadius>4</wildClusterRadius>
             <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>RadiantSoil</li>
+                <li>RadiantRichSoil</li>
+                <li>Stony</li>
+                <li>Rocky</li>
+                <li>ChaliceSoil</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Stony</li>
-                    <li>Rocky</li>
-                    <li>ChaliceSoil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Nebulous Veil Moss ====================-->
@@ -114,15 +108,11 @@
             <visualSizeRange>0.4~0.9</visualSizeRange>
             <topWindExposure>0</topWindExposure>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>Stony</li>
+                <li>Rocky</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Stony</li>
-                    <li>Rocky</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Bulbous Sanitas ====================-->
@@ -153,16 +143,12 @@
             <visualSizeRange>0.5~1.2</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>RadiantSoil</li>
+                <li>Stony</li>
+                <li>Rocky</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Stony</li>
-                    <li>Rocky</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Fiddlehead ====================-->
@@ -193,15 +179,12 @@
             <visualSizeRange>0.5~1.2</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>RadiantSoil</li>
+                <li>RadiantRichSoil</li>
+                <li>SoothingSand</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Sandy</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Fiddlehead Water Based ====================-->
@@ -232,19 +215,11 @@
             <visualSizeRange>0.5~1.425</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
             <wildOrder>2</wildOrder>
+            <wildTerrainTags>
+                <li>RadiantWaterMovingShallow</li>
+                <li>RadiantWaterShallow</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Fresh</li>
-                    <li>Shallow</li>
-                    <li>River</li>
-                    <li>Boggy</li> 
-                    <li>Muddy</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Chalice Fungus ====================-->
@@ -283,6 +258,9 @@
             <wildClusterRadius>4</wildClusterRadius>
             <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>2</wildOrder>
+            <wildTerrainTags>
+                <li>ChaliceSoil</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_SoundEmanate">
@@ -290,11 +268,6 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>ChaliceSoil</li>
-                </terrainTags>
-            </li>
             <li Class="AlienBiomes.ModExt_PlantVisuallyReactive">
                 <triggerRadius>3</triggerRadius>
                 <triggerRadiusColor>(1, 1, 1, 1)</triggerRadiusColor>
@@ -348,6 +321,9 @@
             <topWindExposure>0.3</topWindExposure>
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
+            <wildTerrainTags>
+                <li>SoothingSand</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -366,13 +342,6 @@
                 </harvestSeasons>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Sandy</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Copacetic Cone ====================-->
@@ -417,14 +386,15 @@
             <topWindExposure>0.3</topWindExposure>
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
+            <wildTerrainTags>
+                <li>RadiantSoil</li>
+                <li>RadiantRichSoil</li>
+            </wildTerrainTags>
+            <sowTags>
+                <li>Ground</li>
+                <li>Hydroponic</li>
+            </sowTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Elder Bamboo ====================-->
@@ -455,32 +425,33 @@
         </graphicData>
         <plant>
             <fertilityMin>0.5</fertilityMin>
-            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <fertilitySensitivity>1.125</fertilitySensitivity>
             <soundHarvesting>Harvest_Tree</soundHarvesting>
             <soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
-            <growDays>14</growDays>
+            <growDays>12</growDays>
             <leaflessGraphicPath>AlienBiomes/Things/Plants/ElderBamboo_Leafless</leaflessGraphicPath>
             <immatureGraphicPath>AlienBiomes/Things/Plants/ElderBamboo_Immature</immatureGraphicPath>
             <harvestYield>25</harvestYield>
             <harvestWork>1100</harvestWork>
             <harvestTag>Standard</harvestTag>
-            <harvestAfterGrowth>0.30</harvestAfterGrowth>
+            <harvestAfterGrowth>0.66</harvestAfterGrowth>
             <harvestedThingDef>SZ_ElderBambooLog</harvestedThingDef>
             <wildClusterRadius>10</wildClusterRadius>
             <wildClusterWeight>160</wildClusterWeight>
             <visualSizeRange>0.85~5.15</visualSizeRange>
             <topWindExposure>0.05</topWindExposure>
             <maxMeshCount>4</maxMeshCount>
-            <wildOrder>2</wildOrder>
+            <!--<wildOrder>2</wildOrder>-->
             <interferesWithRoof>true</interferesWithRoof>
+            <wildTerrainTags>
+                <li>RadiantSoil</li>
+                <li>RadiantRichSoil</li>
+            </wildTerrainTags>
+            <sowTags>
+                <li>Ground</li>
+                <li>Hydroponic</li>
+            </sowTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Lily of the Plains ====================-->
@@ -514,19 +485,11 @@
             <visualSizeRange>0.15~1.00</visualSizeRange>
             <topWindExposure>0.65</topWindExposure>
             <wildOrder>2</wildOrder>
+            <wildTerrainTags>
+                <li>RadiantWaterMovingShallow</li>
+                <li>RadiantWaterShallow</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Fresh</li>
-                    <li>Shallow</li>
-                    <li>River</li>
-                    <li>Boggy</li>
-                    <li>Muddy</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Star of the Plains ====================-->
@@ -561,19 +524,11 @@
             <visualSizeRange>0.25~1.75</visualSizeRange>
             <topWindExposure>0.75</topWindExposure>
             <wildOrder>2</wildOrder>
+            <wildTerrainTags>
+                <li>RadiantWaterMovingShallow</li>
+                <li>RadiantWaterShallow</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Fresh</li>
-                    <li>Shallow</li>
-                    <li>River</li>
-                    <li>Boggy</li> <!-- ??? -->
-                    <li>Muddy</li> <!-- ??? -->
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Fiddlehead Wall ====================-->
@@ -610,19 +565,17 @@
             <wildOrder>2</wildOrder>
             <wildClusterRadius>10</wildClusterRadius>
             <wildClusterWeight>50</wildClusterWeight>
+            <wildTerrainTags>
+                <li>RadiantSoil</li>
+                <li>RadiantRichSoil</li>
+                <li>Stony</li>
+                <li>Rocky</li>
+            </wildTerrainTags>
             <sowTags>
                 <li>Ground</li>
+                <!--<li>Hydroponic</li>-->
             </sowTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Stony</li>
-                    <li>Rocky</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
 </Defs>

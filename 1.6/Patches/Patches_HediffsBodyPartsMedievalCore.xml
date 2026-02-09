@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[@Name="SurgeryInstallWoodenPartBase"]/ingredients/li/filter/thingDefs</xpath>
+        <value>
+            <li>SZ_ElderBambooLog</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[@Name="SurgeryInstallWoodenPartBase"]/fixedIngredientFilter/thingDefs</xpath>
+        <value>
+            <li>SZ_ElderBambooLog</li>
+        </value>
+    </Operation>
+
+</Patch>

@@ -67,16 +67,13 @@
         <affordances>
             <li>MovingFluid</li>
         </affordances>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Fresh</li>
-                    <li>Shallow</li>
-                    <li>River</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>RadiantWaterMovingShallow</li>
+            <li>Water</li>
+            <li>Fresh</li>
+            <li>Shallow</li>
+            <li>River</li>
+        </tags>
         <waterDepthShaderParameters>
             <_UseWaterOffset>1</_UseWaterOffset>
         </waterDepthShaderParameters>
@@ -89,15 +86,12 @@
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>394</renderPrecedence>
         <driesTo>SZ_RadiantStonySoil</driesTo>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Fresh</li>
-                    <li>Shallow</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>RadiantWaterShallow</li>
+            <li>Water</li>
+            <li>Fresh</li>
+            <li>Shallow</li>
+        </tags>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterChestDeepBase">
@@ -108,16 +102,13 @@
         <affordances>
             <li>MovingFluid</li>
         </affordances>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Fresh</li>
-                    <li>ChestDeep</li>
-                    <li>River</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>RadiantWaterMovingChestDeep</li>
+            <li>Water</li>
+            <li>Fresh</li>
+            <li>ChestDeep</li>
+            <li>River</li>
+        </tags>
         <waterDepthShaderParameters>
             <_UseWaterOffset>1</_UseWaterOffset>
         </waterDepthShaderParameters>
@@ -147,14 +138,11 @@
         <label>deep water</label>
         <texturePath>AlienBiomes/Terrain/Surfaces/RadiantWaterChestDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Deep</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>RadiantWaterDeep</li>
+            <li>Water</li>
+            <li>Deep</li>
+        </tags>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterShallowBase">
@@ -164,16 +152,12 @@
         <waterDepthShader>Map/WaterDepth</waterDepthShader>
         <renderPrecedence>396</renderPrecedence>
         <driesTo>SZ_RadiantStonySoil</driesTo>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Salty</li>
-                    <li>Shallow</li>
-                    <li>ABSaltyShallow</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>RadiantWaterOceanShallow</li>
+            <li>Water</li>
+            <li>Salty</li>
+            <li>Shallow</li>
+        </tags>
     </TerrainDef>
 
     <TerrainDef ParentName="WaterDeepBase">
@@ -181,15 +165,12 @@
         <label>deep ocean water</label>
         <texturePath>AlienBiomes/Terrain/Surfaces/RadiantWaterDeepRamp</texturePath>
         <renderPrecedence>397</renderPrecedence>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Water</li>
-                    <li>Salty</li>
-                    <li>Deep</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>RadiantWaterOceanDeep</li>
+            <li>Water</li>
+            <li>Salty</li>
+            <li>Deep</li>
+        </tags>
     </TerrainDef>
 
     <!--==================== Delirious Dunes Water ====================-->

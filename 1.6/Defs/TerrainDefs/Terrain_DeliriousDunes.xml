@@ -37,18 +37,8 @@
             </li>
         </tools>
         <tags>
-            <li>Soil</li>
+            <li>DeliriousStonySoil</li>
         </tags>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Stony</li>
-                    <li>Rocky</li>
-                    <li>DeliriousStonySoil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </TerrainDef>
 
     <!--==================== Delirious Smoldering Sand ====================-->
@@ -85,13 +75,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousSmolderingSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>DeliriousSmolderingSand</li>
+        </tags>
     </TerrainDef>
 
     <!--==================== Delirious Mellow Sand ====================-->
@@ -127,13 +113,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousMellowSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>DeliriousMellowSand</li>
+        </tags>
     </TerrainDef>
 
     <!--==================== Delirious Coarse Sand ====================-->
@@ -169,13 +151,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousCoarseSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>DeliriousCoarseSand</li>
+        </tags>
     </TerrainDef>
 
     <!--==================== Delirious Black Sand ====================-->
@@ -211,13 +189,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousBlackSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>DeliriousBlackSand</li>
+        </tags>
     </TerrainDef>
 
     <!--==================== Delirious Rich Black Sand ====================-->
@@ -253,13 +227,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousRichBlackSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>DeliriousRichBlackSand</li>
+        </tags>
     </TerrainDef>
 
 </Defs>

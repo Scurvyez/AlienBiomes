@@ -26,7 +26,7 @@
         <isExtremeBiome>true</isExtremeBiome>
         <geyserCountFactor>1.25</geyserCountFactor>
         <lakeBeachTerrain>SZ_DeliriousBlackSand</lakeBeachTerrain>
-        <riverbankTerrain>SZ_DeliriousBlackSand</riverbankTerrain>
+        <riverbankTerrain>SZ_DeliriousRichBlackSand</riverbankTerrain>
         <riverbankSizeRange>1~5</riverbankSizeRange>
         <coastalBeachTerrain>SZ_DeliriousBlackSand</coastalBeachTerrain>
         <mudTerrain>SZ_DeliriousCoarseSand</mudTerrain>

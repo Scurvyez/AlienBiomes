@@ -38,4 +38,17 @@ Step into an alien world filled with new dangers and exquisite curiosities!\n\nS
         <li>Telkir.TMods.MoreFloors</li>
     </loadAfter>
 
+    <!--
+    TODO: chalice fungus needs a LOS check for the reactive visuals
+    TODO: add elder bamboo as a fuel source for buildings
+    -->
+
+    <!--
+     floor compat
+        - BeautyFloors (Continued)
+        - Flooring Floors
+        - Outland More Floors Stuffed
+        - [T] MoreFloors 1.6
+    -->
+
 </ModMetaData>

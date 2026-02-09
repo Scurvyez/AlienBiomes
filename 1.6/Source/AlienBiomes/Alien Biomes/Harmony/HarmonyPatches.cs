@@ -24,9 +24,9 @@ namespace AlienBiomes
             harmony.Patch(original: AccessTools.PropertyGetter(typeof(SectionLayer_TerrainScatter), "Visible"),
                 prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(SectionLayer_TerrainScatter_VisiblePrefix)));
             
-            harmony.Patch(original: AccessTools.Method(typeof(PlantUtility), nameof(PlantUtility.CanEverPlantAt),
+            /*harmony.Patch(original: AccessTools.Method(typeof(PlantUtility), nameof(PlantUtility.CanEverPlantAt),
                     [typeof(ThingDef), typeof(IntVec3), typeof(Map), typeof(bool), typeof(bool)]),
-                prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(PlantUtility_CanEverPlantAtPrefix)));
+                prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(PlantUtility_CanEverPlantAtPrefix)));*/
             
             /*harmony.Patch(original: AccessTools.Method(typeof(MaterialPool), nameof(MaterialPool.MatFrom),
                     [typeof(MaterialRequest)]),
@@ -82,7 +82,7 @@ namespace AlienBiomes
             }
             
             // if a building provides a matching sowTag, allow immediately (hydroponics)
-            foreach (Thing thing in map.thingGrid.ThingsListAt(c))
+            /*foreach (Thing thing in map.thingGrid.ThingsListAt(c))
             {
                 string sowTag = thing?.def?.building?.sowTag;
                 if (sowTag == null) continue;
@@ -92,7 +92,7 @@ namespace AlienBiomes
 
                 __result = true;
                 return false;
-            }
+            }*/
             
             if (terrainExt != null && plantExt != null)
             {
@@ -127,7 +127,7 @@ namespace AlienBiomes
                 return false;
             }
             
-            if (plantExt == null || plantExt.terrainTags.NullOrEmpty() ||
+            if (plantExt == null || plantExt.terrainTags.NullOrEmpty() || 
                 (terrainExt != null && !terrainExt.terrainTags.NullOrEmpty()))
             {
                 return true;

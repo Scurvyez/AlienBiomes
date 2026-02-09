@@ -32,13 +32,11 @@
             <wildClusterRadius>15</wildClusterRadius>
             <wildClusterWeight>75</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>DeliriousCoarseSand</li>
+            </wildTerrainTags>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousCoarseSand</li>
-                </terrainTags>
-            </li>
             <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
         </modExtensions>
     </ThingDef>
@@ -79,15 +77,11 @@
             <wildClusterRadius>4</wildClusterRadius>
             <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>2</wildOrder>
+            <wildTerrainTags>
+                <li>DeliriousCoarseSand</li>
+                <li>DeliriousBlackSand</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousCoarseSand</li>
-                    <li>DeliriousBlackSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
         <comps>
             <li Class="AlienBiomes.CompProperties_Explosive">
                 <triggerRadius>3</triggerRadius>
@@ -136,6 +130,9 @@
             <wildClusterWeight>2</wildClusterWeight>
             <purpose>Food</purpose>
             <pollution>Any</pollution>
+            <wildTerrainTags>
+                <li>DeliriousMellowSand</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -146,14 +143,6 @@
                 <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousRichBlackSand</li>
-                    <li>DeliriousBlackSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Quasar Blossom ====================-->
@@ -187,6 +176,9 @@
             <wildClusterRadius>3</wildClusterRadius>
             <wildClusterWeight>2</wildClusterWeight>
             <pollution>Any</pollution>
+            <wildTerrainTags>
+                <li>DeliriousMellowSand</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -197,14 +189,6 @@
                 <glowStopTime>0.15</glowStopTime>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>DeliriousRichBlackSand</li>
-                    <li>DeliriousBlackSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Aurora Agave ====================-->
@@ -212,7 +196,7 @@
     <ThingDef ParentName="PlantBase">
         <defName>SZ_AuroraAgave</defName>
         <label>aurora agave</label>
-        <description>A large-leafed desert plant with edible fruit. Found only in the delirious dunes.</description>
+        <description>A large-leafed desert plant with edible fruit. Its vibrant blue stalks provide a stark contrast to its reddish surroundings.</description>
         <selectable>true</selectable>
         <neverMultiSelect>false</neverMultiSelect>
         <fillPercent>0.20</fillPercent>
@@ -227,7 +211,7 @@
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <plant>
-            <fertilityMin>0.25</fertilityMin>
+            <fertilityMin>0.6</fertilityMin>
             <fertilitySensitivity>0.8</fertilitySensitivity>
             <growDays>6</growDays>
             <harvestTag>Standard</harvestTag>
@@ -241,6 +225,10 @@
             <wildClusterWeight>10</wildClusterWeight>
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
+            <wildTerrainTags>
+                <li>DeliriousRichBlackSand</li>
+                <li>DeliriousBlackSand</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -251,14 +239,6 @@
                 <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <!--<li>DeliriousMellowSand</li>-->
-                    <li>DeliriousRichBlackSand</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Sandblossom ====================-->
@@ -294,15 +274,11 @@
             <purpose>Food</purpose>
             <allowAutoCut>false</allowAutoCut>
             <lifespanDaysPerGrowDays>1.75</lifespanDaysPerGrowDays>
+            <wildTerrainTags>
+                <li>DeliriousRichBlackSand</li>
+            </wildTerrainTags>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <!--<li>DeliriousCoarseSand</li>-->
-                    <li>DeliriousRichBlackSand</li>
-                    <!--<li>DeliriousBlackSand</li>-->
-                </terrainTags>
-            </li>
             <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
         </modExtensions>
     </ThingDef>
@@ -343,15 +319,12 @@
             <purpose>Health</purpose>
             <allowAutoCut>false</allowAutoCut>
             <lifespanDaysPerGrowDays>1.75</lifespanDaysPerGrowDays>
+            <wildTerrainTags>
+                <li>DeliriousRichBlackSand</li>
+                <li>DeliriousBlackSand</li>
+            </wildTerrainTags>
         </plant>
         <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <!--<li>DeliriousCoarseSand</li>-->
-                    <li>DeliriousRichBlackSand</li>
-                    <li>DeliriousBlackSand</li>
-                </terrainTags>
-            </li>
             <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
         </modExtensions>
     </ThingDef>
