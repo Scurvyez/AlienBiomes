@@ -60,9 +60,7 @@
     <Compile Include="DefModExtensions\ModExt_BiomeBioluminescence.cs" />
     <Compile Include="DefModExtensions\ModExt_PlantAcidDamage.cs" />
     <Compile Include="DefModExtensions\ModExt_PlantAcidSplash.cs" />
-    <Compile Include="DefModExtensions\ModExt_PlantDesertBloom.cs" />
     <Compile Include="DefModExtensions\ModExt_PlantVisuallyReactive.cs" />
-    <Compile Include="DefModExtensions\ModExt_PlantTerrainControl.cs" />
     <Compile Include="GameConditions\GameCondition_CrystallineRedshift.cs" />
     <Compile Include="GameConditions\GameCondition_DesertBloomWeatherShift.cs" />
     <Compile Include="Harmony\HarmonyPatches.cs" />

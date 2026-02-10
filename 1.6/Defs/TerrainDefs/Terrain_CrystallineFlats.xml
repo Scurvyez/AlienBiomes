@@ -37,15 +37,9 @@
             </li>
         </tools>
         <tags>
+            <li>CrystallineSoil</li>
             <li>Soil</li>
         </tags>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </TerrainDef>
 
     <!--==================== Crystalline Rich Soil ====================-->
@@ -83,15 +77,9 @@
             </li>
         </tools>
         <tags>
+            <li>CrystallineRichSoil</li>
             <li>Soil</li>
         </tags>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </TerrainDef>
 
     <!--==================== Crystalline Stony Soil ====================-->
@@ -130,15 +118,9 @@
             </li>
         </tools>
         <tags>
+            <li>CrystallineStonySoil</li>
             <li>Soil</li>
         </tags>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Rocky</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </TerrainDef>
 
     <!--==================== Crystalline Sand ====================-->
@@ -174,14 +156,9 @@
                 <cooldownTime>1.5</cooldownTime>
             </li>
         </tools>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Sandy</li>
-                    <li>Sandy_Beach</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
+        <tags>
+            <li>CrystallineSand</li>
+        </tags>
     </TerrainDef>
 
 </Defs>

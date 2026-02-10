@@ -573,7 +573,6 @@
             </wildTerrainTags>
             <sowTags>
                 <li>Ground</li>
-                <!--<li>Hydroponic</li>-->
             </sowTags>
         </plant>
     </ThingDef>

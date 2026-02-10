@@ -84,16 +84,13 @@ namespace AlienBiomes
         private static bool CanSpawnAt(IntVec3 c, Map map, ThingDef plantDef, 
             Incident_DesertBloom_ModExt modExt)
         {
-            ModExt_PlantTerrainControl ext = plantDef.GetModExtension<ModExt_PlantTerrainControl>();
-            ModExt_PlantTerrainControl cExt = c.GetTerrain(map).GetModExtension<ModExt_PlantTerrainControl>();
-            
             if (!c.Standable(map)) return false;
             if (c.Fogged(map)) return false;
             if (map.fertilityGrid.FertilityAt(c) < plantDef.plant.fertilityMin) return false;
             if (!c.GetRoom(map).PsychologicallyOutdoors) return false;
             if (c.GetEdifice(map) != null) return false;
             
-            if (cExt == null || !cExt.terrainTags.Any(tag => ext.terrainTags.Contains(tag))) return false;
+            if (!c.GetTerrain(map).tags.Any(tag => plantDef.plant.wildTerrainTags.Contains(tag))) return false;
             
             Plant plant = c.GetPlant(map);
             if (plant != null) return false;

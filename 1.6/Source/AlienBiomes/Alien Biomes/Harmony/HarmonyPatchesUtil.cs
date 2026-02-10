@@ -8,8 +8,22 @@ namespace AlienBiomes
     {
         public const string WATER = "Water";
 
+        private static bool HasLOS(Pawn pawn, IntVec3 targetCell)
+        {
+            if (pawn?.Map == null) return false;
+            
+            Map map = pawn.Map;
+            if (! pawn.Position.InBounds(map) || !targetCell.InBounds(map)) return false;
+            if (pawn.Position.Fogged(map) || targetCell.Fogged(map)) return false;
+            
+            return pawn.Position == targetCell || GenSight.LineOfSight(pawn.Position, targetCell, map, true);
+        }
+        
         public static void TryTriggerVisuallyReactivePlants(Pawn pawn, IntVec3 cell)
         {
+            if (pawn?.Map == null) return;
+            if (!HasLOS(pawn, cell)) return;
+            
             var plantGetterTouchSensitive = pawn.Map.GetComponent<MapComponent_PlantGetter_VisuallyReactive>();
             
             if (plantGetterTouchSensitive == null) return;
@@ -32,6 +46,9 @@ namespace AlienBiomes
         
         public static void TryTriggerHediffGiverPlants(Pawn pawn, IntVec3 cell)
         {
+            if (pawn?.Map == null) return;
+            if (!HasLOS(pawn, cell)) return;
+            
             var plantGetterExplosive = pawn?.Map?.GetComponent<MapComponent_PlantGetter_HediffGiver>();
             
             if (plantGetterExplosive == null) return;
@@ -61,6 +78,9 @@ namespace AlienBiomes
         
         public static void TryTriggerExplosivePlants(Pawn pawn, IntVec3 cell)
         {
+            if (pawn?.Map == null) return;
+            if (!HasLOS(pawn, cell)) return;
+            
             var plantGetterExplosive = pawn?.Map?.GetComponent<MapComponent_PlantGetter_Explosive>();
             
             if (plantGetterExplosive == null) return;

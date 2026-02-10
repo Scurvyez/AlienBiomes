@@ -36,9 +36,6 @@
                 <li>DeliriousCoarseSand</li>
             </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Starburst Cactus ====================-->
@@ -278,9 +275,6 @@
                 <li>DeliriousRichBlackSand</li>
             </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Durasalve ====================-->
@@ -324,9 +318,6 @@
                 <li>DeliriousBlackSand</li>
             </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantDesertBloom" />
-        </modExtensions>
     </ThingDef>
 
 </Defs>

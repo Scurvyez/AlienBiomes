@@ -34,20 +34,21 @@ namespace AlienBiomes
                     nameof(ImpliedTerrainDefsPostfix)));
         }
         
+        // fix to use the vanilla tags system instead of our old extension
         public static void ImpliedTerrainDefsPostfix(ref IEnumerable<TerrainDef> __result)
         {
+            var newTags = new List<string>
+            {
+                "Stony",
+                "Rocky"
+            };
+
             List<TerrainDef> modifiedList = [];
             foreach (TerrainDef def in __result)
             {
                 if (!def.defName.Contains("_Smooth"))
                 {
-                    ModExt_PlantTerrainControl modExtPlantTcExt = new()
-                    {
-                        terrainTags = ["Stony", "Rocky"]
-                    };
-                    
-                    def.modExtensions ??= [];
-                    def.modExtensions.Add(modExtPlantTcExt);
+                    def.tags = newTags;
                     def.fertility = 0.98f;
                 }
                 modifiedList.Add(def);

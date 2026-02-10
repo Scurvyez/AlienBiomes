@@ -29,14 +29,11 @@
             <visualSizeRange>0.4~0.6</visualSizeRange>
             <topWindExposure>0.4</topWindExposure>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Shimmering Tall Grass Plant ====================-->
@@ -68,14 +65,11 @@
             <wildClusterRadius>6</wildClusterRadius>
             <wildClusterWeight>14</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Glistening Grass Plant ====================-->
@@ -106,16 +100,11 @@
             <visualSizeRange>0.4~0.6</visualSizeRange>
             <topWindExposure>0.4</topWindExposure>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Sandy</li>
-                    <li>CrystallineSand_Grove</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Glistening Tall Grass Plant ====================-->
@@ -147,16 +136,11 @@
             <wildClusterRadius>6</wildClusterRadius>
             <wildClusterWeight>14</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Sandy</li>
-                    <li>CrystallineSand_Grove</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Lush Green Grass Plant ====================-->
@@ -186,15 +170,13 @@
             <visualSizeRange>0.2~1.35</visualSizeRange>
             <topWindExposure>0.33</topWindExposure>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+                <li>CrystallineSand</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                    <li>Sandy</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Blue Colossal Crystal  ====================-->
@@ -239,6 +221,11 @@
             <wildClusterRadius>12</wildClusterRadius>
             <wildClusterWeight>14</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -257,13 +244,6 @@
                 <hediffToGive>SZ_Crystallize</hediffToGive>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Green Colossal Crystal ====================-->
@@ -298,6 +278,11 @@
             <wildClusterRadius>12</wildClusterRadius>
             <wildClusterWeight>14</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -313,13 +298,6 @@
             <graphicClass>Graphic_Random</graphicClass>
             <shaderType>TransparentPlant</shaderType>
         </graphicData>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Red Colossal Crystal ====================-->
@@ -407,6 +385,11 @@
             <wildClusterRadius>5</wildClusterRadius>
             <wildClusterWeight>11</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -417,13 +400,6 @@
                 <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Green Inferior Crystal ====================-->
@@ -462,6 +438,11 @@
             <wildClusterRadius>5</wildClusterRadius>
             <wildClusterWeight>11</wildClusterWeight>
             <wildOrder>1</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -472,13 +453,6 @@
                 <glowStopTime>0.20</glowStopTime>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Opulent Orchid ====================-->
@@ -522,6 +496,9 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
             <allowAutoCut>false</allowAutoCut>
+            <wildTerrainTags>
+                <li>CrystallineSand</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedHarvest">
@@ -531,14 +508,6 @@
                 </harvestSeasons>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Sandy</li>
-                    <li>CrystallineSand_Grove</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Blue Moonberry ====================-->
@@ -579,6 +548,9 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
             <allowAutoCut>false</allowAutoCut>
+            <wildTerrainTags>
+                <li>CrystallineSand</li>
+            </wildTerrainTags>
         </plant>
         <comps>
             <li Class="AlienBiomes.CompProperties_TimedGlower">
@@ -595,14 +567,6 @@
                 </harvestSeasons>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Sandy</li>
-                    <li>CrystallineSand_Grove</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!--==================== Winding Fern ====================-->
@@ -638,15 +602,13 @@
             <visualSizeRange>0.25~1.65</visualSizeRange>
             <topWindExposure>0.72</topWindExposure>
             <wildOrder>2</wildOrder>
+            <wildTerrainTags>
+                <li>CrystallineSoil</li>
+                <li>CrystallineRichSoil</li>
+                <li>Soil</li>
+                <li>CrystallineSand</li>
+            </wildTerrainTags>
         </plant>
-        <modExtensions>
-            <li Class="AlienBiomes.ModExt_PlantTerrainControl">
-                <terrainTags>
-                    <li>Sandy</li>
-                    <li>Soil</li>
-                </terrainTags>
-            </li>
-        </modExtensions>
     </ThingDef>
 
 </Defs>

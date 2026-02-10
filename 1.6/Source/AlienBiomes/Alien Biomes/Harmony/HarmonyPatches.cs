@@ -24,10 +24,6 @@ namespace AlienBiomes
             harmony.Patch(original: AccessTools.PropertyGetter(typeof(SectionLayer_TerrainScatter), "Visible"),
                 prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(SectionLayer_TerrainScatter_VisiblePrefix)));
             
-            /*harmony.Patch(original: AccessTools.Method(typeof(PlantUtility), nameof(PlantUtility.CanEverPlantAt),
-                    [typeof(ThingDef), typeof(IntVec3), typeof(Map), typeof(bool), typeof(bool)]),
-                prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(PlantUtility_CanEverPlantAtPrefix)));*/
-            
             /*harmony.Patch(original: AccessTools.Method(typeof(MaterialPool), nameof(MaterialPool.MatFrom),
                     [typeof(MaterialRequest)]),
                 postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(MatFromPostFix)));*/
@@ -61,79 +57,6 @@ namespace AlienBiomes
         {
             bool showTerrainDebris = AlienBiomesSettings.ShowTerrainDebris;
             __result = showTerrainDebris;
-            return false;
-        }
-        
-        public static bool PlantUtility_CanEverPlantAtPrefix(ref bool __result, ThingDef plantDef, 
-            IntVec3 c, Map map, bool canWipePlantsExceptTree = false)
-        {
-            if (!c.InBounds(map)) return true;
-            
-            TerrainDef terrain = map.terrainGrid.TerrainAt(c);
-            bool isWaterLike = terrain.IsWater || terrain.HasTag(HarmonyPatchesUtil.WATER);
-            
-            ModExt_PlantTerrainControl terrainExt = terrain.GetModExtension<ModExt_PlantTerrainControl>();
-            ModExt_PlantTerrainControl plantExt = plantDef.GetModExtension<ModExt_PlantTerrainControl>();
-            
-            if (plantExt == null && terrain.HasTag(HarmonyPatchesUtil.WATER))
-            {
-                __result = false;
-                return false;
-            }
-            
-            // if a building provides a matching sowTag, allow immediately (hydroponics)
-            /*foreach (Thing thing in map.thingGrid.ThingsListAt(c))
-            {
-                string sowTag = thing?.def?.building?.sowTag;
-                if (sowTag == null) continue;
-
-                bool matches = plantDef.plant.sowTags.Contains(sowTag);
-                if (!matches) continue;
-
-                __result = true;
-                return false;
-            }*/
-            
-            if (terrainExt != null && plantExt != null)
-            {
-                bool plantHasTags = !plantExt.terrainTags.NullOrEmpty();
-                
-                if (plantHasTags)
-                {
-                    if (terrainExt.terrainTags.NullOrEmpty())
-                    {
-                        __result = false;
-                        return false;
-                    }
-                    
-                    foreach (string terrainTag in terrainExt.terrainTags)
-                    {
-                        if (plantExt.terrainTags.Contains(terrainTag)) continue;
-                        __result = false;
-                        return false;
-                    }
-                    return true;
-                }
-                
-                if (isWaterLike)
-                {
-                    __result = true;
-                    return false;
-                }
-            }
-            else if (terrainExt == null && terrain.HasTag(HarmonyPatchesUtil.WATER))
-            {
-                __result = false;
-                return false;
-            }
-            
-            if (plantExt == null || plantExt.terrainTags.NullOrEmpty() || 
-                (terrainExt != null && !terrainExt.terrainTags.NullOrEmpty()))
-            {
-                return true;
-            }
-            
-            __result = false;
             return false;
         }
         
